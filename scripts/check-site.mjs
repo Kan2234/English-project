@@ -12,10 +12,30 @@ const defaultPort = base.protocol === 'https:' ? 443 : 80;
 let failed = 0;
 let passed = 0;
 
-function request(path, { method = 'GET', headers = {} } = {}) {
+// No keep-alive: a pooled socket that the CDN already closed can hang a
+// request until it times out. One fresh connection per request is slower but
+// deterministic.
+const agent = new client.Agent({ keepAlive: false });
+
+// Network errors and timeouts are retried twice; if they persist the request
+// resolves with status 0 so the matching check FAILs instead of crashing.
+async function request(path, opts = {}) {
+  let lastError;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      return await requestOnce(path, opts);
+    } catch (e) {
+      lastError = e;
+    }
+  }
+  console.log(`WARN  ${lastError.message}`);
+  return { status: 0, headers: {}, body: Buffer.alloc(0) };
+}
+
+function requestOnce(path, { method = 'GET', headers = {} } = {}) {
   return new Promise((resolve, reject) => {
     const req = client.request(
-      { host: base.hostname, servername: base.hostname, port: base.port || defaultPort, path, method, headers, timeout: 15000 },
+      { host: base.hostname, servername: base.hostname, port: base.port || defaultPort, path, method, headers, agent, timeout: 15000 },
       (res) => {
         const chunks = [];
         res.on('data', (c) => chunks.push(c));
