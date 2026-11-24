@@ -2,481 +2,1157 @@
   "ft01-p1-s01": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p1-s01.mp3",
-    "hash": "b2323760fc87288a",
-    "duration_sec": 16.4
+    "hash": "411840e6ba09a11f",
+    "duration_sec": 17.2,
+    "engine": "edge",
+    "voices": [
+      "en-US-AvaNeural"
+    ],
+    "accents": [
+      "US"
+    ]
   },
   "ft01-p1-s02": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p1-s02.mp3",
-    "hash": "b2be7180c4b961f4",
-    "duration_sec": 16.1
+    "hash": "6ba9e75d464bc558",
+    "duration_sec": 17,
+    "engine": "edge",
+    "voices": [
+      "en-GB-RyanNeural"
+    ],
+    "accents": [
+      "GB"
+    ]
   },
   "ft01-p1-s03": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p1-s03.mp3",
-    "hash": "00364697e41a0b6e",
-    "duration_sec": 17.9
+    "hash": "a426e0a7643e9af8",
+    "duration_sec": 19.5,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "CA"
+    ]
   },
   "ft01-p1-s04": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p1-s04.mp3",
-    "hash": "b428ecfe1c59bf6f",
-    "duration_sec": 15.4
+    "hash": "426af66fcd11dad8",
+    "duration_sec": 17.7,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural"
+    ],
+    "accents": [
+      "AU"
+    ]
   },
   "ft01-p1-s05": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p1-s05.mp3",
-    "hash": "141b14fd6cf1b194",
-    "duration_sec": 18
+    "hash": "d083bb05a9d40a6a",
+    "duration_sec": 19.3,
+    "engine": "edge",
+    "voices": [
+      "en-US-BrianNeural"
+    ],
+    "accents": [
+      "US"
+    ]
   },
   "ft01-p1-s06": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p1-s06.mp3",
-    "hash": "5c3542a473c52345",
-    "duration_sec": 17.8
+    "hash": "64fe850856fed378",
+    "duration_sec": 19.7,
+    "engine": "edge",
+    "voices": [
+      "en-GB-SoniaNeural"
+    ],
+    "accents": [
+      "GB"
+    ]
   },
   "ft01-p2-s01": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s01.mp3",
-    "hash": "64411e4c6fb27128",
-    "duration_sec": 12.6
+    "hash": "e77aa392774da24e",
+    "duration_sec": 12.9,
+    "engine": "edge",
+    "voices": [
+      "en-GB-LibbyNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "GB",
+      "CA"
+    ]
   },
   "ft01-p2-s02": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s02.mp3",
-    "hash": "32e7073a6dfb1198",
-    "duration_sec": 12.1
+    "hash": "a293c868dc2746c0",
+    "duration_sec": 13.4,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "CA",
+      "AU"
+    ]
   },
   "ft01-p2-s03": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s03.mp3",
-    "hash": "6ff549fc1f1baede",
-    "duration_sec": 11.6
+    "hash": "e324af1873128bf4",
+    "duration_sec": 13.5,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural",
+      "en-US-ChristopherNeural"
+    ],
+    "accents": [
+      "AU",
+      "US"
+    ]
   },
   "ft01-p2-s04": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s04.mp3",
-    "hash": "ba68368c99034f48",
-    "duration_sec": 12.4
+    "hash": "da798fde6afd0fdc",
+    "duration_sec": 13.1,
+    "engine": "edge",
+    "voices": [
+      "en-US-BrianNeural",
+      "en-GB-SoniaNeural"
+    ],
+    "accents": [
+      "US",
+      "GB"
+    ]
   },
   "ft01-p2-s05": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s05.mp3",
-    "hash": "8cddcb8a6e1879f7",
-    "duration_sec": 12.1
+    "hash": "fc3c7effe94f013a",
+    "duration_sec": 13.2,
+    "engine": "edge",
+    "voices": [
+      "en-GB-ThomasNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "GB",
+      "AU"
+    ]
   },
   "ft01-p2-s06": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s06.mp3",
-    "hash": "5b18c20d5283c6c4",
-    "duration_sec": 12.8
+    "hash": "312248d930166874",
+    "duration_sec": 14.1,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural",
+      "en-US-ChristopherNeural"
+    ],
+    "accents": [
+      "CA",
+      "US"
+    ]
   },
   "ft01-p2-s07": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s07.mp3",
-    "hash": "ea4fd6d3b2e825af",
-    "duration_sec": 12.7
+    "hash": "1e1a3b9440b3dbb1",
+    "duration_sec": 15.3,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural",
+      "en-GB-LibbyNeural"
+    ],
+    "accents": [
+      "AU",
+      "GB"
+    ]
   },
   "ft01-p2-s08": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s08.mp3",
-    "hash": "66aa84accd4531cc",
-    "duration_sec": 11.3
+    "hash": "87e0dddd6b0568e6",
+    "duration_sec": 12.2,
+    "engine": "edge",
+    "voices": [
+      "en-US-EmmaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "US",
+      "CA"
+    ]
   },
   "ft01-p2-s09": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s09.mp3",
-    "hash": "b71b5a9193250606",
-    "duration_sec": 12.2
+    "hash": "e7b2a1efa7dff481",
+    "duration_sec": 12.4,
+    "engine": "edge",
+    "voices": [
+      "en-GB-SoniaNeural",
+      "en-US-BrianNeural"
+    ],
+    "accents": [
+      "GB",
+      "US"
+    ]
   },
   "ft01-p2-s10": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s10.mp3",
-    "hash": "1207ab3c18630763",
-    "duration_sec": 11.6
+    "hash": "2a8bb1159209697e",
+    "duration_sec": 12.9,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural",
+      "en-GB-LibbyNeural"
+    ],
+    "accents": [
+      "CA",
+      "GB"
+    ]
   },
   "ft01-p2-s11": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s11.mp3",
-    "hash": "512f83a918f96fe7",
-    "duration_sec": 11.7
+    "hash": "a9fa9c2d74ad79de",
+    "duration_sec": 12.8,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "AU",
+      "CA"
+    ]
   },
   "ft01-p2-s12": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s12.mp3",
-    "hash": "a7735c98db28c2d7",
-    "duration_sec": 11.9
+    "hash": "63bba9a75a6e0749",
+    "duration_sec": 13.1,
+    "engine": "edge",
+    "voices": [
+      "en-US-ChristopherNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "US",
+      "AU"
+    ]
   },
   "ft01-p2-s13": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s13.mp3",
-    "hash": "1e4b9070998eac3c",
-    "duration_sec": 13
+    "hash": "75b275fb47e1425c",
+    "duration_sec": 14.1,
+    "engine": "edge",
+    "voices": [
+      "en-GB-RyanNeural",
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "GB",
+      "CA"
+    ]
   },
   "ft01-p2-s14": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s14.mp3",
-    "hash": "9487ffba8ef1e7db",
-    "duration_sec": 14
+    "hash": "9a97c12672b810c0",
+    "duration_sec": 15,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural",
+      "en-AU-WilliamMultilingualNeural"
+    ],
+    "accents": [
+      "CA",
+      "AU"
+    ]
   },
   "ft01-p2-s15": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s15.mp3",
-    "hash": "14eb8f0ac4b7ff85",
-    "duration_sec": 12.7
+    "hash": "162ce649a6ca41e5",
+    "duration_sec": 14.2,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural",
+      "en-US-AvaNeural"
+    ],
+    "accents": [
+      "AU",
+      "US"
+    ]
   },
   "ft01-p2-s16": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s16.mp3",
-    "hash": "0dbc1bf6a7f68e95",
-    "duration_sec": 11.6
+    "hash": "ae3575f74f689505",
+    "duration_sec": 12.3,
+    "engine": "edge",
+    "voices": [
+      "en-US-EmmaNeural",
+      "en-GB-ThomasNeural"
+    ],
+    "accents": [
+      "US",
+      "GB"
+    ]
   },
   "ft01-p2-s17": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s17.mp3",
-    "hash": "4f51d90195e5a878",
-    "duration_sec": 12.2
+    "hash": "d25033609b1e2c90",
+    "duration_sec": 13.5,
+    "engine": "edge",
+    "voices": [
+      "en-GB-SoniaNeural",
+      "en-AU-WilliamMultilingualNeural"
+    ],
+    "accents": [
+      "GB",
+      "AU"
+    ]
   },
   "ft01-p2-s18": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s18.mp3",
-    "hash": "040a24a62645ebfd",
-    "duration_sec": 13.1
+    "hash": "e8533bd96d4fe254",
+    "duration_sec": 14.1,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural",
+      "en-US-AvaNeural"
+    ],
+    "accents": [
+      "CA",
+      "US"
+    ]
   },
   "ft01-p2-s19": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s19.mp3",
-    "hash": "d0b5b4d237314508",
-    "duration_sec": 12.9
+    "hash": "9334eced07310650",
+    "duration_sec": 14,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural",
+      "en-GB-RyanNeural"
+    ],
+    "accents": [
+      "AU",
+      "GB"
+    ]
   },
   "ft01-p2-s20": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s20.mp3",
-    "hash": "eb3b55b99e75270f",
-    "duration_sec": 12.4
+    "hash": "cdb1b70ab4d81dc4",
+    "duration_sec": 13.3,
+    "engine": "edge",
+    "voices": [
+      "en-US-BrianNeural",
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "US",
+      "CA"
+    ]
   },
   "ft01-p2-s21": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s21.mp3",
-    "hash": "032b6a7fcba6fa2f",
-    "duration_sec": 12.7
+    "hash": "29ec9437c01e657b",
+    "duration_sec": 13.6,
+    "engine": "edge",
+    "voices": [
+      "en-GB-ThomasNeural",
+      "en-US-EmmaNeural"
+    ],
+    "accents": [
+      "GB",
+      "US"
+    ]
   },
   "ft01-p2-s22": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s22.mp3",
-    "hash": "4e1da6e180958f1c",
-    "duration_sec": 13.8
+    "hash": "e25e51177e1d3c62",
+    "duration_sec": 14.2,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural",
+      "en-GB-RyanNeural"
+    ],
+    "accents": [
+      "CA",
+      "GB"
+    ]
   },
   "ft01-p2-s23": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s23.mp3",
-    "hash": "d9029ae91c515a70",
-    "duration_sec": 10.9
+    "hash": "6f786524995876c5",
+    "duration_sec": 12.3,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural",
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "AU",
+      "CA"
+    ]
   },
   "ft01-p2-s24": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s24.mp3",
-    "hash": "1f344a03dc617ddf",
-    "duration_sec": 12.6
+    "hash": "e274391cc135c637",
+    "duration_sec": 13.9,
+    "engine": "edge",
+    "voices": [
+      "en-US-AvaNeural",
+      "en-AU-WilliamMultilingualNeural"
+    ],
+    "accents": [
+      "US",
+      "AU"
+    ]
   },
   "ft01-p2-s25": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p2-s25.mp3",
-    "hash": "3f0556b96fd6743f",
-    "duration_sec": 11.5
+    "hash": "0735d468ee009749",
+    "duration_sec": 12,
+    "engine": "edge",
+    "voices": [
+      "en-GB-LibbyNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "GB",
+      "CA"
+    ]
   },
   "ft01-p3-s01": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p3-s01.mp3",
-    "hash": "8f500cec4c7677bc",
-    "duration_sec": 66.2
+    "hash": "9ecfbed958e381c6",
+    "duration_sec": 62.5,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural",
+      "en-US-EmmaNeural"
+    ],
+    "accents": [
+      "AU",
+      "US"
+    ]
   },
   "ft01-p3-s02": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p3-s02.mp3",
-    "hash": "ced9c34860957080",
-    "duration_sec": 63.3
+    "hash": "b0715f1a2eebac06",
+    "duration_sec": 61.3,
+    "engine": "edge",
+    "voices": [
+      "en-US-AvaNeural",
+      "en-GB-ThomasNeural"
+    ],
+    "accents": [
+      "US",
+      "GB"
+    ]
   },
   "ft01-p3-s03": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p3-s03.mp3",
-    "hash": "f69eeea86f1487f2",
-    "duration_sec": 68.5
+    "hash": "22d1fed8977f891e",
+    "duration_sec": 69.3,
+    "engine": "edge",
+    "voices": [
+      "en-GB-SoniaNeural",
+      "en-CA-LiamNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "GB",
+      "CA",
+      "AU"
+    ]
   },
   "ft01-p3-s04": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p3-s04.mp3",
-    "hash": "3e3bab7ee92ea7e4",
-    "duration_sec": 66.2
+    "hash": "ddb8c3dd393ff576",
+    "duration_sec": 66,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "CA",
+      "AU"
+    ]
   },
   "ft01-p3-s05": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p3-s05.mp3",
-    "hash": "ca550d6f727eda4c",
-    "duration_sec": 70.3
+    "hash": "d05e6498bbab8c10",
+    "duration_sec": 71.9,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural",
+      "en-GB-RyanNeural"
+    ],
+    "accents": [
+      "AU",
+      "GB"
+    ]
   },
   "ft01-p3-s06": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p3-s06.mp3",
-    "hash": "820799eb5cccc8d5",
-    "duration_sec": 69.2
+    "hash": "b47f958b643bc61e",
+    "duration_sec": 68.9,
+    "engine": "edge",
+    "voices": [
+      "en-US-ChristopherNeural",
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "US",
+      "CA"
+    ]
   },
   "ft01-p3-s07": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p3-s07.mp3",
-    "hash": "1fe2be42176faf67",
-    "duration_sec": 64.8
+    "hash": "bd4644b60dccf4be",
+    "duration_sec": 65.5,
+    "engine": "edge",
+    "voices": [
+      "en-GB-ThomasNeural",
+      "en-AU-NatashaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "GB",
+      "AU",
+      "CA"
+    ]
   },
   "ft01-p3-s08": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p3-s08.mp3",
-    "hash": "998e05ff105b13fa",
-    "duration_sec": 71.7
+    "hash": "674297fc539049b1",
+    "duration_sec": 68.7,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural",
+      "en-US-BrianNeural"
+    ],
+    "accents": [
+      "CA",
+      "US"
+    ]
   },
   "ft01-p3-s09": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p3-s09.mp3",
-    "hash": "c7178b83328c7585",
-    "duration_sec": 69.9
+    "hash": "44717a82cce27d78",
+    "duration_sec": 68.3,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "AU",
+      "CA"
+    ]
   },
   "ft01-p3-s10": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p3-s10.mp3",
-    "hash": "8b413cbdb22108b6",
-    "duration_sec": 66.6
+    "hash": "e07c21b4a991b76f",
+    "duration_sec": 65.8,
+    "engine": "edge",
+    "voices": [
+      "en-US-ChristopherNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "US",
+      "AU"
+    ]
   },
   "ft01-p3-s11": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p3-s11.mp3",
-    "hash": "c2d17779a65cbb44",
-    "duration_sec": 72.9
+    "hash": "7fb0f4a7e882bce8",
+    "duration_sec": 71.5,
+    "engine": "edge",
+    "voices": [
+      "en-GB-LibbyNeural",
+      "en-US-BrianNeural"
+    ],
+    "accents": [
+      "GB",
+      "US"
+    ]
   },
   "ft01-p3-s12": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p3-s12.mp3",
-    "hash": "fd91603c759e172e",
-    "duration_sec": 72.3
+    "hash": "2c1f88337c8cc69e",
+    "duration_sec": 71,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural",
+      "en-GB-SoniaNeural"
+    ],
+    "accents": [
+      "CA",
+      "GB"
+    ]
   },
   "ft01-p3-s13": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p3-s13.mp3",
-    "hash": "c6caf9fceb5961ab",
-    "duration_sec": 72.9
+    "hash": "4151f5a8b3abe06c",
+    "duration_sec": 74.1,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural",
+      "en-US-ChristopherNeural"
+    ],
+    "accents": [
+      "AU",
+      "US"
+    ]
   },
   "ft01-p4-s01": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p4-s01.mp3",
-    "hash": "b089223a12cb26b1",
-    "duration_sec": 65
+    "hash": "479c033855e82425",
+    "duration_sec": 67.3,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "CA"
+    ]
   },
   "ft01-p4-s02": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p4-s02.mp3",
-    "hash": "d911b10020a0cc64",
-    "duration_sec": 67.7
+    "hash": "5574a7c1cf613b7f",
+    "duration_sec": 69.3,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "AU"
+    ]
   },
   "ft01-p4-s03": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p4-s03.mp3",
-    "hash": "5005745c30739b05",
-    "duration_sec": 62.9
+    "hash": "f93c8f54134ae2cc",
+    "duration_sec": 60,
+    "engine": "edge",
+    "voices": [
+      "en-US-BrianNeural"
+    ],
+    "accents": [
+      "US"
+    ]
   },
   "ft01-p4-s04": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p4-s04.mp3",
-    "hash": "ed88fd7a9197704f",
-    "duration_sec": 60.9
+    "hash": "92ecc4ebedde5ed1",
+    "duration_sec": 65.7,
+    "engine": "edge",
+    "voices": [
+      "en-GB-RyanNeural"
+    ],
+    "accents": [
+      "GB"
+    ]
   },
   "ft01-p4-s05": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p4-s05.mp3",
-    "hash": "55c4c3cba98fe302",
-    "duration_sec": 66.4
+    "hash": "75a1dff799b64ff2",
+    "duration_sec": 65.6,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "CA"
+    ]
   },
   "ft01-p4-s06": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p4-s06.mp3",
-    "hash": "932e66124663aa83",
-    "duration_sec": 62.9
+    "hash": "ff969038d6aff8c1",
+    "duration_sec": 65,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "AU"
+    ]
   },
   "ft01-p4-s07": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p4-s07.mp3",
-    "hash": "a833756c09fb882a",
-    "duration_sec": 63.8
+    "hash": "d1031cc2fbdc2124",
+    "duration_sec": 65.4,
+    "engine": "edge",
+    "voices": [
+      "en-US-ChristopherNeural"
+    ],
+    "accents": [
+      "US"
+    ]
   },
   "ft01-p4-s08": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p4-s08.mp3",
-    "hash": "55666e73079614ca",
-    "duration_sec": 62.1
+    "hash": "9b6b2e6081f219ca",
+    "duration_sec": 68.4,
+    "engine": "edge",
+    "voices": [
+      "en-GB-LibbyNeural"
+    ],
+    "accents": [
+      "GB"
+    ]
   },
   "ft01-p4-s09": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p4-s09.mp3",
-    "hash": "cb035698b186e2ff",
-    "duration_sec": 75.4
+    "hash": "1599222bfd7a1895",
+    "duration_sec": 77.5,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "CA"
+    ]
   },
   "ft01-p4-s10": {
     "test_id": "full-test-01",
     "file": "audio/full-test-01/ft01-p4-s10.mp3",
-    "hash": "012dd189989e32bb",
-    "duration_sec": 78.2
+    "hash": "ecd33a36a41bec16",
+    "duration_sec": 75.6,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural"
+    ],
+    "accents": [
+      "AU"
+    ]
   },
   "mt01-p1-s01": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p1-s01.mp3",
-    "hash": "3aa93fbbbc29adc7",
-    "duration_sec": 17.1
+    "hash": "ce4b410b69eee246",
+    "duration_sec": 18.1,
+    "engine": "edge",
+    "voices": [
+      "en-US-AvaNeural"
+    ],
+    "accents": [
+      "US"
+    ]
   },
   "mt01-p1-s02": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p1-s02.mp3",
-    "hash": "c92cc2359146b447",
-    "duration_sec": 17.1
+    "hash": "5c4a81752a26ecf7",
+    "duration_sec": 18.2,
+    "engine": "edge",
+    "voices": [
+      "en-GB-RyanNeural"
+    ],
+    "accents": [
+      "GB"
+    ]
   },
   "mt01-p1-s03": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p1-s03.mp3",
-    "hash": "6588deb2a2c5dc5c",
-    "duration_sec": 15.1
+    "hash": "7fa11a8ca106cae3",
+    "duration_sec": 17,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "CA"
+    ]
   },
   "mt01-p1-s04": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p1-s04.mp3",
-    "hash": "e7ac3191e3e27935",
-    "duration_sec": 16.6
+    "hash": "b8e5a8fdb634d33d",
+    "duration_sec": 18.8,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural"
+    ],
+    "accents": [
+      "AU"
+    ]
   },
   "mt01-p1-s05": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p1-s05.mp3",
-    "hash": "f4f80c7fa42e3c9e",
-    "duration_sec": 16.7
+    "hash": "5d862037bc9116d7",
+    "duration_sec": 18,
+    "engine": "edge",
+    "voices": [
+      "en-US-BrianNeural"
+    ],
+    "accents": [
+      "US"
+    ]
   },
   "mt01-p1-s06": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p1-s06.mp3",
-    "hash": "7293ad8ec7402e2f",
-    "duration_sec": 17.2
+    "hash": "fb3a76d91f3527ca",
+    "duration_sec": 18.6,
+    "engine": "edge",
+    "voices": [
+      "en-GB-SoniaNeural"
+    ],
+    "accents": [
+      "GB"
+    ]
   },
   "mt01-p2-s01": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p2-s01.mp3",
-    "hash": "d804918709f591d3",
-    "duration_sec": 12.1
+    "hash": "9c7229a6d921c1cc",
+    "duration_sec": 12.7,
+    "engine": "edge",
+    "voices": [
+      "en-GB-LibbyNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "GB",
+      "CA"
+    ]
   },
   "mt01-p2-s02": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p2-s02.mp3",
-    "hash": "c0edd5df53b2aa62",
-    "duration_sec": 12.3
+    "hash": "45ab656334747454",
+    "duration_sec": 13.5,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "CA",
+      "AU"
+    ]
   },
   "mt01-p2-s03": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p2-s03.mp3",
-    "hash": "611fa0367b4052f8",
-    "duration_sec": 12.2
+    "hash": "b127fafbfd2e79ed",
+    "duration_sec": 13.3,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural",
+      "en-US-ChristopherNeural"
+    ],
+    "accents": [
+      "AU",
+      "US"
+    ]
   },
   "mt01-p2-s04": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p2-s04.mp3",
-    "hash": "abec209602f96791",
-    "duration_sec": 12.1
+    "hash": "71b99514d1f9899a",
+    "duration_sec": 13.3,
+    "engine": "edge",
+    "voices": [
+      "en-US-BrianNeural",
+      "en-GB-SoniaNeural"
+    ],
+    "accents": [
+      "US",
+      "GB"
+    ]
   },
   "mt01-p2-s05": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p2-s05.mp3",
-    "hash": "0cc073497bb48c9b",
-    "duration_sec": 13.3
+    "hash": "055fea084779dbc6",
+    "duration_sec": 14.2,
+    "engine": "edge",
+    "voices": [
+      "en-GB-ThomasNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "GB",
+      "AU"
+    ]
   },
   "mt01-p2-s06": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p2-s06.mp3",
-    "hash": "6d98628ddd2370c8",
-    "duration_sec": 13
+    "hash": "d39d118080437c2e",
+    "duration_sec": 13.7,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural",
+      "en-US-ChristopherNeural"
+    ],
+    "accents": [
+      "CA",
+      "US"
+    ]
   },
   "mt01-p2-s07": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p2-s07.mp3",
-    "hash": "08c70ab150481581",
-    "duration_sec": 13.4
+    "hash": "c42283b55c13e1ef",
+    "duration_sec": 15.7,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural",
+      "en-GB-LibbyNeural"
+    ],
+    "accents": [
+      "AU",
+      "GB"
+    ]
   },
   "mt01-p2-s08": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p2-s08.mp3",
-    "hash": "58e3d91693720ac1",
-    "duration_sec": 13.6
+    "hash": "0e23991d0212a0ac",
+    "duration_sec": 14.1,
+    "engine": "edge",
+    "voices": [
+      "en-US-EmmaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "US",
+      "CA"
+    ]
   },
   "mt01-p2-s09": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p2-s09.mp3",
-    "hash": "35800627fd2016fc",
-    "duration_sec": 13.6
+    "hash": "5006e7f863319e80",
+    "duration_sec": 14.3,
+    "engine": "edge",
+    "voices": [
+      "en-GB-SoniaNeural",
+      "en-US-BrianNeural"
+    ],
+    "accents": [
+      "GB",
+      "US"
+    ]
   },
   "mt01-p2-s10": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p2-s10.mp3",
-    "hash": "81db14fbf5dd5ca4",
-    "duration_sec": 14.3
+    "hash": "5e9a19619f50540e",
+    "duration_sec": 15.9,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural",
+      "en-GB-LibbyNeural"
+    ],
+    "accents": [
+      "CA",
+      "GB"
+    ]
   },
   "mt01-p2-s11": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p2-s11.mp3",
-    "hash": "9441b62098a194c6",
-    "duration_sec": 13.4
+    "hash": "339a1abd5c1c08e8",
+    "duration_sec": 14.8,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "AU",
+      "CA"
+    ]
   },
   "mt01-p2-s12": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p2-s12.mp3",
-    "hash": "e8aa549671105263",
-    "duration_sec": 12
+    "hash": "50c830719cfeaebb",
+    "duration_sec": 13.5,
+    "engine": "edge",
+    "voices": [
+      "en-US-ChristopherNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "US",
+      "AU"
+    ]
   },
   "mt01-p2-s13": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p2-s13.mp3",
-    "hash": "e95192ea0e112a2c",
-    "duration_sec": 13
+    "hash": "c052341e4c985a5a",
+    "duration_sec": 13.8,
+    "engine": "edge",
+    "voices": [
+      "en-GB-RyanNeural",
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "GB",
+      "CA"
+    ]
   },
   "mt01-p3-s01": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p3-s01.mp3",
-    "hash": "15e8aa3bed7d7ee2",
-    "duration_sec": 62.1
+    "hash": "4913c6d5a8191dda",
+    "duration_sec": 60.5,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural",
+      "en-US-BrianNeural"
+    ],
+    "accents": [
+      "AU",
+      "US"
+    ]
   },
   "mt01-p3-s02": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p3-s02.mp3",
-    "hash": "130af2ff3c5b2149",
-    "duration_sec": 68
+    "hash": "8ed75d31ab5755b4",
+    "duration_sec": 67.7,
+    "engine": "edge",
+    "voices": [
+      "en-US-ChristopherNeural",
+      "en-GB-SoniaNeural"
+    ],
+    "accents": [
+      "US",
+      "GB"
+    ]
   },
   "mt01-p3-s03": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p3-s03.mp3",
-    "hash": "600fcb5ba89c5ce2",
-    "duration_sec": 71.8
+    "hash": "bed174ea4eac0ecc",
+    "duration_sec": 74,
+    "engine": "edge",
+    "voices": [
+      "en-GB-LibbyNeural",
+      "en-CA-LiamNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "GB",
+      "CA",
+      "AU"
+    ]
   },
   "mt01-p3-s04": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p3-s04.mp3",
-    "hash": "a383a1fa3480b7d0",
-    "duration_sec": 73
+    "hash": "c3d85820057725f0",
+    "duration_sec": 72.8,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "CA",
+      "AU"
+    ]
   },
   "mt01-p4-s01": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p4-s01.mp3",
-    "hash": "d1cf8b2797bef76d",
-    "duration_sec": 63.7
+    "hash": "1d736d60fac4c203",
+    "duration_sec": 65.5,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "CA"
+    ]
   },
   "mt01-p4-s02": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p4-s02.mp3",
-    "hash": "0f6457140b601cbf",
-    "duration_sec": 63.1
+    "hash": "9bcf899f54e4b66d",
+    "duration_sec": 65,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "AU"
+    ]
   },
   "mt01-p4-s03": {
     "test_id": "mini-test-01",
     "file": "audio/mini-test-01/mt01-p4-s03.mp3",
-    "hash": "c792f0a92386c9cf",
-    "duration_sec": 63.2
+    "hash": "f3532a78bdcc1e26",
+    "duration_sec": 60,
+    "engine": "edge",
+    "voices": [
+      "en-US-BrianNeural"
+    ],
+    "accents": [
+      "US"
+    ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T03:16:56.587Z",
+  "generated_at": "2026-11-24T07:08:40.465Z",
   "exam_formats": [
     {
       "code": "LR",
@@ -1533,9 +1533,10 @@
               "explanation_vi": "Người đàn ông ngồi trên ghế công viên đọc báo. (A) sai hành động (gấp báo); (B) lối đi chỉ ở phía sau; (D) cây không phải đang được trồng."
             }
           ],
-          "image_url": "images/ft01-p1-s01.svg",
+          "image_url": "images/ft01-p1-s01.jpg",
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p1-s01.mp3",
-          "audio_duration_sec": 16.4
+          "audio_duration_sec": 17.2
         },
         {
           "id": "ft01-p1-s02",
@@ -1562,9 +1563,10 @@
               "explanation_vi": "Cô ấy đang đẩy xe hàng trong siêu thị. (B) 'stocking shelves' là việc của nhân viên xếp hàng; (C), (D) không có trong ảnh."
             }
           ],
-          "image_url": "images/ft01-p1-s02.svg",
+          "image_url": "images/ft01-p1-s02.jpg",
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p1-s02.mp3",
-          "audio_duration_sec": 16.1
+          "audio_duration_sec": 17
         },
         {
           "id": "ft01-p1-s03",
@@ -1592,9 +1594,10 @@
               "explanation_vi": "Ảnh không có người → loại (A), (C) và (B) ('is being raised' cần người đang kéo rèm). (D) mô tả trạng thái của laptop."
             }
           ],
-          "image_url": "images/ft01-p1-s03.svg",
+          "image_url": "images/ft01-p1-s03.jpg",
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p1-s03.mp3",
-          "audio_duration_sec": 17.9
+          "audio_duration_sec": 19.5
         },
         {
           "id": "ft01-p1-s04",
@@ -1622,9 +1625,10 @@
               "explanation_vi": "Bắt tay = chào hỏi nhau (greeting each other) — đáp án được diễn đạt lại. (A) có cặp nhưng không mở."
             }
           ],
-          "image_url": "images/ft01-p1-s04.svg",
+          "image_url": "images/ft01-p1-s04.jpg",
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p1-s04.mp3",
-          "audio_duration_sec": 15.4
+          "audio_duration_sec": 17.7
         },
         {
           "id": "ft01-p1-s05",
@@ -1652,9 +1656,10 @@
               "explanation_vi": "'applying paint' = sơn. Anh ấy đứng trên thang, không trèo xuống; thùng sơn nằm trên sàn, không xếp lên kệ."
             }
           ],
-          "image_url": "images/ft01-p1-s05.svg",
+          "image_url": "images/ft01-p1-s05.jpg",
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p1-s05.mp3",
-          "audio_duration_sec": 18
+          "audio_duration_sec": 19.3
         },
         {
           "id": "ft01-p1-s06",
@@ -1681,9 +1686,10 @@
               "explanation_vi": "Xe đạp được xếp thành hàng cạnh hàng rào. Ảnh không có người nên loại các đáp án còn lại."
             }
           ],
-          "image_url": "images/ft01-p1-s06.svg",
+          "image_url": "images/ft01-p1-s06.jpg",
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p1-s06.mp3",
-          "audio_duration_sec": 17.8
+          "audio_duration_sec": 19.7
         },
         {
           "id": "ft01-p2-s01",
@@ -1708,8 +1714,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s01.mp3",
-          "audio_duration_sec": 12.6
+          "audio_duration_sec": 12.9
         },
         {
           "id": "ft01-p2-s02",
@@ -1734,8 +1741,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s02.mp3",
-          "audio_duration_sec": 12.1
+          "audio_duration_sec": 13.4
         },
         {
           "id": "ft01-p2-s03",
@@ -1760,8 +1768,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s03.mp3",
-          "audio_duration_sec": 11.6
+          "audio_duration_sec": 13.5
         },
         {
           "id": "ft01-p2-s04",
@@ -1786,8 +1795,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s04.mp3",
-          "audio_duration_sec": 12.4
+          "audio_duration_sec": 13.1
         },
         {
           "id": "ft01-p2-s05",
@@ -1812,8 +1822,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s05.mp3",
-          "audio_duration_sec": 12.1
+          "audio_duration_sec": 13.2
         },
         {
           "id": "ft01-p2-s06",
@@ -1839,8 +1850,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s06.mp3",
-          "audio_duration_sec": 12.8
+          "audio_duration_sec": 14.1
         },
         {
           "id": "ft01-p2-s07",
@@ -1866,8 +1878,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s07.mp3",
-          "audio_duration_sec": 12.7
+          "audio_duration_sec": 15.3
         },
         {
           "id": "ft01-p2-s08",
@@ -1892,8 +1905,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s08.mp3",
-          "audio_duration_sec": 11.3
+          "audio_duration_sec": 12.2
         },
         {
           "id": "ft01-p2-s09",
@@ -1918,8 +1932,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s09.mp3",
-          "audio_duration_sec": 12.2
+          "audio_duration_sec": 12.4
         },
         {
           "id": "ft01-p2-s10",
@@ -1944,8 +1959,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s10.mp3",
-          "audio_duration_sec": 11.6
+          "audio_duration_sec": 12.9
         },
         {
           "id": "ft01-p2-s11",
@@ -1970,8 +1986,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s11.mp3",
-          "audio_duration_sec": 11.7
+          "audio_duration_sec": 12.8
         },
         {
           "id": "ft01-p2-s12",
@@ -1996,8 +2013,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s12.mp3",
-          "audio_duration_sec": 11.9
+          "audio_duration_sec": 13.1
         },
         {
           "id": "ft01-p2-s13",
@@ -2022,8 +2040,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s13.mp3",
-          "audio_duration_sec": 13
+          "audio_duration_sec": 14.1
         },
         {
           "id": "ft01-p2-s14",
@@ -2049,8 +2068,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s14.mp3",
-          "audio_duration_sec": 14
+          "audio_duration_sec": 15
         },
         {
           "id": "ft01-p2-s15",
@@ -2075,8 +2095,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s15.mp3",
-          "audio_duration_sec": 12.7
+          "audio_duration_sec": 14.2
         },
         {
           "id": "ft01-p2-s16",
@@ -2101,8 +2122,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s16.mp3",
-          "audio_duration_sec": 11.6
+          "audio_duration_sec": 12.3
         },
         {
           "id": "ft01-p2-s17",
@@ -2127,8 +2149,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s17.mp3",
-          "audio_duration_sec": 12.2
+          "audio_duration_sec": 13.5
         },
         {
           "id": "ft01-p2-s18",
@@ -2153,8 +2176,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s18.mp3",
-          "audio_duration_sec": 13.1
+          "audio_duration_sec": 14.1
         },
         {
           "id": "ft01-p2-s19",
@@ -2180,8 +2204,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s19.mp3",
-          "audio_duration_sec": 12.9
+          "audio_duration_sec": 14
         },
         {
           "id": "ft01-p2-s20",
@@ -2206,8 +2231,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s20.mp3",
-          "audio_duration_sec": 12.4
+          "audio_duration_sec": 13.3
         },
         {
           "id": "ft01-p2-s21",
@@ -2232,8 +2258,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s21.mp3",
-          "audio_duration_sec": 12.7
+          "audio_duration_sec": 13.6
         },
         {
           "id": "ft01-p2-s22",
@@ -2258,8 +2285,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s22.mp3",
-          "audio_duration_sec": 13.8
+          "audio_duration_sec": 14.2
         },
         {
           "id": "ft01-p2-s23",
@@ -2284,8 +2312,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s23.mp3",
-          "audio_duration_sec": 10.9
+          "audio_duration_sec": 12.3
         },
         {
           "id": "ft01-p2-s24",
@@ -2310,8 +2339,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s24.mp3",
-          "audio_duration_sec": 12.6
+          "audio_duration_sec": 13.9
         },
         {
           "id": "ft01-p2-s25",
@@ -2336,8 +2366,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p2-s25.mp3",
-          "audio_duration_sec": 11.5
+          "audio_duration_sec": 12
         },
         {
           "id": "ft01-p3-s01",
@@ -2399,8 +2430,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p3-s01.mp3",
-          "audio_duration_sec": 66.2
+          "audio_duration_sec": 62.5
         },
         {
           "id": "ft01-p3-s02",
@@ -2462,8 +2494,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p3-s02.mp3",
-          "audio_duration_sec": 63.3
+          "audio_duration_sec": 61.3
         },
         {
           "id": "ft01-p3-s03",
@@ -2526,8 +2559,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p3-s03.mp3",
-          "audio_duration_sec": 68.5
+          "audio_duration_sec": 69.3
         },
         {
           "id": "ft01-p3-s04",
@@ -2589,8 +2623,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p3-s04.mp3",
-          "audio_duration_sec": 66.2
+          "audio_duration_sec": 66
         },
         {
           "id": "ft01-p3-s05",
@@ -2652,8 +2687,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p3-s05.mp3",
-          "audio_duration_sec": 70.3
+          "audio_duration_sec": 71.9
         },
         {
           "id": "ft01-p3-s06",
@@ -2715,8 +2751,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p3-s06.mp3",
-          "audio_duration_sec": 69.2
+          "audio_duration_sec": 68.9
         },
         {
           "id": "ft01-p3-s07",
@@ -2779,8 +2816,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p3-s07.mp3",
-          "audio_duration_sec": 64.8
+          "audio_duration_sec": 65.5
         },
         {
           "id": "ft01-p3-s08",
@@ -2842,8 +2880,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p3-s08.mp3",
-          "audio_duration_sec": 71.7
+          "audio_duration_sec": 68.7
         },
         {
           "id": "ft01-p3-s09",
@@ -2905,8 +2944,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p3-s09.mp3",
-          "audio_duration_sec": 69.9
+          "audio_duration_sec": 68.3
         },
         {
           "id": "ft01-p3-s10",
@@ -2968,8 +3008,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p3-s10.mp3",
-          "audio_duration_sec": 66.6
+          "audio_duration_sec": 65.8
         },
         {
           "id": "ft01-p3-s11",
@@ -3058,8 +3099,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p3-s11.mp3",
-          "audio_duration_sec": 72.9
+          "audio_duration_sec": 71.5
         },
         {
           "id": "ft01-p3-s12",
@@ -3153,8 +3195,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p3-s12.mp3",
-          "audio_duration_sec": 72.3
+          "audio_duration_sec": 71
         },
         {
           "id": "ft01-p3-s13",
@@ -3248,8 +3291,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p3-s13.mp3",
-          "audio_duration_sec": 72.9
+          "audio_duration_sec": 74.1
         },
         {
           "id": "ft01-p4-s01",
@@ -3311,8 +3355,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p4-s01.mp3",
-          "audio_duration_sec": 65
+          "audio_duration_sec": 67.3
         },
         {
           "id": "ft01-p4-s02",
@@ -3374,8 +3419,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p4-s02.mp3",
-          "audio_duration_sec": 67.7
+          "audio_duration_sec": 69.3
         },
         {
           "id": "ft01-p4-s03",
@@ -3437,8 +3483,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p4-s03.mp3",
-          "audio_duration_sec": 62.9
+          "audio_duration_sec": 60
         },
         {
           "id": "ft01-p4-s04",
@@ -3500,8 +3547,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p4-s04.mp3",
-          "audio_duration_sec": 60.9
+          "audio_duration_sec": 65.7
         },
         {
           "id": "ft01-p4-s05",
@@ -3563,8 +3611,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p4-s05.mp3",
-          "audio_duration_sec": 66.4
+          "audio_duration_sec": 65.6
         },
         {
           "id": "ft01-p4-s06",
@@ -3626,8 +3675,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p4-s06.mp3",
-          "audio_duration_sec": 62.9
+          "audio_duration_sec": 65
         },
         {
           "id": "ft01-p4-s07",
@@ -3689,8 +3739,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p4-s07.mp3",
-          "audio_duration_sec": 63.8
+          "audio_duration_sec": 65.4
         },
         {
           "id": "ft01-p4-s08",
@@ -3752,8 +3803,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p4-s08.mp3",
-          "audio_duration_sec": 62.1
+          "audio_duration_sec": 68.4
         },
         {
           "id": "ft01-p4-s09",
@@ -3847,8 +3899,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p4-s09.mp3",
-          "audio_duration_sec": 75.4
+          "audio_duration_sec": 77.5
         },
         {
           "id": "ft01-p4-s10",
@@ -3937,8 +3990,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/full-test-01/ft01-p4-s10.mp3",
-          "audio_duration_sec": 78.2
+          "audio_duration_sec": 75.6
         },
         {
           "id": "ft01-p5-s01",
@@ -3963,6 +4017,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -3989,6 +4044,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4016,6 +4072,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4042,6 +4099,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4069,6 +4127,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4095,6 +4154,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4122,6 +4182,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4148,6 +4209,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4174,6 +4236,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4201,6 +4264,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4227,6 +4291,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4253,6 +4318,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4280,6 +4346,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4306,6 +4373,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4332,6 +4400,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4358,6 +4427,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4385,6 +4455,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4411,6 +4482,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4438,6 +4510,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4465,6 +4538,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4491,6 +4565,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4518,6 +4593,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4544,6 +4620,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4571,6 +4648,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4597,6 +4675,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4623,6 +4702,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4649,6 +4729,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4676,6 +4757,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4702,6 +4784,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4729,6 +4812,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4815,6 +4899,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4901,6 +4986,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -4988,6 +5074,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -5074,6 +5161,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -5126,6 +5214,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -5178,6 +5267,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -5231,6 +5321,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -5283,6 +5374,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -5352,6 +5444,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -5421,6 +5514,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -5491,6 +5585,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -5578,6 +5673,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -5664,6 +5760,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -5750,6 +5847,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -5858,6 +5956,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -5967,6 +6066,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -6082,6 +6182,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -6195,6 +6296,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -6308,6 +6410,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         }
@@ -6348,9 +6451,10 @@
               "explanation_vi": "Người phụ nữ đang gõ phím trên laptop. (A) cốc cà phê chỉ đặt bên cạnh; (C) tập hồ sơ nằm trên bàn, không cất vào tủ; (D) sai hành động."
             }
           ],
-          "image_url": "images/mt01-p1-s01.svg",
+          "image_url": "images/mt01-p1-s01.jpg",
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p1-s01.mp3",
-          "audio_duration_sec": 17.1
+          "audio_duration_sec": 18.1
         },
         {
           "id": "mt01-p1-s02",
@@ -6378,9 +6482,10 @@
               "explanation_vi": "Ảnh không có người nên loại (A), (B), (D) (bị động tiếp diễn 'is being' cần có người đang thực hiện). 'have been stacked' mô tả trạng thái đã xếp chồng."
             }
           ],
-          "image_url": "images/mt01-p1-s02.svg",
+          "image_url": "images/mt01-p1-s02.jpg",
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p1-s02.mp3",
-          "audio_duration_sec": 17.1
+          "audio_duration_sec": 18.2
         },
         {
           "id": "mt01-p1-s03",
@@ -6408,9 +6513,10 @@
               "explanation_vi": "Hai người đang xem bản vẽ (document). (B) là bẫy kinh điển: 'putting on' = hành động đội vào, trong khi họ đã đội sẵn (wearing)."
             }
           ],
-          "image_url": "images/mt01-p1-s03.svg",
+          "image_url": "images/mt01-p1-s03.jpg",
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p1-s03.mp3",
-          "audio_duration_sec": 15.1
+          "audio_duration_sec": 17
         },
         {
           "id": "mt01-p1-s04",
@@ -6438,9 +6544,13 @@
               "explanation_vi": "'Produce' (danh từ) = nông sản. Ảnh không có người nên loại (A), (B), (C)."
             }
           ],
-          "image_url": "images/mt01-p1-s04.svg",
+          "image_url": "images/mt01-p1-s04.jpg",
+          "image_credit": {
+            "text": "“Bali fruit stall 2” – Midori, CC BY 3.0, Wikimedia Commons (đã chuyển sang trắng đen)",
+            "url": "https://commons.wikimedia.org/wiki/File:Bali_fruit_stall_2.JPG"
+          },
           "audio_url": "audio/mini-test-01/mt01-p1-s04.mp3",
-          "audio_duration_sec": 16.6
+          "audio_duration_sec": 18.8
         },
         {
           "id": "mt01-p1-s05",
@@ -6467,9 +6577,10 @@
               "explanation_vi": "Người đàn ông đang tưới cây bằng vòi nước. (A) dùng từ gần âm 'planting'."
             }
           ],
-          "image_url": "images/mt01-p1-s05.svg",
+          "image_url": "images/mt01-p1-s05.jpg",
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p1-s05.mp3",
-          "audio_duration_sec": 16.7
+          "audio_duration_sec": 18
         },
         {
           "id": "mt01-p1-s06",
@@ -6496,9 +6607,10 @@
               "explanation_vi": "Thuyền neo ở bến (docked at a pier). Cây cầu ở nền không đang xây; mặt nước phẳng lặng nên (D) sai."
             }
           ],
-          "image_url": "images/mt01-p1-s06.svg",
+          "image_url": "images/mt01-p1-s06.jpg",
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p1-s06.mp3",
-          "audio_duration_sec": 17.2
+          "audio_duration_sec": 18.6
         },
         {
           "id": "mt01-p2-s01",
@@ -6523,8 +6635,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p2-s01.mp3",
-          "audio_duration_sec": 12.1
+          "audio_duration_sec": 12.7
         },
         {
           "id": "mt01-p2-s02",
@@ -6549,8 +6662,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p2-s02.mp3",
-          "audio_duration_sec": 12.3
+          "audio_duration_sec": 13.5
         },
         {
           "id": "mt01-p2-s03",
@@ -6575,8 +6689,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p2-s03.mp3",
-          "audio_duration_sec": 12.2
+          "audio_duration_sec": 13.3
         },
         {
           "id": "mt01-p2-s04",
@@ -6601,8 +6716,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p2-s04.mp3",
-          "audio_duration_sec": 12.1
+          "audio_duration_sec": 13.3
         },
         {
           "id": "mt01-p2-s05",
@@ -6628,8 +6744,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p2-s05.mp3",
-          "audio_duration_sec": 13.3
+          "audio_duration_sec": 14.2
         },
         {
           "id": "mt01-p2-s06",
@@ -6654,8 +6771,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p2-s06.mp3",
-          "audio_duration_sec": 13
+          "audio_duration_sec": 13.7
         },
         {
           "id": "mt01-p2-s07",
@@ -6680,8 +6798,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p2-s07.mp3",
-          "audio_duration_sec": 13.4
+          "audio_duration_sec": 15.7
         },
         {
           "id": "mt01-p2-s08",
@@ -6706,8 +6825,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p2-s08.mp3",
-          "audio_duration_sec": 13.6
+          "audio_duration_sec": 14.1
         },
         {
           "id": "mt01-p2-s09",
@@ -6732,8 +6852,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p2-s09.mp3",
-          "audio_duration_sec": 13.6
+          "audio_duration_sec": 14.3
         },
         {
           "id": "mt01-p2-s10",
@@ -6759,8 +6880,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p2-s10.mp3",
-          "audio_duration_sec": 14.3
+          "audio_duration_sec": 15.9
         },
         {
           "id": "mt01-p2-s11",
@@ -6785,8 +6907,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p2-s11.mp3",
-          "audio_duration_sec": 13.4
+          "audio_duration_sec": 14.8
         },
         {
           "id": "mt01-p2-s12",
@@ -6811,8 +6934,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p2-s12.mp3",
-          "audio_duration_sec": 12
+          "audio_duration_sec": 13.5
         },
         {
           "id": "mt01-p2-s13",
@@ -6837,8 +6961,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p2-s13.mp3",
-          "audio_duration_sec": 13
+          "audio_duration_sec": 13.8
         },
         {
           "id": "mt01-p3-s01",
@@ -6900,8 +7025,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p3-s01.mp3",
-          "audio_duration_sec": 62.1
+          "audio_duration_sec": 60.5
         },
         {
           "id": "mt01-p3-s02",
@@ -6963,8 +7089,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p3-s02.mp3",
-          "audio_duration_sec": 68
+          "audio_duration_sec": 67.7
         },
         {
           "id": "mt01-p3-s03",
@@ -7027,8 +7154,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p3-s03.mp3",
-          "audio_duration_sec": 71.8
+          "audio_duration_sec": 74
         },
         {
           "id": "mt01-p3-s04",
@@ -7127,8 +7255,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p3-s04.mp3",
-          "audio_duration_sec": 73
+          "audio_duration_sec": 72.8
         },
         {
           "id": "mt01-p4-s01",
@@ -7190,8 +7319,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p4-s01.mp3",
-          "audio_duration_sec": 63.7
+          "audio_duration_sec": 65.5
         },
         {
           "id": "mt01-p4-s02",
@@ -7253,8 +7383,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p4-s02.mp3",
-          "audio_duration_sec": 63.1
+          "audio_duration_sec": 65
         },
         {
           "id": "mt01-p4-s03",
@@ -7316,8 +7447,9 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": "audio/mini-test-01/mt01-p4-s03.mp3",
-          "audio_duration_sec": 63.2
+          "audio_duration_sec": 60
         },
         {
           "id": "mt01-p5-s01",
@@ -7342,6 +7474,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7369,6 +7502,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7395,6 +7529,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7422,6 +7557,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7448,6 +7584,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7475,6 +7612,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7501,6 +7639,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7527,6 +7666,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7553,6 +7693,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7579,6 +7720,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7605,6 +7747,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7631,6 +7774,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7657,6 +7801,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7684,6 +7829,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7710,6 +7856,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7737,6 +7884,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7764,6 +7912,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7791,6 +7940,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7818,6 +7968,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7844,6 +7995,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -7930,6 +8082,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -8017,6 +8170,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -8069,6 +8223,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -8138,6 +8293,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -8246,6 +8402,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         },
@@ -8359,6 +8516,7 @@
             }
           ],
           "image_url": null,
+          "image_credit": null,
           "audio_url": null,
           "audio_duration_sec": null
         }

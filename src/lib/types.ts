@@ -38,6 +38,8 @@ export interface QuestionSet {
   audio_url?: string | null;
   audio_duration_sec?: number | null;
   image_url?: string | null;
+  /** Attribution for a free-licensed photo (e.g. CC BY); null for own/generated images. */
+  image_credit?: { text: string; url: string } | null;
   questions: Question[];
 }
 

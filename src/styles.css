@@ -510,6 +510,16 @@ p {
   height: 100%;
   object-fit: cover;
 }
+.photo-credit {
+  max-width: 560px;
+  margin: -4px 0 0;
+  font-size: var(--t-xs, 0.75rem);
+  line-height: 1.4;
+  color: var(--graphite-soft);
+}
+.photo-credit a {
+  color: inherit;
+}
 .photo-frame__caption {
   font-family: var(--font-booklet);
   font-style: italic;

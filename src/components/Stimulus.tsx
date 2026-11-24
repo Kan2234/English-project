@@ -99,6 +99,14 @@ export function Stimulus({ set, showTranscript = false, autoPlay = false }: Prop
           )}
         </div>
       )}
+      {set.part === 1 && set.image_url && set.image_credit && (
+        <p className="photo-credit">
+          Ảnh:{' '}
+          <a href={set.image_credit.url} target="_blank" rel="noreferrer">
+            {set.image_credit.text}
+          </a>
+        </p>
+      )}
 
       {set.graphic && <GraphicView g={set.graphic} />}
 

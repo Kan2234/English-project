@@ -91,7 +91,8 @@ CREATE TABLE question_sets (
   graphic           TEXT,                      -- JSON for tables/charts in Part 3/4/7
   audio_url         TEXT,                      -- relative to database/, e.g. 'audio/full-test-01/ft01-p3-s01.mp3'
   audio_duration_sec REAL,
-  image_url         TEXT
+  image_url         TEXT,
+  image_credit      TEXT                       -- JSON {text,url} when a free-licensed photo needs attribution
 );
 
 CREATE TABLE questions (
@@ -197,7 +198,7 @@ CREATE VIEW v_questions_full AS
 SELECT q.id, q.test_id, q.part_number, q.number, q.prompt, q.answer,
        q.explanation_vi, q.difficulty, q.tags, q.set_id,
        s.passage_type, s.transcript, s.passages, s.image_description, s.graphic,
-       s.audio_url, s.audio_duration_sec, s.image_url,
+       s.audio_url, s.audio_duration_sec, s.image_url, s.image_credit,
        (SELECT json_group_array(json_object('label', c.label, 'text', c.text))
           FROM (SELECT * FROM choices WHERE question_id = q.id ORDER BY label) c) AS choices
 FROM questions q JOIN question_sets s ON s.id = q.set_id;

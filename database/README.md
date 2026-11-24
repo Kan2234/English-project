@@ -22,10 +22,10 @@ database/
 │   └── strategies.json   chiến thuật theo từng part
 ├── schema.sql            schema SQLite (dùng được cho PostgreSQL/MySQL với chỉnh sửa nhỏ)
 ├── build.mjs             kiểm tra dữ liệu + sinh toeic.db và toeic.json
-├── tts/                  generate-audio.mjs + synthesize.ps1 (sinh audio phần Nghe)
+├── tts/                  generate-audio.mjs + edge_synth.py + synthesize.ps1 (sinh audio phần Nghe)
 ├── audio/                ← SINH TỰ ĐỘNG: MP3 từng set + manifest.json
 ├── illustrations/        part1.mjs: vẽ ảnh minh họa Part 1 bằng SVG
-├── images/               ảnh Part 1: <set-id>.svg|png|jpg|webp (build tự gắn image_url)
+├── images/               ảnh Part 1: <set-id>.jpg (trắng đen) + credits.json (nguồn, giấy phép)
 ├── toeic.db              ← SINH TỰ ĐỘNG: SQLite cho backend
 └── toeic.json            ← SINH TỰ ĐỘNG: một file JSON cho frontend/seed DB khác
 ```
@@ -74,13 +74,13 @@ SELECT q.* FROM questions q, json_each(q.tags) t WHERE t.value = 'grammar:relati
 ## Lưu ý quan trọng
 
 - **Bản quyền:** Đề thi TOEIC thật và các bộ sách ETS là tài liệu có bản quyền, nên **không** được đưa vào đây. Toàn bộ câu hỏi, đoạn văn và transcript được biên soạn mới theo đúng định dạng, độ khó và dạng bẫy của đề thật (`tests.origin = 'original'`).
-- **Phần Nghe:** đã có audio TTS (xem mục bên dưới). Ảnh Part 1 là **minh họa vector thang xám**, vẽ bằng `illustrations/part1.mjs` theo đúng `image_description`, không phải ảnh chụp. Biểu đồ Part 3/4/7 được website vẽ trực tiếp từ dữ liệu `graphic`.
+- **Phần Nghe:** đã có audio TTS (xem mục bên dưới). Ảnh Part 1 là **ảnh trắng đen** (11 ảnh tạo bằng Gemini, 1 ảnh CC BY từ Wikimedia; xem mục Ảnh Part 1). Biểu đồ Part 3/4/7 được website vẽ trực tiếp từ dữ liệu `graphic`.
 - **Điểm quy đổi** chỉ là ước lượng, vì ETS không công bố bảng cố định (điểm được equating theo từng đề).
 - **Lệ phí** lấy từ nguồn bên thứ ba (`verified = 0`); cần đối chiếu với IIG Việt Nam trước khi hiển thị như số liệu chính thức. Tin rút gọn bài thi 4 kỹ năng từ 3/8/2026 cũng **chưa được ETS xác nhận**.
 
 ## Audio phần Nghe (TTS)
 
-Mỗi set Part 1–4 có một file MP3 tại `audio/<test-id>/<set-id>.mp3` (mono 48 kbps). Đường dẫn được ghi vào `question_sets.audio_url`, tương đối so với thư mục `database/`, kèm thời lượng ở `audio_duration_sec`.
+Mỗi set Part 1–4 có một file MP3 tại `audio/<test-id>/<set-id>.mp3` (mono 64 kbps). Đường dẫn được ghi vào `question_sets.audio_url`, tương đối so với thư mục `database/`, kèm thời lượng ở `audio_duration_sec`.
 
 ```powershell
 node database/build.mjs
@@ -90,22 +90,61 @@ node database/build.mjs
 node database/tts/generate-audio.mjs
 ```
 
-- Dùng giọng đọc **offline có sẵn của Windows** (Microsoft David, Zira, Mark), không gửi dữ liệu ra ngoài. Cần ffmpeg trong PATH, hoặc đặt biến `FFMPEG_PATH`.
+- Mặc định dùng **giọng neural của Microsoft** (giọng "Đọc to" của trình duyệt Edge) qua gói mã nguồn mở [edge-tts](https://github.com/rany2/edge-tts). Giọng tự nhiên, gần người thật, và **luân phiên 4 giọng Anh–Mỹ, Anh–Anh, Canada, Úc** như đề thật.
+- **Cần internet và Docker Desktop** (máy không cần cài Python, edge-tts chạy trong container `python:3.12-slim`). Cài một lần:
+
+  ```powershell
+  docker volume create on-ta-pip
+  docker run --rm -v on-ta-pip:/pip python:3.12-slim pip install --target /pip edge-tts==7.2.3
+  ```
+
+  Nếu máy đã có Python cài sẵn edge-tts, đặt biến `EDGE_TTS_PYTHON` trỏ tới python đó để chạy không cần Docker. Cần ffmpeg trong PATH, hoặc đặt biến `FFMPEG_PATH`.
+- **Lưu ý:** edge-tts là client **không chính thức**, gửi transcript tới dịch vụ đọc online của Microsoft Edge. Dùng cho dự án học tập thì ổn; nếu dùng thương mại, hãy chuyển sang dịch vụ chính thức **Azure Speech** (cùng tên giọng). Dịch vụ có giới hạn tần suất (HTTP 429), nên script gửi chậm, tự thử lại, và lưu cache từng câu (`EDGE_TTS_CACHE`, mặc định trong thư mục tạm của hệ điều hành). Bị ngắt giữa chừng thì chạy lại, các câu đã có sẽ không gửi lại.
+- Mỗi câu thoại được đọc riêng rồi ghép bằng ffmpeg với khoảng lặng chính xác, âm lượng các giọng được cân bằng.
 - Định dạng giống đề thật: người dẫn đọc "Number 7…", "Questions 32 through 34 refer to the following conversation…". Part 3/4 đọc câu hỏi và chừa 8 giây để trả lời (12 giây với câu có biểu đồ).
-- Phân vai theo transcript: `M`/`M1` = David, `M2` = Mark, `W`/`W1` = Zira, `W2` = Zira giọng cao hơn. Người dẫn là Mark.
-- Chỉ tạo lại những set có nội dung thay đổi (so hash trong `audio/manifest.json`). Script tự build lại database sau khi xong.
-- Tùy chọn: `--test full-test-01`, `--force`, `--pause 5` (đổi thời gian chờ trả lời), `--no-questions` (chỉ đọc hội thoại, không đọc câu hỏi).
-- Hạn chế: chỉ có giọng Mỹ, nghe còn máy móc. Đề thật có cả giọng Anh, Úc, Canada. Có thể thay bằng giọng neural (Azure, Google, ElevenLabs...) bằng cách sửa `tts/synthesize.ps1`, vẫn giữ nguyên SSML.
+- Phân vai (cố định theo thứ tự set, không ngẫu nhiên):
+
+  | Vai | Giọng |
+  |---|---|
+  | Người dẫn (đọc số câu, câu hỏi Part 3/4) | Andrew (Mỹ), chậm hơn 5% |
+  | Mỹ (US) | Nữ: Ava, Emma · Nam: Brian, Christopher |
+  | Anh (GB) | Nữ: Sonia, Libby · Nam: Ryan, Thomas |
+  | Canada (CA) | Nữ: Clara · Nam: Liam |
+  | Úc (AU) | Nữ: Natasha · Nam: William |
+
+  Các giọng hội thoại đọc chậm hơn mặc định 4% (Brian, Ryan, Thomas, William vốn nói nhanh nên chậm 8%) để người học dễ nghe.
+
+  - Part 1: một giọng đọc cả 4 câu mô tả; giọng đổi theo từng set US → GB → CA → AU, xen kẽ nam/nữ.
+  - Part 2: người hỏi và người trả lời luôn khác cả giọng vùng lẫn giới tính.
+  - Part 3: mỗi người nói (`M`, `W`, `M1`, `M2`, `W1`, `W2`) một giọng vùng khác nhau, nên hai người cùng giới không bao giờ trùng giọng.
+  - Part 4: một người nói mỗi set, giọng vùng xoay vòng; nếu người nói tự giới thiệu tên ("This is Sandra…") thì giới tính giọng khớp với tên (bảng `NAME_GENDER` trong script, script nhắc khi gặp tên mới).
+  - Trên cả đề, 4 giọng vùng xuất hiện gần đều nhau; script in bảng phân bố mỗi lần chạy. `audio/manifest.json` ghi `voices` và `accents` của từng set.
+- Chỉ tạo lại những set có nội dung hoặc phân vai thay đổi (so hash trong `audio/manifest.json`). Script tự build lại database sau khi xong.
+- Tùy chọn: `--test full-test-01`, `--force`, `--pause 5` (đổi thời gian chờ trả lời), `--no-questions` (chỉ đọc hội thoại, không đọc câu hỏi), `--report <file>` (ghi thống kê từng câu: thời lượng, tốc độ đọc, âm lượng).
+- **Chạy offline:** `--engine onecore` dùng giọng có sẵn của Windows (Microsoft David, Zira, Mark), không gửi dữ liệu ra ngoài, nhưng chỉ có giọng Mỹ và nghe máy móc (`M`/`M1` = David, `M2` = Mark, `W`/`W1` = Zira, `W2` = Zira giọng cao hơn, người dẫn là Mark).
 
 ## Ảnh Part 1
+
+Cả 12 set dùng ảnh JPG trắng đen (thang xám, 1000×750, mỗi file dưới 180 KB) tại `images/<set-id>.jpg`:
+
+| Nguồn | Set | Bản quyền |
+|---|---|---|
+| Tạo bằng Google Gemini (model "Neon") | 11 set còn lại | Ảnh tự tạo, không phải ảnh của bên thứ ba; có thể mang watermark ẩn SynthID của Google |
+| Wikimedia Commons: "Bali fruit stall 2", tác giả Midori | `mt01-p1-s04` | CC BY 3.0, **bắt buộc ghi công**; ảnh đã chuyển sang trắng đen |
+
+- `images/credits.json` ghi nguồn, giấy phép, prompt và ghi chú cho từng ảnh.
+- Ảnh nào có trường `attribution` thì build sẽ gắn `image_credit` vào set (trong `toeic.json` và cột `question_sets.image_credit`), và website hiện dòng "Ảnh: …" dưới ảnh. Thêm ảnh CC BY mới thì phải điền trường này.
+- Mỗi ảnh đã được soát đủ hai điều kiện: đáp án đúng phải đúng với ảnh, và cả ba phương án nhiễu phải sai.
+
+Khi build, mỗi set Part 1 tự được gắn `image_url` theo thứ tự ưu tiên `jpg`, `webp`, `png`, rồi mới đến `svg`. Build cũng nhắc tên những set còn thiếu ảnh. Ảnh thay thế phải khớp từng chi tiết mà câu hỏi dựa vào: có người hay không, đang làm gì, đồ vật ở đâu.
+
+Bản minh họa vector cũ vẫn tạo lại được làm phương án dự phòng:
 
 ```powershell
 node database/illustrations/part1.mjs
 ```
 
-Script vẽ lại 12 file SVG vào `images/`. Khi build, mỗi set Part 1 tự được gắn `image_url` nếu có file `images/<set-id>.svg|png|jpg|webp`, và build sẽ nhắc tên những set còn thiếu ảnh.
-
-Muốn thay bằng ảnh chụp thật, đặt file cùng tên (ví dụ `images/ft01-p1-s01.jpg`) và xóa file `.svg` tương ứng. Ảnh phải khớp từng chi tiết mà câu hỏi dựa vào: có người hay không, đang làm gì, đồ vật ở đâu.
+Script ghi 12 file SVG vào `images/`. Vì ảnh chụp được ưu tiên, các file SVG này chỉ được dùng khi set đó không có file `.jpg`, `.webp` hay `.png`.
 
 ## Thêm đề mới
 
