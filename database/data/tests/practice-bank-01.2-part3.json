@@ -1,0 +1,663 @@
+{
+  "test": {
+    "id": "practice-bank-01"
+  },
+  "sets": [
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Changing a catering order",
+      "transcript": "W: Hi, this is Mina from Corwell Pharmaceuticals. Yesterday I placed an order with you for forty boxed lunches for our training workshop on Thursday.\nM: Yes, I have it right here. Forty boxed lunches, delivered at noon.\nW: Well, we've just found out that twelve of the participants will be joining remotely, so we won't need as many. Is it too late to make a change?\nM: Not at all. We don't start preparing anything until the morning of the delivery. But I should mention that orders under thirty don't qualify for free delivery.\nW: Oh, I didn't realize that. Let me check with my supervisor whether we should add a few vegetarian meals to keep the order above thirty. I'll call you back within the hour.",
+      "transcript_vi": "W: Chào anh, tôi là Mina ở công ty dược Corwell. Hôm qua tôi đã đặt 40 suất cơm hộp cho buổi tập huấn vào thứ Năm.\nM: Vâng, tôi thấy đơn đây rồi. Bốn mươi suất cơm hộp, giao lúc 12 giờ trưa.\nW: À, chúng tôi vừa biết 12 người tham dự sẽ tham gia trực tuyến, nên không cần nhiều suất như vậy. Giờ đổi đơn còn kịp không?\nM: Hoàn toàn kịp. Sáng ngày giao chúng tôi mới bắt đầu chuẩn bị. Nhưng tôi phải nói trước là đơn dưới 30 suất thì không được miễn phí giao hàng.\nW: Ồ, tôi không biết điều đó. Để tôi hỏi cấp trên xem có nên thêm vài suất chay để đơn vẫn trên 30 không. Trong vòng một tiếng tôi sẽ gọi lại.",
+      "questions": [
+        {
+          "prompt": "Why is the woman calling?",
+          "prompt_vi": "Vì sao người phụ nữ gọi điện?",
+          "choices": {
+            "A": "To complain about a late delivery",
+            "B": "To ask about vegetarian options",
+            "C": "To change the size of an order",
+            "D": "To reschedule a workshop"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part3:purpose"
+          ],
+          "explanation_vi": "Cô ấy hỏi 'Is it too late to make a change?' vì cần ít suất hơn, tức là muốn giảm số lượng đơn.",
+          "why_wrong_vi": {
+            "A": "Không có giao hàng trễ; đơn chưa được giao.",
+            "B": "Món chay chỉ được nhắc ở cuối như một giải pháp, không phải lý do gọi.",
+            "D": "Buổi tập huấn vẫn diễn ra thứ Năm; chỉ số người ăn thay đổi."
+          }
+        },
+        {
+          "prompt": "What does the man say about orders under thirty?",
+          "prompt_vi": "Người đàn ông nói gì về các đơn dưới 30 suất?",
+          "choices": {
+            "A": "They must be paid for in advance.",
+            "B": "They require two days' notice.",
+            "C": "They are not delivered for free.",
+            "D": "They include a free dessert."
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "part3:detail",
+            "part3:paraphrase"
+          ],
+          "explanation_vi": "'orders under thirty don't qualify for free delivery' = đơn dưới 30 suất phải trả phí giao hàng.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến việc trả tiền trước.",
+            "B": "Anh ấy nói chỉ bắt đầu chuẩn bị vào sáng ngày giao, không cần báo trước hai ngày.",
+            "D": "Không nhắc đến món tráng miệng."
+          }
+        },
+        {
+          "prompt": "What will the woman most likely do next?",
+          "prompt_vi": "Người phụ nữ nhiều khả năng sẽ làm gì tiếp theo?",
+          "choices": {
+            "A": "Cancel the order",
+            "B": "Visit the restaurant",
+            "C": "Send a list of participants",
+            "D": "Consult a supervisor"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part3:next-action",
+            "part3:paraphrase"
+          ],
+          "explanation_vi": "'Let me check with my supervisor' → hỏi ý kiến cấp trên (consult a supervisor).",
+          "why_wrong_vi": {
+            "A": "Cô ấy muốn giữ đơn, thậm chí có thể thêm suất chay.",
+            "B": "Cô ấy sẽ gọi lại, không đến tận nơi.",
+            "C": "Không có yêu cầu gửi danh sách người tham dự."
+          }
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "A new expense app",
+      "transcript": "M: Priya, have you tried the new expense-reporting app yet? We're supposed to switch over by the end of the month.\nW: I tried to upload my receipts from the Denver trip this morning, but the app kept rejecting the photos.\nM: The IT department posted a video tutorial on the intranet yesterday.\nW: Oh, I hadn't seen that. Is it long?\nM: About five minutes. Apparently, the photos have to be taken inside the app. It won't accept pictures uploaded from your phone's gallery.\nW: That explains it. I'll retake them this afternoon, then. Luckily, I still have all the paper receipts in my desk drawer.",
+      "transcript_vi": "M: Priya, chị đã dùng thử ứng dụng báo cáo chi phí mới chưa? Cuối tháng này mình phải chuyển sang dùng nó rồi.\nW: Sáng nay tôi thử tải lên hóa đơn của chuyến đi Denver, nhưng ứng dụng cứ từ chối ảnh.\nM: Hôm qua bộ phận IT đã đăng một video hướng dẫn lên mạng nội bộ đấy.\nW: Ồ, tôi chưa xem. Video có dài không?\nM: Khoảng năm phút. Hình như ảnh phải chụp ngay trong ứng dụng. Nó không nhận ảnh tải lên từ thư viện ảnh của điện thoại.\nW: Thảo nào. Vậy chiều nay tôi sẽ chụp lại. May là tôi vẫn còn giữ toàn bộ hóa đơn giấy trong ngăn bàn.",
+      "questions": [
+        {
+          "prompt": "What are the speakers mainly discussing?",
+          "prompt_vi": "Hai người chủ yếu đang bàn về điều gì?",
+          "choices": {
+            "A": "A business trip to Denver",
+            "B": "A problem with the company intranet",
+            "C": "A new tool for reporting expenses",
+            "D": "A change to the travel budget"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part3:main-idea"
+          ],
+          "explanation_vi": "Cả cuộc hội thoại xoay quanh ứng dụng báo cáo chi phí mới và lỗi khi tải ảnh hóa đơn.",
+          "why_wrong_vi": {
+            "A": "Chuyến đi Denver chỉ là bối cảnh của các hóa đơn.",
+            "B": "Mạng nội bộ chỉ là nơi đăng video, không có sự cố.",
+            "D": "Không nói gì về ngân sách công tác."
+          }
+        },
+        {
+          "prompt": "Why does the man say, \"The IT department posted a video tutorial on the intranet yesterday\"?",
+          "prompt_vi": "Vì sao người đàn ông nói: \"Hôm qua bộ phận IT đã đăng một video hướng dẫn lên mạng nội bộ\"?",
+          "choices": {
+            "A": "To suggest where the woman can find help",
+            "B": "To explain why a deadline was extended",
+            "C": "To point out that he made the video",
+            "D": "To complain that the intranet is hard to use"
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "part3:speaker-intent"
+          ],
+          "explanation_vi": "Ngay sau khi cô ấy kể ứng dụng từ chối ảnh, anh ấy nhắc tới video hướng dẫn, tức là gợi ý cô xem video để giải quyết vấn đề.",
+          "why_wrong_vi": {
+            "B": "Hạn chuyển đổi vẫn là cuối tháng, không được gia hạn.",
+            "C": "Video do bộ phận IT đăng, không phải anh ấy làm.",
+            "D": "Anh ấy không phàn nàn; anh ấy đang gợi ý cách giải quyết."
+          }
+        },
+        {
+          "prompt": "What does the woman say she will do this afternoon?",
+          "prompt_vi": "Người phụ nữ nói chiều nay cô ấy sẽ làm gì?",
+          "choices": {
+            "A": "Photograph her receipts again",
+            "B": "Submit her receipts on paper",
+            "C": "Download a different app",
+            "D": "Call the IT department"
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part3:next-action",
+            "part3:paraphrase"
+          ],
+          "explanation_vi": "'I'll retake them this afternoon' = chụp lại ảnh hóa đơn.",
+          "why_wrong_vi": {
+            "B": "Cô ấy chỉ nói vẫn giữ hóa đơn giấy, không nói sẽ nộp bản giấy.",
+            "C": "Không nhắc đến ứng dụng khác.",
+            "D": "Cô ấy không định gọi IT; vấn đề đã được giải thích."
+          }
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Courier delivery options (graphic)",
+      "graphic": {
+        "type": "table",
+        "title": "Brightline Courier – Delivery Options",
+        "columns": [
+          "Service",
+          "Delivery time",
+          "Price"
+        ],
+        "rows": [
+          [
+            "Economy",
+            "5 business days",
+            "$12"
+          ],
+          [
+            "Standard",
+            "3 business days",
+            "$18"
+          ],
+          [
+            "Express",
+            "Next business day",
+            "$35"
+          ],
+          [
+            "Same-Day",
+            "By 6 P.M. today",
+            "$60"
+          ]
+        ]
+      },
+      "image_description": "Price list of a courier company (see graphic).",
+      "transcript": "W: Hello. I need to send these drawings to a client in Brookfield, and they have to arrive by Wednesday. That's two days from now. What's the least expensive way to do that?\nM: Normally I'd recommend Express. But we have our own depot in Brookfield, so Standard deliveries there arrive a full day earlier than our price list says.\nW: Great, that'll work, then. Oh, and these are printed on very large sheets. I'd really rather not fold them.\nM: That's no problem. We sell sturdy cardboard tubes for documents like these. You'll find them on the shelf by the window.",
+      "transcript_vi": "W: Chào anh. Tôi cần gửi những bản vẽ này cho một khách hàng ở Brookfield, và chúng phải đến nơi trước thứ Tư, tức là hai ngày nữa. Cách nào rẻ nhất vậy?\nM: Bình thường tôi sẽ khuyên dùng gói Hỏa tốc. Nhưng chúng tôi có kho riêng ở Brookfield, nên hàng gửi gói Tiêu chuẩn đến đó sớm hơn một ngày so với bảng giá.\nW: Tuyệt, vậy được rồi. À, mấy bản vẽ này in trên giấy khổ rất lớn. Tôi thật sự không muốn gấp chúng.\nM: Không sao. Chúng tôi có bán ống bìa cứng cho loại tài liệu này. Chị sẽ thấy chúng trên kệ cạnh cửa sổ.",
+      "questions": [
+        {
+          "prompt": "What does the woman want to send?",
+          "prompt_vi": "Người phụ nữ muốn gửi gì?",
+          "choices": {
+            "A": "Some product samples",
+            "B": "A signed contract",
+            "C": "A framed photograph",
+            "D": "Some design plans"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part3:detail",
+            "part3:paraphrase"
+          ],
+          "explanation_vi": "'these drawings' (bản vẽ) được diễn đạt lại thành 'design plans'.",
+          "why_wrong_vi": {
+            "A": "Cô ấy gửi bản vẽ, không phải hàng mẫu.",
+            "B": "Không nhắc đến hợp đồng.",
+            "C": "Không có ảnh đóng khung; 'printed on large sheets' là bản vẽ in khổ lớn."
+          }
+        },
+        {
+          "prompt": "Look at the graphic. How much will the woman most likely pay for delivery?",
+          "prompt_vi": "Hãy nhìn bảng. Người phụ nữ nhiều khả năng sẽ trả bao nhiêu tiền phí giao hàng?",
+          "choices": {
+            "A": "$12",
+            "B": "$18",
+            "C": "$35",
+            "D": "$60"
+          },
+          "answer": "B",
+          "difficulty": 5,
+          "tags": [
+            "part3:graphic"
+          ],
+          "explanation_vi": "Cô ấy cần giao trong 2 ngày và muốn rẻ nhất. Gói Standard (3 ngày) đến Brookfield sớm hơn 1 ngày, tức 2 ngày, nên kịp → $18.",
+          "why_wrong_vi": {
+            "A": "Gói Economy mất 5 ngày, không kịp thứ Tư.",
+            "C": "Express là gợi ý thông thường, nhưng ở Brookfield gói Standard đã đủ nhanh và rẻ hơn.",
+            "D": "Same-Day đắt nhất, trong khi cô ấy muốn cách rẻ nhất."
+          }
+        },
+        {
+          "prompt": "What does the man suggest the woman do?",
+          "prompt_vi": "Người đàn ông gợi ý người phụ nữ làm gì?",
+          "choices": {
+            "A": "Buy a protective container",
+            "B": "Fold the sheets carefully",
+            "C": "Come back the next day",
+            "D": "Pay for faster service"
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part3:suggestion",
+            "part3:paraphrase"
+          ],
+          "explanation_vi": "'We sell sturdy cardboard tubes' → mua ống bìa cứng để bảo vệ bản vẽ (protective container).",
+          "why_wrong_vi": {
+            "B": "Cô ấy nói không muốn gấp giấy.",
+            "C": "Không có gợi ý quay lại vào hôm sau.",
+            "D": "Anh ấy chỉ ra rằng không cần gói nhanh hơn."
+          }
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Welcoming a new analyst (three speakers)",
+      "transcript": "M1: Thanks for joining us, Sofia. As our new marketing analyst, you'll be working closely with Kenji and me on the spring campaign.\nW: I'm excited to get started. Is there anything I should read before our planning session on Wednesday?\nM2: The client's brand guidelines would be a good start. They're about eighty pages, though.\nW: That's fine. I'm a fast reader.\nM1: Good. You'll also need access to our analytics dashboard. Kenji, could you set up her account today?\nM2: I'll request it right after lunch, but approvals usually take a day or two.\nW: In that case, could I look over the reports from last year's campaign in the meantime?\nM1: Of course. I'll e-mail them to you this afternoon.",
+      "transcript_vi": "M1: Cảm ơn Sofia đã đến. Là chuyên viên phân tích marketing mới, chị sẽ làm việc sát với Kenji và tôi trong chiến dịch mùa xuân.\nW: Tôi rất háo hức được bắt đầu. Có tài liệu nào tôi nên đọc trước buổi họp lên kế hoạch hôm thứ Tư không?\nM2: Bộ hướng dẫn thương hiệu của khách hàng là điểm khởi đầu tốt. Có điều nó dài khoảng tám mươi trang.\nW: Không sao. Tôi đọc nhanh mà.\nM1: Tốt. Chị cũng cần quyền truy cập bảng phân tích số liệu. Kenji, anh tạo tài khoản cho chị ấy hôm nay được không?\nM2: Ăn trưa xong tôi sẽ gửi yêu cầu ngay, nhưng việc phê duyệt thường mất một hai ngày.\nW: Vậy trong lúc chờ, tôi xem qua các báo cáo của chiến dịch năm ngoái được không?\nM1: Tất nhiên. Chiều nay tôi sẽ gửi email cho chị.",
+      "questions": [
+        {
+          "prompt": "What will happen on Wednesday?",
+          "prompt_vi": "Điều gì sẽ diễn ra vào thứ Tư?",
+          "choices": {
+            "A": "A campaign will be launched.",
+            "B": "A planning session will be held.",
+            "C": "A client will visit the office.",
+            "D": "An account will be approved."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part3:detail",
+            "part3:three-speakers"
+          ],
+          "explanation_vi": "'our planning session on Wednesday' → thứ Tư có buổi họp lên kế hoạch.",
+          "why_wrong_vi": {
+            "A": "Chiến dịch mùa xuân chưa bắt đầu; thứ Tư chỉ là buổi lên kế hoạch.",
+            "C": "Không nhắc đến khách hàng đến thăm.",
+            "D": "Việc duyệt tài khoản mất một hai ngày, không nói là thứ Tư."
+          }
+        },
+        {
+          "prompt": "Why does the woman say, \"I'm a fast reader\"?",
+          "prompt_vi": "Vì sao người phụ nữ nói: \"Tôi đọc nhanh mà\"?",
+          "choices": {
+            "A": "To explain why she finished a task early",
+            "B": "To indicate that the length of a document is not a problem",
+            "C": "To decline a request politely",
+            "D": "To ask for a printed copy"
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "part3:speaker-intent",
+            "part3:three-speakers"
+          ],
+          "explanation_vi": "Kenji lo tài liệu dài 80 trang; cô ấy đáp 'I'm a fast reader' để cho thấy độ dài không thành vấn đề.",
+          "why_wrong_vi": {
+            "A": "Cô ấy chưa đọc tài liệu nào.",
+            "C": "Cô ấy đồng ý đọc, không từ chối.",
+            "D": "Không nhắc đến bản in."
+          }
+        },
+        {
+          "prompt": "What does the first man say he will do this afternoon?",
+          "prompt_vi": "Người đàn ông thứ nhất nói chiều nay anh ấy sẽ làm gì?",
+          "choices": {
+            "A": "Send some previous reports",
+            "B": "Approve an account request",
+            "C": "Meet with the client",
+            "D": "Print the brand guidelines"
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part3:next-action",
+            "part3:three-speakers"
+          ],
+          "explanation_vi": "'I'll e-mail them to you this afternoon' — 'them' là các báo cáo của chiến dịch năm ngoái.",
+          "why_wrong_vi": {
+            "B": "Việc xin tài khoản do Kenji làm và cần chờ duyệt.",
+            "C": "Không có cuộc gặp khách hàng nào được nhắc tới.",
+            "D": "Không ai nói sẽ in bộ hướng dẫn thương hiệu."
+          }
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Booking a training room (graphic)",
+      "graphic": {
+        "type": "table",
+        "title": "Training Rooms – Thursday Availability",
+        "columns": [
+          "Room",
+          "Seats",
+          "Video conferencing"
+        ],
+        "rows": [
+          [
+            "201",
+            "12",
+            "Yes"
+          ],
+          [
+            "305",
+            "24",
+            "No"
+          ],
+          [
+            "310",
+            "30",
+            "Yes"
+          ],
+          [
+            "412",
+            "50",
+            "Yes"
+          ]
+        ]
+      },
+      "image_description": "Table of available training rooms (see graphic).",
+      "transcript": "M: Olivia, I'm booking a room for Thursday's sales training. We're expecting about twenty people.\nW: Don't forget that the team in Singapore wants to join us, so we'll need a room with video conferencing.\nM: Right. Well, the biggest room has it, but finance has reserved it for the whole day. So that leaves only one option that's big enough.\nW: OK. And could you also ask the cafeteria to bring coffee and pastries up at ten? The morning session is three hours long.\nM: Sure. I'll put in the request as soon as I've booked the room.",
+      "transcript_vi": "M: Olivia, tôi đang đặt phòng cho buổi tập huấn bán hàng hôm thứ Năm. Dự kiến khoảng hai mươi người.\nW: Đừng quên nhóm ở Singapore muốn tham gia cùng, nên mình cần phòng có hệ thống họp trực tuyến.\nM: Đúng rồi. Phòng lớn nhất có hệ thống đó, nhưng phòng tài chính đã đặt cả ngày. Vậy chỉ còn một lựa chọn đủ rộng.\nW: Được. Anh nhờ căng tin mang cà phê và bánh ngọt lên lúc mười giờ được không? Buổi sáng kéo dài ba tiếng.\nM: Được chứ. Đặt phòng xong tôi sẽ gửi yêu cầu ngay.",
+      "questions": [
+        {
+          "prompt": "Why do the speakers need video conferencing?",
+          "prompt_vi": "Vì sao hai người cần hệ thống họp trực tuyến?",
+          "choices": {
+            "A": "A trainer will present from home.",
+            "B": "The session will be recorded.",
+            "C": "Colleagues in another office will participate.",
+            "D": "A client wants to observe the training."
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "part3:detail",
+            "part3:paraphrase"
+          ],
+          "explanation_vi": "'the team in Singapore wants to join us' → đồng nghiệp ở văn phòng khác sẽ tham gia.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến người đào tạo làm việc ở nhà.",
+            "B": "Không nói gì về việc ghi hình.",
+            "D": "Người tham gia từ xa là nhóm ở Singapore, không phải khách hàng."
+          }
+        },
+        {
+          "prompt": "Look at the graphic. Which room will the man most likely book?",
+          "prompt_vi": "Hãy nhìn bảng. Người đàn ông nhiều khả năng sẽ đặt phòng nào?",
+          "choices": {
+            "A": "Room 201",
+            "B": "Room 305",
+            "C": "Room 310",
+            "D": "Room 412"
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part3:graphic"
+          ],
+          "explanation_vi": "Cần trên 20 chỗ và có họp trực tuyến: chỉ còn 310 và 412. Phòng lớn nhất (412) đã bị đặt, nên còn phòng 310.",
+          "why_wrong_vi": {
+            "A": "Phòng 201 chỉ có 12 chỗ, không đủ cho khoảng 20 người.",
+            "B": "Phòng 305 đủ chỗ nhưng không có hệ thống họp trực tuyến.",
+            "D": "Phòng 412 là phòng lớn nhất, đã bị phòng tài chính đặt cả ngày."
+          }
+        },
+        {
+          "prompt": "What does the woman ask the man to do?",
+          "prompt_vi": "Người phụ nữ nhờ người đàn ông làm gì?",
+          "choices": {
+            "A": "Shorten the morning session",
+            "B": "Arrange for refreshments",
+            "C": "Contact the finance department",
+            "D": "Send the schedule to Singapore"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part3:request",
+            "part3:paraphrase"
+          ],
+          "explanation_vi": "'ask the cafeteria to bring coffee and pastries' = sắp xếp đồ ăn nhẹ (refreshments).",
+          "why_wrong_vi": {
+            "A": "Cô ấy chỉ nói buổi sáng dài ba tiếng, không muốn rút ngắn.",
+            "C": "Không ai đề nghị liên hệ phòng tài chính.",
+            "D": "Không nhắc đến việc gửi lịch."
+          }
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "A late produce delivery",
+      "transcript": "W: Hi, Marco, it's Hannah from Linden Bistro. Our produce delivery still hasn't arrived, and we open for lunch in an hour.\nM: I'm sorry, Hannah. One of our trucks broke down on the highway this morning, so every delivery on that route is running late.\nW: Do you know when it'll get here? We have a party of twenty booked for twelve-thirty.\nM: The repair crew is with the truck now, but I can't give you an exact time. You know, our warehouse is only ten minutes from you.\nW: Oh, I could send one of my kitchen staff over right away.\nM: Perfect. I'll have your order packed and waiting at the loading dock.",
+      "transcript_vi": "W: Chào Marco, tôi là Hannah ở nhà hàng Linden Bistro. Hàng rau củ của chúng tôi vẫn chưa tới, mà một tiếng nữa là mở cửa phục vụ bữa trưa rồi.\nM: Xin lỗi chị Hannah. Sáng nay một xe tải của chúng tôi bị hỏng trên đường cao tốc, nên mọi đơn trên tuyến đó đều bị trễ.\nW: Anh có biết khi nào hàng tới không? Chúng tôi có một bàn hai mươi người đặt lúc mười hai giờ rưỡi.\nM: Đội sửa chữa đang ở chỗ xe, nhưng tôi không thể nói chính xác giờ. Chị biết đấy, kho của chúng tôi chỉ cách chỗ chị mười phút.\nW: À, tôi có thể cử một nhân viên bếp qua ngay.\nM: Tuyệt. Tôi sẽ cho đóng gói đơn của chị và để sẵn ở khu bốc dỡ hàng.",
+      "questions": [
+        {
+          "prompt": "What problem does the woman mention?",
+          "prompt_vi": "Người phụ nữ nêu vấn đề gì?",
+          "choices": {
+            "A": "Some vegetables were damaged.",
+            "B": "A delivery has not arrived.",
+            "C": "A reservation was canceled.",
+            "D": "A kitchen employee is absent."
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part3:problem"
+          ],
+          "explanation_vi": "'Our produce delivery still hasn't arrived' → hàng giao chưa tới.",
+          "why_wrong_vi": {
+            "A": "Hàng chưa tới nên không thể bị hư.",
+            "C": "Bàn 20 người vẫn được giữ, không bị hủy.",
+            "D": "Không có nhân viên nào vắng mặt."
+          }
+        },
+        {
+          "prompt": "Why does the man say, \"our warehouse is only ten minutes from you\"?",
+          "prompt_vi": "Vì sao người đàn ông nói: \"kho của chúng tôi chỉ cách chỗ chị mười phút\"?",
+          "choices": {
+            "A": "To explain why the delivery fee is low",
+            "B": "To promise that the truck will arrive soon",
+            "C": "To recommend a different supplier",
+            "D": "To suggest that the woman collect the order herself"
+          },
+          "answer": "D",
+          "difficulty": 4,
+          "tags": [
+            "part3:speaker-intent"
+          ],
+          "explanation_vi": "Không hứa được giờ xe tới, anh ấy nhắc kho rất gần để gợi ý nhà hàng tự qua lấy hàng; cô ấy hiểu ý và cử nhân viên đi.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến phí giao hàng.",
+            "B": "Anh ấy nói không biết chính xác khi nào xe tới.",
+            "C": "Kho đó là của chính công ty anh ấy."
+          }
+        },
+        {
+          "prompt": "What will the man do next?",
+          "prompt_vi": "Người đàn ông sẽ làm gì tiếp theo?",
+          "choices": {
+            "A": "Repair a truck",
+            "B": "Drive to the restaurant",
+            "C": "Issue a refund",
+            "D": "Prepare an order for pickup"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part3:next-action",
+            "part3:paraphrase"
+          ],
+          "explanation_vi": "'I'll have your order packed and waiting at the loading dock' → chuẩn bị sẵn đơn hàng để người tới lấy.",
+          "why_wrong_vi": {
+            "A": "Đội sửa chữa lo việc sửa xe, không phải anh ấy.",
+            "B": "Nhân viên bếp của nhà hàng sẽ tới lấy hàng.",
+            "C": "Không nhắc đến hoàn tiền."
+          }
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Trade show booth (three speakers)",
+      "transcript": "W1: Raj, Emily, thanks for meeting. I've just heard back from the organizers of the Home Design Expo. The booth we wanted near the main entrance has already been taken.\nM: That's disappointing. Most visitors stop at the first few booths they see.\nW2: What about the space next to the demonstration stage? Every presentation draws a crowd, so we'd still get plenty of foot traffic.\nW1: It's more expensive, though. About fifteen percent over what we budgeted.\nM: We could make up the difference by printing fewer catalogs. Last year we brought almost half of them back to the office.\nW1: Good idea. I'll call the organizers this afternoon, before another company books it.",
+      "transcript_vi": "W1: Raj, Emily, cảm ơn hai bạn đã đến họp. Tôi vừa nhận được phản hồi từ ban tổ chức Triển lãm Thiết kế Nội thất. Gian hàng gần lối vào chính mà mình muốn đã có người thuê rồi.\nM: Tiếc thật. Phần lớn khách tham quan chỉ dừng ở vài gian đầu tiên họ thấy.\nW2: Còn chỗ cạnh sân khấu trình diễn thì sao? Buổi trình diễn nào cũng đông người xem, nên mình vẫn có nhiều khách đi qua.\nW1: Nhưng chỗ đó đắt hơn, vượt ngân sách khoảng mười lăm phần trăm.\nM: Mình có thể bù phần chênh lệch bằng cách in ít catalog hơn. Năm ngoái mình mang về văn phòng gần một nửa số catalog.\nW1: Ý hay đấy. Chiều nay tôi sẽ gọi ban tổ chức, trước khi công ty khác đặt mất.",
+      "questions": [
+        {
+          "prompt": "What problem does the first woman report?",
+          "prompt_vi": "Người phụ nữ thứ nhất báo vấn đề gì?",
+          "choices": {
+            "A": "A preferred location is unavailable.",
+            "B": "An exhibition has been postponed.",
+            "C": "Some catalogs contain errors.",
+            "D": "A registration fee has increased."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part3:problem",
+            "part3:three-speakers"
+          ],
+          "explanation_vi": "'The booth we wanted near the main entrance has already been taken' → vị trí mong muốn không còn.",
+          "why_wrong_vi": {
+            "B": "Triển lãm vẫn diễn ra như kế hoạch.",
+            "C": "Catalog chỉ được nhắc tới khi bàn cách tiết kiệm.",
+            "D": "Chỉ có vị trí khác đắt hơn, không phải phí tăng."
+          }
+        },
+        {
+          "prompt": "What does the man suggest?",
+          "prompt_vi": "Người đàn ông đề xuất gì?",
+          "choices": {
+            "A": "Choosing a cheaper exhibition",
+            "B": "Giving a presentation on stage",
+            "C": "Asking the organizers for a discount",
+            "D": "Producing fewer printed materials"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part3:suggestion",
+            "part3:paraphrase",
+            "part3:three-speakers"
+          ],
+          "explanation_vi": "'printing fewer catalogs' → in ít tài liệu hơn để bù chi phí.",
+          "why_wrong_vi": {
+            "A": "Không ai đề nghị đổi sang triển lãm khác.",
+            "B": "Sân khấu được nhắc tới để chọn chỗ, không phải để thuyết trình.",
+            "C": "Anh ấy đề nghị cắt chi phí in, không xin giảm giá."
+          }
+        },
+        {
+          "prompt": "Why does the first woman want to call the organizers this afternoon?",
+          "prompt_vi": "Vì sao người phụ nữ thứ nhất muốn gọi ban tổ chức ngay chiều nay?",
+          "choices": {
+            "A": "To ask for a larger budget",
+            "B": "To cancel a previous booking",
+            "C": "To request a list of exhibitors",
+            "D": "To reserve a space before someone else does"
+          },
+          "answer": "D",
+          "difficulty": 4,
+          "tags": [
+            "part3:detail",
+            "part3:three-speakers"
+          ],
+          "explanation_vi": "'before another company books it' → cô ấy muốn giữ chỗ cạnh sân khấu trước khi bị công ty khác đặt.",
+          "why_wrong_vi": {
+            "A": "Ngân sách do công ty tự quyết, không liên quan đến ban tổ chức.",
+            "B": "Họ chưa đặt chỗ nào để hủy.",
+            "C": "Không nhắc đến danh sách đơn vị tham gia."
+          }
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Picking up a rental car",
+      "transcript": "M: Hi. I reserved a compact car for this morning. The name is Peter Walsh.\nW: Let me see. Yes, Mr. Walsh. I'm afraid there's a problem. All of our compact cars were returned late last night, and they're still being cleaned.\nM: Oh, no. I have a meeting across town at ten.\nW: Well, we do have a midsize sedan ready to go.\nM: Is that going to cost more?\nW: Normally it would, but since the delay is our fault, you'll pay the compact rate. I'll just need you to sign an updated rental agreement.",
+      "transcript_vi": "M: Chào chị. Tôi đã đặt một xe cỡ nhỏ cho sáng nay. Tên tôi là Peter Walsh.\nW: Để tôi xem. Vâng, anh Walsh. Tiếc là có chút trục trặc. Tất cả xe cỡ nhỏ đều được trả muộn tối qua và vẫn đang được vệ sinh.\nM: Ôi không. Tôi có cuộc họp ở đầu kia thành phố lúc mười giờ.\nW: À, chúng tôi có sẵn một xe sedan cỡ trung có thể đi ngay.\nM: Xe đó có đắt hơn không?\nW: Bình thường thì có, nhưng vì sự chậm trễ là lỗi của chúng tôi nên anh chỉ trả giá xe cỡ nhỏ. Tôi chỉ cần anh ký hợp đồng thuê xe đã cập nhật.",
+      "questions": [
+        {
+          "prompt": "Where most likely are the speakers?",
+          "prompt_vi": "Hai người nhiều khả năng đang ở đâu?",
+          "choices": {
+            "A": "At a car rental counter",
+            "B": "At a car wash",
+            "C": "At a repair shop",
+            "D": "At a hotel front desk"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part3:location"
+          ],
+          "explanation_vi": "'I reserved a compact car', 'rental agreement' → quầy cho thuê xe.",
+          "why_wrong_vi": {
+            "B": "Xe đang được vệ sinh, nhưng họ đang làm thủ tục thuê xe.",
+            "C": "Không có xe nào cần sửa.",
+            "D": "Họ nói về đặt xe và hợp đồng thuê xe, không phải phòng."
+          }
+        },
+        {
+          "prompt": "Why does the man say, \"I have a meeting across town at ten\"?",
+          "prompt_vi": "Vì sao người đàn ông nói: \"Tôi có cuộc họp ở đầu kia thành phố lúc mười giờ\"?",
+          "choices": {
+            "A": "To ask for directions to a meeting",
+            "B": "To request a later pickup time",
+            "C": "To indicate that he cannot wait long",
+            "D": "To complain about heavy traffic"
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part3:speaker-intent"
+          ],
+          "explanation_vi": "Nghe tin xe chưa sẵn sàng, anh ấy nhắc cuộc họp lúc 10 giờ để cho thấy mình không thể chờ xe được vệ sinh xong.",
+          "why_wrong_vi": {
+            "A": "Anh ấy không hỏi đường.",
+            "B": "Anh ấy cần xe ngay, không muốn lùi giờ.",
+            "D": "Không nhắc đến tình hình giao thông."
+          }
+        },
+        {
+          "prompt": "What does the woman say about the price?",
+          "prompt_vi": "Người phụ nữ nói gì về giá?",
+          "choices": {
+            "A": "It includes a fuel charge.",
+            "B": "It will stay the same as the original booking.",
+            "C": "It must be paid in cash.",
+            "D": "It is discounted for members."
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "part3:detail",
+            "part3:paraphrase"
+          ],
+          "explanation_vi": "'you'll pay the compact rate' → vẫn trả giá xe cỡ nhỏ như đã đặt, dù nhận xe lớn hơn.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến phí xăng.",
+            "C": "Không nói về hình thức thanh toán.",
+            "D": "Mức giá giữ nguyên vì lỗi của công ty, không phải ưu đãi thành viên."
+          }
+        }
+      ]
+    }
+  ]
+}

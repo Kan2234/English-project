@@ -1154,5 +1154,582 @@
     "accents": [
       "US"
     ]
+  },
+  "practice-bank-01-p2-s01": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s01.mp3",
+    "hash": "b8d4822e54d2313f",
+    "duration_sec": 15.6,
+    "engine": "edge",
+    "voices": [
+      "en-GB-SoniaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "GB",
+      "CA"
+    ]
+  },
+  "practice-bank-01-p2-s02": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s02.mp3",
+    "hash": "6512ae36a944e2b3",
+    "duration_sec": 16.3,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "CA",
+      "AU"
+    ]
+  },
+  "practice-bank-01-p2-s03": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s03.mp3",
+    "hash": "d889ae37d374e2c9",
+    "duration_sec": 15.2,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural",
+      "en-US-BrianNeural"
+    ],
+    "accents": [
+      "AU",
+      "US"
+    ]
+  },
+  "practice-bank-01-p2-s04": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s04.mp3",
+    "hash": "8d5e41a3a90f5a03",
+    "duration_sec": 16.2,
+    "engine": "edge",
+    "voices": [
+      "en-US-ChristopherNeural",
+      "en-GB-LibbyNeural"
+    ],
+    "accents": [
+      "US",
+      "GB"
+    ]
+  },
+  "practice-bank-01-p2-s05": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s05.mp3",
+    "hash": "84b83a685904629c",
+    "duration_sec": 16,
+    "engine": "edge",
+    "voices": [
+      "en-GB-RyanNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "GB",
+      "AU"
+    ]
+  },
+  "practice-bank-01-p2-s06": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s06.mp3",
+    "hash": "007416bf7c0b4e70",
+    "duration_sec": 15,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural",
+      "en-US-BrianNeural"
+    ],
+    "accents": [
+      "CA",
+      "US"
+    ]
+  },
+  "practice-bank-01-p2-s07": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s07.mp3",
+    "hash": "13b29853ab48cac0",
+    "duration_sec": 14.9,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural",
+      "en-GB-SoniaNeural"
+    ],
+    "accents": [
+      "AU",
+      "GB"
+    ]
+  },
+  "practice-bank-01-p2-s08": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s08.mp3",
+    "hash": "71ff28e4a7925bcf",
+    "duration_sec": 14.1,
+    "engine": "edge",
+    "voices": [
+      "en-US-AvaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "US",
+      "CA"
+    ]
+  },
+  "practice-bank-01-p2-s09": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s09.mp3",
+    "hash": "e9571b2be36524ce",
+    "duration_sec": 15.6,
+    "engine": "edge",
+    "voices": [
+      "en-GB-LibbyNeural",
+      "en-US-ChristopherNeural"
+    ],
+    "accents": [
+      "GB",
+      "US"
+    ]
+  },
+  "practice-bank-01-p2-s10": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s10.mp3",
+    "hash": "2cac66f63157c6f3",
+    "duration_sec": 15.5,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural",
+      "en-GB-SoniaNeural"
+    ],
+    "accents": [
+      "CA",
+      "GB"
+    ]
+  },
+  "practice-bank-01-p2-s11": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s11.mp3",
+    "hash": "5d48fda2275a0215",
+    "duration_sec": 13.9,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "AU",
+      "CA"
+    ]
+  },
+  "practice-bank-01-p2-s12": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s12.mp3",
+    "hash": "3f55c532936c0168",
+    "duration_sec": 14.6,
+    "engine": "edge",
+    "voices": [
+      "en-US-BrianNeural",
+      "en-AU-NatashaNeural"
+    ],
+    "accents": [
+      "US",
+      "AU"
+    ]
+  },
+  "practice-bank-01-p2-s13": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s13.mp3",
+    "hash": "151229d6a5d553a9",
+    "duration_sec": 15.3,
+    "engine": "edge",
+    "voices": [
+      "en-GB-ThomasNeural",
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "GB",
+      "CA"
+    ]
+  },
+  "practice-bank-01-p2-s14": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s14.mp3",
+    "hash": "c87859cd628c17b1",
+    "duration_sec": 14.8,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural",
+      "en-AU-WilliamMultilingualNeural"
+    ],
+    "accents": [
+      "CA",
+      "AU"
+    ]
+  },
+  "practice-bank-01-p2-s15": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s15.mp3",
+    "hash": "9c2c4345de358298",
+    "duration_sec": 15.4,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural",
+      "en-US-EmmaNeural"
+    ],
+    "accents": [
+      "AU",
+      "US"
+    ]
+  },
+  "practice-bank-01-p2-s16": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s16.mp3",
+    "hash": "d7763429563dd165",
+    "duration_sec": 14.9,
+    "engine": "edge",
+    "voices": [
+      "en-US-AvaNeural",
+      "en-GB-RyanNeural"
+    ],
+    "accents": [
+      "US",
+      "GB"
+    ]
+  },
+  "practice-bank-01-p2-s17": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s17.mp3",
+    "hash": "345027c37da5c512",
+    "duration_sec": 16.3,
+    "engine": "edge",
+    "voices": [
+      "en-GB-LibbyNeural",
+      "en-AU-WilliamMultilingualNeural"
+    ],
+    "accents": [
+      "GB",
+      "AU"
+    ]
+  },
+  "practice-bank-01-p2-s18": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s18.mp3",
+    "hash": "2a7214e86649049a",
+    "duration_sec": 13.9,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural",
+      "en-US-EmmaNeural"
+    ],
+    "accents": [
+      "CA",
+      "US"
+    ]
+  },
+  "practice-bank-01-p2-s19": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s19.mp3",
+    "hash": "a20a5bf5ab6a2d7b",
+    "duration_sec": 14.8,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural",
+      "en-GB-ThomasNeural"
+    ],
+    "accents": [
+      "AU",
+      "GB"
+    ]
+  },
+  "practice-bank-01-p2-s20": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s20.mp3",
+    "hash": "b897672789182fc8",
+    "duration_sec": 15.3,
+    "engine": "edge",
+    "voices": [
+      "en-US-ChristopherNeural",
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "US",
+      "CA"
+    ]
+  },
+  "practice-bank-01-p2-s21": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s21.mp3",
+    "hash": "62970bf70b8b7762",
+    "duration_sec": 15.4,
+    "engine": "edge",
+    "voices": [
+      "en-GB-RyanNeural",
+      "en-US-AvaNeural"
+    ],
+    "accents": [
+      "GB",
+      "US"
+    ]
+  },
+  "practice-bank-01-p2-s22": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s22.mp3",
+    "hash": "2fb2fd0bf9bfaedd",
+    "duration_sec": 14.9,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural",
+      "en-GB-ThomasNeural"
+    ],
+    "accents": [
+      "CA",
+      "GB"
+    ]
+  },
+  "practice-bank-01-p2-s23": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s23.mp3",
+    "hash": "39e49e5efa7d85a4",
+    "duration_sec": 15.8,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural",
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "AU",
+      "CA"
+    ]
+  },
+  "practice-bank-01-p2-s24": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s24.mp3",
+    "hash": "fe57b6d14a9cdc31",
+    "duration_sec": 15.2,
+    "engine": "edge",
+    "voices": [
+      "en-US-EmmaNeural",
+      "en-AU-WilliamMultilingualNeural"
+    ],
+    "accents": [
+      "US",
+      "AU"
+    ]
+  },
+  "practice-bank-01-p2-s25": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p2-s25.mp3",
+    "hash": "9964bc64383f24be",
+    "duration_sec": 14.9,
+    "engine": "edge",
+    "voices": [
+      "en-GB-SoniaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "GB",
+      "CA"
+    ]
+  },
+  "practice-bank-01-p3-s01": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p3-s01.mp3",
+    "hash": "e5cb900250605830",
+    "duration_sec": 78.2,
+    "engine": "edge",
+    "voices": [
+      "en-AU-NatashaNeural",
+      "en-US-BrianNeural"
+    ],
+    "accents": [
+      "AU",
+      "US"
+    ]
+  },
+  "practice-bank-01-p3-s02": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p3-s02.mp3",
+    "hash": "1dd448248873bf13",
+    "duration_sec": 77.6,
+    "engine": "edge",
+    "voices": [
+      "en-US-ChristopherNeural",
+      "en-GB-LibbyNeural"
+    ],
+    "accents": [
+      "US",
+      "GB"
+    ]
+  },
+  "practice-bank-01-p3-s03": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p3-s03.mp3",
+    "hash": "90947cc4ca797de2",
+    "duration_sec": 80.1,
+    "engine": "edge",
+    "voices": [
+      "en-GB-SoniaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "GB",
+      "CA"
+    ]
+  },
+  "practice-bank-01-p3-s04": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p3-s04.mp3",
+    "hash": "bd0fcfed4e3f3831",
+    "duration_sec": 79.9,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural",
+      "en-AU-NatashaNeural",
+      "en-US-BrianNeural"
+    ],
+    "accents": [
+      "CA",
+      "AU",
+      "US"
+    ]
+  },
+  "practice-bank-01-p3-s05": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p3-s05.mp3",
+    "hash": "3fe11b8d6410f65b",
+    "duration_sec": 79.4,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural",
+      "en-GB-LibbyNeural"
+    ],
+    "accents": [
+      "AU",
+      "GB"
+    ]
+  },
+  "practice-bank-01-p3-s06": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p3-s06.mp3",
+    "hash": "216bebc5a7b6f4e1",
+    "duration_sec": 69.1,
+    "engine": "edge",
+    "voices": [
+      "en-US-AvaNeural",
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "US",
+      "CA"
+    ]
+  },
+  "practice-bank-01-p3-s07": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p3-s07.mp3",
+    "hash": "885a91026682280f",
+    "duration_sec": 79.5,
+    "engine": "edge",
+    "voices": [
+      "en-GB-SoniaNeural",
+      "en-AU-WilliamMultilingualNeural",
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "GB",
+      "AU",
+      "CA"
+    ]
+  },
+  "practice-bank-01-p3-s08": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p3-s08.mp3",
+    "hash": "09da75f8743142d4",
+    "duration_sec": 65.8,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural",
+      "en-US-EmmaNeural"
+    ],
+    "accents": [
+      "CA",
+      "US"
+    ]
+  },
+  "practice-bank-01-p4-s01": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p4-s01.mp3",
+    "hash": "d12d19e953200ec6",
+    "duration_sec": 73.9,
+    "engine": "edge",
+    "voices": [
+      "en-CA-ClaraNeural"
+    ],
+    "accents": [
+      "CA"
+    ]
+  },
+  "practice-bank-01-p4-s02": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p4-s02.mp3",
+    "hash": "8341eda787f93b6d",
+    "duration_sec": 68.1,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural"
+    ],
+    "accents": [
+      "AU"
+    ]
+  },
+  "practice-bank-01-p4-s03": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p4-s03.mp3",
+    "hash": "8ae68cad6c9f16bb",
+    "duration_sec": 79,
+    "engine": "edge",
+    "voices": [
+      "en-US-AvaNeural"
+    ],
+    "accents": [
+      "US"
+    ]
+  },
+  "practice-bank-01-p4-s04": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p4-s04.mp3",
+    "hash": "89eb8c42fd205d5a",
+    "duration_sec": 72.5,
+    "engine": "edge",
+    "voices": [
+      "en-GB-RyanNeural"
+    ],
+    "accents": [
+      "GB"
+    ]
+  },
+  "practice-bank-01-p4-s05": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p4-s05.mp3",
+    "hash": "1124a0c4a0d1ef9d",
+    "duration_sec": 73,
+    "engine": "edge",
+    "voices": [
+      "en-CA-LiamNeural"
+    ],
+    "accents": [
+      "CA"
+    ]
+  },
+  "practice-bank-01-p4-s06": {
+    "test_id": "practice-bank-01",
+    "file": "audio/practice-bank-01/practice-bank-01-p4-s06.mp3",
+    "hash": "9cf519251bd2ec25",
+    "duration_sec": 72.5,
+    "engine": "edge",
+    "voices": [
+      "en-AU-WilliamMultilingualNeural"
+    ],
+    "accents": [
+      "AU"
+    ]
   }
 }

@@ -1,8 +1,9 @@
-import { useState, type ReactNode } from 'react';
+import { useId, useState, type ReactNode } from 'react';
 import type { Graphic, QuestionSet } from '../lib/types';
 import { assetUrl } from '../lib/data';
 import { blankNumber } from '../lib/exam';
 import { AudioPlayer } from './AudioPlayer';
+import '../styles/translate.css';
 
 function GraphicView({ g }: { g: Graphic }) {
   if (g.type === 'bar-chart') {
@@ -66,6 +67,25 @@ function renderPassage(text: string, set: QuestionSet): ReactNode[] {
   });
 }
 
+/** "Xem bản dịch": a disclosure button that reveals the Vietnamese translation below it. */
+function Translation({ children }: { children: ReactNode }) {
+  const [open, setOpen] = useState(false);
+  const id = useId();
+  return (
+    <div className="vi-toggle">
+      <button type="button" className="vi-toggle__btn" aria-expanded={open} aria-controls={id} onClick={() => setOpen((o) => !o)}>
+        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+          <path d="M4 2.5 7.5 6 4 9.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        Xem bản dịch
+      </button>
+      <div id={id} className="vi-panel" lang="vi" hidden={!open}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
 interface Props {
   set: QuestionSet;
   /** show listening transcript (review / practice after answering) */
@@ -118,6 +138,20 @@ export function Stimulus({ set, showTranscript = false, autoPlay = false, withAu
           {renderPassage(p.text, set)}
         </div>
       ))}
+      {/* translations only after answering (practice) or in review: the same moment the transcript appears */}
+      {showTranscript && set.passages?.some((p) => p.text_vi) && (
+        <Translation>
+          {set.passages.map(
+            (p, i) =>
+              p.text_vi && (
+                <div className="vi-panel__item" key={i}>
+                  {set.passages!.length > 1 && p.title && <div className="vi-panel__title">{p.title}</div>}
+                  {renderPassage(p.text_vi, set)}
+                </div>
+              ),
+          )}
+        </Translation>
+      )}
 
       {listening && showTranscript && set.transcript && (
         <details open={set.part >= 3}>
@@ -125,6 +159,11 @@ export function Stimulus({ set, showTranscript = false, autoPlay = false, withAu
             Lời thoại (transcript)
           </summary>
           <p className="transcript">{set.transcript}</p>
+          {set.transcript_vi && (
+            <Translation>
+              <p className="vi-panel__item">{set.transcript_vi}</p>
+            </Translation>
+          )}
         </details>
       )}
     </div>

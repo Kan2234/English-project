@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useData } from '../lib/data';
-import { PART_NAMES } from '../lib/exam';
+import { PART_NAMES, practiceSets } from '../lib/exam';
 import { loadPractice, loadPracticePosition, wrongInPractice } from '../lib/storage';
 import '../styles/study.css';
 
@@ -26,12 +26,14 @@ export default function PracticeIndex() {
         <h1>Luyện theo phần</h1>
         <p>
           Làm từng nhóm câu của một Part, xem đáp án và giải thích ngay sau khi chọn. Không giới hạn thời gian; trang nhớ
-          nhóm bạn đang học và gom lại các câu làm sai.
+          nhóm bạn đang học và gom lại các câu làm sai. Câu hỏi ở đây không lấy từ Full Test, nên khi làm đề đầy đủ bạn vẫn
+          gặp toàn câu mới.
         </p>
       </div>
       <ul className="toc study-toc">
         {[1, 2, 3, 4, 5, 6, 7].map((p) => {
-          const sets = data.tests.flatMap((t) => t.sets.filter((s) => s.part === p));
+          // Same pool and order as the practice page: Full Test sets are kept for the timed test.
+          const sets = practiceSets(data, p).map((x) => x.set);
           const ids = sets.flatMap((s) => s.questions.map((q) => q.id));
           const done = ids.filter((id) => id in progress).length;
           const right = ids.filter((id) => progress[id]).length;

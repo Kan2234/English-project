@@ -85,8 +85,9 @@ CREATE TABLE question_sets (
   order_index       INTEGER NOT NULL,
   title             TEXT,
   passage_type      TEXT,                      -- photo, conversation, talk, email, article, notice...
-  passages          TEXT,                      -- JSON array of {type,title,text} (Part 6/7)
+  passages          TEXT,                      -- JSON array of {type,title,text,text_vi?} (Part 6/7)
   transcript        TEXT,                      -- Listening script (Part 1-4)
+  transcript_vi     TEXT,                      -- Vietnamese translation of the transcript (optional)
   image_description TEXT,                      -- Part 1 photo description / graphic for Part 3-4
   graphic           TEXT,                      -- JSON for tables/charts in Part 3/4/7
   audio_url         TEXT,                      -- relative to database/, e.g. 'audio/full-test-01/ft01-p3-s01.mp3'
@@ -102,8 +103,10 @@ CREATE TABLE questions (
   part_number       INTEGER NOT NULL,
   number            INTEGER NOT NULL,          -- question number inside the test
   prompt            TEXT,                      -- question stem (null for Part 1/2 where it is audio-only)
+  prompt_vi         TEXT,                      -- Vietnamese translation of the stem (optional)
   answer            TEXT NOT NULL,             -- 'A' | 'B' | 'C' | 'D'
   explanation_vi    TEXT,
+  why_wrong_vi      TEXT,                      -- JSON {label: reason} for every wrong choice (optional)
   difficulty        INTEGER CHECK (difficulty BETWEEN 1 AND 5),
   tags              TEXT,                      -- JSON array: ['grammar:verb-tense', 'inference']
   UNIQUE (test_id, number)
@@ -195,9 +198,9 @@ CREATE INDEX idx_vocab_topic ON vocabulary(topic);
 
 -- One row per question with its choices as JSON — handy for API endpoints
 CREATE VIEW v_questions_full AS
-SELECT q.id, q.test_id, q.part_number, q.number, q.prompt, q.answer,
-       q.explanation_vi, q.difficulty, q.tags, q.set_id,
-       s.passage_type, s.transcript, s.passages, s.image_description, s.graphic,
+SELECT q.id, q.test_id, q.part_number, q.number, q.prompt, q.prompt_vi, q.answer,
+       q.explanation_vi, q.why_wrong_vi, q.difficulty, q.tags, q.set_id,
+       s.passage_type, s.transcript, s.transcript_vi, s.passages, s.image_description, s.graphic,
        s.audio_url, s.audio_duration_sec, s.image_url, s.image_credit,
        (SELECT json_group_array(json_object('label', c.label, 'text', c.text))
           FROM (SELECT * FROM choices WHERE question_id = q.id ORDER BY label) c) AS choices

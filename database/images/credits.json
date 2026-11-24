@@ -82,16 +82,12 @@
   },
   {
     "set_id": "mt01-p1-s04",
-    "source": "wikimedia",
-    "url": "https://commons.wikimedia.org/wiki/File:Bali_fruit_stall_2.JPG",
-    "author": "Midori",
-    "license": "CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/) - attribution required",
-    "prompt": null,
-    "notes": "Used the 960x720 Commons thumbnail (original 3616x2712; full-size download was rate-limited). Converted to grayscale with mild contrast increase; kept at 960x720 (no upscaling). Changes must be indicated in attribution, e.g. \"Bali fruit stall 2\" by Midori, CC BY 3.0, via Wikimedia Commons, converted to black and white.",
-    "attribution": {
-      "text": "“Bali fruit stall 2” – Midori, CC BY 3.0, Wikimedia Commons (đã chuyển sang trắng đen)",
-      "url": "https://commons.wikimedia.org/wiki/File:Bali_fruit_stall_2.JPG"
-    }
+    "source": "gemini",
+    "url": "gemini",
+    "author": "Generated with Google Gemini (model \"Neon\", thinking level \"Cao\"/high) in the user's Gemini account",
+    "license": "AI-generated (Google Gemini output; no third-party photo license). May carry Google SynthID invisible watermark.",
+    "prompt": "Common prefix: \"Create an image: a realistic black-and-white documentary-style photograph (true grayscale, no color), landscape 4:3 aspect ratio, natural light, looking like a photo printed in an English listening test book.\" Common suffix: \"No text, no letters, signs, logos or watermark anywhere.\" Scene: An outdoor market stall under a simple canvas awning; many woven baskets and shallow wooden crates on a sturdy wooden table, each neatly filled with fruit arranged for sale (apples, oranges, bananas, pears, grapes), fruit stacked in tidy piles; no people at all anywhere in the frame. Avoid any vendor or customer, hands, weighing scales, a queue or line of people, trucks or vehicles, baskets being lifted or carried, price signs.",
+    "notes": "Raw 2400x1792 PNG. Cropped to 4:3 (2160x1620 from the top, centred horizontally) to remove the Gemini sparkle watermark (bottom-right), scaled to 1000x750, converted to 8-bit single-channel grayscale JPEG (q~0.8), metadata stripped. Replaced an earlier CC BY Wikimedia photo so no on-page credit is needed."
   },
   {
     "set_id": "mt01-p1-s05",

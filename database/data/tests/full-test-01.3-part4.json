@@ -8,9 +8,11 @@
       "passage_type": "broadcast",
       "title": "Traffic report",
       "transcript": "Good morning, this is Sandra Lee with your eight o'clock traffic update on Radio 95. Drivers heading downtown on Highway 4 should expect delays of up to thirty minutes. One lane near the Elm Street exit is closed for road repairs, and the work is expected to continue until Friday. If possible, take the Riverside Bridge instead. And a reminder for public transportation users: starting Monday, city buses will run every ten minutes during rush hour, instead of every fifteen. Stay tuned for the weather after this short break.",
+      "transcript_vi": "Chào buổi sáng, tôi là Sandra Lee với bản tin giao thông lúc tám giờ trên Radio 95. Các tài xế đi vào trung tâm trên Quốc lộ 4 nên chuẩn bị tinh thần bị chậm tới ba mươi phút. Một làn đường gần lối ra phố Elm đang bị đóng để sửa đường, và công việc dự kiến kéo dài đến thứ Sáu. Nếu có thể, hãy đi cầu Riverside thay thế. Và xin nhắc những người đi phương tiện công cộng: từ thứ Hai, xe buýt thành phố sẽ chạy mười phút một chuyến vào giờ cao điểm thay vì mười lăm phút. Sau giờ nghỉ ngắn, mời quý vị đón nghe bản tin thời tiết.",
       "questions": [
         {
           "prompt": "What is causing delays on Highway 4?",
+          "prompt_vi": "Điều gì gây ra tình trạng chậm trên Quốc lộ 4?",
           "choices": {
             "A": "Bad weather",
             "B": "A traffic accident",
@@ -22,10 +24,16 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "'One lane ... is closed for road repairs'."
+          "explanation_vi": "'One lane ... is closed for road repairs'.",
+          "why_wrong_vi": {
+            "A": "Thời tiết chỉ được nhắc là bản tin sắp tới, không phải nguyên nhân kẹt xe.",
+            "B": "Không có tai nạn nào được nhắc đến.",
+            "D": "Không có cuộc diễu hành nào."
+          }
         },
         {
           "prompt": "What does the speaker recommend?",
+          "prompt_vi": "Người nói khuyên điều gì?",
           "choices": {
             "A": "Using a different route",
             "B": "Leaving home early",
@@ -37,10 +45,16 @@
           "tags": [
             "part4:suggestion"
           ],
-          "explanation_vi": "'take the Riverside Bridge instead' = đi đường khác."
+          "explanation_vi": "'take the Riverside Bridge instead' = đi đường khác.",
+          "why_wrong_vi": {
+            "B": "Không khuyên rời nhà sớm, mà khuyên đi đường khác.",
+            "C": "Phần sau chỉ nói về xe buýt, không nhắc đến tàu hỏa.",
+            "D": "Không nhắc đến làm việc tại nhà."
+          }
         },
         {
           "prompt": "What will change on Monday?",
+          "prompt_vi": "Điều gì sẽ thay đổi vào thứ Hai?",
           "choices": {
             "A": "A bridge will reopen.",
             "B": "Bus fares will increase.",
@@ -52,7 +66,12 @@
           "tags": [
             "part4:paraphrase"
           ],
-          "explanation_vi": "Xe buýt chạy 10 phút/chuyến thay vì 15 phút → thường xuyên hơn."
+          "explanation_vi": "Xe buýt chạy 10 phút/chuyến thay vì 15 phút → thường xuyên hơn.",
+          "why_wrong_vi": {
+            "A": "Cầu Riverside vẫn đang mở; không có cầu nào mở lại.",
+            "B": "Thay đổi là tần suất chuyến xe, không phải giá vé.",
+            "C": "Lối ra phố Elm chỉ có một làn bị đóng để sửa, không có lối ra mới."
+          }
         }
       ]
     },
@@ -61,9 +80,11 @@
       "passage_type": "voicemail",
       "title": "Message from a supplier",
       "transcript": "Hello, Mr. Daniels. This is Priya from Northwind Paper Supplies. I'm calling about your order of five hundred boxes of printer paper. Unfortunately, our warehouse is running low on the brand you selected, and we can only send three hundred boxes this week. The remaining two hundred will arrive next Wednesday. Alternatively, we can send a similar brand right away at the same price. Please call me back at 555-0148 to let me know which option you prefer. Thank you.",
+      "transcript_vi": "Xin chào ông Daniels. Tôi là Priya từ Northwind Paper Supplies. Tôi gọi về đơn hàng năm trăm thùng giấy in của ông. Rất tiếc, kho của chúng tôi sắp hết loại giấy ông đã chọn, nên tuần này chúng tôi chỉ gửi được ba trăm thùng. Hai trăm thùng còn lại sẽ đến vào thứ Tư tuần sau. Hoặc chúng tôi có thể gửi ngay một loại tương tự với cùng mức giá. Xin ông gọi lại cho tôi theo số 555-0148 để cho biết ông chọn phương án nào. Cảm ơn ông.",
       "questions": [
         {
           "prompt": "What is the purpose of the call?",
+          "prompt_vi": "Mục đích của cuộc gọi là gì?",
           "choices": {
             "A": "To confirm a payment",
             "B": "To explain a problem with an order",
@@ -75,10 +96,16 @@
           "tags": [
             "part4:purpose"
           ],
-          "explanation_vi": "Nhà cung cấp gọi vì không đủ hàng cho đơn đặt."
+          "explanation_vi": "Nhà cung cấp gọi vì không đủ hàng cho đơn đặt.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến thanh toán.",
+            "C": "Loại giấy tương tự chỉ là phương án thay thế, không phải quảng cáo sản phẩm mới.",
+            "D": "Người nói chỉ đề nghị gọi lại, không hẹn gặp."
+          }
         },
         {
           "prompt": "How many boxes will be delivered this week?",
+          "prompt_vi": "Tuần này sẽ có bao nhiêu thùng được giao?",
           "choices": {
             "A": "200",
             "B": "250",
@@ -90,10 +117,16 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "'we can only send three hundred boxes this week'."
+          "explanation_vi": "'we can only send three hundred boxes this week'.",
+          "why_wrong_vi": {
+            "A": "200 là số thùng còn lại sẽ giao vào thứ Tư tuần sau.",
+            "B": "Con số 250 không xuất hiện trong bài.",
+            "D": "500 là tổng số thùng đã đặt, không phải số giao tuần này."
+          }
         },
         {
           "prompt": "What does the speaker offer to do?",
+          "prompt_vi": "Người nói đề nghị làm gì?",
           "choices": {
             "A": "Deliver on the weekend",
             "B": "Give a discount",
@@ -105,7 +138,12 @@
           "tags": [
             "part4:offer"
           ],
-          "explanation_vi": "'we can send a similar brand right away at the same price'."
+          "explanation_vi": "'we can send a similar brand right away at the same price'.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến giao hàng cuối tuần.",
+            "B": "Loại giấy thay thế có 'the same price', không được giảm giá.",
+            "C": "Không đề nghị hủy đơn hàng."
+          }
         }
       ]
     },
@@ -114,9 +152,11 @@
       "passage_type": "talk",
       "title": "Museum tour",
       "transcript": "Welcome to the Harlow Museum of Science. I'm Ben, and I'll be leading today's tour. We'll start here in the Space Gallery, where you'll see a model of the first satellite launched from this country. Then we'll move on to the new Ocean Life exhibit, which opened just last month. Please note that the exhibit includes a short film, so we'll spend about twenty minutes in the theater there. Before we begin, I'd like to ask you to keep your phones on silent. Now, if everyone's ready, please follow me.",
+      "transcript_vi": "Chào mừng quý vị đến Bảo tàng Khoa học Harlow. Tôi là Ben, người hướng dẫn chuyến tham quan hôm nay. Chúng ta sẽ bắt đầu tại Phòng trưng bày Không gian này, nơi quý vị sẽ thấy mô hình vệ tinh đầu tiên được phóng từ đất nước chúng ta. Sau đó chúng ta sẽ sang khu triển lãm Sinh vật Đại dương mới, vừa khai trương tháng trước. Xin lưu ý khu triển lãm có một bộ phim ngắn, nên chúng ta sẽ ở trong phòng chiếu khoảng hai mươi phút. Trước khi bắt đầu, xin quý vị để điện thoại ở chế độ im lặng. Nào, nếu mọi người đã sẵn sàng, xin mời đi theo tôi.",
       "questions": [
         {
           "prompt": "Where most likely are the listeners?",
+          "prompt_vi": "Người nghe có lẽ đang ở đâu?",
           "choices": {
             "A": "At an aquarium",
             "B": "At a movie theater",
@@ -128,10 +168,16 @@
           "tags": [
             "part4:location"
           ],
-          "explanation_vi": "'Welcome to the Harlow Museum of Science'."
+          "explanation_vi": "'Welcome to the Harlow Museum of Science'.",
+          "why_wrong_vi": {
+            "A": "'Ocean Life' chỉ là một khu triển lãm trong bảo tàng, không phải thủy cung.",
+            "B": "Có phòng chiếu phim nhỏ, nhưng đó là một phần của bảo tàng.",
+            "C": "Phòng trưng bày Không gian thuộc bảo tàng, không phải trung tâm nghiên cứu vũ trụ."
+          }
         },
         {
           "prompt": "What is mentioned about the Ocean Life exhibit?",
+          "prompt_vi": "Điều gì được nói về khu triển lãm Sinh vật Đại dương?",
           "choices": {
             "A": "It opened recently.",
             "B": "It is closed for repairs.",
@@ -143,10 +189,16 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "'opened just last month' = mới mở."
+          "explanation_vi": "'opened just last month' = mới mở.",
+          "why_wrong_vi": {
+            "B": "Khu này vừa mở và đoàn sắp đến xem, không đóng cửa sửa chữa.",
+            "C": "Không nhắc đến vé riêng.",
+            "D": "Không nhắc đến trẻ em."
+          }
         },
         {
           "prompt": "What are listeners asked to do?",
+          "prompt_vi": "Người nghe được yêu cầu làm gì?",
           "choices": {
             "A": "Stay with the group",
             "B": "Silence their phones",
@@ -158,7 +210,12 @@
           "tags": [
             "part4:request"
           ],
-          "explanation_vi": "'keep your phones on silent'."
+          "explanation_vi": "'keep your phones on silent'.",
+          "why_wrong_vi": {
+            "A": "Có câu 'follow me' nhưng yêu cầu chính được nêu là để điện thoại im lặng.",
+            "C": "Không cấm chụp ảnh.",
+            "D": "Không nhắc đến bản đồ."
+          }
         }
       ]
     },
@@ -167,9 +224,11 @@
       "passage_type": "meeting",
       "title": "Staff meeting – new expense system",
       "transcript": "Before we finish today's meeting, I have an announcement. Starting next month, we'll be using a new online system for expense reports. Instead of filling out paper forms, you'll simply take a photo of each receipt with your phone and upload it through the app. This should cut processing time from two weeks to just three days. Now, I know learning a new system takes time, so the finance department will hold training sessions next Tuesday and Thursday. Please sign up for one of them on the sheet by the door.",
+      "transcript_vi": "Trước khi kết thúc cuộc họp hôm nay, tôi có một thông báo. Từ tháng sau, chúng ta sẽ dùng hệ thống trực tuyến mới cho báo cáo chi phí. Thay vì điền mẫu giấy, các bạn chỉ cần chụp ảnh từng hóa đơn bằng điện thoại và tải lên qua ứng dụng. Việc này sẽ rút ngắn thời gian xử lý từ hai tuần xuống chỉ còn ba ngày. Tôi biết học một hệ thống mới cần thời gian, nên phòng tài chính sẽ tổ chức các buổi đào tạo vào thứ Ba và thứ Năm tuần sau. Mọi người hãy đăng ký một buổi vào tờ danh sách cạnh cửa ra vào.",
       "questions": [
         {
           "prompt": "What is the speaker mainly talking about?",
+          "prompt_vi": "Người nói chủ yếu nói về điều gì?",
           "choices": {
             "A": "A change in travel policy",
             "B": "A new budget",
@@ -181,10 +240,16 @@
           "tags": [
             "part4:main-idea"
           ],
-          "explanation_vi": "Thông báo hệ thống trực tuyến mới cho báo cáo chi phí."
+          "explanation_vi": "Thông báo hệ thống trực tuyến mới cho báo cáo chi phí.",
+          "why_wrong_vi": {
+            "A": "Chỉ thay cách nộp báo cáo chi phí, không thay chính sách công tác.",
+            "B": "Không nói về ngân sách mới.",
+            "D": "Không có việc sáp nhập phòng ban."
+          }
         },
         {
           "prompt": "According to the speaker, what is an advantage of the change?",
+          "prompt_vi": "Theo người nói, lợi ích của thay đổi này là gì?",
           "choices": {
             "A": "Lower costs",
             "B": "Faster processing",
@@ -196,10 +261,16 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "Thời gian xử lý giảm từ 2 tuần xuống 3 ngày."
+          "explanation_vi": "Thời gian xử lý giảm từ 2 tuần xuống 3 ngày.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến giảm chi phí.",
+            "C": "Vẫn phải chụp từng hóa đơn; số hóa đơn không giảm.",
+            "D": "Không nói số tiền được hoàn trả cao hơn."
+          }
         },
         {
           "prompt": "What are listeners asked to do?",
+          "prompt_vi": "Người nghe được yêu cầu làm gì?",
           "choices": {
             "A": "Download an app today",
             "B": "Submit their receipts",
@@ -211,7 +282,12 @@
           "tags": [
             "part4:request"
           ],
-          "explanation_vi": "'Please sign up for one of them on the sheet by the door.'"
+          "explanation_vi": "'Please sign up for one of them on the sheet by the door.'",
+          "why_wrong_vi": {
+            "A": "Hệ thống bắt đầu từ tháng sau; không yêu cầu tải ứng dụng hôm nay.",
+            "B": "Nộp hóa đơn là cách dùng hệ thống sau này, không phải yêu cầu lúc này.",
+            "C": "Phòng tài chính tổ chức đào tạo, nhưng người nghe chỉ cần ký tên đăng ký, không cần liên hệ."
+          }
         }
       ]
     },
@@ -220,9 +296,11 @@
       "passage_type": "advertisement",
       "title": "Software advertisement",
       "transcript": "Is your small business still tracking appointments on paper? Then it's time to try BookEase, the scheduling software designed for salons, clinics, and fitness studios. With BookEase, customers can book appointments online twenty-four hours a day, and they'll receive automatic text reminders, so fewer people miss their appointments. And here's the best part: for a limited time, new users get the first three months free. Visit bookease.com to sign up today. Hundreds of businesses already have.",
+      "transcript_vi": "Doanh nghiệp nhỏ của bạn vẫn đang ghi lịch hẹn trên giấy? Vậy đã đến lúc thử BookEase, phần mềm đặt lịch được thiết kế cho tiệm làm đẹp, phòng khám và phòng tập thể hình. Với BookEase, khách hàng có thể đặt lịch trực tuyến suốt hai mươi bốn giờ mỗi ngày và nhận tin nhắn nhắc lịch tự động, nhờ vậy ít người lỡ hẹn hơn. Và điều tuyệt nhất là: trong thời gian có hạn, người dùng mới được miễn phí ba tháng đầu. Hãy truy cập bookease.com để đăng ký ngay hôm nay. Hàng trăm doanh nghiệp đã làm vậy rồi.",
       "questions": [
         {
           "prompt": "What is being advertised?",
+          "prompt_vi": "Sản phẩm nào đang được quảng cáo?",
           "choices": {
             "A": "Scheduling software",
             "B": "A fitness studio",
@@ -234,10 +312,16 @@
           "tags": [
             "part4:main-idea"
           ],
-          "explanation_vi": "BookEase là phần mềm đặt lịch."
+          "explanation_vi": "BookEase là phần mềm đặt lịch.",
+          "why_wrong_vi": {
+            "B": "Phòng tập thể hình chỉ là một loại khách hàng của phần mềm.",
+            "C": "Khách nhận tin nhắn trên điện thoại, nhưng sản phẩm không phải gói cước di động.",
+            "D": "Không liên quan đến dịch vụ kế toán."
+          }
         },
         {
           "prompt": "According to the speaker, what benefit does the product provide?",
+          "prompt_vi": "Theo người nói, sản phẩm mang lại lợi ích gì?",
           "choices": {
             "A": "It lowers staff costs.",
             "B": "It improves online reviews.",
@@ -249,10 +333,16 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "Nhắc lịch tự động → 'fewer people miss their appointments'."
+          "explanation_vi": "Nhắc lịch tự động → 'fewer people miss their appointments'.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến giảm chi phí nhân sự.",
+            "B": "Không nhắc đến đánh giá trực tuyến.",
+            "D": "Phần mềm quản lý lịch hẹn, không theo dõi hàng tồn kho."
+          }
         },
         {
           "prompt": "Why does the speaker say, \"Hundreds of businesses already have\"?",
+          "prompt_vi": "Vì sao người nói nói \"Hàng trăm doanh nghiệp đã làm vậy rồi\"?",
           "choices": {
             "A": "To apologize for a delay",
             "B": "To explain a price increase",
@@ -264,7 +354,12 @@
           "tags": [
             "part4:speaker-intent"
           ],
-          "explanation_vi": "Câu này nhấn mạnh nhiều doanh nghiệp đã dùng → sản phẩm được ưa chuộng, đáng tin."
+          "explanation_vi": "Câu này nhấn mạnh nhiều doanh nghiệp đã dùng → sản phẩm được ưa chuộng, đáng tin.",
+          "why_wrong_vi": {
+            "A": "Không có sự chậm trễ nào cần xin lỗi.",
+            "B": "Không có tăng giá; ngược lại còn miễn phí ba tháng.",
+            "C": "'for a limited time' được nói ở câu trước; câu này nhấn mạnh độ phổ biến."
+          }
         }
       ]
     },
@@ -273,9 +368,11 @@
       "passage_type": "news",
       "title": "Local news – bridge reopening",
       "transcript": "In local news, the Clearwater Bridge will reopen to traffic this Saturday after eight months of renovation. The project, which cost the city twelve million dollars, added a protected bicycle lane and wider sidewalks. Mayor Linda Hayes will attend a ribbon-cutting ceremony at 10 A.M., and the bridge will open to cars at noon. Officials expect the reopening to reduce traffic on nearby streets, especially during morning rush hour. Residents are invited to walk across the bridge during the ceremony.",
+      "transcript_vi": "Tin địa phương: cầu Clearwater sẽ thông xe trở lại vào thứ Bảy này sau tám tháng cải tạo. Dự án tiêu tốn của thành phố mười hai triệu đô la, đã bổ sung một làn xe đạp có rào bảo vệ và vỉa hè rộng hơn. Thị trưởng Linda Hayes sẽ dự lễ cắt băng lúc 10 giờ sáng, và cầu sẽ mở cho ô tô lưu thông vào buổi trưa. Giới chức kỳ vọng việc thông cầu sẽ giảm lưu lượng xe ở các phố lân cận, nhất là vào giờ cao điểm buổi sáng. Người dân được mời đi bộ qua cầu trong buổi lễ.",
       "questions": [
         {
           "prompt": "What was added to the bridge?",
+          "prompt_vi": "Cây cầu được bổ sung thứ gì?",
           "choices": {
             "A": "Additional car lanes",
             "B": "A bicycle lane",
@@ -287,10 +384,16 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "'added a protected bicycle lane and wider sidewalks'."
+          "explanation_vi": "'added a protected bicycle lane and wider sidewalks'.",
+          "why_wrong_vi": {
+            "A": "Thêm làn xe đạp và vỉa hè, không thêm làn ô tô.",
+            "C": "Không nhắc đến hệ thống chiếu sáng.",
+            "D": "Không có trạm thu phí."
+          }
         },
         {
           "prompt": "What will happen at noon on Saturday?",
+          "prompt_vi": "Điều gì sẽ diễn ra vào trưa thứ Bảy?",
           "choices": {
             "A": "Cars will be allowed on the bridge.",
             "B": "A ceremony will begin.",
@@ -302,10 +405,16 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "Lễ cắt băng lúc 10 giờ; xe ô tô được đi qua lúc trưa."
+          "explanation_vi": "Lễ cắt băng lúc 10 giờ; xe ô tô được đi qua lúc trưa.",
+          "why_wrong_vi": {
+            "B": "Lễ cắt băng bắt đầu lúc 10 giờ sáng, không phải buổi trưa.",
+            "C": "Thị trưởng dự lễ cắt băng; không nhắc đến phỏng vấn.",
+            "D": "Có làn xe đạp mới nhưng không có cuộc đua xe đạp."
+          }
         },
         {
           "prompt": "What are residents invited to do?",
+          "prompt_vi": "Người dân được mời làm gì?",
           "choices": {
             "A": "Vote on a project",
             "B": "Volunteer for a cleanup",
@@ -317,7 +426,12 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "'Residents are invited to walk across the bridge during the ceremony.'"
+          "explanation_vi": "'Residents are invited to walk across the bridge during the ceremony.'",
+          "why_wrong_vi": {
+            "A": "Không có bỏ phiếu về dự án.",
+            "B": "Không có hoạt động dọn dẹp tình nguyện.",
+            "D": "Không kêu gọi góp ý."
+          }
         }
       ]
     },
@@ -326,9 +440,11 @@
       "passage_type": "introduction",
       "title": "Workshop speaker introduction",
       "transcript": "Good afternoon, everyone, and thank you for coming to the third session of our small business workshop series. Today's speaker is Dr. Hannah Weiss, a professor of marketing at Bayview University. Dr. Weiss has spent fifteen years studying how small companies can compete with large ones online, and her book on social media marketing was published last year. After her talk, there will be a question-and-answer session. Oh, and copies of her book are available at the back of the room — Dr. Weiss has agreed to sign them after the session.",
+      "transcript_vi": "Xin chào mọi người, cảm ơn quý vị đã đến dự buổi thứ ba trong chuỗi hội thảo dành cho doanh nghiệp nhỏ. Diễn giả hôm nay là Tiến sĩ Hannah Weiss, giáo sư marketing tại Đại học Bayview. Tiến sĩ Weiss đã dành mười lăm năm nghiên cứu cách các công ty nhỏ cạnh tranh trực tuyến với các công ty lớn, và cuốn sách của bà về marketing trên mạng xã hội đã được xuất bản năm ngoái. Sau bài nói chuyện sẽ có phần hỏi đáp. À, sách của bà có bán ở cuối phòng, và Tiến sĩ Weiss đã đồng ý ký tặng sau buổi hội thảo.",
       "questions": [
         {
           "prompt": "Who is Dr. Weiss?",
+          "prompt_vi": "Tiến sĩ Weiss là ai?",
           "choices": {
             "A": "A business owner",
             "B": "A book publisher",
@@ -340,10 +456,16 @@
           "tags": [
             "part4:speaker-identity"
           ],
-          "explanation_vi": "'a professor of marketing at Bayview University'."
+          "explanation_vi": "'a professor of marketing at Bayview University'.",
+          "why_wrong_vi": {
+            "A": "Bà nghiên cứu về doanh nghiệp nhỏ nhưng không làm chủ doanh nghiệp.",
+            "B": "Bà là tác giả có sách được xuất bản, không phải nhà xuất bản.",
+            "C": "Không nhắc đến nghề phóng viên."
+          }
         },
         {
           "prompt": "What is Dr. Weiss's area of expertise?",
+          "prompt_vi": "Lĩnh vực chuyên môn của Tiến sĩ Weiss là gì?",
           "choices": {
             "A": "Online marketing for small businesses",
             "B": "International trade",
@@ -355,10 +477,16 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "Nghiên cứu cách công ty nhỏ cạnh tranh trực tuyến, sách về marketing mạng xã hội."
+          "explanation_vi": "Nghiên cứu cách công ty nhỏ cạnh tranh trực tuyến, sách về marketing mạng xã hội.",
+          "why_wrong_vi": {
+            "B": "Bà nghiên cứu cạnh tranh trực tuyến, không phải thương mại quốc tế.",
+            "C": "Không nhắc đến đào tạo nhân viên.",
+            "D": "Không nhắc đến hoạch định tài chính."
+          }
         },
         {
           "prompt": "What will Dr. Weiss do after the session?",
+          "prompt_vi": "Tiến sĩ Weiss sẽ làm gì sau buổi hội thảo?",
           "choices": {
             "A": "Lead a second workshop",
             "B": "Sign copies of her book",
@@ -370,7 +498,12 @@
           "tags": [
             "part4:next-action"
           ],
-          "explanation_vi": "'Dr. Weiss has agreed to sign them after the session.'"
+          "explanation_vi": "'Dr. Weiss has agreed to sign them after the session.'",
+          "why_wrong_vi": {
+            "A": "Đây là buổi thứ ba của chuỗi, nhưng không nói bà dẫn thêm buổi khác.",
+            "C": "Bà là giáo sư đại học, nhưng không có lịch gặp sinh viên.",
+            "D": "Không nhắc đến chứng nhận."
+          }
         }
       ]
     },
@@ -379,9 +512,11 @@
       "passage_type": "announcement",
       "title": "Airport announcement",
       "transcript": "Attention, passengers on SkyLine Airways Flight 218 to Vancouver. Due to a mechanical issue, this flight has been moved from Gate 12 to Gate 27, and the new departure time is 4:45 P.M. We apologize for the inconvenience. To thank you for your patience, each passenger will receive a fifteen-dollar meal voucher, which can be used at any restaurant in the terminal. Please pick up your voucher at the SkyLine service desk near Gate 20. Boarding will begin approximately thirty minutes before departure.",
+      "transcript_vi": "Xin chú ý, hành khách trên chuyến bay 218 của SkyLine Airways đi Vancouver. Do sự cố kỹ thuật, chuyến bay đã được chuyển từ cửa 12 sang cửa 27, và giờ khởi hành mới là 4 giờ 45 chiều. Chúng tôi xin lỗi vì sự bất tiện này. Để cảm ơn sự kiên nhẫn của quý khách, mỗi hành khách sẽ nhận một phiếu ăn trị giá mười lăm đô la, dùng được tại bất kỳ nhà hàng nào trong nhà ga. Xin quý khách nhận phiếu tại quầy dịch vụ SkyLine gần cửa 20. Việc lên máy bay sẽ bắt đầu khoảng ba mươi phút trước giờ khởi hành.",
       "questions": [
         {
           "prompt": "What has caused the change?",
+          "prompt_vi": "Điều gì gây ra sự thay đổi?",
           "choices": {
             "A": "Bad weather",
             "B": "A late crew",
@@ -393,10 +528,16 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "'Due to a mechanical issue'."
+          "explanation_vi": "'Due to a mechanical issue'.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến thời tiết.",
+            "B": "Không nhắc đến tổ bay đến trễ.",
+            "D": "Không nhắc đến kiểm tra an ninh."
+          }
         },
         {
           "prompt": "What will passengers receive?",
+          "prompt_vi": "Hành khách sẽ nhận được gì?",
           "choices": {
             "A": "A seat upgrade",
             "B": "A hotel room",
@@ -408,10 +549,16 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "'each passenger will receive a fifteen-dollar meal voucher'."
+          "explanation_vi": "'each passenger will receive a fifteen-dollar meal voucher'.",
+          "why_wrong_vi": {
+            "A": "Không có nâng hạng ghế.",
+            "B": "Chuyến bay chỉ dời giờ trong ngày, không có phòng khách sạn.",
+            "C": "Không hoàn tiền; hành khách nhận phiếu ăn."
+          }
         },
         {
           "prompt": "Where should passengers go to get their item?",
+          "prompt_vi": "Hành khách nên đến đâu để nhận phiếu?",
           "choices": {
             "A": "To Gate 12",
             "B": "To a service desk",
@@ -423,7 +570,12 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "'pick up your voucher at the SkyLine service desk near Gate 20'."
+          "explanation_vi": "'pick up your voucher at the SkyLine service desk near Gate 20'.",
+          "why_wrong_vi": {
+            "A": "Cửa 12 là cửa cũ của chuyến bay.",
+            "C": "Cửa 27 là cửa lên máy bay mới, không phải nơi nhận phiếu.",
+            "D": "Nhà hàng là nơi dùng phiếu, không phải nơi nhận phiếu."
+          }
         }
       ]
     },
@@ -464,9 +616,11 @@
       },
       "image_description": "Afternoon session schedule (see graphic).",
       "transcript": "Welcome back from lunch, everyone. Before the afternoon sessions begin, I have a quick update to the program. Unfortunately, Lisa Wong's train has been delayed, so she won't arrive in time for her session. She'll now speak in the last time slot, and Mark Evans has kindly agreed to take her place. All other sessions remain the same. Also, a reminder that your feedback is important to us. Please fill out the short survey in the conference app by the end of the day. Everyone who completes it will be entered in a prize drawing.",
+      "transcript_vi": "Chào mừng mọi người trở lại sau bữa trưa. Trước khi các phiên buổi chiều bắt đầu, tôi có một cập nhật nhanh về chương trình. Rất tiếc, chuyến tàu của Lisa Wong bị trễ nên cô ấy sẽ không đến kịp phiên của mình. Cô ấy sẽ chuyển sang nói ở khung giờ cuối cùng, và Mark Evans đã vui lòng nhận thay chỗ của cô ấy. Các phiên khác giữ nguyên. Ngoài ra, xin nhắc rằng ý kiến phản hồi của quý vị rất quan trọng với chúng tôi. Vui lòng điền bản khảo sát ngắn trong ứng dụng hội nghị trước cuối ngày. Ai hoàn thành sẽ được tham gia rút thăm trúng thưởng.",
       "questions": [
         {
           "prompt": "Why has the program changed?",
+          "prompt_vi": "Vì sao chương trình thay đổi?",
           "choices": {
             "A": "A speaker's train is delayed.",
             "B": "A room is unavailable.",
@@ -478,10 +632,16 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "'Lisa Wong's train has been delayed'."
+          "explanation_vi": "'Lisa Wong's train has been delayed'.",
+          "why_wrong_vi": {
+            "B": "Không nhắc đến phòng không sử dụng được.",
+            "C": "Phiên của Lisa Wong chỉ dời giờ, không bị hủy.",
+            "D": "Bữa trưa vừa kết thúc bình thường, không kéo dài."
+          }
         },
         {
           "prompt": "Look at the graphic. What time will Mark Evans speak?",
+          "prompt_vi": "Hãy nhìn bảng. Mark Evans sẽ nói lúc mấy giờ?",
           "choices": {
             "A": "At 1:00",
             "B": "At 2:00",
@@ -493,10 +653,16 @@
           "tags": [
             "part4:graphic"
           ],
-          "explanation_vi": "Mark Evans thay chỗ Lisa Wong (khung 2:00); Lisa chuyển xuống khung cuối 4:00."
+          "explanation_vi": "Mark Evans thay chỗ Lisa Wong (khung 2:00); Lisa chuyển xuống khung cuối 4:00.",
+          "why_wrong_vi": {
+            "A": "1:00 là phiên của Dr. Amir Khan, giữ nguyên.",
+            "C": "3:00 là phiên của Dr. Paolo Ricci, giữ nguyên.",
+            "D": "Bẫy bảng: 4:00 là giờ cũ của Mark; giờ Lisa Wong chuyển xuống khung cuối này."
+          }
         },
         {
           "prompt": "What can listeners do by the end of the day?",
+          "prompt_vi": "Người nghe có thể làm gì trước cuối ngày?",
           "choices": {
             "A": "Download presentation slides",
             "B": "Register for next year's event",
@@ -508,7 +674,12 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "'fill out the short survey in the conference app by the end of the day'."
+          "explanation_vi": "'fill out the short survey in the conference app by the end of the day'.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến tải slide bài thuyết trình.",
+            "B": "Không nhắc đến đăng ký sự kiện năm sau.",
+            "C": "Không có buổi gặp gỡ diễn giả."
+          }
         }
       ]
     },
@@ -544,9 +715,11 @@
       },
       "image_description": "Bar chart of third-quarter sales by region (see graphic).",
       "transcript": "Thanks for joining this call, everyone. Let's look at third-quarter sales for our new smart watch. Overall, the results are better than we expected. The South region sold the most units, thanks largely to a partnership with a chain of sports stores there. However, I'm concerned about the region with the lowest sales. Our research suggests customers there aren't familiar with the product yet. So, next month, we'll launch a television advertising campaign in that region. I'll send everyone the campaign plan by Friday.",
+      "transcript_vi": "Cảm ơn mọi người đã tham gia cuộc gọi này. Hãy cùng xem doanh số quý ba của đồng hồ thông minh mới. Nhìn chung, kết quả tốt hơn chúng ta dự kiến. Khu vực phía Nam bán được nhiều nhất, phần lớn nhờ hợp tác với một chuỗi cửa hàng đồ thể thao ở đó. Tuy nhiên, tôi lo về khu vực có doanh số thấp nhất. Nghiên cứu của chúng ta cho thấy khách hàng ở đó chưa quen với sản phẩm. Vì vậy, tháng tới chúng ta sẽ triển khai chiến dịch quảng cáo trên truyền hình ở khu vực đó. Tôi sẽ gửi kế hoạch chiến dịch cho mọi người trước thứ Sáu.",
       "questions": [
         {
           "prompt": "What product is the speaker discussing?",
+          "prompt_vi": "Người nói đang bàn về sản phẩm nào?",
           "choices": {
             "A": "A fitness app",
             "B": "A smart watch",
@@ -558,10 +731,16 @@
           "tags": [
             "part4:detail"
           ],
-          "explanation_vi": "'third-quarter sales for our new smart watch'."
+          "explanation_vi": "'third-quarter sales for our new smart watch'.",
+          "why_wrong_vi": {
+            "A": "Sản phẩm là đồng hồ, không phải ứng dụng thể dục.",
+            "C": "Cửa hàng đồ thể thao là đối tác bán hàng, không phải sản phẩm.",
+            "D": "Truyền hình là kênh quảng cáo, không phải sản phẩm."
+          }
         },
         {
           "prompt": "Look at the graphic. In which region will an advertising campaign be launched?",
+          "prompt_vi": "Hãy nhìn bảng. Chiến dịch quảng cáo sẽ triển khai ở khu vực nào?",
           "choices": {
             "A": "North",
             "B": "South",
@@ -573,10 +752,16 @@
           "tags": [
             "part4:graphic"
           ],
-          "explanation_vi": "Chiến dịch dành cho khu vực bán thấp nhất → East (3.100 chiếc)."
+          "explanation_vi": "Chiến dịch dành cho khu vực bán thấp nhất → East (3.100 chiếc).",
+          "why_wrong_vi": {
+            "A": "North bán 4.200 chiếc, không phải thấp nhất.",
+            "B": "South bán nhiều nhất, ngược với khu vực cần quảng cáo.",
+            "D": "West bán 5.500 chiếc, không phải thấp nhất."
+          }
         },
         {
           "prompt": "What will the speaker send by Friday?",
+          "prompt_vi": "Người nói sẽ gửi gì trước thứ Sáu?",
           "choices": {
             "A": "A campaign plan",
             "B": "A sales contract",
@@ -588,7 +773,12 @@
           "tags": [
             "part4:next-action"
           ],
-          "explanation_vi": "'I'll send everyone the campaign plan by Friday.'"
+          "explanation_vi": "'I'll send everyone the campaign plan by Friday.'",
+          "why_wrong_vi": {
+            "B": "Không nhắc đến hợp đồng bán hàng.",
+            "C": "'research' đã được làm; không nói gửi khảo sát khách hàng.",
+            "D": "Không gửi sản phẩm mẫu."
+          }
         }
       ]
     }

@@ -1,0 +1,675 @@
+{
+  "test": {
+    "id": "practice-bank-01",
+    "title": "Ngân hàng luyện tập 01",
+    "test_type": "part-drill",
+    "format_code": "LR",
+    "year": 2026,
+    "description_vi": "Ngân hàng câu hỏi riêng cho chế độ Luyện theo phần (Part 2–7), tách khỏi các đề thi để người học không gặp trước câu hỏi của Full Test. Nội dung được biên soạn mới cho dự án, không sao chép đề thi ETS hay sách đã xuất bản."
+  },
+  "sets": [
+    {
+      "part": 2,
+      "transcript": "Who's going to lead the orientation for the new hires?\n(A) No, they were hired last month.\n(B) Ms. Patel volunteered at Monday's meeting.\n(C) The lead singer was excellent.",
+      "transcript_vi": "Ai sẽ phụ trách buổi định hướng cho nhân viên mới?\n(A) Không, họ được tuyển tháng trước.\n(B) Cô Patel đã xung phong trong cuộc họp hôm thứ Hai.\n(C) Ca sĩ hát chính rất tuyệt.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "No, they were hired last month.",
+            "B": "Ms. Patel volunteered at Monday's meeting.",
+            "C": "The lead singer was excellent."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part2:who"
+          ],
+          "explanation_vi": "Hỏi 'ai' sẽ dẫn buổi định hướng → nêu tên người: cô Patel đã nhận việc này trong cuộc họp.",
+          "why_wrong_vi": {
+            "A": "Câu hỏi Who không trả lời bằng Yes/No; chỉ lặp âm 'hire'.",
+            "C": "'lead' ở đây là 'hát chính', khác nghĩa 'dẫn dắt' trong câu hỏi."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "When will the revised budget be ready for review?\n(A) The finance director still hasn't signed off on it.\n(B) I'll review it after lunch.\n(C) About twenty percent over budget.",
+      "transcript_vi": "Khi nào bản ngân sách sửa đổi sẽ sẵn sàng để xem xét?\n(A) Giám đốc tài chính vẫn chưa duyệt nó.\n(B) Tôi sẽ xem lại nó sau bữa trưa.\n(C) Vượt ngân sách khoảng hai mươi phần trăm.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "The finance director still hasn't signed off on it.",
+            "B": "I'll review it after lunch.",
+            "C": "About twenty percent over budget."
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "part2:when",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Trả lời gián tiếp: chưa biết khi nào vì giám đốc tài chính chưa duyệt, tức là chưa thể sẵn sàng ngay.",
+          "why_wrong_vi": {
+            "B": "Lặp từ 'review' nhưng không trả lời thời điểm bản ngân sách sẵn sàng.",
+            "C": "Lặp từ 'budget'; câu này nói về mức vượt chi, không phải thời gian."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Haven't you submitted your travel expense report yet?\n(A) The trip was very productive.\n(B) I'm still waiting for one of the hotel receipts.\n(C) It's an expensive hotel.",
+      "transcript_vi": "Bạn vẫn chưa nộp báo cáo chi phí công tác à?\n(A) Chuyến đi rất hiệu quả.\n(B) Tôi vẫn đang chờ một hóa đơn khách sạn.\n(C) Đó là một khách sạn đắt tiền.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "The trip was very productive.",
+            "B": "I'm still waiting for one of the hotel receipts.",
+            "C": "It's an expensive hotel."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part2:negative-question",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Câu phủ định hỏi đã nộp chưa → trả lời gián tiếp: chưa nộp vì còn chờ một hóa đơn khách sạn.",
+          "why_wrong_vi": {
+            "A": "Nói về chuyến đi, không trả lời việc đã nộp báo cáo hay chưa.",
+            "C": "Bẫy âm: 'expense' và 'expensive' nghe giống nhau nhưng không liên quan."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Where should I put these boxes of brochures?\n(A) Rita manages the storage room.\n(B) About fifty in each box.\n(C) Yes, they were printed on Monday.",
+      "transcript_vi": "Tôi nên để mấy thùng tờ rơi này ở đâu?\n(A) Rita quản lý phòng kho.\n(B) Khoảng năm mươi tờ mỗi thùng.\n(C) Vâng, chúng được in hôm thứ Hai.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "Rita manages the storage room.",
+            "B": "About fifty in each box.",
+            "C": "Yes, they were printed on Monday."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part2:where",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Trả lời gián tiếp: hãy hỏi Rita, người quản lý phòng kho, tức là nên cất vào kho.",
+          "why_wrong_vi": {
+            "B": "Trả lời số lượng, không phải nơi để; lặp từ 'box'.",
+            "C": "Câu hỏi Where không trả lời bằng Yes; nói về thời gian in."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Would you prefer to meet in person or talk over video?\n(A) Yes, I'd prefer that.\n(B) Our video was posted online.\n(C) I'll be out of town all next week.",
+      "transcript_vi": "Bạn muốn gặp trực tiếp hay nói chuyện qua video?\n(A) Vâng, tôi thích như vậy hơn.\n(B) Video của chúng tôi đã được đăng lên mạng.\n(C) Tôi sẽ đi công tác xa cả tuần sau.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "Yes, I'd prefer that.",
+            "B": "Our video was posted online.",
+            "C": "I'll be out of town all next week."
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part2:choice",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Câu hỏi lựa chọn, trả lời gián tiếp: vắng mặt cả tuần sau nên ngầm chọn họp qua video.",
+          "why_wrong_vi": {
+            "A": "Câu hỏi lựa chọn (A or B) không trả lời bằng Yes.",
+            "B": "Lặp từ 'video' nhưng nói về một video đã đăng."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "The printer on our floor is jammed again.\n(A) Yes, I printed the agenda.\n(B) It's on the fourth floor.\n(C) I'll send my files to the one downstairs.",
+      "transcript_vi": "Máy in ở tầng chúng ta lại bị kẹt giấy rồi.\n(A) Vâng, tôi đã in chương trình họp.\n(B) Nó ở tầng bốn.\n(C) Tôi sẽ gửi tài liệu sang máy ở tầng dưới.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "Yes, I printed the agenda.",
+            "B": "It's on the fourth floor.",
+            "C": "I'll send my files to the one downstairs."
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "part2:statement"
+          ],
+          "explanation_vi": "Câu nói thông báo vấn đề → phản hồi hợp lý là cách xử lý: dùng máy in ở tầng dưới.",
+          "why_wrong_vi": {
+            "A": "Lặp âm 'print' nhưng không phản hồi việc máy bị kẹt.",
+            "B": "Lặp từ 'floor'; trả lời vị trí trong khi không ai hỏi."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Why was the product launch moved to March?\n(A) The packaging supplier needed more time.\n(B) It was launched in Tokyo.\n(C) We moved into a new office.",
+      "transcript_vi": "Tại sao buổi ra mắt sản phẩm bị dời sang tháng Ba?\n(A) Nhà cung cấp bao bì cần thêm thời gian.\n(B) Nó được ra mắt ở Tokyo.\n(C) Chúng tôi đã chuyển đến văn phòng mới.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "The packaging supplier needed more time.",
+            "B": "It was launched in Tokyo.",
+            "C": "We moved into a new office."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part2:why"
+          ],
+          "explanation_vi": "Hỏi Why → nêu lý do: nhà cung cấp bao bì cần thêm thời gian.",
+          "why_wrong_vi": {
+            "B": "Nói nơi ra mắt, không giải thích lý do bị dời.",
+            "C": "Lặp từ 'moved' với nghĩa 'chuyển chỗ', khác nghĩa 'dời lịch'."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "You've worked with this client before, haven't you?\n(A) They work in the design department.\n(B) Before the meeting starts.\n(C) Only on a short project two years ago.",
+      "transcript_vi": "Bạn từng làm việc với khách hàng này rồi, phải không?\n(A) Họ làm ở phòng thiết kế.\n(B) Trước khi cuộc họp bắt đầu.\n(C) Chỉ trong một dự án ngắn hai năm trước.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "They work in the design department.",
+            "B": "Before the meeting starts.",
+            "C": "Only on a short project two years ago."
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "part2:tag-question"
+          ],
+          "explanation_vi": "Câu hỏi đuôi xác nhận kinh nghiệm → trả lời có, nhưng chỉ trong một dự án ngắn hai năm trước.",
+          "why_wrong_vi": {
+            "A": "Lặp từ 'work' nhưng nói về người khác và bộ phận làm việc.",
+            "B": "Lặp từ 'before' nhưng trả lời thời điểm, không liên quan."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Could you send me the slides from this morning's presentation?\n(A) It was presented by Mr. Cho.\n(B) I'm still making a few changes to them.\n(C) I slid it under your door.",
+      "transcript_vi": "Bạn gửi cho tôi các slide của bài thuyết trình sáng nay được không?\n(A) Nó do anh Cho trình bày.\n(B) Tôi vẫn đang sửa vài chỗ trong đó.\n(C) Tôi đã nhét nó qua khe cửa phòng bạn.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "It was presented by Mr. Cho.",
+            "B": "I'm still making a few changes to them.",
+            "C": "I slid it under your door."
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "part2:request",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Lời đề nghị, trả lời gián tiếp: các slide còn đang được sửa nên sẽ gửi sau.",
+          "why_wrong_vi": {
+            "A": "Lặp âm 'present' nhưng trả lời ai thuyết trình.",
+            "C": "Bẫy âm: 'slid' nghe giống 'slides'."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "How did the client respond to our proposal?\n(A) She wants a few more days to think it over.\n(B) By express mail, I think.\n(C) I'll respond to her by Friday.",
+      "transcript_vi": "Khách hàng phản hồi đề xuất của chúng ta thế nào?\n(A) Cô ấy muốn thêm vài ngày để cân nhắc.\n(B) Tôi nghĩ là bằng thư chuyển phát nhanh.\n(C) Tôi sẽ trả lời cô ấy trước thứ Sáu.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "She wants a few more days to think it over.",
+            "B": "By express mail, I think.",
+            "C": "I'll respond to her by Friday."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part2:how"
+          ],
+          "explanation_vi": "Hỏi khách hàng phản ứng ra sao → cô ấy muốn thêm vài ngày suy nghĩ.",
+          "why_wrong_vi": {
+            "B": "Hiểu nhầm 'How' là hỏi phương thức gửi.",
+            "C": "Lặp từ 'respond' nhưng nói về việc người trả lời sẽ hồi đáp."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Why don't we hire a caterer for the year-end party?\n(A) Do we have room in the budget for that?\n(B) Because the party ended late.\n(C) Higher than last year.",
+      "transcript_vi": "Sao chúng ta không thuê dịch vụ tiệc cho buổi liên hoan cuối năm?\n(A) Ngân sách của mình còn đủ cho việc đó không?\n(B) Vì bữa tiệc kết thúc muộn.\n(C) Cao hơn năm ngoái.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "Do we have room in the budget for that?",
+            "B": "Because the party ended late.",
+            "C": "Higher than last year."
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "part2:suggestion",
+            "part2:indirect"
+          ],
+          "explanation_vi": "'Why don't we…?' là lời đề nghị. Đáp lại bằng một câu hỏi về ngân sách là phản hồi tự nhiên.",
+          "why_wrong_vi": {
+            "B": "'Why don't we' là lời đề nghị, không hỏi lý do; trả lời 'Because' là bẫy.",
+            "C": "Bẫy âm: 'higher' đồng âm với 'hire'."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Is the new parking garage open yet?\n(A) Please keep the door open.\n(B) About two hundred spaces.\n(C) The ribbon-cutting is on Thursday.",
+      "transcript_vi": "Bãi đỗ xe mới đã mở chưa?\n(A) Vui lòng để cửa mở.\n(B) Khoảng hai trăm chỗ.\n(C) Lễ cắt băng khánh thành vào thứ Năm.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "Please keep the door open.",
+            "B": "About two hundred spaces.",
+            "C": "The ribbon-cutting is on Thursday."
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part2:yes-no",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Trả lời gián tiếp: thứ Năm mới khánh thành, nghĩa là bãi đỗ xe chưa mở.",
+          "why_wrong_vi": {
+            "A": "Lặp từ 'open' với nghĩa khác (để cửa mở).",
+            "B": "Trả lời sức chứa, không cho biết đã mở hay chưa."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Which supplier did you choose for the office chairs?\n(A) Yes, please take a seat.\n(B) The chair of the committee.\n(C) We're still comparing the last two quotes.",
+      "transcript_vi": "Bạn đã chọn nhà cung cấp nào cho ghế văn phòng?\n(A) Vâng, mời ngồi.\n(B) Chủ tịch ủy ban.\n(C) Chúng tôi vẫn đang so sánh hai bảng báo giá cuối cùng.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "Yes, please take a seat.",
+            "B": "The chair of the committee.",
+            "C": "We're still comparing the last two quotes."
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part2:which",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Trả lời gián tiếp: chưa chọn, vẫn đang so sánh hai báo giá cuối.",
+          "why_wrong_vi": {
+            "A": "Câu hỏi Which không trả lời bằng Yes; 'seat' gợi liên tưởng tới 'chairs'.",
+            "B": "'chair' ở đây là 'chủ tịch', khác nghĩa 'ghế'."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Where can I find the updated safety manual?\n(A) It was updated last month.\n(B) Everything's on the shared drive now.\n(C) Yes, it's very safe.",
+      "transcript_vi": "Tôi có thể tìm sổ tay an toàn bản cập nhật ở đâu?\n(A) Nó được cập nhật tháng trước.\n(B) Giờ mọi thứ đều nằm trên ổ đĩa dùng chung.\n(C) Vâng, nó rất an toàn.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "It was updated last month.",
+            "B": "Everything's on the shared drive now.",
+            "C": "Yes, it's very safe."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part2:where"
+          ],
+          "explanation_vi": "Hỏi ở đâu → trên ổ đĩa dùng chung (shared drive).",
+          "why_wrong_vi": {
+            "A": "Lặp từ 'updated' và trả lời thời điểm, không phải nơi tìm.",
+            "C": "Câu hỏi Where không trả lời bằng Yes; lặp âm 'safe'."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "When's the deadline for the grant application?\n(A) The paint was applied yesterday.\n(B) It was granted to three firms.\n(C) Didn't Ms. Lee e-mail everyone about that?",
+      "transcript_vi": "Hạn chót nộp hồ sơ xin tài trợ là khi nào?\n(A) Lớp sơn đã được phủ hôm qua.\n(B) Nó đã được trao cho ba công ty.\n(C) Không phải cô Lee đã gửi email cho mọi người về chuyện đó sao?",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "The paint was applied yesterday.",
+            "B": "It was granted to three firms.",
+            "C": "Didn't Ms. Lee e-mail everyone about that?"
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part2:when",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Trả lời bằng câu hỏi ngược: thông tin hạn chót đã có trong email của cô Lee.",
+          "why_wrong_vi": {
+            "A": "Bẫy cùng gốc từ: 'applied' (sơn/phết) khác nghĩa 'application' (hồ sơ).",
+            "B": "Lặp âm 'grant' nhưng nói về việc đã trao cho ai."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Would you like me to book a table for the client dinner?\n(A) I read that book last year.\n(B) Thanks, but Karen already took care of it.\n(C) The client enjoyed dinner.",
+      "transcript_vi": "Bạn có muốn tôi đặt bàn cho bữa tối với khách hàng không?\n(A) Tôi đã đọc cuốn sách đó năm ngoái.\n(B) Cảm ơn, nhưng Karen đã lo việc đó rồi.\n(C) Khách hàng rất thích bữa tối.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "I read that book last year.",
+            "B": "Thanks, but Karen already took care of it.",
+            "C": "The client enjoyed dinner."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part2:offer"
+          ],
+          "explanation_vi": "Lời đề nghị giúp → từ chối lịch sự vì Karen đã đặt rồi.",
+          "why_wrong_vi": {
+            "A": "'book' ở đây là 'cuốn sách', khác nghĩa 'đặt chỗ'.",
+            "C": "Lặp 'client', 'dinner' nhưng không đáp lại lời đề nghị."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "I heard the Melbourne office is hiring more engineers.\n(A) Do you know if they're open to remote workers?\n(B) The engineer fixed the heater.\n(C) It's higher than last year.",
+      "transcript_vi": "Tôi nghe nói văn phòng Melbourne đang tuyển thêm kỹ sư.\n(A) Bạn có biết họ có nhận người làm từ xa không?\n(B) Kỹ sư đã sửa máy sưởi.\n(C) Nó cao hơn năm ngoái.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "Do you know if they're open to remote workers?",
+            "B": "The engineer fixed the heater.",
+            "C": "It's higher than last year."
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "part2:statement"
+          ],
+          "explanation_vi": "Phản hồi tự nhiên cho thông tin tuyển dụng: hỏi thêm họ có nhận người làm từ xa không, thể hiện sự quan tâm.",
+          "why_wrong_vi": {
+            "B": "Lặp từ 'engineer' nhưng nói chuyện sửa máy sưởi.",
+            "C": "Bẫy âm: 'higher' nghe giống 'hiring'."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "How long will the system upgrade take?\n(A) It's a long way from here.\n(B) To upgrade our servers.\n(C) They're estimating most of Saturday.",
+      "transcript_vi": "Việc nâng cấp hệ thống sẽ mất bao lâu?\n(A) Chỗ đó cách đây xa lắm.\n(B) Để nâng cấp máy chủ của chúng ta.\n(C) Họ ước tính mất gần trọn ngày thứ Bảy.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "It's a long way from here.",
+            "B": "To upgrade our servers.",
+            "C": "They're estimating most of Saturday."
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "part2:how-long"
+          ],
+          "explanation_vi": "'How long' hỏi thời lượng → gần trọn ngày thứ Bảy.",
+          "why_wrong_vi": {
+            "A": "Lặp từ 'long' nhưng nói về khoảng cách.",
+            "B": "Trả lời mục đích, không phải thời lượng."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Do you know who's replacing Mr. Gomez as store manager?\n(A) He'll replace the batteries.\n(B) It hasn't been announced yet.\n(C) In the main store downtown.",
+      "transcript_vi": "Bạn có biết ai sẽ thay ông Gomez làm quản lý cửa hàng không?\n(A) Anh ấy sẽ thay pin.\n(B) Việc đó vẫn chưa được công bố.\n(C) Ở cửa hàng chính trong trung tâm.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "He'll replace the batteries.",
+            "B": "It hasn't been announced yet.",
+            "C": "In the main store downtown."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part2:embedded-question",
+            "part2:who"
+          ],
+          "explanation_vi": "Câu hỏi lồng 'who' → trả lời 'chưa công bố' là cách nói 'tôi không biết' rất thường gặp.",
+          "why_wrong_vi": {
+            "A": "Lặp từ 'replace' với nghĩa 'thay pin'.",
+            "C": "Lặp từ 'store' nhưng trả lời địa điểm."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Shouldn't we update the price list before the trade show?\n(A) The show was a big success.\n(B) Mark already sent it to the printer.\n(C) Prices are listed in euros.",
+      "transcript_vi": "Chẳng phải chúng ta nên cập nhật bảng giá trước hội chợ sao?\n(A) Buổi triển lãm rất thành công.\n(B) Mark đã gửi nó đi in rồi.\n(C) Giá được niêm yết bằng euro.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "The show was a big success.",
+            "B": "Mark already sent it to the printer.",
+            "C": "Prices are listed in euros."
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "part2:negative-question",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Trả lời gián tiếp: bảng giá đã được cập nhật và gửi in, nên không cần lo nữa.",
+          "why_wrong_vi": {
+            "A": "Lặp từ 'show'; nói về một sự kiện đã qua.",
+            "C": "Lặp 'price', 'list' nhưng không trả lời có cần cập nhật không."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Should we ship the samples today or wait until the labels are fixed?\n(A) The client needs them by Monday morning.\n(B) By cruise ship.\n(C) The labels are blue.",
+      "transcript_vi": "Chúng ta nên gửi mẫu hôm nay hay đợi sửa xong nhãn?\n(A) Khách hàng cần chúng trước sáng thứ Hai.\n(B) Bằng tàu du lịch.\n(C) Nhãn màu xanh dương.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "The client needs them by Monday morning.",
+            "B": "By cruise ship.",
+            "C": "The labels are blue."
+          },
+          "answer": "A",
+          "difficulty": 5,
+          "tags": [
+            "part2:choice",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Câu hỏi lựa chọn, trả lời gián tiếp: khách cần trước sáng thứ Hai nên phải gửi ngay hôm nay.",
+          "why_wrong_vi": {
+            "B": "'ship' ở đây là 'tàu thủy', khác nghĩa 'gửi hàng'.",
+            "C": "Lặp từ 'labels' nhưng nói màu sắc."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "This copier is running low on toner.\n(A) He runs every morning.\n(B) There are spare cartridges in the supply closet.\n(C) Her tone was quite serious.",
+      "transcript_vi": "Máy photocopy này sắp hết mực rồi.\n(A) Anh ấy chạy bộ mỗi sáng.\n(B) Trong tủ văn phòng phẩm có hộp mực dự phòng.\n(C) Giọng cô ấy khá nghiêm túc.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "He runs every morning.",
+            "B": "There are spare cartridges in the supply closet.",
+            "C": "Her tone was quite serious."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part2:statement"
+          ],
+          "explanation_vi": "Phản hồi vấn đề sắp hết mực bằng cách chỉ chỗ có hộp mực dự phòng.",
+          "why_wrong_vi": {
+            "A": "Lặp âm 'run' với nghĩa 'chạy bộ'.",
+            "C": "Bẫy âm: 'tone' nghe giống 'toner'."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Why isn't the conference room projector working?\n(A) Because the conference was successful.\n(B) I worked there for a year.\n(C) Maintenance is replacing the lamp right now.",
+      "transcript_vi": "Sao máy chiếu phòng họp không hoạt động vậy?\n(A) Vì hội nghị đã thành công.\n(B) Tôi đã làm ở đó một năm.\n(C) Bộ phận bảo trì đang thay bóng đèn ngay lúc này.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "Because the conference was successful.",
+            "B": "I worked there for a year.",
+            "C": "Maintenance is replacing the lamp right now."
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "part2:why"
+          ],
+          "explanation_vi": "Hỏi lý do máy chiếu không chạy → đang được thay bóng đèn.",
+          "why_wrong_vi": {
+            "A": "Lặp từ 'conference'; lý do không liên quan đến máy chiếu.",
+            "B": "Lặp âm 'work' với nghĩa 'làm việc'."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Do you mind if I leave early to pick up my daughter?\n(A) Not at all, as long as the sales figures are entered.\n(B) I left it in the lobby.\n(C) She picked the red one.",
+      "transcript_vi": "Bạn có phiền không nếu tôi về sớm để đón con gái?\n(A) Không sao, miễn là số liệu bán hàng đã được nhập xong.\n(B) Tôi để quên nó ở sảnh.\n(C) Cô bé đã chọn cái màu đỏ.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "Not at all, as long as the sales figures are entered.",
+            "B": "I left it in the lobby.",
+            "C": "She picked the red one."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part2:permission"
+          ],
+          "explanation_vi": "'Do you mind if…?' xin phép → 'Not at all' nghĩa là đồng ý, kèm điều kiện.",
+          "why_wrong_vi": {
+            "B": "Bẫy âm: 'left' (để quên) gần với 'leave' nhưng khác nghĩa.",
+            "C": "Lặp âm 'pick' với nghĩa 'chọn'."
+          }
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "How much did the lobby renovation end up costing?\n(A) Julie handled all the invoices.\n(B) It ended around six.\n(C) About three more weeks.",
+      "transcript_vi": "Cuối cùng việc cải tạo sảnh tốn bao nhiêu tiền?\n(A) Julie phụ trách toàn bộ hóa đơn.\n(B) Nó kết thúc vào khoảng sáu giờ.\n(C) Khoảng ba tuần nữa.",
+      "questions": [
+        {
+          "prompt": null,
+          "prompt_vi": null,
+          "choices": {
+            "A": "Julie handled all the invoices.",
+            "B": "It ended around six.",
+            "C": "About three more weeks."
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "part2:how-much",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Trả lời gián tiếp: người nói không nắm con số, hãy hỏi Julie, người xử lý hóa đơn.",
+          "why_wrong_vi": {
+            "B": "Lặp từ 'end' nhưng trả lời giờ kết thúc.",
+            "C": "Trả lời thời gian, không phải chi phí."
+          }
+        }
+      ]
+    }
+  ]
+}

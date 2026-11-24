@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type FocusEvent, type ReactNode } from 'react';
 import { Link, Navigate, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useData } from '../lib/data';
-import { ADVANCE_SEC, PART_NAMES, SCOPE_NAMES, formatClock, isExamStart, questionsOf, scopeMinutes, setsInScope } from '../lib/exam';
+import { ADVANCE_SEC, PART_NAMES, SCOPE_NAMES, formatClock, isExam, isExamStart, questionsOf, scopeMinutes, setsInScope } from '../lib/exam';
 import { clearDraft, loadDraft, newId, saveAttempt, saveDraft } from '../lib/storage';
 import { clearMeta, loadMeta, saveMeta } from '../lib/flags';
 import type { Answers, Label, QuestionSet, Scope } from '../lib/types';
@@ -25,6 +25,8 @@ export default function Exam() {
   const data = useData();
   const test = data.tests.find((t) => t.id === testId);
   if (!test || !isScope(scope)) return <NotFound />;
+  // the practice bank cannot be taken as a timed exam
+  if (!isExam(test)) return <Navigate to="/luyen-tap" replace />;
   const start = isExamStart(state) ? state : null;
   // Opening /lam-bai/... directly must not start the clock: only resume a saved attempt,
   // otherwise send the learner to the intro page to press "Bắt đầu".

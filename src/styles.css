@@ -204,20 +204,6 @@ p {
 .page--narrow {
   max-width: 860px;
 }
-.site-footer {
-  border-top: 1px solid var(--rule);
-  color: var(--graphite-faint);
-  font-size: var(--t-xs);
-}
-.site-footer__inner {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 24px var(--gutter) 40px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-  justify-content: space-between;
-}
 .page-head {
   margin-bottom: 32px;
   display: grid;
@@ -1586,45 +1572,6 @@ kbd {
 }
 .table-scroll {
   overflow-x: auto;
-}
-.flag {
-  display: inline-block;
-  font-size: var(--t-xs);
-  font-weight: 700;
-  padding: 1px 8px;
-  border-radius: 999px;
-  background: var(--ink-tint);
-  color: var(--ink-deep);
-  white-space: nowrap;
-}
-.flag--ok {
-  background: var(--correct-tint);
-  color: var(--correct);
-}
-.timeline {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0;
-}
-.timeline li {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--rule);
-}
-.timeline time {
-  font-weight: 700;
-  color: var(--ink);
-  font-size: var(--t-sm);
-}
-@media (max-width: 560px) {
-  .timeline li {
-    grid-template-columns: 1fr;
-    gap: 2px;
-  }
 }
 .notice {
   border-left: 4px solid var(--ink);

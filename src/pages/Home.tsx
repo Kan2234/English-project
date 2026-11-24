@@ -1,11 +1,13 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useData } from '../lib/data';
-import { PART_NAMES, SCOPE_NAMES, grade, scopeMinutes } from '../lib/exam';
+import { PART_NAMES, SCOPE_NAMES, examTests, grade, practiceSets, scopeMinutes } from '../lib/exam';
 import { listAttempts } from '../lib/storage';
 import type { Label, Question } from '../lib/types';
 import '../styles/content.css';
 import { QuestionBlock } from '../components/QuestionBlock';
+import { StudyNext } from './home/StudyNext';
+import { ScoreHistory } from './home/ScoreHistory';
 
 function shuffled(n: number): number[] {
   const a = Array.from({ length: n }, (_, i) => i);
@@ -21,14 +23,8 @@ const wrongLabel = (q: Question): Label => (Object.keys(q.choices) as Label[]).f
 
 function TryOneQuestion() {
   const data = useData();
-  // Only short tests: Full Test questions stay unseen for the real timed attempt.
-  const pool = useMemo(
-    () =>
-      data.tests
-        .filter((t) => t.test_type !== 'full')
-        .flatMap((t) => t.sets.filter((s) => s.part === 5).flatMap((s) => s.questions)),
-    [data],
-  );
+  // Same pool as Part 5 practice: Full Test questions stay unseen for the real timed attempt.
+  const pool = useMemo(() => practiceSets(data, 5).flatMap((x) => x.set.questions), [data]);
   // Walk a shuffled deck so "Câu khác" shows every question once before any repeats.
   const [order] = useState(() => shuffled(pool.length));
   const [tried, setTried] = useState(0);
@@ -76,21 +72,31 @@ function TryOneQuestion() {
 export default function Home() {
   const data = useData();
   const attempts = listAttempts().slice(0, 6);
-  const full = data.tests.find((t) => t.test_type === 'full') ?? data.tests[0];
-  const totalQuestions = data.tests.reduce((s, t) => s + t.question_count, 0);
+  // Only Full / Mini tests are exams; the practice bank ("part-drill") lives under /luyen-tap.
+  const exams = examTests(data);
+  const full = exams.find((t) => t.test_type === 'full') ?? exams[0];
+  const mini = exams.find((t) => t.test_type === 'mini');
+  const examQuestions = exams.reduce((s, t) => s + t.question_count, 0);
+  const drillQuestions = data.tests.filter((t) => t.test_type === 'part-drill').reduce((s, t) => s + t.question_count, 0);
 
   return (
     <div className="page">
+      <StudyNext />
+
       <section className="hero">
         <div className="hero__text">
           <h1>Luyện TOEIC như đang ngồi trong phòng thi.</h1>
           <p>
-            {totalQuestions} câu theo đúng cấu trúc 7 phần, có audio phần Nghe, chấm điểm theo thang 990 và giải thích từng câu bằng tiếng Việt.
+            {examQuestions} câu đề thi theo đúng cấu trúc 7 phần, chấm điểm theo thang 990
+            {drillQuestions > 0 && `, thêm ${drillQuestions} câu luyện theo phần`}. Phần Nghe có audio, câu nào cũng có giải thích
+            bằng tiếng Việt.
           </p>
           <div className="row">
-            <Link className="btn btn--ink" to={`/de/${full.id}`}>
-              Làm {full.title}
-            </Link>
+            {full && (
+              <Link className="btn btn--ink" to={`/de/${full.id}`}>
+                Làm {full.title}
+              </Link>
+            )}
             <Link className="btn btn--ghost" to="/luyen-tap">
               Luyện từng phần
             </Link>
@@ -102,7 +108,7 @@ export default function Home() {
       <section className="section">
         <h2>Đề thi</h2>
         <ul className="toc">
-          {data.tests.map((t) => (
+          {exams.map((t) => (
             <li key={t.id}>
               <Link to={`/de/${t.id}`}>
                 <span className="toc__num">{t.question_count} câu</span>
@@ -125,7 +131,8 @@ export default function Home() {
           <h2 style={{ marginBottom: 18 }}>Luyện theo phần</h2>
           <ul className="toc">
             {[1, 2, 3, 4, 5, 6, 7].map((p) => {
-              const count = data.tests.reduce((s, t) => s + t.sets.filter((x) => x.part === p).reduce((n, x) => n + x.questions.length, 0), 0);
+              // the same sets as /luyen-tap (no Full Test questions)
+              const count = practiceSets(data, p).reduce((n, x) => n + x.set.questions.length, 0);
               return (
                 <li key={p}>
                   <Link to={`/luyen-tap/part-${p}`}>
@@ -141,11 +148,12 @@ export default function Home() {
 
         <section>
           <h2 style={{ marginBottom: 18 }}>Bài đã làm</h2>
+          <ScoreHistory />
           {attempts.length === 0 ? (
             <div className="empty">
               <span>Bạn chưa nộp bài nào. Làm thử Mini Test để biết mình đang ở mức nào.</span>
-              {data.tests.find((t) => t.test_type === 'mini') && (
-                <Link className="btn btn--small" to={`/de/${data.tests.find((t) => t.test_type === 'mini')!.id}`}>
+              {mini && (
+                <Link className="btn btn--small" to={`/de/${mini.id}`}>
                   Làm Mini Test
                 </Link>
               )}

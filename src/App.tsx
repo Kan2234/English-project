@@ -8,6 +8,7 @@ import ResultPage from './pages/ResultPage';
 import PracticeIndex from './pages/PracticeIndex';
 import Practice from './pages/Practice';
 import VocabPage from './pages/VocabPage';
+import Flashcards from './pages/Flashcards';
 import GrammarPage from './pages/GrammarPage';
 import InfoPage from './pages/InfoPage';
 import NotFound from './pages/NotFound';
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/luyen-tap" element={<PracticeIndex />} />
             <Route path="/luyen-tap/:partSlug" element={<Practice />} />
             <Route path="/tu-vung" element={<VocabPage />} />
+            <Route path="/tu-vung/the" element={<Flashcards />} />
             <Route path="/ngu-phap" element={<GrammarPage />} />
             <Route path="/ngu-phap/:slug" element={<GrammarPage />} />
             <Route path="/ky-thi" element={<InfoPage />} />

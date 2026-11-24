@@ -1,0 +1,475 @@
+{
+  "test": {
+    "id": "practice-bank-01"
+  },
+  "sets": [
+    {
+      "part": 4,
+      "passage_type": "voicemail",
+      "title": "Dental appointment message",
+      "transcript": "Hello, this is Laura Kim from Westbrook Dental Clinic, calling for Mr. Alan Foster. It's about your appointment with Dr. Reyes this Thursday at three. Unfortunately, Dr. Reyes will be attending a training seminar that afternoon, so we need to move your cleaning to another day. We have openings on Friday morning at nine or on Monday at four-thirty. Also, our records show that your insurance information hasn't been updated since last year. If you could bring your new card with you, that would save time at check-in. Please call us back at 555-0148 to let us know which time works for you. Thank you.",
+      "transcript_vi": "Xin chào, tôi là Laura Kim ở phòng khám nha khoa Westbrook, gọi cho anh Alan Foster. Tôi gọi về lịch hẹn của anh với bác sĩ Reyes lúc ba giờ chiều thứ Năm này. Rất tiếc chiều hôm đó bác sĩ Reyes sẽ tham dự một hội thảo đào tạo, nên chúng tôi cần dời buổi làm sạch răng của anh sang ngày khác. Chúng tôi còn trống lúc chín giờ sáng thứ Sáu hoặc bốn giờ rưỡi chiều thứ Hai. Ngoài ra, hồ sơ cho thấy thông tin bảo hiểm của anh chưa được cập nhật từ năm ngoái. Nếu anh mang theo thẻ mới thì việc làm thủ tục sẽ nhanh hơn. Vui lòng gọi lại số 555-0148 để cho chúng tôi biết anh chọn giờ nào. Cảm ơn anh.",
+      "questions": [
+        {
+          "prompt": "What is the purpose of the call?",
+          "prompt_vi": "Mục đích của cuộc gọi là gì?",
+          "choices": {
+            "A": "To reschedule an appointment",
+            "B": "To confirm a payment",
+            "C": "To introduce a new dentist",
+            "D": "To advertise a cleaning service"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part4:purpose"
+          ],
+          "explanation_vi": "'we need to move your cleaning to another day' → dời lịch hẹn.",
+          "why_wrong_vi": {
+            "B": "Không nhắc đến thanh toán.",
+            "C": "Bác sĩ Reyes không phải bác sĩ mới.",
+            "D": "Buổi làm sạch răng là lịch hẹn sẵn có, không phải quảng cáo."
+          }
+        },
+        {
+          "prompt": "Why is Dr. Reyes unavailable on Thursday?",
+          "prompt_vi": "Vì sao bác sĩ Reyes không thể khám vào thứ Năm?",
+          "choices": {
+            "A": "Dr. Reyes will be participating in a training event.",
+            "B": "Dr. Reyes will be on vacation.",
+            "C": "The clinic will be closed for repairs.",
+            "D": "Dr. Reyes has an emergency patient."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part4:detail",
+            "part4:paraphrase"
+          ],
+          "explanation_vi": "'will be attending a training seminar' = tham dự một sự kiện đào tạo.",
+          "why_wrong_vi": {
+            "B": "Không nhắc đến kỳ nghỉ.",
+            "C": "Phòng khám vẫn mở; chỉ bác sĩ bận.",
+            "D": "Lý do là hội thảo đào tạo, không phải ca cấp cứu."
+          }
+        },
+        {
+          "prompt": "What does the speaker ask the listener to bring?",
+          "prompt_vi": "Người nói đề nghị người nghe mang theo gì?",
+          "choices": {
+            "A": "A list of medications",
+            "B": "A current insurance card",
+            "C": "A completed medical form",
+            "D": "A copy of an old invoice"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part4:request",
+            "part4:paraphrase"
+          ],
+          "explanation_vi": "'If you could bring your new card with you' — thẻ bảo hiểm mới, tức thẻ đang còn hiệu lực.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến danh sách thuốc.",
+            "C": "Không có mẫu đơn nào cần điền.",
+            "D": "Không nhắc đến hóa đơn cũ."
+          }
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "announcement",
+      "title": "Store announcement",
+      "transcript": "Attention, Hillcrest Home Supply shoppers. Our spring garden sale starts today and runs through Sunday. All outdoor furniture is twenty percent off, and gardening tools are buy one, get one half price. If you're a Hillcrest Rewards member, you'll also earn double points on every purchase this week. Not a member yet? It takes two minutes. Just stop by the customer service desk near the main entrance, and you can start earning points with today's purchase. And don't forget, our free workshop on building raised flower beds begins at eleven o'clock in the garden center.",
+      "transcript_vi": "Quý khách của Hillcrest Home Supply xin chú ý. Đợt giảm giá đồ làm vườn mùa xuân bắt đầu từ hôm nay đến hết Chủ nhật. Toàn bộ đồ nội thất ngoài trời giảm hai mươi phần trăm, và dụng cụ làm vườn mua một tặng một nửa giá. Nếu quý khách là hội viên Hillcrest Rewards, quý khách còn được nhân đôi điểm cho mọi giao dịch trong tuần này. Chưa là hội viên? Chỉ mất hai phút thôi. Quý khách chỉ cần ghé quầy chăm sóc khách hàng gần lối vào chính là có thể bắt đầu tích điểm ngay với hóa đơn hôm nay. Và đừng quên, buổi hướng dẫn miễn phí về cách làm luống hoa nâng cao sẽ bắt đầu lúc mười một giờ tại khu cây cảnh.",
+      "questions": [
+        {
+          "prompt": "What is being announced?",
+          "prompt_vi": "Thông báo về điều gì?",
+          "choices": {
+            "A": "A seasonal sale",
+            "B": "A store opening",
+            "C": "A change in business hours",
+            "D": "A product recall"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part4:main-idea"
+          ],
+          "explanation_vi": "'Our spring garden sale starts today' → đợt giảm giá theo mùa.",
+          "why_wrong_vi": {
+            "B": "Cửa hàng đang hoạt động; đây là đợt giảm giá.",
+            "C": "Không nhắc đến giờ mở cửa.",
+            "D": "Không có sản phẩm nào bị thu hồi."
+          }
+        },
+        {
+          "prompt": "What does the speaker imply when saying, \"It takes two minutes\"?",
+          "prompt_vi": "Người nói ngụ ý gì khi nói: \"Chỉ mất hai phút thôi\"?",
+          "choices": {
+            "A": "Joining the rewards program is quick and easy.",
+            "B": "A workshop will be short.",
+            "C": "Shoppers should hurry to the checkout.",
+            "D": "The store is about to close."
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "part4:speaker-intent"
+          ],
+          "explanation_vi": "Câu đứng ngay sau 'Not a member yet?', nên ý là đăng ký hội viên rất nhanh và dễ.",
+          "why_wrong_vi": {
+            "B": "Buổi hướng dẫn được nhắc ở câu sau, không liên quan đến câu này.",
+            "C": "Không có ý giục khách ra quầy thanh toán.",
+            "D": "Không nhắc đến giờ đóng cửa."
+          }
+        },
+        {
+          "prompt": "What will happen at eleven o'clock?",
+          "prompt_vi": "Điều gì sẽ diễn ra lúc 11 giờ?",
+          "choices": {
+            "A": "A sale will end.",
+            "B": "Points will be doubled.",
+            "C": "A free class will begin.",
+            "D": "New furniture will arrive."
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "part4:detail",
+            "part4:paraphrase"
+          ],
+          "explanation_vi": "'our free workshop … begins at eleven o'clock' → một lớp hướng dẫn miễn phí bắt đầu.",
+          "why_wrong_vi": {
+            "A": "Đợt giảm giá kéo dài đến Chủ nhật.",
+            "B": "Điểm nhân đôi áp dụng cả tuần, không riêng lúc 11 giờ.",
+            "D": "Không nhắc đến hàng mới về."
+          }
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "meeting",
+      "title": "Customer survey results (graphic)",
+      "graphic": {
+        "type": "table",
+        "title": "Customer Survey – Most Requested Improvements",
+        "columns": [
+          "Improvement",
+          "Responses"
+        ],
+        "rows": [
+          [
+            "Longer opening hours",
+            "142"
+          ],
+          [
+            "More parking",
+            "118"
+          ],
+          [
+            "Online ordering",
+            "96"
+          ],
+          [
+            "Wider product range",
+            "64"
+          ]
+        ]
+      },
+      "image_description": "Survey results table (see graphic).",
+      "transcript": "Before we wrap up, let's look at the results of last month's customer survey. As you can see, the most requested improvement was longer opening hours. Unfortunately, that isn't something we can do right now, since we'd need to hire more staff. The second item on the list is also out of our hands. The parking lot belongs to our landlord. So I'd like us to focus on the third item. Our Web developer says she can have a basic version ready by June. I'll need two volunteers from the sales team to test it before it goes live, so please let me know by Friday if you're interested.",
+      "transcript_vi": "Trước khi kết thúc, chúng ta cùng xem kết quả khảo sát khách hàng tháng trước. Như các bạn thấy, cải tiến được yêu cầu nhiều nhất là kéo dài giờ mở cửa. Tiếc là hiện giờ chúng ta chưa làm được việc đó, vì sẽ phải tuyển thêm nhân viên. Mục thứ hai trong danh sách cũng nằm ngoài khả năng của chúng ta, vì bãi đỗ xe thuộc về chủ nhà. Vì vậy tôi muốn chúng ta tập trung vào mục thứ ba. Lập trình viên web của chúng ta nói cô ấy có thể làm xong phiên bản cơ bản trước tháng Sáu. Tôi cần hai tình nguyện viên trong nhóm bán hàng dùng thử trước khi chính thức ra mắt, nên ai quan tâm thì báo tôi trước thứ Sáu nhé.",
+      "questions": [
+        {
+          "prompt": "What is the speaker mainly discussing?",
+          "prompt_vi": "Người nói chủ yếu bàn về điều gì?",
+          "choices": {
+            "A": "A plan to hire more employees",
+            "B": "A dispute with a landlord",
+            "C": "The results of a customer survey",
+            "D": "A new sales target"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part4:main-idea"
+          ],
+          "explanation_vi": "'let's look at the results of last month's customer survey' → chủ đề là kết quả khảo sát.",
+          "why_wrong_vi": {
+            "A": "Việc tuyển thêm người chỉ được nêu để giải thích vì sao chưa kéo dài giờ mở cửa.",
+            "B": "Chủ nhà chỉ được nhắc vì sở hữu bãi đỗ xe; không có tranh chấp.",
+            "D": "Không nhắc đến chỉ tiêu bán hàng."
+          }
+        },
+        {
+          "prompt": "Look at the graphic. Which improvement does the speaker want to focus on?",
+          "prompt_vi": "Hãy nhìn bảng. Người nói muốn tập trung vào cải tiến nào?",
+          "choices": {
+            "A": "Longer opening hours",
+            "B": "More parking",
+            "C": "Online ordering",
+            "D": "Wider product range"
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part4:graphic"
+          ],
+          "explanation_vi": "Người nói chọn 'the third item'; trong bảng mục thứ ba là Online ordering, phù hợp với việc lập trình viên web làm phiên bản cơ bản.",
+          "why_wrong_vi": {
+            "A": "Mục đứng đầu nhưng chưa làm được vì phải tuyển thêm người.",
+            "B": "Mục thứ hai nằm ngoài khả năng vì bãi đỗ xe thuộc chủ nhà.",
+            "D": "Đây là mục thứ tư, người nói không đề cập."
+          }
+        },
+        {
+          "prompt": "What are some listeners asked to do by Friday?",
+          "prompt_vi": "Một số người nghe được đề nghị làm gì trước thứ Sáu?",
+          "choices": {
+            "A": "Submit their survey responses",
+            "B": "Meet with the Web developer",
+            "C": "Suggest ways to reduce costs",
+            "D": "Volunteer to try out a new service"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part4:request",
+            "part4:paraphrase"
+          ],
+          "explanation_vi": "'I'll need two volunteers … to test it … let me know by Friday' → đăng ký dùng thử dịch vụ mới.",
+          "why_wrong_vi": {
+            "A": "Khảo sát đã xong từ tháng trước.",
+            "B": "Không có yêu cầu gặp lập trình viên.",
+            "C": "Không nhắc đến cắt giảm chi phí."
+          }
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "advertisement",
+      "title": "Cloud storage advertisement",
+      "transcript": "Is your team spending more time searching for files than actually working? Then it's time to try DocuNest, the cloud storage system designed for small businesses. With DocuNest, every document you upload is automatically tagged and sorted, so finding what you need takes only seconds. And unlike other services, we don't charge per user. One monthly price covers your entire team, no matter how large it grows. Still not sure? Sign up on our Web site before April thirtieth, and your first three months are free. No credit card required.",
+      "transcript_vi": "Nhóm của bạn mất nhiều thời gian tìm tài liệu hơn cả thời gian làm việc? Vậy đã đến lúc dùng thử DocuNest, hệ thống lưu trữ đám mây dành cho doanh nghiệp nhỏ. Với DocuNest, mọi tài liệu bạn tải lên đều được tự động gắn nhãn và sắp xếp, nên tìm thứ bạn cần chỉ mất vài giây. Và khác với các dịch vụ khác, chúng tôi không tính phí theo người dùng. Một mức giá hằng tháng áp dụng cho cả nhóm, dù nhóm có lớn đến đâu. Vẫn còn phân vân? Hãy đăng ký trên trang web của chúng tôi trước ngày 30 tháng Tư để được miễn phí ba tháng đầu. Không cần thẻ tín dụng.",
+      "questions": [
+        {
+          "prompt": "What is being advertised?",
+          "prompt_vi": "Sản phẩm nào đang được quảng cáo?",
+          "choices": {
+            "A": "A file storage service",
+            "B": "A filing cabinet",
+            "C": "A project management course",
+            "D": "A credit card for businesses"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part4:main-idea"
+          ],
+          "explanation_vi": "'DocuNest, the cloud storage system' → dịch vụ lưu trữ tài liệu.",
+          "why_wrong_vi": {
+            "B": "Lưu trữ 'cloud' là trực tuyến, không phải tủ hồ sơ.",
+            "C": "Không nhắc đến khóa học.",
+            "D": "'No credit card required' chỉ là điều kiện đăng ký."
+          }
+        },
+        {
+          "prompt": "According to the speaker, how is DocuNest different from other services?",
+          "prompt_vi": "Theo người nói, DocuNest khác các dịch vụ khác ở điểm nào?",
+          "choices": {
+            "A": "It can be used without the Internet.",
+            "B": "Its price does not depend on the number of users.",
+            "C": "It is designed for large corporations.",
+            "D": "It offers free technical training."
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "part4:detail",
+            "part4:paraphrase"
+          ],
+          "explanation_vi": "'unlike other services, we don't charge per user' → giá không phụ thuộc số người dùng.",
+          "why_wrong_vi": {
+            "A": "Là dịch vụ đám mây, không có thông tin dùng ngoại tuyến.",
+            "C": "Nó dành cho doanh nghiệp nhỏ.",
+            "D": "Không nhắc đến đào tạo kỹ thuật."
+          }
+        },
+        {
+          "prompt": "What is available until April thirtieth?",
+          "prompt_vi": "Ưu đãi nào có hiệu lực đến ngày 30 tháng Tư?",
+          "choices": {
+            "A": "A discount on annual plans",
+            "B": "A free trial period",
+            "C": "Additional storage space",
+            "D": "A free consultation"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part4:offer",
+            "part4:paraphrase"
+          ],
+          "explanation_vi": "'Sign up … before April thirtieth, and your first three months are free' → thời gian dùng thử miễn phí.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến gói năm.",
+            "C": "Không nhắc đến dung lượng tặng thêm.",
+            "D": "Ưu đãi là miễn phí ba tháng đầu, không phải tư vấn."
+          }
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "news",
+      "title": "Local news report",
+      "transcript": "In local news, the city council voted last night to approve the long-debated redevelopment of the old Fairmont rail yard. The plan will turn the twelve-acre site into a mix of affordable housing, office space, and a public park. Construction is expected to begin next spring and to take about four years. Supporters say the project will bring much-needed homes to the downtown area. However, some nearby business owners have raised concerns about noise and traffic during construction. Council member Diane Ortiz said the city will hold monthly community meetings to address these issues. The first one is scheduled for October ninth at the public library.",
+      "transcript_vi": "Tin địa phương: tối qua hội đồng thành phố đã bỏ phiếu thông qua dự án cải tạo bãi đường sắt cũ Fairmont, vốn gây tranh cãi lâu nay. Theo kế hoạch, khu đất rộng mười hai mẫu Anh sẽ trở thành khu kết hợp nhà ở giá phải chăng, văn phòng và một công viên công cộng. Việc xây dựng dự kiến bắt đầu vào mùa xuân năm sau và kéo dài khoảng bốn năm. Những người ủng hộ cho rằng dự án sẽ mang lại nhà ở rất cần thiết cho khu trung tâm. Tuy nhiên, một số chủ doanh nghiệp gần đó lo ngại về tiếng ồn và giao thông trong thời gian thi công. Ủy viên hội đồng Diane Ortiz cho biết thành phố sẽ tổ chức họp cộng đồng hằng tháng để giải quyết những vấn đề này. Buổi đầu tiên dự kiến vào ngày 9 tháng Mười tại thư viện công cộng.",
+      "questions": [
+        {
+          "prompt": "What did the city council approve?",
+          "prompt_vi": "Hội đồng thành phố đã thông qua điều gì?",
+          "choices": {
+            "A": "A new rail line",
+            "B": "A budget for the library",
+            "C": "A plan to redevelop a site",
+            "D": "A tax cut for local businesses"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part4:detail",
+            "part4:paraphrase"
+          ],
+          "explanation_vi": "'approve the … redevelopment of the old Fairmont rail yard' → kế hoạch cải tạo một khu đất.",
+          "why_wrong_vi": {
+            "A": "Bãi đường sắt cũ sẽ được cải tạo, không xây tuyến mới.",
+            "B": "Thư viện chỉ là nơi tổ chức họp.",
+            "D": "Không nhắc đến giảm thuế."
+          }
+        },
+        {
+          "prompt": "What concern have some business owners raised?",
+          "prompt_vi": "Một số chủ doanh nghiệp nêu mối lo ngại nào?",
+          "choices": {
+            "A": "A shortage of office space",
+            "B": "Higher rents in the area",
+            "C": "The loss of a public park",
+            "D": "Disturbance caused by construction work"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part4:detail",
+            "part4:paraphrase"
+          ],
+          "explanation_vi": "'concerns about noise and traffic during construction' → sự xáo trộn do thi công.",
+          "why_wrong_vi": {
+            "A": "Dự án còn tạo thêm văn phòng.",
+            "B": "Không nhắc đến giá thuê.",
+            "C": "Dự án tạo thêm công viên chứ không làm mất."
+          }
+        },
+        {
+          "prompt": "According to the speaker, what will take place on October ninth?",
+          "prompt_vi": "Theo người nói, điều gì sẽ diễn ra vào ngày 9 tháng Mười?",
+          "choices": {
+            "A": "The start of construction",
+            "B": "A public meeting",
+            "C": "A council vote",
+            "D": "The opening of a library"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'monthly community meetings … The first one is scheduled for October ninth' → buổi họp cộng đồng đầu tiên.",
+          "why_wrong_vi": {
+            "A": "Thi công bắt đầu vào mùa xuân năm sau.",
+            "C": "Cuộc bỏ phiếu đã diễn ra tối qua.",
+            "D": "Thư viện chỉ là địa điểm họp, đã có sẵn."
+          }
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "talk",
+      "title": "Factory tour introduction",
+      "transcript": "Good morning, everyone, and welcome to the Ridgeview Chocolate Factory. My name is Daniel, and I'll be your guide today. The tour takes about an hour. We'll start in the roasting room, where the cocoa beans are prepared, and we'll finish in the tasting room, which, I'm told, is everyone's favorite part. Before we begin, please put on one of the hairnets in the basket by the door. I know they're not very fashionable, but food safety rules apply to visitors too. You're welcome to take photos everywhere except in the packaging area, because some of the machines there were custom-designed for us. OK, let's head inside.",
+      "transcript_vi": "Chào buổi sáng mọi người, chào mừng đến với Nhà máy Sô-cô-la Ridgeview. Tôi tên là Daniel, hôm nay tôi sẽ hướng dẫn các bạn. Chuyến tham quan kéo dài khoảng một tiếng. Chúng ta sẽ bắt đầu ở phòng rang, nơi hạt ca cao được sơ chế, và kết thúc ở phòng nếm thử, nơi mà tôi nghe nói ai cũng thích nhất. Trước khi bắt đầu, xin mọi người đội một chiếc lưới trùm tóc trong giỏ cạnh cửa. Tôi biết chúng không thời trang lắm, nhưng quy định an toàn thực phẩm cũng áp dụng cho khách tham quan. Các bạn được chụp ảnh ở mọi nơi trừ khu đóng gói, vì một số máy ở đó được thiết kế riêng cho chúng tôi. Nào, chúng ta vào trong thôi.",
+      "questions": [
+        {
+          "prompt": "Where will the tour end?",
+          "prompt_vi": "Chuyến tham quan sẽ kết thúc ở đâu?",
+          "choices": {
+            "A": "In the roasting room",
+            "B": "In the packaging area",
+            "C": "At the gift shop",
+            "D": "In the tasting room"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'we'll finish in the tasting room' → kết thúc ở phòng nếm thử.",
+          "why_wrong_vi": {
+            "A": "Phòng rang là nơi bắt đầu.",
+            "B": "Khu đóng gói chỉ được nhắc vì không được chụp ảnh.",
+            "C": "Không nhắc đến cửa hàng quà tặng."
+          }
+        },
+        {
+          "prompt": "Why does the speaker say, \"I know they're not very fashionable\"?",
+          "prompt_vi": "Vì sao người nói nói: \"Tôi biết chúng không thời trang lắm\"?",
+          "choices": {
+            "A": "To recommend a clothing store",
+            "B": "To explain why the hairnets are free",
+            "C": "To ask visitors to change their clothes",
+            "D": "To show understanding about a rule visitors may dislike"
+          },
+          "answer": "D",
+          "difficulty": 4,
+          "tags": [
+            "part4:speaker-intent"
+          ],
+          "explanation_vi": "Người hướng dẫn thừa nhận lưới trùm tóc không đẹp, thể hiện sự thông cảm, nhưng vẫn yêu cầu đội vì quy định an toàn thực phẩm.",
+          "why_wrong_vi": {
+            "A": "Không có ý giới thiệu cửa hàng.",
+            "B": "Không nói gì về giá của lưới trùm tóc.",
+            "C": "Chỉ yêu cầu đội lưới trùm tóc, không thay quần áo."
+          }
+        },
+        {
+          "prompt": "Why are photos not allowed in the packaging area?",
+          "prompt_vi": "Vì sao không được chụp ảnh ở khu đóng gói?",
+          "choices": {
+            "A": "The lighting there is too dark.",
+            "B": "Some equipment there was specially designed.",
+            "C": "Workers there are very busy.",
+            "D": "The area is closed for cleaning."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part4:detail",
+            "part4:paraphrase"
+          ],
+          "explanation_vi": "'some of the machines there were custom-designed' → thiết bị được thiết kế riêng.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến ánh sáng.",
+            "C": "Không nhắc đến công nhân bận rộn.",
+            "D": "Khu vực không bị đóng cửa."
+          }
+        }
+      ]
+    }
+  ]
+}

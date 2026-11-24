@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useData } from '../lib/data';
-import { PART_NAMES } from '../lib/exam';
+import { PART_NAMES, practiceSets, type PracticeItem } from '../lib/exam';
+import { markActive } from '../lib/progress';
 import {
   loadPractice,
   loadPracticePosition,
@@ -10,17 +11,13 @@ import {
   savePracticePosition,
   wrongInPractice,
 } from '../lib/storage';
-import type { Answers, Label, QuestionSet, Test } from '../lib/types';
+import type { Answers, Label } from '../lib/types';
 import { Stimulus } from '../components/Stimulus';
 import { QuestionBlock } from '../components/QuestionBlock';
 import NotFound from './NotFound';
 import '../styles/study.css';
 
 type Mode = 'all' | 'wrong';
-interface Item {
-  set: QuestionSet;
-  test: Test;
-}
 
 export default function Practice() {
   const { partSlug = '' } = useParams(); // "part-3"
@@ -34,10 +31,8 @@ export default function Practice() {
 
 function PracticeSession({ part }: { part: number }) {
   const data = useData();
-  const sets = useMemo<Item[]>(
-    () => data.tests.flatMap((t) => t.sets.filter((s) => s.part === part).map((s) => ({ set: s, test: t }))),
-    [data, part],
-  );
+  // Practice bank first, then the Mini Test; Full Test questions stay unseen for the real timed attempt.
+  const sets = useMemo<PracticeItem[]>(() => practiceSets(data, part), [data, part]);
   const questionIds = useMemo(() => sets.flatMap((x) => x.set.questions.map((q) => q.id)), [sets]);
 
   const [progress, setProgress] = useState(loadPractice);
@@ -81,6 +76,7 @@ function PracticeSession({ part }: { part: number }) {
     if (shownAnswers[qid]) return;
     (inWrong ? setWrongAnswers : setAnswers)((a) => ({ ...a, [qid]: l }));
     recordPractice(qid, l === key);
+    markActive(); // counts toward the study streak on the day of the answer
     setProgress(loadPractice());
   };
   const go = (i: number) => {

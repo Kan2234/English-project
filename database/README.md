@@ -7,7 +7,7 @@ Dữ liệu cho website luyện thi TOEIC: thông tin đề thi 2025–2026, đ�
 ```
 database/
 ├── data/                 ← NGUỒN GỐC: sửa/thêm dữ liệu ở đây
-│   ├── exam_info.json    cấu trúc đề, các part, thang điểm, lệ phí, tin tức 2025–2026, nguồn
+│   ├── exam_info.json    cấu trúc đề, các part, thang điểm, bậc CEFR
 │   ├── tests/            đề luyện tập (mỗi đề có thể chia nhiều file, gộp theo test.id)
 │   │   ├── mini-test-01.listening.json
 │   │   ├── mini-test-01.reading.json
@@ -25,7 +25,7 @@ database/
 ├── tts/                  generate-audio.mjs + edge_synth.py + synthesize.ps1 (sinh audio phần Nghe)
 ├── audio/                ← SINH TỰ ĐỘNG: MP3 từng set + manifest.json
 ├── illustrations/        part1.mjs: vẽ ảnh minh họa Part 1 bằng SVG
-├── images/               ảnh Part 1: <set-id>.jpg (trắng đen) + credits.json (nguồn, giấy phép)
+├── images/               ảnh Part 1: <set-id>.jpg (trắng đen) + credits.json (nguồn, prompt)
 ├── toeic.db              ← SINH TỰ ĐỘNG: SQLite cho backend
 └── toeic.json            ← SINH TỰ ĐỘNG: một file JSON cho frontend/seed DB khác
 ```
@@ -38,7 +38,7 @@ Cần Node.js ≥ 22.5 (dùng `node:sqlite` có sẵn, không cần cài gói np
 node database/build.mjs
 ```
 
-Script sẽ dừng và liệt kê lỗi nếu dữ liệu sai (đáp án không nằm trong lựa chọn, Part 2 không đủ 3 lựa chọn, thiếu transcript/giải thích, trùng từ vựng, nguồn không tồn tại...). Với đề có `test_type: "full"`, số câu của từng Part phải khớp đúng cấu trúc đề thật trong `exam_parts`.
+Script sẽ dừng và liệt kê lỗi nếu dữ liệu sai (đáp án không nằm trong lựa chọn, Part 2 không đủ 3 lựa chọn, thiếu transcript/giải thích, trùng từ vựng...). Với đề có `test_type: "full"`, số câu của từng Part phải khớp đúng cấu trúc đề thật trong `exam_parts`.
 
 Cuối mỗi lần build, script in ra phân bố đáp án A/B/C/D. Hãy giữ phân bố đều và tránh quy luật lặp, nhất là ở Part 2.
 
@@ -46,14 +46,13 @@ Cuối mỗi lần build, script in ra phân bố đáp án A/B/C/D. Hãy giữ 
 
 | Bảng | Số dòng | Ghi chú |
 |---|---|---|
-| `exam_formats` | 3 | L&R (tuyến tính), L&R thích ứng, Speaking & Writing |
+| `exam_formats` | 2 | Listening & Reading, Speaking & Writing |
 | `exam_parts` | 15 | 7 part L&R + 8 phần S&W |
 | `tests` / `questions` | 2 / 283 | **Full Test 01** (200 câu, đúng cấu trúc đề thật: P1=6, P2=25, P3=39, P4=30, P5=30, P6=16, P7=54) và Mini Test 01 (83 câu) |
 | `vocabulary` | 109 | 13 chủ đề, gắn mức điểm mục tiêu 450/650/850 |
 | `grammar_topics` | 13 | |
 | `strategies` | 14 | |
 | `score_conversion` | 202 | Bảng quy đổi **ước lượng** số câu đúng → điểm |
-| `updates`, `fees`, `sources` | 5 / 3 / 13 | Có cờ `verified` |
 
 ## Một số truy vấn mẫu
 
@@ -74,9 +73,8 @@ SELECT q.* FROM questions q, json_each(q.tags) t WHERE t.value = 'grammar:relati
 ## Lưu ý quan trọng
 
 - **Bản quyền:** Đề thi TOEIC thật và các bộ sách ETS là tài liệu có bản quyền, nên **không** được đưa vào đây. Toàn bộ câu hỏi, đoạn văn và transcript được biên soạn mới theo đúng định dạng, độ khó và dạng bẫy của đề thật (`tests.origin = 'original'`).
-- **Phần Nghe:** đã có audio TTS (xem mục bên dưới). Ảnh Part 1 là **ảnh trắng đen** (11 ảnh tạo bằng Gemini, 1 ảnh CC BY từ Wikimedia; xem mục Ảnh Part 1). Biểu đồ Part 3/4/7 được website vẽ trực tiếp từ dữ liệu `graphic`.
+- **Phần Nghe:** đã có audio TTS (xem mục bên dưới). Ảnh Part 1 là **ảnh trắng đen** (cả 12 ảnh tạo bằng Gemini; xem mục Ảnh Part 1). Biểu đồ Part 3/4/7 được website vẽ trực tiếp từ dữ liệu `graphic`.
 - **Điểm quy đổi** chỉ là ước lượng, vì ETS không công bố bảng cố định (điểm được equating theo từng đề).
-- **Lệ phí** lấy từ nguồn bên thứ ba (`verified = 0`); cần đối chiếu với IIG Việt Nam trước khi hiển thị như số liệu chính thức. Tin đồn rút ngắn bài thi TOEIC 4-Skills tại Pháp (3/8/2026) **chưa được ETS xác nhận**: đến 24/11/2026 trang ETS Pháp vẫn ghi định dạng 2h22.
 
 ## Audio phần Nghe (TTS)
 
@@ -129,11 +127,10 @@ Cả 12 set dùng ảnh JPG trắng đen (thang xám, 1000×750, mỗi file dư�
 
 | Nguồn | Set | Bản quyền |
 |---|---|---|
-| Tạo bằng Google Gemini (model "Neon") | 11 set còn lại | Ảnh tự tạo, không phải ảnh của bên thứ ba; có thể mang watermark ẩn SynthID của Google |
-| Wikimedia Commons: "Bali fruit stall 2", tác giả Midori | `mt01-p1-s04` | CC BY 3.0, **bắt buộc ghi công**; ảnh đã chuyển sang trắng đen |
+| Tạo bằng Google Gemini (model "Neon") | cả 12 set | Ảnh tự tạo, không phải ảnh của bên thứ ba; có thể mang watermark ẩn SynthID của Google |
 
-- `images/credits.json` ghi nguồn, giấy phép, prompt và ghi chú cho từng ảnh.
-- Ảnh nào có trường `attribution` thì build sẽ gắn `image_credit` vào set (trong `toeic.json` và cột `question_sets.image_credit`), và website hiện dòng "Ảnh: …" dưới ảnh. Thêm ảnh CC BY mới thì phải điền trường này.
+- `images/credits.json` ghi nguồn, prompt và cách xử lý của từng ảnh.
+- Hiện không ảnh nào cần ghi công. Nếu sau này dùng ảnh cần ghi công, thêm trường `attribution` (`{text, url}`) vào `credits.json`; build sẽ gắn `image_credit` vào set và website hiện dòng "Ảnh: …" dưới ảnh.
 - Mỗi ảnh đã được soát đủ hai điều kiện: đáp án đúng phải đúng với ảnh, và cả ba phương án nhiễu phải sai.
 
 Khi build, mỗi set Part 1 tự được gắn `image_url` theo thứ tự ưu tiên `jpg`, `webp`, `png`, rồi mới đến `svg`. Build cũng nhắc tên những set còn thiếu ảnh. Ảnh thay thế phải khớp từng chi tiết mà câu hỏi dựa vào: có người hay không, đang làm gì, đồ vật ở đâu.
@@ -145,6 +142,29 @@ node database/illustrations/part1.mjs
 ```
 
 Script ghi 12 file SVG vào `images/`. Vì ảnh chụp được ưu tiên, các file SVG này chỉ được dùng khi set đó không có file `.jpg`, `.webp` hay `.png`.
+
+## Bản dịch tiếng Việt và lý do loại đáp án
+
+Mỗi đề có thể kèm các trường tùy chọn sau (website chỉ hiện sau khi người học trả lời ở chế độ luyện tập, hoặc khi xem lại bài; không bao giờ hiện trong lúc thi):
+
+| Trường | Đặt ở | Kiểu | Cột SQLite |
+|---|---|---|---|
+| `transcript_vi` | set Part 1–4 | chuỗi | `question_sets.transcript_vi` |
+| `text_vi` | từng đoạn trong `passages` (Part 6–7) | chuỗi | trong JSON `question_sets.passages` |
+| `prompt_vi` | câu hỏi có `prompt` (Part 3, 4, 5, 7) | chuỗi hoặc `null` | `questions.prompt_vi` |
+| `why_wrong_vi` | câu hỏi | `{ "<nhãn>": "<một câu ngắn>" }` cho **mọi** đáp án sai | `questions.why_wrong_vi` (JSON) |
+
+```json
+"prompt": "By the time the shipment arrived, the store ------- out of the product.",
+"prompt_vi": "Vào lúc lô hàng đến, cửa hàng đã hết sản phẩm đó.",
+"answer": "D",
+"why_wrong_vi": { "A": "Sai thì: ...", "B": "Sai thì: cần quá khứ hoàn thành vì hành động xảy ra trước 'by the time'", "C": "..." }
+```
+
+- Dịch tự nhiên, không dịch từng chữ; giữ nguyên tên riêng, con số, giờ giấc. Part 5–6: dịch câu/đoạn văn **đã điền đáp án đúng**. Giữ ký hiệu `— [1] —` của câu chèn Part 7.
+- Lý do sai phải là lý do thật: sai thì, sai từ loại, bẫy âm, thông tin có trong bài nhưng nói về đối tượng khác...
+- Part 1–2 không có `prompt` nên không cần `prompt_vi`; Part 6 có prompt dạng `(131)` cũng vậy.
+- Build **báo lỗi** nếu chuỗi rỗng, `why_wrong_vi` có nhãn không tồn tại hoặc giải thích chính đáp án đúng. Thiếu bản dịch chỉ là **cảnh báo** (`note: <file> is missing N Vietnamese translation(s)`), để có thể bổ sung dần.
 
 ## Thêm đề mới
 

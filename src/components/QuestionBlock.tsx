@@ -1,4 +1,5 @@
 import type { Label, Question } from '../lib/types';
+import '../styles/translate.css';
 
 export type Mode = 'exam' | 'practice' | 'review';
 
@@ -27,6 +28,7 @@ export function QuestionBlock({ q, part, mode, selected, onSelect, revealed, fla
   const audioOnly = part <= 2 && !showKey;
   const locked = mode === 'review' || (mode === 'practice' && revealed);
   const groupId = `q-${q.id}`;
+  const wrongReasons = labels.filter((l) => l !== q.answer && q.why_wrong_vi?.[l]).map((l) => [l, q.why_wrong_vi![l]!] as const);
 
   const bubbleClass = (l: Label) =>
     ['bubble', showKey && l === q.answer ? 'is-key' : '', showKey && selected === l && l !== q.answer ? 'is-wrong' : '']
@@ -114,7 +116,30 @@ export function QuestionBlock({ q, part, mode, selected, onSelect, revealed, fla
                 ? `Đúng: ${q.answer}`
                 : `Sai: bạn chọn ${selected}, đáp án đúng là ${q.answer}`}
           </span>
+          {q.prompt_vi && (
+            <span className="explain__vi" lang="vi">
+              <span className="explain__vi-label">Câu hỏi:</span> {q.prompt_vi}
+            </span>
+          )}
           <span>{q.explanation_vi}</span>
+        </div>
+      )}
+      {showKey && wrongReasons.length > 0 && (
+        <div className="why-wrong">
+          <span className="why-wrong__title" id={`${groupId}-why`}>
+            Vì sao các đáp án khác sai
+          </span>
+          <ul aria-labelledby={`${groupId}-why`}>
+            {wrongReasons.map(([l, reason]) => (
+              <li key={l} className={selected === l ? 'is-picked' : undefined}>
+                <span className="why-wrong__label">{l}</span>
+                <span>
+                  {reason}
+                  {selected === l && <span className="why-wrong__mine"> (bạn chọn)</span>}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>

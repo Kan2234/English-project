@@ -8,6 +8,7 @@
       "questions": [
         {
           "prompt": "The new branch manager will ------- a meeting with all staff on Monday.",
+          "prompt_vi": "Quản lý chi nhánh mới sẽ tổ chức một cuộc họp với toàn thể nhân viên vào thứ Hai.",
           "choices": {
             "A": "held",
             "B": "holds",
@@ -19,7 +20,12 @@
           "tags": [
             "grammar:verb-form"
           ],
-          "explanation_vi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu → hold."
+          "explanation_vi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu → hold.",
+          "why_wrong_vi": {
+            "A": "Sai dạng: sau 'will' không dùng quá khứ 'held'.",
+            "B": "Sai dạng: sau 'will' không dùng động từ chia ngôi 'holds'.",
+            "C": "Sai dạng: 'will holding' không đúng ngữ pháp; cần nguyên mẫu."
+          }
         }
       ]
     },
@@ -28,6 +34,7 @@
       "questions": [
         {
           "prompt": "Please make sure that ------- belongings are removed from the lockers by Friday.",
+          "prompt_vi": "Vui lòng đảm bảo đồ đạc của bạn được lấy ra khỏi tủ khóa trước thứ Sáu.",
           "choices": {
             "A": "you",
             "B": "yours",
@@ -39,7 +46,12 @@
           "tags": [
             "grammar:pronoun"
           ],
-          "explanation_vi": "Trước danh từ 'belongings' cần tính từ sở hữu → your."
+          "explanation_vi": "Trước danh từ 'belongings' cần tính từ sở hữu → your.",
+          "why_wrong_vi": {
+            "A": "'you' là đại từ nhân xưng, không đứng trước danh từ để chỉ sở hữu.",
+            "B": "'yours' là đại từ sở hữu, đứng một mình, không đi kèm danh từ 'belongings'.",
+            "D": "'yourself' là đại từ phản thân, không bổ nghĩa cho danh từ."
+          }
         }
       ]
     },
@@ -48,6 +60,7 @@
       "questions": [
         {
           "prompt": "The customer service team responded ------- to the complaint.",
+          "prompt_vi": "Nhóm chăm sóc khách hàng đã phản hồi khiếu nại một cách nhanh chóng.",
           "choices": {
             "A": "prompt",
             "B": "promptness",
@@ -60,7 +73,12 @@
             "grammar:word-form",
             "grammar:adverb"
           ],
-          "explanation_vi": "Bổ nghĩa cho động từ 'responded' → trạng từ promptly."
+          "explanation_vi": "Bổ nghĩa cho động từ 'responded' → trạng từ promptly.",
+          "why_wrong_vi": {
+            "A": "'prompt' là tính từ (hoặc động từ), không bổ nghĩa cho động từ 'responded'.",
+            "B": "'promptness' là danh từ, không đứng sau nội động từ 'responded'.",
+            "C": "'prompted' là động từ quá khứ, câu đã có động từ chính 'responded'."
+          }
         }
       ]
     },
@@ -69,6 +87,7 @@
       "questions": [
         {
           "prompt": "The museum will be closed ------- the installation of a new exhibit.",
+          "prompt_vi": "Bảo tàng sẽ đóng cửa trong thời gian lắp đặt một khu triển lãm mới.",
           "choices": {
             "A": "while",
             "B": "during",
@@ -80,7 +99,12 @@
           "tags": [
             "grammar:conjunction-vs-preposition"
           ],
-          "explanation_vi": "Sau chỗ trống là cụm danh từ → giới từ during. While/although/unless + mệnh đề."
+          "explanation_vi": "Sau chỗ trống là cụm danh từ → giới từ during. While/although/unless + mệnh đề.",
+          "why_wrong_vi": {
+            "A": "'while' là liên từ, cần mệnh đề có chủ ngữ và động từ phía sau.",
+            "C": "'although' là liên từ chỉ nhượng bộ, cần mệnh đề và sai nghĩa.",
+            "D": "'unless' (trừ khi) là liên từ cần mệnh đề, và nghĩa không hợp."
+          }
         }
       ]
     },
@@ -89,6 +113,7 @@
       "questions": [
         {
           "prompt": "Ms. Jung has worked at Delmar Bank ------- 2019.",
+          "prompt_vi": "Cô Jung đã làm việc tại Ngân hàng Delmar từ năm 2019.",
           "choices": {
             "A": "for",
             "B": "since",
@@ -101,7 +126,12 @@
             "grammar:preposition",
             "grammar:present-perfect"
           ],
-          "explanation_vi": "Hiện tại hoàn thành + mốc thời gian → since. 'for' đi với khoảng thời gian."
+          "explanation_vi": "Hiện tại hoàn thành + mốc thời gian → since. 'for' đi với khoảng thời gian.",
+          "why_wrong_vi": {
+            "A": "'for' đi với khoảng thời gian (for five years), không đi với mốc 2019.",
+            "C": "'from' cần đi cặp 'from ... to'; với hiện tại hoàn thành và mốc thời gian phải dùng 'since'.",
+            "D": "'at' không dùng trước năm."
+          }
         }
       ]
     },
@@ -110,6 +140,7 @@
       "questions": [
         {
           "prompt": "Employees must wear identification badges ------- they are in the building.",
+          "prompt_vi": "Nhân viên phải đeo thẻ nhận dạng bất cứ khi nào họ ở trong tòa nhà.",
           "choices": {
             "A": "whenever",
             "B": "whoever",
@@ -121,7 +152,12 @@
           "tags": [
             "grammar:conjunction"
           ],
-          "explanation_vi": "'whenever' = bất cứ khi nào, nối hai mệnh đề về thời gian."
+          "explanation_vi": "'whenever' = bất cứ khi nào, nối hai mệnh đề về thời gian.",
+          "why_wrong_vi": {
+            "B": "'whoever' (bất cứ ai) chỉ người, không nối hai mệnh đề về thời gian.",
+            "C": "'however' (dù thế nào) không mang nghĩa thời gian; câu không hợp nghĩa.",
+            "D": "'whatever' (bất cứ thứ gì) cần làm tân ngữ/chủ ngữ, không hợp với mệnh đề đã đủ thành phần."
+          }
         }
       ]
     },
@@ -130,6 +166,7 @@
       "questions": [
         {
           "prompt": "Our new line of furniture is both stylish and -------.",
+          "prompt_vi": "Dòng sản phẩm nội thất mới của chúng tôi vừa phong cách vừa có giá phải chăng.",
           "choices": {
             "A": "afford",
             "B": "affordably",
@@ -142,7 +179,12 @@
             "grammar:word-form",
             "grammar:paired-conjunction"
           ],
-          "explanation_vi": "'both A and B' cần hai thành phần cùng loại; 'stylish' là tính từ → affordable."
+          "explanation_vi": "'both A and B' cần hai thành phần cùng loại; 'stylish' là tính từ → affordable.",
+          "why_wrong_vi": {
+            "A": "'afford' là động từ; 'both A and B' cần hai tính từ song song.",
+            "B": "'affordably' là trạng từ, không song song với tính từ 'stylish' sau 'is'.",
+            "C": "'affordability' là danh từ, không song song với tính từ 'stylish'."
+          }
         }
       ]
     },
@@ -151,6 +193,7 @@
       "questions": [
         {
           "prompt": "The quarterly sales figures were ------- than the team had predicted.",
+          "prompt_vi": "Số liệu doanh số quý cao hơn mức nhóm đã dự đoán.",
           "choices": {
             "A": "high",
             "B": "higher",
@@ -162,7 +205,12 @@
           "tags": [
             "grammar:comparative"
           ],
-          "explanation_vi": "Có 'than' → so sánh hơn higher."
+          "explanation_vi": "Có 'than' → so sánh hơn higher.",
+          "why_wrong_vi": {
+            "A": "Có 'than' nên phải dùng so sánh hơn, không dùng nguyên dạng 'high'.",
+            "C": "'highest' là so sánh nhất, không đi với 'than'.",
+            "D": "'highly' là trạng từ (rất), không làm vị ngữ so sánh sau 'were'."
+          }
         }
       ]
     },
@@ -171,6 +219,7 @@
       "questions": [
         {
           "prompt": "Mr. Vance asked his assistant to ------- the conference room for the client visit.",
+          "prompt_vi": "Ông Vance đã nhờ trợ lý đặt phòng hội nghị cho buổi khách hàng đến thăm.",
           "choices": {
             "A": "reserve",
             "B": "deserve",
@@ -182,7 +231,12 @@
           "tags": [
             "vocab:office"
           ],
-          "explanation_vi": "'reserve a room' = đặt phòng. Các từ còn lại có âm giống nhưng sai nghĩa."
+          "explanation_vi": "'reserve a room' = đặt phòng. Các từ còn lại có âm giống nhưng sai nghĩa.",
+          "why_wrong_vi": {
+            "B": "'deserve' (xứng đáng) sai nghĩa; chỉ giống âm với 'reserve'.",
+            "C": "'preserve' (bảo tồn) sai nghĩa với 'phòng họp'.",
+            "D": "'observe' (quan sát, tuân thủ) sai nghĩa."
+          }
         }
       ]
     },
@@ -191,6 +245,7 @@
       "questions": [
         {
           "prompt": "The factory has reduced its energy use by 20 percent ------- installing solar panels.",
+          "prompt_vi": "Nhà máy đã giảm 20% lượng điện năng tiêu thụ bằng cách lắp đặt tấm pin mặt trời.",
           "choices": {
             "A": "on",
             "B": "with",
@@ -203,7 +258,12 @@
             "grammar:preposition",
             "grammar:gerund"
           ],
-          "explanation_vi": "'by + V-ing' = bằng cách làm gì."
+          "explanation_vi": "'by + V-ing' = bằng cách làm gì.",
+          "why_wrong_vi": {
+            "A": "'on + V-ing' nghĩa là 'ngay khi', không diễn tả cách thức.",
+            "B": "'with' không đi với V-ing để chỉ phương pháp như 'by'.",
+            "C": "'for + V-ing' chỉ mục đích/công dụng, không phải cách thức."
+          }
         }
       ]
     },
@@ -212,6 +272,7 @@
       "questions": [
         {
           "prompt": "Neither the director ------- the vice president was available for comment.",
+          "prompt_vi": "Cả giám đốc lẫn phó chủ tịch đều không có mặt để bình luận.",
           "choices": {
             "A": "or",
             "B": "and",
@@ -223,7 +284,12 @@
           "tags": [
             "grammar:paired-conjunction"
           ],
-          "explanation_vi": "Cặp 'neither ... nor'."
+          "explanation_vi": "Cặp 'neither ... nor'.",
+          "why_wrong_vi": {
+            "A": "'or' đi cặp với 'either', không đi với 'neither'.",
+            "B": "'and' đi cặp với 'both'.",
+            "C": "'but' đi trong cặp 'not only ... but also'."
+          }
         }
       ]
     },
@@ -232,6 +298,7 @@
       "questions": [
         {
           "prompt": "Visitors are ------- to sign in at the front desk upon arrival.",
+          "prompt_vi": "Khách tham quan được yêu cầu đăng ký tại quầy lễ tân khi đến nơi.",
           "choices": {
             "A": "require",
             "B": "requiring",
@@ -243,7 +310,12 @@
           "tags": [
             "grammar:passive"
           ],
-          "explanation_vi": "'be required to V' = được yêu cầu làm gì (bị động)."
+          "explanation_vi": "'be required to V' = được yêu cầu làm gì (bị động).",
+          "why_wrong_vi": {
+            "A": "'are require' sai: sau 'are' không dùng động từ nguyên mẫu.",
+            "B": "'are requiring' là chủ động: khách không 'yêu cầu' mà 'được yêu cầu'.",
+            "D": "'requirement' là danh từ, không tạo thành cấu trúc 'be ___ to V'."
+          }
         }
       ]
     },
@@ -252,6 +324,7 @@
       "questions": [
         {
           "prompt": "The proposal ------- by the committee at next week's meeting.",
+          "prompt_vi": "Đề xuất sẽ được ủy ban xem xét tại cuộc họp tuần sau.",
           "choices": {
             "A": "reviewed",
             "B": "will be reviewed",
@@ -264,7 +337,12 @@
             "grammar:passive",
             "grammar:verb-tense"
           ],
-          "explanation_vi": "'next week' → tương lai; 'by the committee' → bị động: will be reviewed."
+          "explanation_vi": "'next week' → tương lai; 'by the committee' → bị động: will be reviewed.",
+          "why_wrong_vi": {
+            "A": "'reviewed' là chủ động quá khứ, sai cả thì ('next week') lẫn thể (cần bị động).",
+            "C": "'has reviewed' là chủ động hiện tại hoàn thành; đề xuất không tự xem xét.",
+            "D": "'reviewing' không làm động từ chính được khi thiếu trợ động từ."
+          }
         }
       ]
     },
@@ -273,6 +351,7 @@
       "questions": [
         {
           "prompt": "Mirabel Hotel guests ------- book a spa treatment receive a 10 percent discount.",
+          "prompt_vi": "Khách của khách sạn Mirabel đặt dịch vụ spa sẽ được giảm giá 10%.",
           "choices": {
             "A": "whose",
             "B": "which",
@@ -284,7 +363,12 @@
           "tags": [
             "grammar:relative-clause"
           ],
-          "explanation_vi": "Thay cho 'guests' (người), làm chủ ngữ của 'book' → who."
+          "explanation_vi": "Thay cho 'guests' (người), làm chủ ngữ của 'book' → who.",
+          "why_wrong_vi": {
+            "A": "'whose' cần một danh từ theo sau để chỉ sở hữu.",
+            "B": "'which' thay cho vật, còn 'guests' là người.",
+            "D": "'whom' là tân ngữ, nhưng chỗ trống cần chủ ngữ của 'book'."
+          }
         }
       ]
     },
@@ -293,6 +377,7 @@
       "questions": [
         {
           "prompt": "The marketing department is ------- for designing all product packaging.",
+          "prompt_vi": "Phòng marketing chịu trách nhiệm thiết kế toàn bộ bao bì sản phẩm.",
           "choices": {
             "A": "responsible",
             "B": "responsibly",
@@ -304,7 +389,12 @@
           "tags": [
             "grammar:word-form"
           ],
-          "explanation_vi": "'be responsible for' = chịu trách nhiệm về; sau 'is' cần tính từ."
+          "explanation_vi": "'be responsible for' = chịu trách nhiệm về; sau 'is' cần tính từ.",
+          "why_wrong_vi": {
+            "B": "'responsibly' là trạng từ, không đứng sau 'is' làm vị ngữ.",
+            "C": "'responsibility' là danh từ; 'is responsibility for' thiếu mạo từ và sai cấu trúc.",
+            "D": "'responsibilities' là danh từ số nhiều, không hợp với chủ ngữ số ít và cấu trúc 'be ___ for'."
+          }
         }
       ]
     },
@@ -313,6 +403,7 @@
       "questions": [
         {
           "prompt": "Please contact Mr. Ito directly ------- you have questions about the payroll system.",
+          "prompt_vi": "Vui lòng liên hệ trực tiếp ông Ito nếu bạn có câu hỏi về hệ thống tính lương.",
           "choices": {
             "A": "so that",
             "B": "if",
@@ -324,7 +415,12 @@
           "tags": [
             "grammar:conjunction"
           ],
-          "explanation_vi": "Điều kiện 'nếu có câu hỏi' → if. 'unless' nghĩa ngược lại."
+          "explanation_vi": "Điều kiện 'nếu có câu hỏi' → if. 'unless' nghĩa ngược lại.",
+          "why_wrong_vi": {
+            "A": "'so that' chỉ mục đích (để mà), không hợp nghĩa.",
+            "C": "'unless' (trừ khi) cho nghĩa ngược: chỉ liên hệ khi không có câu hỏi.",
+            "D": "'whereas' (trong khi đó) chỉ sự đối lập, không phải điều kiện."
+          }
         }
       ]
     },
@@ -333,6 +429,7 @@
       "questions": [
         {
           "prompt": "The training manual was written ------- for new employees.",
+          "prompt_vi": "Sổ tay đào tạo được viết riêng cho nhân viên mới.",
           "choices": {
             "A": "specify",
             "B": "specific",
@@ -345,7 +442,12 @@
             "grammar:word-form",
             "grammar:adverb"
           ],
-          "explanation_vi": "Bổ nghĩa cho cụm động từ 'was written for' → trạng từ specifically."
+          "explanation_vi": "Bổ nghĩa cho cụm động từ 'was written for' → trạng từ specifically.",
+          "why_wrong_vi": {
+            "A": "'specify' là động từ, câu đã có động từ 'was written'.",
+            "B": "'specific' là tính từ, không bổ nghĩa cho động từ.",
+            "D": "'specification' là danh từ, không chen vào giữa 'written' và 'for'."
+          }
         }
       ]
     },
@@ -354,6 +456,7 @@
       "questions": [
         {
           "prompt": "Due to high demand, tickets for the concert sold out ------- two hours.",
+          "prompt_vi": "Do nhu cầu cao, vé buổi hòa nhạc đã bán hết trong vòng hai giờ.",
           "choices": {
             "A": "within",
             "B": "between",
@@ -365,7 +468,12 @@
           "tags": [
             "grammar:preposition"
           ],
-          "explanation_vi": "'within + khoảng thời gian' = trong vòng."
+          "explanation_vi": "'within + khoảng thời gian' = trong vòng.",
+          "why_wrong_vi": {
+            "B": "'between' cần hai mốc (between 1 and 3 P.M.).",
+            "C": "'among' dùng với nhóm người/vật, không với khoảng thời gian.",
+            "D": "'along' (dọc theo) chỉ vị trí, không chỉ thời gian."
+          }
         }
       ]
     },
@@ -374,6 +482,7 @@
       "questions": [
         {
           "prompt": "The engineers are developing a cooling system that is more ------- than the current one.",
+          "prompt_vi": "Các kỹ sư đang phát triển một hệ thống làm mát hiệu quả hơn hệ thống hiện tại.",
           "choices": {
             "A": "efficiency",
             "B": "efficiently",
@@ -386,7 +495,12 @@
             "grammar:word-form",
             "grammar:comparative"
           ],
-          "explanation_vi": "'is more ___ than' → so sánh hơn của tính từ: more efficient."
+          "explanation_vi": "'is more ___ than' → so sánh hơn của tính từ: more efficient.",
+          "why_wrong_vi": {
+            "A": "'efficiency' là danh từ, không dùng trong 'is more ___ than' để mô tả hệ thống.",
+            "B": "'efficiently' là trạng từ, không làm vị ngữ sau 'is'.",
+            "D": "'efficiencies' là danh từ số nhiều, sai từ loại."
+          }
         }
       ]
     },
@@ -395,6 +509,7 @@
       "questions": [
         {
           "prompt": "By the time the shipment arrived, the store ------- out of the product.",
+          "prompt_vi": "Vào lúc lô hàng đến, cửa hàng đã hết sản phẩm đó.",
           "choices": {
             "A": "runs",
             "B": "has run",
@@ -407,7 +522,12 @@
             "grammar:verb-tense",
             "grammar:past-perfect"
           ],
-          "explanation_vi": "'By the time + quá khứ đơn' → mệnh đề chính dùng quá khứ hoàn thành: had run."
+          "explanation_vi": "'By the time + quá khứ đơn' → mệnh đề chính dùng quá khứ hoàn thành: had run.",
+          "why_wrong_vi": {
+            "A": "Sai thì: hiện tại đơn không hợp với hành động trong quá khứ ('arrived').",
+            "B": "Sai thì: cần quá khứ hoàn thành vì hành động xảy ra trước 'by the time + quá khứ'.",
+            "C": "Sai thì: tương lai không hợp với mốc quá khứ 'arrived'."
+          }
         }
       ]
     },
@@ -416,6 +536,7 @@
       "questions": [
         {
           "prompt": "The company's profits rose sharply last year, ------- most of its competitors struggled.",
+          "prompt_vi": "Lợi nhuận của công ty tăng mạnh vào năm ngoái, trong khi hầu hết các đối thủ gặp khó khăn.",
           "choices": {
             "A": "because of",
             "B": "while",
@@ -427,7 +548,12 @@
           "tags": [
             "grammar:conjunction-vs-preposition"
           ],
-          "explanation_vi": "Sau chỗ trống là mệnh đề → liên từ; 'while' diễn tả sự tương phản."
+          "explanation_vi": "Sau chỗ trống là mệnh đề → liên từ; 'while' diễn tả sự tương phản.",
+          "why_wrong_vi": {
+            "A": "'because of' là giới từ, cần cụm danh từ chứ không phải mệnh đề; nghĩa cũng sai.",
+            "C": "'despite' là giới từ, không đứng trước mệnh đề.",
+            "D": "'during' là giới từ chỉ thời gian, không đứng trước mệnh đề."
+          }
         }
       ]
     },
@@ -436,6 +562,7 @@
       "questions": [
         {
           "prompt": "Ms. Ramos was praised for her ------- to detail.",
+          "prompt_vi": "Cô Ramos được khen ngợi vì sự tỉ mỉ đến từng chi tiết.",
           "choices": {
             "A": "attention",
             "B": "attend",
@@ -448,7 +575,12 @@
             "grammar:word-form",
             "vocab:collocation"
           ],
-          "explanation_vi": "Sau 'her' cần danh từ; 'attention to detail' = sự tỉ mỉ."
+          "explanation_vi": "Sau 'her' cần danh từ; 'attention to detail' = sự tỉ mỉ.",
+          "why_wrong_vi": {
+            "B": "'attend' là động từ, không đứng sau tính từ sở hữu 'her'.",
+            "C": "'attentive' là tính từ, sau 'her' cần danh từ.",
+            "D": "'attentively' là trạng từ, sai từ loại."
+          }
         }
       ]
     },
@@ -457,6 +589,7 @@
       "questions": [
         {
           "prompt": "The CEO will travel to Seoul next week to ------- a partnership agreement.",
+          "prompt_vi": "Tổng giám đốc sẽ sang Seoul tuần tới để hoàn tất thỏa thuận hợp tác.",
           "choices": {
             "A": "finality",
             "B": "finalized",
@@ -468,7 +601,12 @@
           "tags": [
             "grammar:infinitive"
           ],
-          "explanation_vi": "'to + V nguyên mẫu' chỉ mục đích → finalize."
+          "explanation_vi": "'to + V nguyên mẫu' chỉ mục đích → finalize.",
+          "why_wrong_vi": {
+            "A": "'finality' là danh từ, sau 'to' chỉ mục đích cần động từ nguyên mẫu.",
+            "B": "'to finalized' sai: sau 'to' không dùng quá khứ phân từ.",
+            "C": "'to finalizing' sai: 'to' ở đây là to-infinitive, không phải giới từ."
+          }
         }
       ]
     },
@@ -477,6 +615,7 @@
       "questions": [
         {
           "prompt": "Customers can track their orders ------- through our mobile app.",
+          "prompt_vi": "Khách hàng có thể dễ dàng theo dõi đơn hàng qua ứng dụng di động của chúng tôi.",
           "choices": {
             "A": "ease",
             "B": "easy",
@@ -489,7 +628,12 @@
             "grammar:word-form",
             "grammar:adverb"
           ],
-          "explanation_vi": "Bổ nghĩa cho động từ 'track' → trạng từ easily."
+          "explanation_vi": "Bổ nghĩa cho động từ 'track' → trạng từ easily.",
+          "why_wrong_vi": {
+            "A": "'ease' là danh từ/động từ, không bổ nghĩa cho 'track'.",
+            "B": "'easy' là tính từ, không bổ nghĩa cho động từ.",
+            "D": "'easier' là tính từ so sánh, không bổ nghĩa cho động từ và không có 'than'."
+          }
         }
       ]
     },
@@ -498,6 +642,7 @@
       "questions": [
         {
           "prompt": "The board approved the budget ------- some members expressed concerns.",
+          "prompt_vi": "Hội đồng quản trị đã thông qua ngân sách dù một số thành viên bày tỏ lo ngại.",
           "choices": {
             "A": "despite",
             "B": "even though",
@@ -509,7 +654,12 @@
           "tags": [
             "grammar:conjunction-vs-preposition"
           ],
-          "explanation_vi": "Sau chỗ trống là mệnh đề, nghĩa tương phản → even though. 'in spite' thiếu 'of'."
+          "explanation_vi": "Sau chỗ trống là mệnh đề, nghĩa tương phản → even though. 'in spite' thiếu 'of'.",
+          "why_wrong_vi": {
+            "A": "'despite' là giới từ, không đứng trước mệnh đề.",
+            "C": "'in spite' thiếu 'of', và 'in spite of' cũng không đi với mệnh đề.",
+            "D": "'because of' là giới từ và nghĩa nguyên nhân, không phải tương phản."
+          }
         }
       ]
     },
@@ -518,6 +668,7 @@
       "questions": [
         {
           "prompt": "------- the poor weather forecast, the outdoor reception will be moved indoors.",
+          "prompt_vi": "Do dự báo thời tiết xấu, tiệc chiêu đãi ngoài trời sẽ được chuyển vào trong nhà.",
           "choices": {
             "A": "Because",
             "B": "Even if",
@@ -529,7 +680,12 @@
           "tags": [
             "grammar:conjunction-vs-preposition"
           ],
-          "explanation_vi": "Sau chỗ trống là cụm danh từ, nghĩa nguyên nhân → giới từ 'Owing to' (= because of)."
+          "explanation_vi": "Sau chỗ trống là cụm danh từ, nghĩa nguyên nhân → giới từ 'Owing to' (= because of).",
+          "why_wrong_vi": {
+            "A": "'Because' là liên từ, cần mệnh đề; trước cụm danh từ phải dùng 'because of'.",
+            "B": "'Even if' cần mệnh đề và nghĩa 'ngay cả khi' không hợp.",
+            "C": "'Whether' cần mệnh đề và đi với 'or'; nghĩa không hợp."
+          }
         }
       ]
     },
@@ -538,6 +694,7 @@
       "questions": [
         {
           "prompt": "Mr. Okafor, ------- joined the company last spring, has already been promoted.",
+          "prompt_vi": "Ông Okafor, người gia nhập công ty mùa xuân năm ngoái, đã được thăng chức.",
           "choices": {
             "A": "who",
             "B": "which",
@@ -549,7 +706,12 @@
           "tags": [
             "grammar:relative-clause"
           ],
-          "explanation_vi": "Mệnh đề không xác định, thay cho người làm chủ ngữ của 'joined' → who."
+          "explanation_vi": "Mệnh đề không xác định, thay cho người làm chủ ngữ của 'joined' → who.",
+          "why_wrong_vi": {
+            "B": "'which' thay cho vật, còn Mr. Okafor là người.",
+            "C": "'whom' là tân ngữ, nhưng chỗ trống làm chủ ngữ của 'joined'.",
+            "D": "'whose' cần danh từ theo sau để chỉ sở hữu."
+          }
         }
       ]
     },
@@ -558,6 +720,7 @@
       "questions": [
         {
           "prompt": "The renovation project is ------- to be completed ahead of schedule.",
+          "prompt_vi": "Dự án cải tạo có khả năng sẽ hoàn thành trước kế hoạch.",
           "choices": {
             "A": "likes",
             "B": "liking",
@@ -570,7 +733,12 @@
             "grammar:word-form",
             "vocab:collocation"
           ],
-          "explanation_vi": "'be likely to V' = có khả năng sẽ. 'likely' ở đây là tính từ."
+          "explanation_vi": "'be likely to V' = có khả năng sẽ. 'likely' ở đây là tính từ.",
+          "why_wrong_vi": {
+            "A": "'likes' là động từ chia ngôi, không đứng sau 'is'.",
+            "B": "'is liking to be completed' không đúng cấu trúc và sai nghĩa.",
+            "C": "'likeness' (sự giống nhau) là danh từ, sai nghĩa và sai cấu trúc."
+          }
         }
       ]
     },
@@ -579,6 +747,7 @@
       "questions": [
         {
           "prompt": "Applicants should ------- their résumés no later than March 15.",
+          "prompt_vi": "Ứng viên nên nộp sơ yếu lý lịch chậm nhất vào ngày 15 tháng 3.",
           "choices": {
             "A": "submitting",
             "B": "submission",
@@ -590,7 +759,12 @@
           "tags": [
             "grammar:modal"
           ],
-          "explanation_vi": "Sau 'should' dùng động từ nguyên mẫu → submit."
+          "explanation_vi": "Sau 'should' dùng động từ nguyên mẫu → submit.",
+          "why_wrong_vi": {
+            "A": "Sau 'should' không dùng V-ing.",
+            "B": "'submission' là danh từ, sau 'should' cần động từ.",
+            "D": "Sau 'should' không dùng quá khứ 'submitted'."
+          }
         }
       ]
     },
@@ -599,6 +773,7 @@
       "questions": [
         {
           "prompt": "Had the team ------- the error earlier, the project would not have been delayed.",
+          "prompt_vi": "Nếu nhóm phát hiện ra lỗi sớm hơn thì dự án đã không bị chậm trễ.",
           "choices": {
             "A": "notice",
             "B": "noticed",
@@ -611,7 +786,12 @@
             "grammar:inversion",
             "grammar:conditional"
           ],
-          "explanation_vi": "Đảo ngữ điều kiện loại 3: Had + S + V3 → noticed."
+          "explanation_vi": "Đảo ngữ điều kiện loại 3: Had + S + V3 → noticed.",
+          "why_wrong_vi": {
+            "A": "Đảo ngữ loại 3 'Had + S' cần quá khứ phân từ, không phải nguyên mẫu.",
+            "C": "'Had ... noticing' sai: sau 'had' cần V3.",
+            "D": "'notices' là hiện tại đơn, không đi sau 'had'."
+          }
         }
       ]
     },
@@ -623,7 +803,8 @@
         {
           "type": "notice",
           "title": "Notice to All Tenants – Parkview Office Center",
-          "text": "The parking garage beneath Parkview Office Center will be closed from June 3 to June 7 so that the floors can be resurfaced. During this period, tenants and visitors may park in the public lot on Glen Road, ---(131)--- is a five-minute walk from the building. ---(132)---, parking fees at the Glen Road lot will be covered by building management.\n\nTo receive free parking, simply show your Parkview access card to the lot attendant when you ---(133)---. ---(134)---. We thank you for your patience while we improve our facilities."
+          "text": "The parking garage beneath Parkview Office Center will be closed from June 3 to June 7 so that the floors can be resurfaced. During this period, tenants and visitors may park in the public lot on Glen Road, ---(131)--- is a five-minute walk from the building. ---(132)---, parking fees at the Glen Road lot will be covered by building management.\n\nTo receive free parking, simply show your Parkview access card to the lot attendant when you ---(133)---. ---(134)---. We thank you for your patience while we improve our facilities.",
+          "text_vi": "Bãi đỗ xe tầng hầm của Trung tâm Văn phòng Parkview sẽ đóng cửa từ ngày 3 đến ngày 7 tháng 6 để làm lại mặt sàn. Trong thời gian này, khách thuê và khách đến có thể đỗ xe tại bãi công cộng trên đường Glen, cách tòa nhà năm phút đi bộ. Ngoài ra, phí gửi xe tại bãi đường Glen sẽ do ban quản lý tòa nhà chi trả.\n\nĐể được gửi xe miễn phí, bạn chỉ cần xuất trình thẻ ra vào Parkview cho nhân viên bãi xe khi ra khỏi bãi. Khách không có thẻ sẽ được cấp vé tại quầy lễ tân của chúng tôi. Cảm ơn quý vị đã kiên nhẫn trong thời gian chúng tôi nâng cấp cơ sở vật chất."
         }
       ],
       "questions": [
@@ -640,7 +821,12 @@
           "tags": [
             "grammar:relative-clause"
           ],
-          "explanation_vi": "Thay cho 'the public lot' (vật), làm chủ ngữ của 'is' → which. 'where' cần một mệnh đề đầy đủ phía sau."
+          "explanation_vi": "Thay cho 'the public lot' (vật), làm chủ ngữ của 'is' → which. 'where' cần một mệnh đề đầy đủ phía sau.",
+          "why_wrong_vi": {
+            "A": "'where' cần một mệnh đề đầy đủ phía sau, nhưng sau chỗ trống thiếu chủ ngữ của 'is'.",
+            "C": "'who' thay cho người, còn 'the public lot' là vật.",
+            "D": "'what' không dùng làm đại từ quan hệ sau một danh từ."
+          }
         },
         {
           "prompt": "(132)",
@@ -655,7 +841,12 @@
           "tags": [
             "grammar:conjunctive-adverb"
           ],
-          "explanation_vi": "Câu sau bổ sung thêm một quyền lợi (miễn phí gửi xe) → In addition."
+          "explanation_vi": "Câu sau bổ sung thêm một quyền lợi (miễn phí gửi xe) → In addition.",
+          "why_wrong_vi": {
+            "A": "'Otherwise' (nếu không thì) không hợp: câu sau không nói hậu quả.",
+            "B": "'However' chỉ sự đối lập, nhưng việc được miễn phí gửi xe là thông tin bổ sung có lợi.",
+            "D": "'For example' cần một ví dụ minh họa cho câu trước, không phải một quyền lợi mới."
+          }
         },
         {
           "prompt": "(133)",
@@ -670,7 +861,12 @@
           "tags": [
             "grammar:verb-tense"
           ],
-          "explanation_vi": "Mệnh đề thời gian sau 'when' dùng hiện tại đơn thay cho tương lai → exit."
+          "explanation_vi": "Mệnh đề thời gian sau 'when' dùng hiện tại đơn thay cho tương lai → exit.",
+          "why_wrong_vi": {
+            "B": "Sai thì: hành động trong tương lai, không dùng quá khứ.",
+            "C": "Mệnh đề thời gian sau 'when' không dùng 'will', phải dùng hiện tại đơn.",
+            "D": "'when you exiting' thiếu trợ động từ, sai ngữ pháp."
+          }
         },
         {
           "prompt": "(134)",
@@ -685,7 +881,12 @@
           "tags": [
             "part6:sentence-insertion"
           ],
-          "explanation_vi": "Câu trước nói người có thẻ được miễn phí; câu (D) bổ sung cách xử lý cho khách không có thẻ — mạch lạc nhất."
+          "explanation_vi": "Câu trước nói người có thẻ được miễn phí; câu (D) bổ sung cách xử lý cho khách không có thẻ — mạch lạc nhất.",
+          "why_wrong_vi": {
+            "A": "Năm xây bãi xe không liên quan đến chuyện gửi xe miễn phí đang nói.",
+            "B": "Thông tin bán vé tháng lạc đề với việc bãi xe tạm đóng.",
+            "C": "Mâu thuẫn: bãi đường Glen là nơi gửi xe thay thế, nói nó đóng cửa buổi trưa là vô lý."
+          }
         }
       ]
     },
@@ -697,7 +898,8 @@
         {
           "type": "email",
           "title": "To: Ana Pereira | From: Customer Service, TechWorld Magazine | Subject: Your subscription",
-          "text": "Dear Ms. Pereira,\n\nThank you for being a loyal reader of TechWorld Magazine. Our records show that your subscription will ---(135)--- on August 31. To continue receiving the magazine without interruption, please renew before that date.\n\nIf you renew for two years, you will save 25 percent off the regular price. ---(136)---. Simply visit our Web site and enter the code RENEW25 at checkout.\n\nAs a subscriber, you also have ---(137)--- access to our online archive of more than 5,000 articles. We hope you will continue to enjoy this benefit.\n\nPlease contact us if you have any questions. We look forward to ---(138)--- you for many more years.\n\nSincerely,\nTechWorld Customer Service"
+          "text": "Dear Ms. Pereira,\n\nThank you for being a loyal reader of TechWorld Magazine. Our records show that your subscription will ---(135)--- on August 31. To continue receiving the magazine without interruption, please renew before that date.\n\nIf you renew for two years, you will save 25 percent off the regular price. ---(136)---. Simply visit our Web site and enter the code RENEW25 at checkout.\n\nAs a subscriber, you also have ---(137)--- access to our online archive of more than 5,000 articles. We hope you will continue to enjoy this benefit.\n\nPlease contact us if you have any questions. We look forward to ---(138)--- you for many more years.\n\nSincerely,\nTechWorld Customer Service",
+          "text_vi": "Kính gửi chị Pereira,\n\nCảm ơn chị đã là độc giả thân thiết của Tạp chí TechWorld. Theo hồ sơ của chúng tôi, gói đăng ký của chị sẽ hết hạn vào ngày 31 tháng 8. Để tiếp tục nhận tạp chí không gián đoạn, vui lòng gia hạn trước ngày đó.\n\nNếu gia hạn hai năm, chị sẽ được giảm 25% so với giá thông thường. Gia hạn trực tuyến chỉ mất vài phút. Chị chỉ cần truy cập trang web của chúng tôi và nhập mã RENEW25 khi thanh toán.\n\nLà người đăng ký, chị còn được truy cập không giới hạn kho lưu trữ trực tuyến với hơn 5.000 bài viết. Chúng tôi hy vọng chị sẽ tiếp tục tận hưởng quyền lợi này.\n\nVui lòng liên hệ với chúng tôi nếu có bất kỳ câu hỏi nào. Chúng tôi mong được phục vụ chị thêm nhiều năm nữa.\n\nTrân trọng,\nBộ phận Chăm sóc Khách hàng TechWorld"
         }
       ],
       "questions": [
@@ -714,7 +916,12 @@
           "tags": [
             "vocab:contracts"
           ],
-          "explanation_vi": "Gói đăng ký 'hết hạn' (expire) vào 31/8 nên cần gia hạn."
+          "explanation_vi": "Gói đăng ký 'hết hạn' (expire) vào 31/8 nên cần gia hạn.",
+          "why_wrong_vi": {
+            "A": "'extend' (kéo dài) ngược nghĩa: nếu được kéo dài thì không cần gia hạn.",
+            "B": "'subscription will deliver' sai nghĩa; gói đăng ký không tự 'giao'.",
+            "D": "'publish' (xuất bản) dùng cho tạp chí, không dùng cho gói đăng ký."
+          }
         },
         {
           "prompt": "(136)",
@@ -729,7 +936,12 @@
           "tags": [
             "part6:sentence-insertion"
           ],
-          "explanation_vi": "Câu sau hướng dẫn gia hạn trên web ('Simply visit our Web site...') → câu (A) dẫn vào tự nhiên."
+          "explanation_vi": "Câu sau hướng dẫn gia hạn trên web ('Simply visit our Web site...') → câu (A) dẫn vào tự nhiên.",
+          "why_wrong_vi": {
+            "B": "Văn phòng nghỉ cuối tuần không liên quan đến việc gia hạn trên web ở câu sau.",
+            "C": "Năm thành lập tạp chí lạc đề giữa đoạn hướng dẫn gia hạn.",
+            "D": "Tuyển thêm cây bút mới không dẫn vào câu 'Simply visit our Web site...'."
+          }
         },
         {
           "prompt": "(137)",
@@ -744,7 +956,12 @@
           "tags": [
             "grammar:word-form"
           ],
-          "explanation_vi": "Trước danh từ 'access' cần tính từ → unlimited (không giới hạn)."
+          "explanation_vi": "Trước danh từ 'access' cần tính từ → unlimited (không giới hạn).",
+          "why_wrong_vi": {
+            "A": "'limit' là danh từ/động từ, trước danh từ 'access' cần tính từ.",
+            "C": "'limitation' là danh từ, sai từ loại.",
+            "D": "'limiting access' (truy cập hạn chế) sai nghĩa với một quyền lợi."
+          }
         },
         {
           "prompt": "(138)",
@@ -759,7 +976,12 @@
           "tags": [
             "grammar:gerund"
           ],
-          "explanation_vi": "'look forward to + V-ing' (to là giới từ) → serving."
+          "explanation_vi": "'look forward to + V-ing' (to là giới từ) → serving.",
+          "why_wrong_vi": {
+            "A": "'look forward to' có 'to' là giới từ, không dùng nguyên mẫu.",
+            "B": "Sau giới từ 'to' không dùng quá khứ 'served'.",
+            "C": "'to be serving' biến 'to' thành to-infinitive, sai cấu trúc."
+          }
         }
       ]
     },
@@ -771,7 +993,8 @@
         {
           "type": "article",
           "title": "Greenway Foods Wins Sustainability Award",
-          "text": "PORTLAND — Greenway Foods has been named this year's winner of the Regional Business Sustainability Award. The award recognizes companies that have ---(139)--- reduced their environmental impact.\n\nOver the past three years, Greenway has replaced all of its plastic packaging with recyclable materials and cut its water use by 40 percent. ---(140)---.\n\n\"This award belongs to our employees,\" said CEO Marcus Bell. \"Many of our best ideas came from ---(141)--- working on the production floor.\"\n\nGreenway plans to use the $50,000 prize to fund a new composting facility. Construction ---(142)--- next spring."
+          "text": "PORTLAND — Greenway Foods has been named this year's winner of the Regional Business Sustainability Award. The award recognizes companies that have ---(139)--- reduced their environmental impact.\n\nOver the past three years, Greenway has replaced all of its plastic packaging with recyclable materials and cut its water use by 40 percent. ---(140)---.\n\n\"This award belongs to our employees,\" said CEO Marcus Bell. \"Many of our best ideas came from ---(141)--- working on the production floor.\"\n\nGreenway plans to use the $50,000 prize to fund a new composting facility. Construction ---(142)--- next spring.",
+          "text_vi": "PORTLAND — Greenway Foods đã được vinh danh là đơn vị đoạt Giải thưởng Doanh nghiệp Phát triển bền vững Khu vực năm nay. Giải thưởng ghi nhận những công ty đã giảm đáng kể tác động đến môi trường.\n\nTrong ba năm qua, Greenway đã thay toàn bộ bao bì nhựa bằng vật liệu tái chế được và cắt giảm 40% lượng nước sử dụng. Công ty cũng chuyển đội xe tải giao hàng sang xe điện.\n\n\"Giải thưởng này thuộc về nhân viên của chúng tôi,\" Tổng giám đốc Marcus Bell nói. \"Nhiều ý tưởng hay nhất của chúng tôi đến từ những người làm việc trong xưởng sản xuất.\"\n\nGreenway dự định dùng khoản tiền thưởng 50.000 đô la để xây một cơ sở ủ phân hữu cơ mới. Việc xây dựng dự kiến bắt đầu vào mùa xuân năm sau."
         }
       ],
       "questions": [
@@ -789,7 +1012,12 @@
             "grammar:word-form",
             "grammar:adverb"
           ],
-          "explanation_vi": "Chen giữa 'have' và V3 'reduced' → trạng từ significantly."
+          "explanation_vi": "Chen giữa 'have' và V3 'reduced' → trạng từ significantly.",
+          "why_wrong_vi": {
+            "B": "'significant' là tính từ, không chen giữa 'have' và 'reduced'.",
+            "C": "'significance' là danh từ, sai từ loại.",
+            "D": "'signify' là động từ; câu đã có động từ 'have reduced'."
+          }
         },
         {
           "prompt": "(140)",
@@ -804,7 +1032,12 @@
           "tags": [
             "part6:sentence-insertion"
           ],
-          "explanation_vi": "Đoạn liệt kê các nỗ lực giảm tác động môi trường; (B) dùng 'also' để bổ sung thêm một nỗ lực."
+          "explanation_vi": "Đoạn liệt kê các nỗ lực giảm tác động môi trường; (B) dùng 'also' để bổ sung thêm một nỗ lực.",
+          "why_wrong_vi": {
+            "A": "Thông tin người sáng lập lạc đề giữa đoạn kể các nỗ lực bảo vệ môi trường.",
+            "C": "Câu chung chung về nhựa không nói gì về Greenway.",
+            "D": "Mâu thuẫn: bài báo đang đưa tin công ty được trao giải."
+          }
         },
         {
           "prompt": "(141)",
@@ -819,7 +1052,12 @@
           "tags": [
             "grammar:pronoun"
           ],
-          "explanation_vi": "'those (who are) working...' = những người đang làm việc ở xưởng. 'them' không đi kèm cụm bổ nghĩa như vậy."
+          "explanation_vi": "'those (who are) working...' = những người đang làm việc ở xưởng. 'them' không đi kèm cụm bổ nghĩa như vậy.",
+          "why_wrong_vi": {
+            "A": "'them' không đi với cụm 'working on...' để chỉ 'những người làm việc'.",
+            "B": "'from they' sai: sau giới từ 'from' không dùng đại từ chủ ngữ.",
+            "D": "'theirs' là đại từ sở hữu (của họ), sai nghĩa."
+          }
         },
         {
           "prompt": "(142)",
@@ -834,7 +1072,12 @@
           "tags": [
             "grammar:verb-tense"
           ],
-          "explanation_vi": "'next spring' → tương lai: is expected to begin."
+          "explanation_vi": "'next spring' → tương lai: is expected to begin.",
+          "why_wrong_vi": {
+            "A": "Sai thì: 'began' là quá khứ, mâu thuẫn với 'next spring'.",
+            "B": "Sai thì: hiện tại hoàn thành không hợp với mốc tương lai.",
+            "C": "Sai thì: quá khứ tiếp diễn không hợp với 'next spring'."
+          }
         }
       ]
     },
@@ -846,7 +1089,8 @@
         {
           "type": "letter",
           "title": "Letter from Halcyon Design Studio",
-          "text": "Dear Mr. Lindqvist,\n\nWe are pleased to offer you the position of junior architect at Halcyon Design Studio. Everyone on the hiring committee was impressed by your ---(143)--- of sustainable building methods.\n\nAs discussed, your starting salary will be $58,000 per year, and you will be eligible for a performance review after six months. ---(144)---, you will receive 20 days of paid vacation annually.\n\nPlease sign the enclosed contract and return it ---(145)--- May 10. ---(146)---. We look forward to welcoming you to our team.\n\nBest regards,\nElena Marsh, Human Resources"
+          "text": "Dear Mr. Lindqvist,\n\nWe are pleased to offer you the position of junior architect at Halcyon Design Studio. Everyone on the hiring committee was impressed by your ---(143)--- of sustainable building methods.\n\nAs discussed, your starting salary will be $58,000 per year, and you will be eligible for a performance review after six months. ---(144)---, you will receive 20 days of paid vacation annually.\n\nPlease sign the enclosed contract and return it ---(145)--- May 10. ---(146)---. We look forward to welcoming you to our team.\n\nBest regards,\nElena Marsh, Human Resources",
+          "text_vi": "Kính gửi anh Lindqvist,\n\nChúng tôi vui mừng mời anh vào vị trí kiến trúc sư sơ cấp tại Halcyon Design Studio. Mọi thành viên trong hội đồng tuyển dụng đều ấn tượng với kiến thức của anh về các phương pháp xây dựng bền vững.\n\nNhư đã trao đổi, mức lương khởi điểm của anh là 58.000 đô la mỗi năm, và anh sẽ được đánh giá hiệu quả công việc sau sáu tháng. Ngoài ra, anh sẽ có 20 ngày nghỉ phép hưởng lương mỗi năm.\n\nVui lòng ký hợp đồng gửi kèm và gửi lại trước ngày 10 tháng 5. Ngày làm việc đầu tiên của anh sẽ là ngày 2 tháng 6. Chúng tôi mong được chào đón anh vào đội ngũ.\n\nTrân trọng,\nElena Marsh, Phòng Nhân sự"
         }
       ],
       "questions": [
@@ -863,7 +1107,12 @@
           "tags": [
             "grammar:word-form"
           ],
-          "explanation_vi": "Sau 'your' cần danh từ → knowledge."
+          "explanation_vi": "Sau 'your' cần danh từ → knowledge.",
+          "why_wrong_vi": {
+            "A": "'know' là động từ, sau 'your' cần danh từ.",
+            "C": "'knowledgeable' là tính từ, không làm danh từ sau 'your'.",
+            "D": "'knowingly' là trạng từ, sai từ loại."
+          }
         },
         {
           "prompt": "(144)",
@@ -878,7 +1127,12 @@
           "tags": [
             "grammar:conjunctive-adverb"
           ],
-          "explanation_vi": "Bổ sung thêm quyền lợi (ngày phép) sau lương → In addition."
+          "explanation_vi": "Bổ sung thêm quyền lợi (ngày phép) sau lương → In addition.",
+          "why_wrong_vi": {
+            "A": "'Instead' (thay vào đó) sai: ngày phép không thay thế cho lương.",
+            "B": "'Nevertheless' chỉ sự đối lập, nhưng đây là quyền lợi được cộng thêm.",
+            "D": "'As a result' sai: ngày phép không phải kết quả của việc đánh giá."
+          }
         },
         {
           "prompt": "(145)",
@@ -893,7 +1147,12 @@
           "tags": [
             "grammar:preposition"
           ],
-          "explanation_vi": "Hạn chót gửi lại hợp đồng → by."
+          "explanation_vi": "Hạn chót gửi lại hợp đồng → by.",
+          "why_wrong_vi": {
+            "B": "'until' chỉ hành động kéo dài đến mốc; việc gửi lại là một lần nên dùng 'by'.",
+            "C": "'since' dùng cho mốc trong quá khứ với thì hoàn thành.",
+            "D": "'between' cần hai mốc thời gian."
+          }
         },
         {
           "prompt": "(146)",
@@ -908,7 +1167,12 @@
           "tags": [
             "part6:sentence-insertion"
           ],
-          "explanation_vi": "Sau hướng dẫn ký hợp đồng và trước lời chào đón, thông tin ngày bắt đầu làm việc là hợp lý nhất."
+          "explanation_vi": "Sau hướng dẫn ký hợp đồng và trước lời chào đón, thông tin ngày bắt đầu làm việc là hợp lý nhất.",
+          "why_wrong_vi": {
+            "A": "Năm thiết kế văn phòng lạc đề giữa phần hướng dẫn nhận việc.",
+            "B": "Số đơn ứng tuyển không liên quan đến bước ký hợp đồng.",
+            "C": "Thông tin trả lương bằng tiền mặt không hợp vị trí và mâu thuẫn với văn phong thư mời."
+          }
         }
       ]
     }

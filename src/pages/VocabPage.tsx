@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useData } from '../lib/data';
 import { loadLearned, toggleLearned } from '../lib/storage';
+import { dueCount, loadCards, vocabKey } from '../lib/progress';
 import type { Vocabulary } from '../lib/types';
 import '../styles/content.css';
 
@@ -19,12 +21,14 @@ export const TOPIC_NAMES: Record<string, string> = {
   'real-estate': 'Bất động sản',
   technology: 'Công nghệ',
   dining: 'Ăn uống',
+  management: 'Quản lý',
+  'customer-service': 'Chăm sóc khách hàng',
 };
 
-const POS_VI: Record<string, string> = { noun: 'danh từ', verb: 'động từ', adjective: 'tính từ', adverb: 'trạng từ', phrase: 'cụm từ' };
+export const POS_VI: Record<string, string> = { noun: 'danh từ', verb: 'động từ', adjective: 'tính từ', adverb: 'trạng từ', phrase: 'cụm từ', preposition: 'giới từ' };
 
-const canSpeak = typeof window !== 'undefined' && 'speechSynthesis' in window;
-function speak(text: string) {
+export const canSpeak = typeof window !== 'undefined' && 'speechSynthesis' in window;
+export function speak(text: string) {
   if (!canSpeak) return;
   const u = new SpeechSynthesisUtterance(text);
   u.lang = 'en-US';
@@ -33,7 +37,7 @@ function speak(text: string) {
   window.speechSynthesis.speak(u);
 }
 
-const keyOf = (v: Vocabulary) => `${v.word}|${v.pos}|${v.topic}`;
+const keyOf = vocabKey;
 
 /** Lowercase, drop Vietnamese tone/vowel marks and map đ → d, so "hop dong" matches "hợp đồng". */
 export function fold(text: string): string {
@@ -47,13 +51,13 @@ export function fold(text: string): string {
 }
 
 /** Target score levels are cumulative: aiming for 650 means knowing the 450 words too. */
-const LEVELS = ['450', '650', '850'] as const;
-const LEVEL_LABEL: Record<(typeof LEVELS)[number], string> = {
+export const LEVELS = ['450', '650', '850'] as const;
+export const LEVEL_LABEL: Record<(typeof LEVELS)[number], string> = {
   '450': 'Mục tiêu 450: từ cơ bản',
   '650': 'Mục tiêu 650: gồm từ 450',
   '850': 'Mục tiêu 850+: mọi từ',
 };
-const withinLevel = (v: Vocabulary, target: string) => Number(v.level) <= Number(target);
+export const withinLevel = (v: Vocabulary, target: string) => Number(v.level) <= Number(target);
 
 export default function VocabPage() {
   const data = useData();
@@ -64,6 +68,7 @@ export default function VocabPage() {
   const [revealed, setRevealed] = useState<Set<string>>(new Set());
   const [learned, setLearned] = useState(loadLearned);
   const [onlyNew, setOnlyNew] = useState(false);
+  const [due] = useState(() => dueCount(data.vocabulary, loadCards()));
 
   const topics = useMemo(() => [...new Set(data.vocabulary.map((v) => v.topic))], [data]);
   // English word, Vietnamese meaning, both example sentences and collocations, folded once.
@@ -88,6 +93,13 @@ export default function VocabPage() {
         <p>
           {data.vocabulary.length} từ thường gặp trong đề, chia theo chủ đề và mức điểm mục tiêu. Bạn đã thuộc {learned.size} từ.
         </p>
+        <div className="row vocab-cards-link">
+          {/* the flashcards open with the topic and level chosen here */}
+          <Link className="btn btn--ink btn--small" to={`/tu-vung/the?${new URLSearchParams({ ...(topic ? { 'chu-de': topic } : {}), muc: level })}`}>
+            Ôn bằng thẻ{topic ? `: ${TOPIC_NAMES[topic] ?? topic}` : ''}
+          </Link>
+          <span className="small muted">{due > 0 ? `${due} thẻ đến hạn ôn hôm nay` : 'Lật thẻ, tự chấm mức nhớ, thẻ quay lại đúng lúc sắp quên.'}</span>
+        </div>
       </div>
 
       <div className="filters">

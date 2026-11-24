@@ -1,0 +1,1055 @@
+{
+  "test": {
+    "id": "practice-bank-01"
+  },
+  "sets": [
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Ms. Okafor's proposal was ------- approved by the board after only a brief discussion.",
+          "prompt_vi": "Đề xuất của cô Okafor đã được hội đồng quản trị nhất trí thông qua chỉ sau một cuộc thảo luận ngắn.",
+          "choices": {
+            "A": "unanimously",
+            "B": "unanimous",
+            "C": "unanimity",
+            "D": "unanimousness"
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "grammar:word-form",
+            "grammar:adverb"
+          ],
+          "explanation_vi": "Giữa trợ động từ was và phân từ approved cần trạng từ bổ nghĩa → unanimously (một cách nhất trí).",
+          "why_wrong_vi": {
+            "B": "Tính từ không bổ nghĩa cho động từ/phân từ approved.",
+            "C": "Danh từ không đứng giữa was và approved.",
+            "D": "Danh từ, lại rất ít dùng; vị trí này cần trạng từ."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "All requests for reimbursement must be submitted ------- thirty days of the purchase date.",
+          "prompt_vi": "Mọi yêu cầu hoàn tiền phải được nộp trong vòng ba mươi ngày kể từ ngày mua.",
+          "choices": {
+            "A": "during",
+            "B": "until",
+            "C": "within",
+            "D": "between"
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "grammar:preposition"
+          ],
+          "explanation_vi": "'within + khoảng thời gian + of + mốc' = trong vòng … kể từ … → within thirty days of the purchase date.",
+          "why_wrong_vi": {
+            "A": "'during' đi với một khoảng thời gian/sự kiện, không đi với 'of + mốc'.",
+            "B": "'until thirty days of' sai cấu trúc; until cần một mốc thời gian.",
+            "D": "'between' cần hai đối tượng (between A and B)."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "By the time the new campaign launches in May, the marketing team ------- on it for six months.",
+          "prompt_vi": "Đến lúc chiến dịch mới ra mắt vào tháng Năm, nhóm marketing sẽ đã làm việc với nó được sáu tháng.",
+          "choices": {
+            "A": "has worked",
+            "B": "works",
+            "C": "will have been working",
+            "D": "had been working"
+          },
+          "answer": "C",
+          "difficulty": 5,
+          "tags": [
+            "grammar:verb-tense"
+          ],
+          "explanation_vi": "'By the time + hiện tại đơn' chỉ mốc tương lai; 'for six months' chỉ quá trình kéo dài → tương lai hoàn thành tiếp diễn.",
+          "why_wrong_vi": {
+            "A": "Hiện tại hoàn thành không đi với mốc tương lai by the time … launches.",
+            "B": "Hiện tại đơn không diễn tả quá trình kéo dài tới một mốc tương lai.",
+            "D": "Quá khứ hoàn thành tiếp diễn dùng cho mốc trong quá khứ."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "------- the shipment arrived two days late, the store was able to open on schedule.",
+          "prompt_vi": "Mặc dù lô hàng đến trễ hai ngày, cửa hàng vẫn khai trương đúng kế hoạch.",
+          "choices": {
+            "A": "Despite",
+            "B": "Although",
+            "C": "However",
+            "D": "Because"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "grammar:conjunction-vs-preposition"
+          ],
+          "explanation_vi": "Hai mệnh đề trái ngược nhau (hàng trễ nhưng vẫn mở cửa đúng hẹn) → liên từ nhượng bộ Although.",
+          "why_wrong_vi": {
+            "A": "'Despite' là giới từ, phải đi với danh từ, không đi với mệnh đề.",
+            "C": "'However' là trạng từ liên kết, không nối hai mệnh đề trong một câu như vậy.",
+            "D": "Sai nghĩa: hàng đến trễ không phải lý do giúp mở cửa đúng hẹn."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Ms. Chen prepared the quarterly report -------, without any help from her colleagues.",
+          "prompt_vi": "Cô Chen tự mình chuẩn bị báo cáo quý, không cần đồng nghiệp giúp.",
+          "choices": {
+            "A": "she",
+            "B": "herself",
+            "C": "her",
+            "D": "hers"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "grammar:pronoun"
+          ],
+          "explanation_vi": "Đại từ phản thân dùng để nhấn mạnh 'tự mình làm', phù hợp với 'without any help' → herself.",
+          "why_wrong_vi": {
+            "A": "Đại từ chủ ngữ không đứng sau tân ngữ ở cuối mệnh đề.",
+            "C": "'her' là tân ngữ/tính từ sở hữu, không mang nghĩa 'tự mình'.",
+            "D": "Đại từ sở hữu (của cô ấy) không hợp nghĩa."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The board was impressed by the ------- of the new accounting software.",
+          "prompt_vi": "Hội đồng quản trị ấn tượng với độ tin cậy của phần mềm kế toán mới.",
+          "choices": {
+            "A": "reliable",
+            "B": "reliably",
+            "C": "reliability",
+            "D": "relying"
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "grammar:word-form"
+          ],
+          "explanation_vi": "Sau mạo từ 'the' và trước 'of' cần danh từ → reliability (độ tin cậy).",
+          "why_wrong_vi": {
+            "A": "Tính từ không đứng sau 'the' và trước 'of' khi không có danh từ.",
+            "B": "Trạng từ không làm tân ngữ cho giới từ by.",
+            "D": "V-ing 'relying' cần giới từ 'on' và không hợp nghĩa."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Applicants for the compliance officer position must have a ------- understanding of data privacy regulations.",
+          "prompt_vi": "Ứng viên vị trí chuyên viên tuân thủ phải hiểu biết sâu sắc về các quy định bảo mật dữ liệu.",
+          "choices": {
+            "A": "thoroughly",
+            "B": "thoroughness",
+            "C": "more thoroughly",
+            "D": "thorough"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "grammar:word-form"
+          ],
+          "explanation_vi": "Giữa mạo từ 'a' và danh từ 'understanding' cần tính từ → thorough (kỹ lưỡng, sâu sắc).",
+          "why_wrong_vi": {
+            "A": "Trạng từ không bổ nghĩa cho danh từ understanding.",
+            "B": "Danh từ không đứng giữa a và danh từ khác ở đây.",
+            "C": "Cụm trạng từ so sánh, sai từ loại."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The contract will be renewed automatically ------- either party gives written notice of cancellation.",
+          "prompt_vi": "Hợp đồng sẽ được tự động gia hạn trừ khi một trong hai bên gửi thông báo hủy bằng văn bản.",
+          "choices": {
+            "A": "unless",
+            "B": "whether",
+            "C": "so that",
+            "D": "in case of"
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "grammar:conjunction"
+          ],
+          "explanation_vi": "Gia hạn tự động 'trừ khi' có thông báo hủy → unless = if … not.",
+          "why_wrong_vi": {
+            "B": "'whether' (liệu…hay không) không tạo quan hệ điều kiện phù hợp.",
+            "C": "'so that' chỉ mục đích, sai nghĩa.",
+            "D": "'in case of' là giới từ, phải đi với danh từ, không đi với mệnh đề."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Mr. Haddad has been ------- to oversee the merger of the two regional offices.",
+          "prompt_vi": "Ông Haddad đã được giao giám sát việc sáp nhập hai văn phòng khu vực.",
+          "choices": {
+            "A": "assigning",
+            "B": "assignment",
+            "C": "assigned",
+            "D": "assigns"
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "grammar:passive"
+          ],
+          "explanation_vi": "Ông Haddad 'được' giao việc → bị động hoàn thành: has been + V3 → assigned.",
+          "why_wrong_vi": {
+            "A": "'has been assigning' là chủ động tiếp diễn, nhưng câu thiếu tân ngữ và sai nghĩa.",
+            "B": "Danh từ không đứng sau has been để diễn tả hành động được giao.",
+            "D": "Động từ chia ngôi không đứng sau has been."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The latest software update is ------- with most devices released after 2022.",
+          "prompt_vi": "Bản cập nhật phần mềm mới nhất tương thích với hầu hết thiết bị ra mắt sau năm 2022.",
+          "choices": {
+            "A": "comparable",
+            "B": "competent",
+            "C": "considerate",
+            "D": "compatible"
+          },
+          "answer": "D",
+          "difficulty": 4,
+          "tags": [
+            "vocab:collocation"
+          ],
+          "explanation_vi": "'be compatible with' = tương thích với, cụm cố định khi nói về phần mềm và thiết bị.",
+          "why_wrong_vi": {
+            "A": "'comparable with' = có thể so sánh, không hợp nghĩa thiết bị/phần mềm.",
+            "B": "'competent' (có năng lực) dùng cho người.",
+            "C": "'considerate' (chu đáo) dùng cho người."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Please ------- the attached form and return it to the human resources office by Monday.",
+          "prompt_vi": "Vui lòng điền đầy đủ mẫu đơn đính kèm và gửi lại phòng nhân sự trước thứ Hai.",
+          "choices": {
+            "A": "comply",
+            "B": "accomplish",
+            "C": "conclude",
+            "D": "complete"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "vocab:office",
+            "vocab:collocation"
+          ],
+          "explanation_vi": "'complete a form' = điền đầy đủ mẫu đơn, kết hợp từ chuẩn.",
+          "why_wrong_vi": {
+            "A": "'comply' là nội động từ, cần 'with'.",
+            "B": "'accomplish' dùng cho mục tiêu, nhiệm vụ, không dùng cho mẫu đơn.",
+            "C": "'conclude' (kết luận/kết thúc) không đi với form."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The museum's new wing, ------- was designed by architect Lena Morales, will open to the public in June.",
+          "prompt_vi": "Cánh mới của bảo tàng, do kiến trúc sư Lena Morales thiết kế, sẽ mở cửa đón công chúng vào tháng Sáu.",
+          "choices": {
+            "A": "which",
+            "B": "who",
+            "C": "what",
+            "D": "where"
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "grammar:relative-clause"
+          ],
+          "explanation_vi": "Mệnh đề quan hệ không xác định (có dấu phẩy) thay cho vật 'wing', làm chủ ngữ của was designed → which.",
+          "why_wrong_vi": {
+            "B": "'who' chỉ người, còn 'wing' là vật.",
+            "C": "'what' không dùng làm đại từ quan hệ sau danh từ.",
+            "D": "'where' cần mệnh đề đầy đủ chủ ngữ phía sau; ở đây thiếu chủ ngữ của was designed."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Neither the sales director ------- her assistant was available to answer questions about the delay.",
+          "prompt_vi": "Cả giám đốc bán hàng lẫn trợ lý của cô ấy đều không có mặt để trả lời câu hỏi về sự chậm trễ.",
+          "choices": {
+            "A": "or",
+            "B": "nor",
+            "C": "and",
+            "D": "but"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "grammar:paired-conjunction"
+          ],
+          "explanation_vi": "Liên từ cặp: neither … nor.",
+          "why_wrong_vi": {
+            "A": "'or' đi với 'either', không đi với 'neither'.",
+            "C": "'and' đi với 'both'.",
+            "D": "'but' đi với 'not only … but also'."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The quarterly results were ------- better than analysts had predicted.",
+          "prompt_vi": "Kết quả quý tốt hơn đáng kể so với dự đoán của các nhà phân tích.",
+          "choices": {
+            "A": "considerable",
+            "B": "consider",
+            "C": "considerably",
+            "D": "consideration"
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "grammar:adverb",
+            "grammar:comparative"
+          ],
+          "explanation_vi": "Trạng từ chỉ mức độ đứng trước tính từ so sánh hơn → considerably better (tốt hơn đáng kể).",
+          "why_wrong_vi": {
+            "A": "Tính từ không bổ nghĩa cho tính từ so sánh better.",
+            "B": "Động từ nguyên mẫu không đứng ở vị trí này.",
+            "D": "Danh từ không bổ nghĩa cho better."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Mr. Lindqvist will be out of the office ------- the end of the month, so please direct urgent questions to Ms. Baker.",
+          "prompt_vi": "Ông Lindqvist sẽ vắng mặt ở văn phòng cho đến cuối tháng, vì vậy vui lòng chuyển các câu hỏi gấp cho cô Baker.",
+          "choices": {
+            "A": "until",
+            "B": "by",
+            "C": "since",
+            "D": "within"
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "grammar:preposition"
+          ],
+          "explanation_vi": "Trạng thái vắng mặt kéo dài liên tục đến một mốc → until. Bẫy thường gặp: 'by' chỉ hạn chót.",
+          "why_wrong_vi": {
+            "B": "'by' chỉ hạn chót cho hành động xảy ra một lần, không dùng cho trạng thái kéo dài như 'be out'.",
+            "C": "'since' đi với mốc quá khứ và thì hoàn thành.",
+            "D": "'within' đi với một khoảng thời gian, không đi với mốc 'the end of the month'."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The survey results suggest that customers are ------- interested in eco-friendly packaging than they were five years ago.",
+          "prompt_vi": "Kết quả khảo sát cho thấy khách hàng quan tâm đến bao bì thân thiện với môi trường hơn so với năm năm trước.",
+          "choices": {
+            "A": "more",
+            "B": "most",
+            "C": "much",
+            "D": "very"
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "grammar:comparative"
+          ],
+          "explanation_vi": "Có 'than' → so sánh hơn với tính từ dài: more interested … than.",
+          "why_wrong_vi": {
+            "B": "'most' là so sánh nhất, không đi với 'than'.",
+            "C": "'much' chỉ nhấn mạnh so sánh hơn khi đã có 'more' (much more).",
+            "D": "'very' không đi với 'than'."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Only after the inspection had been completed ------- the workers allowed to reenter the building.",
+          "prompt_vi": "Chỉ sau khi việc kiểm tra hoàn tất thì công nhân mới được phép vào lại tòa nhà.",
+          "choices": {
+            "A": "was",
+            "B": "have",
+            "C": "did",
+            "D": "were"
+          },
+          "answer": "D",
+          "difficulty": 5,
+          "tags": [
+            "grammar:inversion",
+            "grammar:passive"
+          ],
+          "explanation_vi": "'Only after …' đầu câu → đảo ngữ trợ động từ lên trước chủ ngữ. Công nhân 'được cho phép' (bị động, số nhiều, quá khứ) → were the workers allowed.",
+          "why_wrong_vi": {
+            "A": "Chủ ngữ 'the workers' số nhiều nên không dùng was.",
+            "B": "'have allowed' là chủ động, sai nghĩa và sai thì.",
+            "C": "'did … allowed' sai: sau did phải là động từ nguyên mẫu."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "It is essential that every participant ------- a signed consent form before the study begins.",
+          "prompt_vi": "Điều bắt buộc là mỗi người tham gia phải nộp mẫu đồng ý đã ký trước khi nghiên cứu bắt đầu.",
+          "choices": {
+            "A": "submits",
+            "B": "submit",
+            "C": "submitted",
+            "D": "will submit"
+          },
+          "answer": "B",
+          "difficulty": 5,
+          "tags": [
+            "grammar:subjunctive"
+          ],
+          "explanation_vi": "Cấu trúc giả định: It is essential/important that + S + V nguyên mẫu → submit.",
+          "why_wrong_vi": {
+            "A": "Sau 'It is essential that' dùng động từ nguyên mẫu (giả định), không chia theo ngôi.",
+            "C": "Quá khứ đơn sai cấu trúc giả định.",
+            "D": "Không dùng 'will' trong mệnh đề giả định."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The hotel offers a complimentary airport shuttle to guests ------- stay longer than three nights.",
+          "prompt_vi": "Khách sạn có xe đưa đón sân bay miễn phí cho khách lưu trú trên ba đêm.",
+          "choices": {
+            "A": "whose",
+            "B": "which",
+            "C": "who",
+            "D": "whom"
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "grammar:relative-clause"
+          ],
+          "explanation_vi": "Thay cho người ('guests'), làm chủ ngữ của 'stay' → who.",
+          "why_wrong_vi": {
+            "A": "'whose' cần một danh từ theo sau (whose + N).",
+            "B": "'which' dùng cho vật, còn 'guests' là người.",
+            "D": "'whom' là tân ngữ; ở đây cần chủ ngữ cho động từ stay."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Our customer service representatives are trained to handle complaints ------- and professionally.",
+          "prompt_vi": "Nhân viên chăm sóc khách hàng của chúng tôi được đào tạo để xử lý khiếu nại nhanh chóng và chuyên nghiệp.",
+          "choices": {
+            "A": "prompt",
+            "B": "promptly",
+            "C": "prompted",
+            "D": "promptness"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "grammar:adverb",
+            "grammar:word-form"
+          ],
+          "explanation_vi": "Cấu trúc song song với 'and professionally' (trạng từ) và bổ nghĩa cho 'handle' → promptly.",
+          "why_wrong_vi": {
+            "A": "Tính từ không song song với trạng từ 'professionally'.",
+            "C": "Phân từ không hợp nghĩa và không bổ nghĩa cho handle.",
+            "D": "Danh từ không song song với trạng từ."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The board will make a final decision ------- the proposed merger at next week's meeting.",
+          "prompt_vi": "Hội đồng quản trị sẽ đưa ra quyết định cuối cùng về việc sáp nhập được đề xuất trong cuộc họp tuần tới.",
+          "choices": {
+            "A": "despite",
+            "B": "among",
+            "C": "throughout",
+            "D": "regarding"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "grammar:preposition"
+          ],
+          "explanation_vi": "'a decision regarding …' = quyết định về/liên quan đến ….",
+          "why_wrong_vi": {
+            "A": "'despite' (mặc dù) sai nghĩa.",
+            "B": "'among' (giữa nhiều thứ) không hợp nghĩa.",
+            "C": "'throughout' (suốt) không đi với decision."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Ms. Tanaka's presentation was so ------- that several investors requested a follow-up meeting.",
+          "prompt_vi": "Bài thuyết trình của cô Tanaka thuyết phục đến mức nhiều nhà đầu tư đề nghị một cuộc họp tiếp theo.",
+          "choices": {
+            "A": "persuasion",
+            "B": "persuade",
+            "C": "persuasively",
+            "D": "persuasive"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "grammar:word-form"
+          ],
+          "explanation_vi": "Sau 'was so' cần tính từ (so + adj + that) → persuasive.",
+          "why_wrong_vi": {
+            "A": "Danh từ không đi sau 'so' trong cấu trúc so … that.",
+            "B": "Động từ không đứng sau was so.",
+            "C": "Trạng từ không làm bổ ngữ cho động từ to be."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Visitors ------- to wear safety goggles at all times while on the factory floor.",
+          "prompt_vi": "Khách tham quan được yêu cầu đeo kính bảo hộ mọi lúc khi ở trong xưởng.",
+          "choices": {
+            "A": "require",
+            "B": "requiring",
+            "C": "are required",
+            "D": "have required"
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "grammar:passive"
+          ],
+          "explanation_vi": "Khách 'được yêu cầu' → be required to do.",
+          "why_wrong_vi": {
+            "A": "Chủ động sai nghĩa: khách không yêu cầu, mà được yêu cầu.",
+            "B": "V-ing không làm động từ chính của câu.",
+            "D": "Chủ động hoàn thành, sai nghĩa."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Once the new payroll system -------, employees will be able to view their pay stubs online.",
+          "prompt_vi": "Khi hệ thống tính lương mới được cài đặt xong, nhân viên sẽ có thể xem phiếu lương trực tuyến.",
+          "choices": {
+            "A": "has been installed",
+            "B": "will install",
+            "C": "installs",
+            "D": "installing"
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "grammar:verb-tense",
+            "grammar:passive"
+          ],
+          "explanation_vi": "Mệnh đề thời gian (once) dùng hiện tại/hiện tại hoàn thành thay cho tương lai; hệ thống 'được' cài → has been installed.",
+          "why_wrong_vi": {
+            "B": "Không dùng 'will' trong mệnh đề thời gian, và chủ động sai nghĩa.",
+            "C": "Chủ động sai nghĩa: hệ thống không tự cài đặt.",
+            "D": "V-ing không làm động từ chính của mệnh đề."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The company's profits rose sharply last quarter, ------- its stock price remained unchanged.",
+          "prompt_vi": "Lợi nhuận của công ty tăng mạnh trong quý trước, nhưng giá cổ phiếu vẫn không đổi.",
+          "choices": {
+            "A": "so",
+            "B": "because",
+            "C": "therefore",
+            "D": "yet"
+          },
+          "answer": "D",
+          "difficulty": 4,
+          "tags": [
+            "grammar:conjunction"
+          ],
+          "explanation_vi": "Hai ý trái ngược (lợi nhuận tăng – giá cổ phiếu đứng yên) → liên từ đẳng lập 'yet' (nhưng).",
+          "why_wrong_vi": {
+            "A": "'so' chỉ kết quả, sai quan hệ (lợi nhuận tăng không dẫn đến giá đứng yên).",
+            "B": "'because' chỉ nguyên nhân, sai nghĩa.",
+            "C": "'therefore' là trạng từ, không nối hai mệnh đề chỉ bằng dấu phẩy; nghĩa cũng sai."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Leah Woods, the firm's most ------- consultant, has advised clients in more than twenty countries.",
+          "prompt_vi": "Leah Woods, chuyên gia tư vấn giàu kinh nghiệm nhất của công ty, đã tư vấn cho khách hàng ở hơn hai mươi quốc gia.",
+          "choices": {
+            "A": "experienced",
+            "B": "experiencing",
+            "C": "experience",
+            "D": "experiential"
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "grammar:participle",
+            "grammar:word-form"
+          ],
+          "explanation_vi": "'experienced' (tính từ dạng V3) = giàu kinh nghiệm, bổ nghĩa cho consultant.",
+          "why_wrong_vi": {
+            "B": "'experiencing' mang nghĩa chủ động 'đang trải qua', không chỉ người có kinh nghiệm.",
+            "C": "Danh từ không đứng sau 'most' để bổ nghĩa cho consultant.",
+            "D": "'experiential' (thuộc về trải nghiệm) dùng cho phương pháp, không cho người."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The restaurant had to ------- its grand opening because the kitchen equipment had not been delivered.",
+          "prompt_vi": "Nhà hàng phải hoãn buổi khai trương vì thiết bị bếp chưa được giao.",
+          "choices": {
+            "A": "prevent",
+            "B": "postpone",
+            "C": "preserve",
+            "D": "propose"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "vocab:business"
+          ],
+          "explanation_vi": "Thiết bị chưa đến nên phải hoãn khai trương → postpone.",
+          "why_wrong_vi": {
+            "A": "'prevent' (ngăn chặn) không hợp nghĩa.",
+            "C": "'preserve' (bảo tồn) không hợp nghĩa.",
+            "D": "'propose' (đề xuất) mâu thuẫn với lý do thiết bị chưa đến."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Applications that are incomplete will not be ------- for the scholarship.",
+          "prompt_vi": "Hồ sơ không đầy đủ sẽ không được xét cho học bổng.",
+          "choices": {
+            "A": "regarded",
+            "B": "thought",
+            "C": "considered",
+            "D": "judged"
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "vocab:collocation"
+          ],
+          "explanation_vi": "'be considered for + vị trí/học bổng' = được xem xét cho ….",
+          "why_wrong_vi": {
+            "A": "'regard' đi với 'as' (regard A as B), không đi với 'for'.",
+            "B": "'think' không dùng ở bị động với 'for' theo nghĩa này.",
+            "D": "'judged for' không phải kết hợp chuẩn; judge thường đi với 'on' hoặc 'by'."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Mr. Patel asked ------- of the interns to prepare a short presentation on their projects.",
+          "prompt_vi": "Ông Patel yêu cầu từng thực tập sinh chuẩn bị một bài thuyết trình ngắn về dự án của mình.",
+          "choices": {
+            "A": "every",
+            "B": "each",
+            "C": "other",
+            "D": "whole"
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "grammar:pronoun"
+          ],
+          "explanation_vi": "'each of the + N số nhiều' = từng người trong số …; 'every' không đi với 'of'.",
+          "why_wrong_vi": {
+            "A": "'every' không đứng trước 'of' (every of là sai).",
+            "C": "'other of' không đúng ngữ pháp.",
+            "D": "'whole' không đi với danh từ số nhiều đếm được theo cách này."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The training manual has been revised to make ------- easier for new staff to follow.",
+          "prompt_vi": "Sổ tay đào tạo đã được chỉnh sửa để nhân viên mới dễ làm theo hơn.",
+          "choices": {
+            "A": "them",
+            "B": "its",
+            "C": "it",
+            "D": "itself"
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "grammar:pronoun"
+          ],
+          "explanation_vi": "make + it + adj + for sb + to V: 'it' thay cho 'the training manual' (số ít).",
+          "why_wrong_vi": {
+            "A": "'them' số nhiều, trong khi 'manual' là số ít.",
+            "B": "Tính từ sở hữu phải đi kèm danh từ.",
+            "D": "Đại từ phản thân chỉ dùng khi chủ ngữ và tân ngữ trùng nhau; chủ ngữ ngầm ở đây không phải là manual."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "------- the warehouse expansion is complete, the company will be able to store twice as much inventory.",
+          "prompt_vi": "Một khi việc mở rộng nhà kho hoàn tất, công ty sẽ có thể chứa lượng hàng tồn kho gấp đôi.",
+          "choices": {
+            "A": "During",
+            "B": "Once",
+            "C": "Owing to",
+            "D": "In spite of"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "grammar:conjunction-vs-preposition"
+          ],
+          "explanation_vi": "Sau chỗ trống là mệnh đề (S + is) → cần liên từ; 'Once' = một khi.",
+          "why_wrong_vi": {
+            "A": "'During' là giới từ, không đi với mệnh đề.",
+            "C": "'Owing to' là giới từ, phải đi với danh từ.",
+            "D": "'In spite of' là giới từ và sai nghĩa."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Sales of electric bicycles have grown ------- since the city introduced dedicated bike lanes.",
+          "prompt_vi": "Doanh số xe đạp điện đã tăng đều đặn kể từ khi thành phố có làn đường riêng cho xe đạp.",
+          "choices": {
+            "A": "steady",
+            "B": "steadiness",
+            "C": "steadied",
+            "D": "steadily"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "grammar:adverb"
+          ],
+          "explanation_vi": "Trạng từ bổ nghĩa cho động từ 'have grown' → steadily.",
+          "why_wrong_vi": {
+            "A": "Tính từ không bổ nghĩa cho động từ 'grown'.",
+            "B": "Danh từ không đứng sau nội động từ grow.",
+            "C": "Phân từ không hợp với cấu trúc have grown."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Due to ------- weather conditions, the outdoor concert has been moved to the community center.",
+          "prompt_vi": "Do thời tiết xấu, buổi hòa nhạc ngoài trời đã được chuyển vào trung tâm cộng đồng.",
+          "choices": {
+            "A": "inclement",
+            "B": "incidental",
+            "C": "insistent",
+            "D": "inclusive"
+          },
+          "answer": "A",
+          "difficulty": 5,
+          "tags": [
+            "vocab:collocation"
+          ],
+          "explanation_vi": "'inclement weather' = thời tiết xấu, cụm thường gặp trong thông báo hủy/dời sự kiện.",
+          "why_wrong_vi": {
+            "B": "'incidental' (ngẫu nhiên, phụ) không dùng cho thời tiết.",
+            "C": "'insistent' (khăng khăng) dùng cho người.",
+            "D": "'inclusive' (bao gồm) không hợp nghĩa."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Ms. Ruiz will ------- the opening remarks at the annual shareholders' meeting.",
+          "prompt_vi": "Cô Ruiz sẽ phát biểu khai mạc tại cuộc họp cổ đông thường niên.",
+          "choices": {
+            "A": "deliver",
+            "B": "speak",
+            "C": "tell",
+            "D": "express"
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "vocab:collocation"
+          ],
+          "explanation_vi": "'deliver remarks/a speech' = trình bày bài phát biểu.",
+          "why_wrong_vi": {
+            "B": "'speak' là nội động từ, không đi trực tiếp với 'remarks'.",
+            "C": "'tell' đi với người nghe hoặc story/truth, không đi với remarks.",
+            "D": "'express' đi với cảm xúc, ý kiến (express thanks), không dùng cho bài phát biểu."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "If the delivery had arrived on time, we ------- the display before the store opened.",
+          "prompt_vi": "Nếu hàng giao đúng giờ thì chúng tôi đã dựng xong khu trưng bày trước khi cửa hàng mở cửa.",
+          "choices": {
+            "A": "will finish",
+            "B": "would finish",
+            "C": "had finished",
+            "D": "would have finished"
+          },
+          "answer": "D",
+          "difficulty": 4,
+          "tags": [
+            "grammar:conditional"
+          ],
+          "explanation_vi": "Vế if dùng 'had arrived' (loại 3, trái với quá khứ) → vế chính: would have + V3.",
+          "why_wrong_vi": {
+            "A": "Không dùng tương lai trong câu điều kiện loại 3.",
+            "B": "Điều kiện loại 2 không khớp với vế if ở quá khứ hoàn thành.",
+            "C": "Vế chính của câu điều kiện loại 3 cần would have + V3."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Staff members are encouraged to carpool ------- reduce the number of vehicles in the parking lot.",
+          "prompt_vi": "Nhân viên được khuyến khích đi chung xe để giảm số lượng xe trong bãi đỗ.",
+          "choices": {
+            "A": "so that",
+            "B": "because of",
+            "C": "as long as",
+            "D": "in order to"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "grammar:infinitive"
+          ],
+          "explanation_vi": "Sau chỗ trống là động từ nguyên mẫu 'reduce' → in order to + V chỉ mục đích.",
+          "why_wrong_vi": {
+            "A": "'so that' cần một mệnh đề có chủ ngữ phía sau.",
+            "B": "'because of' đi với danh từ và chỉ nguyên nhân.",
+            "C": "'as long as' cần mệnh đề và chỉ điều kiện."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The CEO thanked the engineering team for ------- dedication to completing the project ahead of schedule.",
+          "prompt_vi": "Giám đốc điều hành cảm ơn nhóm kỹ sư vì sự tận tâm hoàn thành dự án trước thời hạn.",
+          "choices": {
+            "A": "they",
+            "B": "their",
+            "C": "them",
+            "D": "theirs"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "grammar:pronoun"
+          ],
+          "explanation_vi": "Trước danh từ 'dedication' cần tính từ sở hữu → their.",
+          "why_wrong_vi": {
+            "A": "Đại từ chủ ngữ không đứng trước danh từ.",
+            "C": "Đại từ tân ngữ không bổ nghĩa cho danh từ.",
+            "D": "Đại từ sở hữu đứng một mình, không đi kèm danh từ."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The new branch office is ------- located near the central train station, making it convenient for commuters.",
+          "prompt_vi": "Văn phòng chi nhánh mới có vị trí lý tưởng gần ga tàu trung tâm, thuận tiện cho người đi làm.",
+          "choices": {
+            "A": "ideal",
+            "B": "idealize",
+            "C": "ideally",
+            "D": "ideals"
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "grammar:adverb"
+          ],
+          "explanation_vi": "Trạng từ bổ nghĩa cho phân từ 'located' → ideally located (ở vị trí lý tưởng).",
+          "why_wrong_vi": {
+            "A": "Tính từ không bổ nghĩa cho phân từ located.",
+            "B": "Động từ không đứng ở vị trí này.",
+            "D": "Danh từ số nhiều không hợp ngữ pháp."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Before signing the lease, the tenant asked for ------- of the maintenance fees listed in section 4.",
+          "prompt_vi": "Trước khi ký hợp đồng thuê, người thuê yêu cầu làm rõ các khoản phí bảo trì ghi ở mục 4.",
+          "choices": {
+            "A": "clarification",
+            "B": "clarify",
+            "C": "clear",
+            "D": "clarified"
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "grammar:word-form",
+            "vocab:contracts"
+          ],
+          "explanation_vi": "Sau giới từ 'for' cần danh từ → clarification (sự làm rõ).",
+          "why_wrong_vi": {
+            "B": "Động từ không đứng sau giới từ 'for'.",
+            "C": "'ask for clear of' sai ngữ pháp.",
+            "D": "Phân từ không làm tân ngữ của giới từ."
+          }
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The finance department will ------- every expense report for accuracy before reimbursement is issued.",
+          "prompt_vi": "Phòng tài chính sẽ kiểm tra từng báo cáo chi phí để đảm bảo chính xác trước khi hoàn tiền.",
+          "choices": {
+            "A": "remind",
+            "B": "review",
+            "C": "retain",
+            "D": "refer"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "vocab:office"
+          ],
+          "explanation_vi": "'review … for accuracy' = rà soát để đảm bảo chính xác.",
+          "why_wrong_vi": {
+            "A": "'remind' (nhắc nhở) đi với người, không đi với report.",
+            "C": "'retain' (giữ lại) không hợp với 'for accuracy'.",
+            "D": "'refer' cần giới từ 'to' và sai nghĩa."
+          }
+        }
+      ]
+    }
+  ]
+}

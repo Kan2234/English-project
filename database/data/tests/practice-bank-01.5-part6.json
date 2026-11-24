@@ -1,0 +1,404 @@
+{
+  "test": {
+    "id": "practice-bank-01"
+  },
+  "sets": [
+    {
+      "part": 6,
+      "passage_type": "email",
+      "title": "Cafeteria renovation e-mail",
+      "passages": [
+        {
+          "type": "email",
+          "title": "To: All employees | From: Gregory Hale, Facilities Manager | Date: March 3 | Subject: Cafeteria renovation",
+          "text": "Dear colleagues,\n\nStarting Monday, March 10, the second-floor cafeteria will be closed for renovation. The work ---(1)--- approximately three weeks. During this period, a temporary coffee station will be set up in the main lobby. ---(2)---.\n\nOnce the renovation is complete, the cafeteria will offer a larger seating area and a new salad bar. We have also listened to your ---(3)--- and will extend the cafeteria's opening hours until 7 P.M. ---(4)---, employees who work the evening shift will finally have access to hot meals.\n\nThank you for your patience.\n\nGregory Hale",
+          "text_vi": "Các đồng nghiệp thân mến,\n\nTừ thứ Hai ngày 10 tháng Ba, căng tin tầng hai sẽ đóng cửa để cải tạo. Công việc ---(1)--- khoảng ba tuần. Trong thời gian này, một quầy cà phê tạm thời sẽ được đặt ở sảnh chính. ---(2)---.\n\nSau khi cải tạo xong, căng tin sẽ có khu chỗ ngồi rộng hơn và một quầy salad mới. Chúng tôi cũng đã lắng nghe ---(3)--- của các bạn và sẽ kéo dài giờ mở cửa của căng tin đến 7 giờ tối. ---(4)---, nhân viên làm ca tối cuối cùng cũng có thể dùng bữa nóng.\n\nCảm ơn sự kiên nhẫn của các bạn.\n\nGregory Hale"
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "(1)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "took",
+            "B": "had taken",
+            "C": "has been taking",
+            "D": "will take"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "grammar:verb-tense"
+          ],
+          "explanation_vi": "Việc cải tạo bắt đầu từ thứ Hai tới (tương lai), nên 'sẽ mất' khoảng ba tuần → will take.",
+          "why_wrong_vi": {
+            "A": "Quá khứ đơn sai, vì công việc bắt đầu từ ngày 10/3 sắp tới.",
+            "B": "Quá khứ hoàn thành chỉ việc xảy ra trước một mốc quá khứ.",
+            "C": "Hiện tại hoàn thành tiếp diễn chỉ việc đã bắt đầu, trong khi việc cải tạo chưa bắt đầu."
+          }
+        },
+        {
+          "prompt": "(2)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "Light snacks and sandwiches will also be available there.",
+            "B": "The renovation was completed ahead of schedule.",
+            "C": "Please submit your vacation requests by Friday.",
+            "D": "The lobby will be repainted next month."
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "part6:sentence-insertion"
+          ],
+          "explanation_vi": "Câu trước nói về quầy cà phê tạm ở sảnh; câu chèn bổ sung rằng ở đó (there) còn có đồ ăn nhẹ và bánh mì kẹp.",
+          "why_wrong_vi": {
+            "B": "Mâu thuẫn: việc cải tạo còn chưa bắt đầu.",
+            "C": "Lạc đề: không liên quan đến căng tin hay quầy cà phê tạm.",
+            "D": "Không liên quan đến việc phục vụ đồ ăn uống trong thời gian căng tin đóng cửa."
+          }
+        },
+        {
+          "prompt": "(3)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "suggest",
+            "B": "suggested",
+            "C": "suggestions",
+            "D": "suggestive"
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "grammar:word-form"
+          ],
+          "explanation_vi": "Sau tính từ sở hữu 'your' cần danh từ → suggestions (góp ý).",
+          "why_wrong_vi": {
+            "A": "Động từ không đứng sau tính từ sở hữu your.",
+            "B": "Phân từ không làm tân ngữ sau your.",
+            "D": "Tính từ (gợi ý, ám chỉ) không đứng một mình sau your."
+          }
+        },
+        {
+          "prompt": "(4)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "Nevertheless",
+            "B": "For instance",
+            "C": "Otherwise",
+            "D": "As a result"
+          },
+          "answer": "D",
+          "difficulty": 4,
+          "tags": [
+            "grammar:conjunctive-adverb"
+          ],
+          "explanation_vi": "Kéo dài giờ mở cửa → kết quả là ca tối có bữa nóng → As a result.",
+          "why_wrong_vi": {
+            "A": "Chỉ sự tương phản, nhưng hai câu có quan hệ nguyên nhân – kết quả.",
+            "B": "Câu sau không phải ví dụ minh họa.",
+            "C": "'Otherwise' (nếu không thì) sai logic."
+          }
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "passage_type": "press-release",
+      "title": "Press release about a new store",
+      "passages": [
+        {
+          "type": "article",
+          "title": "Orrin Outdoor Gear to Open Flagship Store",
+          "text": "SEATTLE (May 14) — Orrin Outdoor Gear announced today that it will open its first flagship store in Seattle this fall. The 3,000-square-meter store on Pine Street will feature an indoor climbing wall where customers can ---(1)--- equipment before buying it. ---(2)---.\n\n\"Seattle has always been one of our strongest markets online,\" said CEO Maya Lindgren. \"Opening a physical store here was the ---(3)--- next step.\"\n\nThe company plans to hire about 80 local employees, many of ---(4)--- will lead free weekend hiking and kayaking workshops for customers.",
+          "text_vi": "SEATTLE (14/5) — Hôm nay Orrin Outdoor Gear thông báo sẽ mở cửa hàng chủ lực đầu tiên tại Seattle vào mùa thu này. Cửa hàng rộng 3.000 mét vuông trên phố Pine sẽ có một bức tường leo núi trong nhà, nơi khách hàng có thể ---(1)--- thiết bị trước khi mua. ---(2)---.\n\n\"Seattle luôn là một trong những thị trường trực tuyến mạnh nhất của chúng tôi,\" Giám đốc điều hành Maya Lindgren cho biết. \"Mở một cửa hàng thực tế ở đây là bước đi ---(3)--- tiếp theo.\"\n\nCông ty dự định tuyển khoảng 80 nhân viên địa phương, nhiều người trong số ---(4)--- sẽ dẫn các buổi hướng dẫn đi bộ đường dài và chèo thuyền kayak miễn phí vào cuối tuần cho khách hàng."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "(1)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "attend",
+            "B": "assemble",
+            "C": "test",
+            "D": "deliver"
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "vocab:shopping"
+          ],
+          "explanation_vi": "Tường leo núi cho phép khách thử thiết bị trước khi mua → test.",
+          "why_wrong_vi": {
+            "A": "'attend' (tham dự) không đi với 'equipment'.",
+            "B": "'assemble' (lắp ráp) không hợp với bối cảnh tường leo núi.",
+            "D": "Khách hàng không 'giao' thiết bị trước khi mua."
+          }
+        },
+        {
+          "prompt": "(2)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "The climbing wall was removed last year.",
+            "B": "The store will also offer a rental service for camping gear.",
+            "C": "Online sales have declined since the store closed.",
+            "D": "Ms. Lindgren will retire at the end of the month."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part6:sentence-insertion"
+          ],
+          "explanation_vi": "Đoạn đầu mô tả các tính năng của cửa hàng; câu chèn bổ sung thêm một dịch vụ (also) là cho thuê đồ cắm trại.",
+          "why_wrong_vi": {
+            "A": "Mâu thuẫn: cửa hàng còn chưa mở và tường leo núi là tính năng mới.",
+            "C": "Mâu thuẫn: cửa hàng chưa mở và CEO nói thị trường trực tuyến rất mạnh.",
+            "D": "Lạc đề, không liên quan đến các tính năng của cửa hàng."
+          }
+        },
+        {
+          "prompt": "(3)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "natural",
+            "B": "naturally",
+            "C": "nature",
+            "D": "naturalness"
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "grammar:word-form"
+          ],
+          "explanation_vi": "Giữa 'the' và cụm danh từ 'next step' cần tính từ → natural (bước đi tự nhiên, hợp lý).",
+          "why_wrong_vi": {
+            "B": "Trạng từ không bổ nghĩa cho cụm danh từ next step.",
+            "C": "Danh từ không hợp nghĩa ở vị trí bổ nghĩa cho step.",
+            "D": "Danh từ trừu tượng không hợp ngữ pháp."
+          }
+        },
+        {
+          "prompt": "(4)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "who",
+            "B": "whom",
+            "C": "them",
+            "D": "which"
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "grammar:relative-clause"
+          ],
+          "explanation_vi": "'many of whom' = nhiều người trong số đó; sau giới từ dùng whom cho người.",
+          "why_wrong_vi": {
+            "A": "Sau giới từ 'of' phải dùng 'whom', không dùng 'who'.",
+            "C": "'them' là đại từ thường, không nối được hai mệnh đề (sẽ thành câu ghép sai).",
+            "D": "'which' dùng cho vật, còn employees là người."
+          }
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "passage_type": "letter",
+      "title": "Letter from a water company",
+      "passages": [
+        {
+          "type": "letter",
+          "title": "Northfield Water",
+          "text": "Dear Valued Customer,\n\nNorthfield Water is replacing the water meters in your neighborhood with new digital models. These meters send usage readings to us automatically, ---(1)--- our staff will no longer need to visit your property each month.\n\nA technician will install the new meter at your address on Tuesday, June 18, between 9 A.M. and noon. Your water supply will be ---(2)--- shut off for about 30 minutes during the installation. ---(3)---.\n\nThere is no charge for this upgrade. If the scheduled time is not convenient, please call our customer service line at 555-0192 at least 48 hours in ---(4)--- to arrange another appointment.\n\nSincerely,\nNorthfield Water Customer Service",
+          "text_vi": "Kính gửi Quý khách hàng,\n\nNorthfield Water đang thay đồng hồ nước trong khu vực của quý khách bằng loại kỹ thuật số mới. Đồng hồ này tự động gửi chỉ số sử dụng về cho chúng tôi, ---(1)--- nhân viên của chúng tôi sẽ không cần đến nhà quý khách hằng tháng nữa.\n\nKỹ thuật viên sẽ lắp đồng hồ mới tại địa chỉ của quý khách vào thứ Ba ngày 18 tháng Sáu, trong khoảng từ 9 giờ sáng đến trưa. Nguồn nước của quý khách sẽ bị ngắt ---(2)--- khoảng 30 phút trong lúc lắp đặt. ---(3)---.\n\nViệc nâng cấp này hoàn toàn miễn phí. Nếu thời gian đã hẹn không thuận tiện, vui lòng gọi đường dây chăm sóc khách hàng 555-0192 ít nhất 48 giờ ---(4)--- để sắp xếp lịch hẹn khác.\n\nTrân trọng,\nBộ phận Chăm sóc Khách hàng Northfield Water"
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "(1)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "because",
+            "B": "although",
+            "C": "unless",
+            "D": "so"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "grammar:conjunction"
+          ],
+          "explanation_vi": "Đồng hồ tự gửi số liệu → kết quả là nhân viên không cần đến nhà → liên từ chỉ kết quả so.",
+          "why_wrong_vi": {
+            "A": "Sai quan hệ: việc nhân viên không cần đến là kết quả, không phải nguyên nhân.",
+            "B": "Hai ý không trái ngược nhau.",
+            "C": "'unless' (trừ khi) sai logic."
+          }
+        },
+        {
+          "prompt": "(2)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "temporary",
+            "B": "temporarily",
+            "C": "temporariness",
+            "D": "temporaries"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "grammar:adverb"
+          ],
+          "explanation_vi": "Trạng từ bổ nghĩa cho 'be shut off' → temporarily (tạm thời).",
+          "why_wrong_vi": {
+            "A": "Tính từ không bổ nghĩa cho phân từ 'shut off'.",
+            "C": "Danh từ không đứng giữa be và phân từ.",
+            "D": "Danh từ số nhiều, sai từ loại."
+          }
+        },
+        {
+          "prompt": "(3)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "Your monthly bill will now be sent by mail.",
+            "B": "The technician has already completed the installation.",
+            "C": "We recommend filling a few containers with water beforehand.",
+            "D": "Our office is closed on public holidays."
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part6:sentence-insertion"
+          ],
+          "explanation_vi": "Câu trước báo sẽ ngắt nước 30 phút; lời khuyên trữ sẵn nước là phần tiếp nối hợp lý.",
+          "why_wrong_vi": {
+            "A": "Không liên quan đến việc ngắt nước trong lúc lắp đặt.",
+            "B": "Mâu thuẫn về thời gian: việc lắp đặt còn chưa diễn ra.",
+            "D": "Lạc đề so với đoạn văn về lịch lắp đặt."
+          }
+        },
+        {
+          "prompt": "(4)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "before",
+            "B": "prior",
+            "C": "early",
+            "D": "advance"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "vocab:collocation"
+          ],
+          "explanation_vi": "'in advance' = trước (thời hạn), cụm cố định: at least 48 hours in advance.",
+          "why_wrong_vi": {
+            "A": "'in before' không phải cụm đúng.",
+            "B": "'prior' cần 'to' (prior to), không đi sau in.",
+            "C": "'in early' không phải cụm đúng."
+          }
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "passage_type": "article",
+      "title": "Company newsletter article",
+      "passages": [
+        {
+          "type": "article",
+          "title": "Employee Spotlight: Mentoring Program Celebrates First Year",
+          "text": "When Bellmont Insurance launched its mentoring program last spring, organizers hoped that 20 employees would sign up. Instead, more than 60 ---(1)--- in the first month alone. The program pairs new hires with experienced staff members, who meet with them twice a month to discuss career goals.\n\n---(2)---. According to a recent survey, 85 percent of participants said the program helped them feel more confident in their roles. Several mentors also reported that the experience had improved ---(3)--- own leadership skills.\n\nBecause of its success, the program will be ---(4)--- to the company's regional offices next year. Employees interested in becoming mentors can contact Ruth Abara in Human Resources.",
+          "text_vi": "Khi Bellmont Insurance khởi động chương trình kèm cặp vào mùa xuân năm ngoái, ban tổ chức hy vọng có 20 nhân viên đăng ký. Thực tế, hơn 60 người đã ---(1)--- chỉ trong tháng đầu tiên. Chương trình ghép nhân viên mới với nhân viên giàu kinh nghiệm, những người gặp họ hai lần mỗi tháng để trao đổi về mục tiêu nghề nghiệp.\n\n---(2)---. Theo một cuộc khảo sát gần đây, 85 phần trăm người tham gia cho biết chương trình giúp họ tự tin hơn trong công việc. Một số người hướng dẫn cũng cho biết trải nghiệm này đã cải thiện kỹ năng lãnh đạo của ---(3)---.\n\nNhờ thành công đó, chương trình sẽ được ---(4)--- sang các văn phòng khu vực của công ty vào năm tới. Nhân viên muốn trở thành người hướng dẫn có thể liên hệ chị Ruth Abara ở phòng Nhân sự."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "(1)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "registered",
+            "B": "will register",
+            "C": "had been registered",
+            "D": "are registering"
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "grammar:verb-tense"
+          ],
+          "explanation_vi": "Sự việc trong quá khứ (last spring, in the first month) và chủ động → quá khứ đơn registered.",
+          "why_wrong_vi": {
+            "B": "Sự việc đã xảy ra vào mùa xuân năm ngoái, không phải tương lai.",
+            "C": "Bị động sai nghĩa: nhân viên tự đăng ký; và 'had been' không hợp ngữ cảnh.",
+            "D": "Hiện tại tiếp diễn sai mốc thời gian (in the first month, quá khứ)."
+          }
+        },
+        {
+          "prompt": "(2)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "Applications for the program closed in 2019.",
+            "B": "New hires must complete safety training first.",
+            "C": "The response so far has been very positive.",
+            "D": "The survey was conducted by an outside firm."
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part6:sentence-insertion"
+          ],
+          "explanation_vi": "Câu chèn là câu chủ đề của đoạn 2 (phản hồi tích cực), được chứng minh bằng số liệu khảo sát 85% ngay sau đó.",
+          "why_wrong_vi": {
+            "A": "Mâu thuẫn: chương trình mới bắt đầu từ mùa xuân năm ngoái.",
+            "B": "Lạc đề, không liên quan đến kết quả của chương trình.",
+            "D": "Câu này nhắc 'The survey' trước khi cuộc khảo sát được giới thiệu ở câu sau."
+          }
+        },
+        {
+          "prompt": "(3)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "their",
+            "B": "its",
+            "C": "our",
+            "D": "whose"
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "grammar:pronoun"
+          ],
+          "explanation_vi": "'their own' thay cho 'several mentors' (số nhiều).",
+          "why_wrong_vi": {
+            "B": "'its' số ít, trong khi chủ ngữ 'Several mentors' số nhiều.",
+            "C": "Người viết không nằm trong nhóm người hướng dẫn.",
+            "D": "'whose' là đại từ quan hệ, không đứng trước 'own' ở vị trí này."
+          }
+        },
+        {
+          "prompt": "(4)",
+          "prompt_vi": null,
+          "choices": {
+            "A": "expanding",
+            "B": "expanded",
+            "C": "expansion",
+            "D": "expansive"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "grammar:passive",
+            "grammar:word-form"
+          ],
+          "explanation_vi": "Chương trình 'được mở rộng' → bị động will be + V3 → expanded.",
+          "why_wrong_vi": {
+            "A": "'will be expanding' là chủ động, nhưng chương trình 'được' mở rộng.",
+            "C": "Danh từ không đứng sau will be để tạo nghĩa bị động.",
+            "D": "Tính từ 'expansive' (rộng lớn) không đi với 'to the company's regional offices'."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -77,7 +77,7 @@ npm run db:audio
 | Luyện theo phần | `#/luyen-tap/part-N` | Làm từng nhóm câu của một Part, có đáp án ngay |
 | Từ vựng | `#/tu-vung` | Lọc theo chủ đề và mức điểm, nghe phát âm, ẩn nghĩa để tự kiểm tra, đánh dấu đã thuộc |
 | Ngữ pháp | `#/ngu-phap/:slug` | 13 chủ điểm, bẫy thường gặp, câu Part 5 liên quan để luyện |
-| Về kỳ thi | `#/ky-thi` | Cấu trúc đề, thang điểm, lệ phí, mốc thay đổi 2025–2026, mẹo làm bài |
+| Về kỳ thi | `#/ky-thi` | Cấu trúc đề, thang điểm, mẹo làm bài |
 
 Bài làm, kết quả và tiến độ chỉ lưu trong `localStorage` của trình duyệt. Chưa có tài khoản hay đồng bộ giữa các máy.
 

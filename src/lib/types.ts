@@ -9,6 +9,10 @@ export interface Question {
   choices: Partial<Record<Label, string>>;
   answer: Label;
   explanation_vi: string;
+  /** Vietnamese translation of the stem (Part 3, 4, 5, 7) */
+  prompt_vi?: string | null;
+  /** Why each wrong choice is wrong, keyed by label (never the answer) */
+  why_wrong_vi?: Partial<Record<Label, string>>;
   difficulty?: number;
   tags?: string[];
 }
@@ -17,6 +21,8 @@ export interface Passage {
   type: string;
   title?: string;
   text: string;
+  /** Vietnamese translation, shown on request after answering */
+  text_vi?: string;
 }
 
 export interface Graphic {
@@ -32,6 +38,8 @@ export interface QuestionSet {
   title?: string;
   passage_type?: string;
   transcript?: string;
+  /** Vietnamese translation of the transcript, shown on request after answering */
+  transcript_vi?: string;
   image_description?: string;
   passages?: Passage[];
   graphic?: Graphic;

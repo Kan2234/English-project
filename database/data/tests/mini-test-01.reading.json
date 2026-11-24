@@ -8,6 +8,7 @@
       "questions": [
         {
           "prompt": "The marketing team will present ------- findings at the quarterly meeting.",
+          "prompt_vi": "Nhóm marketing sẽ trình bày các kết quả nghiên cứu của họ tại cuộc họp quý.",
           "choices": {
             "A": "it",
             "B": "they",
@@ -19,7 +20,12 @@
           "tags": [
             "grammar:pronoun"
           ],
-          "explanation_vi": "Trước danh từ 'findings' cần tính từ sở hữu → their."
+          "explanation_vi": "Trước danh từ 'findings' cần tính từ sở hữu → their.",
+          "why_wrong_vi": {
+            "A": "'it' là đại từ, không đứng trước danh từ; lại là số ít, không chỉ 'the marketing team' như sở hữu.",
+            "B": "'they' là đại từ chủ ngữ, không đứng trước danh từ 'findings'.",
+            "C": "'them' là đại từ tân ngữ, không bổ nghĩa cho danh từ."
+          }
         }
       ]
     },
@@ -28,6 +34,7 @@
       "questions": [
         {
           "prompt": "Ms. Lopez was promoted because she managed the project very -------.",
+          "prompt_vi": "Cô Lopez được thăng chức vì đã quản lý dự án rất hiệu quả.",
           "choices": {
             "A": "efficient",
             "B": "more efficient",
@@ -40,7 +47,12 @@
             "grammar:word-form",
             "grammar:adverb"
           ],
-          "explanation_vi": "Bổ nghĩa cho động từ 'managed' cần trạng từ → efficiently."
+          "explanation_vi": "Bổ nghĩa cho động từ 'managed' cần trạng từ → efficiently.",
+          "why_wrong_vi": {
+            "A": "'efficient' là tính từ, không bổ nghĩa cho động từ 'managed'.",
+            "B": "'more efficient' là tính từ so sánh, không có 'than' và vẫn sai từ loại.",
+            "C": "'efficiency' là danh từ, không đứng sau 'very' để bổ nghĩa cho động từ."
+          }
         }
       ]
     },
@@ -49,6 +61,7 @@
       "questions": [
         {
           "prompt": "All employees must submit their timesheets ------- 5 P.M. on Friday.",
+          "prompt_vi": "Tất cả nhân viên phải nộp bảng chấm công trước 5 giờ chiều thứ Sáu.",
           "choices": {
             "A": "by",
             "B": "until",
@@ -60,7 +73,12 @@
           "tags": [
             "grammar:preposition"
           ],
-          "explanation_vi": "'by + thời điểm' = hạn chót (trước/không muộn hơn). 'until' diễn tả hành động kéo dài đến thời điểm đó."
+          "explanation_vi": "'by + thời điểm' = hạn chót (trước/không muộn hơn). 'until' diễn tả hành động kéo dài đến thời điểm đó.",
+          "why_wrong_vi": {
+            "B": "'until' dùng cho hành động kéo dài đến mốc, còn việc nộp là hành động một lần cần hạn chót.",
+            "C": "'since' đi với mốc quá khứ và thì hoàn thành.",
+            "D": "'during' đi với khoảng thời gian (during the meeting), không đi với giờ cụ thể."
+          }
         }
       ]
     },
@@ -69,6 +87,7 @@
       "questions": [
         {
           "prompt": "The new software ------- by the IT department since last Monday.",
+          "prompt_vi": "Phần mềm mới đã được phòng IT thử nghiệm từ thứ Hai tuần trước.",
           "choices": {
             "A": "tests",
             "B": "is testing",
@@ -81,7 +100,12 @@
             "grammar:passive",
             "grammar:present-perfect"
           ],
-          "explanation_vi": "'since last Monday' → hiện tại hoàn thành; chủ ngữ là vật + 'by the IT department' → bị động: has been tested."
+          "explanation_vi": "'since last Monday' → hiện tại hoàn thành; chủ ngữ là vật + 'by the IT department' → bị động: has been tested.",
+          "why_wrong_vi": {
+            "A": "'tests' là chủ động hiện tại đơn, không hợp với 'since' và 'by the IT department'.",
+            "B": "'is testing' là chủ động: phần mềm không tự thử nghiệm.",
+            "D": "'will test' là tương lai chủ động, sai cả thì lẫn thể."
+          }
         }
       ]
     },
@@ -90,6 +114,7 @@
       "questions": [
         {
           "prompt": "------- the heavy rain, the outdoor concert was held as scheduled.",
+          "prompt_vi": "Dù mưa lớn, buổi hòa nhạc ngoài trời vẫn diễn ra đúng lịch.",
           "choices": {
             "A": "Although",
             "B": "Despite",
@@ -101,7 +126,12 @@
           "tags": [
             "grammar:conjunction-vs-preposition"
           ],
-          "explanation_vi": "Sau chỗ trống là cụm danh từ 'the heavy rain' → cần giới từ Despite. Although/Because + mệnh đề; However là trạng từ nối."
+          "explanation_vi": "Sau chỗ trống là cụm danh từ 'the heavy rain' → cần giới từ Despite. Although/Because + mệnh đề; However là trạng từ nối.",
+          "why_wrong_vi": {
+            "A": "'Although' là liên từ, cần mệnh đề chứ không phải cụm danh từ.",
+            "C": "'Because' là liên từ cần mệnh đề, và nghĩa nguyên nhân không hợp.",
+            "D": "'However' là trạng từ nối, đứng đầu câu phải có dấu phẩy và không đi với cụm danh từ."
+          }
         }
       ]
     },
@@ -110,6 +140,7 @@
       "questions": [
         {
           "prompt": "Customers who wish to return an item must present the original -------.",
+          "prompt_vi": "Khách hàng muốn trả hàng phải xuất trình hóa đơn gốc.",
           "choices": {
             "A": "receive",
             "B": "receptive",
@@ -122,7 +153,12 @@
             "grammar:word-form",
             "vocab:shopping"
           ],
-          "explanation_vi": "Sau tính từ 'original' cần danh từ → receipt (hóa đơn)."
+          "explanation_vi": "Sau tính từ 'original' cần danh từ → receipt (hóa đơn).",
+          "why_wrong_vi": {
+            "A": "'receive' là động từ, sau tính từ 'original' cần danh từ.",
+            "B": "'receptive' (dễ tiếp thu) là tính từ, sai từ loại và sai nghĩa.",
+            "C": "'receiving' là V-ing, không làm danh từ chỉ giấy tờ."
+          }
         }
       ]
     },
@@ -131,6 +167,7 @@
       "questions": [
         {
           "prompt": "The board of directors has decided to ------- the merger until further notice.",
+          "prompt_vi": "Hội đồng quản trị đã quyết định hoãn việc sáp nhập cho đến khi có thông báo mới.",
           "choices": {
             "A": "propose",
             "B": "prevent",
@@ -142,7 +179,12 @@
           "tags": [
             "vocab:business"
           ],
-          "explanation_vi": "'until further notice' (cho đến khi có thông báo mới) đi với 'postpone' (hoãn)."
+          "explanation_vi": "'until further notice' (cho đến khi có thông báo mới) đi với 'postpone' (hoãn).",
+          "why_wrong_vi": {
+            "A": "'propose' (đề xuất) không hợp với 'until further notice'.",
+            "B": "'prevent' (ngăn chặn) sai nghĩa và không đi với 'until further notice'.",
+            "C": "'proceed' là nội động từ, cần 'with' (proceed with the merger)."
+          }
         }
       ]
     },
@@ -151,6 +193,7 @@
       "questions": [
         {
           "prompt": "Mr. Tanaka is the candidate ------- experience best matches the job requirements.",
+          "prompt_vi": "Ông Tanaka là ứng viên có kinh nghiệm phù hợp nhất với yêu cầu công việc.",
           "choices": {
             "A": "who",
             "B": "whom",
@@ -162,7 +205,12 @@
           "tags": [
             "grammar:relative-clause"
           ],
-          "explanation_vi": "Chỗ trống đứng trước danh từ 'experience' và chỉ sự sở hữu của 'candidate' → whose."
+          "explanation_vi": "Chỗ trống đứng trước danh từ 'experience' và chỉ sự sở hữu của 'candidate' → whose.",
+          "why_wrong_vi": {
+            "A": "'who' làm chủ ngữ, nhưng sau chỗ trống là danh từ 'experience' cần đại từ sở hữu.",
+            "B": "'whom' là tân ngữ, không đứng trước danh từ để chỉ sở hữu.",
+            "C": "'which' thay cho vật, còn 'candidate' là người."
+          }
         }
       ]
     },
@@ -171,6 +219,7 @@
       "questions": [
         {
           "prompt": "If the shipment ------- on time, we would have finished the installation yesterday.",
+          "prompt_vi": "Nếu lô hàng đến đúng hẹn, chúng tôi đã hoàn tất việc lắp đặt hôm qua rồi.",
           "choices": {
             "A": "arrives",
             "B": "arrived",
@@ -182,7 +231,12 @@
           "tags": [
             "grammar:conditional"
           ],
-          "explanation_vi": "Mệnh đề chính 'would have finished' → câu điều kiện loại 3: If + had + V3."
+          "explanation_vi": "Mệnh đề chính 'would have finished' → câu điều kiện loại 3: If + had + V3.",
+          "why_wrong_vi": {
+            "A": "Hiện tại đơn dùng cho điều kiện loại 1, không hợp với 'would have finished'.",
+            "B": "Quá khứ đơn dùng cho loại 2, không hợp với 'would have finished ... yesterday'.",
+            "D": "Mệnh đề 'if' không dùng 'would'."
+          }
         }
       ]
     },
@@ -191,6 +245,7 @@
       "questions": [
         {
           "prompt": "The conference room is available for booking ------- on weekdays and weekends.",
+          "prompt_vi": "Phòng hội nghị có thể đặt cả vào ngày thường lẫn cuối tuần.",
           "choices": {
             "A": "either",
             "B": "both",
@@ -202,7 +257,12 @@
           "tags": [
             "grammar:paired-conjunction"
           ],
-          "explanation_vi": "Cặp liên từ 'both ... and'. Either đi với or, neither đi với nor, not only đi với but also."
+          "explanation_vi": "Cặp liên từ 'both ... and'. Either đi với or, neither đi với nor, not only đi với but also.",
+          "why_wrong_vi": {
+            "A": "'either' đi cặp với 'or', không đi với 'and'.",
+            "C": "'neither' đi cặp với 'nor'.",
+            "D": "'not only' đi cặp với 'but also'."
+          }
         }
       ]
     },
@@ -211,6 +271,7 @@
       "questions": [
         {
           "prompt": "Applicants are required to have ------- three years of experience in sales.",
+          "prompt_vi": "Ứng viên phải có ít nhất ba năm kinh nghiệm bán hàng.",
           "choices": {
             "A": "almost of",
             "B": "at most",
@@ -222,7 +283,12 @@
           "tags": [
             "vocab:recruitment"
           ],
-          "explanation_vi": "Yêu cầu tối thiểu → 'at least' (ít nhất)."
+          "explanation_vi": "Yêu cầu tối thiểu → 'at least' (ít nhất).",
+          "why_wrong_vi": {
+            "A": "'almost of' sai ngữ pháp; 'almost' không đi với 'of' ở đây.",
+            "B": "'at most' (nhiều nhất) ngược nghĩa với yêu cầu tối thiểu.",
+            "C": "'less' cần 'than' và không hợp nghĩa yêu cầu."
+          }
         }
       ]
     },
@@ -231,6 +297,7 @@
       "questions": [
         {
           "prompt": "The renovation of the lobby is expected to be ------- by the end of March.",
+          "prompt_vi": "Việc cải tạo sảnh dự kiến sẽ hoàn tất trước cuối tháng 3.",
           "choices": {
             "A": "complete",
             "B": "completion",
@@ -242,7 +309,12 @@
           "tags": [
             "grammar:word-form"
           ],
-          "explanation_vi": "Sau 'to be' cần tính từ → complete (hoàn tất)."
+          "explanation_vi": "Sau 'to be' cần tính từ → complete (hoàn tất).",
+          "why_wrong_vi": {
+            "B": "'completion' là danh từ; 'to be completion' sai.",
+            "C": "'completely' là trạng từ, không làm vị ngữ sau 'to be'.",
+            "D": "'to be completing' là chủ động tiếp diễn; việc cải tạo không tự hoàn thành."
+          }
         }
       ]
     },
@@ -251,6 +323,7 @@
       "questions": [
         {
           "prompt": "Ms. Ahmed asked that every report ------- reviewed by a manager before submission.",
+          "prompt_vi": "Cô Ahmed yêu cầu mọi báo cáo phải được quản lý xem xét trước khi nộp.",
           "choices": {
             "A": "is",
             "B": "be",
@@ -262,7 +335,12 @@
           "tags": [
             "grammar:subjunctive"
           ],
-          "explanation_vi": "Sau động từ yêu cầu 'ask that' dùng thức giả định: động từ nguyên mẫu → be reviewed."
+          "explanation_vi": "Sau động từ yêu cầu 'ask that' dùng thức giả định: động từ nguyên mẫu → be reviewed.",
+          "why_wrong_vi": {
+            "A": "Sau 'ask that' dùng thức giả định (nguyên mẫu), không dùng 'is'.",
+            "C": "'was' là quá khứ chỉ định, không dùng trong mệnh đề giả định.",
+            "D": "'being' không làm động từ chính của mệnh đề."
+          }
         }
       ]
     },
@@ -271,6 +349,7 @@
       "questions": [
         {
           "prompt": "Our sales have increased ------- since we launched the online store.",
+          "prompt_vi": "Doanh số của chúng tôi đã tăng đáng kể kể từ khi mở cửa hàng trực tuyến.",
           "choices": {
             "A": "significant",
             "B": "significance",
@@ -283,7 +362,12 @@
             "grammar:word-form",
             "grammar:adverb"
           ],
-          "explanation_vi": "Bổ nghĩa cho động từ 'increased' → trạng từ significantly."
+          "explanation_vi": "Bổ nghĩa cho động từ 'increased' → trạng từ significantly.",
+          "why_wrong_vi": {
+            "A": "'significant' là tính từ, không bổ nghĩa cho động từ 'increased'.",
+            "B": "'significance' là danh từ, sai từ loại.",
+            "D": "'signify' là động từ, câu đã có động từ 'have increased'."
+          }
         }
       ]
     },
@@ -292,6 +376,7 @@
       "questions": [
         {
           "prompt": "The hotel offers a free shuttle service to guests ------- stay for more than three nights.",
+          "prompt_vi": "Khách sạn có dịch vụ xe đưa đón miễn phí cho khách ở hơn ba đêm.",
           "choices": {
             "A": "what",
             "B": "who",
@@ -303,7 +388,12 @@
           "tags": [
             "grammar:relative-clause"
           ],
-          "explanation_vi": "Đại từ quan hệ thay cho 'guests' (người) làm chủ ngữ của 'stay' → who."
+          "explanation_vi": "Đại từ quan hệ thay cho 'guests' (người) làm chủ ngữ của 'stay' → who.",
+          "why_wrong_vi": {
+            "A": "'what' không dùng làm đại từ quan hệ sau danh từ.",
+            "C": "'whose' cần danh từ theo sau.",
+            "D": "'where' thay cho nơi chốn, còn 'guests' là người."
+          }
         }
       ]
     },
@@ -312,6 +402,7 @@
       "questions": [
         {
           "prompt": "The project was completed ------- budget, thanks to careful planning.",
+          "prompt_vi": "Nhờ lên kế hoạch cẩn thận, dự án đã hoàn thành dưới mức ngân sách.",
           "choices": {
             "A": "under",
             "B": "below of",
@@ -324,7 +415,12 @@
             "grammar:preposition",
             "vocab:collocation"
           ],
-          "explanation_vi": "Collocation 'under budget' = dưới mức ngân sách (tiết kiệm). Tương tự 'on budget', 'over budget'."
+          "explanation_vi": "Collocation 'under budget' = dưới mức ngân sách (tiết kiệm). Tương tự 'on budget', 'over budget'.",
+          "why_wrong_vi": {
+            "B": "'below of' sai: 'below' không đi với 'of'.",
+            "C": "'beneath to' sai ngữ pháp và không phải cụm cố định.",
+            "D": "'down budget' không phải cụm từ đúng trong tiếng Anh."
+          }
         }
       ]
     },
@@ -333,6 +429,7 @@
       "questions": [
         {
           "prompt": "------- you need further assistance, please contact our help desk.",
+          "prompt_vi": "Nếu bạn cần hỗ trợ thêm, vui lòng liên hệ bộ phận trợ giúp.",
           "choices": {
             "A": "Whether",
             "B": "Would",
@@ -345,7 +442,12 @@
             "grammar:inversion",
             "grammar:conditional"
           ],
-          "explanation_vi": "Đảo ngữ câu điều kiện loại 1: Should + S + V = If + S + V."
+          "explanation_vi": "Đảo ngữ câu điều kiện loại 1: Should + S + V = If + S + V.",
+          "why_wrong_vi": {
+            "A": "'Whether' cần 'or (not)' và không mang nghĩa điều kiện 'nếu'.",
+            "B": "'Would you need...' là câu hỏi, không tạo mệnh đề điều kiện.",
+            "C": "'Unless' (trừ khi) cho nghĩa ngược: chỉ liên hệ khi không cần hỗ trợ."
+          }
         }
       ]
     },
@@ -354,6 +456,7 @@
       "questions": [
         {
           "prompt": "The CEO thanked the staff for their ------- to the company's success.",
+          "prompt_vi": "Tổng giám đốc cảm ơn nhân viên vì những đóng góp của họ cho thành công của công ty.",
           "choices": {
             "A": "contributor",
             "B": "contributes",
@@ -366,7 +469,12 @@
             "grammar:word-form",
             "vocab:collocation"
           ],
-          "explanation_vi": "Sau tính từ sở hữu 'their' cần danh từ; 'contribution to' = đóng góp cho. 'contributor' chỉ người, không hợp nghĩa."
+          "explanation_vi": "Sau tính từ sở hữu 'their' cần danh từ; 'contribution to' = đóng góp cho. 'contributor' chỉ người, không hợp nghĩa.",
+          "why_wrong_vi": {
+            "A": "'contributor' là danh từ chỉ người, không hợp nghĩa 'cảm ơn vì người đóng góp'.",
+            "B": "'contributes' là động từ, sau 'their' cần danh từ.",
+            "C": "'contributed' là động từ quá khứ, sai từ loại."
+          }
         }
       ]
     },
@@ -375,6 +483,7 @@
       "questions": [
         {
           "prompt": "Please read the safety instructions carefully ------- operating the machine.",
+          "prompt_vi": "Vui lòng đọc kỹ hướng dẫn an toàn trước khi vận hành máy.",
           "choices": {
             "A": "before",
             "B": "while",
@@ -387,7 +496,12 @@
             "grammar:conjunction",
             "grammar:gerund"
           ],
-          "explanation_vi": "Đọc hướng dẫn trước khi vận hành máy → before + V-ing. 'during' không đi với V-ing."
+          "explanation_vi": "Đọc hướng dẫn trước khi vận hành máy → before + V-ing. 'during' không đi với V-ing.",
+          "why_wrong_vi": {
+            "B": "'while' (trong khi) không hợp: đọc hướng dẫn phải làm trước, không phải trong lúc vận hành.",
+            "C": "'during' là giới từ đi với danh từ, không đi với V-ing.",
+            "D": "'since' chỉ mốc thời gian trong quá khứ, không hợp với lời hướng dẫn."
+          }
         }
       ]
     },
@@ -396,6 +510,7 @@
       "questions": [
         {
           "prompt": "The number of online orders ------- doubled over the past year.",
+          "prompt_vi": "Số lượng đơn hàng trực tuyến đã tăng gấp đôi trong năm qua.",
           "choices": {
             "A": "have",
             "B": "were",
@@ -407,7 +522,12 @@
           "tags": [
             "grammar:subject-verb-agreement"
           ],
-          "explanation_vi": "'The number of + N số nhiều' → động từ số ít. (Khác với 'A number of' → số nhiều.)"
+          "explanation_vi": "'The number of + N số nhiều' → động từ số ít. (Khác với 'A number of' → số nhiều.)",
+          "why_wrong_vi": {
+            "A": "'The number of' đi với động từ số ít, không dùng 'have'.",
+            "B": "'were doubled' là bị động và chủ ngữ số nhiều, sai cả hai.",
+            "C": "'are doubled' sai số (cần số ít) và sai thì với 'over the past year'."
+          }
         }
       ]
     },
@@ -419,7 +539,8 @@
         {
           "type": "email",
           "title": "To: All staff | From: Facilities Department | Subject: Elevator maintenance",
-          "text": "Dear staff,\n\nPlease be advised that the elevators in the east wing will be out of service on Saturday, May 10, from 8 A.M. to 4 P.M. The building management has scheduled ---(1)--- annual inspection on that day.\n\nDuring this time, employees who need to access the upper floors ---(2)--- the stairs or the elevators in the west wing. ---(3)---.\n\nWe apologize for any inconvenience and appreciate your ---(4)---.\n\nFacilities Department"
+          "text": "Dear staff,\n\nPlease be advised that the elevators in the east wing will be out of service on Saturday, May 10, from 8 A.M. to 4 P.M. The building management has scheduled ---(1)--- annual inspection on that day.\n\nDuring this time, employees who need to access the upper floors ---(2)--- the stairs or the elevators in the west wing. ---(3)---.\n\nWe apologize for any inconvenience and appreciate your ---(4)---.\n\nFacilities Department",
+          "text_vi": "Kính gửi toàn thể nhân viên,\n\nXin lưu ý rằng thang máy ở khu phía đông sẽ ngừng hoạt động vào thứ Bảy, ngày 10 tháng 5, từ 8 giờ sáng đến 4 giờ chiều. Ban quản lý tòa nhà đã lên lịch kiểm tra định kỳ hằng năm vào ngày đó.\n\nTrong thời gian này, nhân viên cần lên các tầng trên nên đi thang bộ hoặc dùng thang máy ở khu phía tây. Vui lòng dành thêm thời gian để đến chỗ làm việc.\n\nChúng tôi xin lỗi vì mọi bất tiện và cảm ơn sự thông cảm của các bạn.\n\nBộ phận Cơ sở vật chất"
         }
       ],
       "questions": [
@@ -436,7 +557,12 @@
           "tags": [
             "grammar:pronoun"
           ],
-          "explanation_vi": "'The building management' là danh từ tập hợp số ít, chỉ tổ chức → its."
+          "explanation_vi": "'The building management' là danh từ tập hợp số ít, chỉ tổ chức → its.",
+          "why_wrong_vi": {
+            "B": "'their' dùng cho số nhiều, còn 'the building management' là một tổ chức số ít.",
+            "C": "'his' chỉ một người nam, không chỉ ban quản lý.",
+            "D": "'our' sai ngôi: thư do bộ phận Cơ sở vật chất viết, còn ban quản lý tòa nhà là đơn vị khác."
+          }
         },
         {
           "prompt": "(2)",
@@ -451,7 +577,12 @@
           "tags": [
             "grammar:modal"
           ],
-          "explanation_vi": "Hướng dẫn cho tương lai (thứ Bảy tới) → should use. 'used' và 'have used' sai thì."
+          "explanation_vi": "Hướng dẫn cho tương lai (thứ Bảy tới) → should use. 'used' và 'have used' sai thì.",
+          "why_wrong_vi": {
+            "A": "Sai thì: 'used' là quá khứ, trong khi đây là hướng dẫn cho thứ Bảy sắp tới.",
+            "C": "Sai thì: hiện tại hoàn thành không dùng cho việc sẽ xảy ra.",
+            "D": "'using' không làm động từ chính; câu thiếu động từ."
+          }
         },
         {
           "prompt": "(3)",
@@ -466,7 +597,12 @@
           "tags": [
             "part6:sentence-insertion"
           ],
-          "explanation_vi": "Sau thông tin phải đi thang bộ/thang khác, lời khuyên 'dành thêm thời gian' là hợp lý. (C) mâu thuẫn vì thang máy khu phía tây vẫn dùng được."
+          "explanation_vi": "Sau thông tin phải đi thang bộ/thang khác, lời khuyên 'dành thêm thời gian' là hợp lý. (C) mâu thuẫn vì thang máy khu phía tây vẫn dùng được.",
+          "why_wrong_vi": {
+            "A": "Năm lắp thang máy không liên quan đến hướng dẫn đi lại trong ngày bảo trì.",
+            "C": "Mâu thuẫn: câu trước vừa bảo dùng thang máy khu phía tây.",
+            "D": "Nhân viên không tham gia buổi kiểm tra; câu cảm ơn này vô lý."
+          }
         },
         {
           "prompt": "(4)",
@@ -481,7 +617,12 @@
           "tags": [
             "grammar:word-form"
           ],
-          "explanation_vi": "Sau tính từ sở hữu 'your' cần danh từ → understanding (sự thông cảm)."
+          "explanation_vi": "Sau tính từ sở hữu 'your' cần danh từ → understanding (sự thông cảm).",
+          "why_wrong_vi": {
+            "A": "'understand' là động từ, sau 'your' cần danh từ.",
+            "B": "'understandable' là tính từ, sai từ loại.",
+            "D": "'understood' là quá khứ phân từ, không làm danh từ."
+          }
         }
       ]
     },
@@ -493,7 +634,8 @@
         {
           "type": "article",
           "title": "Harbor City Bakery Expands",
-          "text": "HARBOR CITY — Sunrise Bakery, a family-owned business founded in 2009, will open its third location next month on Maple Avenue. The new store will be ---(1)--- larger than the original shop, with seating for up to forty customers.\n\n\"Our customers have been asking for a place to sit and enjoy their coffee,\" said owner Grace Liu. ---(2)---. The bakery also plans to hire fifteen new employees, ---(3)--- bakers, cashiers, and delivery drivers.\n\nA grand opening celebration is planned for June 3. The first 100 visitors will receive a free pastry, and live music will be ---(4)--- throughout the afternoon."
+          "text": "HARBOR CITY — Sunrise Bakery, a family-owned business founded in 2009, will open its third location next month on Maple Avenue. The new store will be ---(1)--- larger than the original shop, with seating for up to forty customers.\n\n\"Our customers have been asking for a place to sit and enjoy their coffee,\" said owner Grace Liu. ---(2)---. The bakery also plans to hire fifteen new employees, ---(3)--- bakers, cashiers, and delivery drivers.\n\nA grand opening celebration is planned for June 3. The first 100 visitors will receive a free pastry, and live music will be ---(4)--- throughout the afternoon.",
+          "text_vi": "HARBOR CITY — Sunrise Bakery, một doanh nghiệp gia đình thành lập năm 2009, sẽ mở cửa hàng thứ ba vào tháng tới trên đại lộ Maple. Cửa hàng mới sẽ rộng hơn đáng kể so với tiệm đầu tiên, với chỗ ngồi cho tối đa bốn mươi khách.\n\n\"Khách hàng vẫn luôn mong có chỗ ngồi để thưởng thức cà phê,\" chủ tiệm Grace Liu cho biết. \"Chúng tôi đã thiết kế không gian mới với mong muốn đó.\" Tiệm bánh cũng dự định tuyển mười lăm nhân viên mới, bao gồm thợ làm bánh, thu ngân và tài xế giao hàng.\n\nLễ khai trương được lên kế hoạch vào ngày 3 tháng 6. 100 khách đầu tiên sẽ được tặng một chiếc bánh ngọt, và sẽ có nhạc sống biểu diễn suốt buổi chiều."
         }
       ],
       "questions": [
@@ -511,7 +653,12 @@
             "grammar:word-form",
             "grammar:comparative"
           ],
-          "explanation_vi": "Bổ nghĩa cho tính từ so sánh hơn 'larger' → trạng từ considerably (đáng kể)."
+          "explanation_vi": "Bổ nghĩa cho tính từ so sánh hơn 'larger' → trạng từ considerably (đáng kể).",
+          "why_wrong_vi": {
+            "A": "'consider' là động từ, không bổ nghĩa cho tính từ 'larger'.",
+            "B": "'considerable' là tính từ, không bổ nghĩa cho một tính từ khác.",
+            "D": "'consideration' là danh từ, sai từ loại."
+          }
         },
         {
           "prompt": "(2)",
@@ -526,7 +673,12 @@
           "tags": [
             "part6:sentence-insertion"
           ],
-          "explanation_vi": "'that' trong (C) quy chiếu đến mong muốn có chỗ ngồi của khách trong câu trích dẫn trước đó."
+          "explanation_vi": "'that' trong (C) quy chiếu đến mong muốn có chỗ ngồi của khách trong câu trích dẫn trước đó.",
+          "why_wrong_vi": {
+            "A": "Bài báo chỉ nói mở thêm cửa hàng; không có chi tiết đóng cửa tiệm cũ.",
+            "B": "Giá cà phê lạc đề so với mong muốn có chỗ ngồi của khách.",
+            "D": "Chuyện làm bánh từ thời đại học không nối tiếp lời trích về chỗ ngồi."
+          }
         },
         {
           "prompt": "(3)",
@@ -541,7 +693,12 @@
           "tags": [
             "grammar:participle"
           ],
-          "explanation_vi": "'including' = bao gồm, dùng như giới từ đứng trước danh sách."
+          "explanation_vi": "'including' = bao gồm, dùng như giới từ đứng trước danh sách.",
+          "why_wrong_vi": {
+            "A": "'include' là động từ chia, câu đã có động từ 'plans'; cần dạng giới từ trước danh sách.",
+            "C": "'included' phải đứng sau danh sách (bakers ... included), không đứng trước.",
+            "D": "'inclusion' là danh từ, không dẫn ra một danh sách."
+          }
         },
         {
           "prompt": "(4)",
@@ -556,7 +713,12 @@
           "tags": [
             "grammar:passive"
           ],
-          "explanation_vi": "'live music will be performed' — bị động tương lai: will be + V3."
+          "explanation_vi": "'live music will be performed' — bị động tương lai: will be + V3.",
+          "why_wrong_vi": {
+            "B": "'will be performing' là chủ động; nhạc không tự biểu diễn.",
+            "C": "'performer' là người biểu diễn, 'music will be performer' vô nghĩa.",
+            "D": "'performance' là danh từ, 'music will be performance' sai nghĩa."
+          }
         }
       ]
     },
@@ -568,12 +730,14 @@
         {
           "type": "notice",
           "title": "Riverside Public Library",
-          "text": "RIVERSIDE PUBLIC LIBRARY – NOTICE TO PATRONS\n\nBeginning July 1, the library will extend its weekday hours. The building will be open from 8 A.M. to 9 P.M., Monday through Friday. Weekend hours (10 A.M. to 5 P.M.) will remain the same.\n\nIn addition, patrons can now reserve study rooms online through our Web site for up to three hours per day. Reservations must be made at least one day in advance. A valid library card is required."
+          "text": "RIVERSIDE PUBLIC LIBRARY – NOTICE TO PATRONS\n\nBeginning July 1, the library will extend its weekday hours. The building will be open from 8 A.M. to 9 P.M., Monday through Friday. Weekend hours (10 A.M. to 5 P.M.) will remain the same.\n\nIn addition, patrons can now reserve study rooms online through our Web site for up to three hours per day. Reservations must be made at least one day in advance. A valid library card is required.",
+          "text_vi": "THƯ VIỆN CÔNG CỘNG RIVERSIDE – THÔNG BÁO GỬI BẠN ĐỌC\n\nTừ ngày 1 tháng 7, thư viện sẽ kéo dài giờ mở cửa ngày thường. Thư viện sẽ mở cửa từ 8 giờ sáng đến 9 giờ tối, từ thứ Hai đến thứ Sáu. Giờ mở cửa cuối tuần (10 giờ sáng đến 5 giờ chiều) giữ nguyên.\n\nNgoài ra, bạn đọc nay có thể đặt phòng tự học trực tuyến qua trang web của chúng tôi, tối đa ba giờ mỗi ngày. Phải đặt trước ít nhất một ngày. Cần có thẻ thư viện còn hiệu lực."
         }
       ],
       "questions": [
         {
           "prompt": "What is the purpose of the notice?",
+          "prompt_vi": "Mục đích của thông báo là gì?",
           "choices": {
             "A": "To announce new opening hours",
             "B": "To introduce a new librarian",
@@ -585,10 +749,16 @@
           "tags": [
             "part7:purpose"
           ],
-          "explanation_vi": "Thông báo chủ yếu về việc kéo dài giờ mở cửa ngày thường."
+          "explanation_vi": "Thông báo chủ yếu về việc kéo dài giờ mở cửa ngày thường.",
+          "why_wrong_vi": {
+            "B": "Không có thủ thư mới nào được giới thiệu.",
+            "C": "Không nhắc đến tăng phí.",
+            "D": "Không có đợt bán sách nào."
+          }
         },
         {
           "prompt": "What is required to reserve a study room?",
+          "prompt_vi": "Cần gì để đặt phòng tự học?",
           "choices": {
             "A": "A same-day phone call",
             "B": "A payment",
@@ -600,7 +770,12 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "'A valid library card is required.' Phải đặt trước ít nhất 1 ngày nên (A) sai."
+          "explanation_vi": "'A valid library card is required.' Phải đặt trước ít nhất 1 ngày nên (A) sai.",
+          "why_wrong_vi": {
+            "A": "Phải đặt trực tuyến trước ít nhất một ngày, không gọi điện trong ngày.",
+            "B": "Không nhắc đến khoản phí nào.",
+            "D": "Không yêu cầu giấy xác nhận của trường."
+          }
         }
       ]
     },
@@ -612,12 +787,14 @@
         {
           "type": "chat",
           "title": "Online chat discussion",
-          "text": "Hana Sato [9:12 A.M.]: Hi Peter, are you still at the client's office?\nPeter Grant [9:14 A.M.]: Yes, the meeting just ended. They liked our proposal!\nHana Sato [9:15 A.M.]: Great news. Did they mention the budget?\nPeter Grant [9:16 A.M.]: They want us to reduce the cost by about 10 percent.\nHana Sato [9:17 A.M.]: That's doable. We could use fewer printed materials.\nPeter Grant [9:18 A.M.]: Exactly what I was thinking. I'll revise the estimate when I get back this afternoon.\nHana Sato [9:19 A.M.]: Perfect. Send it to me before you submit it."
+          "text": "Hana Sato [9:12 A.M.]: Hi Peter, are you still at the client's office?\nPeter Grant [9:14 A.M.]: Yes, the meeting just ended. They liked our proposal!\nHana Sato [9:15 A.M.]: Great news. Did they mention the budget?\nPeter Grant [9:16 A.M.]: They want us to reduce the cost by about 10 percent.\nHana Sato [9:17 A.M.]: That's doable. We could use fewer printed materials.\nPeter Grant [9:18 A.M.]: Exactly what I was thinking. I'll revise the estimate when I get back this afternoon.\nHana Sato [9:19 A.M.]: Perfect. Send it to me before you submit it.",
+          "text_vi": "Hana Sato [9:12 A.M.]: Chào Peter, anh vẫn ở văn phòng khách hàng à?\nPeter Grant [9:14 A.M.]: Ừ, cuộc họp vừa xong. Họ thích đề xuất của chúng ta!\nHana Sato [9:15 A.M.]: Tin tốt quá. Họ có nhắc đến ngân sách không?\nPeter Grant [9:16 A.M.]: Họ muốn chúng ta giảm chi phí khoảng 10%.\nHana Sato [9:17 A.M.]: Làm được đấy. Mình có thể dùng ít tài liệu in hơn.\nPeter Grant [9:18 A.M.]: Đúng ý tôi. Chiều nay về tôi sẽ sửa lại bản dự toán.\nHana Sato [9:19 A.M.]: Tuyệt. Gửi cho tôi xem trước khi nộp nhé."
         }
       ],
       "questions": [
         {
           "prompt": "What is suggested about the client?",
+          "prompt_vi": "Điều gì được gợi ý về khách hàng?",
           "choices": {
             "A": "They rejected the proposal.",
             "B": "They responded positively to the proposal.",
@@ -629,10 +806,16 @@
           "tags": [
             "part7:inference"
           ],
-          "explanation_vi": "'They liked our proposal!'"
+          "explanation_vi": "'They liked our proposal!'",
+          "why_wrong_vi": {
+            "A": "Ngược lại, khách thích đề xuất.",
+            "C": "Peter là người đến văn phòng khách hàng, không phải ngược lại.",
+            "D": "Khách muốn giảm chi phí, không tăng ngân sách."
+          }
         },
         {
           "prompt": "At 9:17 A.M., what does Ms. Sato mean when she writes, \"That's doable\"?",
+          "prompt_vi": "Lúc 9:17 A.M., khi viết \"That's doable\", cô Sato có ý gì?",
           "choices": {
             "A": "She thinks the cost can be lowered.",
             "B": "She wants to cancel the project.",
@@ -644,10 +827,16 @@
           "tags": [
             "part7:intent"
           ],
-          "explanation_vi": "'doable' = khả thi → cô ấy tin có thể giảm chi phí 10% như khách yêu cầu."
+          "explanation_vi": "'doable' = khả thi → cô ấy tin có thể giảm chi phí 10% như khách yêu cầu.",
+          "why_wrong_vi": {
+            "B": "Cô ấy tìm cách đáp ứng yêu cầu, không muốn hủy dự án.",
+            "C": "Peter đã gặp khách xong; cô Sato không có lịch gặp khách.",
+            "D": "Cô ấy đề xuất dùng ít tài liệu in hơn, không nói đã in xong."
+          }
         },
         {
           "prompt": "What will Mr. Grant most likely do this afternoon?",
+          "prompt_vi": "Chiều nay anh Grant nhiều khả năng sẽ làm gì?",
           "choices": {
             "A": "Print new brochures",
             "B": "Call the client",
@@ -659,7 +848,12 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "'I'll revise the estimate when I get back this afternoon.'"
+          "explanation_vi": "'I'll revise the estimate when I get back this afternoon.'",
+          "why_wrong_vi": {
+            "A": "Họ định giảm tài liệu in, không in tờ rơi mới.",
+            "B": "Anh ấy vừa gặp khách xong, không nói sẽ gọi lại.",
+            "D": "Không nhắc đến phỏng vấn ứng viên."
+          }
         }
       ]
     },
@@ -671,17 +865,20 @@
         {
           "type": "advertisement",
           "title": "Brightline Coworking Spaces",
-          "text": "BRIGHTLINE COWORKING – Flexible workspace in downtown Easton\n\nMembership plans:\n• Basic – $150/month: access to shared desks, Monday–Friday\n• Plus – $250/month: shared desks 7 days a week + 5 hours of meeting room use\n• Private – $600/month: private office for up to 3 people + unlimited meeting rooms\n\nAll plans include high-speed Internet and free coffee. Sign up before March 31 and receive your first month at half price!"
+          "text": "BRIGHTLINE COWORKING – Flexible workspace in downtown Easton\n\nMembership plans:\n• Basic – $150/month: access to shared desks, Monday–Friday\n• Plus – $250/month: shared desks 7 days a week + 5 hours of meeting room use\n• Private – $600/month: private office for up to 3 people + unlimited meeting rooms\n\nAll plans include high-speed Internet and free coffee. Sign up before March 31 and receive your first month at half price!",
+          "text_vi": "BRIGHTLINE COWORKING – Không gian làm việc linh hoạt tại trung tâm Easton\n\nCác gói thành viên:\n• Basic – $150/tháng: dùng bàn làm việc chung, thứ Hai – thứ Sáu\n• Plus – $250/tháng: dùng bàn chung 7 ngày/tuần + 5 giờ sử dụng phòng họp\n• Private – $600/tháng: văn phòng riêng cho tối đa 3 người + phòng họp không giới hạn\n\nTất cả các gói đều có Internet tốc độ cao và cà phê miễn phí. Đăng ký trước ngày 31 tháng 3 để được giảm nửa giá tháng đầu tiên!"
         },
         {
           "type": "email",
           "title": "To: info@brightline.example | From: d.moreno@mail.example | Date: March 28 | Subject: Membership",
-          "text": "Hello,\n\nI'm a freelance graphic designer, and I'm interested in your coworking space. I usually work on weekends as well as weekdays, and I meet clients about once a week for an hour, so I think the Plus plan would suit me. However, I'd like to see the space before I sign up. Would it be possible to visit on Saturday morning?\n\nAlso, could you tell me whether there is parking nearby?\n\nThank you,\nDiego Moreno"
+          "text": "Hello,\n\nI'm a freelance graphic designer, and I'm interested in your coworking space. I usually work on weekends as well as weekdays, and I meet clients about once a week for an hour, so I think the Plus plan would suit me. However, I'd like to see the space before I sign up. Would it be possible to visit on Saturday morning?\n\nAlso, could you tell me whether there is parking nearby?\n\nThank you,\nDiego Moreno",
+          "text_vi": "Xin chào,\n\nTôi là nhà thiết kế đồ họa tự do và tôi quan tâm đến không gian làm việc chung của quý vị. Tôi thường làm việc cả cuối tuần lẫn ngày thường, và gặp khách khoảng mỗi tuần một lần, mỗi lần một tiếng, nên tôi nghĩ gói Plus phù hợp với tôi. Tuy nhiên, tôi muốn xem không gian trước khi đăng ký. Tôi có thể đến xem vào sáng thứ Bảy được không?\n\nNgoài ra, quý vị cho tôi biết gần đó có chỗ đỗ xe không?\n\nCảm ơn,\nDiego Moreno"
         }
       ],
       "questions": [
         {
           "prompt": "What is included in all membership plans?",
+          "prompt_vi": "Thứ gì có trong tất cả các gói thành viên?",
           "choices": {
             "A": "A private office",
             "B": "Unlimited meeting rooms",
@@ -693,10 +890,16 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "'All plans include high-speed Internet and free coffee.'"
+          "explanation_vi": "'All plans include high-speed Internet and free coffee.'",
+          "why_wrong_vi": {
+            "A": "Văn phòng riêng chỉ có trong gói Private.",
+            "B": "Phòng họp không giới hạn chỉ có trong gói Private.",
+            "D": "Chỗ đỗ xe không được nhắc trong quảng cáo; anh Moreno còn phải hỏi."
+          }
         },
         {
           "prompt": "Who most likely is Mr. Moreno?",
+          "prompt_vi": "Anh Moreno nhiều khả năng là ai?",
           "choices": {
             "A": "A self-employed designer",
             "B": "A Brightline employee",
@@ -708,10 +911,16 @@
           "tags": [
             "part7:inference"
           ],
-          "explanation_vi": "'freelance graphic designer' = nhà thiết kế tự do (self-employed)."
+          "explanation_vi": "'freelance graphic designer' = nhà thiết kế tự do (self-employed).",
+          "why_wrong_vi": {
+            "B": "Anh ấy gửi e-mail hỏi Brightline, không phải nhân viên của họ.",
+            "C": "Không có chi tiết nào nói anh quản lý tòa nhà.",
+            "D": "Anh ấy là nhà thiết kế đồ họa, không phải môi giới bất động sản."
+          }
         },
         {
           "prompt": "How much will Mr. Moreno most likely pay for his first month?",
+          "prompt_vi": "Tháng đầu tiên anh Moreno nhiều khả năng sẽ trả bao nhiêu?",
           "choices": {
             "A": "$75",
             "B": "$125",
@@ -723,10 +932,16 @@
           "tags": [
             "part7:cross-reference"
           ],
-          "explanation_vi": "Kết hợp 2 văn bản: anh ấy chọn gói Plus ($250), email gửi ngày 28/3 (trước 31/3) → giảm 50% tháng đầu = $125."
+          "explanation_vi": "Kết hợp 2 văn bản: anh ấy chọn gói Plus ($250), email gửi ngày 28/3 (trước 31/3) → giảm 50% tháng đầu = $125.",
+          "why_wrong_vi": {
+            "A": "$75 là nửa giá gói Basic, nhưng anh ấy chọn gói Plus.",
+            "C": "$250 là giá gốc; anh ấy đăng ký trước 31/3 nên được giảm nửa giá.",
+            "D": "$300 không ứng với gói hay mức giảm nào."
+          }
         },
         {
           "prompt": "Why does Mr. Moreno want the Plus plan?",
+          "prompt_vi": "Vì sao anh Moreno muốn gói Plus?",
           "choices": {
             "A": "He needs a private office.",
             "B": "He works on weekends.",
@@ -738,10 +953,16 @@
           "tags": [
             "part7:cross-reference"
           ],
-          "explanation_vi": "Gói Plus cho phép dùng 7 ngày/tuần, phù hợp vì anh ấy làm cả cuối tuần."
+          "explanation_vi": "Gói Plus cho phép dùng 7 ngày/tuần, phù hợp vì anh ấy làm cả cuối tuần.",
+          "why_wrong_vi": {
+            "A": "Văn phòng riêng là gói Private; anh ấy không cần.",
+            "C": "Anh ấy làm tự do, không nhắc đến đối tác kinh doanh.",
+            "D": "Cà phê miễn phí có ở mọi gói, không phải lý do chọn gói Plus."
+          }
         },
         {
           "prompt": "What does Mr. Moreno ask about?",
+          "prompt_vi": "Anh Moreno hỏi về điều gì?",
           "choices": {
             "A": "Discounts for students",
             "B": "The size of the meeting rooms",
@@ -753,7 +974,12 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "'could you tell me whether there is parking nearby?'"
+          "explanation_vi": "'could you tell me whether there is parking nearby?'",
+          "why_wrong_vi": {
+            "A": "Không hỏi về giảm giá cho sinh viên.",
+            "B": "Không hỏi về kích thước phòng họp.",
+            "D": "Không hỏi về chính sách hủy."
+          }
         }
       ]
     },
@@ -765,22 +991,26 @@
         {
           "type": "schedule",
           "title": "Northgate Business Conference – Day 2 (October 14)",
-          "text": "9:00 – 10:00  Keynote: \"The Future of Remote Work\" – Dr. Alice Brennan (Hall A)\n10:15 – 11:15  Workshop: Effective Online Marketing – Raj Mehta (Room 101)\n11:30 – 12:30  Panel: Financing Small Businesses (Hall B)\n12:30 – 1:30  Lunch (Garden Terrace)\n1:30 – 2:30  Workshop: Negotiation Skills – Sofia Klein (Room 101)"
+          "text": "9:00 – 10:00  Keynote: \"The Future of Remote Work\" – Dr. Alice Brennan (Hall A)\n10:15 – 11:15  Workshop: Effective Online Marketing – Raj Mehta (Room 101)\n11:30 – 12:30  Panel: Financing Small Businesses (Hall B)\n12:30 – 1:30  Lunch (Garden Terrace)\n1:30 – 2:30  Workshop: Negotiation Skills – Sofia Klein (Room 101)",
+          "text_vi": "9:00 – 10:00  Bài phát biểu chính: \"Tương lai của làm việc từ xa\" – TS. Alice Brennan (Hall A)\n10:15 – 11:15  Hội thảo: Marketing trực tuyến hiệu quả – Raj Mehta (Room 101)\n11:30 – 12:30  Thảo luận: Tài chính cho doanh nghiệp nhỏ (Hall B)\n12:30 – 1:30  Ăn trưa (Garden Terrace)\n1:30 – 2:30  Hội thảo: Kỹ năng đàm phán – Sofia Klein (Room 101)"
         },
         {
           "type": "email",
           "title": "To: All attendees | From: Conference Office | Date: October 13 | Subject: Schedule update",
-          "text": "Dear attendees,\n\nDue to a flight delay, Raj Mehta will not arrive until the afternoon of October 14. His workshop has therefore been moved to 1:30 P.M. Sofia Klein has kindly agreed to give her workshop at 10:15 A.M. instead. Both sessions will remain in Room 101.\n\nIn addition, because of the forecast for rain, lunch will be served in the main lobby rather than outdoors.\n\nConference Office"
+          "text": "Dear attendees,\n\nDue to a flight delay, Raj Mehta will not arrive until the afternoon of October 14. His workshop has therefore been moved to 1:30 P.M. Sofia Klein has kindly agreed to give her workshop at 10:15 A.M. instead. Both sessions will remain in Room 101.\n\nIn addition, because of the forecast for rain, lunch will be served in the main lobby rather than outdoors.\n\nConference Office",
+          "text_vi": "Kính gửi quý đại biểu,\n\nDo chuyến bay bị trễ, Raj Mehta sẽ phải đến chiều ngày 14 tháng 10 mới tới nơi. Vì vậy, buổi hội thảo của anh ấy được dời sang 1:30 chiều. Sofia Klein đã vui lòng đổi buổi hội thảo của mình lên 10:15 sáng. Cả hai buổi vẫn diễn ra tại Room 101.\n\nNgoài ra, do dự báo có mưa, bữa trưa sẽ được phục vụ ở sảnh chính thay vì ngoài trời.\n\nVăn phòng Hội nghị"
         },
         {
           "type": "review",
           "title": "Online review – posted October 16 by Mia Turner",
-          "text": "I attended the second day of the Northgate Business Conference. The keynote was inspiring, and the morning workshop in Room 101 gave me practical tips I used in a contract discussion the very next day. My only complaint is that the lobby was crowded at lunch. Overall, I would definitely attend again next year."
+          "text": "I attended the second day of the Northgate Business Conference. The keynote was inspiring, and the morning workshop in Room 101 gave me practical tips I used in a contract discussion the very next day. My only complaint is that the lobby was crowded at lunch. Overall, I would definitely attend again next year.",
+          "text_vi": "Tôi đã tham dự ngày thứ hai của Hội nghị Doanh nghiệp Northgate. Bài phát biểu chính rất truyền cảm hứng, và buổi hội thảo buổi sáng ở Room 101 cho tôi những mẹo thực tế mà tôi đã áp dụng trong một cuộc thảo luận hợp đồng ngay ngày hôm sau. Điều duy nhất tôi không hài lòng là sảnh khá đông vào giờ ăn trưa. Nhìn chung, chắc chắn năm sau tôi sẽ tham dự lại."
         }
       ],
       "questions": [
         {
           "prompt": "What is the main purpose of the email?",
+          "prompt_vi": "Mục đích chính của e-mail là gì?",
           "choices": {
             "A": "To cancel a conference",
             "B": "To announce changes to a schedule",
@@ -792,10 +1022,16 @@
           "tags": [
             "part7:purpose"
           ],
-          "explanation_vi": "Email thông báo đổi giờ hai workshop và đổi địa điểm ăn trưa."
+          "explanation_vi": "Email thông báo đổi giờ hai workshop và đổi địa điểm ăn trưa.",
+          "why_wrong_vi": {
+            "A": "Hội nghị vẫn diễn ra, chỉ đổi giờ và địa điểm ăn trưa.",
+            "C": "Raj Mehta và Sofia Klein đều đã có trong lịch, không có diễn giả mới.",
+            "D": "E-mail không xin ý kiến phản hồi."
+          }
         },
         {
           "prompt": "Why was Mr. Mehta's workshop rescheduled?",
+          "prompt_vi": "Vì sao buổi hội thảo của anh Mehta bị dời giờ?",
           "choices": {
             "A": "His room was unavailable.",
             "B": "He was ill.",
@@ -807,10 +1043,16 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "'Due to a flight delay, Raj Mehta will not arrive until the afternoon'."
+          "explanation_vi": "'Due to a flight delay, Raj Mehta will not arrive until the afternoon'.",
+          "why_wrong_vi": {
+            "A": "Cả hai buổi vẫn ở Room 101; phòng không có vấn đề.",
+            "B": "Anh ấy không bị ốm, chỉ bị trễ chuyến bay.",
+            "C": "Không nhắc đến số người đăng ký."
+          }
         },
         {
           "prompt": "Where was lunch served on October 14?",
+          "prompt_vi": "Bữa trưa ngày 14 tháng 10 được phục vụ ở đâu?",
           "choices": {
             "A": "On the Garden Terrace",
             "B": "In Hall A",
@@ -822,10 +1064,16 @@
           "tags": [
             "part7:cross-reference"
           ],
-          "explanation_vi": "Lịch ghi Garden Terrace nhưng email đã đổi sang sảnh chính (main lobby) do dự báo mưa; bài review cũng xác nhận."
+          "explanation_vi": "Lịch ghi Garden Terrace nhưng email đã đổi sang sảnh chính (main lobby) do dự báo mưa; bài review cũng xác nhận.",
+          "why_wrong_vi": {
+            "A": "Bẫy lịch cũ: Garden Terrace đã được đổi do dự báo mưa.",
+            "B": "Hall A là nơi diễn ra bài phát biểu chính.",
+            "C": "Room 101 là phòng hội thảo."
+          }
         },
         {
           "prompt": "Which workshop did Ms. Turner most likely attend?",
+          "prompt_vi": "Cô Turner nhiều khả năng đã tham dự buổi hội thảo nào?",
           "choices": {
             "A": "Effective Online Marketing",
             "B": "Negotiation Skills",
@@ -837,10 +1085,16 @@
           "tags": [
             "part7:cross-reference"
           ],
-          "explanation_vi": "Câu suy luận 3 văn bản: buổi sáng ở Room 101 sau khi đổi lịch là workshop Negotiation Skills (Sofia Klein); cô ấy áp dụng vào một buổi đàm phán hợp đồng ngay hôm sau."
+          "explanation_vi": "Câu suy luận 3 văn bản: buổi sáng ở Room 101 sau khi đổi lịch là workshop Negotiation Skills (Sofia Klein); cô ấy áp dụng vào một buổi đàm phán hợp đồng ngay hôm sau.",
+          "why_wrong_vi": {
+            "A": "Bẫy lịch cũ: buổi Marketing đã bị dời sang buổi chiều, không còn là buổi sáng ở Room 101.",
+            "C": "Buổi thảo luận tài chính ở Hall B, không phải Room 101.",
+            "D": "Đó là bài phát biểu chính ở Hall A, cô ấy nhắc riêng, không phải hội thảo."
+          }
         },
         {
           "prompt": "In the review, the word \"practical\" in line 2 is closest in meaning to",
+          "prompt_vi": "Trong bài đánh giá, từ \"practical\" ở dòng 2 gần nghĩa nhất với",
           "choices": {
             "A": "useful",
             "B": "theoretical",
@@ -852,7 +1106,12 @@
           "tags": [
             "part7:synonym"
           ],
-          "explanation_vi": "'practical tips' = mẹo hữu ích, áp dụng được → useful."
+          "explanation_vi": "'practical tips' = mẹo hữu ích, áp dụng được → useful.",
+          "why_wrong_vi": {
+            "B": "'theoretical' (lý thuyết) là trái nghĩa với 'practical'.",
+            "C": "'expensive' (đắt) sai nghĩa.",
+            "D": "'temporary' (tạm thời) sai nghĩa."
+          }
         }
       ]
     }

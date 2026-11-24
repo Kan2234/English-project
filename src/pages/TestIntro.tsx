@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useData } from '../lib/data';
-import { PART_NAMES, SCOPE_NAMES, formatClock, questionsOf, scopeMinutes, setsInScope, ADVANCE_SEC, type ExamStart } from '../lib/exam';
+import { PART_NAMES, SCOPE_NAMES, formatClock, isExam, questionsOf, scopeMinutes, setsInScope, ADVANCE_SEC, type ExamStart } from '../lib/exam';
 import { clearDraft, loadDraft } from '../lib/storage';
 import { clearMeta, loadMeta } from '../lib/flags';
 import type { Scope } from '../lib/types';
@@ -22,6 +22,8 @@ export default function TestIntro() {
     ? ((state as Record<string, unknown>).needStart as Scope)
     : null;
   if (!test) return <NotFound />;
+  // The practice bank is not an exam: its questions are studied part by part under /luyen-tap.
+  if (!isExam(test)) return <Navigate to="/luyen-tap" replace />;
 
   const parts = [1, 2, 3, 4, 5, 6, 7]
     .map((p) => ({ p, n: test.sets.filter((s) => s.part === p).reduce((s, x) => s + x.questions.length, 0) }))

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useData } from '../lib/data';
+import { practiceSets } from '../lib/exam';
 import type { Answers, Label } from '../lib/types';
 import { QuestionBlock } from '../components/QuestionBlock';
 import NotFound from './NotFound';
@@ -59,8 +60,9 @@ function TopicView({ slug }: { slug: string }) {
   const [answers, setAnswers] = useState<Answers>({});
   const related = useMemo(() => {
     const tags = TAGS[slug] ?? [];
-    return data.tests
-      .flatMap((t) => t.sets.filter((s) => s.part === 5).flatMap((s) => s.questions))
+    // practice questions only: Full Test questions stay unseen for the real timed attempt
+    return practiceSets(data, 5)
+      .flatMap((x) => x.set.questions)
       .filter((q) => q.tags?.some((tag) => tags.includes(tag)))
       .slice(0, 5);
   }, [data, slug]);
@@ -100,7 +102,7 @@ function TopicView({ slug }: { slug: string }) {
         <section>
           <h3 style={{ marginBottom: 4 }}>Luyện ngay</h3>
           <p className="muted small" style={{ marginBottom: 8 }}>
-            Câu Part 5 trong đề có dùng chủ điểm này.
+            Câu Part 5 trong phần luyện tập có dùng chủ điểm này.
           </p>
           {related.map((q, i) => (
             <QuestionBlock

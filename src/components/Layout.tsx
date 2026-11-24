@@ -46,12 +46,6 @@ export function Layout() {
       <main>
         <Outlet />
       </main>
-      <footer className="site-footer">
-        <div className="site-footer__inner">
-          <span>Câu hỏi được biên soạn mới theo cấu trúc TOEIC Listening & Reading, không phải đề thi chính thức của ETS.</span>
-          <span>Kết quả làm bài chỉ lưu trên trình duyệt này.</span>
-        </div>
-      </footer>
     </>
   );
 }

@@ -296,7 +296,7 @@ export default function ResultPage() {
         </div>
         <p className="small muted" style={{ marginTop: 16 }}>
           Bậc CEFR ước tính theo bảng ánh xạ điểm từng kỹ năng của ETS (Nghe: A1 từ 60, A2 từ 110, B1 từ 275, B2 từ 400,
-          C1 từ 490; Đọc: A1 từ 60, A2 từ 115, B1 từ 275, B2 từ 385, C1 từ 455). ETS khuyên chỉ dùng làm tham khảo.
+          C1 từ 490; Đọc: A1 từ 60, A2 từ 115, B1 từ 275, B2 từ 385, C1 từ 455).
         </p>
       </section>
 

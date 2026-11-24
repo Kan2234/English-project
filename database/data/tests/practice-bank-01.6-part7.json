@@ -1,0 +1,784 @@
+{
+  "test": {
+    "id": "practice-bank-01"
+  },
+  "sets": [
+    {
+      "part": 7,
+      "passage_type": "text-message-chain",
+      "title": "Single passage – Text message chain",
+      "passages": [
+        {
+          "type": "chat",
+          "title": "Text message chain",
+          "text": "Nadia Brooks [9:12 A.M.]: Hi Leon, the projector in Conference Room B won't turn on, and the clients arrive at 10.\nLeon Price [9:14 A.M.]: Did you check that the power strip under the table is switched on? People turn it off all the time.\nNadia Brooks [9:16 A.M.]: You're a lifesaver. It's working now.\nLeon Price [9:17 A.M.]: Great. Do you need extra chairs? Facilities told me to expect eight people.\nNadia Brooks [9:18 A.M.]: Two people from their legal team are joining too, so yes, please.",
+          "text_vi": "Nadia Brooks [9:12 sáng]: Chào Leon, máy chiếu ở phòng họp B không bật lên được, mà 10 giờ khách hàng đến rồi.\nLeon Price [9:14 sáng]: Chị đã kiểm tra ổ cắm điện dưới gầm bàn có bật chưa? Mọi người hay tắt nó lắm.\nNadia Brooks [9:16 sáng]: Anh đúng là cứu tinh. Nó chạy rồi.\nLeon Price [9:17 sáng]: Tốt quá. Chị có cần thêm ghế không? Bộ phận Hành chính bảo tôi là có tám người.\nNadia Brooks [9:18 sáng]: Có thêm hai người bên pháp lý của họ nữa, nên có, nhờ anh nhé."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "At 9:16 A.M., what does Ms. Brooks most likely mean when she writes, \"You're a lifesaver\"?",
+          "prompt_vi": "Lúc 9:16 sáng, cô Brooks nhiều khả năng có ý gì khi viết: \"Anh đúng là cứu tinh\"?",
+          "choices": {
+            "A": "Mr. Price's advice solved her problem.",
+            "B": "She needs medical assistance.",
+            "C": "She wants Mr. Price to meet the clients.",
+            "D": "She has decided to postpone the meeting."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part7:intent"
+          ],
+          "explanation_vi": "Ngay sau gợi ý kiểm tra ổ cắm, cô ấy báo máy đã chạy → 'You're a lifesaver' = lời khuyên của anh đã giải quyết được vấn đề.",
+          "why_wrong_vi": {
+            "B": "Hiểu theo nghĩa đen 'cứu mạng' là sai; đây là thành ngữ cảm ơn.",
+            "C": "Không có yêu cầu gặp khách hàng.",
+            "D": "Máy chiếu đã chạy nên không cần dời họp."
+          }
+        },
+        {
+          "prompt": "What will Mr. Price most likely do next?",
+          "prompt_vi": "Ông Price nhiều khả năng sẽ làm gì tiếp theo?",
+          "choices": {
+            "A": "Repair a projector",
+            "B": "Bring additional seating",
+            "C": "Contact the legal team",
+            "D": "Reserve a larger room"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part7:inference",
+            "part7:paraphrase"
+          ],
+          "explanation_vi": "Anh ấy hỏi có cần thêm ghế không, cô ấy đáp 'yes, please' → anh ấy sẽ mang thêm ghế.",
+          "why_wrong_vi": {
+            "A": "Máy chiếu đã hoạt động.",
+            "C": "Nhóm pháp lý là người của khách hàng, không cần liên hệ.",
+            "D": "Không nhắc đến việc đổi phòng."
+          }
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "notice",
+      "title": "Single passage – Notice",
+      "passages": [
+        {
+          "type": "notice",
+          "title": "Westbury Public Library – Changes to Borrowing Policy",
+          "text": "Effective September 1\n\nTo better serve our growing membership, Westbury Public Library is updating its borrowing policy.\n\n• Members may now borrow up to 15 items at a time (previously 10).\n• The loan period for new releases will be shortened from three weeks to two weeks.\n• Late fees for children's books will be eliminated entirely.\n• Items can be renewed online up to two times, unless another member has placed a hold on them.\n\nMembers who have questions about these changes can speak with any staff member at the circulation desk or e-mail help@westburylib.example. The full policy is available on our Web site.",
+          "text_vi": "Có hiệu lực từ ngày 1 tháng Chín\n\nĐể phục vụ tốt hơn số lượng thành viên ngày càng tăng, Thư viện Công cộng Westbury cập nhật chính sách mượn tài liệu.\n\n• Thành viên nay được mượn tối đa 15 tài liệu mỗi lần (trước đây là 10).\n• Thời hạn mượn đối với ấn phẩm mới phát hành sẽ rút ngắn từ ba tuần xuống hai tuần.\n• Bỏ hoàn toàn phí trả trễ đối với sách thiếu nhi.\n• Có thể gia hạn trực tuyến tối đa hai lần, trừ khi có thành viên khác đã đặt giữ tài liệu đó.\n\nThành viên có thắc mắc về những thay đổi này có thể trao đổi với bất kỳ nhân viên nào ở quầy mượn trả hoặc gửi email đến help@westburylib.example. Toàn văn chính sách có trên trang web của thư viện."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is the purpose of the notice?",
+          "prompt_vi": "Mục đích của thông báo là gì?",
+          "choices": {
+            "A": "To announce the opening of a new branch",
+            "B": "To recruit library volunteers",
+            "C": "To explain changes to library rules",
+            "D": "To remind members to return overdue books"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part7:purpose"
+          ],
+          "explanation_vi": "Tiêu đề và câu mở đầu: 'updating its borrowing policy' → giải thích các thay đổi trong quy định.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến chi nhánh mới.",
+            "B": "Không có thông tin tuyển tình nguyện viên.",
+            "D": "Thông báo nói về chính sách mới, không nhắc trả sách quá hạn."
+          }
+        },
+        {
+          "prompt": "What is NOT mentioned as a change to the policy?",
+          "prompt_vi": "Điều nào KHÔNG được nêu là một thay đổi trong chính sách?",
+          "choices": {
+            "A": "An increase in the number of items members can borrow",
+            "B": "A shorter loan period for some materials",
+            "C": "The removal of certain fines",
+            "D": "Longer weekend opening hours"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part7:not-question"
+          ],
+          "explanation_vi": "Ba thay đổi kia đều có trong danh sách; giờ mở cửa cuối tuần hoàn toàn không được nhắc tới.",
+          "why_wrong_vi": {
+            "A": "Có nêu: từ 10 lên 15 tài liệu.",
+            "B": "Có nêu: ấn phẩm mới chỉ được mượn hai tuần.",
+            "C": "Có nêu: bỏ phí trả trễ sách thiếu nhi."
+          }
+        },
+        {
+          "prompt": "What is indicated about renewing items online?",
+          "prompt_vi": "Thông báo cho biết gì về việc gia hạn trực tuyến?",
+          "choices": {
+            "A": "It may not be possible if another member has requested the item.",
+            "B": "It can be done an unlimited number of times.",
+            "C": "It is available only for children's books.",
+            "D": "It requires a visit to the circulation desk."
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "part7:detail",
+            "part7:paraphrase"
+          ],
+          "explanation_vi": "'unless another member has placed a hold on them' → không gia hạn được nếu người khác đã đặt giữ tài liệu.",
+          "why_wrong_vi": {
+            "B": "Chỉ được gia hạn tối đa hai lần.",
+            "C": "Không giới hạn ở sách thiếu nhi.",
+            "D": "Gia hạn được thực hiện trực tuyến."
+          }
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "email",
+      "title": "Single passage – E-mail",
+      "passages": [
+        {
+          "type": "email",
+          "title": "To: Hyun-woo Park | From: Clara Vence, Tallis Furniture | Date: October 2 | Subject: Your order #48211",
+          "text": "Dear Mr. Park,\n\nThank you for your recent order of twelve Arden office chairs. Unfortunately, the charcoal-gray fabric you selected is temporarily out of stock because our supplier is experiencing production delays. We expect new stock to arrive by October 25, which would push your delivery date back by approximately three weeks.\n\nWe understand that you are furnishing a new office and may not be able to wait. If you prefer, we can ship the same chair in navy blue or forest green immediately, at no additional cost. Alternatively, you may cancel the order for a full refund.\n\nAs a token of our appreciation for your patience, we would like to offer you 15 percent off your next purchase. Please reply to this e-mail by October 6 to let us know how you would like to proceed.\n\nSincerely,\nClara Vence\nCustomer Relations, Tallis Furniture",
+          "text_vi": "Kính gửi anh Park,\n\nCảm ơn anh đã đặt mua mười hai chiếc ghế văn phòng Arden. Rất tiếc, loại vải màu xám than mà anh chọn tạm thời hết hàng vì nhà cung cấp của chúng tôi đang chậm sản xuất. Chúng tôi dự kiến hàng mới về trước ngày 25 tháng Mười, như vậy ngày giao hàng của anh sẽ lùi lại khoảng ba tuần.\n\nChúng tôi hiểu anh đang trang bị nội thất cho văn phòng mới và có thể không chờ được. Nếu anh muốn, chúng tôi có thể giao ngay cùng mẫu ghế đó với màu xanh navy hoặc xanh lá rừng, không tính thêm phí. Hoặc anh có thể hủy đơn và được hoàn tiền toàn bộ.\n\nĐể bày tỏ lòng cảm ơn vì sự kiên nhẫn của anh, chúng tôi xin tặng anh ưu đãi giảm 15 phần trăm cho lần mua tiếp theo. Vui lòng trả lời email này trước ngày 6 tháng Mười để cho chúng tôi biết anh muốn xử lý thế nào.\n\nTrân trọng,\nClara Vence\nBộ phận Quan hệ Khách hàng, Tallis Furniture"
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Why did Ms. Vence write the e-mail?",
+          "prompt_vi": "Vì sao cô Vence viết email này?",
+          "choices": {
+            "A": "To confirm a delivery date",
+            "B": "To inform a customer about a delay",
+            "C": "To advertise a new line of chairs",
+            "D": "To request payment for an order"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part7:purpose"
+          ],
+          "explanation_vi": "Email báo vải đã chọn tạm hết hàng nên đơn sẽ bị giao trễ khoảng ba tuần.",
+          "why_wrong_vi": {
+            "A": "Ngày giao hàng bị lùi, chưa được xác nhận.",
+            "C": "Ghế Arden là sản phẩm khách đã đặt.",
+            "D": "Không nhắc đến thanh toán."
+          }
+        },
+        {
+          "prompt": "What is suggested about Mr. Park?",
+          "prompt_vi": "Có thể suy ra điều gì về anh Park?",
+          "choices": {
+            "A": "He is setting up a new workplace.",
+            "B": "He has ordered from Tallis Furniture many times.",
+            "C": "He prefers navy blue chairs.",
+            "D": "He works for a fabric supplier."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part7:inference"
+          ],
+          "explanation_vi": "'you are furnishing a new office' → anh ấy đang trang bị cho văn phòng mới.",
+          "why_wrong_vi": {
+            "B": "Không có thông tin về các lần đặt trước.",
+            "C": "Anh ấy đã chọn màu xám than.",
+            "D": "Nhà cung cấp vải là đối tác của Tallis, không liên quan đến anh Park."
+          }
+        },
+        {
+          "prompt": "What is NOT offered to Mr. Park?",
+          "prompt_vi": "Điều nào KHÔNG được đề nghị với anh Park?",
+          "choices": {
+            "A": "Chairs in a different color",
+            "B": "Free express shipping",
+            "C": "A full refund",
+            "D": "A discount on a future order"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part7:not-question"
+          ],
+          "explanation_vi": "Email có đề nghị đổi màu, hoàn tiền và giảm giá lần sau, nhưng không nhắc đến 'giao hàng nhanh miễn phí'.",
+          "why_wrong_vi": {
+            "A": "Có đề nghị: màu xanh navy hoặc xanh lá, giao ngay.",
+            "C": "Có đề nghị: hủy đơn và hoàn tiền toàn bộ.",
+            "D": "Có đề nghị: giảm 15% cho lần mua sau."
+          }
+        },
+        {
+          "prompt": "The word \"token\" in paragraph 3, line 1, is closest in meaning to",
+          "prompt_vi": "Từ \"token\" ở đoạn 3, dòng 1 gần nghĩa nhất với",
+          "choices": {
+            "A": "coin",
+            "B": "ticket",
+            "C": "sample",
+            "D": "gesture"
+          },
+          "answer": "D",
+          "difficulty": 4,
+          "tags": [
+            "part7:synonym"
+          ],
+          "explanation_vi": "'as a token of our appreciation' = như một cử chỉ thể hiện lòng biết ơn → gesture.",
+          "why_wrong_vi": {
+            "A": "'token' có thể là đồng xu/thẻ, nhưng không hợp ngữ cảnh.",
+            "B": "'ticket' (vé) không hợp ngữ cảnh.",
+            "C": "'sample' (hàng mẫu) không hợp ngữ cảnh."
+          }
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "article",
+      "title": "Single passage – Article",
+      "passages": [
+        {
+          "type": "article",
+          "title": "Harbor Street Market to Add Weekday Evenings",
+          "text": "GLENWOOD (April 8) — Harbor Street Market, the open-air food market that has operated on weekends for nearly 40 years, will begin opening on weekday evenings in June. — [1] —\n\nThe decision follows a two-year decline in the number of Saturday visitors, which market organizers attribute largely to the growth of grocery delivery services. \"People's shopping habits have changed,\" said market director Amelia Tran. \"Many of our customers work long hours during the week and want somewhere to pick up fresh food on their way home.\" — [2] —\n\nThe evening market will run on Wednesdays and Thursdays from 4 P.M. to 8 P.M. In addition to the usual produce and bakery stalls, it will feature food trucks and live music. — [3] — Vendors who already hold a weekend permit can apply for an evening spot at a reduced fee.\n\nNot everyone has welcomed the plan. Some residents of nearby apartment buildings have expressed concern about noise. — [4] — In response, organizers have agreed to end amplified music by 7:30 P.M.",
+          "text_vi": "GLENWOOD (8/4) — Chợ Harbor Street, khu chợ thực phẩm ngoài trời họp vào cuối tuần gần 40 năm nay, sẽ bắt đầu mở cửa vào các buổi tối trong tuần từ tháng Sáu. — [1] —\n\nQuyết định này được đưa ra sau hai năm lượng khách ngày thứ Bảy giảm sút, mà ban tổ chức chợ cho rằng phần lớn là do dịch vụ giao đồ tạp hóa phát triển. \"Thói quen mua sắm của mọi người đã thay đổi,\" giám đốc chợ Amelia Tran nói. \"Nhiều khách hàng của chúng tôi làm việc nhiều giờ trong tuần và muốn có chỗ mua thực phẩm tươi trên đường về nhà.\" — [2] —\n\nChợ tối sẽ họp vào thứ Tư và thứ Năm, từ 4 giờ đến 8 giờ tối. Ngoài các sạp rau củ và bánh mì quen thuộc, chợ sẽ có xe bán đồ ăn và nhạc sống. — [3] — Những người bán hàng đã có giấy phép cuối tuần có thể đăng ký một chỗ buổi tối với mức phí giảm.\n\nKhông phải ai cũng hoan nghênh kế hoạch này. Một số cư dân ở các tòa chung cư gần đó lo ngại về tiếng ồn. — [4] — Đáp lại, ban tổ chức đã đồng ý dừng nhạc có khuếch đại âm thanh trước 7 giờ 30 tối."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is the article mainly about?",
+          "prompt_vi": "Bài báo chủ yếu nói về điều gì?",
+          "choices": {
+            "A": "The opening of a grocery delivery service",
+            "B": "A dispute between two vendors",
+            "C": "A market's plan to extend its operating schedule",
+            "D": "The history of a neighborhood"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part7:main-idea"
+          ],
+          "explanation_vi": "Bài báo nói chợ cuối tuần sẽ mở thêm các buổi tối trong tuần → mở rộng lịch hoạt động.",
+          "why_wrong_vi": {
+            "A": "Dịch vụ giao hàng chỉ được nêu như nguyên nhân.",
+            "B": "Không có tranh chấp giữa người bán.",
+            "D": "Chỉ nhắc chợ đã hoạt động gần 40 năm, không kể lịch sử khu phố."
+          }
+        },
+        {
+          "prompt": "What is suggested about Harbor Street Market?",
+          "prompt_vi": "Có thể suy ra điều gì về chợ Harbor Street?",
+          "choices": {
+            "A": "Fewer people have been shopping there on Saturdays.",
+            "B": "It has recently changed its location.",
+            "C": "It will close on weekends starting in June.",
+            "D": "It started a grocery delivery service."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part7:inference",
+            "part7:paraphrase"
+          ],
+          "explanation_vi": "'a two-year decline in the number of Saturday visitors' → lượng khách thứ Bảy giảm.",
+          "why_wrong_vi": {
+            "B": "Không nhắc đến việc chuyển địa điểm.",
+            "C": "Chợ mở thêm buổi tối, không bỏ cuối tuần.",
+            "D": "Dịch vụ giao hàng là đối thủ, không phải của chợ."
+          }
+        },
+        {
+          "prompt": "What is indicated about vendors with a weekend permit?",
+          "prompt_vi": "Bài báo cho biết gì về những người bán hàng đã có giấy phép cuối tuần?",
+          "choices": {
+            "A": "They must sell food from trucks.",
+            "B": "They are required to work on Wednesdays.",
+            "C": "They will receive a new permit automatically.",
+            "D": "They can pay less for an evening spot."
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part7:detail",
+            "part7:paraphrase"
+          ],
+          "explanation_vi": "'can apply for an evening spot at a reduced fee' → được trả phí thấp hơn.",
+          "why_wrong_vi": {
+            "A": "Xe bán đồ ăn là bổ sung, không bắt buộc với người bán cũ.",
+            "B": "Họ có thể đăng ký, không bị bắt buộc.",
+            "C": "Họ phải nộp đơn (apply), không tự động được cấp."
+          }
+        },
+        {
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"Organizers hope these additions will attract younger visitors.\"",
+          "prompt_vi": "Câu sau phù hợp nhất ở vị trí nào trong số [1], [2], [3] và [4]?\n\"Ban tổ chức hy vọng những điểm bổ sung này sẽ thu hút khách trẻ tuổi hơn.\"",
+          "choices": {
+            "A": "[1]",
+            "B": "[2]",
+            "C": "[3]",
+            "D": "[4]"
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part7:sentence-insertion"
+          ],
+          "explanation_vi": "'these additions' quy chiếu tới xe bán đồ ăn và nhạc sống ngay trước vị trí [3].",
+          "why_wrong_vi": {
+            "A": "Vị trí [1] chưa nhắc đến điểm bổ sung nào nên 'these additions' không có gì để quy chiếu.",
+            "B": "Vị trí [2] nằm sau lời bà Tran về thói quen mua sắm, chưa nói đến tiện ích mới.",
+            "D": "Vị trí [4] nói về lo ngại tiếng ồn, chen câu này vào sẽ cắt đứt mạch giữa lo ngại và cách giải quyết."
+          }
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "online-chat",
+      "title": "Single passage – Online chat discussion",
+      "passages": [
+        {
+          "type": "chat",
+          "title": "Online chat discussion",
+          "text": "Marcus Bell [11:02 A.M.]: Quick update on the Hartley account. They've asked us to move the product demo from Thursday to Tuesday.\nInes Duarte [11:03 A.M.]: Tuesday? The new version of the dashboard won't be finished until Wednesday.\nMarcus Bell [11:04 A.M.]: I know. They're presenting to their board on Wednesday and want to see it before then.\nKwame Asante [11:06 A.M.]: We could show them the test version. The reporting feature works; only the export function is unfinished.\nInes Duarte [11:07 A.M.]: That could work, as long as we tell them up front what's still in progress.\nMarcus Bell [11:08 A.M.]: Agreed. Kwame, can you prepare a sample report using their data by Monday afternoon?\nKwame Asante [11:09 A.M.]: Consider it done.\nMarcus Bell [11:10 A.M.]: Thanks. I'll confirm the new time with Hartley and send everyone a calendar invitation.",
+          "text_vi": "Marcus Bell [11:02 sáng]: Cập nhật nhanh về khách hàng Hartley. Họ đề nghị dời buổi demo sản phẩm từ thứ Năm sang thứ Ba.\nInes Duarte [11:03 sáng]: Thứ Ba á? Phiên bản mới của bảng điều khiển phải đến thứ Tư mới xong.\nMarcus Bell [11:04 sáng]: Tôi biết. Thứ Tư họ thuyết trình trước hội đồng quản trị và muốn xem sản phẩm trước đó.\nKwame Asante [11:06 sáng]: Mình có thể cho họ xem bản thử nghiệm. Tính năng báo cáo đã chạy; chỉ còn chức năng xuất dữ liệu là chưa xong.\nInes Duarte [11:07 sáng]: Cũng được, miễn là mình nói trước với họ phần nào vẫn đang làm.\nMarcus Bell [11:08 sáng]: Đồng ý. Kwame, anh chuẩn bị một báo cáo mẫu dùng dữ liệu của họ trước chiều thứ Hai được không?\nKwame Asante [11:09 sáng]: Cứ coi như xong rồi.\nMarcus Bell [11:10 sáng]: Cảm ơn. Tôi sẽ xác nhận giờ mới với Hartley và gửi lời mời trên lịch cho mọi người."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Why does Hartley want an earlier demonstration?",
+          "prompt_vi": "Vì sao Hartley muốn buổi demo sớm hơn?",
+          "choices": {
+            "A": "Their office will be closed on Thursday.",
+            "B": "They need to export data by Tuesday.",
+            "C": "They are considering a competitor's product.",
+            "D": "They want to see the product before an important meeting."
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part7:detail",
+            "part7:paraphrase"
+          ],
+          "explanation_vi": "'They're presenting to their board on Wednesday and want to see it before then' → muốn xem trước cuộc họp quan trọng.",
+          "why_wrong_vi": {
+            "A": "Không nhắc đến việc văn phòng đóng cửa.",
+            "B": "Chức năng xuất dữ liệu là phần còn dang dở, không phải lý do.",
+            "C": "Không nhắc đến đối thủ cạnh tranh."
+          }
+        },
+        {
+          "prompt": "What is indicated about the dashboard?",
+          "prompt_vi": "Đoạn chat cho biết gì về bảng điều khiển?",
+          "choices": {
+            "A": "It has already been delivered to Hartley.",
+            "B": "Its reporting feature has errors.",
+            "C": "One of its functions is incomplete.",
+            "D": "It was designed by Ms. Duarte alone."
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "part7:detail",
+            "part7:paraphrase"
+          ],
+          "explanation_vi": "'only the export function is unfinished' → một chức năng chưa hoàn thiện.",
+          "why_wrong_vi": {
+            "A": "Nó còn chưa hoàn thành.",
+            "B": "Ngược lại, tính năng báo cáo đã chạy tốt.",
+            "D": "Không có thông tin ai thiết kế."
+          }
+        },
+        {
+          "prompt": "At 11:09 A.M., what does Mr. Asante mean when he writes, \"Consider it done\"?",
+          "prompt_vi": "Lúc 11:09 sáng, anh Asante có ý gì khi viết: \"Cứ coi như xong rồi\"?",
+          "choices": {
+            "A": "He has already finished the sample report.",
+            "B": "He thinks the demo should be canceled.",
+            "C": "He wants someone else to prepare the report.",
+            "D": "He agrees to complete a task on time."
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part7:intent"
+          ],
+          "explanation_vi": "'Consider it done' là cách nhận lời chắc chắn: anh ấy sẽ chuẩn bị báo cáo mẫu kịp chiều thứ Hai.",
+          "why_wrong_vi": {
+            "A": "Bẫy nghĩa đen: 'done' không có nghĩa là đã làm xong; anh ấy cam kết sẽ làm.",
+            "B": "Không có ý hủy buổi demo.",
+            "C": "Ngược lại, anh ấy nhận việc."
+          }
+        },
+        {
+          "prompt": "What will Mr. Bell most likely do next?",
+          "prompt_vi": "Anh Bell nhiều khả năng sẽ làm gì tiếp theo?",
+          "choices": {
+            "A": "Finish the export function",
+            "B": "Contact the client",
+            "C": "Present to Hartley's board",
+            "D": "Prepare a sample report"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part7:inference"
+          ],
+          "explanation_vi": "'I'll confirm the new time with Hartley' → liên hệ khách hàng.",
+          "why_wrong_vi": {
+            "A": "Đó là việc kỹ thuật, không phải của anh Bell.",
+            "C": "Chính Hartley mới thuyết trình trước hội đồng của họ.",
+            "D": "Việc này giao cho Kwame."
+          }
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "advertisement",
+      "title": "Single passage – Advertisement",
+      "passages": [
+        {
+          "type": "advertisement",
+          "title": "Coastline Coworking – Now Open in the Harbor District",
+          "text": "Need a professional place to work without the cost of a long-term lease? Coastline Coworking offers flexible memberships for freelancers, start-ups, and remote employees.\n\nFlex Pass – $180/month: Use of any open desk, Monday–Friday, 8 A.M.–8 P.M.\nDedicated Desk – $320/month: Your own desk with lockable storage and 24-hour access\nPrivate Office – from $750/month: Fully furnished offices for teams of two to six\n\nAll memberships include high-speed Wi-Fi, free coffee and tea, and discounted rates on our meeting rooms. Members also receive two free guest passes each month.\n\nJoin before March 31 and pay only half price for your first month. Book a free tour at coastlinecowork.example.",
+          "text_vi": "Bạn cần một nơi làm việc chuyên nghiệp mà không phải trả chi phí thuê dài hạn? Coastline Coworking có các gói thành viên linh hoạt cho người làm tự do, công ty khởi nghiệp và nhân viên làm việc từ xa.\n\nFlex Pass – 180 đô la/tháng: Dùng bàn trống bất kỳ, thứ Hai–thứ Sáu, 8 giờ sáng–8 giờ tối\nDedicated Desk – 320 đô la/tháng: Bàn riêng có tủ khóa, ra vào 24 giờ\nPrivate Office – từ 750 đô la/tháng: Văn phòng đầy đủ nội thất cho nhóm từ hai đến sáu người\n\nMọi gói đều có Wi-Fi tốc độ cao, cà phê và trà miễn phí, cùng giá ưu đãi khi thuê phòng họp. Thành viên còn được tặng hai vé khách miễn phí mỗi tháng.\n\nĐăng ký trước ngày 31 tháng Ba để chỉ trả nửa giá tháng đầu tiên. Đặt lịch tham quan miễn phí tại coastlinecowork.example."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "For whom is the advertisement most likely intended?",
+          "prompt_vi": "Quảng cáo này nhiều khả năng dành cho ai?",
+          "choices": {
+            "A": "Companies looking to buy office buildings",
+            "B": "Furniture designers seeking customers",
+            "C": "People who need flexible workspace",
+            "D": "Tourists visiting the Harbor District"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part7:inference"
+          ],
+          "explanation_vi": "'flexible memberships for freelancers, start-ups, and remote employees' → người cần chỗ làm việc linh hoạt.",
+          "why_wrong_vi": {
+            "A": "Quảng cáo nhấn mạnh việc 'không cần thuê dài hạn', không nói đến mua tòa nhà.",
+            "B": "Nội thất chỉ là tiện ích của văn phòng.",
+            "D": "Khu Harbor chỉ là địa điểm."
+          }
+        },
+        {
+          "prompt": "What is true about the Dedicated Desk membership?",
+          "prompt_vi": "Điều nào đúng về gói Dedicated Desk?",
+          "choices": {
+            "A": "It allows members to enter at any time of day.",
+            "B": "It costs less than the Flex Pass.",
+            "C": "It is designed for teams of up to six people.",
+            "D": "It is available only on weekdays."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part7:detail",
+            "part7:paraphrase"
+          ],
+          "explanation_vi": "'24-hour access' → ra vào bất cứ lúc nào trong ngày.",
+          "why_wrong_vi": {
+            "B": "Gói này 320 đô la, đắt hơn Flex Pass (180 đô la).",
+            "C": "Đó là gói Private Office.",
+            "D": "Giới hạn thứ Hai–thứ Sáu là của Flex Pass."
+          }
+        },
+        {
+          "prompt": "What is NOT included in every membership?",
+          "prompt_vi": "Điều nào KHÔNG có trong mọi gói thành viên?",
+          "choices": {
+            "A": "Free use of meeting rooms",
+            "B": "Internet access",
+            "C": "Free drinks",
+            "D": "Guest passes"
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "part7:not-question"
+          ],
+          "explanation_vi": "Phòng họp chỉ được 'discounted rates' (giảm giá), không miễn phí — đây là bẫy diễn đạt.",
+          "why_wrong_vi": {
+            "B": "Có: Wi-Fi tốc độ cao.",
+            "C": "Có: cà phê và trà miễn phí.",
+            "D": "Có: hai vé khách miễn phí mỗi tháng."
+          }
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "double",
+      "title": "Double passage – Web page and e-mail",
+      "passages": [
+        {
+          "type": "web-page",
+          "title": "Greenway Cycling Tours – Lake District Weekend",
+          "text": "Day 1 (Saturday): Meet at Ashby Station at 9:00 A.M. Ride 45 km along the eastern lakeshore to Fernhill Lodge, stopping for lunch at a family-run farm café.\nDay 2 (Sunday): Ride 30 km through Hollin Forest, with a guided visit to Carrow Castle. Return to Ashby Station by 4:30 P.M.\n\nPrice: $340 per person, including bicycle rental, helmet, lodging, and all meals. Riders who bring their own bicycles receive a $40 discount. Electric bicycles are available for an additional $25 per day.\n\nTours run every weekend from May to September. Groups are limited to 12 riders.",
+          "text_vi": "Ngày 1 (thứ Bảy): Tập trung ở ga Ashby lúc 9 giờ sáng. Đạp xe 45 km dọc bờ hồ phía đông đến nhà nghỉ Fernhill, dừng ăn trưa ở một quán cà phê nông trại do gia đình tự quản lý.\nNgày 2 (Chủ nhật): Đạp xe 30 km xuyên rừng Hollin, có hướng dẫn viên dẫn tham quan lâu đài Carrow. Về lại ga Ashby trước 4 giờ 30 chiều.\n\nGiá: 340 đô la/người, bao gồm thuê xe đạp, mũ bảo hiểm, chỗ ở và tất cả các bữa ăn. Người tự mang xe đạp được giảm 40 đô la. Có xe đạp điện với phụ phí 25 đô la/ngày.\n\nTour chạy mỗi cuối tuần từ tháng Năm đến tháng Chín. Mỗi đoàn tối đa 12 người."
+        },
+        {
+          "type": "email",
+          "title": "To: bookings@greenwaycycling.example | From: Oren Feld | Date: May 19 | Subject: Lake District Weekend – June 14–15",
+          "text": "Hello,\n\nI have booked the Lake District Weekend tour for June 14–15 for myself and my sister. I would like to make a change to our booking. My sister recently injured her knee, and although her doctor says she can ride, she would rather not cover the longer distance without some help. Could you reserve an electric bicycle for her for that day only? I will be bringing my own bicycle, as indicated in my booking form.\n\nAlso, the confirmation mentions a castle visit. Is there an entrance fee, or is it included in the price?\n\nThank you,\nOren Feld",
+          "text_vi": "Xin chào,\n\nTôi đã đặt tour Lake District Weekend ngày 14–15 tháng Sáu cho tôi và em gái. Tôi muốn thay đổi một chút trong đơn đặt. Em gái tôi mới bị thương ở đầu gối, và tuy bác sĩ nói cô ấy vẫn đạp xe được, cô ấy không muốn đi chặng dài hơn mà không có trợ lực. Anh/chị có thể giữ cho cô ấy một xe đạp điện chỉ trong ngày hôm đó được không? Tôi sẽ mang xe đạp riêng, như đã ghi trong phiếu đặt.\n\nNgoài ra, thư xác nhận có nhắc đến chuyến tham quan lâu đài. Có phải trả phí vào cửa không, hay đã bao gồm trong giá?\n\nCảm ơn,\nOren Feld"
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is indicated about the tour?",
+          "prompt_vi": "Trang web cho biết gì về tour?",
+          "choices": {
+            "A": "It is offered all year round.",
+            "B": "Meals are included in the price.",
+            "C": "It begins at Fernhill Lodge.",
+            "D": "It is limited to experienced cyclists."
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "'including bicycle rental, helmet, lodging, and all meals' → giá đã gồm các bữa ăn.",
+          "why_wrong_vi": {
+            "A": "Tour chỉ chạy từ tháng Năm đến tháng Chín.",
+            "C": "Tour bắt đầu ở ga Ashby; Fernhill là nơi nghỉ đêm.",
+            "D": "Không có yêu cầu về kinh nghiệm; chỉ giới hạn 12 người."
+          }
+        },
+        {
+          "prompt": "Why did Mr. Feld write the e-mail?",
+          "prompt_vi": "Vì sao anh Feld viết email?",
+          "choices": {
+            "A": "To modify a reservation",
+            "B": "To cancel a tour",
+            "C": "To book a tour for a large group",
+            "D": "To complain about a castle visit"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part7:purpose"
+          ],
+          "explanation_vi": "'I would like to make a change to our booking' → thay đổi đơn đặt.",
+          "why_wrong_vi": {
+            "B": "Anh ấy vẫn tham gia, chỉ muốn thay đổi.",
+            "C": "Đơn đặt chỉ có hai người.",
+            "D": "Anh ấy chỉ hỏi về phí vào cửa."
+          }
+        },
+        {
+          "prompt": "How far will Mr. Feld's sister most likely ride on an electric bicycle?",
+          "prompt_vi": "Em gái anh Feld nhiều khả năng sẽ đạp xe điện quãng đường bao xa?",
+          "choices": {
+            "A": "12 km",
+            "B": "30 km",
+            "C": "45 km",
+            "D": "75 km"
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part7:cross-reference"
+          ],
+          "explanation_vi": "Cô ấy chỉ cần xe điện cho 'the longer distance' trong 'that day only'; theo trang web, chặng dài hơn là 45 km ở ngày 1.",
+          "why_wrong_vi": {
+            "A": "12 là số người tối đa mỗi đoàn, không phải số km.",
+            "B": "30 km là chặng ngắn hơn (ngày 2).",
+            "D": "75 km là tổng hai ngày, trong khi cô ấy chỉ cần xe điện một ngày."
+          }
+        },
+        {
+          "prompt": "How much will Mr. Feld most likely pay for his own place on the tour?",
+          "prompt_vi": "Anh Feld nhiều khả năng sẽ trả bao nhiêu cho suất của chính mình?",
+          "choices": {
+            "A": "$300",
+            "B": "$325",
+            "C": "$340",
+            "D": "$365"
+          },
+          "answer": "A",
+          "difficulty": 4,
+          "tags": [
+            "part7:cross-reference"
+          ],
+          "explanation_vi": "Anh ấy tự mang xe (email) nên được giảm 40 đô la (trang web): 340 − 40 = 300 đô la.",
+          "why_wrong_vi": {
+            "B": "Phụ phí xe điện 25 đô la là của em gái, không phải của anh ấy.",
+            "C": "Đây là giá gốc, chưa trừ ưu đãi tự mang xe.",
+            "D": "Cộng nhầm phụ phí xe điện vào giá gốc."
+          }
+        },
+        {
+          "prompt": "In the e-mail, the word \"indicated\" in paragraph 1, line 5, is closest in meaning to",
+          "prompt_vi": "Trong email, từ \"indicated\" ở đoạn 1, dòng 5 gần nghĩa nhất với",
+          "choices": {
+            "A": "pointed",
+            "B": "stated",
+            "C": "predicted",
+            "D": "signaled"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part7:synonym"
+          ],
+          "explanation_vi": "'as indicated in my booking form' = như đã ghi/nêu trong phiếu → stated.",
+          "why_wrong_vi": {
+            "A": "'pointed' (chỉ tay) là nghĩa vật lý, không hợp với phiếu đặt.",
+            "C": "'predicted' (dự đoán) sai nghĩa.",
+            "D": "'signaled' (ra hiệu) không dùng cho thông tin ghi trên phiếu."
+          }
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "triple",
+      "title": "Triple passage – Memo, schedule, and e-mail",
+      "passages": [
+        {
+          "type": "memo",
+          "title": "MEMO | To: All Store Managers | From: Daniela Cruz, Regional Training Coordinator | Date: August 4 | Subject: Customer service training",
+          "text": "As announced at last month's meeting, every store manager must complete our new customer service training by the end of September. The course consists of one full-day session at the regional office. In addition, managers of stores with more than 30 employees are required to attend a half-day follow-up workshop on October 6.\n\nPlease register through the training portal at least one week before your chosen session. If none of the dates work for you, contact me directly so that we can arrange an alternative.",
+          "text_vi": "Như đã thông báo trong cuộc họp tháng trước, mọi quản lý cửa hàng phải hoàn thành khóa đào tạo dịch vụ khách hàng mới trước cuối tháng Chín. Khóa học gồm một buổi trọn ngày tại văn phòng khu vực. Ngoài ra, quản lý của các cửa hàng có trên 30 nhân viên phải tham dự thêm một buổi hội thảo nửa ngày vào ngày 6 tháng Mười.\n\nVui lòng đăng ký qua cổng đào tạo ít nhất một tuần trước buổi học đã chọn. Nếu không có ngày nào phù hợp, hãy liên hệ trực tiếp với tôi để chúng ta sắp xếp phương án khác."
+        },
+        {
+          "type": "schedule",
+          "title": "Customer Service Training – Session Dates (Regional Office)",
+          "text": "Session A — Tuesday, September 9 — Room 1 — Trainer: Paul Henning\nSession B — Friday, September 12 — Room 3 — Trainer: Mei Chang\nSession C — Wednesday, September 17 — Room 1 — Trainer: Paul Henning\nSession D — Monday, September 22 — Room 3 — Trainer: Mei Chang\n\nAll sessions run from 9:00 A.M. to 5:00 P.M. Lunch is provided.",
+          "text_vi": "Buổi A — thứ Ba, 9 tháng Chín — Phòng 1 — Giảng viên: Paul Henning\nBuổi B — thứ Sáu, 12 tháng Chín — Phòng 3 — Giảng viên: Mei Chang\nBuổi C — thứ Tư, 17 tháng Chín — Phòng 1 — Giảng viên: Paul Henning\nBuổi D — thứ Hai, 22 tháng Chín — Phòng 3 — Giảng viên: Mei Chang\n\nTất cả các buổi diễn ra từ 9 giờ sáng đến 5 giờ chiều. Có phục vụ bữa trưa."
+        },
+        {
+          "type": "email",
+          "title": "To: Daniela Cruz | From: Tomasz Wilk | Date: September 8 | Subject: Training registration",
+          "text": "Hi Daniela,\n\nI tried to register for Ms. Chang's session on September 12, but the portal would not accept my registration. I assume this is because the deadline has already passed. Our store is holding a sidewalk sale on the 17th, so I can't attend that day. Would it be possible to join the September 12 session anyway? If not, I can attend the last session, although I would prefer an earlier date, since our store has 42 employees and I will also need to prepare for the October workshop.\n\nBest regards,\nTomasz Wilk\nManager, Eastgate Store",
+          "text_vi": "Chào Daniela,\n\nTôi đã thử đăng ký buổi của cô Chang ngày 12 tháng Chín nhưng cổng đăng ký không chấp nhận. Tôi đoán là vì đã quá hạn. Ngày 17 cửa hàng chúng tôi tổ chức bán hàng trên vỉa hè nên tôi không thể tham dự hôm đó. Liệu tôi vẫn có thể tham gia buổi ngày 12 không? Nếu không, tôi có thể dự buổi cuối cùng, dù tôi muốn ngày sớm hơn, vì cửa hàng chúng tôi có 42 nhân viên và tôi còn phải chuẩn bị cho buổi hội thảo tháng Mười.\n\nTrân trọng,\nTomasz Wilk\nQuản lý cửa hàng Eastgate"
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is the main purpose of the memo?",
+          "prompt_vi": "Mục đích chính của bản ghi nhớ là gì?",
+          "choices": {
+            "A": "To introduce a new regional coordinator",
+            "B": "To announce changes to store hours",
+            "C": "To remind managers of a training requirement",
+            "D": "To request feedback on a course"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part7:purpose"
+          ],
+          "explanation_vi": "'As announced at last month's meeting, every store manager must complete…' → nhắc lại yêu cầu bắt buộc phải đào tạo.",
+          "why_wrong_vi": {
+            "A": "Cô Cruz không giới thiệu bản thân như người mới.",
+            "B": "Không nhắc đến giờ mở cửa.",
+            "D": "Khóa học chưa diễn ra để góp ý."
+          }
+        },
+        {
+          "prompt": "Why most likely was Mr. Wilk unable to register online?",
+          "prompt_vi": "Vì sao anh Wilk nhiều khả năng không đăng ký trực tuyến được?",
+          "choices": {
+            "A": "The session was already full.",
+            "B": "He selected a session at the wrong office.",
+            "C": "The training portal was being repaired.",
+            "D": "He tried to register less than a week before the session."
+          },
+          "answer": "D",
+          "difficulty": 4,
+          "tags": [
+            "part7:cross-reference",
+            "part7:inference"
+          ],
+          "explanation_vi": "Bản ghi nhớ yêu cầu đăng ký trước ít nhất một tuần; anh ấy thử đăng ký ngày 8/9 cho buổi 12/9, chỉ trước bốn ngày.",
+          "why_wrong_vi": {
+            "A": "Không có thông tin buổi học đã kín chỗ.",
+            "B": "Mọi buổi đều ở văn phòng khu vực.",
+            "C": "Không nhắc đến lỗi kỹ thuật của cổng đăng ký."
+          }
+        },
+        {
+          "prompt": "Which session will Mr. Wilk most likely attend if his request is refused?",
+          "prompt_vi": "Nếu yêu cầu bị từ chối, anh Wilk nhiều khả năng sẽ dự buổi nào?",
+          "choices": {
+            "A": "Session A",
+            "B": "Session B",
+            "C": "Session C",
+            "D": "Session D"
+          },
+          "answer": "D",
+          "difficulty": 4,
+          "tags": [
+            "part7:cross-reference"
+          ],
+          "explanation_vi": "Anh ấy nói 'I can attend the last session'; theo lịch, buổi cuối là Session D (22/9).",
+          "why_wrong_vi": {
+            "A": "Buổi A (9/9) cũng chỉ còn một ngày, quá hạn đăng ký.",
+            "B": "Buổi B chính là buổi anh ấy đang xin ngoại lệ.",
+            "C": "Ngày 17 cửa hàng có đợt bán hàng nên anh ấy không thể dự."
+          }
+        },
+        {
+          "prompt": "What is suggested about Mr. Wilk?",
+          "prompt_vi": "Có thể suy ra điều gì về anh Wilk?",
+          "choices": {
+            "A": "He has worked with Ms. Chang before.",
+            "B": "He must attend a workshop on October 6.",
+            "C": "He will lead a training session.",
+            "D": "He manages more than one store."
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "part7:cross-reference",
+            "part7:inference"
+          ],
+          "explanation_vi": "Cửa hàng của anh ấy có 42 nhân viên (email), trên mức 30 trong bản ghi nhớ → bắt buộc dự hội thảo ngày 6/10.",
+          "why_wrong_vi": {
+            "A": "Không có thông tin anh ấy từng làm việc với cô Chang.",
+            "C": "Anh ấy là học viên, không phải giảng viên.",
+            "D": "Anh ấy ký tên là quản lý cửa hàng Eastgate."
+          }
+        },
+        {
+          "prompt": "In the memo, the word \"arrange\" in paragraph 2, line 2, is closest in meaning to",
+          "prompt_vi": "Trong bản ghi nhớ, từ \"arrange\" ở đoạn 2, dòng 2 gần nghĩa nhất với",
+          "choices": {
+            "A": "sort",
+            "B": "organize",
+            "C": "decorate",
+            "D": "agree"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part7:synonym"
+          ],
+          "explanation_vi": "'arrange an alternative' = sắp xếp/tổ chức một phương án khác → organize.",
+          "why_wrong_vi": {
+            "A": "'sort' (phân loại, sắp xếp đồ vật) là nghĩa khác của arrange, không hợp ngữ cảnh.",
+            "C": "'decorate' (trang trí) không hợp nghĩa.",
+            "D": "'agree' không đi với tân ngữ 'an alternative' theo nghĩa này."
+          }
+        }
+      ]
+    }
+  ]
+}

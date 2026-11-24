@@ -18,6 +18,29 @@ export const SCOPE_NAMES: Record<Scope, string> = {
   reading: 'Chỉ phần Đọc',
 };
 
+/** Timed, scored tests (Full Test, Mini Test). A "part-drill" bank is practice material, never an exam. */
+export const isExam = (t: Test) => t.test_type === 'full' || t.test_type === 'mini';
+export const examTests = (data: Bundle): Test[] => data.tests.filter(isExam);
+
+/** A practice set together with the test it comes from. */
+export interface PracticeItem {
+  set: QuestionSet;
+  test: Test;
+}
+
+// The practice bank comes first, then the Mini Test; Full Test sets are never used for
+// practice, so its questions stay unseen for the real timed attempt.
+const PRACTICE_ORDER: Partial<Record<Test['test_type'], number>> = { 'part-drill': 0, mini: 1 };
+
+/** The sets of part N used by "Luyện theo phần", in practice order (the one source for every page). */
+export function practiceSets(data: Bundle, part: number): PracticeItem[] {
+  return data.tests
+    .filter((t) => PRACTICE_ORDER[t.test_type] !== undefined)
+    .map((t, i) => ({ t, i }))
+    .sort((a, b) => PRACTICE_ORDER[a.t.test_type]! - PRACTICE_ORDER[b.t.test_type]! || a.i - b.i)
+    .flatMap(({ t }) => t.sets.filter((s) => s.part === part).map((set) => ({ set, test: t })));
+}
+
 export function setsInScope(test: Test, scope: Scope): QuestionSet[] {
   return scope === 'full' ? test.sets : test.sets.filter((s) => sectionOfPart(s.part) === scope);
 }

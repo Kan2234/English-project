@@ -11,12 +11,14 @@
         {
           "type": "chat",
           "title": "Text message chain",
-          "text": "Kevin Ng [2:05 P.M.]: Hi Rosa, I'm at the print shop picking up the brochures for tomorrow's trade show. They printed 300 instead of 500.\nRosa Alvarez [2:07 P.M.]: Can they print the rest today?\nKevin Ng [2:08 P.M.]: They said it'll be ready by 6.\nRosa Alvarez [2:09 P.M.]: That's cutting it close, but OK. I can pick them up on my way home.\nKevin Ng [2:10 P.M.]: Thanks! I'll take these 300 to the convention center now."
+          "text": "Kevin Ng [2:05 P.M.]: Hi Rosa, I'm at the print shop picking up the brochures for tomorrow's trade show. They printed 300 instead of 500.\nRosa Alvarez [2:07 P.M.]: Can they print the rest today?\nKevin Ng [2:08 P.M.]: They said it'll be ready by 6.\nRosa Alvarez [2:09 P.M.]: That's cutting it close, but OK. I can pick them up on my way home.\nKevin Ng [2:10 P.M.]: Thanks! I'll take these 300 to the convention center now.",
+          "text_vi": "Kevin Ng [2:05 P.M.]: Chào Rosa, tôi đang ở tiệm in lấy tờ rơi cho hội chợ thương mại ngày mai. Họ in 300 tờ thay vì 500.\nRosa Alvarez [2:07 P.M.]: Họ in nốt phần còn lại trong hôm nay được không?\nKevin Ng [2:08 P.M.]: Họ bảo 6 giờ sẽ xong.\nRosa Alvarez [2:09 P.M.]: Hơi sát giờ đấy, nhưng được. Tôi có thể ghé lấy trên đường về nhà.\nKevin Ng [2:10 P.M.]: Cảm ơn chị! Giờ tôi mang 300 tờ này đến trung tâm hội nghị."
         }
       ],
       "questions": [
         {
           "prompt": "What problem does Mr. Ng mention?",
+          "prompt_vi": "Anh Ng nêu vấn đề gì?",
           "choices": {
             "A": "Some brochures contain errors.",
             "B": "A print shop is closed.",
@@ -28,10 +30,16 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "Chỉ in 300 thay vì 500 tờ → đơn hàng chưa đủ."
+          "explanation_vi": "Chỉ in 300 thay vì 500 tờ → đơn hàng chưa đủ.",
+          "why_wrong_vi": {
+            "A": "Tờ rơi chỉ thiếu số lượng, không nói có lỗi in.",
+            "B": "Anh ấy đang ở tiệm in và tiệm vẫn hoạt động.",
+            "C": "Hội chợ vẫn diễn ra ngày mai, không bị hoãn."
+          }
         },
         {
           "prompt": "At 2:09 P.M., what does Ms. Alvarez most likely mean when she writes, \"That's cutting it close\"?",
+          "prompt_vi": "Lúc 2:09 P.M., khi viết \"That's cutting it close\", cô Alvarez nhiều khả năng muốn nói gì?",
           "choices": {
             "A": "The price is too high.",
             "B": "The print shop is far away.",
@@ -43,7 +51,12 @@
           "tags": [
             "part7:intent"
           ],
-          "explanation_vi": "'cutting it close' = sát giờ: in xong lúc 6 giờ tối, trong khi hội chợ là ngày mai."
+          "explanation_vi": "'cutting it close' = sát giờ: in xong lúc 6 giờ tối, trong khi hội chợ là ngày mai.",
+          "why_wrong_vi": {
+            "A": "Không ai nhắc đến giá cả.",
+            "B": "Cụm từ nói về thời gian sát nút, không phải khoảng cách; cô ấy còn tiện đường ghé lấy.",
+            "D": "Không nói gì về kích thước tờ rơi."
+          }
         }
       ]
     },
@@ -55,12 +68,14 @@
         {
           "type": "notice",
           "title": "Fitness Center Notice",
-          "text": "SUMMIT FITNESS CENTER\n\nThe swimming pool will be closed for cleaning and maintenance from Monday, July 8, through Wednesday, July 10. During this time, members may use the pool at our Oakdale location free of charge by showing their membership card.\n\nAll group fitness classes and the weight room will remain open as usual. We apologize for any inconvenience."
+          "text": "SUMMIT FITNESS CENTER\n\nThe swimming pool will be closed for cleaning and maintenance from Monday, July 8, through Wednesday, July 10. During this time, members may use the pool at our Oakdale location free of charge by showing their membership card.\n\nAll group fitness classes and the weight room will remain open as usual. We apologize for any inconvenience.",
+          "text_vi": "TRUNG TÂM THỂ HÌNH SUMMIT\n\nHồ bơi sẽ đóng cửa để vệ sinh và bảo trì từ thứ Hai, ngày 8 tháng 7, đến hết thứ Tư, ngày 10 tháng 7. Trong thời gian này, hội viên có thể dùng miễn phí hồ bơi tại cơ sở Oakdale bằng cách xuất trình thẻ hội viên.\n\nTất cả các lớp thể dục nhóm và phòng tạ vẫn mở cửa như bình thường. Chúng tôi xin lỗi vì mọi bất tiện."
         }
       ],
       "questions": [
         {
           "prompt": "What is the purpose of the notice?",
+          "prompt_vi": "Mục đích của thông báo là gì?",
           "choices": {
             "A": "To advertise new classes",
             "B": "To announce a temporary closure",
@@ -72,10 +87,16 @@
           "tags": [
             "part7:purpose"
           ],
-          "explanation_vi": "Hồ bơi đóng cửa 3 ngày để vệ sinh, bảo trì."
+          "explanation_vi": "Hồ bơi đóng cửa 3 ngày để vệ sinh, bảo trì.",
+          "why_wrong_vi": {
+            "A": "Các lớp nhóm chỉ được nhắc là vẫn mở như thường, không có lớp mới.",
+            "C": "Không nhắc đến thay đổi giá.",
+            "D": "Cơ sở Oakdale đã có sẵn, không phải địa điểm mới."
+          }
         },
         {
           "prompt": "What are members allowed to do?",
+          "prompt_vi": "Hội viên được phép làm gì?",
           "choices": {
             "A": "Bring a guest for free",
             "B": "Get a refund for July",
@@ -87,7 +108,12 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "Hội viên được dùng hồ bơi ở cơ sở Oakdale miễn phí."
+          "explanation_vi": "Hội viên được dùng hồ bơi ở cơ sở Oakdale miễn phí.",
+          "why_wrong_vi": {
+            "A": "Không nói được dẫn khách miễn phí.",
+            "B": "Không có hoàn tiền tháng 7.",
+            "C": "Các lớp vẫn diễn ra như thường, không giảm giá."
+          }
         }
       ]
     },
@@ -99,12 +125,14 @@
         {
           "type": "advertisement",
           "title": "Advertisement",
-          "text": "FRESHLY CLEAN – Professional Office Cleaning\n\nServing businesses in the Millbrook area for over 12 years.\n• Daily, weekly, or monthly service\n• Eco-friendly cleaning products\n• Evening and weekend appointments available\n\nNEW CUSTOMERS: Book a weekly plan before October 31 and receive your first cleaning free.\nCall 555-0192 for a free estimate."
+          "text": "FRESHLY CLEAN – Professional Office Cleaning\n\nServing businesses in the Millbrook area for over 12 years.\n• Daily, weekly, or monthly service\n• Eco-friendly cleaning products\n• Evening and weekend appointments available\n\nNEW CUSTOMERS: Book a weekly plan before October 31 and receive your first cleaning free.\nCall 555-0192 for a free estimate.",
+          "text_vi": "FRESHLY CLEAN – Dịch vụ vệ sinh văn phòng chuyên nghiệp\n\nPhục vụ các doanh nghiệp khu vực Millbrook hơn 12 năm.\n• Dịch vụ hằng ngày, hằng tuần hoặc hằng tháng\n• Sản phẩm vệ sinh thân thiện với môi trường\n• Có lịch hẹn buổi tối và cuối tuần\n\nKHÁCH HÀNG MỚI: Đăng ký gói hằng tuần trước ngày 31 tháng 10 để được miễn phí lần dọn đầu tiên.\nGọi 555-0192 để được báo giá miễn phí."
         }
       ],
       "questions": [
         {
           "prompt": "What is indicated about Freshly Clean?",
+          "prompt_vi": "Điều gì được nêu về Freshly Clean?",
           "choices": {
             "A": "It recently opened.",
             "B": "It serves homes only.",
@@ -117,10 +145,16 @@
             "part7:detail",
             "part7:paraphrase"
           ],
-          "explanation_vi": "'Eco-friendly cleaning products' = sản phẩm thân thiện môi trường. Hoạt động hơn 12 năm, có lịch cuối tuần."
+          "explanation_vi": "'Eco-friendly cleaning products' = sản phẩm thân thiện môi trường. Hoạt động hơn 12 năm, có lịch cuối tuần.",
+          "why_wrong_vi": {
+            "A": "Công ty đã hoạt động hơn 12 năm, không phải mới mở.",
+            "B": "Họ vệ sinh văn phòng cho doanh nghiệp, không chỉ phục vụ nhà ở.",
+            "D": "Có lịch hẹn cả cuối tuần."
+          }
         },
         {
           "prompt": "How can new customers receive a free cleaning?",
+          "prompt_vi": "Khách hàng mới được dọn miễn phí bằng cách nào?",
           "choices": {
             "A": "By signing up for a weekly plan",
             "B": "By referring a friend",
@@ -132,7 +166,12 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "'Book a weekly plan before October 31 and receive your first cleaning free.'"
+          "explanation_vi": "'Book a weekly plan before October 31 and receive your first cleaning free.'",
+          "why_wrong_vi": {
+            "B": "Không có chương trình giới thiệu bạn bè.",
+            "C": "Đặt qua điện thoại; không nhắc đến đặt trực tuyến.",
+            "D": "Chỉ cần gói hằng tuần, không phải trả trước cả năm."
+          }
         }
       ]
     },
@@ -144,12 +183,14 @@
         {
           "type": "invoice",
           "title": "Invoice",
-          "text": "BLUE RIVER OFFICE FURNITURE\nInvoice #4471   Date: March 3\nCustomer: Lantern Media, 22 Fulton Street\n\nErgonomic office chair (x6) ........ $1,080\nStanding desk (x2) ................. $  900\nDelivery and assembly .............. $  120\nTOTAL .............................. $2,100\n\nPayment due within 30 days. A 2% discount applies if paid within 10 days.\nQuestions? E-mail billing@blueriver.example"
+          "text": "BLUE RIVER OFFICE FURNITURE\nInvoice #4471   Date: March 3\nCustomer: Lantern Media, 22 Fulton Street\n\nErgonomic office chair (x6) ........ $1,080\nStanding desk (x2) ................. $  900\nDelivery and assembly .............. $  120\nTOTAL .............................. $2,100\n\nPayment due within 30 days. A 2% discount applies if paid within 10 days.\nQuestions? E-mail billing@blueriver.example",
+          "text_vi": "NỘI THẤT VĂN PHÒNG BLUE RIVER\nHóa đơn số 4471   Ngày: 3 tháng 3\nKhách hàng: Lantern Media, 22 Fulton Street\n\nGhế văn phòng công thái học (x6) ........ $1,080\nBàn làm việc đứng (x2) ................. $  900\nGiao hàng và lắp đặt .................. $  120\nTỔNG CỘNG ............................. $2,100\n\nThanh toán trong vòng 30 ngày. Được giảm 2% nếu thanh toán trong vòng 10 ngày.\nThắc mắc? E-mail billing@blueriver.example"
         }
       ],
       "questions": [
         {
           "prompt": "What did Lantern Media purchase?",
+          "prompt_vi": "Lantern Media đã mua gì?",
           "choices": {
             "A": "Computer equipment",
             "B": "Office furniture",
@@ -161,10 +202,16 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "Ghế văn phòng và bàn đứng → nội thất văn phòng."
+          "explanation_vi": "Ghế văn phòng và bàn đứng → nội thất văn phòng.",
+          "why_wrong_vi": {
+            "A": "Hóa đơn chỉ có ghế và bàn, không có thiết bị máy tính.",
+            "C": "Lantern Media là công ty truyền thông nhưng không mua dịch vụ in.",
+            "D": "Không có vật tư vệ sinh trong hóa đơn."
+          }
         },
         {
           "prompt": "How can Lantern Media reduce the amount it pays?",
+          "prompt_vi": "Lantern Media có thể giảm số tiền phải trả bằng cách nào?",
           "choices": {
             "A": "By picking up the items itself",
             "B": "By ordering more chairs",
@@ -176,7 +223,12 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "'A 2% discount applies if paid within 10 days.'"
+          "explanation_vi": "'A 2% discount applies if paid within 10 days.'",
+          "why_wrong_vi": {
+            "A": "Phí giao hàng có trong hóa đơn nhưng không nói tự lấy hàng sẽ được giảm.",
+            "B": "Không có ưu đãi khi mua thêm ghế.",
+            "C": "Không nhắc đến mã giảm giá."
+          }
         }
       ]
     },
@@ -188,12 +240,14 @@
         {
           "type": "email",
           "title": "To: All Staff | From: Jonathan Price | Date: September 12 | Subject: Office move",
-          "text": "Dear colleagues,\n\nAs you know, our team will move to the newly renovated fourth floor next month. The move is scheduled for the weekend of October 18. Please pack your personal items and files in the boxes that will be delivered to your desks on October 14. Label each box with your name and new desk number, which you will receive from your manager this week.\n\nThe IT department will disconnect and move all computers, so please do not pack any equipment yourself.\n\nWhen you arrive on Monday, October 20, your boxes will be waiting at your new desk. If anything is missing, contact Sally Tran in Facilities at extension 214.\n\nThank you for your cooperation,\nJonathan Price, Office Manager"
+          "text": "Dear colleagues,\n\nAs you know, our team will move to the newly renovated fourth floor next month. The move is scheduled for the weekend of October 18. Please pack your personal items and files in the boxes that will be delivered to your desks on October 14. Label each box with your name and new desk number, which you will receive from your manager this week.\n\nThe IT department will disconnect and move all computers, so please do not pack any equipment yourself.\n\nWhen you arrive on Monday, October 20, your boxes will be waiting at your new desk. If anything is missing, contact Sally Tran in Facilities at extension 214.\n\nThank you for your cooperation,\nJonathan Price, Office Manager",
+          "text_vi": "Các đồng nghiệp thân mến,\n\nNhư mọi người đã biết, nhóm chúng ta sẽ chuyển lên tầng bốn vừa được cải tạo vào tháng sau. Việc chuyển dự kiến diễn ra vào cuối tuần ngày 18 tháng 10. Vui lòng xếp đồ dùng cá nhân và hồ sơ vào các thùng sẽ được giao đến bàn của bạn vào ngày 14 tháng 10. Ghi tên và số bàn mới lên từng thùng; số bàn mới quản lý sẽ gửi bạn trong tuần này.\n\nPhòng IT sẽ ngắt kết nối và chuyển toàn bộ máy tính, vì vậy xin đừng tự đóng gói bất kỳ thiết bị nào.\n\nKhi bạn đến vào thứ Hai, ngày 20 tháng 10, các thùng sẽ có sẵn ở bàn mới. Nếu thiếu thứ gì, hãy liên hệ Sally Tran ở bộ phận Cơ sở vật chất, số máy lẻ 214.\n\nCảm ơn sự hợp tác của các bạn,\nJonathan Price, Quản lý văn phòng"
         }
       ],
       "questions": [
         {
           "prompt": "What is the main purpose of the e-mail?",
+          "prompt_vi": "Mục đích chính của e-mail là gì?",
           "choices": {
             "A": "To announce a renovation project",
             "B": "To introduce a new manager",
@@ -205,10 +259,16 @@
           "tags": [
             "part7:purpose"
           ],
-          "explanation_vi": "Email hướng dẫn nhân viên chuẩn bị chuyển lên tầng 4."
+          "explanation_vi": "Email hướng dẫn nhân viên chuẩn bị chuyển lên tầng 4.",
+          "why_wrong_vi": {
+            "A": "Tầng bốn đã cải tạo xong; e-mail nói về việc chuyển chỗ, không thông báo dự án cải tạo.",
+            "B": "Không có quản lý mới nào được giới thiệu.",
+            "D": "Không yêu cầu thiết bị mới; máy tính cũ sẽ được chuyển đi."
+          }
         },
         {
           "prompt": "What will employees receive from their managers?",
+          "prompt_vi": "Nhân viên sẽ nhận được gì từ quản lý của mình?",
           "choices": {
             "A": "Their new desk numbers",
             "B": "Packing boxes",
@@ -220,10 +280,16 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "'new desk number, which you will receive from your manager this week'. Thùng được giao tới bàn ngày 14/10."
+          "explanation_vi": "'new desk number, which you will receive from your manager this week'. Thùng được giao tới bàn ngày 14/10.",
+          "why_wrong_vi": {
+            "B": "Thùng được giao đến bàn ngày 14/10, không do quản lý đưa.",
+            "C": "Máy tính cũ được phòng IT chuyển đi, không có máy mới.",
+            "D": "Không nhắc đến sơ đồ tầng."
+          }
         },
         {
           "prompt": "What are employees asked NOT to do?",
+          "prompt_vi": "Nhân viên được yêu cầu KHÔNG làm gì?",
           "choices": {
             "A": "Work on October 18",
             "B": "Pack their own computers",
@@ -235,7 +301,12 @@
           "tags": [
             "part7:not-question"
           ],
-          "explanation_vi": "'please do not pack any equipment yourself' — bộ phận IT sẽ chuyển máy tính."
+          "explanation_vi": "'please do not pack any equipment yourself' — bộ phận IT sẽ chuyển máy tính.",
+          "why_wrong_vi": {
+            "A": "Ngày 18/10 là ngày chuyển, nhưng không có lệnh cấm làm việc hôm đó.",
+            "C": "Ngược lại, họ được hướng dẫn liên hệ bộ phận Cơ sở vật chất nếu thiếu đồ.",
+            "D": "Ngược lại, họ được yêu cầu ghi tên lên thùng."
+          }
         }
       ]
     },
@@ -247,12 +318,14 @@
         {
           "type": "article",
           "title": "Local Café Expands Online",
-          "text": "MAPLETON — Brewster's Café, a popular coffee shop on Main Street, has launched an online store selling its house-roasted coffee beans. — [1] — Owner Tomas Brewster says customers had been asking for years whether they could buy the beans to make coffee at home.\n\nThe online store offers six blends, and orders are shipped within two business days. — [2] — Customers who sign up for a monthly subscription receive free shipping and a 10 percent discount.\n\nThe café plans to add brewing equipment, such as grinders and filters, to the online store later this year. — [3] — \"We want to help people enjoy café-quality coffee wherever they are,\" Mr. Brewster said. — [4] —"
+          "text": "MAPLETON — Brewster's Café, a popular coffee shop on Main Street, has launched an online store selling its house-roasted coffee beans. — [1] — Owner Tomas Brewster says customers had been asking for years whether they could buy the beans to make coffee at home.\n\nThe online store offers six blends, and orders are shipped within two business days. — [2] — Customers who sign up for a monthly subscription receive free shipping and a 10 percent discount.\n\nThe café plans to add brewing equipment, such as grinders and filters, to the online store later this year. — [3] — \"We want to help people enjoy café-quality coffee wherever they are,\" Mr. Brewster said. — [4] —",
+          "text_vi": "MAPLETON — Brewster's Café, quán cà phê nổi tiếng trên phố Main, vừa mở cửa hàng trực tuyến bán hạt cà phê do quán tự rang. — [1] — Chủ quán Tomas Brewster cho biết nhiều năm nay khách hàng vẫn hỏi liệu họ có thể mua hạt về tự pha ở nhà hay không.\n\nCửa hàng trực tuyến có sáu loại cà phê phối trộn, đơn hàng được gửi đi trong vòng hai ngày làm việc. — [2] — Khách đăng ký gói định kỳ hằng tháng được miễn phí vận chuyển và giảm 10%.\n\nQuán dự định bổ sung dụng cụ pha chế như máy xay và giấy lọc vào cửa hàng trực tuyến cuối năm nay. — [3] — \"Chúng tôi muốn giúp mọi người thưởng thức cà phê chuẩn quán ở bất cứ đâu,\" ông Brewster nói. — [4] —"
         }
       ],
       "questions": [
         {
           "prompt": "What is the article mainly about?",
+          "prompt_vi": "Bài báo chủ yếu nói về điều gì?",
           "choices": {
             "A": "A café's new online business",
             "B": "The opening of a second café",
@@ -264,10 +337,16 @@
           "tags": [
             "part7:main-idea"
           ],
-          "explanation_vi": "Quán cà phê mở cửa hàng trực tuyến bán hạt cà phê."
+          "explanation_vi": "Quán cà phê mở cửa hàng trực tuyến bán hạt cà phê.",
+          "why_wrong_vi": {
+            "B": "Không có quán thứ hai; quán mở cửa hàng trực tuyến.",
+            "C": "Không nhắc đến giá cà phê tăng.",
+            "D": "Không có cuộc thi pha cà phê."
+          }
         },
         {
           "prompt": "What benefit do subscribers receive?",
+          "prompt_vi": "Người đăng ký gói định kỳ nhận được quyền lợi gì?",
           "choices": {
             "A": "Free coffee at the café",
             "B": "Free brewing equipment",
@@ -279,10 +358,16 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "'receive free shipping and a 10 percent discount'."
+          "explanation_vi": "'receive free shipping and a 10 percent discount'.",
+          "why_wrong_vi": {
+            "A": "Không có cà phê miễn phí tại quán.",
+            "B": "Dụng cụ pha chế sẽ được bán sau này, không tặng miễn phí.",
+            "C": "Không nhắc đến quyền mua trước loại mới."
+          }
         },
         {
           "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"Shipping is available only within the country for now.\"",
+          "prompt_vi": "Câu sau phù hợp nhất với vị trí nào trong [1], [2], [3], [4]?\n\"Hiện tại chỉ giao hàng trong nước.\"",
           "choices": {
             "A": "[1]",
             "B": "[2]",
@@ -294,7 +379,12 @@
           "tags": [
             "part7:sentence-insertion"
           ],
-          "explanation_vi": "Câu nói về vận chuyển nên đặt ngay sau 'orders are shipped within two business days' → vị trí [2]."
+          "explanation_vi": "Câu nói về vận chuyển nên đặt ngay sau 'orders are shipped within two business days' → vị trí [2].",
+          "why_wrong_vi": {
+            "A": "Vị trí [1] đang nói lý do mở cửa hàng, chưa nhắc đến giao hàng.",
+            "C": "Vị trí [3] nói về sản phẩm sắp bán thêm, không liên quan vận chuyển.",
+            "D": "Vị trí [4] là câu kết sau lời trích dẫn, chen chuyện vận chuyển vào sẽ lạc ý."
+          }
         }
       ]
     },
@@ -306,12 +396,14 @@
         {
           "type": "memo",
           "title": "MEMO – To: Sales Department | From: Diane Holt, Sales Director | Date: January 6",
-          "text": "Congratulations to everyone on an outstanding year. Our department exceeded its annual sales target by 18 percent, and customer satisfaction scores reached their highest level ever.\n\nTo celebrate, we will hold a team dinner at Riverside Grill on Friday, January 17, at 7 P.M. Partners and spouses are welcome. Please let my assistant, Owen Park, know by January 10 whether you will attend and how many guests you will bring.\n\nIn addition, the top three salespeople of the year will each receive an extra two days of paid leave. Their names will be announced at the dinner."
+          "text": "Congratulations to everyone on an outstanding year. Our department exceeded its annual sales target by 18 percent, and customer satisfaction scores reached their highest level ever.\n\nTo celebrate, we will hold a team dinner at Riverside Grill on Friday, January 17, at 7 P.M. Partners and spouses are welcome. Please let my assistant, Owen Park, know by January 10 whether you will attend and how many guests you will bring.\n\nIn addition, the top three salespeople of the year will each receive an extra two days of paid leave. Their names will be announced at the dinner.",
+          "text_vi": "Chúc mừng tất cả mọi người về một năm xuất sắc. Phòng chúng ta đã vượt chỉ tiêu doanh số năm 18%, và điểm hài lòng của khách hàng đạt mức cao nhất từ trước đến nay.\n\nĐể ăn mừng, chúng ta sẽ tổ chức bữa tối cho cả nhóm tại nhà hàng Riverside Grill vào thứ Sáu, ngày 17 tháng 1, lúc 7 giờ tối. Mọi người có thể đưa bạn đời hoặc người thân đi cùng. Vui lòng báo cho trợ lý của tôi, Owen Park, trước ngày 10 tháng 1 về việc bạn có tham dự hay không và sẽ đi cùng bao nhiêu người.\n\nNgoài ra, ba nhân viên kinh doanh xuất sắc nhất năm sẽ được thưởng thêm hai ngày nghỉ phép hưởng lương mỗi người. Tên của họ sẽ được công bố tại bữa tối."
         }
       ],
       "questions": [
         {
           "prompt": "Why was the memo written?",
+          "prompt_vi": "Vì sao bản ghi nhớ được viết ra?",
           "choices": {
             "A": "To announce new sales targets",
             "B": "To recognize the team's performance",
@@ -323,10 +415,16 @@
           "tags": [
             "part7:purpose"
           ],
-          "explanation_vi": "Chúc mừng thành tích vượt chỉ tiêu và mời ăn tối ăn mừng."
+          "explanation_vi": "Chúc mừng thành tích vượt chỉ tiêu và mời ăn tối ăn mừng.",
+          "why_wrong_vi": {
+            "A": "Bản ghi nhớ nói về chỉ tiêu đã vượt, không đặt chỉ tiêu mới.",
+            "C": "Owen Park là trợ lý sẵn có, không được giới thiệu như người mới.",
+            "D": "Hai ngày phép là phần thưởng, không phải thay đổi chính sách nghỉ phép."
+          }
         },
         {
           "prompt": "What are employees asked to do by January 10?",
+          "prompt_vi": "Nhân viên được yêu cầu làm gì trước ngày 10 tháng 1?",
           "choices": {
             "A": "Submit their sales reports",
             "B": "Make a restaurant reservation",
@@ -339,10 +437,16 @@
             "part7:detail",
             "part7:paraphrase"
           ],
-          "explanation_vi": "Báo cho Owen Park có tham dự hay không và mang theo bao nhiêu khách = trả lời lời mời."
+          "explanation_vi": "Báo cho Owen Park có tham dự hay không và mang theo bao nhiêu khách = trả lời lời mời.",
+          "why_wrong_vi": {
+            "A": "Không yêu cầu nộp báo cáo doanh số.",
+            "B": "Nhà hàng đã được chọn; nhân viên không phải tự đặt bàn.",
+            "D": "Ba người xuất sắc sẽ được công bố, không cần ai đề cử."
+          }
         },
         {
           "prompt": "What will happen at the dinner?",
+          "prompt_vi": "Điều gì sẽ diễn ra tại bữa tối?",
           "choices": {
             "A": "A new director will be introduced.",
             "B": "Customer feedback will be reviewed.",
@@ -354,7 +458,12 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "Tên ba nhân viên bán hàng xuất sắc nhất sẽ được công bố tại bữa tối."
+          "explanation_vi": "Tên ba nhân viên bán hàng xuất sắc nhất sẽ được công bố tại bữa tối.",
+          "why_wrong_vi": {
+            "A": "Diane Holt vẫn là giám đốc; không có giám đốc mới.",
+            "B": "Điểm hài lòng của khách được nhắc trong thư, không phải nội dung bữa tối.",
+            "C": "Bữa tối để ăn mừng, không bàn về chỉ tiêu doanh số."
+          }
         }
       ]
     },
@@ -366,12 +475,14 @@
         {
           "type": "chat",
           "title": "Online chat discussion",
-          "text": "Megan Ross [10:02 A.M.]: Hi team. The client in Lisbon wants to move our video call from Thursday to Wednesday. Does that work for everyone?\nArjun Patel [10:04 A.M.]: Wednesday morning is fine for me, but I have a dentist appointment in the afternoon.\nLucy Chen [10:05 A.M.]: I'm free all day Wednesday.\nMegan Ross [10:06 A.M.]: They suggested 3 P.M. our time.\nArjun Patel [10:07 A.M.]: Could we ask for 10 A.M. instead? That would be 3 P.M. in Lisbon.\nMegan Ross [10:08 A.M.]: Good point. I'll propose that. Lucy, can you finish the updated cost estimate by Tuesday so we can send it before the call?\nLucy Chen [10:09 A.M.]: Consider it done.\nArjun Patel [10:10 A.M.]: I'll prepare the slides for the product demonstration."
+          "text": "Megan Ross [10:02 A.M.]: Hi team. The client in Lisbon wants to move our video call from Thursday to Wednesday. Does that work for everyone?\nArjun Patel [10:04 A.M.]: Wednesday morning is fine for me, but I have a dentist appointment in the afternoon.\nLucy Chen [10:05 A.M.]: I'm free all day Wednesday.\nMegan Ross [10:06 A.M.]: They suggested 3 P.M. our time.\nArjun Patel [10:07 A.M.]: Could we ask for 10 A.M. instead? That would be 3 P.M. in Lisbon.\nMegan Ross [10:08 A.M.]: Good point. I'll propose that. Lucy, can you finish the updated cost estimate by Tuesday so we can send it before the call?\nLucy Chen [10:09 A.M.]: Consider it done.\nArjun Patel [10:10 A.M.]: I'll prepare the slides for the product demonstration.",
+          "text_vi": "Megan Ross [10:02 A.M.]: Chào cả nhóm. Khách hàng ở Lisbon muốn dời cuộc gọi video từ thứ Năm sang thứ Tư. Mọi người có tiện không?\nArjun Patel [10:04 A.M.]: Sáng thứ Tư thì tôi được, nhưng buổi chiều tôi có hẹn nha sĩ.\nLucy Chen [10:05 A.M.]: Tôi rảnh cả ngày thứ Tư.\nMegan Ross [10:06 A.M.]: Họ đề xuất 3 giờ chiều theo giờ bên mình.\nArjun Patel [10:07 A.M.]: Mình đề nghị 10 giờ sáng được không? Lúc đó ở Lisbon là 3 giờ chiều.\nMegan Ross [10:08 A.M.]: Ý hay. Tôi sẽ đề xuất như vậy. Lucy, chị làm xong bản dự toán chi phí cập nhật trước thứ Ba được không, để mình gửi trước cuộc gọi?\nLucy Chen [10:09 A.M.]: Cứ yên tâm, coi như xong.\nArjun Patel [10:10 A.M.]: Tôi sẽ chuẩn bị slide cho phần trình diễn sản phẩm."
         }
       ],
       "questions": [
         {
           "prompt": "What is the main topic of the discussion?",
+          "prompt_vi": "Chủ đề chính của cuộc trao đổi là gì?",
           "choices": {
             "A": "Rescheduling a meeting",
             "B": "Planning a business trip",
@@ -383,10 +494,16 @@
           "tags": [
             "part7:main-idea"
           ],
-          "explanation_vi": "Khách muốn dời cuộc gọi video từ thứ Năm sang thứ Tư."
+          "explanation_vi": "Khách muốn dời cuộc gọi video từ thứ Năm sang thứ Tư.",
+          "why_wrong_vi": {
+            "B": "Đây là cuộc gọi video, không ai đi công tác.",
+            "C": "Không bàn chuyện tuyển người.",
+            "D": "Khách chỉ đề nghị đổi lịch, không phàn nàn."
+          }
         },
         {
           "prompt": "Why does Mr. Patel suggest a different time?",
+          "prompt_vi": "Vì sao anh Patel đề nghị giờ khác?",
           "choices": {
             "A": "He will be traveling on Wednesday.",
             "B": "The client's office closes early.",
@@ -398,10 +515,16 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "Anh ấy có hẹn nha sĩ buổi chiều nên đề xuất 10 giờ sáng."
+          "explanation_vi": "Anh ấy có hẹn nha sĩ buổi chiều nên đề xuất 10 giờ sáng.",
+          "why_wrong_vi": {
+            "A": "Anh ấy không đi công tác; anh có hẹn nha sĩ.",
+            "B": "Không nhắc đến giờ đóng cửa của văn phòng khách hàng.",
+            "D": "Anh ấy không nói cần thêm thời gian chuẩn bị."
+          }
         },
         {
           "prompt": "At 10:09 A.M., what does Ms. Chen mean when she writes, \"Consider it done\"?",
+          "prompt_vi": "Lúc 10:09 A.M., khi viết \"Consider it done\", chị Chen có ý gì?",
           "choices": {
             "A": "She has already sent the estimate.",
             "B": "She will complete the task on time.",
@@ -413,10 +536,16 @@
           "tags": [
             "part7:intent"
           ],
-          "explanation_vi": "'Consider it done' = cứ yên tâm, tôi sẽ làm xong (cam kết hoàn thành trước thứ Ba)."
+          "explanation_vi": "'Consider it done' = cứ yên tâm, tôi sẽ làm xong (cam kết hoàn thành trước thứ Ba).",
+          "why_wrong_vi": {
+            "A": "Bản dự toán chưa làm xong; chị ấy hứa sẽ hoàn thành trước thứ Ba.",
+            "C": "Đây là lời nhận lời, không phải phản đối.",
+            "D": "Chị ấy rảnh cả ngày thứ Tư nên tham dự được."
+          }
         },
         {
           "prompt": "What will Mr. Patel do?",
+          "prompt_vi": "Anh Patel sẽ làm gì?",
           "choices": {
             "A": "Contact the client",
             "B": "Revise a cost estimate",
@@ -429,7 +558,12 @@
             "part7:detail",
             "part7:paraphrase"
           ],
-          "explanation_vi": "'I'll prepare the slides for the product demonstration' = chuẩn bị bài trình bày."
+          "explanation_vi": "'I'll prepare the slides for the product demonstration' = chuẩn bị bài trình bày.",
+          "why_wrong_vi": {
+            "A": "Megan là người sẽ đề xuất giờ mới với khách hàng.",
+            "B": "Sửa bản dự toán chi phí là việc của Lucy Chen.",
+            "C": "Đây là cuộc gọi video; không ai nhắc đến đặt phòng họp."
+          }
         }
       ]
     },
@@ -441,12 +575,14 @@
         {
           "type": "letter",
           "title": "Letter",
-          "text": "Dear Ms. Okonkwo,\n\nOn behalf of the Fairview Arts Council, I am delighted to inform you that your mural design, \"River of Light,\" has been selected for the new public library on Elm Avenue. — [1] — The selection committee reviewed more than 60 proposals and was particularly impressed by how your design reflects the history of our town.\n\nAs stated in the competition guidelines, you will receive a fee of $15,000, half of which will be paid when the contract is signed. — [2] — The remaining amount will be paid upon completion. The library is scheduled to open on September 1, so we ask that the mural be finished by August 15.\n\nThe library's architect, Mr. Felix Grant, would like to meet with you to discuss the wall surface and lighting. — [3] — Please contact his office at 555-0177 to arrange a time.\n\nI have enclosed two copies of the contract. — [4] — Congratulations once again.\n\nSincerely,\nNadia Fischer\nDirector, Fairview Arts Council"
+          "text": "Dear Ms. Okonkwo,\n\nOn behalf of the Fairview Arts Council, I am delighted to inform you that your mural design, \"River of Light,\" has been selected for the new public library on Elm Avenue. — [1] — The selection committee reviewed more than 60 proposals and was particularly impressed by how your design reflects the history of our town.\n\nAs stated in the competition guidelines, you will receive a fee of $15,000, half of which will be paid when the contract is signed. — [2] — The remaining amount will be paid upon completion. The library is scheduled to open on September 1, so we ask that the mural be finished by August 15.\n\nThe library's architect, Mr. Felix Grant, would like to meet with you to discuss the wall surface and lighting. — [3] — Please contact his office at 555-0177 to arrange a time.\n\nI have enclosed two copies of the contract. — [4] — Congratulations once again.\n\nSincerely,\nNadia Fischer\nDirector, Fairview Arts Council",
+          "text_vi": "Kính gửi chị Okonkwo,\n\nThay mặt Hội đồng Nghệ thuật Fairview, tôi vui mừng thông báo rằng bản thiết kế tranh tường \"River of Light\" của chị đã được chọn cho thư viện công cộng mới trên đại lộ Elm. — [1] — Hội đồng tuyển chọn đã xem xét hơn 60 đề xuất và đặc biệt ấn tượng với cách bản thiết kế của chị thể hiện lịch sử thị trấn.\n\nNhư đã nêu trong thể lệ cuộc thi, chị sẽ nhận khoản thù lao 15.000 đô la, một nửa được trả khi ký hợp đồng. — [2] — Số tiền còn lại sẽ được trả khi hoàn thành. Thư viện dự kiến khai trương ngày 1 tháng 9, vì vậy chúng tôi đề nghị tranh tường được hoàn thành trước ngày 15 tháng 8.\n\nKiến trúc sư của thư viện, ông Felix Grant, muốn gặp chị để bàn về bề mặt tường và ánh sáng. — [3] — Vui lòng liên hệ văn phòng của ông theo số 555-0177 để hẹn thời gian.\n\nTôi gửi kèm hai bản hợp đồng. — [4] — Một lần nữa xin chúc mừng chị.\n\nTrân trọng,\nNadia Fischer\nGiám đốc, Hội đồng Nghệ thuật Fairview"
         }
       ],
       "questions": [
         {
           "prompt": "Who most likely is Ms. Okonkwo?",
+          "prompt_vi": "Chị Okonkwo nhiều khả năng là ai?",
           "choices": {
             "A": "A librarian",
             "B": "An architect",
@@ -458,10 +594,16 @@
           "tags": [
             "part7:inference"
           ],
-          "explanation_vi": "Bản thiết kế tranh tường (mural) của cô được chọn → cô là nghệ sĩ."
+          "explanation_vi": "Bản thiết kế tranh tường (mural) của cô được chọn → cô là nghệ sĩ.",
+          "why_wrong_vi": {
+            "A": "Thư viện là nơi đặt tranh, chị không làm việc ở thư viện.",
+            "B": "Kiến trúc sư là ông Felix Grant.",
+            "D": "Tranh thể hiện lịch sử thị trấn, nhưng chị là người vẽ, không phải nhà sử học."
+          }
         },
         {
           "prompt": "What is indicated about the competition?",
+          "prompt_vi": "Điều gì được nêu về cuộc thi?",
           "choices": {
             "A": "It received many entries.",
             "B": "It was open only to local residents.",
@@ -473,10 +615,16 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "'reviewed more than 60 proposals' → nhiều bài dự thi. Ban tổ chức là Hội đồng Nghệ thuật, không phải thư viện."
+          "explanation_vi": "'reviewed more than 60 proposals' → nhiều bài dự thi. Ban tổ chức là Hội đồng Nghệ thuật, không phải thư viện.",
+          "why_wrong_vi": {
+            "B": "Không nói cuộc thi chỉ dành cho cư dân địa phương.",
+            "C": "Không có thông tin cuộc thi tổ chức năm ngoái.",
+            "D": "Ban tổ chức là Hội đồng Nghệ thuật Fairview, không phải thư viện."
+          }
         },
         {
           "prompt": "By when should the mural be completed?",
+          "prompt_vi": "Tranh tường cần hoàn thành trước ngày nào?",
           "choices": {
             "A": "September 1",
             "B": "August 1",
@@ -488,10 +636,16 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "'we ask that the mural be finished by August 15'. Ngày 1/9 là ngày khai trương thư viện."
+          "explanation_vi": "'we ask that the mural be finished by August 15'. Ngày 1/9 là ngày khai trương thư viện.",
+          "why_wrong_vi": {
+            "A": "Ngày 1 tháng 9 là ngày thư viện khai trương.",
+            "B": "Ngày 1 tháng 8 không xuất hiện trong thư.",
+            "D": "Khi ký hợp đồng là lúc nhận một nửa thù lao, không phải hạn hoàn thành."
+          }
         },
         {
           "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"Please sign both and return one to us in the envelope provided.\"",
+          "prompt_vi": "Câu sau phù hợp nhất với vị trí nào trong [1], [2], [3], [4]?\n\"Vui lòng ký cả hai bản và gửi lại cho chúng tôi một bản trong phong bì kèm theo.\"",
           "choices": {
             "A": "[1]",
             "B": "[2]",
@@ -503,7 +657,12 @@
           "tags": [
             "part7:sentence-insertion"
           ],
-          "explanation_vi": "'both' quy chiếu tới 'two copies of the contract' ngay trước vị trí [4]."
+          "explanation_vi": "'both' quy chiếu tới 'two copies of the contract' ngay trước vị trí [4].",
+          "why_wrong_vi": {
+            "A": "Ở [1] chưa có 'hai bản' nào để 'both' quy chiếu tới.",
+            "B": "Ở [2] đang nói về thù lao, chưa nhắc đến hai bản hợp đồng gửi kèm.",
+            "C": "Ở [3] đang nói về việc gặp kiến trúc sư, không liên quan."
+          }
         }
       ]
     },
@@ -515,12 +674,14 @@
         {
           "type": "article",
           "title": "Business Section – Harmon Electronics Reports Record Year",
-          "text": "Harmon Electronics announced on Tuesday that its annual revenue rose 22 percent to $840 million, the highest in the company's 30-year history. The growth was driven mainly by strong sales of its wireless earbuds, which accounted for nearly half of total revenue.\n\nChief Executive Officer Carla Mendes credited the company's decision two years ago to sell directly to consumers through its own Web site. \"By cutting out retailers, we were able to lower prices and build closer relationships with our customers,\" she said.\n\nHowever, the company faces challenges. Rising costs for electronic components reduced profit margins in the fourth quarter, and several competitors have recently released similar products at lower prices.\n\nTo stay ahead, Harmon plans to open a research center in Austin next year, where 200 engineers will develop new audio technologies. The company also intends to expand into the European market, beginning with Germany and France."
+          "text": "Harmon Electronics announced on Tuesday that its annual revenue rose 22 percent to $840 million, the highest in the company's 30-year history. The growth was driven mainly by strong sales of its wireless earbuds, which accounted for nearly half of total revenue.\n\nChief Executive Officer Carla Mendes credited the company's decision two years ago to sell directly to consumers through its own Web site. \"By cutting out retailers, we were able to lower prices and build closer relationships with our customers,\" she said.\n\nHowever, the company faces challenges. Rising costs for electronic components reduced profit margins in the fourth quarter, and several competitors have recently released similar products at lower prices.\n\nTo stay ahead, Harmon plans to open a research center in Austin next year, where 200 engineers will develop new audio technologies. The company also intends to expand into the European market, beginning with Germany and France.",
+          "text_vi": "Harmon Electronics hôm thứ Ba công bố doanh thu năm tăng 22%, đạt 840 triệu đô la, mức cao nhất trong lịch sử 30 năm của công ty. Mức tăng trưởng chủ yếu nhờ doanh số mạnh của tai nghe không dây, chiếm gần một nửa tổng doanh thu.\n\nTổng giám đốc Carla Mendes cho rằng thành công đến từ quyết định cách đây hai năm của công ty: bán hàng trực tiếp cho người tiêu dùng qua trang web riêng. \"Nhờ bỏ khâu nhà bán lẻ, chúng tôi đã giảm được giá và xây dựng quan hệ gần gũi hơn với khách hàng,\" bà nói.\n\nTuy nhiên, công ty cũng đối mặt với thách thức. Chi phí linh kiện điện tử tăng đã làm giảm biên lợi nhuận trong quý bốn, và một số đối thủ gần đây đã tung ra sản phẩm tương tự với giá thấp hơn.\n\nĐể giữ vững vị trí dẫn đầu, Harmon dự định mở một trung tâm nghiên cứu tại Austin vào năm tới, nơi 200 kỹ sư sẽ phát triển các công nghệ âm thanh mới. Công ty cũng có kế hoạch mở rộng sang thị trường châu Âu, bắt đầu từ Đức và Pháp."
         }
       ],
       "questions": [
         {
           "prompt": "What is the article mainly about?",
+          "prompt_vi": "Bài báo chủ yếu nói về điều gì?",
           "choices": {
             "A": "A merger between two firms",
             "B": "A new product launch",
@@ -532,10 +693,16 @@
           "tags": [
             "part7:main-idea"
           ],
-          "explanation_vi": "Bài báo về doanh thu kỷ lục và kế hoạch của Harmon."
+          "explanation_vi": "Bài báo về doanh thu kỷ lục và kế hoạch của Harmon.",
+          "why_wrong_vi": {
+            "A": "Không có sáp nhập giữa hai công ty.",
+            "B": "Tai nghe là sản phẩm bán chạy sẵn có, không phải sản phẩm mới ra mắt.",
+            "C": "Carla Mendes vẫn là CEO; không có thay đổi lãnh đạo."
+          }
         },
         {
           "prompt": "According to Ms. Mendes, what contributed to the company's success?",
+          "prompt_vi": "Theo bà Mendes, điều gì góp phần vào thành công của công ty?",
           "choices": {
             "A": "Opening stores in Europe",
             "B": "Hiring more engineers",
@@ -547,10 +714,16 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "Quyết định bán trực tiếp qua website, bỏ qua nhà bán lẻ."
+          "explanation_vi": "Quyết định bán trực tiếp qua website, bỏ qua nhà bán lẻ.",
+          "why_wrong_vi": {
+            "A": "Mở rộng sang châu Âu là kế hoạch tương lai, không phải lý do thành công.",
+            "B": "Tuyển 200 kỹ sư là kế hoạch cho trung tâm nghiên cứu năm tới.",
+            "D": "Không nhắc đến việc giảm số lượng sản phẩm."
+          }
         },
         {
           "prompt": "What problem is mentioned in the article?",
+          "prompt_vi": "Bài báo nêu vấn đề gì?",
           "choices": {
             "A": "Sales of earbuds declined.",
             "B": "Some component costs increased.",
@@ -562,10 +735,16 @@
           "tags": [
             "part7:detail"
           ],
-          "explanation_vi": "'Rising costs for electronic components reduced profit margins'."
+          "explanation_vi": "'Rising costs for electronic components reduced profit margins'.",
+          "why_wrong_vi": {
+            "A": "Ngược lại, tai nghe bán rất chạy.",
+            "C": "Trung tâm nghiên cứu sắp được mở, không bị đóng cửa.",
+            "D": "Không nhắc đến khiếu nại về chất lượng."
+          }
         },
         {
           "prompt": "The word \"stay\" in paragraph 4, line 1, is closest in meaning to",
+          "prompt_vi": "Từ \"stay\" ở đoạn 4, dòng 1 gần nghĩa nhất với",
           "choices": {
             "A": "live",
             "B": "visit",
@@ -577,7 +756,12 @@
           "tags": [
             "part7:synonym"
           ],
-          "explanation_vi": "'stay ahead' = duy trì vị trí dẫn đầu → remain."
+          "explanation_vi": "'stay ahead' = duy trì vị trí dẫn đầu → remain.",
+          "why_wrong_vi": {
+            "A": "'live' (sinh sống) là nghĩa 'ở lại một nơi', không hợp với 'stay ahead'.",
+            "B": "'visit' (thăm) sai nghĩa hoàn toàn.",
+            "C": "'pause' (tạm dừng) sai nghĩa; 'stay ahead' là tiếp tục dẫn đầu."
+          }
         }
       ]
     }
