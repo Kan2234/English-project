@@ -1,0 +1,123 @@
+{
+  "exam_formats": [
+    {
+      "code": "LR",
+      "name": "TOEIC Listening & Reading (linear)",
+      "skills": "listening,reading",
+      "total_questions": 200,
+      "duration_minutes": 120,
+      "score_min": 10,
+      "score_max": 990,
+      "score_step": 5,
+      "description_vi": "Bài thi TOEIC 2 kỹ năng phổ biến nhất tại Việt Nam. 200 câu trắc nghiệm, khoảng 2 giờ (45 phút Nghe + 75 phút Đọc). Cấu trúc áp dụng từ tháng 6/2018 và vẫn giữ nguyên trong 2025–2026.",
+      "notes": "Thi trên giấy hoặc trên máy tại IIG Việt Nam. Kết quả có giá trị 2 năm.",
+      "status": "current"
+    },
+    {
+      "code": "LR_ADAPTIVE",
+      "name": "TOEIC Listening & Reading (online adaptive)",
+      "skills": "listening,reading",
+      "total_questions": 90,
+      "duration_minutes": 60,
+      "score_min": 10,
+      "score_max": 990,
+      "score_step": 5,
+      "description_vi": "Phiên bản thích ứng (adaptive) do ETS Global giới thiệu: khoảng 90 câu (45 Nghe, 45 Đọc), khoảng 1 giờ, cùng thang điểm 10–990 và cùng độ khó với bài thi tuyến tính.",
+      "notes": "Chưa áp dụng phổ biến tại mọi quốc gia; kiểm tra với đơn vị tổ chức thi.",
+      "status": "unverified"
+    },
+    {
+      "code": "SW",
+      "name": "TOEIC Speaking & Writing",
+      "skills": "speaking,writing",
+      "total_questions": 19,
+      "duration_minutes": 80,
+      "score_min": 0,
+      "score_max": 400,
+      "score_step": 10,
+      "description_vi": "Bài thi Nói (11 câu, ~20 phút) và Viết (8 câu, ~60 phút) trên máy tính. Mỗi kỹ năng 0–200 điểm, bước 10 điểm.",
+      "notes": "Một số trang luyện thi báo tin ETS sẽ rút ngắn bài thi 4 kỹ năng từ 3/8/2026; chưa có xác nhận chính thức trong dữ liệu này.",
+      "status": "current"
+    }
+  ],
+  "exam_sections": [
+    { "format_code": "LR", "name": "Listening", "question_count": 100, "duration_minutes": 45, "score_min": 5, "score_max": 495 },
+    { "format_code": "LR", "name": "Reading", "question_count": 100, "duration_minutes": 75, "score_min": 5, "score_max": 495 },
+    { "format_code": "SW", "name": "Speaking", "question_count": 11, "duration_minutes": 20, "score_min": 0, "score_max": 200 },
+    { "format_code": "SW", "name": "Writing", "question_count": 8, "duration_minutes": 60, "score_min": 0, "score_max": 200 }
+  ],
+  "exam_parts": [
+    { "format_code": "LR", "section": "Listening", "part_number": 1, "name_en": "Photographs", "name_vi": "Mô tả tranh", "question_count": 6, "question_range": "1-6", "choices_per_question": 4,
+      "description_vi": "Nghe 4 câu mô tả một bức ảnh, chọn câu mô tả đúng nhất. Các lựa chọn không in trong đề.",
+      "skills_tested": ["mô tả hành động", "vị trí đồ vật", "thì hiện tại tiếp diễn / bị động"] },
+    { "format_code": "LR", "section": "Listening", "part_number": 2, "name_en": "Question-Response", "name_vi": "Hỏi – đáp", "question_count": 25, "question_range": "7-31", "choices_per_question": 3,
+      "description_vi": "Nghe một câu hỏi hoặc câu nói và 3 lời đáp, chọn lời đáp phù hợp nhất. Chỉ có 3 lựa chọn (A, B, C).",
+      "skills_tested": ["câu hỏi WH", "Yes/No", "câu hỏi lựa chọn", "câu gián tiếp", "câu đề nghị"] },
+    { "format_code": "LR", "section": "Listening", "part_number": 3, "name_en": "Conversations", "name_vi": "Hội thoại ngắn", "question_count": 39, "question_range": "32-70", "choices_per_question": 4,
+      "description_vi": "13 đoạn hội thoại (2–3 người), mỗi đoạn 3 câu hỏi. Một số câu kết hợp biểu đồ/bảng (graphic) hoặc hỏi ý định của người nói.",
+      "skills_tested": ["ý chính", "chi tiết", "suy luận", "ý định người nói", "đọc biểu đồ"] },
+    { "format_code": "LR", "section": "Listening", "part_number": 4, "name_en": "Talks", "name_vi": "Bài nói ngắn", "question_count": 30, "question_range": "71-100", "choices_per_question": 4,
+      "description_vi": "10 bài nói của một người (thông báo, tin nhắn thoại, quảng cáo, bản tin...), mỗi bài 3 câu hỏi.",
+      "skills_tested": ["mục đích bài nói", "chi tiết", "suy luận", "ý định người nói", "đọc biểu đồ"] },
+    { "format_code": "LR", "section": "Reading", "part_number": 5, "name_en": "Incomplete Sentences", "name_vi": "Hoàn thành câu", "question_count": 30, "question_range": "101-130", "choices_per_question": 4,
+      "description_vi": "Chọn từ/cụm từ điền vào chỗ trống trong câu. Kiểm tra ngữ pháp và từ vựng.",
+      "skills_tested": ["từ loại", "thì động từ", "giới từ", "liên từ", "đại từ", "từ vựng"] },
+    { "format_code": "LR", "section": "Reading", "part_number": 6, "name_en": "Text Completion", "name_vi": "Hoàn thành đoạn văn", "question_count": 16, "question_range": "131-146", "choices_per_question": 4,
+      "description_vi": "4 đoạn văn, mỗi đoạn 4 chỗ trống; trong đó 1 chỗ trống yêu cầu chọn cả câu phù hợp ngữ cảnh.",
+      "skills_tested": ["ngữ pháp theo ngữ cảnh", "từ nối", "chọn câu phù hợp"] },
+    { "format_code": "LR", "section": "Reading", "part_number": 7, "name_en": "Reading Comprehension", "name_vi": "Đọc hiểu", "question_count": 54, "question_range": "147-200", "choices_per_question": 4,
+      "description_vi": "29 câu đoạn đơn (single passages) và 25 câu đoạn kép/ba (2 bộ double, 3 bộ triple). Có dạng chèn câu, tin nhắn/chat nhiều người.",
+      "skills_tested": ["ý chính", "chi tiết", "suy luận", "từ đồng nghĩa", "chèn câu", "liên kết nhiều văn bản"] },
+
+    { "format_code": "SW", "section": "Speaking", "part_number": 1, "name_en": "Read a text aloud", "name_vi": "Đọc to đoạn văn", "question_count": 2, "question_range": "Q1-2", "choices_per_question": null,
+      "description_vi": "Đọc to một đoạn văn ngắn. Chấm phát âm, ngữ điệu, trọng âm.", "skills_tested": ["phát âm", "ngữ điệu"] },
+    { "format_code": "SW", "section": "Speaking", "part_number": 2, "name_en": "Describe a picture", "name_vi": "Mô tả tranh", "question_count": 2, "question_range": "Q3-4", "choices_per_question": null,
+      "description_vi": "Mô tả chi tiết một bức ảnh trong 30 giây.", "skills_tested": ["từ vựng", "ngữ pháp", "mạch lạc"] },
+    { "format_code": "SW", "section": "Speaking", "part_number": 3, "name_en": "Respond to questions", "name_vi": "Trả lời câu hỏi", "question_count": 3, "question_range": "Q5-7", "choices_per_question": null,
+      "description_vi": "Trả lời 3 câu hỏi về một chủ đề quen thuộc.", "skills_tested": ["phản xạ", "nội dung liên quan"] },
+    { "format_code": "SW", "section": "Speaking", "part_number": 4, "name_en": "Respond to questions using information provided", "name_vi": "Trả lời dựa trên thông tin cho sẵn", "question_count": 3, "question_range": "Q8-10", "choices_per_question": null,
+      "description_vi": "Đọc lịch trình/bảng biểu và trả lời 3 câu hỏi.", "skills_tested": ["đọc lướt thông tin", "diễn đạt chính xác"] },
+    { "format_code": "SW", "section": "Speaking", "part_number": 5, "name_en": "Express an opinion", "name_vi": "Trình bày quan điểm", "question_count": 1, "question_range": "Q11", "choices_per_question": null,
+      "description_vi": "Nêu và bảo vệ quan điểm trong 60 giây.", "skills_tested": ["lập luận", "ví dụ minh họa"] },
+    { "format_code": "SW", "section": "Writing", "part_number": 1, "name_en": "Write a sentence based on a picture", "name_vi": "Viết câu theo tranh", "question_count": 5, "question_range": "Q1-5", "choices_per_question": null,
+      "description_vi": "Viết 1 câu mô tả tranh có dùng 2 từ cho sẵn.", "skills_tested": ["ngữ pháp câu"] },
+    { "format_code": "SW", "section": "Writing", "part_number": 2, "name_en": "Respond to a written request", "name_vi": "Trả lời email", "question_count": 2, "question_range": "Q6-7", "choices_per_question": null,
+      "description_vi": "Đọc email và viết thư trả lời theo yêu cầu trong 10 phút.", "skills_tested": ["văn phong thư tín", "đáp ứng yêu cầu"] },
+    { "format_code": "SW", "section": "Writing", "part_number": 3, "name_en": "Write an opinion essay", "name_vi": "Viết luận nêu quan điểm", "question_count": 1, "question_range": "Q8", "choices_per_question": null,
+      "description_vi": "Viết bài luận tối thiểu 300 từ trong 30 phút.", "skills_tested": ["lập luận", "tổ chức bài viết"] }
+  ],
+  "score_conversion_anchors": {
+    "_note": "Bảng quy đổi ƯỚC LƯỢNG. ETS không công bố bảng cố định; điểm thật phụ thuộc từng đề (equating). Build script nội suy tuyến tính giữa các mốc và làm tròn tới bội số 5.",
+    "listening": [[0, 5], [10, 15], [20, 60], [30, 120], [40, 180], [50, 240], [60, 300], [70, 355], [80, 405], [90, 455], [96, 495], [100, 495]],
+    "reading":   [[0, 5], [10, 10], [20, 50], [30, 105], [40, 160], [50, 215], [60, 270], [70, 325], [80, 380], [90, 435], [100, 495]]
+  },
+  "score_levels": [
+    { "min_score": 10,  "max_score": 219, "cefr": "A1", "label_vi": "Sơ cấp", "description_vi": "Hiểu được câu rất đơn giản; chưa đủ cho giao tiếp công việc." },
+    { "min_score": 220, "max_score": 549, "cefr": "A2", "label_vi": "Cơ bản", "description_vi": "Giao tiếp được trong tình huống quen thuộc, hạn chế trong môi trường công việc." },
+    { "min_score": 550, "max_score": 784, "cefr": "B1", "label_vi": "Trung cấp", "description_vi": "Chuẩn đầu ra phổ biến của nhiều trường đại học (450–600). Xử lý được phần lớn tình huống công việc thường ngày." },
+    { "min_score": 785, "max_score": 944, "cefr": "B2", "label_vi": "Trung cao cấp", "description_vi": "Làm việc hiệu quả bằng tiếng Anh; đáp ứng yêu cầu tuyển dụng của nhiều công ty đa quốc gia." },
+    { "min_score": 945, "max_score": 990, "cefr": "C1", "label_vi": "Cao cấp", "description_vi": "Sử dụng tiếng Anh thành thạo trong môi trường chuyên nghiệp." }
+  ],
+  "fees": [
+    { "country": "VN", "format_code": "LR", "candidate_type": "student", "amount": 1330000, "currency": "VND", "effective_year": 2026, "source_id": "prep-fee-2026", "verified": 0 },
+    { "country": "VN", "format_code": "LR", "candidate_type": "general", "amount": 1500000, "currency": "VND", "effective_year": 2026, "source_id": "prep-fee-2026", "verified": 0 },
+    { "country": "VN", "format_code": "SW", "candidate_type": "general", "amount": 1800000, "currency": "VND", "effective_year": 2026, "source_id": "prep-fee-2026", "verified": 0 }
+  ],
+  "updates": [
+    { "date": "2025-04-21", "title_vi": "Đăng ký thi TOEIC 100% trực tuyến tại IIG Việt Nam", "summary_vi": "Từ 21/4/2025, thí sinh đăng ký thi TOEIC và TOEFL ITP hoàn toàn trực tuyến, không cần đến văn phòng.", "source_id": "iig-announcements", "verified": 0 },
+    { "date": "2025-06-09", "title_vi": "Ưu đãi lệ phí TOEIC 4 kỹ năng cho học sinh, sinh viên", "summary_vi": "IIG Việt Nam công bố chính sách giảm lệ phí bài thi TOEIC 4 kỹ năng dành riêng cho học sinh, sinh viên.", "source_id": "iig-student-discount", "verified": 1 },
+    { "date": "2025-07-01", "title_vi": "Hướng dẫn dự thi TOEIC Online", "summary_vi": "IIG Việt Nam phát hành tài liệu hướng dẫn dự thi TOEIC hình thức trực tuyến.", "source_id": "iig-online-guide", "verified": 1 },
+    { "date": "2026-01-01", "title_vi": "Cấu trúc TOEIC Listening & Reading không thay đổi", "summary_vi": "Bài thi tuyến tính vẫn giữ cấu trúc 7 phần, 200 câu, 120 phút như từ tháng 6/2018.", "source_id": "ets-toeic", "verified": 0 },
+    { "date": "2026-08-03", "title_vi": "Tin chưa xác nhận: rút ngắn bài thi TOEIC 4 kỹ năng", "summary_vi": "Một trang luyện thi tại Pháp đưa tin bài thi 4 kỹ năng sẽ rút từ 2 giờ 22 phút xuống tối đa 1 giờ 20 phút từ 3/8/2026. ETS chưa công bố chính thức trong nguồn đã kiểm tra.", "source_id": "digischool-2026", "verified": 0 }
+  ],
+  "sources": [
+    { "id": "ets-toeic", "name": "ETS – TOEIC Program", "url": "https://www.ets.org/toeic.html", "source_type": "official", "note_vi": "Trang chính thức của ETS về các bài thi TOEIC." },
+    { "id": "ets-global-adaptive", "name": "ETS Global – Adaptive TOEIC test", "url": "https://www.etsglobal.org/fr/en/blog/news/adaptative-toeic-test", "source_type": "official", "note_vi": "Giới thiệu bài thi TOEIC L&R thích ứng (90 câu, ~1 giờ)." },
+    { "id": "iig-announcements", "name": "IIG Việt Nam – Thông báo", "url": "https://iigvietnam.com/policies-and-announcements/announcements/", "source_type": "official", "note_vi": "Đơn vị đại diện ETS tại Việt Nam; nơi đăng ký thi và công bố lệ phí." },
+    { "id": "iig-student-discount", "name": "IIG Việt Nam – Ưu đãi lệ phí cho sinh viên", "url": "https://iigvietnam.com/discount-policy-for-english-test-fees-at-iig-vietnam-for-students-2/", "source_type": "official", "note_vi": null },
+    { "id": "iig-online-guide", "name": "IIG Việt Nam – Hướng dẫn dự thi TOEIC Online (PDF)", "url": "https://iigvietnam.com/wp-content/uploads/2025/07/HUONG-DAN-DU-THI-TOEIC-ONLINE.pdf", "source_type": "official", "note_vi": null },
+    { "id": "prep-fee-2026", "name": "PREP – Lệ phí thi TOEIC 2026", "url": "https://prepedu.com/vi/blog/le-phi-thi-toeic", "source_type": "prep-site", "note_vi": "Nguồn bên thứ ba; cần đối chiếu với IIG trước khi hiển thị như số liệu chính thức." },
+    { "id": "digischool-2026", "name": "Digischool – TOEIC 4-Skills từ 3/8/2026", "url": "https://www.digischool.fr/articles/toeic/nouveau-toeic-4-skills-aout-2026/", "source_type": "prep-site", "note_vi": "Tin chưa được ETS xác nhận." },
+    { "id": "wikipedia-toeic", "name": "Wikipedia – TOEIC", "url": "https://en.wikipedia.org/wiki/TOEIC", "source_type": "reference", "note_vi": null }
+  ]
+}

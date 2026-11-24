@@ -1,0 +1,6 @@
+# Keep LF in the repo and working tree (nginx.conf, Dockerfile, scripts run in Linux containers)
+* text=auto eol=lf
+*.mp3 binary
+*.png binary
+*.jpg binary
+*.webp binary

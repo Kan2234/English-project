@@ -1,0 +1,860 @@
+{
+  "test": {
+    "id": "mini-test-01"
+  },
+  "sets": [
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The marketing team will present ------- findings at the quarterly meeting.",
+          "choices": {
+            "A": "it",
+            "B": "they",
+            "C": "them",
+            "D": "their"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "grammar:pronoun"
+          ],
+          "explanation_vi": "Trước danh từ 'findings' cần tính từ sở hữu → their."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Ms. Lopez was promoted because she managed the project very -------.",
+          "choices": {
+            "A": "efficient",
+            "B": "more efficient",
+            "C": "efficiency",
+            "D": "efficiently"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "grammar:word-form",
+            "grammar:adverb"
+          ],
+          "explanation_vi": "Bổ nghĩa cho động từ 'managed' cần trạng từ → efficiently."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "All employees must submit their timesheets ------- 5 P.M. on Friday.",
+          "choices": {
+            "A": "by",
+            "B": "until",
+            "C": "since",
+            "D": "during"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "grammar:preposition"
+          ],
+          "explanation_vi": "'by + thời điểm' = hạn chót (trước/không muộn hơn). 'until' diễn tả hành động kéo dài đến thời điểm đó."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The new software ------- by the IT department since last Monday.",
+          "choices": {
+            "A": "tests",
+            "B": "is testing",
+            "C": "has been tested",
+            "D": "will test"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "grammar:passive",
+            "grammar:present-perfect"
+          ],
+          "explanation_vi": "'since last Monday' → hiện tại hoàn thành; chủ ngữ là vật + 'by the IT department' → bị động: has been tested."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "------- the heavy rain, the outdoor concert was held as scheduled.",
+          "choices": {
+            "A": "Although",
+            "B": "Despite",
+            "C": "Because",
+            "D": "However"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "grammar:conjunction-vs-preposition"
+          ],
+          "explanation_vi": "Sau chỗ trống là cụm danh từ 'the heavy rain' → cần giới từ Despite. Although/Because + mệnh đề; However là trạng từ nối."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Customers who wish to return an item must present the original -------.",
+          "choices": {
+            "A": "receive",
+            "B": "receptive",
+            "C": "receiving",
+            "D": "receipt"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "grammar:word-form",
+            "vocab:shopping"
+          ],
+          "explanation_vi": "Sau tính từ 'original' cần danh từ → receipt (hóa đơn)."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The board of directors has decided to ------- the merger until further notice.",
+          "choices": {
+            "A": "propose",
+            "B": "prevent",
+            "C": "proceed",
+            "D": "postpone"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "vocab:business"
+          ],
+          "explanation_vi": "'until further notice' (cho đến khi có thông báo mới) đi với 'postpone' (hoãn)."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Mr. Tanaka is the candidate ------- experience best matches the job requirements.",
+          "choices": {
+            "A": "who",
+            "B": "whom",
+            "C": "which",
+            "D": "whose"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "grammar:relative-clause"
+          ],
+          "explanation_vi": "Chỗ trống đứng trước danh từ 'experience' và chỉ sự sở hữu của 'candidate' → whose."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "If the shipment ------- on time, we would have finished the installation yesterday.",
+          "choices": {
+            "A": "arrives",
+            "B": "arrived",
+            "C": "had arrived",
+            "D": "would arrive"
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "grammar:conditional"
+          ],
+          "explanation_vi": "Mệnh đề chính 'would have finished' → câu điều kiện loại 3: If + had + V3."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The conference room is available for booking ------- on weekdays and weekends.",
+          "choices": {
+            "A": "either",
+            "B": "both",
+            "C": "neither",
+            "D": "not only"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "grammar:paired-conjunction"
+          ],
+          "explanation_vi": "Cặp liên từ 'both ... and'. Either đi với or, neither đi với nor, not only đi với but also."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Applicants are required to have ------- three years of experience in sales.",
+          "choices": {
+            "A": "almost of",
+            "B": "at most",
+            "C": "less",
+            "D": "at least"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "vocab:recruitment"
+          ],
+          "explanation_vi": "Yêu cầu tối thiểu → 'at least' (ít nhất)."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The renovation of the lobby is expected to be ------- by the end of March.",
+          "choices": {
+            "A": "complete",
+            "B": "completion",
+            "C": "completely",
+            "D": "completing"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "grammar:word-form"
+          ],
+          "explanation_vi": "Sau 'to be' cần tính từ → complete (hoàn tất)."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Ms. Ahmed asked that every report ------- reviewed by a manager before submission.",
+          "choices": {
+            "A": "is",
+            "B": "be",
+            "C": "was",
+            "D": "being"
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "grammar:subjunctive"
+          ],
+          "explanation_vi": "Sau động từ yêu cầu 'ask that' dùng thức giả định: động từ nguyên mẫu → be reviewed."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Our sales have increased ------- since we launched the online store.",
+          "choices": {
+            "A": "significant",
+            "B": "significance",
+            "C": "significantly",
+            "D": "signify"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "grammar:word-form",
+            "grammar:adverb"
+          ],
+          "explanation_vi": "Bổ nghĩa cho động từ 'increased' → trạng từ significantly."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The hotel offers a free shuttle service to guests ------- stay for more than three nights.",
+          "choices": {
+            "A": "what",
+            "B": "who",
+            "C": "whose",
+            "D": "where"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "grammar:relative-clause"
+          ],
+          "explanation_vi": "Đại từ quan hệ thay cho 'guests' (người) làm chủ ngữ của 'stay' → who."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The project was completed ------- budget, thanks to careful planning.",
+          "choices": {
+            "A": "under",
+            "B": "below of",
+            "C": "beneath to",
+            "D": "down"
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "grammar:preposition",
+            "vocab:collocation"
+          ],
+          "explanation_vi": "Collocation 'under budget' = dưới mức ngân sách (tiết kiệm). Tương tự 'on budget', 'over budget'."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "------- you need further assistance, please contact our help desk.",
+          "choices": {
+            "A": "Whether",
+            "B": "Would",
+            "C": "Unless",
+            "D": "Should"
+          },
+          "answer": "D",
+          "difficulty": 4,
+          "tags": [
+            "grammar:inversion",
+            "grammar:conditional"
+          ],
+          "explanation_vi": "Đảo ngữ câu điều kiện loại 1: Should + S + V = If + S + V."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The CEO thanked the staff for their ------- to the company's success.",
+          "choices": {
+            "A": "contributor",
+            "B": "contributes",
+            "C": "contributed",
+            "D": "contributions"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "grammar:word-form",
+            "vocab:collocation"
+          ],
+          "explanation_vi": "Sau tính từ sở hữu 'their' cần danh từ; 'contribution to' = đóng góp cho. 'contributor' chỉ người, không hợp nghĩa."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Please read the safety instructions carefully ------- operating the machine.",
+          "choices": {
+            "A": "before",
+            "B": "while",
+            "C": "during",
+            "D": "since"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "grammar:conjunction",
+            "grammar:gerund"
+          ],
+          "explanation_vi": "Đọc hướng dẫn trước khi vận hành máy → before + V-ing. 'during' không đi với V-ing."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The number of online orders ------- doubled over the past year.",
+          "choices": {
+            "A": "have",
+            "B": "were",
+            "C": "are",
+            "D": "has"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "grammar:subject-verb-agreement"
+          ],
+          "explanation_vi": "'The number of + N số nhiều' → động từ số ít. (Khác với 'A number of' → số nhiều.)"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "passage_type": "email",
+      "title": "Email about a schedule change",
+      "passages": [
+        {
+          "type": "email",
+          "title": "To: All staff | From: Facilities Department | Subject: Elevator maintenance",
+          "text": "Dear staff,\n\nPlease be advised that the elevators in the east wing will be out of service on Saturday, May 10, from 8 A.M. to 4 P.M. The building management has scheduled ---(1)--- annual inspection on that day.\n\nDuring this time, employees who need to access the upper floors ---(2)--- the stairs or the elevators in the west wing. ---(3)---.\n\nWe apologize for any inconvenience and appreciate your ---(4)---.\n\nFacilities Department"
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "(1)",
+          "choices": {
+            "A": "its",
+            "B": "their",
+            "C": "his",
+            "D": "our"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "grammar:pronoun"
+          ],
+          "explanation_vi": "'The building management' là danh từ tập hợp số ít, chỉ tổ chức → its."
+        },
+        {
+          "prompt": "(2)",
+          "choices": {
+            "A": "used",
+            "B": "should use",
+            "C": "have used",
+            "D": "using"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "grammar:modal"
+          ],
+          "explanation_vi": "Hướng dẫn cho tương lai (thứ Bảy tới) → should use. 'used' và 'have used' sai thì."
+        },
+        {
+          "prompt": "(3)",
+          "choices": {
+            "A": "The new elevators were installed last year.",
+            "B": "Please allow extra time to reach your workspace.",
+            "C": "The west wing will be closed for renovations.",
+            "D": "Thank you for attending the inspection."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part6:sentence-insertion"
+          ],
+          "explanation_vi": "Sau thông tin phải đi thang bộ/thang khác, lời khuyên 'dành thêm thời gian' là hợp lý. (C) mâu thuẫn vì thang máy khu phía tây vẫn dùng được."
+        },
+        {
+          "prompt": "(4)",
+          "choices": {
+            "A": "understand",
+            "B": "understandable",
+            "C": "understanding",
+            "D": "understood"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "grammar:word-form"
+          ],
+          "explanation_vi": "Sau tính từ sở hữu 'your' cần danh từ → understanding (sự thông cảm)."
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "passage_type": "article",
+      "title": "Local business news",
+      "passages": [
+        {
+          "type": "article",
+          "title": "Harbor City Bakery Expands",
+          "text": "HARBOR CITY — Sunrise Bakery, a family-owned business founded in 2009, will open its third location next month on Maple Avenue. The new store will be ---(1)--- larger than the original shop, with seating for up to forty customers.\n\n\"Our customers have been asking for a place to sit and enjoy their coffee,\" said owner Grace Liu. ---(2)---. The bakery also plans to hire fifteen new employees, ---(3)--- bakers, cashiers, and delivery drivers.\n\nA grand opening celebration is planned for June 3. The first 100 visitors will receive a free pastry, and live music will be ---(4)--- throughout the afternoon."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "(1)",
+          "choices": {
+            "A": "consider",
+            "B": "considerable",
+            "C": "considerably",
+            "D": "consideration"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "grammar:word-form",
+            "grammar:comparative"
+          ],
+          "explanation_vi": "Bổ nghĩa cho tính từ so sánh hơn 'larger' → trạng từ considerably (đáng kể)."
+        },
+        {
+          "prompt": "(2)",
+          "choices": {
+            "A": "The original shop will close permanently next week.",
+            "B": "Coffee prices have risen sharply this year.",
+            "C": "We designed the new space with that in mind.",
+            "D": "She started baking as a hobby in college."
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "part6:sentence-insertion"
+          ],
+          "explanation_vi": "'that' trong (C) quy chiếu đến mong muốn có chỗ ngồi của khách trong câu trích dẫn trước đó."
+        },
+        {
+          "prompt": "(3)",
+          "choices": {
+            "A": "include",
+            "B": "including",
+            "C": "included",
+            "D": "inclusion"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "grammar:participle"
+          ],
+          "explanation_vi": "'including' = bao gồm, dùng như giới từ đứng trước danh sách."
+        },
+        {
+          "prompt": "(4)",
+          "choices": {
+            "A": "performed",
+            "B": "performing",
+            "C": "performer",
+            "D": "performance"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "grammar:passive"
+          ],
+          "explanation_vi": "'live music will be performed' — bị động tương lai: will be + V3."
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "notice",
+      "title": "Single passage – Notice",
+      "passages": [
+        {
+          "type": "notice",
+          "title": "Riverside Public Library",
+          "text": "RIVERSIDE PUBLIC LIBRARY – NOTICE TO PATRONS\n\nBeginning July 1, the library will extend its weekday hours. The building will be open from 8 A.M. to 9 P.M., Monday through Friday. Weekend hours (10 A.M. to 5 P.M.) will remain the same.\n\nIn addition, patrons can now reserve study rooms online through our Web site for up to three hours per day. Reservations must be made at least one day in advance. A valid library card is required."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is the purpose of the notice?",
+          "choices": {
+            "A": "To announce new opening hours",
+            "B": "To introduce a new librarian",
+            "C": "To explain a fee increase",
+            "D": "To advertise a book sale"
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part7:purpose"
+          ],
+          "explanation_vi": "Thông báo chủ yếu về việc kéo dài giờ mở cửa ngày thường."
+        },
+        {
+          "prompt": "What is required to reserve a study room?",
+          "choices": {
+            "A": "A same-day phone call",
+            "B": "A payment",
+            "C": "A library card",
+            "D": "A letter from a school"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "'A valid library card is required.' Phải đặt trước ít nhất 1 ngày nên (A) sai."
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "text-message-chain",
+      "title": "Single passage – Text message chain",
+      "passages": [
+        {
+          "type": "chat",
+          "title": "Online chat discussion",
+          "text": "Hana Sato [9:12 A.M.]: Hi Peter, are you still at the client's office?\nPeter Grant [9:14 A.M.]: Yes, the meeting just ended. They liked our proposal!\nHana Sato [9:15 A.M.]: Great news. Did they mention the budget?\nPeter Grant [9:16 A.M.]: They want us to reduce the cost by about 10 percent.\nHana Sato [9:17 A.M.]: That's doable. We could use fewer printed materials.\nPeter Grant [9:18 A.M.]: Exactly what I was thinking. I'll revise the estimate when I get back this afternoon.\nHana Sato [9:19 A.M.]: Perfect. Send it to me before you submit it."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is suggested about the client?",
+          "choices": {
+            "A": "They rejected the proposal.",
+            "B": "They responded positively to the proposal.",
+            "C": "They will visit Ms. Sato's office.",
+            "D": "They increased their budget."
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part7:inference"
+          ],
+          "explanation_vi": "'They liked our proposal!'"
+        },
+        {
+          "prompt": "At 9:17 A.M., what does Ms. Sato mean when she writes, \"That's doable\"?",
+          "choices": {
+            "A": "She thinks the cost can be lowered.",
+            "B": "She wants to cancel the project.",
+            "C": "She will meet the client today.",
+            "D": "She has already printed the materials."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part7:intent"
+          ],
+          "explanation_vi": "'doable' = khả thi → cô ấy tin có thể giảm chi phí 10% như khách yêu cầu."
+        },
+        {
+          "prompt": "What will Mr. Grant most likely do this afternoon?",
+          "choices": {
+            "A": "Print new brochures",
+            "B": "Call the client",
+            "C": "Update a cost estimate",
+            "D": "Interview a candidate"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "'I'll revise the estimate when I get back this afternoon.'"
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "double",
+      "title": "Double passage – Advertisement and email",
+      "passages": [
+        {
+          "type": "advertisement",
+          "title": "Brightline Coworking Spaces",
+          "text": "BRIGHTLINE COWORKING – Flexible workspace in downtown Easton\n\nMembership plans:\n• Basic – $150/month: access to shared desks, Monday–Friday\n• Plus – $250/month: shared desks 7 days a week + 5 hours of meeting room use\n• Private – $600/month: private office for up to 3 people + unlimited meeting rooms\n\nAll plans include high-speed Internet and free coffee. Sign up before March 31 and receive your first month at half price!"
+        },
+        {
+          "type": "email",
+          "title": "To: info@brightline.example | From: d.moreno@mail.example | Date: March 28 | Subject: Membership",
+          "text": "Hello,\n\nI'm a freelance graphic designer, and I'm interested in your coworking space. I usually work on weekends as well as weekdays, and I meet clients about once a week for an hour, so I think the Plus plan would suit me. However, I'd like to see the space before I sign up. Would it be possible to visit on Saturday morning?\n\nAlso, could you tell me whether there is parking nearby?\n\nThank you,\nDiego Moreno"
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is included in all membership plans?",
+          "choices": {
+            "A": "A private office",
+            "B": "Unlimited meeting rooms",
+            "C": "Internet access",
+            "D": "Free parking"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "'All plans include high-speed Internet and free coffee.'"
+        },
+        {
+          "prompt": "Who most likely is Mr. Moreno?",
+          "choices": {
+            "A": "A self-employed designer",
+            "B": "A Brightline employee",
+            "C": "A building manager",
+            "D": "A real estate agent"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part7:inference"
+          ],
+          "explanation_vi": "'freelance graphic designer' = nhà thiết kế tự do (self-employed)."
+        },
+        {
+          "prompt": "How much will Mr. Moreno most likely pay for his first month?",
+          "choices": {
+            "A": "$75",
+            "B": "$125",
+            "C": "$250",
+            "D": "$300"
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "part7:cross-reference"
+          ],
+          "explanation_vi": "Kết hợp 2 văn bản: anh ấy chọn gói Plus ($250), email gửi ngày 28/3 (trước 31/3) → giảm 50% tháng đầu = $125."
+        },
+        {
+          "prompt": "Why does Mr. Moreno want the Plus plan?",
+          "choices": {
+            "A": "He needs a private office.",
+            "B": "He works on weekends.",
+            "C": "He has two business partners.",
+            "D": "He wants free coffee."
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part7:cross-reference"
+          ],
+          "explanation_vi": "Gói Plus cho phép dùng 7 ngày/tuần, phù hợp vì anh ấy làm cả cuối tuần."
+        },
+        {
+          "prompt": "What does Mr. Moreno ask about?",
+          "choices": {
+            "A": "Discounts for students",
+            "B": "The size of the meeting rooms",
+            "C": "Parking near the building",
+            "D": "The cancellation policy"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "'could you tell me whether there is parking nearby?'"
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "triple",
+      "title": "Triple passage – Schedule, email, and review",
+      "passages": [
+        {
+          "type": "schedule",
+          "title": "Northgate Business Conference – Day 2 (October 14)",
+          "text": "9:00 – 10:00  Keynote: \"The Future of Remote Work\" – Dr. Alice Brennan (Hall A)\n10:15 – 11:15  Workshop: Effective Online Marketing – Raj Mehta (Room 101)\n11:30 – 12:30  Panel: Financing Small Businesses (Hall B)\n12:30 – 1:30  Lunch (Garden Terrace)\n1:30 – 2:30  Workshop: Negotiation Skills – Sofia Klein (Room 101)"
+        },
+        {
+          "type": "email",
+          "title": "To: All attendees | From: Conference Office | Date: October 13 | Subject: Schedule update",
+          "text": "Dear attendees,\n\nDue to a flight delay, Raj Mehta will not arrive until the afternoon of October 14. His workshop has therefore been moved to 1:30 P.M. Sofia Klein has kindly agreed to give her workshop at 10:15 A.M. instead. Both sessions will remain in Room 101.\n\nIn addition, because of the forecast for rain, lunch will be served in the main lobby rather than outdoors.\n\nConference Office"
+        },
+        {
+          "type": "review",
+          "title": "Online review – posted October 16 by Mia Turner",
+          "text": "I attended the second day of the Northgate Business Conference. The keynote was inspiring, and the morning workshop in Room 101 gave me practical tips I used in a contract discussion the very next day. My only complaint is that the lobby was crowded at lunch. Overall, I would definitely attend again next year."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is the main purpose of the email?",
+          "choices": {
+            "A": "To cancel a conference",
+            "B": "To announce changes to a schedule",
+            "C": "To introduce a new speaker",
+            "D": "To request feedback"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part7:purpose"
+          ],
+          "explanation_vi": "Email thông báo đổi giờ hai workshop và đổi địa điểm ăn trưa."
+        },
+        {
+          "prompt": "Why was Mr. Mehta's workshop rescheduled?",
+          "choices": {
+            "A": "His room was unavailable.",
+            "B": "He was ill.",
+            "C": "Too few people registered.",
+            "D": "His flight was delayed."
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "'Due to a flight delay, Raj Mehta will not arrive until the afternoon'."
+        },
+        {
+          "prompt": "Where was lunch served on October 14?",
+          "choices": {
+            "A": "On the Garden Terrace",
+            "B": "In Hall A",
+            "C": "In Room 101",
+            "D": "In the main lobby"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part7:cross-reference"
+          ],
+          "explanation_vi": "Lịch ghi Garden Terrace nhưng email đã đổi sang sảnh chính (main lobby) do dự báo mưa; bài review cũng xác nhận."
+        },
+        {
+          "prompt": "Which workshop did Ms. Turner most likely attend?",
+          "choices": {
+            "A": "Effective Online Marketing",
+            "B": "Negotiation Skills",
+            "C": "Financing Small Businesses",
+            "D": "The Future of Remote Work"
+          },
+          "answer": "B",
+          "difficulty": 5,
+          "tags": [
+            "part7:cross-reference"
+          ],
+          "explanation_vi": "Câu suy luận 3 văn bản: buổi sáng ở Room 101 sau khi đổi lịch là workshop Negotiation Skills (Sofia Klein); cô ấy áp dụng vào một buổi đàm phán hợp đồng ngay hôm sau."
+        },
+        {
+          "prompt": "In the review, the word \"practical\" in line 2 is closest in meaning to",
+          "choices": {
+            "A": "useful",
+            "B": "theoretical",
+            "C": "expensive",
+            "D": "temporary"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part7:synonym"
+          ],
+          "explanation_vi": "'practical tips' = mẹo hữu ích, áp dụng được → useful."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,789 @@
+{
+  "test": {
+    "id": "full-test-01"
+  },
+  "sets": [
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Booking a private dining room",
+      "transcript": "M: Hello, I'm calling from Kessler Engineering. We're planning a retirement party for one of our directors, and I'd like to reserve your private dining room for Friday the twentieth.\nW: Certainly. How many guests are you expecting?\nM: Around thirty-five.\nW: That's fine — the room seats up to forty. To hold the reservation, we'll need a deposit of two hundred dollars. Could you also send me your menu choices by e-mail before Wednesday? That way the kitchen can order ingredients in time.\nM: Sure, I'll do that today.",
+      "questions": [
+        {
+          "prompt": "Why is the man calling?",
+          "choices": {
+            "A": "To order food for delivery",
+            "B": "To reserve a room for an event",
+            "C": "To apply for a job",
+            "D": "To complain about a meal"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part3:purpose"
+          ],
+          "explanation_vi": "'I'd like to reserve your private dining room' cho tiệc nghỉ hưu."
+        },
+        {
+          "prompt": "How many guests does the man expect?",
+          "choices": {
+            "A": "Twenty",
+            "B": "Thirty",
+            "C": "Forty",
+            "D": "Thirty-five"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'Around thirty-five.' Con số 40 là sức chứa tối đa của phòng."
+        },
+        {
+          "prompt": "What does the woman ask the man to do?",
+          "choices": {
+            "A": "Choose a different date",
+            "B": "Arrive early on Friday",
+            "C": "Pay the full price in advance",
+            "D": "Send his menu selections"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part3:request"
+          ],
+          "explanation_vi": "'Could you also send me your menu choices by e-mail before Wednesday?'"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Broken copier",
+      "transcript": "W: Excuse me, Paul. Do you know what's wrong with the copier? It keeps showing an error message.\nM: The paper tray is jammed again. I already called the technician, but he can't come until tomorrow morning.\nW: Oh no. The handouts are for the two o'clock meeting.\nM: In that case, why don't you use the copier on the third floor? The marketing team won't mind.\nW: Good idea. I'll head up there now.",
+      "questions": [
+        {
+          "prompt": "What problem are the speakers discussing?",
+          "choices": {
+            "A": "A meeting has been canceled.",
+            "B": "A technician is late.",
+            "C": "A machine is not working.",
+            "D": "Some handouts contain errors."
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part3:problem"
+          ],
+          "explanation_vi": "Máy photo bị kẹt giấy, báo lỗi."
+        },
+        {
+          "prompt": "What does the woman imply when she says, \"The handouts are for the two o'clock meeting\"?",
+          "choices": {
+            "A": "She has already finished the copies.",
+            "B": "The meeting time has changed.",
+            "C": "She does not need the handouts.",
+            "D": "She cannot wait until tomorrow."
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part3:speaker-intent"
+          ],
+          "explanation_vi": "Thợ sửa mai mới đến, nhưng tài liệu cần cho cuộc họp lúc 2 giờ hôm nay → cô ấy không thể chờ."
+        },
+        {
+          "prompt": "What does the man suggest?",
+          "choices": {
+            "A": "Using another copier",
+            "B": "Calling a different technician",
+            "C": "Postponing a meeting",
+            "D": "Sending documents by e-mail"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part3:suggestion"
+          ],
+          "explanation_vi": "'why don't you use the copier on the third floor?'"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Choosing a candidate (three speakers)",
+      "transcript": "W1: So, we've interviewed all five applicants for the graphic designer position. Who stood out to you?\nM: I liked Akira Sato. Her portfolio was excellent, especially the packaging designs.\nW2: I agree, but she's only worked with print materials. Most of our projects now are for Web sites and mobile apps.\nM: That's true. Still, she said she's taking an online course in Web design.\nW1: Let's invite her back for a second interview and give her a short digital design task. I'll call her this afternoon to arrange a time.",
+      "questions": [
+        {
+          "prompt": "What are the speakers mainly discussing?",
+          "choices": {
+            "A": "A packaging problem",
+            "B": "Hiring a designer",
+            "C": "Launching a Web site",
+            "D": "Training new employees"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part3:main-idea",
+            "part3:three-speakers"
+          ],
+          "explanation_vi": "Họ bàn về các ứng viên cho vị trí thiết kế đồ họa."
+        },
+        {
+          "prompt": "What concern is mentioned about Ms. Sato?",
+          "choices": {
+            "A": "Her salary expectations are high.",
+            "B": "She cannot start immediately.",
+            "C": "She has limited digital experience.",
+            "D": "Her portfolio is incomplete."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'she's only worked with print materials' trong khi dự án chủ yếu là web/app."
+        },
+        {
+          "prompt": "What will the first woman do this afternoon?",
+          "choices": {
+            "A": "Review more portfolios",
+            "B": "Sign up for a course",
+            "C": "Post a job advertisement",
+            "D": "Contact a candidate"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part3:next-action"
+          ],
+          "explanation_vi": "'I'll call her this afternoon to arrange a time.'"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Returning headphones",
+      "transcript": "M: Hi, I bought these wireless headphones here last week, but the left side stopped working.\nW: I'm sorry to hear that. Do you have your receipt?\nM: Unfortunately, no. I think I threw it away.\nW: That's OK. If you paid by card, I can look up the purchase. Could I see the card you used?\nM: Here you go.\nW: Thanks. Yes, here it is. Since the model is sold out, I can give you store credit for the full amount, or you can wait about a week for a replacement.",
+      "questions": [
+        {
+          "prompt": "Why does the man want to return the headphones?",
+          "choices": {
+            "A": "He received them as a gift.",
+            "B": "They are the wrong color.",
+            "C": "They were too expensive.",
+            "D": "They are defective."
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "part3:problem"
+          ],
+          "explanation_vi": "'the left side stopped working' → hàng lỗi (defective)."
+        },
+        {
+          "prompt": "What does the woman ask to see?",
+          "choices": {
+            "A": "A warranty card",
+            "B": "A payment card",
+            "C": "A store receipt",
+            "D": "A photo ID"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "Khách không có hóa đơn nên cô ấy xin xem thẻ đã dùng để thanh toán."
+        },
+        {
+          "prompt": "What does the woman say about the model?",
+          "choices": {
+            "A": "It has been discontinued.",
+            "B": "It is on sale this week.",
+            "C": "It is currently out of stock.",
+            "D": "It comes with a free case."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part3:paraphrase"
+          ],
+          "explanation_vi": "'the model is sold out' = hết hàng (out of stock). Vẫn có thể chờ hàng thay thế nên không phải ngừng sản xuất."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Business trip to Tokyo",
+      "transcript": "W: Hi, Raymond. I just booked your flight to Tokyo for the trade fair. You leave on Monday at 9 A.M.\nM: Thanks, Grace. Did you also reserve a hotel?\nW: I was about to. There's one near the airport with a good corporate rate.\nM: Hmm. The conference center is across the river from the airport.\nW: You're right — the traffic could be terrible. I'll look for something within walking distance of the center instead.\nM: That would be great. And please make sure the room has a desk; I'll need to prepare my presentation there.",
+      "questions": [
+        {
+          "prompt": "Why is the man going to Tokyo?",
+          "choices": {
+            "A": "To visit a client",
+            "B": "To open a new office",
+            "C": "To interview applicants",
+            "D": "To attend a trade fair"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'your flight to Tokyo for the trade fair'."
+        },
+        {
+          "prompt": "Why does the man say, \"The conference center is across the river from the airport\"?",
+          "choices": {
+            "A": "To suggest a different hotel location",
+            "B": "To give directions to the woman",
+            "C": "To recommend taking a boat",
+            "D": "To explain why his flight is late"
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part3:speaker-intent"
+          ],
+          "explanation_vi": "Anh ấy ngụ ý khách sạn gần sân bay xa trung tâm hội nghị; người phụ nữ hiểu và tìm khách sạn khác."
+        },
+        {
+          "prompt": "What does the man request?",
+          "choices": {
+            "A": "An earlier flight",
+            "B": "A room with a desk",
+            "C": "A corporate credit card",
+            "D": "Airport transportation"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part3:request"
+          ],
+          "explanation_vi": "'please make sure the room has a desk'."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Looking for office space",
+      "transcript": "M: Thanks for meeting with me, Ms. Novak. You said you're looking for office space for your accounting firm?\nW: That's right. We're growing quickly, and our current office is too small. We need room for about fifteen staff.\nM: I have a few properties in mind. What's most important to you?\nW: Being close to public transportation. Many of our employees don't drive.\nM: Then you'll like the building on Harbor Street. It's right next to the subway station. Could you see it on Thursday afternoon?\nW: Thursday works.",
+      "questions": [
+        {
+          "prompt": "What type of business does the woman work for?",
+          "choices": {
+            "A": "An accounting firm",
+            "B": "A real estate agency",
+            "C": "A transportation company",
+            "D": "A construction company"
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'office space for your accounting firm'."
+        },
+        {
+          "prompt": "What is most important to the woman?",
+          "choices": {
+            "A": "A low rent",
+            "B": "A large parking area",
+            "C": "Access to public transportation",
+            "D": "A modern design"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'Being close to public transportation.'"
+        },
+        {
+          "prompt": "When will the woman most likely visit a property?",
+          "choices": {
+            "A": "On Tuesday morning",
+            "B": "On Thursday afternoon",
+            "C": "On Friday morning",
+            "D": "This evening"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'Could you see it on Thursday afternoon?' — 'Thursday works.'"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Restaurant menu change (three speakers)",
+      "transcript": "M1: Chef, our seafood supplier just called. Because of the storm, they can't deliver any shrimp this week.\nW: That's a problem. The shrimp pasta is our most popular dish.\nM2: What if we replace the shrimp with grilled chicken for a few days?\nW: That could work. Daniel, can you update the specials board and let the servers know before we open?\nM2: Sure. I'll also tell them to mention it when customers order.\nW: Thanks. And Oscar, please ask the supplier when they expect to deliver again.",
+      "questions": [
+        {
+          "prompt": "Where most likely do the speakers work?",
+          "choices": {
+            "A": "At a grocery store",
+            "B": "At a fishing company",
+            "C": "At a restaurant",
+            "D": "At a catering school"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part3:location",
+            "part3:three-speakers"
+          ],
+          "explanation_vi": "Chef, dish, specials board, servers → nhà hàng."
+        },
+        {
+          "prompt": "Why is there a problem?",
+          "choices": {
+            "A": "A chef is absent.",
+            "B": "Some prices have risen.",
+            "C": "A customer complained.",
+            "D": "A delivery cannot be made."
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part3:problem"
+          ],
+          "explanation_vi": "Nhà cung cấp không giao được tôm vì bão."
+        },
+        {
+          "prompt": "What is Oscar asked to do?",
+          "choices": {
+            "A": "Find out about a delivery date",
+            "B": "Cook a new dish",
+            "C": "Update the menu board",
+            "D": "Speak to the servers"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part3:request"
+          ],
+          "explanation_vi": "'Oscar, please ask the supplier when they expect to deliver again.' Việc cập nhật bảng là của Daniel."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Volunteer program",
+      "transcript": "W: Hi, I saw a poster about volunteering at the community center. Are you still looking for people?\nM: Yes, we are! We need volunteers for our weekend reading program for children. Do you have any teaching experience?\nW: I tutored high school students in math when I was at university.\nM: That's helpful. All volunteers attend a two-hour orientation first. The next one is this Saturday at ten.\nW: I can make that. Is there anything I need to bring?\nM: Just a form of identification. We do a short background check for everyone who works with children.",
+      "questions": [
+        {
+          "prompt": "How did the woman learn about the program?",
+          "choices": {
+            "A": "From a friend",
+            "B": "From a poster",
+            "C": "From a newspaper",
+            "D": "From a Web site"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'I saw a poster about volunteering'."
+        },
+        {
+          "prompt": "What experience does the woman mention?",
+          "choices": {
+            "A": "Organizing events",
+            "B": "Working in a library",
+            "C": "Writing children's books",
+            "D": "Tutoring students"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'I tutored high school students in math'."
+        },
+        {
+          "prompt": "What should the woman bring on Saturday?",
+          "choices": {
+            "A": "Some identification",
+            "B": "A completed application",
+            "C": "A reference letter",
+            "D": "Some books"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'Just a form of identification.'"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Car repair",
+      "transcript": "W: Hello, this is Mila Rossi. I brought my car in this morning for an oil change. Is it ready?\nM: Hi, Ms. Rossi. We finished the oil change, but our mechanic noticed your front brakes are badly worn. I'd recommend replacing them soon.\nW: How much would that cost?\nM: About three hundred dollars, including labor. We could do it today, but the car wouldn't be ready until tomorrow.\nW: I need it for work tomorrow morning. Can I bring it back on Saturday?\nM: Of course. I'll book you in for nine o'clock.",
+      "questions": [
+        {
+          "prompt": "Why did the woman bring her car to the shop?",
+          "choices": {
+            "A": "To fix a flat tire",
+            "B": "To have it washed",
+            "C": "To get the oil changed",
+            "D": "To have the brakes checked"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'I brought my car in this morning for an oil change.' Phanh là vấn đề thợ phát hiện thêm."
+        },
+        {
+          "prompt": "What problem does the man mention?",
+          "choices": {
+            "A": "A part is unavailable.",
+            "B": "Some brakes need to be replaced.",
+            "C": "The bill is higher than expected.",
+            "D": "A mechanic is on vacation."
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part3:problem"
+          ],
+          "explanation_vi": "'your front brakes are badly worn' → cần thay."
+        },
+        {
+          "prompt": "What will the woman most likely do on Saturday?",
+          "choices": {
+            "A": "Pick up a rental car",
+            "B": "Pay a bill online",
+            "C": "Drive to work",
+            "D": "Return to the repair shop"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part3:next-action"
+          ],
+          "explanation_vi": "'Can I bring it back on Saturday?' — đặt lịch 9 giờ."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "New training platform",
+      "transcript": "M: Have you tried the new online training system yet? We're supposed to finish the data security course by the end of the month.\nW: I started it yesterday. The videos are clear, but the quizzes keep freezing on my laptop.\nM: Same here. I think it only works properly with the latest version of the browser.\nW: Well, I haven't updated mine in a year.\nM: That's probably it. The IT department sent instructions on how to update it last week.\nW: I'll look for that e-mail now.",
+      "questions": [
+        {
+          "prompt": "What are the speakers required to do by the end of the month?",
+          "choices": {
+            "A": "Complete a training course",
+            "B": "Buy new laptops",
+            "C": "Submit a security report",
+            "D": "Record some videos"
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'finish the data security course by the end of the month'."
+        },
+        {
+          "prompt": "What does the woman imply when she says, \"I haven't updated mine in a year\"?",
+          "choices": {
+            "A": "Her laptop is new.",
+            "B": "She does not like the course.",
+            "C": "Her browser may be causing the problem.",
+            "D": "She has finished the quizzes."
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "part3:speaker-intent"
+          ],
+          "explanation_vi": "Hệ thống cần trình duyệt mới nhất; cô ấy chưa cập nhật → có thể đây là nguyên nhân."
+        },
+        {
+          "prompt": "What will the woman do next?",
+          "choices": {
+            "A": "Call the IT department",
+            "B": "Find an e-mail",
+            "C": "Restart her laptop",
+            "D": "Watch a video"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part3:next-action"
+          ],
+          "explanation_vi": "'I'll look for that e-mail now.'"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Building directory (graphic)",
+      "graphic": {
+        "type": "table",
+        "title": "Westfield Tower – Directory",
+        "columns": [
+          "Floor",
+          "Company"
+        ],
+        "rows": [
+          [
+            "2",
+            "Pinewood Insurance"
+          ],
+          [
+            "3",
+            "Atlas Legal Services"
+          ],
+          [
+            "4",
+            "Brightpath Marketing"
+          ],
+          [
+            "5",
+            "Corelink Software"
+          ]
+        ]
+      },
+      "image_description": "Building directory board in a lobby (see graphic).",
+      "transcript": "W: Excuse me, I have a job interview at Brightpath Marketing at eleven. Could you tell me how to get there?\nM: Of course. But you should know that Brightpath moved last week. They switched floors with the law firm, so they're on Atlas's old floor now. We haven't updated the directory yet.\nW: Thanks for telling me. Should I sign in somewhere?\nM: Yes, please write your name in the visitor book and take one of these badges. Please return it when you leave.",
+      "questions": [
+        {
+          "prompt": "Why is the woman visiting the building?",
+          "choices": {
+            "A": "To deliver a package",
+            "B": "To meet a lawyer",
+            "C": "To attend a job interview",
+            "D": "To repair some equipment"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part3:purpose"
+          ],
+          "explanation_vi": "'I have a job interview at Brightpath Marketing'."
+        },
+        {
+          "prompt": "Look at the graphic. Which floor will the woman go to?",
+          "choices": {
+            "A": "Floor 2",
+            "B": "Floor 3",
+            "C": "Floor 4",
+            "D": "Floor 5"
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "part3:graphic"
+          ],
+          "explanation_vi": "Brightpath đã đổi tầng với Atlas Legal (tầng 3), nên giờ ở tầng 3; bảng chỉ dẫn chưa được cập nhật."
+        },
+        {
+          "prompt": "What does the man ask the woman to do?",
+          "choices": {
+            "A": "Wait in the lobby",
+            "B": "Show an ID card",
+            "C": "Call the company",
+            "D": "Sign a visitor book"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part3:request"
+          ],
+          "explanation_vi": "'please write your name in the visitor book'."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Catering order (graphic)",
+      "graphic": {
+        "type": "table",
+        "title": "Green Leaf Catering – Lunch Packages (per person)",
+        "columns": [
+          "Package",
+          "Includes",
+          "Price"
+        ],
+        "rows": [
+          [
+            "Basic",
+            "Sandwiches, fruit",
+            "$12"
+          ],
+          [
+            "Standard",
+            "Sandwiches, salad, fruit",
+            "$15"
+          ],
+          [
+            "Deluxe",
+            "Hot meal, salad, dessert",
+            "$20"
+          ],
+          [
+            "Premium",
+            "Hot meal, salad, dessert, drinks",
+            "$24"
+          ]
+        ]
+      },
+      "image_description": "Catering price list (see graphic).",
+      "transcript": "M: Hi, I'd like to order lunch for a training session next Tuesday. There will be twenty-five people.\nW: Certainly. Have you looked at our packages?\nM: Yes. We'd like a hot meal, and dessert would be nice too. We'll provide our own drinks, though.\nW: Then this package is the right one for you. Do any of your guests have dietary restrictions?\nM: A few are vegetarian. I'll e-mail you the exact number tomorrow.",
+      "questions": [
+        {
+          "prompt": "What event is the man ordering food for?",
+          "choices": {
+            "A": "A training session",
+            "B": "A retirement party",
+            "C": "A client dinner",
+            "D": "A product launch"
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'lunch for a training session next Tuesday'."
+        },
+        {
+          "prompt": "Look at the graphic. How much will the man pay per person?",
+          "choices": {
+            "A": "$12",
+            "B": "$15",
+            "C": "$20",
+            "D": "$24"
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part3:graphic"
+          ],
+          "explanation_vi": "Cần bữa nóng + tráng miệng, tự mang đồ uống → gói Deluxe ($20), không phải Premium."
+        },
+        {
+          "prompt": "What will the man send tomorrow?",
+          "choices": {
+            "A": "A payment",
+            "B": "A delivery address",
+            "C": "A revised schedule",
+            "D": "The number of vegetarian guests"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part3:next-action"
+          ],
+          "explanation_vi": "'A few are vegetarian. I'll e-mail you the exact number tomorrow.'"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Outdoor festival planning (graphic)",
+      "graphic": {
+        "type": "table",
+        "title": "Weekend Forecast",
+        "columns": [
+          "Day",
+          "Weather",
+          "High"
+        ],
+        "rows": [
+          [
+            "Thursday",
+            "Sunny",
+            "27°C"
+          ],
+          [
+            "Friday",
+            "Cloudy",
+            "24°C"
+          ],
+          [
+            "Saturday",
+            "Heavy rain",
+            "19°C"
+          ],
+          [
+            "Sunday",
+            "Sunny",
+            "25°C"
+          ]
+        ]
+      },
+      "image_description": "Four-day weather forecast (see graphic).",
+      "transcript": "W: Have you seen the weather forecast? It doesn't look good for our food festival on Saturday.\nM: I just saw it. We can't hold an outdoor event in heavy rain.\nW: Should we move it to the next day? The forecast looks great.\nM: I think so. The park is available both days. But we'll need to tell the food vendors right away.\nW: I'll e-mail them this afternoon. Could you update the event page on our Web site?\nM: Sure, I'll do it now.",
+      "questions": [
+        {
+          "prompt": "What kind of event are the speakers planning?",
+          "choices": {
+            "A": "A sports competition",
+            "B": "A food festival",
+            "C": "A music concert",
+            "D": "A charity run"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'our food festival on Saturday'."
+        },
+        {
+          "prompt": "Look at the graphic. On which day will the event most likely be held?",
+          "choices": {
+            "A": "Thursday",
+            "B": "Friday",
+            "C": "Saturday",
+            "D": "Sunday"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part3:graphic"
+          ],
+          "explanation_vi": "Dời sang 'the next day' sau thứ Bảy, dự báo nắng → Chủ nhật."
+        },
+        {
+          "prompt": "What will the man do next?",
+          "choices": {
+            "A": "Update a Web page",
+            "B": "Call the park office",
+            "C": "Contact some vendors",
+            "D": "Check the forecast again"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part3:next-action"
+          ],
+          "explanation_vi": "Người phụ nữ nhờ cập nhật trang sự kiện trên web; anh ấy trả lời 'I'll do it now.' Liên hệ người bán hàng là việc của cô ấy."
+        }
+      ]
+    }
+  ]
+}

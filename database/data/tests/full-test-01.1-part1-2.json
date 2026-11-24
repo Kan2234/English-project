@@ -1,0 +1,658 @@
+{
+  "test": {
+    "id": "full-test-01",
+    "title": "TOEIC Full Test 01",
+    "test_type": "full",
+    "format_code": "LR",
+    "year": 2026,
+    "duration_minutes": 120,
+    "description_vi": "Đề đầy đủ 200 câu theo đúng cấu trúc TOEIC Listening & Reading (P1=6, P2=25, P3=39, P4=30, P5=30, P6=16, P7=54). Nội dung được biên soạn mới cho dự án, không sao chép đề thi ETS. Phần Nghe có transcript để tạo audio."
+  },
+  "sets": [
+    {
+      "part": 1,
+      "passage_type": "photo",
+      "image_description": "A man is sitting on a park bench reading a newspaper; trees and a walking path are behind him.",
+      "transcript": "(A) He's folding a newspaper.\n(B) He's walking along a path.\n(C) He's reading while seated outdoors.\n(D) He's planting some trees.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "He's folding a newspaper.",
+            "B": "He's walking along a path.",
+            "C": "He's reading while seated outdoors.",
+            "D": "He's planting some trees."
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part1:action"
+          ],
+          "explanation_vi": "Người đàn ông ngồi trên ghế công viên đọc báo. (A) sai hành động (gấp báo); (B) lối đi chỉ ở phía sau; (D) cây không phải đang được trồng."
+        }
+      ]
+    },
+    {
+      "part": 1,
+      "passage_type": "photo",
+      "image_description": "A woman is pushing a shopping cart down a supermarket aisle lined with shelves of canned goods.",
+      "transcript": "(A) She's pushing a cart through a store.\n(B) She's stocking some shelves.\n(C) She's paying at a register.\n(D) She's opening a can.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "She's pushing a cart through a store.",
+            "B": "She's stocking some shelves.",
+            "C": "She's paying at a register.",
+            "D": "She's opening a can."
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part1:action"
+          ],
+          "explanation_vi": "Cô ấy đang đẩy xe hàng trong siêu thị. (B) 'stocking shelves' là việc của nhân viên xếp hàng; (C), (D) không có trong ảnh."
+        }
+      ]
+    },
+    {
+      "part": 1,
+      "passage_type": "photo",
+      "image_description": "An empty meeting room: several open laptops sit on a long table, and the window blinds are closed.",
+      "transcript": "(A) Some people are leaving a meeting.\n(B) The blinds are being raised.\n(C) A technician is fixing a laptop.\n(D) Some laptops have been left open on a table.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "Some people are leaving a meeting.",
+            "B": "The blinds are being raised.",
+            "C": "A technician is fixing a laptop.",
+            "D": "Some laptops have been left open on a table."
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part1:object-position",
+            "grammar:passive-perfect"
+          ],
+          "explanation_vi": "Ảnh không có người → loại (A), (C) và (B) ('is being raised' cần người đang kéo rèm). (D) mô tả trạng thái của laptop."
+        }
+      ]
+    },
+    {
+      "part": 1,
+      "passage_type": "photo",
+      "image_description": "Two businesspeople are shaking hands in a hotel lobby; one is holding a briefcase.",
+      "transcript": "(A) They're opening a briefcase.\n(B) They're greeting each other.\n(C) They're checking in at a front desk.\n(D) They're sitting across from each other.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "They're opening a briefcase.",
+            "B": "They're greeting each other.",
+            "C": "They're checking in at a front desk.",
+            "D": "They're sitting across from each other."
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part1:action",
+            "part1:paraphrase"
+          ],
+          "explanation_vi": "Bắt tay = chào hỏi nhau (greeting each other) — đáp án được diễn đạt lại. (A) có cặp nhưng không mở."
+        }
+      ]
+    },
+    {
+      "part": 1,
+      "passage_type": "photo",
+      "image_description": "A worker standing on a ladder is painting a wall with a roller; paint cans are on the floor.",
+      "transcript": "(A) A worker is climbing down a ladder.\n(B) Paint cans are being stacked on a shelf.\n(C) A wall is being torn down.\n(D) A man is applying paint to a wall.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "A worker is climbing down a ladder.",
+            "B": "Paint cans are being stacked on a shelf.",
+            "C": "A wall is being torn down.",
+            "D": "A man is applying paint to a wall."
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part1:action",
+            "part1:paraphrase"
+          ],
+          "explanation_vi": "'applying paint' = sơn. Anh ấy đứng trên thang, không trèo xuống; thùng sơn nằm trên sàn, không xếp lên kệ."
+        }
+      ]
+    },
+    {
+      "part": 1,
+      "passage_type": "photo",
+      "image_description": "A row of bicycles is parked along a metal fence on a quiet street.",
+      "transcript": "(A) Some bicycles are lined up beside a fence.\n(B) Cyclists are riding down a street.\n(C) A fence is being painted.\n(D) A bicycle is being repaired.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "Some bicycles are lined up beside a fence.",
+            "B": "Cyclists are riding down a street.",
+            "C": "A fence is being painted.",
+            "D": "A bicycle is being repaired."
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part1:object-position"
+          ],
+          "explanation_vi": "Xe đạp được xếp thành hàng cạnh hàng rào. Ảnh không có người nên loại các đáp án còn lại."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Where's the nearest post office?\n(A) I posted it yesterday.\n(B) Two blocks down this street.\n(C) The office closes at five.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "I posted it yesterday.",
+            "B": "Two blocks down this street.",
+            "C": "The office closes at five."
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part2:where"
+          ],
+          "explanation_vi": "'Where' → vị trí. (A), (C) lặp âm 'post', 'office'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "When did you start working here?\n(A) About six months ago.\n(B) In the accounting department.\n(C) Yes, I'm working late.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "About six months ago.",
+            "B": "In the accounting department.",
+            "C": "Yes, I'm working late."
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part2:when"
+          ],
+          "explanation_vi": "'When' (quá khứ) → mốc thời gian 'six months ago'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Who should I give these invoices to?\n(A) Her voice is very clear.\n(B) Yesterday afternoon.\n(C) Leave them with Ms. Ortiz.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "Her voice is very clear.",
+            "B": "Yesterday afternoon.",
+            "C": "Leave them with Ms. Ortiz."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part2:who"
+          ],
+          "explanation_vi": "'Who' → người nhận. (A) bẫy âm 'invoices/voice'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Why don't we order lunch for the team?\n(A) The team won the game.\n(B) Because it's in order.\n(C) Good idea. I'll find a menu.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "The team won the game.",
+            "B": "Because it's in order.",
+            "C": "Good idea. I'll find a menu."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part2:suggestion"
+          ],
+          "explanation_vi": "'Why don't we...?' là lời đề nghị, không hỏi lý do → đáp lại đồng ý. (B) bẫy 'Why → Because'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "How long will the renovation take?\n(A) The contractor said three weeks.\n(B) It's a long hallway.\n(C) A brand-new kitchen.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "The contractor said three weeks.",
+            "B": "It's a long hallway.",
+            "C": "A brand-new kitchen."
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part2:how-long"
+          ],
+          "explanation_vi": "'How long' → khoảng thời gian."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Is the presentation in Room A or Room B?\n(A) Yes, it is.\n(B) It's been moved to the auditorium.\n(C) Thanks for the present.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "Yes, it is.",
+            "B": "It's been moved to the auditorium.",
+            "C": "Thanks for the present."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part2:choice",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Câu hỏi lựa chọn nhưng đáp án là phương án thứ ba (đã chuyển sang hội trường)."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Have you finished the quarterly report?\n(A) I'm still waiting for some figures.\n(B) At a quarter past ten.\n(C) He reported it to the manager.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "I'm still waiting for some figures.",
+            "B": "At a quarter past ten.",
+            "C": "He reported it to the manager."
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part2:yes-no",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Trả lời gián tiếp 'chưa xong' vì còn chờ số liệu. (B), (C) lặp âm 'quarter', 'report'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "What did you think of the new logo?\n(A) I logged in already.\n(B) Last Tuesday.\n(C) The colors are a bit too bright.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "I logged in already.",
+            "B": "Last Tuesday.",
+            "C": "The colors are a bit too bright."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part2:opinion"
+          ],
+          "explanation_vi": "Hỏi ý kiến → nhận xét về logo. (A) bẫy âm 'logo/logged'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Could you help me move these boxes?\n(A) At the box office.\n(B) Sure, where do they go?\n(C) The movie was great.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "At the box office.",
+            "B": "Sure, where do they go?",
+            "C": "The movie was great."
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part2:request"
+          ],
+          "explanation_vi": "Lời nhờ vả → đồng ý và hỏi thêm. (A), (C) bẫy âm 'box', 'move/movie'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Where are we holding the company picnic?\n(A) Next Saturday.\n(B) At Lakeside Park.\n(C) Pick a nice one.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "Next Saturday.",
+            "B": "At Lakeside Park.",
+            "C": "Pick a nice one."
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part2:where"
+          ],
+          "explanation_vi": "'Where' → địa điểm. (A) trả lời câu 'When'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Why is the store closed today?\n(A) It closes at six.\n(B) It's close to the station.\n(C) It's a national holiday.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "It closes at six.",
+            "B": "It's close to the station.",
+            "C": "It's a national holiday."
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part2:why"
+          ],
+          "explanation_vi": "'Why' → lý do: ngày lễ. (B) bẫy đồng âm khác nghĩa 'close' (gần)."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Do you know when the shipment will arrive?\n(A) It should be here by noon.\n(B) Yes, I know him well.\n(C) It's a large ship.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "It should be here by noon.",
+            "B": "Yes, I know him well.",
+            "C": "It's a large ship."
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part2:embedded-question"
+          ],
+          "explanation_vi": "Câu hỏi lồng 'Do you know when...' → trọng tâm là 'when', cần thời gian."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Mr. Chen will be leading the workshop, won't he?\n(A) It's a leading company.\n(B) No, Ms. Rivera is.\n(C) The work is done.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "It's a leading company.",
+            "B": "No, Ms. Rivera is.",
+            "C": "The work is done."
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part2:tag-question"
+          ],
+          "explanation_vi": "Câu hỏi đuôi → 'No' kèm thông tin đúng."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "How much does it cost to ship this package overnight?\n(A) Let me weigh it first.\n(B) I stayed overnight at the hotel.\n(C) Yes, it's very costly.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "Let me weigh it first.",
+            "B": "I stayed overnight at the hotel.",
+            "C": "Yes, it's very costly."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part2:how-much",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Trả lời gián tiếp: phải cân gói hàng rồi mới báo giá."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "I can't log in to my e-mail account.\n(A) The account number is fifty-two.\n(B) I sent two e-mails.\n(C) The server is being updated.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "The account number is fifty-two.",
+            "B": "I sent two e-mails.",
+            "C": "The server is being updated."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part2:statement"
+          ],
+          "explanation_vi": "Câu trần thuật báo vấn đề → giải thích nguyên nhân (máy chủ đang cập nhật)."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Which candidate did you hire?\n(A) The one with sales experience.\n(B) Higher than last year.\n(C) Next Monday.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "The one with sales experience.",
+            "B": "Higher than last year.",
+            "C": "Next Monday."
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part2:which"
+          ],
+          "explanation_vi": "'Which candidate' → 'The one...'. (B) bẫy âm 'hire/higher'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Would you rather meet in the morning or the afternoon?\n(A) I'd rather not say.\n(B) In the meeting room.\n(C) Either works for me.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "I'd rather not say.",
+            "B": "In the meeting room.",
+            "C": "Either works for me."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part2:choice"
+          ],
+          "explanation_vi": "Câu hỏi lựa chọn → 'Either works for me' (giờ nào cũng được)."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Who's responsible for ordering supplies?\n(A) It was a big surprise.\n(B) That's Tom's job.\n(C) Yes, they're responsible.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "It was a big surprise.",
+            "B": "That's Tom's job.",
+            "C": "Yes, they're responsible."
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part2:who"
+          ],
+          "explanation_vi": "'Who' → người phụ trách. (C) không trả lời Yes/No cho câu WH."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Weren't you going to the trade show in Berlin?\n(A) It was traded last year.\n(B) Let's have a show of hands.\n(C) My flight leaves tomorrow.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "It was traded last year.",
+            "B": "Let's have a show of hands.",
+            "C": "My flight leaves tomorrow."
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "part2:negative-question",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Câu hỏi phủ định; trả lời gián tiếp 'có, mai tôi bay'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "When does the new manager start?\n(A) On the first of next month.\n(B) She's starting a new project.\n(C) At the start of the road.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "On the first of next month.",
+            "B": "She's starting a new project.",
+            "C": "At the start of the road."
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part2:when"
+          ],
+          "explanation_vi": "'When' → ngày bắt đầu. (B), (C) lặp từ 'start'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Should I send the contract by mail or e-mail?\n(A) He's a male employee.\n(B) E-mail is faster.\n(C) He already sent it.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "He's a male employee.",
+            "B": "E-mail is faster.",
+            "C": "He already sent it."
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part2:choice"
+          ],
+          "explanation_vi": "Chọn một trong hai phương án kèm lý do. (A) bẫy đồng âm 'mail/male'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "The printer on this floor is out of paper again.\n(A) Print three copies, please.\n(B) There's more in the supply closet.\n(C) On the third floor.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "Print three copies, please.",
+            "B": "There's more in the supply closet.",
+            "C": "On the third floor."
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part2:statement"
+          ],
+          "explanation_vi": "Báo hết giấy → chỉ chỗ lấy thêm giấy."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "How did the client meeting go?\n(A) They signed the agreement.\n(B) By taxi.\n(C) It went to the client.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "They signed the agreement.",
+            "B": "By taxi.",
+            "C": "It went to the client."
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part2:how"
+          ],
+          "explanation_vi": "'How did ... go?' hỏi kết quả → khách đã ký thỏa thuận. (B) trả lời 'How did you get there'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Why hasn't the budget been approved yet?\n(A) About ten thousand dollars.\n(B) Yes, it was proved.\n(C) The director is still reviewing it.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "About ten thousand dollars.",
+            "B": "Yes, it was proved.",
+            "C": "The director is still reviewing it."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part2:why"
+          ],
+          "explanation_vi": "'Why' → lý do: giám đốc vẫn đang xem xét."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Can I park my car here?\n(A) It's a public park.\n(B) Only for fifteen minutes.\n(C) It's a new car.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "It's a public park.",
+            "B": "Only for fifteen minutes.",
+            "C": "It's a new car."
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part2:permission"
+          ],
+          "explanation_vi": "Xin phép → cho phép có điều kiện. (A) bẫy nghĩa 'park' (công viên)."
+        }
+      ]
+    }
+  ]
+}

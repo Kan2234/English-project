@@ -1,0 +1,585 @@
+{
+  "test": {
+    "id": "full-test-01"
+  },
+  "sets": [
+    {
+      "part": 7,
+      "passage_type": "text-message-chain",
+      "title": "Questions 147-148",
+      "passages": [
+        {
+          "type": "chat",
+          "title": "Text message chain",
+          "text": "Kevin Ng [2:05 P.M.]: Hi Rosa, I'm at the print shop picking up the brochures for tomorrow's trade show. They printed 300 instead of 500.\nRosa Alvarez [2:07 P.M.]: Can they print the rest today?\nKevin Ng [2:08 P.M.]: They said it'll be ready by 6.\nRosa Alvarez [2:09 P.M.]: That's cutting it close, but OK. I can pick them up on my way home.\nKevin Ng [2:10 P.M.]: Thanks! I'll take these 300 to the convention center now."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What problem does Mr. Ng mention?",
+          "choices": {
+            "A": "Some brochures contain errors.",
+            "B": "A print shop is closed.",
+            "C": "A trade show was postponed.",
+            "D": "An order is incomplete."
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "Chỉ in 300 thay vì 500 tờ → đơn hàng chưa đủ."
+        },
+        {
+          "prompt": "At 2:09 P.M., what does Ms. Alvarez most likely mean when she writes, \"That's cutting it close\"?",
+          "choices": {
+            "A": "The price is too high.",
+            "B": "The print shop is far away.",
+            "C": "There is little time to spare.",
+            "D": "The brochures are too small."
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "part7:intent"
+          ],
+          "explanation_vi": "'cutting it close' = sát giờ: in xong lúc 6 giờ tối, trong khi hội chợ là ngày mai."
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "notice",
+      "title": "Questions 149-150",
+      "passages": [
+        {
+          "type": "notice",
+          "title": "Fitness Center Notice",
+          "text": "SUMMIT FITNESS CENTER\n\nThe swimming pool will be closed for cleaning and maintenance from Monday, July 8, through Wednesday, July 10. During this time, members may use the pool at our Oakdale location free of charge by showing their membership card.\n\nAll group fitness classes and the weight room will remain open as usual. We apologize for any inconvenience."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is the purpose of the notice?",
+          "choices": {
+            "A": "To advertise new classes",
+            "B": "To announce a temporary closure",
+            "C": "To explain a price change",
+            "D": "To introduce a new location"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part7:purpose"
+          ],
+          "explanation_vi": "Hồ bơi đóng cửa 3 ngày để vệ sinh, bảo trì."
+        },
+        {
+          "prompt": "What are members allowed to do?",
+          "choices": {
+            "A": "Bring a guest for free",
+            "B": "Get a refund for July",
+            "C": "Take classes at a discount",
+            "D": "Use another facility's pool"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "Hội viên được dùng hồ bơi ở cơ sở Oakdale miễn phí."
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "advertisement",
+      "title": "Questions 151-152",
+      "passages": [
+        {
+          "type": "advertisement",
+          "title": "Advertisement",
+          "text": "FRESHLY CLEAN – Professional Office Cleaning\n\nServing businesses in the Millbrook area for over 12 years.\n• Daily, weekly, or monthly service\n• Eco-friendly cleaning products\n• Evening and weekend appointments available\n\nNEW CUSTOMERS: Book a weekly plan before October 31 and receive your first cleaning free.\nCall 555-0192 for a free estimate."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is indicated about Freshly Clean?",
+          "choices": {
+            "A": "It recently opened.",
+            "B": "It serves homes only.",
+            "C": "It uses environmentally friendly products.",
+            "D": "It operates only on weekdays."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail",
+            "part7:paraphrase"
+          ],
+          "explanation_vi": "'Eco-friendly cleaning products' = sản phẩm thân thiện môi trường. Hoạt động hơn 12 năm, có lịch cuối tuần."
+        },
+        {
+          "prompt": "How can new customers receive a free cleaning?",
+          "choices": {
+            "A": "By signing up for a weekly plan",
+            "B": "By referring a friend",
+            "C": "By booking online",
+            "D": "By paying for a year in advance"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "'Book a weekly plan before October 31 and receive your first cleaning free.'"
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "invoice",
+      "title": "Questions 153-154",
+      "passages": [
+        {
+          "type": "invoice",
+          "title": "Invoice",
+          "text": "BLUE RIVER OFFICE FURNITURE\nInvoice #4471   Date: March 3\nCustomer: Lantern Media, 22 Fulton Street\n\nErgonomic office chair (x6) ........ $1,080\nStanding desk (x2) ................. $  900\nDelivery and assembly .............. $  120\nTOTAL .............................. $2,100\n\nPayment due within 30 days. A 2% discount applies if paid within 10 days.\nQuestions? E-mail billing@blueriver.example"
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What did Lantern Media purchase?",
+          "choices": {
+            "A": "Computer equipment",
+            "B": "Office furniture",
+            "C": "Printing services",
+            "D": "Cleaning supplies"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "Ghế văn phòng và bàn đứng → nội thất văn phòng."
+        },
+        {
+          "prompt": "How can Lantern Media reduce the amount it pays?",
+          "choices": {
+            "A": "By picking up the items itself",
+            "B": "By ordering more chairs",
+            "C": "By using a coupon code",
+            "D": "By paying within ten days"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "'A 2% discount applies if paid within 10 days.'"
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "email",
+      "title": "Questions 155-157",
+      "passages": [
+        {
+          "type": "email",
+          "title": "To: All Staff | From: Jonathan Price | Date: September 12 | Subject: Office move",
+          "text": "Dear colleagues,\n\nAs you know, our team will move to the newly renovated fourth floor next month. The move is scheduled for the weekend of October 18. Please pack your personal items and files in the boxes that will be delivered to your desks on October 14. Label each box with your name and new desk number, which you will receive from your manager this week.\n\nThe IT department will disconnect and move all computers, so please do not pack any equipment yourself.\n\nWhen you arrive on Monday, October 20, your boxes will be waiting at your new desk. If anything is missing, contact Sally Tran in Facilities at extension 214.\n\nThank you for your cooperation,\nJonathan Price, Office Manager"
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is the main purpose of the e-mail?",
+          "choices": {
+            "A": "To announce a renovation project",
+            "B": "To introduce a new manager",
+            "C": "To give instructions about a move",
+            "D": "To request new equipment"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part7:purpose"
+          ],
+          "explanation_vi": "Email hướng dẫn nhân viên chuẩn bị chuyển lên tầng 4."
+        },
+        {
+          "prompt": "What will employees receive from their managers?",
+          "choices": {
+            "A": "Their new desk numbers",
+            "B": "Packing boxes",
+            "C": "New computers",
+            "D": "A floor plan"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "'new desk number, which you will receive from your manager this week'. Thùng được giao tới bàn ngày 14/10."
+        },
+        {
+          "prompt": "What are employees asked NOT to do?",
+          "choices": {
+            "A": "Work on October 18",
+            "B": "Pack their own computers",
+            "C": "Contact the Facilities department",
+            "D": "Label their boxes"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part7:not-question"
+          ],
+          "explanation_vi": "'please do not pack any equipment yourself' — bộ phận IT sẽ chuyển máy tính."
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "article",
+      "title": "Questions 158-160",
+      "passages": [
+        {
+          "type": "article",
+          "title": "Local Café Expands Online",
+          "text": "MAPLETON — Brewster's Café, a popular coffee shop on Main Street, has launched an online store selling its house-roasted coffee beans. — [1] — Owner Tomas Brewster says customers had been asking for years whether they could buy the beans to make coffee at home.\n\nThe online store offers six blends, and orders are shipped within two business days. — [2] — Customers who sign up for a monthly subscription receive free shipping and a 10 percent discount.\n\nThe café plans to add brewing equipment, such as grinders and filters, to the online store later this year. — [3] — \"We want to help people enjoy café-quality coffee wherever they are,\" Mr. Brewster said. — [4] —"
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is the article mainly about?",
+          "choices": {
+            "A": "A café's new online business",
+            "B": "The opening of a second café",
+            "C": "Rising coffee prices",
+            "D": "A coffee-making competition"
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part7:main-idea"
+          ],
+          "explanation_vi": "Quán cà phê mở cửa hàng trực tuyến bán hạt cà phê."
+        },
+        {
+          "prompt": "What benefit do subscribers receive?",
+          "choices": {
+            "A": "Free coffee at the café",
+            "B": "Free brewing equipment",
+            "C": "Early access to new blends",
+            "D": "Free shipping"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "'receive free shipping and a 10 percent discount'."
+        },
+        {
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"Shipping is available only within the country for now.\"",
+          "choices": {
+            "A": "[1]",
+            "B": "[2]",
+            "C": "[3]",
+            "D": "[4]"
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "part7:sentence-insertion"
+          ],
+          "explanation_vi": "Câu nói về vận chuyển nên đặt ngay sau 'orders are shipped within two business days' → vị trí [2]."
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "memo",
+      "title": "Questions 161-163",
+      "passages": [
+        {
+          "type": "memo",
+          "title": "MEMO – To: Sales Department | From: Diane Holt, Sales Director | Date: January 6",
+          "text": "Congratulations to everyone on an outstanding year. Our department exceeded its annual sales target by 18 percent, and customer satisfaction scores reached their highest level ever.\n\nTo celebrate, we will hold a team dinner at Riverside Grill on Friday, January 17, at 7 P.M. Partners and spouses are welcome. Please let my assistant, Owen Park, know by January 10 whether you will attend and how many guests you will bring.\n\nIn addition, the top three salespeople of the year will each receive an extra two days of paid leave. Their names will be announced at the dinner."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Why was the memo written?",
+          "choices": {
+            "A": "To announce new sales targets",
+            "B": "To recognize the team's performance",
+            "C": "To introduce a new assistant",
+            "D": "To explain a change in leave policy"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part7:purpose"
+          ],
+          "explanation_vi": "Chúc mừng thành tích vượt chỉ tiêu và mời ăn tối ăn mừng."
+        },
+        {
+          "prompt": "What are employees asked to do by January 10?",
+          "choices": {
+            "A": "Submit their sales reports",
+            "B": "Make a restaurant reservation",
+            "C": "Respond to an invitation",
+            "D": "Nominate a colleague"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail",
+            "part7:paraphrase"
+          ],
+          "explanation_vi": "Báo cho Owen Park có tham dự hay không và mang theo bao nhiêu khách = trả lời lời mời."
+        },
+        {
+          "prompt": "What will happen at the dinner?",
+          "choices": {
+            "A": "A new director will be introduced.",
+            "B": "Customer feedback will be reviewed.",
+            "C": "Sales targets will be discussed.",
+            "D": "Award recipients will be named."
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "Tên ba nhân viên bán hàng xuất sắc nhất sẽ được công bố tại bữa tối."
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "online-chat",
+      "title": "Questions 164-167",
+      "passages": [
+        {
+          "type": "chat",
+          "title": "Online chat discussion",
+          "text": "Megan Ross [10:02 A.M.]: Hi team. The client in Lisbon wants to move our video call from Thursday to Wednesday. Does that work for everyone?\nArjun Patel [10:04 A.M.]: Wednesday morning is fine for me, but I have a dentist appointment in the afternoon.\nLucy Chen [10:05 A.M.]: I'm free all day Wednesday.\nMegan Ross [10:06 A.M.]: They suggested 3 P.M. our time.\nArjun Patel [10:07 A.M.]: Could we ask for 10 A.M. instead? That would be 3 P.M. in Lisbon.\nMegan Ross [10:08 A.M.]: Good point. I'll propose that. Lucy, can you finish the updated cost estimate by Tuesday so we can send it before the call?\nLucy Chen [10:09 A.M.]: Consider it done.\nArjun Patel [10:10 A.M.]: I'll prepare the slides for the product demonstration."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is the main topic of the discussion?",
+          "choices": {
+            "A": "Rescheduling a meeting",
+            "B": "Planning a business trip",
+            "C": "Hiring a new team member",
+            "D": "Reviewing a client's complaint"
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part7:main-idea"
+          ],
+          "explanation_vi": "Khách muốn dời cuộc gọi video từ thứ Năm sang thứ Tư."
+        },
+        {
+          "prompt": "Why does Mr. Patel suggest a different time?",
+          "choices": {
+            "A": "He will be traveling on Wednesday.",
+            "B": "The client's office closes early.",
+            "C": "He has an appointment in the afternoon.",
+            "D": "He needs more time to prepare."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "Anh ấy có hẹn nha sĩ buổi chiều nên đề xuất 10 giờ sáng."
+        },
+        {
+          "prompt": "At 10:09 A.M., what does Ms. Chen mean when she writes, \"Consider it done\"?",
+          "choices": {
+            "A": "She has already sent the estimate.",
+            "B": "She will complete the task on time.",
+            "C": "She disagrees with the plan.",
+            "D": "She cannot attend the call."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part7:intent"
+          ],
+          "explanation_vi": "'Consider it done' = cứ yên tâm, tôi sẽ làm xong (cam kết hoàn thành trước thứ Ba)."
+        },
+        {
+          "prompt": "What will Mr. Patel do?",
+          "choices": {
+            "A": "Contact the client",
+            "B": "Revise a cost estimate",
+            "C": "Book a meeting room",
+            "D": "Prepare a presentation"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail",
+            "part7:paraphrase"
+          ],
+          "explanation_vi": "'I'll prepare the slides for the product demonstration' = chuẩn bị bài trình bày."
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "letter",
+      "title": "Questions 168-171",
+      "passages": [
+        {
+          "type": "letter",
+          "title": "Letter",
+          "text": "Dear Ms. Okonkwo,\n\nOn behalf of the Fairview Arts Council, I am delighted to inform you that your mural design, \"River of Light,\" has been selected for the new public library on Elm Avenue. — [1] — The selection committee reviewed more than 60 proposals and was particularly impressed by how your design reflects the history of our town.\n\nAs stated in the competition guidelines, you will receive a fee of $15,000, half of which will be paid when the contract is signed. — [2] — The remaining amount will be paid upon completion. The library is scheduled to open on September 1, so we ask that the mural be finished by August 15.\n\nThe library's architect, Mr. Felix Grant, would like to meet with you to discuss the wall surface and lighting. — [3] — Please contact his office at 555-0177 to arrange a time.\n\nI have enclosed two copies of the contract. — [4] — Congratulations once again.\n\nSincerely,\nNadia Fischer\nDirector, Fairview Arts Council"
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "Who most likely is Ms. Okonkwo?",
+          "choices": {
+            "A": "A librarian",
+            "B": "An architect",
+            "C": "An artist",
+            "D": "A historian"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part7:inference"
+          ],
+          "explanation_vi": "Bản thiết kế tranh tường (mural) của cô được chọn → cô là nghệ sĩ."
+        },
+        {
+          "prompt": "What is indicated about the competition?",
+          "choices": {
+            "A": "It received many entries.",
+            "B": "It was open only to local residents.",
+            "C": "It was held last year.",
+            "D": "It was organized by the library."
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "'reviewed more than 60 proposals' → nhiều bài dự thi. Ban tổ chức là Hội đồng Nghệ thuật, không phải thư viện."
+        },
+        {
+          "prompt": "By when should the mural be completed?",
+          "choices": {
+            "A": "September 1",
+            "B": "August 1",
+            "C": "August 15",
+            "D": "When the contract is signed"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "'we ask that the mural be finished by August 15'. Ngày 1/9 là ngày khai trương thư viện."
+        },
+        {
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"Please sign both and return one to us in the envelope provided.\"",
+          "choices": {
+            "A": "[1]",
+            "B": "[2]",
+            "C": "[3]",
+            "D": "[4]"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part7:sentence-insertion"
+          ],
+          "explanation_vi": "'both' quy chiếu tới 'two copies of the contract' ngay trước vị trí [4]."
+        }
+      ]
+    },
+    {
+      "part": 7,
+      "passage_type": "article",
+      "title": "Questions 172-175",
+      "passages": [
+        {
+          "type": "article",
+          "title": "Business Section – Harmon Electronics Reports Record Year",
+          "text": "Harmon Electronics announced on Tuesday that its annual revenue rose 22 percent to $840 million, the highest in the company's 30-year history. The growth was driven mainly by strong sales of its wireless earbuds, which accounted for nearly half of total revenue.\n\nChief Executive Officer Carla Mendes credited the company's decision two years ago to sell directly to consumers through its own Web site. \"By cutting out retailers, we were able to lower prices and build closer relationships with our customers,\" she said.\n\nHowever, the company faces challenges. Rising costs for electronic components reduced profit margins in the fourth quarter, and several competitors have recently released similar products at lower prices.\n\nTo stay ahead, Harmon plans to open a research center in Austin next year, where 200 engineers will develop new audio technologies. The company also intends to expand into the European market, beginning with Germany and France."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "What is the article mainly about?",
+          "choices": {
+            "A": "A merger between two firms",
+            "B": "A new product launch",
+            "C": "A change in leadership",
+            "D": "A company's financial results"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "part7:main-idea"
+          ],
+          "explanation_vi": "Bài báo về doanh thu kỷ lục và kế hoạch của Harmon."
+        },
+        {
+          "prompt": "According to Ms. Mendes, what contributed to the company's success?",
+          "choices": {
+            "A": "Opening stores in Europe",
+            "B": "Hiring more engineers",
+            "C": "Selling products directly to customers",
+            "D": "Reducing the number of products"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "Quyết định bán trực tiếp qua website, bỏ qua nhà bán lẻ."
+        },
+        {
+          "prompt": "What problem is mentioned in the article?",
+          "choices": {
+            "A": "Sales of earbuds declined.",
+            "B": "Some component costs increased.",
+            "C": "A research center was closed.",
+            "D": "Customers complained about quality."
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part7:detail"
+          ],
+          "explanation_vi": "'Rising costs for electronic components reduced profit margins'."
+        },
+        {
+          "prompt": "The word \"stay\" in paragraph 4, line 1, is closest in meaning to",
+          "choices": {
+            "A": "live",
+            "B": "visit",
+            "C": "pause",
+            "D": "remain"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part7:synonym"
+          ],
+          "explanation_vi": "'stay ahead' = duy trì vị trí dẫn đầu → remain."
+        }
+      ]
+    }
+  ]
+}

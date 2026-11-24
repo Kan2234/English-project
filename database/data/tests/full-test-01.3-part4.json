@@ -1,0 +1,596 @@
+{
+  "test": {
+    "id": "full-test-01"
+  },
+  "sets": [
+    {
+      "part": 4,
+      "passage_type": "broadcast",
+      "title": "Traffic report",
+      "transcript": "Good morning, this is Sandra Lee with your eight o'clock traffic update on Radio 95. Drivers heading downtown on Highway 4 should expect delays of up to thirty minutes. One lane near the Elm Street exit is closed for road repairs, and the work is expected to continue until Friday. If possible, take the Riverside Bridge instead. And a reminder for public transportation users: starting Monday, city buses will run every ten minutes during rush hour, instead of every fifteen. Stay tuned for the weather after this short break.",
+      "questions": [
+        {
+          "prompt": "What is causing delays on Highway 4?",
+          "choices": {
+            "A": "Bad weather",
+            "B": "A traffic accident",
+            "C": "Road repairs",
+            "D": "A parade"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'One lane ... is closed for road repairs'."
+        },
+        {
+          "prompt": "What does the speaker recommend?",
+          "choices": {
+            "A": "Using a different route",
+            "B": "Leaving home early",
+            "C": "Taking the train",
+            "D": "Working from home"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part4:suggestion"
+          ],
+          "explanation_vi": "'take the Riverside Bridge instead' = đi đường khác."
+        },
+        {
+          "prompt": "What will change on Monday?",
+          "choices": {
+            "A": "A bridge will reopen.",
+            "B": "Bus fares will increase.",
+            "C": "A new highway exit will open.",
+            "D": "Buses will run more frequently."
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part4:paraphrase"
+          ],
+          "explanation_vi": "Xe buýt chạy 10 phút/chuyến thay vì 15 phút → thường xuyên hơn."
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "voicemail",
+      "title": "Message from a supplier",
+      "transcript": "Hello, Mr. Daniels. This is Priya from Northwind Paper Supplies. I'm calling about your order of five hundred boxes of printer paper. Unfortunately, our warehouse is running low on the brand you selected, and we can only send three hundred boxes this week. The remaining two hundred will arrive next Wednesday. Alternatively, we can send a similar brand right away at the same price. Please call me back at 555-0148 to let me know which option you prefer. Thank you.",
+      "questions": [
+        {
+          "prompt": "What is the purpose of the call?",
+          "choices": {
+            "A": "To confirm a payment",
+            "B": "To explain a problem with an order",
+            "C": "To advertise a new product",
+            "D": "To schedule a meeting"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part4:purpose"
+          ],
+          "explanation_vi": "Nhà cung cấp gọi vì không đủ hàng cho đơn đặt."
+        },
+        {
+          "prompt": "How many boxes will be delivered this week?",
+          "choices": {
+            "A": "200",
+            "B": "250",
+            "C": "300",
+            "D": "500"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'we can only send three hundred boxes this week'."
+        },
+        {
+          "prompt": "What does the speaker offer to do?",
+          "choices": {
+            "A": "Deliver on the weekend",
+            "B": "Give a discount",
+            "C": "Cancel the order",
+            "D": "Send a different brand"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part4:offer"
+          ],
+          "explanation_vi": "'we can send a similar brand right away at the same price'."
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "talk",
+      "title": "Museum tour",
+      "transcript": "Welcome to the Harlow Museum of Science. I'm Ben, and I'll be leading today's tour. We'll start here in the Space Gallery, where you'll see a model of the first satellite launched from this country. Then we'll move on to the new Ocean Life exhibit, which opened just last month. Please note that the exhibit includes a short film, so we'll spend about twenty minutes in the theater there. Before we begin, I'd like to ask you to keep your phones on silent. Now, if everyone's ready, please follow me.",
+      "questions": [
+        {
+          "prompt": "Where most likely are the listeners?",
+          "choices": {
+            "A": "At an aquarium",
+            "B": "At a movie theater",
+            "C": "At a space research center",
+            "D": "At a museum"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "part4:location"
+          ],
+          "explanation_vi": "'Welcome to the Harlow Museum of Science'."
+        },
+        {
+          "prompt": "What is mentioned about the Ocean Life exhibit?",
+          "choices": {
+            "A": "It opened recently.",
+            "B": "It is closed for repairs.",
+            "C": "It requires a separate ticket.",
+            "D": "It is popular with children."
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'opened just last month' = mới mở."
+        },
+        {
+          "prompt": "What are listeners asked to do?",
+          "choices": {
+            "A": "Stay with the group",
+            "B": "Silence their phones",
+            "C": "Avoid taking photos",
+            "D": "Pick up a map"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part4:request"
+          ],
+          "explanation_vi": "'keep your phones on silent'."
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "meeting",
+      "title": "Staff meeting – new expense system",
+      "transcript": "Before we finish today's meeting, I have an announcement. Starting next month, we'll be using a new online system for expense reports. Instead of filling out paper forms, you'll simply take a photo of each receipt with your phone and upload it through the app. This should cut processing time from two weeks to just three days. Now, I know learning a new system takes time, so the finance department will hold training sessions next Tuesday and Thursday. Please sign up for one of them on the sheet by the door.",
+      "questions": [
+        {
+          "prompt": "What is the speaker mainly talking about?",
+          "choices": {
+            "A": "A change in travel policy",
+            "B": "A new budget",
+            "C": "A new expense reporting system",
+            "D": "A department merger"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part4:main-idea"
+          ],
+          "explanation_vi": "Thông báo hệ thống trực tuyến mới cho báo cáo chi phí."
+        },
+        {
+          "prompt": "According to the speaker, what is an advantage of the change?",
+          "choices": {
+            "A": "Lower costs",
+            "B": "Faster processing",
+            "C": "Fewer receipts",
+            "D": "Higher reimbursements"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "Thời gian xử lý giảm từ 2 tuần xuống 3 ngày."
+        },
+        {
+          "prompt": "What are listeners asked to do?",
+          "choices": {
+            "A": "Download an app today",
+            "B": "Submit their receipts",
+            "C": "Contact the finance department",
+            "D": "Register for a training session"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part4:request"
+          ],
+          "explanation_vi": "'Please sign up for one of them on the sheet by the door.'"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "advertisement",
+      "title": "Software advertisement",
+      "transcript": "Is your small business still tracking appointments on paper? Then it's time to try BookEase, the scheduling software designed for salons, clinics, and fitness studios. With BookEase, customers can book appointments online twenty-four hours a day, and they'll receive automatic text reminders, so fewer people miss their appointments. And here's the best part: for a limited time, new users get the first three months free. Visit bookease.com to sign up today. Hundreds of businesses already have.",
+      "questions": [
+        {
+          "prompt": "What is being advertised?",
+          "choices": {
+            "A": "Scheduling software",
+            "B": "A fitness studio",
+            "C": "A mobile phone plan",
+            "D": "An accounting service"
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part4:main-idea"
+          ],
+          "explanation_vi": "BookEase là phần mềm đặt lịch."
+        },
+        {
+          "prompt": "According to the speaker, what benefit does the product provide?",
+          "choices": {
+            "A": "It lowers staff costs.",
+            "B": "It improves online reviews.",
+            "C": "It reduces missed appointments.",
+            "D": "It tracks inventory."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "Nhắc lịch tự động → 'fewer people miss their appointments'."
+        },
+        {
+          "prompt": "Why does the speaker say, \"Hundreds of businesses already have\"?",
+          "choices": {
+            "A": "To apologize for a delay",
+            "B": "To explain a price increase",
+            "C": "To warn that the offer may end",
+            "D": "To show that the product is popular"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part4:speaker-intent"
+          ],
+          "explanation_vi": "Câu này nhấn mạnh nhiều doanh nghiệp đã dùng → sản phẩm được ưa chuộng, đáng tin."
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "news",
+      "title": "Local news – bridge reopening",
+      "transcript": "In local news, the Clearwater Bridge will reopen to traffic this Saturday after eight months of renovation. The project, which cost the city twelve million dollars, added a protected bicycle lane and wider sidewalks. Mayor Linda Hayes will attend a ribbon-cutting ceremony at 10 A.M., and the bridge will open to cars at noon. Officials expect the reopening to reduce traffic on nearby streets, especially during morning rush hour. Residents are invited to walk across the bridge during the ceremony.",
+      "questions": [
+        {
+          "prompt": "What was added to the bridge?",
+          "choices": {
+            "A": "Additional car lanes",
+            "B": "A bicycle lane",
+            "C": "New lighting",
+            "D": "A toll booth"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'added a protected bicycle lane and wider sidewalks'."
+        },
+        {
+          "prompt": "What will happen at noon on Saturday?",
+          "choices": {
+            "A": "Cars will be allowed on the bridge.",
+            "B": "A ceremony will begin.",
+            "C": "The mayor will give an interview.",
+            "D": "A bicycle race will start."
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "Lễ cắt băng lúc 10 giờ; xe ô tô được đi qua lúc trưa."
+        },
+        {
+          "prompt": "What are residents invited to do?",
+          "choices": {
+            "A": "Vote on a project",
+            "B": "Volunteer for a cleanup",
+            "C": "Walk across the bridge",
+            "D": "Submit suggestions"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'Residents are invited to walk across the bridge during the ceremony.'"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "introduction",
+      "title": "Workshop speaker introduction",
+      "transcript": "Good afternoon, everyone, and thank you for coming to the third session of our small business workshop series. Today's speaker is Dr. Hannah Weiss, a professor of marketing at Bayview University. Dr. Weiss has spent fifteen years studying how small companies can compete with large ones online, and her book on social media marketing was published last year. After her talk, there will be a question-and-answer session. Oh, and copies of her book are available at the back of the room — Dr. Weiss has agreed to sign them after the session.",
+      "questions": [
+        {
+          "prompt": "Who is Dr. Weiss?",
+          "choices": {
+            "A": "A business owner",
+            "B": "A book publisher",
+            "C": "A newspaper reporter",
+            "D": "A university professor"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "part4:speaker-identity"
+          ],
+          "explanation_vi": "'a professor of marketing at Bayview University'."
+        },
+        {
+          "prompt": "What is Dr. Weiss's area of expertise?",
+          "choices": {
+            "A": "Online marketing for small businesses",
+            "B": "International trade",
+            "C": "Employee training",
+            "D": "Financial planning"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "Nghiên cứu cách công ty nhỏ cạnh tranh trực tuyến, sách về marketing mạng xã hội."
+        },
+        {
+          "prompt": "What will Dr. Weiss do after the session?",
+          "choices": {
+            "A": "Lead a second workshop",
+            "B": "Sign copies of her book",
+            "C": "Meet with university students",
+            "D": "Hand out certificates"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part4:next-action"
+          ],
+          "explanation_vi": "'Dr. Weiss has agreed to sign them after the session.'"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "announcement",
+      "title": "Airport announcement",
+      "transcript": "Attention, passengers on SkyLine Airways Flight 218 to Vancouver. Due to a mechanical issue, this flight has been moved from Gate 12 to Gate 27, and the new departure time is 4:45 P.M. We apologize for the inconvenience. To thank you for your patience, each passenger will receive a fifteen-dollar meal voucher, which can be used at any restaurant in the terminal. Please pick up your voucher at the SkyLine service desk near Gate 20. Boarding will begin approximately thirty minutes before departure.",
+      "questions": [
+        {
+          "prompt": "What has caused the change?",
+          "choices": {
+            "A": "Bad weather",
+            "B": "A late crew",
+            "C": "A mechanical problem",
+            "D": "A security check"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'Due to a mechanical issue'."
+        },
+        {
+          "prompt": "What will passengers receive?",
+          "choices": {
+            "A": "A seat upgrade",
+            "B": "A hotel room",
+            "C": "A partial refund",
+            "D": "A meal voucher"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'each passenger will receive a fifteen-dollar meal voucher'."
+        },
+        {
+          "prompt": "Where should passengers go to get their item?",
+          "choices": {
+            "A": "To Gate 12",
+            "B": "To a service desk",
+            "C": "To Gate 27",
+            "D": "To a restaurant"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'pick up your voucher at the SkyLine service desk near Gate 20'."
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "talk",
+      "title": "Conference schedule (graphic)",
+      "graphic": {
+        "type": "table",
+        "title": "Healthcare Technology Forum – Afternoon Sessions",
+        "columns": [
+          "Time",
+          "Session",
+          "Speaker"
+        ],
+        "rows": [
+          [
+            "1:00",
+            "Digital Patient Records",
+            "Dr. Amir Khan"
+          ],
+          [
+            "2:00",
+            "AI in Diagnosis",
+            "Lisa Wong"
+          ],
+          [
+            "3:00",
+            "Telehealth Trends",
+            "Dr. Paolo Ricci"
+          ],
+          [
+            "4:00",
+            "Hospital Cybersecurity",
+            "Mark Evans"
+          ]
+        ]
+      },
+      "image_description": "Afternoon session schedule (see graphic).",
+      "transcript": "Welcome back from lunch, everyone. Before the afternoon sessions begin, I have a quick update to the program. Unfortunately, Lisa Wong's train has been delayed, so she won't arrive in time for her session. She'll now speak in the last time slot, and Mark Evans has kindly agreed to take her place. All other sessions remain the same. Also, a reminder that your feedback is important to us. Please fill out the short survey in the conference app by the end of the day. Everyone who completes it will be entered in a prize drawing.",
+      "questions": [
+        {
+          "prompt": "Why has the program changed?",
+          "choices": {
+            "A": "A speaker's train is delayed.",
+            "B": "A room is unavailable.",
+            "C": "A session was canceled.",
+            "D": "Lunch ran late."
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'Lisa Wong's train has been delayed'."
+        },
+        {
+          "prompt": "Look at the graphic. What time will Mark Evans speak?",
+          "choices": {
+            "A": "At 1:00",
+            "B": "At 2:00",
+            "C": "At 3:00",
+            "D": "At 4:00"
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "part4:graphic"
+          ],
+          "explanation_vi": "Mark Evans thay chỗ Lisa Wong (khung 2:00); Lisa chuyển xuống khung cuối 4:00."
+        },
+        {
+          "prompt": "What can listeners do by the end of the day?",
+          "choices": {
+            "A": "Download presentation slides",
+            "B": "Register for next year's event",
+            "C": "Meet the speakers",
+            "D": "Complete a survey"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'fill out the short survey in the conference app by the end of the day'."
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "talk",
+      "title": "Sales results (graphic)",
+      "graphic": {
+        "type": "bar-chart",
+        "title": "Smart Watch Sales by Region (units, Q3)",
+        "columns": [
+          "Region",
+          "Units sold"
+        ],
+        "rows": [
+          [
+            "North",
+            "4,200"
+          ],
+          [
+            "South",
+            "6,800"
+          ],
+          [
+            "East",
+            "3,100"
+          ],
+          [
+            "West",
+            "5,500"
+          ]
+        ]
+      },
+      "image_description": "Bar chart of third-quarter sales by region (see graphic).",
+      "transcript": "Thanks for joining this call, everyone. Let's look at third-quarter sales for our new smart watch. Overall, the results are better than we expected. The South region sold the most units, thanks largely to a partnership with a chain of sports stores there. However, I'm concerned about the region with the lowest sales. Our research suggests customers there aren't familiar with the product yet. So, next month, we'll launch a television advertising campaign in that region. I'll send everyone the campaign plan by Friday.",
+      "questions": [
+        {
+          "prompt": "What product is the speaker discussing?",
+          "choices": {
+            "A": "A fitness app",
+            "B": "A smart watch",
+            "C": "Running shoes",
+            "D": "A television"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'third-quarter sales for our new smart watch'."
+        },
+        {
+          "prompt": "Look at the graphic. In which region will an advertising campaign be launched?",
+          "choices": {
+            "A": "North",
+            "B": "South",
+            "C": "East",
+            "D": "West"
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part4:graphic"
+          ],
+          "explanation_vi": "Chiến dịch dành cho khu vực bán thấp nhất → East (3.100 chiếc)."
+        },
+        {
+          "prompt": "What will the speaker send by Friday?",
+          "choices": {
+            "A": "A campaign plan",
+            "B": "A sales contract",
+            "C": "A customer survey",
+            "D": "A product sample"
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part4:next-action"
+          ],
+          "explanation_vi": "'I'll send everyone the campaign plan by Friday.'"
+        }
+      ]
+    }
+  ]
+}

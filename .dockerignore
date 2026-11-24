@@ -1,0 +1,4 @@
+# Only dist/ and deploy/ are needed by deploy/Dockerfile
+*
+!dist/
+!deploy/

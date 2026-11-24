@@ -1,0 +1,131 @@
+[
+  { "slug": "word-form", "order_index": 1, "title_vi": "Từ loại (Word form)", "title_en": "Parts of speech", "parts": [5, 6],
+    "summary_vi": "Dạng câu chiếm nhiều nhất ở Part 5: 4 đáp án cùng gốc từ, khác đuôi. Xác định vị trí chỗ trống để chọn danh từ, động từ, tính từ hay trạng từ.",
+    "rules": [
+      { "rule": "Sau mạo từ (a/an/the), tính từ sở hữu (my/their...), tính từ → DANH TỪ", "example": "their contributions; the original receipt" },
+      { "rule": "Trước danh từ, sau 'to be/become/seem/remain' → TÍNH TỪ", "example": "an innovative design; The lobby is complete." },
+      { "rule": "Bổ nghĩa cho động từ, tính từ, trạng từ, cả câu → TRẠNG TỪ (thường đuôi -ly)", "example": "increased significantly; considerably larger" },
+      { "rule": "Đuôi danh từ thường gặp: -tion, -ment, -ness, -ity, -ance/-ence, -er/-or/-ant (người)", "example": "completion, payment, applicant" },
+      { "rule": "Đuôi tính từ thường gặp: -ful, -less, -able/-ible, -ive, -ous, -al, -ic", "example": "affordable, competitive, substantial" }
+    ],
+    "common_traps_vi": ["Danh từ chỉ người vs chỉ vật (contributor vs contribution)", "Tính từ đuôi -ly: friendly, costly, timely không phải trạng từ", "V-ing có thể là danh động từ hoặc tính từ"] },
+
+  { "slug": "verb-tense", "order_index": 2, "title_vi": "Thì của động từ", "title_en": "Verb tenses", "parts": [5, 6],
+    "summary_vi": "Dựa vào dấu hiệu thời gian (since, by the time, next week, currently...) để chọn thì.",
+    "rules": [
+      { "rule": "Hiện tại hoàn thành: since/for/already/yet/so far/recently", "example": "Sales have increased since March." },
+      { "rule": "Quá khứ đơn: yesterday, last..., ago, in + năm quá khứ", "example": "The shipment arrived two days ago." },
+      { "rule": "Tương lai: next..., tomorrow, upcoming, soon; mệnh đề thời gian (when/after/before/as soon as) dùng hiện tại", "example": "We will call you as soon as the order arrives." },
+      { "rule": "Quá khứ hoàn thành: by the time + quá khứ đơn", "example": "By the time we arrived, the meeting had started." },
+      { "rule": "Tương lai hoàn thành: by + mốc tương lai", "example": "By next June, we will have opened ten stores." }
+    ],
+    "common_traps_vi": ["Mệnh đề thời gian không dùng 'will'", "Part 6 cần nhìn ngữ cảnh cả đoạn để xác định thì (email gửi trước hay sau sự kiện)"] },
+
+  { "slug": "passive-voice", "order_index": 3, "title_vi": "Câu bị động", "title_en": "Passive voice", "parts": [1, 5, 6],
+    "summary_vi": "Chủ ngữ chịu tác động → be + V3. Dấu hiệu: chỗ trống không có tân ngữ phía sau, hoặc có 'by + tác nhân'.",
+    "rules": [
+      { "rule": "Bị động hiện tại hoàn thành: has/have been + V3", "example": "The software has been tested." },
+      { "rule": "Bị động với động từ khuyết thiếu: modal + be + V3", "example": "Live music will be performed." },
+      { "rule": "Part 1: 'is being + V3' chỉ dùng khi có người đang thực hiện hành động trong ảnh", "example": "A screen is being rolled up. (cần có người đang cuộn)" },
+      { "rule": "Part 1: 'has been + V3' / 'is + V3' mô tả trạng thái của vật", "example": "Chairs have been stacked against a wall." }
+    ],
+    "common_traps_vi": ["Ngoại động từ có tân ngữ phía sau → chủ động", "Nội động từ (arrive, occur, happen, rise) không có bị động"] },
+
+  { "slug": "preposition", "order_index": 4, "title_vi": "Giới từ", "title_en": "Prepositions", "parts": [5, 6],
+    "summary_vi": "Giới từ chỉ thời gian, nơi chốn và các cụm cố định thường gặp trong TOEIC.",
+    "rules": [
+      { "rule": "by (hạn chót) vs until (kéo dài tới)", "example": "Submit it by Friday. / The office is open until 6 P.M." },
+      { "rule": "within + khoảng thời gian (trong vòng)", "example": "within 30 days" },
+      { "rule": "throughout (suốt), during (trong suốt) + danh từ", "example": "throughout the year; during the meeting" },
+      { "rule": "Cụm cố định: under budget, on time, in advance, in charge of, on behalf of, in accordance with", "example": "Book in advance." }
+    ],
+    "common_traps_vi": ["during + danh từ, không + mệnh đề hoặc V-ing", "'in time' (kịp lúc) khác 'on time' (đúng giờ)"] },
+
+  { "slug": "conjunction-vs-preposition", "order_index": 5, "title_vi": "Liên từ vs Giới từ vs Trạng từ nối", "title_en": "Conjunctions, prepositions and conjunctive adverbs", "parts": [5, 6],
+    "summary_vi": "Nhìn phía sau chỗ trống: mệnh đề (S + V) → liên từ; cụm danh từ/V-ing → giới từ; đứng đầu câu có dấu phẩy, nối hai câu → trạng từ nối.",
+    "rules": [
+      { "rule": "Liên từ + mệnh đề: although, because, while, unless, once, as soon as", "example": "Although it rained, the concert continued." },
+      { "rule": "Giới từ + danh từ: despite, in spite of, because of, due to, regardless of", "example": "Despite the rain, ..." },
+      { "rule": "Trạng từ nối: however, therefore, moreover, otherwise, consequently", "example": "Prices rose. However, demand remained strong." }
+    ],
+    "common_traps_vi": ["'However' không nối 2 mệnh đề bằng dấu phẩy", "'due to' + danh từ; 'because' + mệnh đề"] },
+
+  { "slug": "relative-clause", "order_index": 6, "title_vi": "Mệnh đề quan hệ", "title_en": "Relative clauses", "parts": [5, 6],
+    "summary_vi": "Chọn đại từ quan hệ dựa vào danh từ được thay thế (người/vật) và vai trò (chủ ngữ/tân ngữ/sở hữu).",
+    "rules": [
+      { "rule": "who: người, làm chủ ngữ", "example": "guests who stay for three nights" },
+      { "rule": "whom: người, làm tân ngữ", "example": "the manager whom I met" },
+      { "rule": "which/that: vật", "example": "the report which was submitted" },
+      { "rule": "whose + danh từ: sở hữu", "example": "the candidate whose experience matches" },
+      { "rule": "where/when: nơi chốn/thời gian (thay cho in which/at which)", "example": "the city where the conference is held" }
+    ],
+    "common_traps_vi": ["Không dùng 'that' sau dấu phẩy", "'what' không đứng sau danh từ"] },
+
+  { "slug": "conditional", "order_index": 7, "title_vi": "Câu điều kiện và đảo ngữ", "title_en": "Conditionals and inversion", "parts": [5],
+    "summary_vi": "Xác định loại câu điều kiện qua động từ ở mệnh đề chính.",
+    "rules": [
+      { "rule": "Loại 1: If + hiện tại, will + V", "example": "If you register early, you will get a discount." },
+      { "rule": "Loại 2: If + quá khứ, would + V", "example": "If we had more staff, we would open on Sundays." },
+      { "rule": "Loại 3: If + had V3, would have V3", "example": "If the shipment had arrived, we would have finished." },
+      { "rule": "Đảo ngữ: Should + S + V (loại 1), Were + S + to V (loại 2), Had + S + V3 (loại 3)", "example": "Should you need help, please call us." }
+    ],
+    "common_traps_vi": ["'Unless' = If ... not", "Đảo ngữ 'Should' rất hay gặp trong email/thông báo"] },
+
+  { "slug": "subject-verb-agreement", "order_index": 8, "title_vi": "Hòa hợp chủ ngữ – động từ", "title_en": "Subject-verb agreement", "parts": [5, 6],
+    "summary_vi": "Xác định chủ ngữ chính, bỏ qua cụm giới từ/mệnh đề chen giữa.",
+    "rules": [
+      { "rule": "The number of + N(số nhiều) → động từ số ít", "example": "The number of orders has doubled." },
+      { "rule": "A number of + N(số nhiều) → động từ số nhiều", "example": "A number of employees have volunteered." },
+      { "rule": "Each/Every + N số ít → động từ số ít", "example": "Every report is reviewed." },
+      { "rule": "Chủ ngữ là V-ing / To V → số ít", "example": "Hiring new staff takes time." }
+    ],
+    "common_traps_vi": ["Danh từ gần chỗ trống chưa chắc là chủ ngữ", "'news', 'information', 'equipment' là danh từ không đếm được"] },
+
+  { "slug": "pronoun", "order_index": 9, "title_vi": "Đại từ", "title_en": "Pronouns", "parts": [5, 6],
+    "summary_vi": "Chọn đúng dạng đại từ theo vị trí: chủ ngữ, tân ngữ, sở hữu, phản thân.",
+    "rules": [
+      { "rule": "Trước danh từ → tính từ sở hữu (my, its, their)", "example": "their findings" },
+      { "rule": "Sau động từ/giới từ → tân ngữ (me, them)", "example": "Please send it to them." },
+      { "rule": "Đứng một mình thay cho 'tính từ sở hữu + N' → đại từ sở hữu (mine, theirs)", "example": "Our prices are lower than theirs." },
+      { "rule": "by oneself / chủ ngữ và tân ngữ trùng nhau → phản thân", "example": "She completed it by herself." }
+    ],
+    "common_traps_vi": ["Danh từ tập hợp chỉ tổ chức (company, management) dùng 'its'", "'it's' (it is) khác 'its'"] },
+
+  { "slug": "gerund-infinitive", "order_index": 10, "title_vi": "Danh động từ và động từ nguyên mẫu", "title_en": "Gerunds and infinitives", "parts": [5, 6],
+    "summary_vi": "Một số động từ đi với V-ing, một số đi với to V.",
+    "rules": [
+      { "rule": "+ V-ing: avoid, consider, recommend, suggest, finish, postpone, mind, look forward to", "example": "We look forward to meeting you." },
+      { "rule": "+ to V: decide, plan, agree, hope, expect, offer, intend, be required to", "example": "Applicants are required to submit a résumé." },
+      { "rule": "Sau giới từ → V-ing", "example": "before operating the machine" },
+      { "rule": "Chỉ mục đích → to V / in order to V", "example": "She called to confirm the order." }
+    ],
+    "common_traps_vi": ["'look forward to', 'be committed to', 'be dedicated to' + V-ing (to là giới từ)"] },
+
+  { "slug": "comparison", "order_index": 11, "title_vi": "So sánh", "title_en": "Comparatives and superlatives", "parts": [5],
+    "summary_vi": "Nhận diện dấu hiệu than (so sánh hơn), the ... of/in (so sánh nhất), as ... as (so sánh bằng).",
+    "rules": [
+      { "rule": "Bổ nghĩa cho so sánh hơn: much, far, considerably, significantly, even, a lot", "example": "considerably larger" },
+      { "rule": "The + so sánh hơn ..., the + so sánh hơn", "example": "The sooner you register, the cheaper the fee." },
+      { "rule": "Bổ nghĩa cho so sánh nhất: by far, easily", "example": "by far the most popular" }
+    ],
+    "common_traps_vi": ["Không dùng 'very' trước so sánh hơn"] },
+
+  { "slug": "paired-conjunction", "order_index": 12, "title_vi": "Liên từ tương quan", "title_en": "Correlative conjunctions", "parts": [5],
+    "summary_vi": "Các cặp liên từ cố định — chỉ cần thấy một vế là suy ra vế còn lại.",
+    "rules": [
+      { "rule": "both A and B", "example": "both weekdays and weekends" },
+      { "rule": "either A or B", "example": "either by email or by phone" },
+      { "rule": "neither A nor B", "example": "neither the manager nor the staff" },
+      { "rule": "not only A but (also) B", "example": "not only fast but also reliable" },
+      { "rule": "whether A or B", "example": "whether online or in person" }
+    ],
+    "common_traps_vi": ["Với either/neither, động từ chia theo chủ ngữ gần nhất"] },
+
+  { "slug": "subjunctive", "order_index": 13, "title_vi": "Thức giả định", "title_en": "Subjunctive", "parts": [5],
+    "summary_vi": "Sau động từ/tính từ chỉ yêu cầu, đề nghị, mệnh đề 'that' dùng động từ nguyên mẫu (không chia).",
+    "rules": [
+      { "rule": "request/ask/recommend/suggest/require/insist + that + S + V(nguyên mẫu)", "example": "She asked that every report be reviewed." },
+      { "rule": "It is essential/important/necessary + that + S + V(nguyên mẫu)", "example": "It is essential that he attend the meeting." }
+    ],
+    "common_traps_vi": ["Chủ ngữ số ít vẫn không thêm -s"] }
+]

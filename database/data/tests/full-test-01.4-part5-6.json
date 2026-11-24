@@ -1,0 +1,916 @@
+{
+  "test": {
+    "id": "full-test-01"
+  },
+  "sets": [
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The new branch manager will ------- a meeting with all staff on Monday.",
+          "choices": {
+            "A": "held",
+            "B": "holds",
+            "C": "holding",
+            "D": "hold"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "grammar:verb-form"
+          ],
+          "explanation_vi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu → hold."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Please make sure that ------- belongings are removed from the lockers by Friday.",
+          "choices": {
+            "A": "you",
+            "B": "yours",
+            "C": "your",
+            "D": "yourself"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "grammar:pronoun"
+          ],
+          "explanation_vi": "Trước danh từ 'belongings' cần tính từ sở hữu → your."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The customer service team responded ------- to the complaint.",
+          "choices": {
+            "A": "prompt",
+            "B": "promptness",
+            "C": "prompted",
+            "D": "promptly"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "grammar:word-form",
+            "grammar:adverb"
+          ],
+          "explanation_vi": "Bổ nghĩa cho động từ 'responded' → trạng từ promptly."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The museum will be closed ------- the installation of a new exhibit.",
+          "choices": {
+            "A": "while",
+            "B": "during",
+            "C": "although",
+            "D": "unless"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "grammar:conjunction-vs-preposition"
+          ],
+          "explanation_vi": "Sau chỗ trống là cụm danh từ → giới từ during. While/although/unless + mệnh đề."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Ms. Jung has worked at Delmar Bank ------- 2019.",
+          "choices": {
+            "A": "for",
+            "B": "since",
+            "C": "from",
+            "D": "at"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "grammar:preposition",
+            "grammar:present-perfect"
+          ],
+          "explanation_vi": "Hiện tại hoàn thành + mốc thời gian → since. 'for' đi với khoảng thời gian."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Employees must wear identification badges ------- they are in the building.",
+          "choices": {
+            "A": "whenever",
+            "B": "whoever",
+            "C": "however",
+            "D": "whatever"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "grammar:conjunction"
+          ],
+          "explanation_vi": "'whenever' = bất cứ khi nào, nối hai mệnh đề về thời gian."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Our new line of furniture is both stylish and -------.",
+          "choices": {
+            "A": "afford",
+            "B": "affordably",
+            "C": "affordability",
+            "D": "affordable"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "grammar:word-form",
+            "grammar:paired-conjunction"
+          ],
+          "explanation_vi": "'both A and B' cần hai thành phần cùng loại; 'stylish' là tính từ → affordable."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The quarterly sales figures were ------- than the team had predicted.",
+          "choices": {
+            "A": "high",
+            "B": "higher",
+            "C": "highest",
+            "D": "highly"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "grammar:comparative"
+          ],
+          "explanation_vi": "Có 'than' → so sánh hơn higher."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Mr. Vance asked his assistant to ------- the conference room for the client visit.",
+          "choices": {
+            "A": "reserve",
+            "B": "deserve",
+            "C": "preserve",
+            "D": "observe"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "vocab:office"
+          ],
+          "explanation_vi": "'reserve a room' = đặt phòng. Các từ còn lại có âm giống nhưng sai nghĩa."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The factory has reduced its energy use by 20 percent ------- installing solar panels.",
+          "choices": {
+            "A": "on",
+            "B": "with",
+            "C": "for",
+            "D": "by"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "grammar:preposition",
+            "grammar:gerund"
+          ],
+          "explanation_vi": "'by + V-ing' = bằng cách làm gì."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Neither the director ------- the vice president was available for comment.",
+          "choices": {
+            "A": "or",
+            "B": "and",
+            "C": "but",
+            "D": "nor"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "grammar:paired-conjunction"
+          ],
+          "explanation_vi": "Cặp 'neither ... nor'."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Visitors are ------- to sign in at the front desk upon arrival.",
+          "choices": {
+            "A": "require",
+            "B": "requiring",
+            "C": "required",
+            "D": "requirement"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "grammar:passive"
+          ],
+          "explanation_vi": "'be required to V' = được yêu cầu làm gì (bị động)."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The proposal ------- by the committee at next week's meeting.",
+          "choices": {
+            "A": "reviewed",
+            "B": "will be reviewed",
+            "C": "has reviewed",
+            "D": "reviewing"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "grammar:passive",
+            "grammar:verb-tense"
+          ],
+          "explanation_vi": "'next week' → tương lai; 'by the committee' → bị động: will be reviewed."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Mirabel Hotel guests ------- book a spa treatment receive a 10 percent discount.",
+          "choices": {
+            "A": "whose",
+            "B": "which",
+            "C": "who",
+            "D": "whom"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "grammar:relative-clause"
+          ],
+          "explanation_vi": "Thay cho 'guests' (người), làm chủ ngữ của 'book' → who."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The marketing department is ------- for designing all product packaging.",
+          "choices": {
+            "A": "responsible",
+            "B": "responsibly",
+            "C": "responsibility",
+            "D": "responsibilities"
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "grammar:word-form"
+          ],
+          "explanation_vi": "'be responsible for' = chịu trách nhiệm về; sau 'is' cần tính từ."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Please contact Mr. Ito directly ------- you have questions about the payroll system.",
+          "choices": {
+            "A": "so that",
+            "B": "if",
+            "C": "unless",
+            "D": "whereas"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "grammar:conjunction"
+          ],
+          "explanation_vi": "Điều kiện 'nếu có câu hỏi' → if. 'unless' nghĩa ngược lại."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The training manual was written ------- for new employees.",
+          "choices": {
+            "A": "specify",
+            "B": "specific",
+            "C": "specifically",
+            "D": "specification"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "grammar:word-form",
+            "grammar:adverb"
+          ],
+          "explanation_vi": "Bổ nghĩa cho cụm động từ 'was written for' → trạng từ specifically."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Due to high demand, tickets for the concert sold out ------- two hours.",
+          "choices": {
+            "A": "within",
+            "B": "between",
+            "C": "among",
+            "D": "along"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "grammar:preposition"
+          ],
+          "explanation_vi": "'within + khoảng thời gian' = trong vòng."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The engineers are developing a cooling system that is more ------- than the current one.",
+          "choices": {
+            "A": "efficiency",
+            "B": "efficiently",
+            "C": "efficient",
+            "D": "efficiencies"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "grammar:word-form",
+            "grammar:comparative"
+          ],
+          "explanation_vi": "'is more ___ than' → so sánh hơn của tính từ: more efficient."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "By the time the shipment arrived, the store ------- out of the product.",
+          "choices": {
+            "A": "runs",
+            "B": "has run",
+            "C": "will run",
+            "D": "had run"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "grammar:verb-tense",
+            "grammar:past-perfect"
+          ],
+          "explanation_vi": "'By the time + quá khứ đơn' → mệnh đề chính dùng quá khứ hoàn thành: had run."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The company's profits rose sharply last year, ------- most of its competitors struggled.",
+          "choices": {
+            "A": "because of",
+            "B": "while",
+            "C": "despite",
+            "D": "during"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "grammar:conjunction-vs-preposition"
+          ],
+          "explanation_vi": "Sau chỗ trống là mệnh đề → liên từ; 'while' diễn tả sự tương phản."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Ms. Ramos was praised for her ------- to detail.",
+          "choices": {
+            "A": "attention",
+            "B": "attend",
+            "C": "attentive",
+            "D": "attentively"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "grammar:word-form",
+            "vocab:collocation"
+          ],
+          "explanation_vi": "Sau 'her' cần danh từ; 'attention to detail' = sự tỉ mỉ."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The CEO will travel to Seoul next week to ------- a partnership agreement.",
+          "choices": {
+            "A": "finality",
+            "B": "finalized",
+            "C": "finalizing",
+            "D": "finalize"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "grammar:infinitive"
+          ],
+          "explanation_vi": "'to + V nguyên mẫu' chỉ mục đích → finalize."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Customers can track their orders ------- through our mobile app.",
+          "choices": {
+            "A": "ease",
+            "B": "easy",
+            "C": "easily",
+            "D": "easier"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "grammar:word-form",
+            "grammar:adverb"
+          ],
+          "explanation_vi": "Bổ nghĩa cho động từ 'track' → trạng từ easily."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The board approved the budget ------- some members expressed concerns.",
+          "choices": {
+            "A": "despite",
+            "B": "even though",
+            "C": "in spite",
+            "D": "because of"
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "grammar:conjunction-vs-preposition"
+          ],
+          "explanation_vi": "Sau chỗ trống là mệnh đề, nghĩa tương phản → even though. 'in spite' thiếu 'of'."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "------- the poor weather forecast, the outdoor reception will be moved indoors.",
+          "choices": {
+            "A": "Because",
+            "B": "Even if",
+            "C": "Whether",
+            "D": "Owing to"
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "grammar:conjunction-vs-preposition"
+          ],
+          "explanation_vi": "Sau chỗ trống là cụm danh từ, nghĩa nguyên nhân → giới từ 'Owing to' (= because of)."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Mr. Okafor, ------- joined the company last spring, has already been promoted.",
+          "choices": {
+            "A": "who",
+            "B": "which",
+            "C": "whom",
+            "D": "whose"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "grammar:relative-clause"
+          ],
+          "explanation_vi": "Mệnh đề không xác định, thay cho người làm chủ ngữ của 'joined' → who."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "The renovation project is ------- to be completed ahead of schedule.",
+          "choices": {
+            "A": "likes",
+            "B": "liking",
+            "C": "likeness",
+            "D": "likely"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "grammar:word-form",
+            "vocab:collocation"
+          ],
+          "explanation_vi": "'be likely to V' = có khả năng sẽ. 'likely' ở đây là tính từ."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Applicants should ------- their résumés no later than March 15.",
+          "choices": {
+            "A": "submitting",
+            "B": "submission",
+            "C": "submit",
+            "D": "submitted"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "grammar:modal"
+          ],
+          "explanation_vi": "Sau 'should' dùng động từ nguyên mẫu → submit."
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "questions": [
+        {
+          "prompt": "Had the team ------- the error earlier, the project would not have been delayed.",
+          "choices": {
+            "A": "notice",
+            "B": "noticed",
+            "C": "noticing",
+            "D": "notices"
+          },
+          "answer": "B",
+          "difficulty": 4,
+          "tags": [
+            "grammar:inversion",
+            "grammar:conditional"
+          ],
+          "explanation_vi": "Đảo ngữ điều kiện loại 3: Had + S + V3 → noticed."
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "passage_type": "notice",
+      "title": "Parking garage notice",
+      "passages": [
+        {
+          "type": "notice",
+          "title": "Notice to All Tenants – Parkview Office Center",
+          "text": "The parking garage beneath Parkview Office Center will be closed from June 3 to June 7 so that the floors can be resurfaced. During this period, tenants and visitors may park in the public lot on Glen Road, ---(131)--- is a five-minute walk from the building. ---(132)---, parking fees at the Glen Road lot will be covered by building management.\n\nTo receive free parking, simply show your Parkview access card to the lot attendant when you ---(133)---. ---(134)---. We thank you for your patience while we improve our facilities."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "(131)",
+          "choices": {
+            "A": "where",
+            "B": "which",
+            "C": "who",
+            "D": "what"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "grammar:relative-clause"
+          ],
+          "explanation_vi": "Thay cho 'the public lot' (vật), làm chủ ngữ của 'is' → which. 'where' cần một mệnh đề đầy đủ phía sau."
+        },
+        {
+          "prompt": "(132)",
+          "choices": {
+            "A": "Otherwise",
+            "B": "However",
+            "C": "In addition",
+            "D": "For example"
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "grammar:conjunctive-adverb"
+          ],
+          "explanation_vi": "Câu sau bổ sung thêm một quyền lợi (miễn phí gửi xe) → In addition."
+        },
+        {
+          "prompt": "(133)",
+          "choices": {
+            "A": "exit",
+            "B": "exited",
+            "C": "will exit",
+            "D": "exiting"
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "grammar:verb-tense"
+          ],
+          "explanation_vi": "Mệnh đề thời gian sau 'when' dùng hiện tại đơn thay cho tương lai → exit."
+        },
+        {
+          "prompt": "(134)",
+          "choices": {
+            "A": "The garage was built in 1998.",
+            "B": "Monthly parking permits are now on sale.",
+            "C": "The Glen Road lot will close at noon.",
+            "D": "Visitors without a card will receive a pass at our front desk."
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part6:sentence-insertion"
+          ],
+          "explanation_vi": "Câu trước nói người có thẻ được miễn phí; câu (D) bổ sung cách xử lý cho khách không có thẻ — mạch lạc nhất."
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "passage_type": "email",
+      "title": "Subscription renewal email",
+      "passages": [
+        {
+          "type": "email",
+          "title": "To: Ana Pereira | From: Customer Service, TechWorld Magazine | Subject: Your subscription",
+          "text": "Dear Ms. Pereira,\n\nThank you for being a loyal reader of TechWorld Magazine. Our records show that your subscription will ---(135)--- on August 31. To continue receiving the magazine without interruption, please renew before that date.\n\nIf you renew for two years, you will save 25 percent off the regular price. ---(136)---. Simply visit our Web site and enter the code RENEW25 at checkout.\n\nAs a subscriber, you also have ---(137)--- access to our online archive of more than 5,000 articles. We hope you will continue to enjoy this benefit.\n\nPlease contact us if you have any questions. We look forward to ---(138)--- you for many more years.\n\nSincerely,\nTechWorld Customer Service"
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "(135)",
+          "choices": {
+            "A": "extend",
+            "B": "deliver",
+            "C": "expire",
+            "D": "publish"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "vocab:contracts"
+          ],
+          "explanation_vi": "Gói đăng ký 'hết hạn' (expire) vào 31/8 nên cần gia hạn."
+        },
+        {
+          "prompt": "(136)",
+          "choices": {
+            "A": "Renewing online takes only a few minutes.",
+            "B": "Our office is closed on weekends.",
+            "C": "The magazine was founded in 2005.",
+            "D": "We have hired several new writers."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part6:sentence-insertion"
+          ],
+          "explanation_vi": "Câu sau hướng dẫn gia hạn trên web ('Simply visit our Web site...') → câu (A) dẫn vào tự nhiên."
+        },
+        {
+          "prompt": "(137)",
+          "choices": {
+            "A": "limit",
+            "B": "unlimited",
+            "C": "limitation",
+            "D": "limiting"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "grammar:word-form"
+          ],
+          "explanation_vi": "Trước danh từ 'access' cần tính từ → unlimited (không giới hạn)."
+        },
+        {
+          "prompt": "(138)",
+          "choices": {
+            "A": "serve",
+            "B": "served",
+            "C": "be serving",
+            "D": "serving"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "grammar:gerund"
+          ],
+          "explanation_vi": "'look forward to + V-ing' (to là giới từ) → serving."
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "passage_type": "press-release",
+      "title": "Company award",
+      "passages": [
+        {
+          "type": "article",
+          "title": "Greenway Foods Wins Sustainability Award",
+          "text": "PORTLAND — Greenway Foods has been named this year's winner of the Regional Business Sustainability Award. The award recognizes companies that have ---(139)--- reduced their environmental impact.\n\nOver the past three years, Greenway has replaced all of its plastic packaging with recyclable materials and cut its water use by 40 percent. ---(140)---.\n\n\"This award belongs to our employees,\" said CEO Marcus Bell. \"Many of our best ideas came from ---(141)--- working on the production floor.\"\n\nGreenway plans to use the $50,000 prize to fund a new composting facility. Construction ---(142)--- next spring."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "(139)",
+          "choices": {
+            "A": "significantly",
+            "B": "significant",
+            "C": "significance",
+            "D": "signify"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "grammar:word-form",
+            "grammar:adverb"
+          ],
+          "explanation_vi": "Chen giữa 'have' và V3 'reduced' → trạng từ significantly."
+        },
+        {
+          "prompt": "(140)",
+          "choices": {
+            "A": "The company was founded by two brothers.",
+            "B": "It also switched its delivery trucks to electric vehicles.",
+            "C": "Plastic is used in many industries.",
+            "D": "The award ceremony was canceled."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part6:sentence-insertion"
+          ],
+          "explanation_vi": "Đoạn liệt kê các nỗ lực giảm tác động môi trường; (B) dùng 'also' để bổ sung thêm một nỗ lực."
+        },
+        {
+          "prompt": "(141)",
+          "choices": {
+            "A": "them",
+            "B": "they",
+            "C": "those",
+            "D": "theirs"
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "grammar:pronoun"
+          ],
+          "explanation_vi": "'those (who are) working...' = những người đang làm việc ở xưởng. 'them' không đi kèm cụm bổ nghĩa như vậy."
+        },
+        {
+          "prompt": "(142)",
+          "choices": {
+            "A": "began",
+            "B": "has begun",
+            "C": "was beginning",
+            "D": "is expected to begin"
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "grammar:verb-tense"
+          ],
+          "explanation_vi": "'next spring' → tương lai: is expected to begin."
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "passage_type": "letter",
+      "title": "Job offer letter",
+      "passages": [
+        {
+          "type": "letter",
+          "title": "Letter from Halcyon Design Studio",
+          "text": "Dear Mr. Lindqvist,\n\nWe are pleased to offer you the position of junior architect at Halcyon Design Studio. Everyone on the hiring committee was impressed by your ---(143)--- of sustainable building methods.\n\nAs discussed, your starting salary will be $58,000 per year, and you will be eligible for a performance review after six months. ---(144)---, you will receive 20 days of paid vacation annually.\n\nPlease sign the enclosed contract and return it ---(145)--- May 10. ---(146)---. We look forward to welcoming you to our team.\n\nBest regards,\nElena Marsh, Human Resources"
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "(143)",
+          "choices": {
+            "A": "know",
+            "B": "knowledge",
+            "C": "knowledgeable",
+            "D": "knowingly"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "grammar:word-form"
+          ],
+          "explanation_vi": "Sau 'your' cần danh từ → knowledge."
+        },
+        {
+          "prompt": "(144)",
+          "choices": {
+            "A": "Instead",
+            "B": "Nevertheless",
+            "C": "In addition",
+            "D": "As a result"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "grammar:conjunctive-adverb"
+          ],
+          "explanation_vi": "Bổ sung thêm quyền lợi (ngày phép) sau lương → In addition."
+        },
+        {
+          "prompt": "(145)",
+          "choices": {
+            "A": "by",
+            "B": "until",
+            "C": "since",
+            "D": "between"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "grammar:preposition"
+          ],
+          "explanation_vi": "Hạn chót gửi lại hợp đồng → by."
+        },
+        {
+          "prompt": "(146)",
+          "choices": {
+            "A": "Our office was designed in 1985.",
+            "B": "We received over 200 applications.",
+            "C": "The salary is paid in cash.",
+            "D": "Your first day of work will be June 2."
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part6:sentence-insertion"
+          ],
+          "explanation_vi": "Sau hướng dẫn ký hợp đồng và trước lời chào đón, thông tin ngày bắt đầu làm việc là hợp lý nhất."
+        }
+      ]
+    }
+  ]
+}

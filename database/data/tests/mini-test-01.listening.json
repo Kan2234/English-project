@@ -1,0 +1,825 @@
+{
+  "test": {
+    "id": "mini-test-01",
+    "title": "TOEIC Mini Test 01",
+    "test_type": "mini",
+    "format_code": "LR",
+    "year": 2026,
+    "duration_minutes": 60,
+    "description_vi": "Đề rút gọn theo đúng cấu trúc 7 phần của TOEIC Listening & Reading (83 câu). Nội dung được biên soạn mới cho dự án, không sao chép đề thi ETS. Phần Nghe có transcript để tạo audio (TTS hoặc thu âm)."
+  },
+  "sets": [
+    {
+      "part": 1,
+      "passage_type": "photo",
+      "image_description": "A woman in an office is typing on a laptop at a desk; a cup of coffee and a stack of folders are beside her.",
+      "transcript": "(A) She's drinking from a cup.\n(B) She's typing on a keyboard.\n(C) She's filing some folders in a cabinet.\n(D) She's turning off a computer.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "She's drinking from a cup.",
+            "B": "She's typing on a keyboard.",
+            "C": "She's filing some folders in a cabinet.",
+            "D": "She's turning off a computer."
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part1:action"
+          ],
+          "explanation_vi": "Người phụ nữ đang gõ phím trên laptop. (A) cốc cà phê chỉ đặt bên cạnh; (C) tập hồ sơ nằm trên bàn, không cất vào tủ; (D) sai hành động."
+        }
+      ]
+    },
+    {
+      "part": 1,
+      "passage_type": "photo",
+      "image_description": "Several chairs are stacked against the wall of an empty conference room; a projector screen is pulled down.",
+      "transcript": "(A) People are gathered for a meeting.\n(B) A projector is being repaired.\n(C) Some chairs have been stacked against a wall.\n(D) A screen is being rolled up.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "People are gathered for a meeting.",
+            "B": "A projector is being repaired.",
+            "C": "Some chairs have been stacked against a wall.",
+            "D": "A screen is being rolled up."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part1:object-position",
+            "grammar:passive-perfect"
+          ],
+          "explanation_vi": "Ảnh không có người nên loại (A), (B), (D) (bị động tiếp diễn 'is being' cần có người đang thực hiện). 'have been stacked' mô tả trạng thái đã xếp chồng."
+        }
+      ]
+    },
+    {
+      "part": 1,
+      "passage_type": "photo",
+      "image_description": "Two men in hard hats are looking at a blueprint spread out on the hood of a truck at a construction site.",
+      "transcript": "(A) They're climbing a ladder.\n(B) They're putting on helmets.\n(C) They're driving a truck.\n(D) They're examining a document.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "They're climbing a ladder.",
+            "B": "They're putting on helmets.",
+            "C": "They're driving a truck.",
+            "D": "They're examining a document."
+          },
+          "answer": "D",
+          "difficulty": 2,
+          "tags": [
+            "part1:action",
+            "trap:putting-on-vs-wearing"
+          ],
+          "explanation_vi": "Hai người đang xem bản vẽ (document). (B) là bẫy kinh điển: 'putting on' = hành động đội vào, trong khi họ đã đội sẵn (wearing)."
+        }
+      ]
+    },
+    {
+      "part": 1,
+      "passage_type": "photo",
+      "image_description": "Fruit is displayed in baskets at an outdoor market stall; no people are visible.",
+      "transcript": "(A) A vendor is weighing some fruit.\n(B) Customers are waiting in line.\n(C) Baskets are being carried to a truck.\n(D) Produce has been arranged for sale.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "A vendor is weighing some fruit.",
+            "B": "Customers are waiting in line.",
+            "C": "Baskets are being carried to a truck.",
+            "D": "Produce has been arranged for sale."
+          },
+          "answer": "D",
+          "difficulty": 3,
+          "tags": [
+            "part1:object-position",
+            "vocab:produce"
+          ],
+          "explanation_vi": "'Produce' (danh từ) = nông sản. Ảnh không có người nên loại (A), (B), (C)."
+        }
+      ]
+    },
+    {
+      "part": 1,
+      "passage_type": "photo",
+      "image_description": "A man is watering plants on a balcony with a hose.",
+      "transcript": "(A) He's planting a tree in a garden.\n(B) He's watering some plants.\n(C) He's sweeping a balcony.\n(D) He's hanging a plant from the ceiling.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "He's planting a tree in a garden.",
+            "B": "He's watering some plants.",
+            "C": "He's sweeping a balcony.",
+            "D": "He's hanging a plant from the ceiling."
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part1:action"
+          ],
+          "explanation_vi": "Người đàn ông đang tưới cây bằng vòi nước. (A) dùng từ gần âm 'planting'."
+        }
+      ]
+    },
+    {
+      "part": 1,
+      "passage_type": "photo",
+      "image_description": "Boats are tied to a dock; the water is calm and a bridge is in the background.",
+      "transcript": "(A) Some boats are docked at a pier.\n(B) A bridge is under construction.\n(C) Passengers are boarding a ferry.\n(D) Waves are crashing onto the shore.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "Some boats are docked at a pier.",
+            "B": "A bridge is under construction.",
+            "C": "Passengers are boarding a ferry.",
+            "D": "Waves are crashing onto the shore."
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part1:scenery"
+          ],
+          "explanation_vi": "Thuyền neo ở bến (docked at a pier). Cây cầu ở nền không đang xây; mặt nước phẳng lặng nên (D) sai."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "When is the budget report due?\n(A) By Friday afternoon.\n(B) It's on the second floor.\n(C) Yes, I reported it.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "By Friday afternoon.",
+            "B": "It's on the second floor.",
+            "C": "Yes, I reported it."
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part2:when"
+          ],
+          "explanation_vi": "Câu hỏi 'When' → cần thời gian. (C) sai vì câu hỏi WH không trả lời Yes/No, lại lặp âm 'report'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Who's leading the training session tomorrow?\n(A) At nine o'clock.\n(B) Ms. Patel from Human Resources.\n(C) The train was delayed.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "At nine o'clock.",
+            "B": "Ms. Patel from Human Resources.",
+            "C": "The train was delayed."
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part2:who"
+          ],
+          "explanation_vi": "'Who' → cần người. (C) bẫy âm 'training/train'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Would you like me to print the agenda for you?\n(A) Thanks, that would be helpful.\n(B) The printer is new.\n(C) I liked it very much.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "Thanks, that would be helpful.",
+            "B": "The printer is new.",
+            "C": "I liked it very much."
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part2:offer"
+          ],
+          "explanation_vi": "Lời đề nghị giúp đỡ → đáp lời cảm ơn/chấp nhận."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Why was the client meeting postponed?\n(A) In the main conference room.\n(B) I'll post it online.\n(C) Their flight was canceled.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "In the main conference room.",
+            "B": "I'll post it online.",
+            "C": "Their flight was canceled."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part2:why"
+          ],
+          "explanation_vi": "'Why' → cần lý do, không nhất thiết có 'because'. (B) bẫy âm 'postponed/post'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Should we take a taxi or walk to the restaurant?\n(A) It's only five minutes away.\n(B) The menu looks great.\n(C) Yes, I booked a table.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "It's only five minutes away.",
+            "B": "The menu looks great.",
+            "C": "Yes, I booked a table."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part2:choice",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Câu hỏi lựa chọn; đáp án gián tiếp: chỉ 5 phút → ngụ ý đi bộ. Câu hỏi lựa chọn hiếm khi trả lời Yes/No nên loại (C)."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Where can I find the new employee handbook?\n(A) It was handed out last week.\n(B) On the company intranet.\n(C) About fifty pages.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "It was handed out last week.",
+            "B": "On the company intranet.",
+            "C": "About fifty pages."
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part2:where"
+          ],
+          "explanation_vi": "'Where' → địa điểm. Mạng nội bộ (intranet) là nơi tìm tài liệu."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "You've worked with this supplier before, haven't you?\n(A) Yes, for about three years.\n(B) A new shipment of supplies.\n(C) Before the deadline.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "Yes, for about three years.",
+            "B": "A new shipment of supplies.",
+            "C": "Before the deadline."
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part2:tag-question"
+          ],
+          "explanation_vi": "Câu hỏi đuôi → trả lời Yes/No kèm thông tin. (B) bẫy 'supplier/supplies'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "How many people have registered for the workshop?\n(A) It's in Room 204.\n(B) Over sixty so far.\n(C) Online registration is easy.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "It's in Room 204.",
+            "B": "Over sixty so far.",
+            "C": "Online registration is easy."
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part2:how-many"
+          ],
+          "explanation_vi": "'How many' → con số."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "The air conditioner in the lobby isn't working.\n(A) I've already called maintenance.\n(B) Yes, it's a working lunch.\n(C) The lobby opens at eight.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "I've already called maintenance.",
+            "B": "Yes, it's a working lunch.",
+            "C": "The lobby opens at eight."
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part2:statement"
+          ],
+          "explanation_vi": "Câu trần thuật báo sự cố → đáp lời về cách xử lý (đã gọi bộ phận bảo trì)."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Didn't Mr. Kim approve the design already?\n(A) The design team is on the fifth floor.\n(B) He wants a few more changes first.\n(C) I approve of your idea.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "The design team is on the fifth floor.",
+            "B": "He wants a few more changes first.",
+            "C": "I approve of your idea."
+          },
+          "answer": "B",
+          "difficulty": 3,
+          "tags": [
+            "part2:negative-question",
+            "part2:indirect"
+          ],
+          "explanation_vi": "Câu hỏi phủ định; đáp án ngầm hiểu là 'chưa duyệt' vì ông ấy muốn sửa thêm. (A), (C) lặp từ."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Could you send me the updated sales figures?\n(A) Sure, I'll email them right away.\n(B) Sales increased last year.\n(C) The figure on page three.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "Sure, I'll email them right away.",
+            "B": "Sales increased last year.",
+            "C": "The figure on page three."
+          },
+          "answer": "A",
+          "difficulty": 1,
+          "tags": [
+            "part2:request"
+          ],
+          "explanation_vi": "Lời yêu cầu → đồng ý/từ chối. (B), (C) lặp từ 'sales', 'figure'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Which hotel did you book for the conference?\n(A) The book is on my desk.\n(B) Next Tuesday.\n(C) The one closest to the venue.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "The book is on my desk.",
+            "B": "Next Tuesday.",
+            "C": "The one closest to the venue."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part2:which"
+          ],
+          "explanation_vi": "'Which hotel' → 'The one...' là cấu trúc trả lời rất thường gặp. (A) bẫy nghĩa của 'book'."
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "transcript": "Isn't the new branch opening this month?\n(A) It's been pushed back to June.\n(B) Open the window, please.\n(C) A branch of the tree.",
+      "questions": [
+        {
+          "prompt": null,
+          "choices": {
+            "A": "It's been pushed back to June.",
+            "B": "Open the window, please.",
+            "C": "A branch of the tree."
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part2:negative-question"
+          ],
+          "explanation_vi": "'Push back' = hoãn lại. (C) bẫy đồng âm 'branch' (chi nhánh / cành cây)."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Office supply order",
+      "transcript": "W: Hi, Daniel. I'm placing this month's order for office supplies. Do you need anything for your team?\nM: Actually, yes. We're running low on printer toner, and we'll need extra notebooks for the new interns starting Monday.\nW: Okay. How many interns are joining?\nM: Four. Oh, and could you check whether the supplier still offers free delivery? Last time we were charged a fee.\nW: Good point. I'll call them before I submit the order.",
+      "questions": [
+        {
+          "prompt": "What is the woman doing?",
+          "choices": {
+            "A": "Interviewing interns",
+            "B": "Repairing a printer",
+            "C": "Ordering office supplies",
+            "D": "Planning a team event"
+          },
+          "answer": "C",
+          "difficulty": 1,
+          "tags": [
+            "part3:main-idea"
+          ],
+          "explanation_vi": "Câu đầu: 'I'm placing this month's order for office supplies.'"
+        },
+        {
+          "prompt": "What will happen on Monday?",
+          "choices": {
+            "A": "New interns will start work.",
+            "B": "A delivery will arrive.",
+            "C": "A printer will be replaced.",
+            "D": "A supplier will visit."
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'the new interns starting Monday'."
+        },
+        {
+          "prompt": "What does the woman say she will do?",
+          "choices": {
+            "A": "Pay a delivery fee",
+            "B": "Contact a supplier",
+            "C": "Train the interns",
+            "D": "Cancel an order"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part3:next-action"
+          ],
+          "explanation_vi": "'I'll call them before I submit the order' — 'them' = nhà cung cấp. 'call' được diễn đạt lại thành 'contact'."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Hotel check-in",
+      "transcript": "M: Good evening. I have a reservation under the name Rossi, for three nights.\nW: Welcome, Mr. Rossi. I see your booking here. Unfortunately, the room with the city view you requested isn't ready yet. We had a plumbing issue this afternoon.\nM: Oh, that's disappointing. I have an early meeting tomorrow, so I really need to rest tonight.\nW: I completely understand. We can offer you a garden-view room right now, and we'll include breakfast for all three days at no charge.\nM: That sounds fine. Thank you.",
+      "questions": [
+        {
+          "prompt": "Where most likely are the speakers?",
+          "choices": {
+            "A": "At an airport",
+            "B": "At a hotel",
+            "C": "At a restaurant",
+            "D": "At a plumbing store"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part3:location"
+          ],
+          "explanation_vi": "reservation, room, city view, breakfast → khách sạn."
+        },
+        {
+          "prompt": "Why is the requested room unavailable?",
+          "choices": {
+            "A": "It was given to another guest.",
+            "B": "It is being painted.",
+            "C": "There was a plumbing problem.",
+            "D": "The booking was canceled."
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'We had a plumbing issue this afternoon.'"
+        },
+        {
+          "prompt": "What does the woman offer the man?",
+          "choices": {
+            "A": "A discount on his next stay",
+            "B": "Free breakfast",
+            "C": "A room upgrade",
+            "D": "A late checkout"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part3:offer"
+          ],
+          "explanation_vi": "'we'll include breakfast ... at no charge' = bữa sáng miễn phí."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Product launch schedule (three speakers)",
+      "transcript": "W1: Kenji, Maria, thanks for joining. We need to confirm the launch date for the new fitness app.\nM: The developers told me the final testing will take another two weeks.\nW2: Hmm, that's later than planned. Our advertising campaign is scheduled to begin on the fifteenth.\nW1: Can we move the campaign?\nW2: I'd have to check with the agency. They've already reserved some online ad space.\nM: Well, I guess we could launch a limited beta version first.\nW1: That's worth considering. Maria, please contact the agency today and let me know what they say.",
+      "questions": [
+        {
+          "prompt": "What are the speakers mainly discussing?",
+          "choices": {
+            "A": "Hiring developers",
+            "B": "The timing of a product launch",
+            "C": "A fitness class",
+            "D": "The cost of an agency"
+          },
+          "answer": "B",
+          "difficulty": 2,
+          "tags": [
+            "part3:main-idea",
+            "part3:three-speakers"
+          ],
+          "explanation_vi": "Nội dung xoay quanh việc xác nhận ngày ra mắt ứng dụng."
+        },
+        {
+          "prompt": "What does the man mean when he says, \"I guess we could launch a limited beta version first\"?",
+          "choices": {
+            "A": "He is proposing a possible solution.",
+            "B": "He disagrees with the developers.",
+            "C": "He wants to cancel the project.",
+            "D": "He has finished testing the app."
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part3:speaker-intent"
+          ],
+          "explanation_vi": "Câu hỏi ý định người nói: anh ấy đề xuất giải pháp ra mắt bản thử nghiệm để kịp chiến dịch quảng cáo."
+        },
+        {
+          "prompt": "What is Maria asked to do?",
+          "choices": {
+            "A": "Test the application",
+            "B": "Reserve ad space",
+            "C": "Contact an advertising agency",
+            "D": "Write a press release"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part3:request"
+          ],
+          "explanation_vi": "'Maria, please contact the agency today'."
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "passage_type": "conversation",
+      "title": "Train schedule (graphic)",
+      "graphic": {
+        "type": "table",
+        "title": "Departures – Platform 3",
+        "columns": [
+          "Train",
+          "Destination",
+          "Departs",
+          "Status"
+        ],
+        "rows": [
+          [
+            "R12",
+            "Riverside",
+            "10:05",
+            "On time"
+          ],
+          [
+            "R14",
+            "Lakeview",
+            "10:20",
+            "Delayed 30 min"
+          ],
+          [
+            "R16",
+            "Riverside",
+            "10:45",
+            "On time"
+          ],
+          [
+            "R18",
+            "Hillcrest",
+            "11:00",
+            "On time"
+          ]
+        ]
+      },
+      "image_description": "Departure board for Platform 3 (see graphic).",
+      "transcript": "M: Excuse me, I'm going to Lakeview for a meeting at eleven thirty. Is this the right platform?\nW: Yes, it is, but the Lakeview train is running late this morning. Let me check the board... It's delayed by half an hour.\nM: Oh no. That might make me late. Is there a faster way to get there?\nW: You could take a bus from the stop outside the station. It takes about forty minutes.\nM: I'll do that. Thanks for your help.",
+      "questions": [
+        {
+          "prompt": "Why is the man traveling to Lakeview?",
+          "choices": {
+            "A": "To visit a friend",
+            "B": "To attend a meeting",
+            "C": "To start a new job",
+            "D": "To catch a flight"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part3:detail"
+          ],
+          "explanation_vi": "'I'm going to Lakeview for a meeting at eleven thirty.'"
+        },
+        {
+          "prompt": "Look at the graphic. What time will the man's train most likely depart?",
+          "choices": {
+            "A": "10:05",
+            "B": "10:20",
+            "C": "10:50",
+            "D": "11:00"
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part3:graphic"
+          ],
+          "explanation_vi": "Tàu R14 đi Lakeview dự kiến 10:20 nhưng trễ 30 phút → 10:50."
+        },
+        {
+          "prompt": "What will the man most likely do next?",
+          "choices": {
+            "A": "Wait on the platform",
+            "B": "Buy a new ticket online",
+            "C": "Take a bus",
+            "D": "Call his client"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part3:next-action"
+          ],
+          "explanation_vi": "Người phụ nữ gợi ý đi xe buýt, người đàn ông đáp 'I'll do that.'"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "announcement",
+      "title": "Store announcement",
+      "transcript": "Attention, shoppers. Thank you for visiting Greenfield Home Center. This weekend only, all outdoor furniture is twenty percent off. In addition, members of our rewards program can receive free delivery on any purchase over two hundred dollars. Not a member yet? Just stop by the customer service desk near the main entrance, and you can sign up in less than five minutes. Also, please note that the store will close early tonight, at seven P.M., for inventory.",
+      "questions": [
+        {
+          "prompt": "What is being discounted?",
+          "choices": {
+            "A": "Kitchen appliances",
+            "B": "Garden tools",
+            "C": "Lighting fixtures",
+            "D": "Outdoor furniture"
+          },
+          "answer": "D",
+          "difficulty": 1,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'all outdoor furniture is twenty percent off'."
+        },
+        {
+          "prompt": "According to the speaker, what can listeners do at the customer service desk?",
+          "choices": {
+            "A": "Return an item",
+            "B": "Pick up an order",
+            "C": "Join a rewards program",
+            "D": "Schedule a delivery"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'stop by the customer service desk ... you can sign up' = tham gia chương trình thành viên."
+        },
+        {
+          "prompt": "Why will the store close early?",
+          "choices": {
+            "A": "To count its stock",
+            "B": "To prepare for a holiday",
+            "C": "To make repairs",
+            "D": "To hold a staff meeting"
+          },
+          "answer": "A",
+          "difficulty": 3,
+          "tags": [
+            "part4:paraphrase"
+          ],
+          "explanation_vi": "'for inventory' = kiểm kê hàng hóa → 'count its stock' (paraphrase)."
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "voicemail",
+      "title": "Telephone message",
+      "transcript": "Hi, this is Laura Chen from Brightway Dental Clinic, calling for Mr. James Ortiz. I'm calling to remind you of your appointment with Dr. Hassan this Thursday at two o'clock. Please remember to bring your updated insurance card, since our records show the one on file has expired. If you need to reschedule, please call us at least twenty-four hours in advance. Otherwise, there may be a cancellation fee. Thank you, and we'll see you on Thursday.",
+      "questions": [
+        {
+          "prompt": "Why is the speaker calling?",
+          "choices": {
+            "A": "To confirm a payment",
+            "B": "To remind a patient about an appointment",
+            "C": "To announce a new dentist",
+            "D": "To apologize for a delay"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part4:purpose"
+          ],
+          "explanation_vi": "'I'm calling to remind you of your appointment'."
+        },
+        {
+          "prompt": "What is the listener asked to bring?",
+          "choices": {
+            "A": "A photo ID",
+            "B": "A medical report",
+            "C": "A new insurance card",
+            "D": "A payment receipt"
+          },
+          "answer": "C",
+          "difficulty": 2,
+          "tags": [
+            "part4:detail"
+          ],
+          "explanation_vi": "'bring your updated insurance card'."
+        },
+        {
+          "prompt": "What does the speaker say about rescheduling?",
+          "choices": {
+            "A": "It must be done online.",
+            "B": "It is not allowed this week.",
+            "C": "It requires at least one day's notice.",
+            "D": "It is free of charge at any time."
+          },
+          "answer": "C",
+          "difficulty": 3,
+          "tags": [
+            "part4:paraphrase"
+          ],
+          "explanation_vi": "'at least twenty-four hours in advance' = báo trước ít nhất một ngày."
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "passage_type": "talk",
+      "title": "Tour introduction",
+      "transcript": "Good morning, everyone, and welcome to the Westbrook Chocolate Factory tour. My name is Omar, and I'll be your guide today. The tour lasts about an hour. We'll begin in the roasting room, where cocoa beans are prepared, and finish in the tasting room, where you can try our newest flavors. For safety reasons, please put on the hairnets that I'm handing out now. And I'm afraid photography isn't permitted inside the production area. But don't worry — there's a photo spot in the gift shop at the end.",
+      "questions": [
+        {
+          "prompt": "Who most likely is the speaker?",
+          "choices": {
+            "A": "A factory manager",
+            "B": "A tour guide",
+            "C": "A chef",
+            "D": "A photographer"
+          },
+          "answer": "B",
+          "difficulty": 1,
+          "tags": [
+            "part4:speaker-identity"
+          ],
+          "explanation_vi": "'I'll be your guide today'."
+        },
+        {
+          "prompt": "What are listeners asked to do?",
+          "choices": {
+            "A": "Wear hairnets",
+            "B": "Sign a form",
+            "C": "Leave their bags",
+            "D": "Buy tickets"
+          },
+          "answer": "A",
+          "difficulty": 2,
+          "tags": [
+            "part4:request"
+          ],
+          "explanation_vi": "'please put on the hairnets'."
+        },
+        {
+          "prompt": "Why does the speaker say, \"there's a photo spot in the gift shop at the end\"?",
+          "choices": {
+            "A": "To advertise a product",
+            "B": "To explain where the tour starts",
+            "C": "To reassure listeners who want to take pictures",
+            "D": "To ask listeners to hurry"
+          },
+          "answer": "C",
+          "difficulty": 4,
+          "tags": [
+            "part4:speaker-intent"
+          ],
+          "explanation_vi": "Sau khi nói không được chụp ảnh trong khu sản xuất, người nói trấn an khách rằng vẫn có chỗ chụp ảnh ở cuối tour."
+        }
+      ]
+    }
+  ]
+}
