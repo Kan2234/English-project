@@ -1,17 +1,21 @@
 // Smoke + security checks against a deployed copy of the site.
 // Usage: node scripts/check-site.mjs http://127.0.0.1:8081
-// Exits 1 if any check fails. Uses raw node:http so paths such as /../ are
+//        node scripts/check-site.mjs https://english-project.leminhkhang2234.workers.dev
+// Exits 1 if any check fails. Uses raw node:http(s) so paths such as /../ are
 // sent exactly as written instead of being normalised by fetch().
 import http from 'node:http';
+import https from 'node:https';
 
 const base = new URL(process.argv[2] ?? 'http://127.0.0.1:8081');
+const client = base.protocol === 'https:' ? https : http;
+const defaultPort = base.protocol === 'https:' ? 443 : 80;
 let failed = 0;
 let passed = 0;
 
 function request(path, { method = 'GET', headers = {} } = {}) {
   return new Promise((resolve, reject) => {
-    const req = http.request(
-      { host: base.hostname, port: base.port || 80, path, method, headers, timeout: 10000 },
+    const req = client.request(
+      { host: base.hostname, servername: base.hostname, port: base.port || defaultPort, path, method, headers, timeout: 15000 },
       (res) => {
         const chunks = [];
         res.on('data', (c) => chunks.push(c));
@@ -34,7 +38,10 @@ function check(name, ok, detail = '') {
 const home = await request('/');
 check('GET / returns 200', home.status === 200, `status ${home.status}`);
 check('index.html has app root', home.body.toString().includes('<div id="root">'));
-check('index.html revalidates (no-cache)', /no-cache/.test(home.headers['cache-control'] ?? ''));
+check('index.html revalidates (no-cache / max-age=0)', /no-cache|max-age=0\b/.test(home.headers['cache-control'] ?? ''), home.headers['cache-control']);
+const missingPage = await request('/khong-ton-tai');
+check('unknown path returns a real 404', missingPage.status === 404, `status ${missingPage.status}`);
+check('404 page is the friendly 404.html', missingPage.body.toString().includes('Không có trang này'));
 
 const assetPaths = [...home.body.toString().matchAll(/(?:src|href)="\.\/(assets\/[^"]+)"/g)].map((m) => m[1]);
 check('index.html references built assets', assetPaths.length >= 2, `found ${assetPaths.length}`);
@@ -69,6 +76,17 @@ if (mp3) {
   const r = await request(`/data/${mp3}`, { headers: { Range: 'bytes=0-99' } });
   check('audio supports range requests (206) for seeking', r.status === 206 && r.body.length === 100, `status ${r.status}`);
   check('audio served as audio/mpeg', r.headers['content-type'] === 'audio/mpeg', r.headers['content-type']);
+  const full = await request(`/data/${mp3}`);
+  const size = full.body.length;
+  check('audio range response has Content-Range', r.headers['content-range'] === `bytes 0-99/${size}`, r.headers['content-range']);
+  check('audio advertises Accept-Ranges: bytes', full.headers['accept-ranges'] === 'bytes', full.headers['accept-ranges']);
+  const mid = await request(`/data/${mp3}`, { headers: { Range: `bytes=${size - 50}-` } });
+  check('audio open-ended range returns the tail', mid.status === 206 && mid.body.equals(full.body.subarray(size - 50)), `status ${mid.status}`);
+  const suffix = await request(`/data/${mp3}`, { headers: { Range: 'bytes=-10' } });
+  check('audio suffix range returns last bytes', suffix.status === 206 && suffix.body.equals(full.body.subarray(size - 10)), `status ${suffix.status}`);
+  const bad = await request(`/data/${mp3}`, { headers: { Range: `bytes=${size + 10}-${size + 20}` } });
+  check('audio unsatisfiable range returns 416', bad.status === 416, `status ${bad.status}`);
+  check('security headers also on audio responses', Boolean(r.headers['content-security-policy']) && r.headers['x-content-type-options'] === 'nosniff');
 }
 
 // --- Security headers ---
@@ -99,7 +117,7 @@ for (const p of ['/assets/', '/data/', '/data/audio/', '/data/images/']) {
   const r = await request(p);
   check(`no directory listing: ${p}`, r.status !== 200 || !/Index of/i.test(r.body.toString()), `status ${r.status}`);
 }
-for (const p of ['/etc/nginx/nginx.conf', '/nginx.conf', '/Dockerfile', '/package.json', '/src/main.tsx', '/database/toeic.db', '/server-status', '/nginx_status']) {
+for (const p of ['/etc/nginx/nginx.conf', '/nginx.conf', '/Dockerfile', '/package.json', '/src/main.tsx', '/database/toeic.db', '/_headers', '/wrangler.jsonc', '/worker/index.js', '/server-status', '/nginx_status']) {
   const r = await request(p);
   check(`not exposed: ${p}`, r.status === 404, `status ${r.status}`);
 }

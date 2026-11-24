@@ -1,0 +1,22 @@
+// Cloudflare Workers deployment (Workers Builds runs `npm run build` then
+// `npx wrangler deploy`). The name must match the Worker in the dashboard.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "english-project",
+  "main": "worker/index.js",
+  // Must not be newer than the workerd bundled with the pinned wrangler.
+  "compatibility_date": "2026-11-16",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // Real 404s (dist/404.html). The app uses HashRouter, so it never needs
+    // the single-page-application fallback.
+    "not_found_handling": "404-page",
+    // Only audio goes through the Worker (Range support for seeking);
+    // everything else is served straight from the asset store.
+    "run_worker_first": ["/data/audio/*"]
+  },
+  "observability": {
+    "enabled": true
+  }
+}

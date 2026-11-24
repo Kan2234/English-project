@@ -37,6 +37,23 @@ npm run check-site -- http://127.0.0.1:8081   # chạy riêng bộ kiểm tra
 - Mặc định production chỉ mở cho chính máy này (`127.0.0.1:80`). Muốn máy khác trong mạng LAN truy cập: `$env:ONTA_PROD_BIND = '0.0.0.0:80'; npm run deploy:production`.
 - Cấu hình nằm trong `deploy/` (`Dockerfile`, `nginx.conf`, `security-headers.conf`).
 
+## Triển khai trên Cloudflare Workers
+
+Worker `english-project` nối với repo này qua Workers Builds. Mỗi lần push, Cloudflare chạy `npm run build` rồi `npx wrangler deploy`, theo cấu hình trong `wrangler.jsonc`.
+
+- Push lên `main` sẽ cập nhật production: https://english-project.leminhkhang2234.workers.dev
+- Push lên nhánh khác sẽ tạo bản preview, dùng như staging. Kiểm tra bản preview bằng `npm run check-site -- <URL preview>`, đạt thì mới merge vào `main`.
+- `public/_headers` gắn header bảo mật và cache cho file tĩnh. Nội dung phải giống `deploy/security-headers.conf`.
+- `worker/index.js` chỉ xử lý `/data/audio/*`. Static assets của Cloudflare không hỗ trợ `Range`, nên Worker này tự trả `206 Partial Content` để trình duyệt tua được audio. Worker cũng tự gắn header bảo mật, vì `_headers` không áp dụng cho response do Worker tạo ra.
+- Đường dẫn sai trả lỗi 404 thật với trang `public/404.html`.
+- Chạy thử trên máy: Smart App Control của Windows chặn `workerd.exe` (file không có chữ ký số), nên phải chạy `wrangler dev` trong Docker:
+
+  ```bash
+  docker run --rm -p 127.0.0.1:8787:8787 -v "$PWD:/src:ro" node:24-bookworm-slim sh -c 'apt-get update -qq && apt-get install -y -qq ca-certificates >/dev/null && mkdir /app && cd /src && tar --exclude=./node_modules --exclude=./.git -cf - . | tar -xf - -C /app && cd /app && npm ci && npx wrangler dev --ip 0.0.0.0 --port 8787'
+  ```
+
+  Chạy `npm run build` trước để có `dist/`.
+
 ## Cập nhật dữ liệu
 
 ```powershell
