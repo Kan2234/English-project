@@ -1,6 +1,6 @@
 import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent, type PointerEvent } from 'react';
 import { useData } from '../../lib/data';
-import { SCOPE_NAMES, grade } from '../../lib/exam';
+import { SCOPE_NAMES, examTests, grade } from '../../lib/exam';
 import { listAttempts } from '../../lib/storage';
 import type { Scope } from '../../lib/types';
 
@@ -74,8 +74,9 @@ export function ScoreHistory() {
   const data = useData();
   const points = useMemo<Point[]>(() => {
     const out: Point[] = [];
+    const exams = examTests(data); // attempts naming a practice bank (tampered storage) are skipped
     for (const a of listAttempts()) {
-      const test = data.tests.find((t) => t.id === a.testId);
+      const test = exams.find((t) => t.id === a.testId);
       if (!test) continue;
       const r = grade(data, test, a.scope, a.answers);
       const sec = (k: 'listening' | 'reading') => r.sections.find((s) => s.section === k)?.scaled ?? null;
@@ -97,6 +98,10 @@ export function ScoreHistory() {
     return () => ro.disconnect();
   }, []);
   const [active, setActive] = useState<number | null>(null);
+  // The point picked by the pointerdown that is about to focus the plot. On touch,
+  // pointerleave (which clears `active`) fires before focus, so onFocus restores it
+  // instead of falling back to the newest attempt (the keyboard default).
+  const pressed = useRef<number | null>(null);
   const summaryId = useId();
 
   if (points.length < 2) return null;
@@ -126,6 +131,11 @@ export function ScoreHistory() {
     return Math.max(0, Math.min(n - 1, Math.round(((px - PAD.left) / plotW) * (n - 1))));
   };
   const onMove = (e: PointerEvent<HTMLDivElement>) => setActive(nearest(e.clientX));
+  const onDown = (e: PointerEvent<HTMLDivElement>) => {
+    const i = nearest(e.clientX);
+    if (document.activeElement !== wrapRef.current) pressed.current = i;
+    setActive(i);
+  };
   const onKey = (e: KeyboardEvent<HTMLDivElement>) => {
     if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'Home' || e.key === 'End') {
       e.preventDefault();
@@ -170,10 +180,17 @@ export function ScoreHistory() {
         aria-label="Biểu đồ điểm. Dùng phím mũi tên trái, phải để xem từng bài."
         aria-describedby={summaryId}
         onPointerMove={onMove}
-        onPointerDown={onMove}
+        onPointerDown={onDown}
         onPointerLeave={() => document.activeElement !== wrapRef.current && setActive(null)}
-        onFocus={() => setActive((a) => a ?? n - 1)}
-        onBlur={() => setActive(null)}
+        onFocus={() => {
+          const tapped = pressed.current;
+          pressed.current = null;
+          setActive((a) => tapped ?? a ?? n - 1);
+        }}
+        onBlur={() => {
+          pressed.current = null;
+          setActive(null);
+        }}
         onKeyDown={onKey}
       >
         <svg width={width} height={H} viewBox={`0 0 ${width} ${H}`} aria-hidden="true">

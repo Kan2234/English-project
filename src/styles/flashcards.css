@@ -76,6 +76,8 @@
 .fc__actions {
   min-height: 3.75rem;
   display: grid;
+  /* room under the buttons when Flashcards.tsx scrolls them into view after a flip */
+  scroll-margin-bottom: 16px;
 }
 .fc .fc__flip {
   justify-content: center;

@@ -60,8 +60,12 @@ export default {
     }
 
     // Always fetch the asset with GET so we can measure and slice the body.
-    const asset = await env.ASSETS.fetch(new Request(request.url, { method: 'GET' }));
-    const path = new URL(request.url).pathname;
+    // Media URLs carry a ?v=<content hash> cache-buster; the asset store matches
+    // on the path, but drop the query anyway so the lookup never depends on it.
+    const assetUrl = new URL(request.url);
+    assetUrl.search = '';
+    const asset = await env.ASSETS.fetch(new Request(assetUrl, { method: 'GET' }));
+    const path = assetUrl.pathname;
     if (asset.status !== 200 || !path.startsWith('/data/audio/')) {
       return withHeaders(request.method === 'HEAD' ? null : asset.body, asset.status, asset.headers);
     }

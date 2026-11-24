@@ -560,7 +560,7 @@
           ],
           "explanation_vi": "Câu hỏi lựa chọn, trả lời gián tiếp: khách cần trước sáng thứ Hai nên phải gửi ngay hôm nay.",
           "why_wrong_vi": {
-            "B": "'ship' ở đây là 'tàu thủy', khác nghĩa 'gửi hàng'.",
+            "B": "Bẫy lặp từ: 'ship' trong (B) là tàu thủy (cruise ship: tàu du lịch), không liên quan đến việc gửi hàng mẫu.",
             "C": "Lặp từ 'labels' nhưng nói màu sắc."
           }
         }

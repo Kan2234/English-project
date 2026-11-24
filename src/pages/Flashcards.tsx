@@ -79,6 +79,13 @@ export default function Flashcards() {
   const [flipped, setFlipped] = useState(false);
   const [reviewed, setReviewed] = useState(0);
   const cardRef = useRef<HTMLDivElement>(null);
+  const actionsRef = useRef<HTMLDivElement>(null);
+  // On a short desktop window (e.g. 1536×639) the rating buttons can sit below the
+  // fold; bring them into view once the card is flipped. Phones (≤560px) keep
+  // their own scrolling untouched.
+  useEffect(() => {
+    if (flipped && window.matchMedia('(min-width: 561px)').matches) actionsRef.current?.scrollIntoView({ block: 'nearest' });
+  }, [flipped]);
 
   // a new filter starts a new session for that word list
   const filterKey = `${topic ?? ''}|${level}`;
@@ -209,7 +216,7 @@ export default function Flashcards() {
             </div>
           </div>
 
-          <div className="fc__actions">
+          <div className="fc__actions" ref={actionsRef}>
             {!flipped ? (
               <button type="button" className="btn btn--ink fc__flip" onClick={() => setFlipped(true)}>
                 Lật thẻ <kbd>Space</kbd>

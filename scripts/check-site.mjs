@@ -85,13 +85,14 @@ JSON.stringify(data, (key, value) => {
 });
 let missing = [];
 for (const url of media) {
-  // Bundle paths are relative to data/ (see assetUrl in src/lib/data.tsx).
+  // Bundle paths are relative to data/ (see assetUrl in src/lib/data.tsx) and
+  // carry a ?v=<content hash> cache-buster (database/build.mjs).
   const r = await request(`/data/${url}`, { method: 'HEAD' });
   if (r.status !== 200) missing.push(`${url} -> ${r.status}`);
 }
 check(`all ${media.size} audio/image files referenced by the bundle are served`, media.size > 0 && missing.length === 0, missing.slice(0, 5).join(', '));
 
-const mp3 = [...media].find((u) => u.endsWith('.mp3'));
+const mp3 = [...media].find((u) => /\.mp3(\?|$)/.test(u));
 if (mp3) {
   const r = await request(`/data/${mp3}`, { headers: { Range: 'bytes=0-99' } });
   check('audio supports range requests (206) for seeking', r.status === 206 && r.body.length === 100, `status ${r.status}`);

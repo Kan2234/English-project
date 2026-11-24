@@ -20,6 +20,8 @@ export interface Question {
 export interface Passage {
   type: string;
   title?: string;
+  /** Vietnamese title for the translation panel (falls back to the English title) */
+  title_vi?: string;
   text: string;
   /** Vietnamese translation, shown on request after answering */
   text_vi?: string;

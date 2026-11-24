@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useData } from '../lib/data';
-import { PART_NAMES, SCOPE_NAMES, formatClock, grade, levelFor, sectionOfPart, setsInScope } from '../lib/exam';
+import { PART_NAMES, SCOPE_NAMES, examTests, formatClock, grade, levelFor, sectionOfPart, setsInScope } from '../lib/exam';
 import { deleteAttempt, getAttempt } from '../lib/storage';
 import type { Section } from '../lib/types';
 import { Stimulus } from '../components/Stimulus';
@@ -148,7 +148,8 @@ export default function ResultPage() {
   const [allTags, setAllTags] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const attempt = attemptId ? getAttempt(attemptId) : undefined;
-  const test = attempt && data.tests.find((t) => t.id === attempt.testId);
+  // Only timed exams have results; an attempt naming a practice bank (tampered storage) is not one.
+  const test = attempt && examTests(data).find((t) => t.id === attempt.testId);
 
   if (!attempt || !test)
     return (

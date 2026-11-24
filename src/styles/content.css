@@ -127,6 +127,14 @@
 .next__streak {
   font-weight: 600;
 }
+/* Due flashcards when no step links to them: a full-height tap target (44px). */
+.next__due {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+}
 .next__streak strong {
   font-size: var(--t-xl);
   font-weight: 800;
@@ -145,9 +153,13 @@
 }
 .next__alts li {
   display: grid;
-  gap: 1px;
 }
+/* 44px tall tap targets; the "why" line sits right under the link. */
 .next__alts a {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-weight: 600;
 }
 @media (max-width: 760px) {

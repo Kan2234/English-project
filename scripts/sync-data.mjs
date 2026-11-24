@@ -19,6 +19,8 @@ if (existsSync(join(src, 'audio'))) {
   cpSync(join(src, 'audio'), join(out, 'audio'), { recursive: true, filter: (p) => !p.endsWith('manifest.json') });
 }
 if (existsSync(join(src, 'images'))) {
-  cpSync(join(src, 'images'), join(out, 'images'), { recursive: true });
+  // credits.json is build-time provenance (generation prompts, licences) that
+  // build.mjs folds into toeic.json; the client never reads it, so it stays private.
+  cpSync(join(src, 'images'), join(out, 'images'), { recursive: true, filter: (p) => !p.endsWith('credits.json') });
 }
 console.log('Synced database/toeic.json, audio and images -> public/data/');

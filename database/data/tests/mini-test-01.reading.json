@@ -865,12 +865,14 @@
         {
           "type": "advertisement",
           "title": "Brightline Coworking Spaces",
+          "title_vi": "Không gian làm việc chung Brightline",
           "text": "BRIGHTLINE COWORKING – Flexible workspace in downtown Easton\n\nMembership plans:\n• Basic – $150/month: access to shared desks, Monday–Friday\n• Plus – $250/month: shared desks 7 days a week + 5 hours of meeting room use\n• Private – $600/month: private office for up to 3 people + unlimited meeting rooms\n\nAll plans include high-speed Internet and free coffee. Sign up before March 31 and receive your first month at half price!",
           "text_vi": "BRIGHTLINE COWORKING – Không gian làm việc linh hoạt tại trung tâm Easton\n\nCác gói thành viên:\n• Basic – $150/tháng: dùng bàn làm việc chung, thứ Hai – thứ Sáu\n• Plus – $250/tháng: dùng bàn chung 7 ngày/tuần + 5 giờ sử dụng phòng họp\n• Private – $600/tháng: văn phòng riêng cho tối đa 3 người + phòng họp không giới hạn\n\nTất cả các gói đều có Internet tốc độ cao và cà phê miễn phí. Đăng ký trước ngày 31 tháng 3 để được giảm nửa giá tháng đầu tiên!"
         },
         {
           "type": "email",
           "title": "To: info@brightline.example | From: d.moreno@mail.example | Date: March 28 | Subject: Membership",
+          "title_vi": "Đến: info@brightline.example | Từ: d.moreno@mail.example | Ngày: 28 tháng 3 | Tiêu đề: Gói thành viên",
           "text": "Hello,\n\nI'm a freelance graphic designer, and I'm interested in your coworking space. I usually work on weekends as well as weekdays, and I meet clients about once a week for an hour, so I think the Plus plan would suit me. However, I'd like to see the space before I sign up. Would it be possible to visit on Saturday morning?\n\nAlso, could you tell me whether there is parking nearby?\n\nThank you,\nDiego Moreno",
           "text_vi": "Xin chào,\n\nTôi là nhà thiết kế đồ họa tự do và tôi quan tâm đến không gian làm việc chung của quý vị. Tôi thường làm việc cả cuối tuần lẫn ngày thường, và gặp khách khoảng mỗi tuần một lần, mỗi lần một tiếng, nên tôi nghĩ gói Plus phù hợp với tôi. Tuy nhiên, tôi muốn xem không gian trước khi đăng ký. Tôi có thể đến xem vào sáng thứ Bảy được không?\n\nNgoài ra, quý vị cho tôi biết gần đó có chỗ đỗ xe không?\n\nCảm ơn,\nDiego Moreno"
         }
@@ -991,18 +993,21 @@
         {
           "type": "schedule",
           "title": "Northgate Business Conference – Day 2 (October 14)",
+          "title_vi": "Hội nghị Kinh doanh Northgate – Ngày 2 (14 tháng 10)",
           "text": "9:00 – 10:00  Keynote: \"The Future of Remote Work\" – Dr. Alice Brennan (Hall A)\n10:15 – 11:15  Workshop: Effective Online Marketing – Raj Mehta (Room 101)\n11:30 – 12:30  Panel: Financing Small Businesses (Hall B)\n12:30 – 1:30  Lunch (Garden Terrace)\n1:30 – 2:30  Workshop: Negotiation Skills – Sofia Klein (Room 101)",
           "text_vi": "9:00 – 10:00  Bài phát biểu chính: \"Tương lai của làm việc từ xa\" – TS. Alice Brennan (Hall A)\n10:15 – 11:15  Hội thảo: Marketing trực tuyến hiệu quả – Raj Mehta (Room 101)\n11:30 – 12:30  Thảo luận: Tài chính cho doanh nghiệp nhỏ (Hall B)\n12:30 – 1:30  Ăn trưa (Garden Terrace)\n1:30 – 2:30  Hội thảo: Kỹ năng đàm phán – Sofia Klein (Room 101)"
         },
         {
           "type": "email",
           "title": "To: All attendees | From: Conference Office | Date: October 13 | Subject: Schedule update",
+          "title_vi": "Đến: Tất cả người tham dự | Từ: Văn phòng hội nghị | Ngày: 13 tháng 10 | Tiêu đề: Cập nhật lịch trình",
           "text": "Dear attendees,\n\nDue to a flight delay, Raj Mehta will not arrive until the afternoon of October 14. His workshop has therefore been moved to 1:30 P.M. Sofia Klein has kindly agreed to give her workshop at 10:15 A.M. instead. Both sessions will remain in Room 101.\n\nIn addition, because of the forecast for rain, lunch will be served in the main lobby rather than outdoors.\n\nConference Office",
           "text_vi": "Kính gửi quý đại biểu,\n\nDo chuyến bay bị trễ, Raj Mehta sẽ phải đến chiều ngày 14 tháng 10 mới tới nơi. Vì vậy, buổi hội thảo của anh ấy được dời sang 1:30 chiều. Sofia Klein đã vui lòng đổi buổi hội thảo của mình lên 10:15 sáng. Cả hai buổi vẫn diễn ra tại Room 101.\n\nNgoài ra, do dự báo có mưa, bữa trưa sẽ được phục vụ ở sảnh chính thay vì ngoài trời.\n\nVăn phòng Hội nghị"
         },
         {
           "type": "review",
           "title": "Online review – posted October 16 by Mia Turner",
+          "title_vi": "Đánh giá trực tuyến – đăng ngày 16 tháng 10 bởi Mia Turner",
           "text": "I attended the second day of the Northgate Business Conference. The keynote was inspiring, and the morning workshop in Room 101 gave me practical tips I used in a contract discussion the very next day. My only complaint is that the lobby was crowded at lunch. Overall, I would definitely attend again next year.",
           "text_vi": "Tôi đã tham dự ngày thứ hai của Hội nghị Doanh nghiệp Northgate. Bài phát biểu chính rất truyền cảm hứng, và buổi hội thảo buổi sáng ở Room 101 cho tôi những mẹo thực tế mà tôi đã áp dụng trong một cuộc thảo luận hợp đồng ngay ngày hôm sau. Điều duy nhất tôi không hài lòng là sảnh khá đông vào giờ ăn trưa. Nhìn chung, chắc chắn năm sau tôi sẽ tham dự lại."
         }

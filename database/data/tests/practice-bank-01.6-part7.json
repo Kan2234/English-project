@@ -528,12 +528,14 @@
         {
           "type": "web-page",
           "title": "Greenway Cycling Tours – Lake District Weekend",
+          "title_vi": "Greenway Cycling Tours – Chuyến cuối tuần ở Lake District",
           "text": "Day 1 (Saturday): Meet at Ashby Station at 9:00 A.M. Ride 45 km along the eastern lakeshore to Fernhill Lodge, stopping for lunch at a family-run farm café.\nDay 2 (Sunday): Ride 30 km through Hollin Forest, with a guided visit to Carrow Castle. Return to Ashby Station by 4:30 P.M.\n\nPrice: $340 per person, including bicycle rental, helmet, lodging, and all meals. Riders who bring their own bicycles receive a $40 discount. Electric bicycles are available for an additional $25 per day.\n\nTours run every weekend from May to September. Groups are limited to 12 riders.",
           "text_vi": "Ngày 1 (thứ Bảy): Tập trung ở ga Ashby lúc 9 giờ sáng. Đạp xe 45 km dọc bờ hồ phía đông đến nhà nghỉ Fernhill, dừng ăn trưa ở một quán cà phê nông trại do gia đình tự quản lý.\nNgày 2 (Chủ nhật): Đạp xe 30 km xuyên rừng Hollin, có hướng dẫn viên dẫn tham quan lâu đài Carrow. Về lại ga Ashby trước 4 giờ 30 chiều.\n\nGiá: 340 đô la/người, bao gồm thuê xe đạp, mũ bảo hiểm, chỗ ở và tất cả các bữa ăn. Người tự mang xe đạp được giảm 40 đô la. Có xe đạp điện với phụ phí 25 đô la/ngày.\n\nTour chạy mỗi cuối tuần từ tháng Năm đến tháng Chín. Mỗi đoàn tối đa 12 người."
         },
         {
           "type": "email",
           "title": "To: bookings@greenwaycycling.example | From: Oren Feld | Date: May 19 | Subject: Lake District Weekend – June 14–15",
+          "title_vi": "Đến: bookings@greenwaycycling.example | Từ: Oren Feld | Ngày: 19 tháng 5 | Tiêu đề: Chuyến cuối tuần ở Lake District – 14–15 tháng 6",
           "text": "Hello,\n\nI have booked the Lake District Weekend tour for June 14–15 for myself and my sister. I would like to make a change to our booking. My sister recently injured her knee, and although her doctor says she can ride, she would rather not cover the longer distance without some help. Could you reserve an electric bicycle for her for that day only? I will be bringing my own bicycle, as indicated in my booking form.\n\nAlso, the confirmation mentions a castle visit. Is there an entrance fee, or is it included in the price?\n\nThank you,\nOren Feld",
           "text_vi": "Xin chào,\n\nTôi đã đặt tour Lake District Weekend ngày 14–15 tháng Sáu cho tôi và em gái. Tôi muốn thay đổi một chút trong đơn đặt. Em gái tôi mới bị thương ở đầu gối, và tuy bác sĩ nói cô ấy vẫn đạp xe được, cô ấy không muốn đi chặng dài hơn mà không có trợ lực. Anh/chị có thể giữ cho cô ấy một xe đạp điện chỉ trong ngày hôm đó được không? Tôi sẽ mang xe đạp riêng, như đã ghi trong phiếu đặt.\n\nNgoài ra, thư xác nhận có nhắc đến chuyến tham quan lâu đài. Có phải trả phí vào cửa không, hay đã bao gồm trong giá?\n\nCảm ơn,\nOren Feld"
         }
@@ -654,18 +656,21 @@
         {
           "type": "memo",
           "title": "MEMO | To: All Store Managers | From: Daniela Cruz, Regional Training Coordinator | Date: August 4 | Subject: Customer service training",
+          "title_vi": "BẢN GHI NHỚ | Đến: Tất cả quản lý cửa hàng | Từ: Daniela Cruz, Điều phối viên đào tạo khu vực | Ngày: 4 tháng 8 | Tiêu đề: Đào tạo dịch vụ khách hàng",
           "text": "As announced at last month's meeting, every store manager must complete our new customer service training by the end of September. The course consists of one full-day session at the regional office. In addition, managers of stores with more than 30 employees are required to attend a half-day follow-up workshop on October 6.\n\nPlease register through the training portal at least one week before your chosen session. If none of the dates work for you, contact me directly so that we can arrange an alternative.",
           "text_vi": "Như đã thông báo trong cuộc họp tháng trước, mọi quản lý cửa hàng phải hoàn thành khóa đào tạo dịch vụ khách hàng mới trước cuối tháng Chín. Khóa học gồm một buổi trọn ngày tại văn phòng khu vực. Ngoài ra, quản lý của các cửa hàng có trên 30 nhân viên phải tham dự thêm một buổi hội thảo nửa ngày vào ngày 6 tháng Mười.\n\nVui lòng đăng ký qua cổng đào tạo ít nhất một tuần trước buổi học đã chọn. Nếu không có ngày nào phù hợp, hãy liên hệ trực tiếp với tôi để chúng ta sắp xếp phương án khác."
         },
         {
           "type": "schedule",
           "title": "Customer Service Training – Session Dates (Regional Office)",
+          "title_vi": "Đào tạo dịch vụ khách hàng – Lịch các buổi học (Văn phòng khu vực)",
           "text": "Session A — Tuesday, September 9 — Room 1 — Trainer: Paul Henning\nSession B — Friday, September 12 — Room 3 — Trainer: Mei Chang\nSession C — Wednesday, September 17 — Room 1 — Trainer: Paul Henning\nSession D — Monday, September 22 — Room 3 — Trainer: Mei Chang\n\nAll sessions run from 9:00 A.M. to 5:00 P.M. Lunch is provided.",
           "text_vi": "Buổi A — thứ Ba, 9 tháng Chín — Phòng 1 — Giảng viên: Paul Henning\nBuổi B — thứ Sáu, 12 tháng Chín — Phòng 3 — Giảng viên: Mei Chang\nBuổi C — thứ Tư, 17 tháng Chín — Phòng 1 — Giảng viên: Paul Henning\nBuổi D — thứ Hai, 22 tháng Chín — Phòng 3 — Giảng viên: Mei Chang\n\nTất cả các buổi diễn ra từ 9 giờ sáng đến 5 giờ chiều. Có phục vụ bữa trưa."
         },
         {
           "type": "email",
           "title": "To: Daniela Cruz | From: Tomasz Wilk | Date: September 8 | Subject: Training registration",
+          "title_vi": "Đến: Daniela Cruz | Từ: Tomasz Wilk | Ngày: 8 tháng 9 | Tiêu đề: Đăng ký đào tạo",
           "text": "Hi Daniela,\n\nI tried to register for Ms. Chang's session on September 12, but the portal would not accept my registration. I assume this is because the deadline has already passed. Our store is holding a sidewalk sale on the 17th, so I can't attend that day. Would it be possible to join the September 12 session anyway? If not, I can attend the last session, although I would prefer an earlier date, since our store has 42 employees and I will also need to prepare for the October workshop.\n\nBest regards,\nTomasz Wilk\nManager, Eastgate Store",
           "text_vi": "Chào Daniela,\n\nTôi đã thử đăng ký buổi của cô Chang ngày 12 tháng Chín nhưng cổng đăng ký không chấp nhận. Tôi đoán là vì đã quá hạn. Ngày 17 cửa hàng chúng tôi tổ chức bán hàng trên vỉa hè nên tôi không thể tham dự hôm đó. Liệu tôi vẫn có thể tham gia buổi ngày 12 không? Nếu không, tôi có thể dự buổi cuối cùng, dù tôi muốn ngày sớm hơn, vì cửa hàng chúng tôi có 42 nhân viên và tôi còn phải chuẩn bị cho buổi hội thảo tháng Mười.\n\nTrân trọng,\nTomasz Wilk\nQuản lý cửa hàng Eastgate"
         }

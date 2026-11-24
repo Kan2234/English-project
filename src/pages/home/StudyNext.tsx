@@ -25,7 +25,10 @@ const dateVi = (ts: number) => new Date(ts).toLocaleDateString('vi-VN', { day: '
  */
 function nextSteps(data: Bundle): Step[] {
   const steps: Step[] = [];
-  const attempts = listAttempts();
+  // Only attempts on a timed exam count; a stored attempt that names a practice
+  // bank (part-drill) or an unknown test is ignored.
+  const exams = examTests(data);
+  const attempts = listAttempts().filter((a) => exams.some((t) => t.id === a.testId));
   const practice = loadPractice();
   const cards = loadCards();
   const mini = data.tests.find((t) => t.test_type === 'mini');
@@ -80,9 +83,9 @@ function nextSteps(data: Bundle): Step[] {
   if (wrongTotal >= 5) steps.push(wrongStep());
 
   // 4. weakest part of the newest attempt
-  const last = attempts.find((a) => data.tests.some((t) => t.id === a.testId));
+  const last = attempts[0];
   if (last) {
-    const test = data.tests.find((t) => t.id === last.testId)!;
+    const test = exams.find((t) => t.id === last.testId)!;
     const weak = grade(data, test, last.scope, last.answers)
       .byPart.filter((p) => p.correct < p.total)
       .sort((a, b) => a.correct / a.total - b.correct / b.total || a.part - b.part)[0];
@@ -166,6 +169,8 @@ export function StudyNext() {
   const [main, ...rest] = steps;
   if (!main) return null;
   const alts = rest.slice(0, 2);
+  // Due flashcards appear once: as a step when one is shown, otherwise as a link here.
+  const dueLink = due > 0 && ![main, ...alts].some((s) => s.to === '/tu-vung/the');
 
   return (
     <section className="next" aria-labelledby="next-title">
@@ -194,13 +199,12 @@ export function StudyNext() {
           </span>
           <span className="small muted">
             {run.count === 0 ? 'Học một chút mỗi ngày để bắt đầu chuỗi.' : run.activeToday ? 'Hôm nay bạn đã học.' : 'Học hôm nay để giữ chuỗi.'}
-            {due > 0 && (
-              <>
-                {' '}
-                <Link to="/tu-vung/the">{due} thẻ từ vựng đến hạn</Link>.
-              </>
-            )}
           </span>
+          {dueLink && (
+            <Link className="next__due" to="/tu-vung/the">
+              Ôn {due} thẻ từ vựng đến hạn
+            </Link>
+          )}
         </p>
         {alts.length > 0 && (
           <div>

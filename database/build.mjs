@@ -9,12 +9,20 @@ import { readFileSync, readdirSync, existsSync, rmSync, writeFileSync } from 'no
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DatabaseSync } from 'node:sqlite';
+import { createHash } from 'node:crypto';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const DATA = join(ROOT, 'data');
 const readJson = (p) => JSON.parse(readFileSync(p, 'utf8'));
 const errors = [];
 const fail = (msg) => errors.push(msg);
+// Media URLs keep their path but get ?v=<8 hex of the file's sha256>, so a replaced
+// photo or MP3 gets a new URL and browsers holding the old copy (max-age=86400)
+// fetch it again. Paths are relative to database/ (= public/data/ after sync-data).
+const versioned = (rel) => {
+  if (!rel || /^[a-z][a-z0-9+.-]*:|[?#]/i.test(rel) || !existsSync(join(ROOT, rel))) return rel;
+  return `${rel}?v=${createHash('sha256').update(readFileSync(join(ROOT, rel))).digest('hex').slice(0, 8)}`;
+};
 
 // ---------------------------------------------------------------- load
 const info = readJson(join(DATA, 'exam_info.json'));
@@ -43,7 +51,7 @@ for (const f of testFiles) {
 }
 
 // ---------------------------------------------------------------- Vietnamese translations (all optional)
-//   set.transcript_vi, passages[].text_vi, question.prompt_vi, question.why_wrong_vi { label: reason }
+//   set.transcript_vi, passages[].text_vi, passages[].title_vi, question.prompt_vi, question.why_wrong_vi { label: reason }
 // Malformed values fail the build; missing ones are only reported (per source file) so content can be added gradually.
 const missingVi = new Map(); // file -> [ids]
 const noteMissing = (file, id) => missingVi.set(file, [...(missingVi.get(file) ?? []), id]);
@@ -54,6 +62,7 @@ function checkSetVi(s, setId, file) {
     if (!s.transcript) fail(`${setId}: transcript_vi without transcript`);
   } else if (s.transcript) noteMissing(file, `${setId} transcript`);
   (s.passages ?? []).forEach((p, i) => {
+    if (p.title_vi !== undefined && !(isText(p.title_vi) && p.title)) fail(`${setId}: passages[${i}].title_vi must be a non-empty string next to a title`);
     if (p.text_vi === undefined) noteMissing(file, `${setId} passage ${i + 1}`);
     else if (!isText(p.text_vi)) fail(`${setId}: passages[${i}].text_vi must be a non-empty string`);
   });
@@ -115,9 +124,9 @@ for (const [testId, t] of tests) {
     if (credit && !(credit.text && /^https:\/\//.test(credit.url))) fail(`${setId}: image attribution needs text and an https url`);
     return {
       id: setId, ...s,
-      image_url: s.image_url ?? image ?? null,
+      image_url: versioned(s.image_url ?? image ?? null),
       image_credit: s.image_credit ?? credit ?? null,
-      audio_url: s.audio_url ?? (audioOk ? audio.file : null),
+      audio_url: versioned(s.audio_url ?? (audioOk ? audio.file : null)),
       audio_duration_sec: s.audio_duration_sec ?? (audioOk ? audio.duration_sec : null),
       questions,
     };

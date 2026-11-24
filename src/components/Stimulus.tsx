@@ -145,7 +145,7 @@ export function Stimulus({ set, showTranscript = false, autoPlay = false, withAu
             (p, i) =>
               p.text_vi && (
                 <div className="vi-panel__item" key={i}>
-                  {set.passages!.length > 1 && p.title && <div className="vi-panel__title">{p.title}</div>}
+                  {set.passages!.length > 1 && p.title && <div className="vi-panel__title">{p.title_vi ?? p.title}</div>}
                   {renderPassage(p.text_vi, set)}
                 </div>
               ),

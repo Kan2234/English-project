@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T16:23:16.873Z",
+  "generated_at": "2026-11-24T16:53:17.299Z",
   "exam_formats": [
     {
       "code": "LR",
@@ -1409,9 +1409,9 @@
               }
             }
           ],
-          "image_url": "images/ft01-p1-s01.jpg",
+          "image_url": "images/ft01-p1-s01.jpg?v=8c8db868",
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p1-s01.mp3",
+          "audio_url": "audio/full-test-01/ft01-p1-s01.mp3?v=1779a008",
           "audio_duration_sec": 17.2
         },
         {
@@ -1445,9 +1445,9 @@
               }
             }
           ],
-          "image_url": "images/ft01-p1-s02.jpg",
+          "image_url": "images/ft01-p1-s02.jpg?v=93269c2e",
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p1-s02.mp3",
+          "audio_url": "audio/full-test-01/ft01-p1-s02.mp3?v=d9d25f96",
           "audio_duration_sec": 17
         },
         {
@@ -1482,9 +1482,9 @@
               }
             }
           ],
-          "image_url": "images/ft01-p1-s03.jpg",
+          "image_url": "images/ft01-p1-s03.jpg?v=7a7cec57",
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p1-s03.mp3",
+          "audio_url": "audio/full-test-01/ft01-p1-s03.mp3?v=cc80e084",
           "audio_duration_sec": 19.5
         },
         {
@@ -1519,9 +1519,9 @@
               }
             }
           ],
-          "image_url": "images/ft01-p1-s04.jpg",
+          "image_url": "images/ft01-p1-s04.jpg?v=be5e353d",
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p1-s04.mp3",
+          "audio_url": "audio/full-test-01/ft01-p1-s04.mp3?v=4824a035",
           "audio_duration_sec": 17.7
         },
         {
@@ -1556,9 +1556,9 @@
               }
             }
           ],
-          "image_url": "images/ft01-p1-s05.jpg",
+          "image_url": "images/ft01-p1-s05.jpg?v=d9633541",
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p1-s05.mp3",
+          "audio_url": "audio/full-test-01/ft01-p1-s05.mp3?v=a1bb6c92",
           "audio_duration_sec": 19.3
         },
         {
@@ -1592,9 +1592,9 @@
               }
             }
           ],
-          "image_url": "images/ft01-p1-s06.jpg",
+          "image_url": "images/ft01-p1-s06.jpg?v=23564413",
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p1-s06.mp3",
+          "audio_url": "audio/full-test-01/ft01-p1-s06.mp3?v=1f8bdd9b",
           "audio_duration_sec": 19.7
         },
         {
@@ -1626,7 +1626,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s01.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s01.mp3?v=96d3072b",
           "audio_duration_sec": 12.9
         },
         {
@@ -1658,7 +1658,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s02.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s02.mp3?v=acc183ad",
           "audio_duration_sec": 13.4
         },
         {
@@ -1690,7 +1690,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s03.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s03.mp3?v=3aca8a5f",
           "audio_duration_sec": 13.5
         },
         {
@@ -1722,7 +1722,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s04.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s04.mp3?v=970a31a4",
           "audio_duration_sec": 13.1
         },
         {
@@ -1754,7 +1754,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s05.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s05.mp3?v=8dc4f942",
           "audio_duration_sec": 13.2
         },
         {
@@ -1787,7 +1787,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s06.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s06.mp3?v=a20e3b16",
           "audio_duration_sec": 14.1
         },
         {
@@ -1820,7 +1820,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s07.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s07.mp3?v=41a9644c",
           "audio_duration_sec": 15.3
         },
         {
@@ -1852,7 +1852,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s08.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s08.mp3?v=a9d1efa4",
           "audio_duration_sec": 12.2
         },
         {
@@ -1884,7 +1884,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s09.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s09.mp3?v=3189e9b4",
           "audio_duration_sec": 12.4
         },
         {
@@ -1916,7 +1916,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s10.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s10.mp3?v=b7227a49",
           "audio_duration_sec": 12.9
         },
         {
@@ -1948,7 +1948,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s11.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s11.mp3?v=d309c044",
           "audio_duration_sec": 12.8
         },
         {
@@ -1980,7 +1980,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s12.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s12.mp3?v=12a36207",
           "audio_duration_sec": 13.1
         },
         {
@@ -2012,7 +2012,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s13.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s13.mp3?v=dada8c95",
           "audio_duration_sec": 14.1
         },
         {
@@ -2045,7 +2045,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s14.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s14.mp3?v=6a858d9c",
           "audio_duration_sec": 15
         },
         {
@@ -2077,7 +2077,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s15.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s15.mp3?v=ce2a3731",
           "audio_duration_sec": 14.2
         },
         {
@@ -2109,7 +2109,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s16.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s16.mp3?v=e677a46c",
           "audio_duration_sec": 12.3
         },
         {
@@ -2141,7 +2141,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s17.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s17.mp3?v=0769aa23",
           "audio_duration_sec": 13.5
         },
         {
@@ -2173,7 +2173,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s18.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s18.mp3?v=b71932a4",
           "audio_duration_sec": 14.1
         },
         {
@@ -2206,7 +2206,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s19.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s19.mp3?v=998e2e20",
           "audio_duration_sec": 14
         },
         {
@@ -2238,7 +2238,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s20.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s20.mp3?v=106669fc",
           "audio_duration_sec": 13.3
         },
         {
@@ -2270,7 +2270,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s21.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s21.mp3?v=2c59a159",
           "audio_duration_sec": 13.6
         },
         {
@@ -2302,7 +2302,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s22.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s22.mp3?v=3e228cad",
           "audio_duration_sec": 14.2
         },
         {
@@ -2334,7 +2334,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s23.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s23.mp3?v=bc2ef582",
           "audio_duration_sec": 12.3
         },
         {
@@ -2366,7 +2366,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s24.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s24.mp3?v=8edd5cd8",
           "audio_duration_sec": 13.9
         },
         {
@@ -2398,7 +2398,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p2-s25.mp3",
+          "audio_url": "audio/full-test-01/ft01-p2-s25.mp3?v=28bb333c",
           "audio_duration_sec": 12
         },
         {
@@ -2481,7 +2481,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p3-s01.mp3",
+          "audio_url": "audio/full-test-01/ft01-p3-s01.mp3?v=226c7a46",
           "audio_duration_sec": 62.5
         },
         {
@@ -2564,7 +2564,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p3-s02.mp3",
+          "audio_url": "audio/full-test-01/ft01-p3-s02.mp3?v=283cf68c",
           "audio_duration_sec": 61.3
         },
         {
@@ -2648,7 +2648,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p3-s03.mp3",
+          "audio_url": "audio/full-test-01/ft01-p3-s03.mp3?v=513ebd96",
           "audio_duration_sec": 69.3
         },
         {
@@ -2731,7 +2731,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p3-s04.mp3",
+          "audio_url": "audio/full-test-01/ft01-p3-s04.mp3?v=43c5516f",
           "audio_duration_sec": 66
         },
         {
@@ -2814,7 +2814,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p3-s05.mp3",
+          "audio_url": "audio/full-test-01/ft01-p3-s05.mp3?v=e2583a19",
           "audio_duration_sec": 71.9
         },
         {
@@ -2897,7 +2897,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p3-s06.mp3",
+          "audio_url": "audio/full-test-01/ft01-p3-s06.mp3?v=b185c3f6",
           "audio_duration_sec": 68.9
         },
         {
@@ -2981,7 +2981,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p3-s07.mp3",
+          "audio_url": "audio/full-test-01/ft01-p3-s07.mp3?v=306f5a9f",
           "audio_duration_sec": 65.5
         },
         {
@@ -3064,7 +3064,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p3-s08.mp3",
+          "audio_url": "audio/full-test-01/ft01-p3-s08.mp3?v=b112e7f6",
           "audio_duration_sec": 68.7
         },
         {
@@ -3147,7 +3147,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p3-s09.mp3",
+          "audio_url": "audio/full-test-01/ft01-p3-s09.mp3?v=89b4dd3d",
           "audio_duration_sec": 68.3
         },
         {
@@ -3230,7 +3230,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p3-s10.mp3",
+          "audio_url": "audio/full-test-01/ft01-p3-s10.mp3?v=0d13731f",
           "audio_duration_sec": 65.8
         },
         {
@@ -3340,7 +3340,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p3-s11.mp3",
+          "audio_url": "audio/full-test-01/ft01-p3-s11.mp3?v=04d5fd6b",
           "audio_duration_sec": 71.5
         },
         {
@@ -3455,7 +3455,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p3-s12.mp3",
+          "audio_url": "audio/full-test-01/ft01-p3-s12.mp3?v=b3911ee8",
           "audio_duration_sec": 71
         },
         {
@@ -3570,7 +3570,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p3-s13.mp3",
+          "audio_url": "audio/full-test-01/ft01-p3-s13.mp3?v=0a9bfee6",
           "audio_duration_sec": 74.1
         },
         {
@@ -3653,7 +3653,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p4-s01.mp3",
+          "audio_url": "audio/full-test-01/ft01-p4-s01.mp3?v=061a396e",
           "audio_duration_sec": 67.3
         },
         {
@@ -3736,7 +3736,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p4-s02.mp3",
+          "audio_url": "audio/full-test-01/ft01-p4-s02.mp3?v=54031156",
           "audio_duration_sec": 69.3
         },
         {
@@ -3819,7 +3819,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p4-s03.mp3",
+          "audio_url": "audio/full-test-01/ft01-p4-s03.mp3?v=dafcde68",
           "audio_duration_sec": 60
         },
         {
@@ -3902,7 +3902,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p4-s04.mp3",
+          "audio_url": "audio/full-test-01/ft01-p4-s04.mp3?v=7f89f22e",
           "audio_duration_sec": 65.7
         },
         {
@@ -3985,7 +3985,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p4-s05.mp3",
+          "audio_url": "audio/full-test-01/ft01-p4-s05.mp3?v=3e7dcb04",
           "audio_duration_sec": 65.6
         },
         {
@@ -4068,7 +4068,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p4-s06.mp3",
+          "audio_url": "audio/full-test-01/ft01-p4-s06.mp3?v=ad778fbd",
           "audio_duration_sec": 65
         },
         {
@@ -4151,7 +4151,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p4-s07.mp3",
+          "audio_url": "audio/full-test-01/ft01-p4-s07.mp3?v=6d6aa125",
           "audio_duration_sec": 65.4
         },
         {
@@ -4234,7 +4234,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p4-s08.mp3",
+          "audio_url": "audio/full-test-01/ft01-p4-s08.mp3?v=fb344e2e",
           "audio_duration_sec": 68.4
         },
         {
@@ -4349,7 +4349,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p4-s09.mp3",
+          "audio_url": "audio/full-test-01/ft01-p4-s09.mp3?v=4bdb7ad6",
           "audio_duration_sec": 77.5
         },
         {
@@ -4459,7 +4459,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/full-test-01/ft01-p4-s10.mp3",
+          "audio_url": "audio/full-test-01/ft01-p4-s10.mp3?v=047531c9",
           "audio_duration_sec": 75.6
         },
         {
@@ -6776,12 +6776,14 @@
             {
               "type": "advertisement",
               "title": "Lakeshore Community College – Evening Photography Workshops",
+              "title_vi": "Trường Cao đẳng Cộng đồng Lakeshore – Các buổi học nhiếp ảnh buổi tối",
               "text": "Improve your photography skills with our four-part evening series! Each workshop runs from 6:30 to 8:30 P.M. in Room 210, Arts Building.\n\nWorkshop 1 – Camera Basics (March 4)\nWorkshop 2 – Portrait Lighting (March 11)\nWorkshop 3 – Landscape Photography (March 18) *meets at Lakeshore Park\nWorkshop 4 – Photo Editing Software (March 25) *laptop required\n\nFees: $40 per workshop, or $140 for all four. Lakeshore students receive a 25% discount.\nRegister at lakeshorecc.example/photo. Class size is limited to 15.",
               "text_vi": "Nâng cao kỹ năng nhiếp ảnh với chuỗi bốn buổi học buổi tối của chúng tôi! Mỗi buổi diễn ra từ 6:30 đến 8:30 tối tại Phòng 210, Tòa nhà Nghệ thuật.\n\nBuổi 1 – Kiến thức cơ bản về máy ảnh (4 tháng 3)\nBuổi 2 – Ánh sáng chụp chân dung (11 tháng 3)\nBuổi 3 – Chụp ảnh phong cảnh (18 tháng 3) *học tại công viên Lakeshore\nBuổi 4 – Phần mềm chỉnh sửa ảnh (25 tháng 3) *cần mang laptop\n\nHọc phí: $40 mỗi buổi, hoặc $140 cho cả bốn buổi. Sinh viên Lakeshore được giảm 25%.\nĐăng ký tại lakeshorecc.example/photo. Mỗi lớp tối đa 15 người."
             },
             {
               "type": "email",
               "title": "To: continuinged@lakeshorecc.example | From: hiro.tanaka@mail.example | Date: February 20 | Subject: Photography workshops",
+              "title_vi": "Đến: continuinged@lakeshorecc.example | Từ: hiro.tanaka@mail.example | Ngày: 20 tháng 2 | Tiêu đề: Các buổi học nhiếp ảnh",
               "text": "Hello,\n\nI would like to sign up for the full photography series. I have a basic camera but have never taken a class, so I think the series will be very useful. I am not a Lakeshore student.\n\nI have one question. I don't own a laptop. Will there be computers available for the editing session, or should I borrow one from a friend?\n\nAlso, I may need to leave the March 18 workshop a little early. Will the session end at the usual time even though it is held at a different location?\n\nThank you,\nHiro Tanaka",
               "text_vi": "Xin chào,\n\nTôi muốn đăng ký trọn bộ chuỗi buổi học nhiếp ảnh. Tôi có một chiếc máy ảnh cơ bản nhưng chưa từng học lớp nào, nên tôi nghĩ chuỗi buổi học sẽ rất hữu ích. Tôi không phải sinh viên Lakeshore.\n\nTôi có một câu hỏi. Tôi không có laptop. Buổi chỉnh sửa ảnh có sẵn máy tính không, hay tôi nên mượn của bạn?\n\nNgoài ra, có thể tôi sẽ phải về sớm một chút ở buổi ngày 18 tháng 3. Buổi đó có kết thúc vào giờ thường lệ không, dù được tổ chức ở địa điểm khác?\n\nCảm ơn,\nHiro Tanaka"
             }
@@ -6917,12 +6919,14 @@
             {
               "type": "job-posting",
               "title": "Job Posting – Orchard Logistics",
+              "title_vi": "Tin tuyển dụng – Orchard Logistics",
               "text": "Position: Warehouse Operations Supervisor\nLocation: Dayton distribution center\n\nOrchard Logistics is seeking an experienced supervisor to manage a team of 25 warehouse staff on the evening shift (3 P.M.–11 P.M.).\n\nRequirements:\n• At least three years of supervisory experience in a warehouse or distribution setting\n• Familiarity with inventory management software\n• Forklift certification (or willingness to obtain it within 60 days of hire)\n• Strong communication skills\n\nTo apply, send a résumé and cover letter to hiring@orchardlogistics.example by May 30.",
               "text_vi": "Vị trí: Giám sát vận hành kho\nĐịa điểm: Trung tâm phân phối Dayton\n\nOrchard Logistics đang tìm một giám sát viên có kinh nghiệm để quản lý đội 25 nhân viên kho ca tối (3 giờ chiều – 11 giờ đêm).\n\nYêu cầu:\n• Ít nhất ba năm kinh nghiệm giám sát trong môi trường kho hoặc phân phối\n• Thành thạo phần mềm quản lý hàng tồn kho\n• Chứng chỉ lái xe nâng (hoặc sẵn sàng lấy chứng chỉ trong vòng 60 ngày kể từ khi được tuyển)\n• Kỹ năng giao tiếp tốt\n\nĐể ứng tuyển, gửi sơ yếu lý lịch và thư xin việc đến hiring@orchardlogistics.example trước ngày 30 tháng 5."
             },
             {
               "type": "email",
               "title": "To: hiring@orchardlogistics.example | From: Sofia Marquez | Date: May 22 | Subject: Application – Warehouse Operations Supervisor",
+              "title_vi": "Đến: hiring@orchardlogistics.example | Từ: Sofia Marquez | Ngày: 22 tháng 5 | Tiêu đề: Ứng tuyển – Giám sát vận hành kho",
               "text": "Dear Hiring Manager,\n\nI am writing to apply for the Warehouse Operations Supervisor position at your Dayton distribution center. For the past four years, I have supervised a team of 18 employees at Kingsway Retail's regional warehouse, where I helped reduce shipping errors by 30 percent.\n\nIn my current role, I use StockTrack inventory software daily and have trained new employees to use it. Although I do not yet have a forklift certification, I have already registered for a certification course that begins next month.\n\nI am currently working the day shift, but I am happy to work evenings. My résumé is attached. Thank you for your consideration.\n\nSincerely,\nSofia Marquez",
               "text_vi": "Kính gửi Quản lý tuyển dụng,\n\nTôi viết thư này để ứng tuyển vị trí Giám sát vận hành kho tại trung tâm phân phối Dayton của quý công ty. Bốn năm qua, tôi giám sát một đội 18 nhân viên tại kho khu vực của Kingsway Retail, nơi tôi đã góp phần giảm 30% lỗi giao hàng.\n\nỞ vị trí hiện tại, tôi dùng phần mềm quản lý kho StockTrack hằng ngày và đã đào tạo nhân viên mới sử dụng phần mềm này. Tuy chưa có chứng chỉ lái xe nâng, tôi đã đăng ký một khóa học lấy chứng chỉ bắt đầu từ tháng sau.\n\nHiện tôi đang làm ca ngày, nhưng tôi sẵn sàng làm ca tối. Sơ yếu lý lịch của tôi được gửi kèm. Cảm ơn quý công ty đã xem xét.\n\nTrân trọng,\nSofia Marquez"
             }
@@ -7059,18 +7063,21 @@
             {
               "type": "web-page",
               "title": "Seabreeze Inn – Room Types",
+              "title_vi": "Nhà nghỉ Seabreeze – Các loại phòng",
               "text": "SEABREEZE INN – Ocean Road, Port Ellis\n\nStandard Room: Queen bed, garden view – $120/night\nOcean Room: King bed, ocean view – $165/night\nFamily Suite: Two queen beds, sofa bed, kitchenette – $210/night\nLuxury Suite: King bed, private balcony, ocean view – $260/night\n\nAll rooms include free Wi-Fi and breakfast. Free parking for one vehicle per room.\nCancellations made at least 72 hours before arrival receive a full refund.",
               "text_vi": "SEABREEZE INN – Đường Ocean, Port Ellis\n\nPhòng Tiêu chuẩn: Giường queen, nhìn ra vườn – $120/đêm\nPhòng Hướng biển: Giường king, nhìn ra biển – $165/đêm\nSuite Gia đình: Hai giường queen, sofa giường, bếp nhỏ – $210/đêm\nSuite Cao cấp: Giường king, ban công riêng, nhìn ra biển – $260/đêm\n\nTất cả các phòng đều có Wi-Fi và bữa sáng miễn phí. Miễn phí đỗ xe cho một xe mỗi phòng.\nHủy phòng ít nhất 72 giờ trước khi đến được hoàn tiền toàn bộ."
             },
             {
               "type": "confirmation",
               "title": "Booking Confirmation #SB-20931",
+              "title_vi": "Xác nhận đặt phòng #SB-20931",
               "text": "Guest: Martin Duval\nCheck-in: Friday, July 11   Check-out: Monday, July 14 (3 nights)\nRoom: Family Suite\nGuests: 2 adults, 3 children\nSpecial requests: Extra crib\nTotal: $630 (taxes included)\nPayment: Charged to card ending 4417",
               "text_vi": "Khách: Martin Duval\nNhận phòng: Thứ Sáu, 11 tháng 7   Trả phòng: Thứ Hai, 14 tháng 7 (3 đêm)\nPhòng: Suite Gia đình\nSố khách: 2 người lớn, 3 trẻ em\nYêu cầu đặc biệt: Thêm một nôi em bé\nTổng cộng: $630 (đã gồm thuế)\nThanh toán: Trừ vào thẻ có 4 số cuối 4417"
             },
             {
               "type": "email",
               "title": "To: reservations@seabreezeinn.example | From: Martin Duval | Date: July 9 | Subject: Booking #SB-20931",
+              "title_vi": "Đến: reservations@seabreezeinn.example | Từ: Martin Duval | Ngày: 9 tháng 7 | Tiêu đề: Đặt phòng #SB-20931",
               "text": "Hello,\n\nI have a reservation at your inn beginning this Friday. Unfortunately, my wife has a work commitment on Friday, so we will now arrive on Saturday instead and stay for two nights. Could you please change my booking? I understand I may not receive a refund for the first night.\n\nAlso, we will be traveling in two cars, as my parents are joining us for dinner on Saturday. Is there space to park a second car?\n\nThank you,\nMartin Duval",
               "text_vi": "Xin chào,\n\nTôi có đặt phòng tại nhà nghỉ của quý vị bắt đầu từ thứ Sáu này. Không may, vợ tôi có việc vào thứ Sáu, nên giờ chúng tôi sẽ đến vào thứ Bảy và ở hai đêm. Quý vị có thể đổi đặt phòng giúp tôi không? Tôi hiểu rằng có thể tôi sẽ không được hoàn tiền đêm đầu tiên.\n\nNgoài ra, chúng tôi sẽ đi hai xe vì bố mẹ tôi sẽ đến ăn tối cùng vào thứ Bảy. Có chỗ để đỗ chiếc xe thứ hai không?\n\nCảm ơn,\nMartin Duval"
             }
@@ -7208,18 +7215,21 @@
             {
               "type": "notice",
               "title": "City of Brookfield – New Recycling Program",
+              "title_vi": "Thành phố Brookfield – Chương trình tái chế mới",
               "text": "Beginning April 1, the City of Brookfield will collect food waste separately from regular trash. Each household will receive a green bin for food scraps, such as fruit and vegetable peels, coffee grounds, and eggshells. Meat, bones, and plastic bags may not be placed in green bins.\n\nGreen bins will be collected once a week, on the same day as your regular trash collection. Bins will be delivered to all households between March 15 and March 25. If you have not received yours by March 28, please call the city services line at 555-0100.",
               "text_vi": "Từ ngày 1 tháng 4, Thành phố Brookfield sẽ thu gom rác thực phẩm riêng với rác thông thường. Mỗi hộ gia đình sẽ nhận một thùng xanh để đựng thức ăn thừa như vỏ trái cây và rau củ, bã cà phê và vỏ trứng. Không được bỏ thịt, xương và túi nilon vào thùng xanh.\n\nThùng xanh sẽ được thu gom mỗi tuần một lần, cùng ngày với lịch thu gom rác thông thường của bạn. Thùng sẽ được giao đến tất cả các hộ từ ngày 15 đến ngày 25 tháng 3. Nếu đến ngày 28 tháng 3 vẫn chưa nhận được, vui lòng gọi đường dây dịch vụ thành phố theo số 555-0100."
             },
             {
               "type": "schedule",
               "title": "Collection Schedule by Neighborhood",
+              "title_vi": "Lịch thu gom theo khu dân cư",
               "text": "Northside – Monday\nRiverbend – Tuesday\nOld Town – Wednesday\nHillcrest – Thursday\nWestgate – Friday",
               "text_vi": "Northside – Thứ Hai\nRiverbend – Thứ Ba\nOld Town – Thứ Tư\nHillcrest – Thứ Năm\nWestgate – Thứ Sáu"
             },
             {
               "type": "email",
               "title": "To: cityservices@brookfield.example | From: Leah Morgan | Date: March 30 | Subject: Green bin",
+              "title_vi": "Đến: cityservices@brookfield.example | Từ: Leah Morgan | Ngày: 30 tháng 3 | Tiêu đề: Thùng màu xanh lá",
               "text": "Hello,\n\nI live at 48 Cedar Lane in Hillcrest. My neighbors all received their green bins last week, but mine has not arrived. I tried calling the city services line twice yesterday, but the line was busy both times.\n\nI am excited about the new program, as I compost at home but don't have space for all my food scraps. Please let me know when I can expect my bin so that I can start using it on my first collection day.\n\nThank you,\nLeah Morgan",
               "text_vi": "Xin chào,\n\nTôi sống tại số 48 Cedar Lane, khu Hillcrest. Hàng xóm của tôi đều đã nhận thùng xanh từ tuần trước, nhưng thùng của tôi vẫn chưa đến. Hôm qua tôi đã gọi đường dây dịch vụ thành phố hai lần nhưng cả hai lần đều máy bận.\n\nTôi rất hào hứng với chương trình mới này, vì tôi có ủ phân ở nhà nhưng không đủ chỗ cho hết thức ăn thừa. Vui lòng cho tôi biết khi nào tôi sẽ nhận được thùng để có thể bắt đầu dùng vào ngày thu gom đầu tiên.\n\nCảm ơn,\nLeah Morgan"
             }
@@ -7355,18 +7365,21 @@
             {
               "type": "article",
               "title": "Taste of Saigon Opens on Bridge Street",
+              "title_vi": "Nhà hàng Taste of Saigon khai trương trên phố Bridge",
               "text": "LINCOLN CITY — Chef Mai Nguyen has opened her first restaurant, Taste of Saigon, at 17 Bridge Street. Ms. Nguyen, who previously worked as head chef at the Grand Plaza Hotel for eight years, serves dishes inspired by her grandmother's home cooking in Ho Chi Minh City.\n\nThe restaurant seats 50 and is open for dinner Tuesday through Sunday. A lunch menu will be added in the fall. Signature dishes include beef pho, which simmers for twelve hours, and caramelized fish in a clay pot. Reservations are recommended on weekends.",
               "text_vi": "LINCOLN CITY — Đầu bếp Mai Nguyen vừa mở nhà hàng đầu tiên của mình, Taste of Saigon, tại số 17 phố Bridge. Chị Nguyen, người từng làm bếp trưởng tại khách sạn Grand Plaza trong tám năm, phục vụ các món ăn lấy cảm hứng từ những bữa cơm nhà của bà ngoại ở Thành phố Hồ Chí Minh.\n\nNhà hàng có 50 chỗ ngồi và mở cửa phục vụ bữa tối từ thứ Ba đến Chủ nhật. Thực đơn bữa trưa sẽ được bổ sung vào mùa thu. Các món đặc trưng gồm phở bò ninh mười hai tiếng và cá kho tộ. Nên đặt bàn trước vào cuối tuần."
             },
             {
               "type": "review",
               "title": "Online review – 4 stars – posted by Daniel Brooks",
+              "title_vi": "Đánh giá trực tuyến – 4 sao – đăng bởi Daniel Brooks",
               "text": "My wife and I had dinner at Taste of Saigon last Saturday. We didn't make a reservation and had to wait 40 minutes for a table, but it was worth it. The pho was the best I've had outside Vietnam, and the fresh spring rolls were excellent. My only complaint is that the dining room was quite noisy, which made conversation difficult. Still, I'll definitely be back — hopefully for lunch once they start serving it.",
               "text_vi": "Tối thứ Bảy vừa rồi vợ chồng tôi ăn tối ở Taste of Saigon. Chúng tôi không đặt bàn trước nên phải đợi 40 phút mới có chỗ, nhưng rất đáng. Phở ở đây ngon nhất mà tôi từng ăn ngoài Việt Nam, và gỏi cuốn tuyệt hảo. Điều duy nhất tôi không hài lòng là phòng ăn khá ồn, khó nói chuyện. Dù vậy, chắc chắn tôi sẽ quay lại, mong là vào bữa trưa khi họ bắt đầu phục vụ."
             },
             {
               "type": "email",
               "title": "To: Daniel Brooks | From: Mai Nguyen | Subject: Thank you for your review",
+              "title_vi": "Đến: Daniel Brooks | Từ: Mai Nguyen | Tiêu đề: Cảm ơn anh đã đánh giá",
               "text": "Dear Mr. Brooks,\n\nThank you so much for your kind review. I'm delighted you enjoyed the pho — it's my grandmother's recipe.\n\nI'm sorry about the noise. We've heard similar comments from other guests, so next month we will install sound-absorbing panels on the ceiling.\n\nI'm also pleased to tell you that we will begin serving lunch earlier than planned, starting on August 5. As a thank-you, please show this e-mail on your next visit to receive a free dessert.\n\nWarm regards,\nMai Nguyen",
               "text_vi": "Kính gửi anh Brooks,\n\nCảm ơn anh rất nhiều vì bài đánh giá tốt. Tôi rất vui vì anh thích món phở, đó là công thức của bà tôi.\n\nTôi xin lỗi về tiếng ồn. Chúng tôi cũng đã nghe các khách khác góp ý tương tự, nên tháng sau chúng tôi sẽ lắp các tấm tiêu âm trên trần.\n\nTôi cũng vui mừng báo với anh rằng chúng tôi sẽ bắt đầu phục vụ bữa trưa sớm hơn dự kiến, từ ngày 5 tháng 8. Để cảm ơn anh, lần tới anh hãy xuất trình e-mail này để được tặng một món tráng miệng.\n\nThân mến,\nMai Nguyen"
             }
@@ -7536,9 +7549,9 @@
               }
             }
           ],
-          "image_url": "images/mt01-p1-s01.jpg",
+          "image_url": "images/mt01-p1-s01.jpg?v=7287237e",
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p1-s01.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p1-s01.mp3?v=e09517ad",
           "audio_duration_sec": 18.1
         },
         {
@@ -7573,9 +7586,9 @@
               }
             }
           ],
-          "image_url": "images/mt01-p1-s02.jpg",
+          "image_url": "images/mt01-p1-s02.jpg?v=c6d08707",
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p1-s02.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p1-s02.mp3?v=307e74f8",
           "audio_duration_sec": 18.2
         },
         {
@@ -7610,9 +7623,9 @@
               }
             }
           ],
-          "image_url": "images/mt01-p1-s03.jpg",
+          "image_url": "images/mt01-p1-s03.jpg?v=360727ce",
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p1-s03.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p1-s03.mp3?v=49349a5c",
           "audio_duration_sec": 17
         },
         {
@@ -7647,9 +7660,9 @@
               }
             }
           ],
-          "image_url": "images/mt01-p1-s04.jpg",
+          "image_url": "images/mt01-p1-s04.jpg?v=ef2bfae7",
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p1-s04.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p1-s04.mp3?v=855cf5b3",
           "audio_duration_sec": 18.8
         },
         {
@@ -7683,9 +7696,9 @@
               }
             }
           ],
-          "image_url": "images/mt01-p1-s05.jpg",
+          "image_url": "images/mt01-p1-s05.jpg?v=0127dbf6",
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p1-s05.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p1-s05.mp3?v=527443cf",
           "audio_duration_sec": 18
         },
         {
@@ -7719,9 +7732,9 @@
               }
             }
           ],
-          "image_url": "images/mt01-p1-s06.jpg",
+          "image_url": "images/mt01-p1-s06.jpg?v=6d883928",
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p1-s06.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p1-s06.mp3?v=7b1654e2",
           "audio_duration_sec": 18.6
         },
         {
@@ -7753,7 +7766,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p2-s01.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p2-s01.mp3?v=00dcb1b1",
           "audio_duration_sec": 12.7
         },
         {
@@ -7785,7 +7798,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p2-s02.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p2-s02.mp3?v=039d11ee",
           "audio_duration_sec": 13.5
         },
         {
@@ -7817,7 +7830,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p2-s03.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p2-s03.mp3?v=c91964c5",
           "audio_duration_sec": 13.3
         },
         {
@@ -7849,7 +7862,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p2-s04.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p2-s04.mp3?v=a71aaf8f",
           "audio_duration_sec": 13.3
         },
         {
@@ -7882,7 +7895,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p2-s05.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p2-s05.mp3?v=67e07a13",
           "audio_duration_sec": 14.2
         },
         {
@@ -7914,7 +7927,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p2-s06.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p2-s06.mp3?v=744ceb73",
           "audio_duration_sec": 13.7
         },
         {
@@ -7946,7 +7959,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p2-s07.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p2-s07.mp3?v=61c703e4",
           "audio_duration_sec": 15.7
         },
         {
@@ -7978,7 +7991,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p2-s08.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p2-s08.mp3?v=7d472b36",
           "audio_duration_sec": 14.1
         },
         {
@@ -8010,7 +8023,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p2-s09.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p2-s09.mp3?v=3a6ba0da",
           "audio_duration_sec": 14.3
         },
         {
@@ -8043,7 +8056,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p2-s10.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p2-s10.mp3?v=5f8eeb1c",
           "audio_duration_sec": 15.9
         },
         {
@@ -8075,7 +8088,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p2-s11.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p2-s11.mp3?v=84c40443",
           "audio_duration_sec": 14.8
         },
         {
@@ -8107,7 +8120,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p2-s12.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p2-s12.mp3?v=2a123cca",
           "audio_duration_sec": 13.5
         },
         {
@@ -8139,7 +8152,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p2-s13.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p2-s13.mp3?v=ac5a3595",
           "audio_duration_sec": 13.8
         },
         {
@@ -8222,7 +8235,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p3-s01.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p3-s01.mp3?v=af78e537",
           "audio_duration_sec": 60.5
         },
         {
@@ -8305,7 +8318,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p3-s02.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p3-s02.mp3?v=5e81738e",
           "audio_duration_sec": 67.7
         },
         {
@@ -8389,7 +8402,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p3-s03.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p3-s03.mp3?v=a7bbc0aa",
           "audio_duration_sec": 74
         },
         {
@@ -8509,7 +8522,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p3-s04.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p3-s04.mp3?v=1d96902b",
           "audio_duration_sec": 72.8
         },
         {
@@ -8592,7 +8605,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p4-s01.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p4-s01.mp3?v=fdde83b7",
           "audio_duration_sec": 65.5
         },
         {
@@ -8675,7 +8688,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p4-s02.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p4-s02.mp3?v=55b77e02",
           "audio_duration_sec": 65
         },
         {
@@ -8758,7 +8771,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/mini-test-01/mt01-p4-s03.mp3",
+          "audio_url": "audio/mini-test-01/mt01-p4-s03.mp3?v=8edc495d",
           "audio_duration_sec": 60
         },
         {
@@ -9810,12 +9823,14 @@
             {
               "type": "advertisement",
               "title": "Brightline Coworking Spaces",
+              "title_vi": "Không gian làm việc chung Brightline",
               "text": "BRIGHTLINE COWORKING – Flexible workspace in downtown Easton\n\nMembership plans:\n• Basic – $150/month: access to shared desks, Monday–Friday\n• Plus – $250/month: shared desks 7 days a week + 5 hours of meeting room use\n• Private – $600/month: private office for up to 3 people + unlimited meeting rooms\n\nAll plans include high-speed Internet and free coffee. Sign up before March 31 and receive your first month at half price!",
               "text_vi": "BRIGHTLINE COWORKING – Không gian làm việc linh hoạt tại trung tâm Easton\n\nCác gói thành viên:\n• Basic – $150/tháng: dùng bàn làm việc chung, thứ Hai – thứ Sáu\n• Plus – $250/tháng: dùng bàn chung 7 ngày/tuần + 5 giờ sử dụng phòng họp\n• Private – $600/tháng: văn phòng riêng cho tối đa 3 người + phòng họp không giới hạn\n\nTất cả các gói đều có Internet tốc độ cao và cà phê miễn phí. Đăng ký trước ngày 31 tháng 3 để được giảm nửa giá tháng đầu tiên!"
             },
             {
               "type": "email",
               "title": "To: info@brightline.example | From: d.moreno@mail.example | Date: March 28 | Subject: Membership",
+              "title_vi": "Đến: info@brightline.example | Từ: d.moreno@mail.example | Ngày: 28 tháng 3 | Tiêu đề: Gói thành viên",
               "text": "Hello,\n\nI'm a freelance graphic designer, and I'm interested in your coworking space. I usually work on weekends as well as weekdays, and I meet clients about once a week for an hour, so I think the Plus plan would suit me. However, I'd like to see the space before I sign up. Would it be possible to visit on Saturday morning?\n\nAlso, could you tell me whether there is parking nearby?\n\nThank you,\nDiego Moreno",
               "text_vi": "Xin chào,\n\nTôi là nhà thiết kế đồ họa tự do và tôi quan tâm đến không gian làm việc chung của quý vị. Tôi thường làm việc cả cuối tuần lẫn ngày thường, và gặp khách khoảng mỗi tuần một lần, mỗi lần một tiếng, nên tôi nghĩ gói Plus phù hợp với tôi. Tuy nhiên, tôi muốn xem không gian trước khi đăng ký. Tôi có thể đến xem vào sáng thứ Bảy được không?\n\nNgoài ra, quý vị cho tôi biết gần đó có chỗ đỗ xe không?\n\nCảm ơn,\nDiego Moreno"
             }
@@ -9951,18 +9966,21 @@
             {
               "type": "schedule",
               "title": "Northgate Business Conference – Day 2 (October 14)",
+              "title_vi": "Hội nghị Kinh doanh Northgate – Ngày 2 (14 tháng 10)",
               "text": "9:00 – 10:00  Keynote: \"The Future of Remote Work\" – Dr. Alice Brennan (Hall A)\n10:15 – 11:15  Workshop: Effective Online Marketing – Raj Mehta (Room 101)\n11:30 – 12:30  Panel: Financing Small Businesses (Hall B)\n12:30 – 1:30  Lunch (Garden Terrace)\n1:30 – 2:30  Workshop: Negotiation Skills – Sofia Klein (Room 101)",
               "text_vi": "9:00 – 10:00  Bài phát biểu chính: \"Tương lai của làm việc từ xa\" – TS. Alice Brennan (Hall A)\n10:15 – 11:15  Hội thảo: Marketing trực tuyến hiệu quả – Raj Mehta (Room 101)\n11:30 – 12:30  Thảo luận: Tài chính cho doanh nghiệp nhỏ (Hall B)\n12:30 – 1:30  Ăn trưa (Garden Terrace)\n1:30 – 2:30  Hội thảo: Kỹ năng đàm phán – Sofia Klein (Room 101)"
             },
             {
               "type": "email",
               "title": "To: All attendees | From: Conference Office | Date: October 13 | Subject: Schedule update",
+              "title_vi": "Đến: Tất cả người tham dự | Từ: Văn phòng hội nghị | Ngày: 13 tháng 10 | Tiêu đề: Cập nhật lịch trình",
               "text": "Dear attendees,\n\nDue to a flight delay, Raj Mehta will not arrive until the afternoon of October 14. His workshop has therefore been moved to 1:30 P.M. Sofia Klein has kindly agreed to give her workshop at 10:15 A.M. instead. Both sessions will remain in Room 101.\n\nIn addition, because of the forecast for rain, lunch will be served in the main lobby rather than outdoors.\n\nConference Office",
               "text_vi": "Kính gửi quý đại biểu,\n\nDo chuyến bay bị trễ, Raj Mehta sẽ phải đến chiều ngày 14 tháng 10 mới tới nơi. Vì vậy, buổi hội thảo của anh ấy được dời sang 1:30 chiều. Sofia Klein đã vui lòng đổi buổi hội thảo của mình lên 10:15 sáng. Cả hai buổi vẫn diễn ra tại Room 101.\n\nNgoài ra, do dự báo có mưa, bữa trưa sẽ được phục vụ ở sảnh chính thay vì ngoài trời.\n\nVăn phòng Hội nghị"
             },
             {
               "type": "review",
               "title": "Online review – posted October 16 by Mia Turner",
+              "title_vi": "Đánh giá trực tuyến – đăng ngày 16 tháng 10 bởi Mia Turner",
               "text": "I attended the second day of the Northgate Business Conference. The keynote was inspiring, and the morning workshop in Room 101 gave me practical tips I used in a contract discussion the very next day. My only complaint is that the lobby was crowded at lunch. Overall, I would definitely attend again next year.",
               "text_vi": "Tôi đã tham dự ngày thứ hai của Hội nghị Doanh nghiệp Northgate. Bài phát biểu chính rất truyền cảm hứng, và buổi hội thảo buổi sáng ở Room 101 cho tôi những mẹo thực tế mà tôi đã áp dụng trong một cuộc thảo luận hợp đồng ngay ngày hôm sau. Điều duy nhất tôi không hài lòng là sảnh khá đông vào giờ ăn trưa. Nhìn chung, chắc chắn năm sau tôi sẽ tham dự lại."
             }
@@ -10130,7 +10148,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s01.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s01.mp3?v=d0f391d8",
           "audio_duration_sec": 15.6
         },
         {
@@ -10164,7 +10182,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s02.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s02.mp3?v=f9da2a87",
           "audio_duration_sec": 16.3
         },
         {
@@ -10198,7 +10216,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s03.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s03.mp3?v=78f4a5d2",
           "audio_duration_sec": 15.2
         },
         {
@@ -10232,7 +10250,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s04.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s04.mp3?v=55f9a7b1",
           "audio_duration_sec": 16.2
         },
         {
@@ -10266,7 +10284,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s05.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s05.mp3?v=e0fa6888",
           "audio_duration_sec": 16
         },
         {
@@ -10299,7 +10317,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s06.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s06.mp3?v=4b6500bf",
           "audio_duration_sec": 15
         },
         {
@@ -10332,7 +10350,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s07.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s07.mp3?v=c03cf0ca",
           "audio_duration_sec": 14.9
         },
         {
@@ -10365,7 +10383,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s08.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s08.mp3?v=69d50639",
           "audio_duration_sec": 14.1
         },
         {
@@ -10399,7 +10417,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s09.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s09.mp3?v=20132107",
           "audio_duration_sec": 15.6
         },
         {
@@ -10432,7 +10450,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s10.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s10.mp3?v=bc842ccf",
           "audio_duration_sec": 15.5
         },
         {
@@ -10466,7 +10484,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s11.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s11.mp3?v=6ae46fbd",
           "audio_duration_sec": 13.9
         },
         {
@@ -10500,7 +10518,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s12.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s12.mp3?v=51e1a474",
           "audio_duration_sec": 14.6
         },
         {
@@ -10534,7 +10552,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s13.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s13.mp3?v=f4f8232f",
           "audio_duration_sec": 15.3
         },
         {
@@ -10567,7 +10585,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s14.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s14.mp3?v=b73a1cb4",
           "audio_duration_sec": 14.8
         },
         {
@@ -10601,7 +10619,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s15.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s15.mp3?v=8b036afe",
           "audio_duration_sec": 15.4
         },
         {
@@ -10634,7 +10652,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s16.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s16.mp3?v=e53811b5",
           "audio_duration_sec": 14.9
         },
         {
@@ -10667,7 +10685,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s17.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s17.mp3?v=82c23644",
           "audio_duration_sec": 16.3
         },
         {
@@ -10700,7 +10718,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s18.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s18.mp3?v=1218ea22",
           "audio_duration_sec": 13.9
         },
         {
@@ -10734,7 +10752,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s19.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s19.mp3?v=a5eb5fa0",
           "audio_duration_sec": 14.8
         },
         {
@@ -10768,7 +10786,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s20.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s20.mp3?v=5083b7e9",
           "audio_duration_sec": 15.3
         },
         {
@@ -10795,14 +10813,14 @@
               ],
               "explanation_vi": "Câu hỏi lựa chọn, trả lời gián tiếp: khách cần trước sáng thứ Hai nên phải gửi ngay hôm nay.",
               "why_wrong_vi": {
-                "B": "'ship' ở đây là 'tàu thủy', khác nghĩa 'gửi hàng'.",
+                "B": "Bẫy lặp từ: 'ship' trong (B) là tàu thủy (cruise ship: tàu du lịch), không liên quan đến việc gửi hàng mẫu.",
                 "C": "Lặp từ 'labels' nhưng nói màu sắc."
               }
             }
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s21.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s21.mp3?v=31551dc1",
           "audio_duration_sec": 15.4
         },
         {
@@ -10835,7 +10853,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s22.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s22.mp3?v=8eb85fef",
           "audio_duration_sec": 14.9
         },
         {
@@ -10868,7 +10886,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s23.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s23.mp3?v=50fbafaa",
           "audio_duration_sec": 15.8
         },
         {
@@ -10901,7 +10919,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s24.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s24.mp3?v=7c0f283c",
           "audio_duration_sec": 15.2
         },
         {
@@ -10935,7 +10953,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s25.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p2-s25.mp3?v=ff128206",
           "audio_duration_sec": 14.9
         },
         {
@@ -11020,7 +11038,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s01.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s01.mp3?v=622be5d1",
           "audio_duration_sec": 78.2
         },
         {
@@ -11104,7 +11122,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s02.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s02.mp3?v=39a56f65",
           "audio_duration_sec": 77.6
         },
         {
@@ -11221,7 +11239,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s03.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s03.mp3?v=c76356ca",
           "audio_duration_sec": 80.1
         },
         {
@@ -11307,7 +11325,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s04.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s04.mp3?v=163b1a6c",
           "audio_duration_sec": 79.9
         },
         {
@@ -11424,7 +11442,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s05.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s05.mp3?v=f3a62bb4",
           "audio_duration_sec": 79.4
         },
         {
@@ -11508,7 +11526,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s06.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s06.mp3?v=28ae4351",
           "audio_duration_sec": 69.1
         },
         {
@@ -11595,7 +11613,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s07.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s07.mp3?v=5a2d727a",
           "audio_duration_sec": 79.5
         },
         {
@@ -11679,7 +11697,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s08.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p3-s08.mp3?v=dafb566e",
           "audio_duration_sec": 65.8
         },
         {
@@ -11764,7 +11782,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p4-s01.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p4-s01.mp3?v=9f533afe",
           "audio_duration_sec": 73.9
         },
         {
@@ -11848,7 +11866,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p4-s02.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p4-s02.mp3?v=40b1a42d",
           "audio_duration_sec": 68.1
         },
         {
@@ -11959,7 +11977,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p4-s03.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p4-s03.mp3?v=9bf3f23b",
           "audio_duration_sec": 79
         },
         {
@@ -12044,7 +12062,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p4-s04.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p4-s04.mp3?v=da3dda1d",
           "audio_duration_sec": 72.5
         },
         {
@@ -12129,7 +12147,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p4-s05.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p4-s05.mp3?v=c2c6dcfe",
           "audio_duration_sec": 73
         },
         {
@@ -12213,7 +12231,7 @@
           ],
           "image_url": null,
           "image_credit": null,
-          "audio_url": "audio/practice-bank-01/practice-bank-01-p4-s06.mp3",
+          "audio_url": "audio/practice-bank-01/practice-bank-01-p4-s06.mp3?v=bf13ca41",
           "audio_duration_sec": 72.5
         },
         {
@@ -14589,12 +14607,14 @@
             {
               "type": "web-page",
               "title": "Greenway Cycling Tours – Lake District Weekend",
+              "title_vi": "Greenway Cycling Tours – Chuyến cuối tuần ở Lake District",
               "text": "Day 1 (Saturday): Meet at Ashby Station at 9:00 A.M. Ride 45 km along the eastern lakeshore to Fernhill Lodge, stopping for lunch at a family-run farm café.\nDay 2 (Sunday): Ride 30 km through Hollin Forest, with a guided visit to Carrow Castle. Return to Ashby Station by 4:30 P.M.\n\nPrice: $340 per person, including bicycle rental, helmet, lodging, and all meals. Riders who bring their own bicycles receive a $40 discount. Electric bicycles are available for an additional $25 per day.\n\nTours run every weekend from May to September. Groups are limited to 12 riders.",
               "text_vi": "Ngày 1 (thứ Bảy): Tập trung ở ga Ashby lúc 9 giờ sáng. Đạp xe 45 km dọc bờ hồ phía đông đến nhà nghỉ Fernhill, dừng ăn trưa ở một quán cà phê nông trại do gia đình tự quản lý.\nNgày 2 (Chủ nhật): Đạp xe 30 km xuyên rừng Hollin, có hướng dẫn viên dẫn tham quan lâu đài Carrow. Về lại ga Ashby trước 4 giờ 30 chiều.\n\nGiá: 340 đô la/người, bao gồm thuê xe đạp, mũ bảo hiểm, chỗ ở và tất cả các bữa ăn. Người tự mang xe đạp được giảm 40 đô la. Có xe đạp điện với phụ phí 25 đô la/ngày.\n\nTour chạy mỗi cuối tuần từ tháng Năm đến tháng Chín. Mỗi đoàn tối đa 12 người."
             },
             {
               "type": "email",
               "title": "To: bookings@greenwaycycling.example | From: Oren Feld | Date: May 19 | Subject: Lake District Weekend – June 14–15",
+              "title_vi": "Đến: bookings@greenwaycycling.example | Từ: Oren Feld | Ngày: 19 tháng 5 | Tiêu đề: Chuyến cuối tuần ở Lake District – 14–15 tháng 6",
               "text": "Hello,\n\nI have booked the Lake District Weekend tour for June 14–15 for myself and my sister. I would like to make a change to our booking. My sister recently injured her knee, and although her doctor says she can ride, she would rather not cover the longer distance without some help. Could you reserve an electric bicycle for her for that day only? I will be bringing my own bicycle, as indicated in my booking form.\n\nAlso, the confirmation mentions a castle visit. Is there an entrance fee, or is it included in the price?\n\nThank you,\nOren Feld",
               "text_vi": "Xin chào,\n\nTôi đã đặt tour Lake District Weekend ngày 14–15 tháng Sáu cho tôi và em gái. Tôi muốn thay đổi một chút trong đơn đặt. Em gái tôi mới bị thương ở đầu gối, và tuy bác sĩ nói cô ấy vẫn đạp xe được, cô ấy không muốn đi chặng dài hơn mà không có trợ lực. Anh/chị có thể giữ cho cô ấy một xe đạp điện chỉ trong ngày hôm đó được không? Tôi sẽ mang xe đạp riêng, như đã ghi trong phiếu đặt.\n\nNgoài ra, thư xác nhận có nhắc đến chuyến tham quan lâu đài. Có phải trả phí vào cửa không, hay đã bao gồm trong giá?\n\nCảm ơn,\nOren Feld"
             }
@@ -14730,18 +14750,21 @@
             {
               "type": "memo",
               "title": "MEMO | To: All Store Managers | From: Daniela Cruz, Regional Training Coordinator | Date: August 4 | Subject: Customer service training",
+              "title_vi": "BẢN GHI NHỚ | Đến: Tất cả quản lý cửa hàng | Từ: Daniela Cruz, Điều phối viên đào tạo khu vực | Ngày: 4 tháng 8 | Tiêu đề: Đào tạo dịch vụ khách hàng",
               "text": "As announced at last month's meeting, every store manager must complete our new customer service training by the end of September. The course consists of one full-day session at the regional office. In addition, managers of stores with more than 30 employees are required to attend a half-day follow-up workshop on October 6.\n\nPlease register through the training portal at least one week before your chosen session. If none of the dates work for you, contact me directly so that we can arrange an alternative.",
               "text_vi": "Như đã thông báo trong cuộc họp tháng trước, mọi quản lý cửa hàng phải hoàn thành khóa đào tạo dịch vụ khách hàng mới trước cuối tháng Chín. Khóa học gồm một buổi trọn ngày tại văn phòng khu vực. Ngoài ra, quản lý của các cửa hàng có trên 30 nhân viên phải tham dự thêm một buổi hội thảo nửa ngày vào ngày 6 tháng Mười.\n\nVui lòng đăng ký qua cổng đào tạo ít nhất một tuần trước buổi học đã chọn. Nếu không có ngày nào phù hợp, hãy liên hệ trực tiếp với tôi để chúng ta sắp xếp phương án khác."
             },
             {
               "type": "schedule",
               "title": "Customer Service Training – Session Dates (Regional Office)",
+              "title_vi": "Đào tạo dịch vụ khách hàng – Lịch các buổi học (Văn phòng khu vực)",
               "text": "Session A — Tuesday, September 9 — Room 1 — Trainer: Paul Henning\nSession B — Friday, September 12 — Room 3 — Trainer: Mei Chang\nSession C — Wednesday, September 17 — Room 1 — Trainer: Paul Henning\nSession D — Monday, September 22 — Room 3 — Trainer: Mei Chang\n\nAll sessions run from 9:00 A.M. to 5:00 P.M. Lunch is provided.",
               "text_vi": "Buổi A — thứ Ba, 9 tháng Chín — Phòng 1 — Giảng viên: Paul Henning\nBuổi B — thứ Sáu, 12 tháng Chín — Phòng 3 — Giảng viên: Mei Chang\nBuổi C — thứ Tư, 17 tháng Chín — Phòng 1 — Giảng viên: Paul Henning\nBuổi D — thứ Hai, 22 tháng Chín — Phòng 3 — Giảng viên: Mei Chang\n\nTất cả các buổi diễn ra từ 9 giờ sáng đến 5 giờ chiều. Có phục vụ bữa trưa."
             },
             {
               "type": "email",
               "title": "To: Daniela Cruz | From: Tomasz Wilk | Date: September 8 | Subject: Training registration",
+              "title_vi": "Đến: Daniela Cruz | Từ: Tomasz Wilk | Ngày: 8 tháng 9 | Tiêu đề: Đăng ký đào tạo",
               "text": "Hi Daniela,\n\nI tried to register for Ms. Chang's session on September 12, but the portal would not accept my registration. I assume this is because the deadline has already passed. Our store is holding a sidewalk sale on the 17th, so I can't attend that day. Would it be possible to join the September 12 session anyway? If not, I can attend the last session, although I would prefer an earlier date, since our store has 42 employees and I will also need to prepare for the October workshop.\n\nBest regards,\nTomasz Wilk\nManager, Eastgate Store",
               "text_vi": "Chào Daniela,\n\nTôi đã thử đăng ký buổi của cô Chang ngày 12 tháng Chín nhưng cổng đăng ký không chấp nhận. Tôi đoán là vì đã quá hạn. Ngày 17 cửa hàng chúng tôi tổ chức bán hàng trên vỉa hè nên tôi không thể tham dự hôm đó. Liệu tôi vẫn có thể tham gia buổi ngày 12 không? Nếu không, tôi có thể dự buổi cuối cùng, dù tôi muốn ngày sớm hơn, vì cửa hàng chúng tôi có 42 nhân viên và tôi còn phải chuẩn bị cho buổi hội thảo tháng Mười.\n\nTrân trọng,\nTomasz Wilk\nQuản lý cửa hàng Eastgate"
             }
@@ -18795,7 +18818,7 @@
       "word": "mutually",
       "pos": "adverb",
       "ipa": "/ˈmjuːtʃuəli/",
-      "meaning_vi": "cùng nhau, cho cả đôi bên",
+      "meaning_vi": "lẫn nhau, cho cả đôi bên",
       "example_en": "We agreed on a mutually convenient date.",
       "example_vi": "Chúng tôi đã thống nhất một ngày thuận tiện cho cả hai bên.",
       "topic": "contracts",
@@ -19435,7 +19458,7 @@
       "word": "physician",
       "pos": "noun",
       "ipa": "/fɪˈzɪʃn/",
-      "meaning_vi": "bác sĩ (nội khoa)",
+      "meaning_vi": "bác sĩ",
       "example_en": "Consult your physician before starting the program.",
       "example_vi": "Hãy hỏi ý kiến bác sĩ trước khi bắt đầu chương trình.",
       "topic": "health",
