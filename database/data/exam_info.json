@@ -36,7 +36,7 @@
       "score_max": 400,
       "score_step": 10,
       "description_vi": "Bài thi Nói (11 câu, ~20 phút) và Viết (8 câu, ~60 phút) trên máy tính. Mỗi kỹ năng 0–200 điểm, bước 10 điểm.",
-      "notes": "Một số trang luyện thi báo tin ETS sẽ rút ngắn bài thi 4 kỹ năng từ 3/8/2026; chưa có xác nhận chính thức trong dữ liệu này.",
+      "notes": "Tin rút ngắn từ 3/8/2026 nói về bài thi TOEIC 4-Skills tại Pháp (khác bài thi này) và chưa được ETS xác nhận: trang ETS Pháp, kiểm tra ngày 24/11/2026, vẫn ghi 2 giờ 22 phút.",
       "status": "current"
     }
   ],
@@ -92,11 +92,12 @@
     "reading":   [[0, 5], [10, 10], [20, 50], [30, 105], [40, 160], [50, 215], [60, 270], [70, 325], [80, 380], [90, 435], [100, 495]]
   },
   "score_levels": [
-    { "min_score": 10,  "max_score": 219, "cefr": "A1", "label_vi": "Sơ cấp", "description_vi": "Hiểu được câu rất đơn giản; chưa đủ cho giao tiếp công việc." },
-    { "min_score": 220, "max_score": 549, "cefr": "A2", "label_vi": "Cơ bản", "description_vi": "Giao tiếp được trong tình huống quen thuộc, hạn chế trong môi trường công việc." },
-    { "min_score": 550, "max_score": 784, "cefr": "B1", "label_vi": "Trung cấp", "description_vi": "Chuẩn đầu ra phổ biến của nhiều trường đại học (450–600). Xử lý được phần lớn tình huống công việc thường ngày." },
-    { "min_score": 785, "max_score": 944, "cefr": "B2", "label_vi": "Trung cao cấp", "description_vi": "Làm việc hiệu quả bằng tiếng Anh; đáp ứng yêu cầu tuyển dụng của nhiều công ty đa quốc gia." },
-    { "min_score": 945, "max_score": 990, "cefr": "C1", "label_vi": "Cao cấp", "description_vi": "Sử dụng tiếng Anh thành thạo trong môi trường chuyên nghiệp." }
+    { "min_score": 10,  "max_score": 115, "cefr": "Dưới A1", "label_vi": "Mới bắt đầu", "description_vi": "Chưa đạt mốc A1. Nên bắt đầu từ từ vựng và mẫu câu cơ bản nhất." },
+    { "min_score": 120, "max_score": 220, "cefr": "A1", "label_vi": "Sơ cấp", "description_vi": "Nhận ra từ quen thuộc và câu rất ngắn, đơn giản; chưa đủ để giao tiếp trong công việc." },
+    { "min_score": 225, "max_score": 545, "cefr": "A2", "label_vi": "Cơ bản", "description_vi": "Hiểu câu và thông tin ngắn trong tình huống quen thuộc như lịch hẹn, thông báo đơn giản; còn khó khăn khi xử lý công việc bằng tiếng Anh." },
+    { "min_score": 550, "max_score": 780, "cefr": "B1", "label_vi": "Trung cấp", "description_vi": "Nắm được ý chính của hội thoại, email và thông báo công việc thường gặp; tự xử lý được phần lớn tình huống quen thuộc." },
+    { "min_score": 785, "max_score": 940, "cefr": "B2", "label_vi": "Trung cao cấp", "description_vi": "Hiểu cả ý chính lẫn chi tiết trong trao đổi và văn bản công việc khá phức tạp; làm việc bằng tiếng Anh tương đối trôi chảy." },
+    { "min_score": 945, "max_score": 990, "cefr": "C1", "label_vi": "Cao cấp", "description_vi": "Hiểu văn bản dài, nhiều thông tin và ý ngầm; dùng tiếng Anh linh hoạt, hiệu quả trong môi trường chuyên nghiệp." }
   ],
   "fees": [
     { "country": "VN", "format_code": "LR", "candidate_type": "student", "amount": 1330000, "currency": "VND", "effective_year": 2026, "source_id": "prep-fee-2026", "verified": 0 },
@@ -104,20 +105,25 @@
     { "country": "VN", "format_code": "SW", "candidate_type": "general", "amount": 1800000, "currency": "VND", "effective_year": 2026, "source_id": "prep-fee-2026", "verified": 0 }
   ],
   "updates": [
-    { "date": "2025-04-21", "title_vi": "Đăng ký thi TOEIC 100% trực tuyến tại IIG Việt Nam", "summary_vi": "Từ 21/4/2025, thí sinh đăng ký thi TOEIC và TOEFL ITP hoàn toàn trực tuyến, không cần đến văn phòng.", "source_id": "iig-announcements", "verified": 0 },
-    { "date": "2025-06-09", "title_vi": "Ưu đãi lệ phí TOEIC 4 kỹ năng cho học sinh, sinh viên", "summary_vi": "IIG Việt Nam công bố chính sách giảm lệ phí bài thi TOEIC 4 kỹ năng dành riêng cho học sinh, sinh viên.", "source_id": "iig-student-discount", "verified": 1 },
+    { "date": "2025-04-21", "title_vi": "Đăng ký thi TOEIC 100% trực tuyến tại IIG Việt Nam", "summary_vi": "Từ 21/4/2025, các bài thi TOEIC Listening & Reading, Speaking & Writing, Speaking và TOEFL ITP chuyển sang đăng ký hoàn toàn trực tuyến tại online.iigvietnam.com, không cần đến văn phòng.", "source_id": "iig-online-registration", "verified": 1 },
+    { "date": "2025-06-09", "title_vi": "Ưu đãi lệ phí TOEIC 4 kỹ năng cho học sinh, sinh viên", "summary_vi": "Từ 9/6/2025, học sinh, sinh viên đăng ký combo TOEIC Listening & Reading + Speaking & Writing tại IIG Việt Nam được giảm 450.000 đ lệ phí thi.", "source_id": "iig-4skill-combo", "verified": 1 },
     { "date": "2025-07-01", "title_vi": "Hướng dẫn dự thi TOEIC Online", "summary_vi": "IIG Việt Nam phát hành tài liệu hướng dẫn dự thi TOEIC hình thức trực tuyến.", "source_id": "iig-online-guide", "verified": 1 },
     { "date": "2026-01-01", "title_vi": "Cấu trúc TOEIC Listening & Reading không thay đổi", "summary_vi": "Bài thi tuyến tính vẫn giữ cấu trúc 7 phần, 200 câu, 120 phút như từ tháng 6/2018.", "source_id": "ets-toeic", "verified": 0 },
-    { "date": "2026-08-03", "title_vi": "Tin chưa xác nhận: rút ngắn bài thi TOEIC 4 kỹ năng", "summary_vi": "Một trang luyện thi tại Pháp đưa tin bài thi 4 kỹ năng sẽ rút từ 2 giờ 22 phút xuống tối đa 1 giờ 20 phút từ 3/8/2026. ETS chưa công bố chính thức trong nguồn đã kiểm tra.", "source_id": "digischool-2026", "verified": 0 }
+    { "date": "2026-08-03", "title_vi": "Tin đồn rút ngắn bài thi TOEIC 4-Skills tại Pháp", "summary_vi": "Một số trang luyện thi tại Pháp từng đưa tin bài thi TOEIC 4-Skills của ETS ở Pháp sẽ rút từ 2 giờ 22 phút xuống tối đa 1 giờ 20 phút từ 3/8/2026. Đến 24/11/2026, trang chính thức của ETS Pháp vẫn ghi định dạng 2 giờ 22 phút. Đây là bài thi khác với TOEIC Speaking & Writing thi tại IIG Việt Nam.", "source_id": "ets-fr-4skills", "verified": 0 }
   ],
   "sources": [
     { "id": "ets-toeic", "name": "ETS – TOEIC Program", "url": "https://www.ets.org/toeic.html", "source_type": "official", "note_vi": "Trang chính thức của ETS về các bài thi TOEIC." },
     { "id": "ets-global-adaptive", "name": "ETS Global – Adaptive TOEIC test", "url": "https://www.etsglobal.org/fr/en/blog/news/adaptative-toeic-test", "source_type": "official", "note_vi": "Giới thiệu bài thi TOEIC L&R thích ứng (90 câu, ~1 giờ)." },
-    { "id": "iig-announcements", "name": "IIG Việt Nam – Thông báo", "url": "https://iigvietnam.com/policies-and-announcements/announcements/", "source_type": "official", "note_vi": "Đơn vị đại diện ETS tại Việt Nam; nơi đăng ký thi và công bố lệ phí." },
-    { "id": "iig-student-discount", "name": "IIG Việt Nam – Ưu đãi lệ phí cho sinh viên", "url": "https://iigvietnam.com/discount-policy-for-english-test-fees-at-iig-vietnam-for-students-2/", "source_type": "official", "note_vi": null },
-    { "id": "iig-online-guide", "name": "IIG Việt Nam – Hướng dẫn dự thi TOEIC Online (PDF)", "url": "https://iigvietnam.com/wp-content/uploads/2025/07/HUONG-DAN-DU-THI-TOEIC-ONLINE.pdf", "source_type": "official", "note_vi": null },
-    { "id": "prep-fee-2026", "name": "PREP – Lệ phí thi TOEIC 2026", "url": "https://prepedu.com/vi/blog/le-phi-thi-toeic", "source_type": "prep-site", "note_vi": "Nguồn bên thứ ba; cần đối chiếu với IIG trước khi hiển thị như số liệu chính thức." },
-    { "id": "digischool-2026", "name": "Digischool – TOEIC 4-Skills từ 3/8/2026", "url": "https://www.digischool.fr/articles/toeic/nouveau-toeic-4-skills-aout-2026/", "source_type": "prep-site", "note_vi": "Tin chưa được ETS xác nhận." },
+    { "id": "ets-cefr-mapping", "name": "ETS – Mapping the TOEIC tests on the CEFR (PDF)", "url": "https://www.ets.org/pdfs/toeic/toeic-mapping-cefr-reference.pdf", "source_type": "official", "note_vi": "Điểm tối thiểu từng kỹ năng cho mỗi bậc CEFR. Nghe: A1 60, A2 110, B1 275, B2 400, C1 490. Đọc: A1 60, A2 115, B1 275, B2 385, C1 455." },
+    { "id": "iig-announcements", "name": "IIG Việt Nam – Quy định và thông báo", "url": "https://iigvietnam.com/vi/tin-tuc/chuyen-muc/quy-dinh-va-thong-bao", "source_type": "official", "note_vi": "Đơn vị đại diện ETS tại Việt Nam; nơi đăng ký thi và công bố lệ phí." },
+    { "id": "iig-toeic", "name": "IIG Việt Nam – Bài thi TOEIC", "url": "https://iigvietnam.com/vi/bai-thi/bai-thi-toeic", "source_type": "official", "note_vi": null },
+    { "id": "iig-online-registration", "name": "IIG Việt Nam – Chuyển sang đăng ký thi 100% online (16/4/2025)", "url": "https://iigvietnam.com/vi/tin-tuc/thong-bao-iig-viet-nam-chuyen-doi-hinh-thuc-dang-ky-thi-toeic-toefl-itp-100-online-cuc-tien-loi", "source_type": "official", "note_vi": null },
+    { "id": "iig-4skill-combo", "name": "IIG Việt Nam – Ưu đãi combo TOEIC 4 kỹ năng cho học sinh, sinh viên (9/6/2025)", "url": "https://iigvietnam.com/vi/tin-tuc/thong-bao-iig-viet-nam-ra-mat-goi-uu-dai-le-phi-thi-toeic-4-ky-nang-danh-rieng-cho-hoc-sinh-sinh-vien", "source_type": "official", "note_vi": null },
+    { "id": "iig-student-discount", "name": "IIG Việt Nam – Quy định ưu đãi lệ phí cho học sinh, sinh viên", "url": "https://iigvietnam.com/en/tin-tuc/discount-policy-for-english-test-fees-at-iig-vietnam-for-students-2", "source_type": "official", "note_vi": "Điều kiện được hưởng ưu đãi (sinh viên chính quy, thẻ còn hạn vào ngày thi)." },
+    { "id": "iig-online-guide", "name": "IIG Việt Nam – Hướng dẫn dự thi TOEIC Online (PDF, cập nhật 21/11/2025)", "url": "https://iigvietnam.com/wp-content/uploads/2025/12/H%C6%AF%E1%BB%9ANG%20D%E1%BA%AAN%20D%E1%BB%B0%20THI%20TOEIC%20ONLINE%20P%C4%90%20upd%2021Nov25.pdf", "source_type": "official", "note_vi": null },
+    { "id": "prep-fee-2026", "name": "PREP – Lệ phí thi TOEIC 2026", "url": "https://prepedu.com/vi/blog/le-phi-thi-toeic", "source_type": "prep-site", "note_vi": "Nguồn bên thứ ba. Chưa tìm thấy bảng lệ phí trên các trang công khai của IIG Việt Nam (kiểm tra 24/11/2026), nên các mức phí này chưa được xác nhận." },
+    { "id": "ets-fr-4skills", "name": "ETS Pháp – Bài thi TOEIC 4-Skills", "url": "https://www.fr.ets.org/toeic/about/toeic-4-skills-test.html", "source_type": "official", "note_vi": "Đến 24/11/2026 vẫn ghi: Nghe 25 phút, Nói 20 phút, Đọc 37 phút, Viết 60 phút (tổng 2 giờ 22 phút)." },
+    { "id": "digischool-2026", "name": "Digischool – TOEIC 4-Skills từ 3/8/2026", "url": "https://www.digischool.fr/articles/toeic/nouveau-toeic-4-skills-aout-2026/", "source_type": "prep-site", "note_vi": "Nguồn tin rút ngắn bài thi; ETS chưa xác nhận." },
     { "id": "wikipedia-toeic", "name": "Wikipedia – TOEIC", "url": "https://en.wikipedia.org/wiki/TOEIC", "source_type": "reference", "note_vi": null }
   ]
 }

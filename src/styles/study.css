@@ -1,0 +1,104 @@
+/* ------------------------------------------------------------------
+   Study flow: practice by part and the result analysis.
+   Reuses the tokens and classes from styles.css; only adds what those
+   pages need on top.
+   ------------------------------------------------------------------ */
+
+.study-gap {
+  margin: 14px 0;
+}
+
+/* ------------------------------------------------ practice index */
+.study-progress {
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+  max-width: 42ch;
+}
+.study-progress__track {
+  display: block;
+  height: 6px;
+  background: var(--ink-tint);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.study-progress__fill {
+  display: block;
+  height: 100%;
+  background: var(--graphite);
+}
+@media (max-width: 560px) {
+  .study-toc a {
+    grid-template-columns: auto 1fr;
+    row-gap: 4px;
+  }
+  .study-toc .toc__meta {
+    grid-column: 2;
+    text-align: left;
+  }
+}
+
+/* ------------------------------------------------ practice: reset */
+.study-reset {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+.study-confirm {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1.5px solid var(--ink-line);
+  border-left: 4px solid var(--ink);
+  border-radius: var(--radius-s);
+  background: var(--paper);
+  font-size: var(--t-sm);
+}
+
+/* ------------------------------------------------ results */
+.study-total {
+  font-size: var(--t-sm);
+  color: var(--graphite-soft);
+}
+.study-total strong {
+  color: var(--graphite);
+}
+.study-levels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.study-level {
+  border-top: 2px solid var(--graphite);
+  padding-top: 16px;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+.study-level__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.study-level__cefr {
+  font-size: var(--t-2xl);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ink);
+}
+.study-level p {
+  font-size: var(--t-sm);
+}
+.study-tags .part-bar {
+  grid-template-columns: minmax(0, 260px) 1fr 64px;
+}
+.study-tags .part-bar.is-weak .part-bar__fill {
+  background: var(--ink);
+}
+@media (max-width: 560px) {
+  .study-tags .part-bar {
+    grid-template-columns: 1fr 64px;
+  }
+}

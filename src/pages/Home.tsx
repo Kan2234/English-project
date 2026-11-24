@@ -3,36 +3,72 @@ import { Link } from 'react-router-dom';
 import { useData } from '../lib/data';
 import { PART_NAMES, SCOPE_NAMES, grade, scopeMinutes } from '../lib/exam';
 import { listAttempts } from '../lib/storage';
-import type { Label } from '../lib/types';
+import type { Label, Question } from '../lib/types';
+import '../styles/content.css';
 import { QuestionBlock } from '../components/QuestionBlock';
+
+function shuffled(n: number): number[] {
+  const a = Array.from({ length: n }, (_, i) => i);
+  for (let i = n - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/** A label that is never the right answer, so the sizer shows the longest verdict ("Sai: bạn chọn …"). */
+const wrongLabel = (q: Question): Label => (Object.keys(q.choices) as Label[]).find((l) => l !== q.answer) ?? q.answer;
 
 function TryOneQuestion() {
   const data = useData();
+  // Only short tests: Full Test questions stay unseen for the real timed attempt.
   const pool = useMemo(
-    () => data.tests.flatMap((t) => t.sets.filter((s) => s.part === 5).flatMap((s) => s.questions)),
+    () =>
+      data.tests
+        .filter((t) => t.test_type !== 'full')
+        .flatMap((t) => t.sets.filter((s) => s.part === 5).flatMap((s) => s.questions)),
     [data],
   );
-  const [index, setIndex] = useState(() => Math.floor(Math.random() * pool.length));
+  // Walk a shuffled deck so "Câu khác" shows every question once before any repeats.
+  const [order] = useState(() => shuffled(pool.length));
+  const [tried, setTried] = useState(0);
   const [picked, setPicked] = useState<Label | undefined>();
-  const q = pool[index];
+  const q = pool[order[tried % order.length]];
   if (!q) return null;
 
   return (
     <div className="try">
       <span className="try__label">Thử một câu Part 5</span>
-      <QuestionBlock q={{ ...q, number: 1 }} part={5} mode="practice" selected={picked} revealed={!!picked} onSelect={setPicked} />
+      <div className="try__stage">
+        <QuestionBlock q={q} part={5} mode="practice" selected={picked} revealed={!!picked} onSelect={setPicked} />
+        {pool.map((s) => (
+          <div key={s.id} className="try__sizer" aria-hidden="true" inert>
+            <QuestionBlock q={{ ...s, id: `${s.id}-sizer` }} part={5} mode="practice" selected={wrongLabel(s)} revealed />
+          </div>
+        ))}
+      </div>
       <div className="try__foot">
-        <span className="small muted">{picked ? 'Mỗi câu trong đề đều có giải thích như thế này.' : 'Chọn một đáp án để xem giải thích.'}</span>
-        <button
-          type="button"
-          className="btn btn--ghost btn--small"
-          onClick={() => {
-            setIndex((i) => (i + 1 + Math.floor(Math.random() * (pool.length - 1))) % pool.length);
-            setPicked(undefined);
-          }}
-        >
-          Câu khác
-        </button>
+        {/* both hints share one grid cell, so swapping them never changes the footer height */}
+        <span className="small muted try__hint">
+          <span className={picked ? 'try__sizer' : undefined} aria-hidden={picked ? true : undefined}>
+            Chọn một đáp án để xem giải thích.
+          </span>
+          <span className={picked ? undefined : 'try__sizer'} aria-hidden={picked ? undefined : true}>
+            Mỗi câu trong đề đều có giải thích như thế này.
+          </span>
+        </span>
+        {pool.length > 1 && (
+          <button
+            type="button"
+            className="btn btn--ghost btn--small"
+            onClick={() => {
+              setTried((n) => n + 1);
+              setPicked(undefined);
+            }}
+          >
+            Câu khác
+          </button>
+        )}
       </div>
     </div>
   );

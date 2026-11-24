@@ -1,0 +1,57 @@
+/* Styles for Home, InfoPage and VocabPage (content pages). Tokens come from ../styles.css. */
+
+/* ---------------------------------------------------------------- home: "Thử một câu Part 5" */
+/* Every candidate question is stacked in one grid cell with its explanation shown, but only the
+   current one is visible. The box is therefore always as tall as the tallest question + explanation,
+   so neither revealing an answer nor loading another question moves the content around it. */
+.try__stage {
+  display: grid;
+}
+.try__stage > *,
+.try__hint > * {
+  grid-area: 1 / 1;
+  align-self: start;
+}
+.try__stage .question {
+  border-top: 0;
+}
+.try__hint {
+  display: grid;
+  flex: 1 1 12rem;
+}
+.try__sizer {
+  visibility: hidden;
+  pointer-events: none;
+}
+/* the sample is not question 1 of anything: hide the number and let the explanation span the row */
+.try .qnum {
+  display: none;
+}
+.try .explain {
+  margin-left: 0;
+}
+
+/* ---------------------------------------------------------------- info page */
+.info-note {
+  margin-top: 10px;
+}
+.fee-note {
+  margin-top: 12px;
+  display: grid;
+  gap: 6px;
+}
+
+/* ---------------------------------------------------------------- vocabulary */
+/* Keep the page at least one screen tall below the filters, so narrowing the list never makes the
+   scrollbar disappear (which shifts the whole page sideways) or clamps the scroll position. */
+.vocab-results {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+.vocab-count {
+  margin: 0 0 10px;
+  font-variant-numeric: tabular-nums;
+}
+.vocab-level {
+  max-width: 100%;
+}

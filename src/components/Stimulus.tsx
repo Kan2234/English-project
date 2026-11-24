@@ -71,15 +71,17 @@ interface Props {
   /** show listening transcript (review / practice after answering) */
   showTranscript?: boolean;
   autoPlay?: boolean;
+  /** false: the caller renders the audio player itself (the exam keeps it sticky) */
+  withAudio?: boolean;
 }
 
-export function Stimulus({ set, showTranscript = false, autoPlay = false }: Props) {
+export function Stimulus({ set, showTranscript = false, autoPlay = false, withAudio = true }: Props) {
   const [showPhotoText, setShowPhotoText] = useState(false);
   const listening = set.part <= 4;
 
   return (
     <div className="stimulus">
-      {listening && (
+      {listening && withAudio && (
         <AudioPlayer src={set.audio_url} autoPlay={autoPlay} durationHint={set.audio_duration_sec} label={`Audio câu ${set.questions[0].number}`} />
       )}
 

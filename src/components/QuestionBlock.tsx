@@ -10,13 +10,18 @@ interface Props {
   onSelect?: (label: Label) => void;
   /** practice: reveal the key + explanation once answered */
   revealed?: boolean;
+  /** exam: show a "flag for review" toggle when onToggleFlag is given */
+  flagged?: boolean;
+  onToggleFlag?: () => void;
+  /** exam: this is the question keyboard shortcuts answer */
+  current?: boolean;
 }
 
 /**
  * One question: number, prompt and a row of answer-sheet bubbles.
  * Part 1–2 choices are only heard in the real test, so their text stays hidden until review.
  */
-export function QuestionBlock({ q, part, mode, selected, onSelect, revealed }: Props) {
+export function QuestionBlock({ q, part, mode, selected, onSelect, revealed, flagged = false, onToggleFlag, current = false }: Props) {
   const labels = Object.keys(q.choices) as Label[];
   const showKey = mode === 'review' || (mode === 'practice' && revealed);
   const audioOnly = part <= 2 && !showKey;
@@ -29,7 +34,7 @@ export function QuestionBlock({ q, part, mode, selected, onSelect, revealed }: P
       .join(' ');
 
   return (
-    <div className="question" id={groupId}>
+    <div className={['question', current ? 'is-current' : '', flagged ? 'is-flagged' : ''].filter(Boolean).join(' ')} id={groupId}>
       <div className="question__head">
         <span className="qnum">{q.number}.</span>
         {q.prompt && part !== 6 ? (
@@ -51,6 +56,21 @@ export function QuestionBlock({ q, part, mode, selected, onSelect, revealed }: P
             {part === 2 && 'Chọn câu đáp lại phù hợp nhất.'}
             {part === 6 && `Chỗ trống số ${q.number} trong đoạn văn.`}
           </p>
+        )}
+        {onToggleFlag && (
+          <button
+            type="button"
+            className="flag-toggle"
+            aria-pressed={flagged}
+            aria-label={`Xem lại câu ${q.number}`}
+            title={flagged ? 'Bỏ đánh dấu xem lại' : 'Đánh dấu để xem lại'}
+            onClick={onToggleFlag}
+          >
+            <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M3.5 14.5V2M3.5 2.5h8.5l-2 3 2 3H3.5" fill={flagged ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+            </svg>
+            <span>Xem lại</span>
+          </button>
         )}
       </div>
 

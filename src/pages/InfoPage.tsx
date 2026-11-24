@@ -1,8 +1,10 @@
 import { useData } from '../lib/data';
 import { PART_NAMES } from '../lib/exam';
+import '../styles/content.css';
 
 const vnd = (n: number) => n.toLocaleString('vi-VN') + ' đ';
 const CANDIDATE: Record<string, string> = { student: 'Học sinh, sinh viên', general: 'Thí sinh tự do' };
+const IIG_FALLBACK = 'https://iigvietnam.com/vi/tin-tuc/chuyen-muc/quy-dinh-va-thong-bao';
 
 export default function InfoPage() {
   const data = useData();
@@ -11,6 +13,10 @@ export default function InfoPage() {
   const swParts = data.exam_parts.filter((p) => p.format_code === 'SW');
   const sourceName = (id: string) => data.sources.find((s) => s.id === id);
   const updates = [...data.updates].sort((a, b) => a.date.localeCompare(b.date));
+  const cefrSource = sourceName('ets-cefr-mapping');
+  const iigUrl = sourceName('iig-announcements')?.url ?? IIG_FALLBACK;
+  const comboSource = sourceName('iig-4skill-combo');
+  const feesUnverified = data.fees.some((f) => !f.verified);
 
   return (
     <div className="page page--narrow">
@@ -72,7 +78,7 @@ export default function InfoPage() {
                 <td style={{ whiteSpace: 'nowrap' }}>
                   {l.min_score}–{l.max_score}
                 </td>
-                <td>{l.cefr}</td>
+                <td style={{ whiteSpace: 'nowrap' }}>{l.cefr}</td>
                 <td>
                   <strong>{l.label_vi}</strong>
                   <br />
@@ -82,6 +88,18 @@ export default function InfoPage() {
             ))}
           </tbody>
         </table>
+        <p className="small muted info-note">
+          Mốc CEFR theo nghiên cứu chuẩn hóa của ETS: điểm tổng là tổng hai mốc tối thiểu của Nghe và Đọc (ví dụ B1 = Nghe 275 + Đọc 275).
+          ETS khuyên xét riêng từng kỹ năng và chỉ dùng các mốc này để tham khảo.
+          {cefrSource && (
+            <>
+              {' '}
+              <a href={cefrSource.url} target="_blank" rel="noreferrer">
+                Xem bảng của ETS
+              </a>
+            </>
+          )}
+        </p>
       </section>
 
       <section className="section">
@@ -106,13 +124,27 @@ export default function InfoPage() {
             ))}
           </tbody>
         </table>
-        <p className="notice" style={{ marginTop: 12 }}>
-          Mức phí lấy từ nguồn tham khảo bên ngoài, chưa đối chiếu với IIG Việt Nam. Kiểm tra lại trên{' '}
-          <a href="https://iigvietnam.com/policies-and-announcements/announcements/" target="_blank" rel="noreferrer">
-            trang thông báo của IIG
-          </a>{' '}
-          trước khi đăng ký.
-        </p>
+        <div className="notice fee-note">
+          {feesUnverified && (
+            <span>
+              <strong>Lệ phí chưa xác nhận, kiểm tra tại IIG.</strong> Các mức trên lấy từ trang luyện thi bên ngoài, chưa đối chiếu được
+              với bảng phí của IIG Việt Nam và có thể đã thay đổi. Xem lệ phí chính xác khi đăng ký trên{' '}
+              <a href={iigUrl} target="_blank" rel="noreferrer">
+                trang thông báo của IIG Việt Nam
+              </a>
+              .
+            </span>
+          )}
+          {comboSource && (
+            <span>
+              Đã xác nhận: học sinh, sinh viên đăng ký combo TOEIC 4 kỹ năng (Nghe – Đọc + Nói – Viết) được giảm 450.000 đ (
+              <a href={comboSource.url} target="_blank" rel="noreferrer">
+                thông báo của IIG
+              </a>
+              ).
+            </span>
+          )}
+        </div>
       </section>
 
       <section className="section">

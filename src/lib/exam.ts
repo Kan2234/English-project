@@ -104,3 +104,15 @@ export function formatClock(totalSec: number): string {
 export function blankNumber(set: QuestionSet, k: number): number | undefined {
   return set.questions[k - 1]?.number;
 }
+
+/** Router state set by the test intro page when the learner presses "Bắt đầu" / "Làm tiếp". */
+export interface ExamStart {
+  start: true;
+  /** "Chế độ thi thật" for a new attempt (a resumed attempt keeps its own mode) */
+  strict: boolean;
+}
+export const isExamStart = (v: unknown): v is ExamStart =>
+  typeof v === 'object' && v !== null && (v as Record<string, unknown>).start === true && typeof (v as Record<string, unknown>).strict === 'boolean';
+
+/** Real-exam mode: seconds between the end of one set's audio and the next set. */
+export const ADVANCE_SEC = 6;

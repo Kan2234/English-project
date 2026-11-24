@@ -53,7 +53,7 @@ Cuối mỗi lần build, script in ra phân bố đáp án A/B/C/D. Hãy giữ 
 | `grammar_topics` | 13 | |
 | `strategies` | 14 | |
 | `score_conversion` | 202 | Bảng quy đổi **ước lượng** số câu đúng → điểm |
-| `updates`, `fees`, `sources` | 5 / 3 / 8 | Có cờ `verified` |
+| `updates`, `fees`, `sources` | 5 / 3 / 13 | Có cờ `verified` |
 
 ## Một số truy vấn mẫu
 
@@ -76,7 +76,7 @@ SELECT q.* FROM questions q, json_each(q.tags) t WHERE t.value = 'grammar:relati
 - **Bản quyền:** Đề thi TOEIC thật và các bộ sách ETS là tài liệu có bản quyền, nên **không** được đưa vào đây. Toàn bộ câu hỏi, đoạn văn và transcript được biên soạn mới theo đúng định dạng, độ khó và dạng bẫy của đề thật (`tests.origin = 'original'`).
 - **Phần Nghe:** đã có audio TTS (xem mục bên dưới). Ảnh Part 1 là **ảnh trắng đen** (11 ảnh tạo bằng Gemini, 1 ảnh CC BY từ Wikimedia; xem mục Ảnh Part 1). Biểu đồ Part 3/4/7 được website vẽ trực tiếp từ dữ liệu `graphic`.
 - **Điểm quy đổi** chỉ là ước lượng, vì ETS không công bố bảng cố định (điểm được equating theo từng đề).
-- **Lệ phí** lấy từ nguồn bên thứ ba (`verified = 0`); cần đối chiếu với IIG Việt Nam trước khi hiển thị như số liệu chính thức. Tin rút gọn bài thi 4 kỹ năng từ 3/8/2026 cũng **chưa được ETS xác nhận**.
+- **Lệ phí** lấy từ nguồn bên thứ ba (`verified = 0`); cần đối chiếu với IIG Việt Nam trước khi hiển thị như số liệu chính thức. Tin đồn rút ngắn bài thi TOEIC 4-Skills tại Pháp (3/8/2026) **chưa được ETS xác nhận**: đến 24/11/2026 trang ETS Pháp vẫn ghi định dạng 2h22.
 
 ## Audio phần Nghe (TTS)
 

@@ -89,6 +89,35 @@ export function recordPractice(questionId: string, correct: boolean) {
   write(PRACTICE, p);
 }
 
+/** Question ids of one part whose last practice answer was wrong (they leave the list once answered right). */
+export const wrongInPractice = (questionIds: string[], progress = loadPractice()) =>
+  questionIds.filter((id) => progress[id] === false);
+
+// Practice mode: the question set each part was left at, stored by set id
+// (an id survives reordering of the data better than an index).
+const PRACTICE_POS = 'onta.practice.pos.v1';
+const isPartKey = (k: string) => /^[1-7]$/.test(k);
+const isPositions = (v: unknown): v is Record<string, string> =>
+  isObject(v) && Object.entries(v).every(([k, x]) => isPartKey(k) && isStr(x) && x.length > 0 && x.length < 200);
+const loadPositions = () => read<Record<string, string>>(PRACTICE_POS, {}, isPositions);
+export const loadPracticePosition = (part: number): string | undefined => loadPositions()[String(part)];
+export function savePracticePosition(part: number, setId: string) {
+  const p = loadPositions();
+  if (p[String(part)] === setId) return;
+  p[String(part)] = setId;
+  write(PRACTICE_POS, p);
+}
+
+/** Forgets one part's practice answers and position; other parts are left untouched. */
+export function resetPracticePart(part: number, questionIds: string[]) {
+  const p = loadPractice();
+  for (const id of questionIds) delete p[id];
+  write(PRACTICE, p);
+  const pos = loadPositions();
+  delete pos[String(part)];
+  write(PRACTICE_POS, pos);
+}
+
 // Vocabulary marked as learned
 const LEARNED = 'onta.vocab.learned.v1';
 export const loadLearned = () => new Set(read<string[]>(LEARNED, [], isStringList));
