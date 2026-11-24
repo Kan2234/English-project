@@ -7,16 +7,33 @@
 .try__stage {
   display: grid;
 }
-.try__stage > *,
-.try__hint > * {
+.try__stage > * {
   grid-area: 1 / 1;
   align-self: start;
 }
 .try__stage .question {
   border-top: 0;
 }
+/* The visible question stretches over the whole reserved height; until an answer is picked, a dashed
+   placeholder fills the room below the choices, exactly where the explanation will appear. */
+.try__stage > .try__current {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+.try__placeholder {
+  flex: 1 1 auto; /* never taller than the room left: that room is at least this question's own explanation */
+  margin-top: 12px; /* = the .question gap above .explain */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border: 1.5px dashed var(--rule);
+  border-radius: var(--radius-s);
+  color: var(--graphite-soft);
+  text-align: center;
+}
 .try__hint {
-  display: grid;
   flex: 1 1 12rem;
 }
 .try__sizer {
@@ -54,4 +71,16 @@
 }
 .vocab-level {
   max-width: 100%;
+}
+.vocab-search {
+  flex: 1 1 22rem;
+  min-width: 0;
+}
+/* Small screens: search on its own full-width row, the level select full width below it. */
+@media (max-width: 560px) {
+  .vocab-search,
+  .vocab-level {
+    flex-basis: 100%;
+    width: 100%;
+  }
 }

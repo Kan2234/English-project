@@ -173,11 +173,11 @@ export default function ResultPage() {
 
   const sectionLevels = r.sections.map((s) => {
     const cefr = cefrFor(s.section, s.scaled);
-    // weakest parts of this section first; ties keep the part order
-    const parts = r.byPart
-      .filter((p) => sectionOfPart(p.part) === s.section)
+    // parts of this section with a wrong or unanswered question, weakest first; ties keep the part order
+    const weakParts = r.byPart
+      .filter((p) => sectionOfPart(p.part) === s.section && p.correct < p.total)
       .sort((a, b) => a.correct / a.total - b.correct / b.total);
-    return { ...s, cefr, advice: adviceFor(s.section, cefr), parts };
+    return { ...s, cefr, advice: adviceFor(s.section, cefr), weakParts };
   });
   const listening = sectionLevels.find((s) => s.section === 'listening');
   const reading = sectionLevels.find((s) => s.section === 'reading');
@@ -272,19 +272,25 @@ export default function ResultPage() {
                 </span>
               </div>
               <p>{s.advice}</p>
-              {s.parts[0] && s.parts[0].correct < s.parts[0].total && (
-                <p className="muted">
-                  Yếu nhất trong bài này: Part {s.parts[0].part} ({PART_NAMES[s.parts[0].part]}), đúng{' '}
-                  {s.parts[0].correct}/{s.parts[0].total} câu.
+              {s.weakParts.length > 0 ? (
+                <>
+                  <p className="muted">
+                    Yếu nhất trong bài này: Part {s.weakParts[0].part} ({PART_NAMES[s.weakParts[0].part]}), đúng{' '}
+                    {s.weakParts[0].correct}/{s.weakParts[0].total} câu.
+                  </p>
+                  <div className="row">
+                    {s.weakParts.slice(0, 2).map((p) => (
+                      <Link key={p.part} className="btn btn--small btn--ghost" to={`/luyen-tap/part-${p.part}`}>
+                        Luyện thêm Part {p.part}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <p className="study-perfect">
+                  Bạn làm đúng cả {s.total} câu phần {SECTION_NAMES[s.section]}. Hãy thử sức với một đề khác để giữ phong độ.
                 </p>
               )}
-              <div className="row">
-                {s.parts.slice(0, 2).map((p) => (
-                  <Link key={p.part} className="btn btn--small btn--ghost" to={`/luyen-tap/part-${p.part}`}>
-                    Luyện thêm Part {p.part}
-                  </Link>
-                ))}
-              </div>
             </article>
           ))}
         </div>
@@ -395,7 +401,8 @@ export default function ResultPage() {
                 className="btn btn--small btn--ink"
                 onClick={() => {
                   deleteAttempt(attempt.id);
-                  navigate('/');
+                  // replace: Back must not land on this deleted result
+                  navigate('/', { replace: true });
                 }}
               >
                 Xóa kết quả

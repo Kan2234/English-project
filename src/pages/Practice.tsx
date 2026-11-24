@@ -24,7 +24,9 @@ interface Item {
 
 export default function Practice() {
   const { partSlug = '' } = useParams(); // "part-3"
-  const part = Number(partSlug.replace(/^part-/, ''));
+  // Only exactly "part-1" … "part-7"; loose forms like "part-3.0", "part-+5" or a bare "3" are not pages.
+  const match = /^part-([1-7])$/.exec(partSlug);
+  const part = match ? Number(match[1]) : 0;
   if (!PART_NAMES[part]) return <NotFound />;
   // key: start fresh when moving to another part
   return <PracticeSession key={part} part={part} />;

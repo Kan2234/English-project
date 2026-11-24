@@ -17,6 +17,8 @@ interface Props {
   suspended?: boolean;
   /** when set, audio that has not started yet (no autoplay, or autoplay blocked) shows one big start button with this text */
   startLabel?: string;
+  /** called when this src starts playing for the first time */
+  onStart?: () => void;
   onEnded?: () => void;
   className?: string;
 }
@@ -29,6 +31,7 @@ export function AudioPlayer({
   locked = false,
   suspended = false,
   startLabel,
+  onStart,
   onEnded,
   className,
 }: Props) {
@@ -51,6 +54,11 @@ export function AudioPlayer({
   rateRef.current = rate;
   const onEndedRef = useRef(onEnded);
   onEndedRef.current = onEnded;
+  const onStartRef = useRef(onStart);
+  onStartRef.current = onStart;
+  const startedRef = useRef(false);
+  const lockRef = useRef({ locked, suspended });
+  lockRef.current = { locked, suspended };
   const resumeAfterSuspend = useRef(false);
 
   // A newly loaded media resource starts at defaultPlaybackRate, so set both, and again on loadedmetadata.
@@ -65,6 +73,7 @@ export function AudioPlayer({
     setPlaying(false);
     setEnded(false);
     setStarted(false);
+    startedRef.current = false;
     setBlocked(false);
     setFailed(false);
     const a = ref.current;
@@ -93,6 +102,25 @@ export function AudioPlayer({
       if (locked) a.play().catch(() => {});
     }
   }, [suspended, locked]);
+
+  // real-exam mode: the media keys / system media controls must not pause the audio either
+  useEffect(() => {
+    const ms = typeof navigator !== 'undefined' ? navigator.mediaSession : undefined;
+    if (!locked || !ms) return;
+    const noop = () => {};
+    try {
+      ms.setActionHandler('pause', noop);
+    } catch {
+      /* action not supported */
+    }
+    return () => {
+      try {
+        ms.setActionHandler('pause', null);
+      } catch {
+        /* ignore */
+      }
+    };
+  }, [locked]);
 
   if (!src) return <div className="player player--missing">Câu này chưa có audio.</div>;
 
@@ -138,7 +166,8 @@ export function AudioPlayer({
 
   const sync = (a: HTMLAudioElement) => setTime(a.currentTime);
   const showStart = !!startLabel && !started && !playing && (!autoPlay || blocked) && !failed;
-  const playDisabled = locked && (playing || ended);
+  // real-exam mode: one press starts the audio, after that it can never be restarted by hand
+  const playDisabled = locked && (playing || ended || started);
 
   return (
     <div className={className}>
@@ -151,10 +180,21 @@ export function AudioPlayer({
           setStarted(true);
           setEnded(false);
           setBlocked(false);
+          if (!startedRef.current) {
+            startedRef.current = true;
+            onStartRef.current?.();
+          }
         }}
         onPause={(e) => {
+          const a = e.currentTarget;
+          // real-exam mode: a pause that did not come from this page (media key, headset,
+          // another script) is undone at once; dialog suspensions and the natural end are kept
+          if (lockRef.current.locked && !lockRef.current.suspended && !a.ended && a.isConnected && startedRef.current) {
+            a.play().catch(() => setPlaying(false));
+            return;
+          }
           setPlaying(false);
-          sync(e.currentTarget);
+          sync(a);
         }}
         onEnded={(e) => {
           setPlaying(false);

@@ -79,9 +79,11 @@ export default function TestIntro() {
         <h2 style={{ marginBottom: 18 }}>Chọn phần muốn làm</h2>
         <ul className="toc">
           {SCOPES.map((scope) => {
-            const count = questionsOf(setsInScope(test, scope)).length;
-            const draft = loadDraft(test.id, scope);
-            const done = draft ? Object.keys(draft.answers).length : 0;
+            const qs = questionsOf(setsInScope(test, scope));
+            const count = qs.length;
+            const draft = loadDraft(test.id, scope, scopeMinutes(test, scope) * 60);
+            // only answers to questions of this scope count (a stale or edited draft can hold other ids)
+            const done = draft ? qs.filter((q) => draft.answers[q.id]).length : 0;
             const draftStrict = draft ? !!loadMeta(test.id, scope, draft.startedAt)?.strict : false;
             return (
               <li key={scope}>

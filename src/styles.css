@@ -156,19 +156,19 @@ p {
   margin-left: auto;
 }
 @media (max-width: 640px) {
+  /* phones: the nav wraps onto a second row so every item stays visible, nothing scrolls sideways */
   .site-header__inner {
     gap: 4px;
-    padding-bottom: 4px;
+    padding-bottom: 6px;
   }
   .nav {
-    margin-left: -10px;
-    width: calc(100% + 10px);
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
+    margin-left: -8px;
+    width: calc(100% + 8px);
+    gap: 2px 0;
   }
   .nav a {
     white-space: nowrap;
+    padding: 6px 8px;
   }
 }
 .nav a {
@@ -852,7 +852,9 @@ button.dot {
   display: flex;
   align-items: center;
   gap: 16px;
-  flex-wrap: wrap;
+}
+.exam-bar__inner > * {
+  flex: none;
 }
 .exam-bar a,
 .exam-bar .brand:hover {
@@ -870,16 +872,35 @@ button.dot {
 .exam-bar .btn--ghost:hover {
   background: #3a3d42;
 }
-.exam-bar__title {
+/* one row at every width: the title gives way (ellipsis), timer and buttons stay together on the right */
+.exam-bar__inner > .exam-bar__title {
+  flex: 1 1 auto;
+  min-width: 0;
   font-weight: 700;
-  margin-right: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 980px) {
+  .exam-bar__inner {
+    gap: 12px;
+  }
+  .exam-bar__scope {
+    display: none;
+  }
 }
 @media (max-width: 560px) {
   .exam-bar .brand {
     display: none;
   }
   .exam-bar__inner {
-    gap: 8px 12px;
+    gap: 8px;
+  }
+  .exam-bar .btn--small {
+    padding: 6px 9px;
+  }
+  .exam-bar .timer {
+    font-size: var(--t-md);
   }
 }
 .timer {
@@ -994,26 +1015,74 @@ kbd {
 .sheet-toggle {
   display: none;
 }
+.exam__panel-head {
+  display: none;
+}
 @media (max-width: 980px) {
   .exam {
     grid-template-columns: 1fr;
   }
+  /* the aside becomes a full-screen dimmed backdrop (tap it to close) holding a bottom panel */
   .exam__aside {
     position: fixed;
-    inset: auto 0 0 0;
-    top: auto;
-    max-height: 70vh;
+    inset: 0;
+    max-height: none;
+    overflow: hidden;
     z-index: 40;
-    padding: 12px;
-    background: rgba(38, 40, 44, 0.35);
+    background: rgba(38, 40, 44, 0.45);
     display: none;
   }
   .exam__aside.is-open {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .exam__panel {
+    max-height: 75vh;
+    max-height: 75dvh;
+    overflow: auto;
+    overscroll-behavior: contain;
+    background: var(--paper);
+    border-radius: var(--radius-m) var(--radius-m) 0 0;
+    padding: 0 12px 12px;
+  }
+  .exam__panel-head {
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--paper);
+    padding: 8px 0;
+  }
+  .exam__panel-head .btn {
+    min-height: 36px;
   }
   .sheet-toggle {
     display: inline-flex;
   }
+}
+/* touch screens have no keyboard shortcuts to show */
+@media (hover: none) and (pointer: coarse) {
+  .exam__keys {
+    display: none;
+  }
+}
+.audio-spent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  font-size: var(--t-sm);
+  color: var(--graphite-soft);
+  background: var(--paper-sunk);
+  border-left: 4px solid var(--graphite-faint);
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+  padding: 8px 12px;
+  max-width: 640px;
+}
+.audio-spent strong {
+  color: var(--graphite);
 }
 
 /* ---------------------------------------------------------------- dialog */

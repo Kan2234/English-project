@@ -46,8 +46,9 @@ const isAnswers = (v: unknown): v is Answers => isObject(v) && Object.values(v).
 const isAttempt = (v: unknown): v is Attempt =>
   isObject(v) && isStr(v.id) && isStr(v.testId) && isStr(v.scope) && SCOPES.has(v.scope) && isAnswers(v.answers) &&
   isNum(v.startedAt) && isNum(v.finishedAt) && isNum(v.elapsedSec);
+// remainingSec is range-checked by loadDraft, which knows the scope's time limit
 const isDraft = (v: unknown): v is Draft =>
-  isObject(v) && isAnswers(v.answers) && isNum(v.startedAt) && isNum(v.remainingSec) && v.remainingSec >= 0 &&
+  isObject(v) && isAnswers(v.answers) && isNum(v.startedAt) && isNum(v.remainingSec) &&
   Number.isInteger(v.current) && (v.current as number) >= 0;
 const isList = (v: unknown): v is unknown[] => Array.isArray(v);
 const isPractice = (v: unknown): v is Record<string, boolean> => isObject(v) && Object.values(v).every((x) => typeof x === 'boolean');
@@ -70,13 +71,22 @@ function remove(key: string) {
 export const listAttempts = (): Attempt[] => read<unknown[]>(ATTEMPTS, [], isList).filter(isAttempt).sort((a, b) => b.finishedAt - a.finishedAt);
 export const getAttempt = (id: string) => listAttempts().find((a) => a.id === id);
 export function saveAttempt(a: Attempt) {
-  write(ATTEMPTS, [a, ...listAttempts().filter((x) => x.id !== a.id)].slice(0, 50));
+  const clean = { ...a, elapsedSec: Math.max(0, a.elapsedSec) };
+  write(ATTEMPTS, [clean, ...listAttempts().filter((x) => x.id !== a.id)].slice(0, 50));
 }
 export function deleteAttempt(id: string) {
   write(ATTEMPTS, listAttempts().filter((x) => x.id !== id));
 }
 
-export const loadDraft = (testId: string, scope: Scope) => read<Draft | null>(draftKey(testId, scope), null, isDraft);
+/**
+ * The saved attempt, with remainingSec clamped to [0, limitSec]: a tampered or stale draft
+ * (e.g. saved before the time limit changed) can never give more time than the scope allows.
+ */
+export function loadDraft(testId: string, scope: Scope, limitSec = Number.MAX_SAFE_INTEGER): Draft | null {
+  const d = read<Draft | null>(draftKey(testId, scope), null, isDraft);
+  if (!d) return null;
+  return { ...d, remainingSec: Math.max(0, Math.min(Math.floor(limitSec), Math.round(d.remainingSec))) };
+}
 export const saveDraft = (testId: string, scope: Scope, d: Draft) => write(draftKey(testId, scope), d);
 export const clearDraft = (testId: string, scope: Scope) => remove(draftKey(testId, scope));
 

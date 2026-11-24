@@ -40,7 +40,11 @@ function TryOneQuestion() {
     <div className="try">
       <span className="try__label">Thử một câu Part 5</span>
       <div className="try__stage">
-        <QuestionBlock q={q} part={5} mode="practice" selected={picked} revealed={!!picked} onSelect={setPicked} />
+        <div className="try__current">
+          <QuestionBlock q={q} part={5} mode="practice" selected={picked} revealed={!!picked} onSelect={setPicked} />
+          {/* fills the room reserved for the explanation until an answer is picked */}
+          {!picked && <div className="try__placeholder small">Chọn một đáp án để xem giải thích.</div>}
+        </div>
         {pool.map((s) => (
           <div key={s.id} className="try__sizer" aria-hidden="true" inert>
             <QuestionBlock q={{ ...s, id: `${s.id}-sizer` }} part={5} mode="practice" selected={wrongLabel(s)} revealed />
@@ -48,14 +52,9 @@ function TryOneQuestion() {
         ))}
       </div>
       <div className="try__foot">
-        {/* both hints share one grid cell, so swapping them never changes the footer height */}
-        <span className="small muted try__hint">
-          <span className={picked ? 'try__sizer' : undefined} aria-hidden={picked ? true : undefined}>
-            Chọn một đáp án để xem giải thích.
-          </span>
-          <span className={picked ? undefined : 'try__sizer'} aria-hidden={picked ? undefined : true}>
-            Mỗi câu trong đề đều có giải thích như thế này.
-          </span>
+        {/* kept in the layout (just hidden) before an answer is picked, so the footer height never changes */}
+        <span className={picked ? 'small muted try__hint' : 'small muted try__hint try__sizer'} aria-hidden={picked ? undefined : true}>
+          Mỗi câu trong đề đều có giải thích như thế này.
         </span>
         {pool.length > 1 && (
           <button

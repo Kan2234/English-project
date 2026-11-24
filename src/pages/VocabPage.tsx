@@ -92,9 +92,9 @@ export default function VocabPage() {
 
       <div className="filters">
         <input
-          className="input"
+          className="input vocab-search"
           type="search"
-          placeholder="Tìm từ, nghĩa hoặc ví dụ (gõ không dấu được)"
+          placeholder="Tìm từ, nghĩa, ví dụ (không cần dấu)"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           aria-label="Tìm từ vựng"

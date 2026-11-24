@@ -28,7 +28,7 @@ export default function Exam() {
   const start = isExamStart(state) ? state : null;
   // Opening /lam-bai/... directly must not start the clock: only resume a saved attempt,
   // otherwise send the learner to the intro page to press "Bắt đầu".
-  if (!start && !loadDraft(test.id, scope)) return <Navigate to={`/de/${test.id}`} replace state={{ needStart: scope }} />;
+  if (!start && !loadDraft(test.id, scope, scopeMinutes(test, scope) * 60)) return <Navigate to={`/de/${test.id}`} replace state={{ needStart: scope }} />;
   // key: remount cleanly when switching between tests/scopes
   return <ExamSession key={`${test.id}/${scope}`} testId={test.id} scope={scope} strictChoice={start?.strict ?? false} />;
 }
@@ -41,15 +41,31 @@ function ExamSession({ testId, scope, strictChoice }: { testId: string; scope: S
   const allQuestions = useMemo(() => questionsOf(sets), [sets]);
   const limitSec = scopeMinutes(test, scope) * 60;
 
-  const [initial] = useState(() => loadDraft(testId, scope));
+  const [initial] = useState(() => {
+    // remainingSec comes back clamped to the limit; answers to ids outside this scope are dropped
+    const d = loadDraft(testId, scope, limitSec);
+    if (!d) return null;
+    const ids = new Set(allQuestions.map((q) => q.id));
+    const answers = Object.fromEntries(Object.entries(d.answers).filter(([id]) => ids.has(id))) as Answers;
+    return { ...d, answers };
+  });
   const [answers, setAnswers] = useState<Answers>(initial?.answers ?? {});
   const [current, setCurrent] = useState(Math.max(0, Math.min(initial?.current ?? 0, sets.length - 1)));
   const [remaining, setRemaining] = useState(initial?.remainingSec ?? limitSec);
   const [startedAt] = useState(initial?.startedAt ?? Date.now());
   // flags + listening mode live in flags.ts (storage.ts belongs to the draft); a resumed attempt keeps its mode
-  const [meta] = useState(() => (initial ? loadMeta(testId, scope, initial.startedAt) : null) ?? { startedAt, flagged: [], strict: initial ? false : strictChoice });
+  const [meta] = useState(() => {
+    const m = (initial ? loadMeta(testId, scope, initial.startedAt) : null) ?? { startedAt, flagged: [], strict: initial ? false : strictChoice, played: [] };
+    const qids = new Set(allQuestions.map((q) => q.id));
+    const sids = new Set(sets.map((s) => s.id));
+    return { ...m, flagged: m.flagged.filter((id) => qids.has(id)), played: m.played.filter((id) => sids.has(id)) };
+  });
   const strict = meta.strict;
   const [flagged, setFlagged] = useState<ReadonlySet<string>>(() => new Set(meta.flagged));
+  // real-exam mode: listening sets whose audio has already started in this attempt (kept across reloads)
+  const [played, setPlayed] = useState<ReadonlySet<string>>(() => new Set(meta.played));
+  // the set whose audio was started during the current visit to it; only that one shows a player once played
+  const [liveSet, setLiveSet] = useState<string | null>(null);
   const [currentQ, setCurrentQ] = useState(() => firstOpen(sets[Math.max(0, Math.min(initial?.current ?? 0, sets.length - 1))], initial?.answers ?? {}));
   const [confirming, setConfirming] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -60,6 +76,11 @@ function ExamSession({ testId, scope, strictChoice }: { testId: string; scope: S
   const submitted = useRef(false);
   const topRef = useRef<HTMLElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const submitBtnRef = useRef<HTMLButtonElement>(null);
+  const openerRef = useRef<HTMLElement | null>(null);
+  const sheetCloseRef = useRef<HTMLButtonElement>(null);
+  const sheetToggleRef = useRef<HTMLButtonElement>(null);
 
   // keep the latest values for the timer/unload callbacks
   const latest = useRef({ answers, current, remaining });
@@ -83,7 +104,7 @@ function ExamSession({ testId, scope, strictChoice }: { testId: string; scope: S
       answers: latest.current.answers,
       startedAt,
       finishedAt,
-      elapsedSec: limitSec - latest.current.remaining,
+      elapsedSec: Math.max(0, limitSec - latest.current.remaining),
     });
     clearDraft(testId, scope);
     clearMeta(testId, scope);
@@ -112,8 +133,53 @@ function ExamSession({ testId, scope, strictChoice }: { testId: string; scope: S
     };
   }, [persist]);
   useEffect(() => {
-    if (!submitted.current) saveMeta(testId, scope, { startedAt, flagged: [...flagged], strict });
-  }, [testId, scope, startedAt, flagged, strict]);
+    if (!submitted.current) saveMeta(testId, scope, { startedAt, flagged: [...flagged], strict, played: [...played] });
+  }, [testId, scope, startedAt, flagged, strict, played]);
+
+  // "Nộp bài?" dialog: Escape closes it, Tab stays inside, focus goes back to the button that opened it
+  const openConfirm = () => {
+    openerRef.current = document.activeElement instanceof HTMLElement && document.activeElement !== document.body ? document.activeElement : null;
+    setSheetOpen(false);
+    setConfirming(true);
+  };
+  useEffect(() => {
+    if (!confirming) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        setConfirming(false);
+        return;
+      }
+      const box = dialogRef.current;
+      if (e.key !== 'Tab' || !box) return;
+      const items = [...box.querySelectorAll<HTMLElement>('button:not([disabled]), [href], input:not([disabled]), [tabindex]:not([tabindex="-1"])')];
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement;
+      const inside = !!active && box.contains(active);
+      if (e.shiftKey ? !inside || active === first : !inside || active === last) {
+        e.preventDefault();
+        (e.shiftKey ? last : first).focus();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      if (submitted.current) return;
+      const opener = openerRef.current;
+      (opener?.isConnected ? opener : submitBtnRef.current)?.focus();
+    };
+  }, [confirming]);
+
+  // the answer sheet panel (small screens): focus moves into it when opened, back to the toggle when dismissed
+  useEffect(() => {
+    if (sheetOpen) sheetCloseRef.current?.focus({ preventScroll: true });
+  }, [sheetOpen]);
+  const closeSheet = () => {
+    setSheetOpen(false);
+    sheetToggleRef.current?.focus({ preventScroll: true });
+  };
 
   // the sticky player and passage sit below the exam bar, whose height changes when it wraps
   useEffect(() => {
@@ -139,6 +205,7 @@ function ExamSession({ testId, scope, strictChoice }: { testId: string; scope: S
     if (i !== current) {
       setCurrent(i);
       setNavigated(true);
+      setLiveSet(null); // coming back to a played set later shows "đã phát", never the player
     }
     setAdvanceIn(null);
     setSheetOpen(false);
@@ -175,6 +242,11 @@ function ExamSession({ testId, scope, strictChoice }: { testId: string; scope: S
 
   // keyboard shortcuts: A–D / 1–4 answer the current question, ←/→ previous/next set
   const onKey = (e: KeyboardEvent) => {
+    if (e.key === 'Escape' && sheetOpen && !confirming) {
+      e.preventDefault();
+      closeSheet();
+      return;
+    }
     if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || e.isComposing || confirming) return;
     const t = e.target instanceof Element ? e.target : null;
     if (t?.closest('input, textarea, select, [contenteditable]:not([contenteditable="false"]), [role="slider"], [role="textbox"]')) return;
@@ -219,6 +291,9 @@ function ExamSession({ testId, scope, strictChoice }: { testId: string; scope: S
   const firstListening = sets.findIndex((s) => s.part <= 4);
   const nextSet = sets[current + 1];
   const twoCol = set.part >= 6 && !!set.passages?.length;
+  // real-exam mode: a set played before (earlier in this attempt, or before a reload) never plays again
+  const audioSpent = strict && listening && played.has(set.id) && liveSet !== set.id;
+  const flaggedCount = allQuestions.filter((q) => flagged.has(q.id)).length;
 
   const questions: ReactNode = (
     <div onFocus={onQuestionsFocus}>
@@ -243,21 +318,31 @@ function ExamSession({ testId, scope, strictChoice }: { testId: string; scope: S
       <div className="exam-bar" ref={barRef}>
         <div className="exam-bar__inner">
           <Brand />
-          <span className="exam-bar__title">
+          <span className="exam-bar__title" title={`${test.title} · ${SCOPE_NAMES[scope]}${strict ? ' · Thi thật' : ''}`}>
             {test.title}
             <span className="small" style={{ opacity: 0.7, fontWeight: 400 }}>
-              {'  '}
-              {SCOPE_NAMES[scope]}
+              <span className="exam-bar__scope">
+                {'  '}
+                {SCOPE_NAMES[scope]}
+              </span>
               {strict && ' · Thi thật'}
             </span>
           </span>
           <span className={`timer${remaining < 300 ? ' is-low' : ''}`} role="timer" aria-label={`Còn ${formatClock(remaining)}`}>
             {formatClock(remaining)}
           </span>
-          <button type="button" className="btn btn--ghost btn--small sheet-toggle" style={{ color: 'inherit' }} aria-expanded={sheetOpen} onClick={() => setSheetOpen((o) => !o)}>
+          <button
+            type="button"
+            ref={sheetToggleRef}
+            className="btn btn--ghost btn--small sheet-toggle"
+            style={{ color: 'inherit' }}
+            aria-expanded={sheetOpen}
+            aria-controls="exam-sheet"
+            onClick={() => (sheetOpen ? closeSheet() : setSheetOpen(true))}
+          >
             Phiếu trả lời
           </button>
-          <button type="button" className="btn btn--ink btn--small" onClick={() => setConfirming(true)}>
+          <button type="button" ref={submitBtnRef} className="btn btn--ink btn--small" onClick={openConfirm}>
             Nộp bài
           </button>
         </div>
@@ -277,18 +362,37 @@ function ExamSession({ testId, scope, strictChoice }: { testId: string; scope: S
 
           {listening && (
             <div className="exam__audio">
-              <AudioPlayer
-                src={set.audio_url}
-                autoPlay={navigated}
-                durationHint={set.audio_duration_sec}
-                label={`Audio câu ${first}`}
-                locked={strict}
-                suspended={confirming}
-                startLabel={current === firstListening ? 'Bấm để bắt đầu phần Nghe' : 'Bấm để phát audio nhóm này'}
-                onEnded={() => {
-                  if (strict && latest.current.current < sets.length - 1) setAdvanceIn(ADVANCE_SEC);
-                }}
-              />
+              {audioSpent ? (
+                <div className="audio-spent" role="status">
+                  <span>
+                    <strong>Audio nhóm này đã phát.</strong> Chế độ thi thật chỉ cho nghe một lần, bạn vẫn sửa được đáp án.
+                  </span>
+                  {nextSet && (
+                    <button type="button" className="btn btn--small" onClick={() => go(current + 1)}>
+                      {nextSet.part >= 5 ? 'Sang phần Đọc' : 'Sang nhóm tiếp theo'}
+                    </button>
+                  )}
+                </div>
+              ) : (
+                <AudioPlayer
+                  src={set.audio_url}
+                  autoPlay={navigated}
+                  durationHint={set.audio_duration_sec}
+                  label={`Audio câu ${first}`}
+                  locked={strict}
+                  suspended={confirming}
+                  startLabel={current === firstListening ? 'Bấm để bắt đầu phần Nghe' : 'Bấm để phát audio nhóm này'}
+                  onStart={() => {
+                    if (!strict) return;
+                    const id = set.id;
+                    setLiveSet(id);
+                    setPlayed((p) => (p.has(id) ? p : new Set(p).add(id)));
+                  }}
+                  onEnded={() => {
+                    if (strict && latest.current.current < sets.length - 1) setAdvanceIn(ADVANCE_SEC);
+                  }}
+                />
+              )}
               {advanceIn !== null && (
                 <p className="advance" role="status">
                   Audio đã hết. Tự chuyển sang {nextSet && nextSet.part >= 5 && set.part <= 4 ? 'phần Đọc' : 'nhóm tiếp theo'} sau{' '}
@@ -324,7 +428,7 @@ function ExamSession({ testId, scope, strictChoice }: { testId: string; scope: S
                 Nhóm tiếp theo
               </button>
             ) : (
-              <button type="button" className="btn btn--ink" onClick={() => setConfirming(true)}>
+              <button type="button" className="btn btn--ink" onClick={openConfirm}>
                 Nộp bài
               </button>
             )}
@@ -337,29 +441,37 @@ function ExamSession({ testId, scope, strictChoice }: { testId: string; scope: S
           </p>
         </main>
 
-        <aside className={`exam__aside${sheetOpen ? ' is-open' : ''}`} onClick={(e) => e.target === e.currentTarget && setSheetOpen(false)}>
-          <AnswerSheet
-            sets={sets}
-            answers={answers}
-            currentSetIndex={current}
-            currentQuestionId={currentQ}
-            onJump={go}
-            onAnswer={choose}
-            flagged={flagged}
-            scrollTrigger={sheetOpen}
-          />
+        {/* on small screens this is a bottom panel over a dimmed backdrop; tapping the backdrop closes it */}
+        <aside id="exam-sheet" className={`exam__aside${sheetOpen ? ' is-open' : ''}`} onClick={(e) => e.target === e.currentTarget && closeSheet()}>
+          <div className="exam__panel">
+            <div className="exam__panel-head">
+              <button type="button" ref={sheetCloseRef} className="btn btn--ghost btn--small" aria-label="Đóng phiếu trả lời" onClick={closeSheet}>
+                Đóng
+              </button>
+            </div>
+            <AnswerSheet
+              sets={sets}
+              answers={answers}
+              currentSetIndex={current}
+              currentQuestionId={currentQ}
+              onJump={go}
+              onAnswer={choose}
+              flagged={flagged}
+              scrollTrigger={sheetOpen}
+            />
+          </div>
         </aside>
       </div>
 
       {confirming && (
         <div className="dialog-backdrop" role="presentation" onClick={(e) => e.target === e.currentTarget && setConfirming(false)}>
-          <div className="dialog" role="dialog" aria-modal="true" aria-labelledby="submit-title">
+          <div className="dialog" role="dialog" aria-modal="true" aria-labelledby="submit-title" aria-describedby="submit-desc" ref={dialogRef}>
             <h2 id="submit-title">Nộp bài?</h2>
-            <p>
+            <p id="submit-desc">
               {unanswered > 0
                 ? `Bạn còn ${unanswered} câu chưa trả lời. TOEIC không trừ điểm câu sai, nên hãy chọn một đáp án cho mọi câu trước khi nộp.`
                 : 'Bạn đã trả lời tất cả các câu. Sau khi nộp sẽ không sửa được đáp án.'}
-              {flagged.size > 0 && ` Còn ${flagged.size} câu bạn đánh dấu xem lại.`}
+              {flaggedCount > 0 && ` Còn ${flaggedCount} câu bạn đánh dấu xem lại.`}
             </p>
             <div className="row" style={{ justifyContent: 'flex-end' }}>
               <button type="button" className="btn btn--ghost" onClick={() => setConfirming(false)} autoFocus>
