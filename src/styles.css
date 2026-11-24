@@ -156,7 +156,12 @@ p {
   margin-left: auto;
 }
 @media (max-width: 640px) {
-  /* phones: the nav wraps onto a second row so every item stays visible, nothing scrolls sideways */
+  /* phones: the nav wraps onto a second row so every item stays visible, nothing scrolls sideways.
+     That makes the header two rows tall, so it scrolls away instead of covering the screen.
+     (The exam page has no site header; its own .exam-bar and --bar-h are unaffected.) */
+  .site-header {
+    position: static;
+  }
   .site-header__inner {
     gap: 4px;
     padding-bottom: 6px;
@@ -169,6 +174,10 @@ p {
   .nav a {
     white-space: nowrap;
     padding: 6px 8px;
+    /* comfortable touch target */
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
   }
 }
 .nav a {

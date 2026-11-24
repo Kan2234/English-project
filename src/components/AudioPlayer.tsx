@@ -4,6 +4,7 @@ import { formatClock } from '../lib/exam';
 
 const SPEEDS = [1, 1.25, 0.75];
 const KEY_STEP_SEC = 5;
+const SEEK_TOLERANCE_SEC = 1;
 
 interface Props {
   src?: string | null;
@@ -60,6 +61,10 @@ export function AudioPlayer({
   const lockRef = useRef({ locked, suspended });
   lockRef.current = { locked, suspended };
   const resumeAfterSuspend = useRef(false);
+  // real-exam mode: last position reached by normal playback, so a seek from outside the page
+  // (DevTools, extensions, another script) can be undone
+  const naturalPos = useRef(0);
+  const restoring = useRef(false);
 
   // A newly loaded media resource starts at defaultPlaybackRate, so set both, and again on loadedmetadata.
   const applyRate = (a: HTMLAudioElement) => {
@@ -74,6 +79,8 @@ export function AudioPlayer({
     setEnded(false);
     setStarted(false);
     startedRef.current = false;
+    naturalPos.current = 0;
+    restoring.current = false;
     setBlocked(false);
     setFailed(false);
     const a = ref.current;
@@ -165,6 +172,23 @@ export function AudioPlayer({
   };
 
   const sync = (a: HTMLAudioElement) => setTime(a.currentTime);
+  // Real-exam mode has no seek controls, so once the audio has started, a seek landing more
+  // than ~1 s from the natural play position came from outside the page and is undone.
+  const onSeeking = (a: HTMLAudioElement) => {
+    if (lockRef.current.locked && startedRef.current && !restoring.current) {
+      const back = naturalPos.current;
+      if (Math.abs(a.currentTime - back) > SEEK_TOLERANCE_SEC) {
+        restoring.current = true; // if the restore itself lands elsewhere, leave it: no loop
+        a.currentTime = back;
+        return;
+      }
+    }
+    restoring.current = false;
+    sync(a);
+  };
+  const remember = (a: HTMLAudioElement) => {
+    if (!a.seeking) naturalPos.current = a.currentTime;
+  };
   const showStart = !!startLabel && !started && !playing && (!autoPlay || blocked) && !failed;
   // real-exam mode: one press starts the audio, after that it can never be restarted by hand
   const playDisabled = locked && (playing || ended || started);
@@ -197,14 +221,21 @@ export function AudioPlayer({
           sync(a);
         }}
         onEnded={(e) => {
+          remember(e.currentTarget);
           setPlaying(false);
           setEnded(true);
           sync(e.currentTarget);
           onEndedRef.current?.();
         }}
-        onTimeUpdate={(e) => sync(e.currentTarget)}
-        onSeeking={(e) => sync(e.currentTarget)}
-        onSeeked={(e) => sync(e.currentTarget)}
+        onTimeUpdate={(e) => {
+          remember(e.currentTarget);
+          sync(e.currentTarget);
+        }}
+        onSeeking={(e) => onSeeking(e.currentTarget)}
+        onSeeked={(e) => {
+          remember(e.currentTarget);
+          sync(e.currentTarget);
+        }}
         onLoadedMetadata={(e) => {
           applyRate(e.currentTarget);
           onDuration(e.currentTarget.duration);
