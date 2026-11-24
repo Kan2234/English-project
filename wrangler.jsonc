@@ -18,5 +18,9 @@
   },
   "observability": {
     "enabled": true
-  }
+  },
+  // Non-main branches are built with `npx wrangler preview`, which needs this
+  // block (may stay empty). Each branch gets <branch>-english-project...workers.dev
+  // and serves as staging before merging to main.
+  "previews": {}
 }
