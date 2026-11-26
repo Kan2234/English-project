@@ -22,5 +22,18 @@
   // Non-main branches are built with `npx wrangler preview`, which needs this
   // block (may stay empty). Each branch gets <branch>-english-project...workers.dev
   // and serves as staging before merging to main.
-  "previews": {}
+  "previews": {},
+  // Staging: `wrangler deploy --env staging` deploys a separate Worker,
+  // english-project-staging (https://english-project-staging.<subdomain>.workers.dev).
+  // Inherited from the top level by wrangler 4.159.0: main, compatibility_date,
+  // assets (incl. run_worker_first), observability, previews, workers_dev.
+  // NOT inherited (must be repeated here if added above): vars, define, secrets
+  // and every binding (kv_namespaces, d1_databases, r2_buckets, services...).
+  // The name would default to "<name>-staging" anyway; it is spelled out so a
+  // rename of the top-level Worker can never retarget staging by accident.
+  "env": {
+    "staging": {
+      "name": "english-project-staging"
+    }
+  }
 }
