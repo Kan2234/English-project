@@ -54,8 +54,12 @@ test.describe('storage robustness', () => {
       );
       for (const route of ROUTES) {
         await page.goto(`/${route}`);
-        await page.reload(); // read storage on a fresh page load, not only on route change
+        // Read storage on a fresh page load, not only on route change. 'domcontentloaded', not
+        // the default 'load': over the internet Firefox sometimes never fires `load` within
+        // the timeout; the assertions below wait for the app itself.
+        await page.reload({ waitUntil: 'domcontentloaded' });
         await expect(page.locator('main h1, main .empty, .exam-bar').first(), route).toBeAttached();
+        await expect(page.locator('.loading'), route).toHaveCount(0); // data loaded: the page really rendered with the stored values
         await expect(page.getByText('Trang gặp lỗi khi hiển thị.'), route).toHaveCount(0);
       }
       expect(await page.evaluate(() => ({} as Record<string, unknown>).polluted)).toBeUndefined();

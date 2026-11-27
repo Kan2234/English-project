@@ -84,7 +84,7 @@ test.describe('real-exam mode @slow', () => {
     await expect.poll(async () => (await readStorage<{ answers: Record<string, string> }>(page, DRAFT))?.answers[s1.questions[0].id]).toBe('B');
 
     // after a reload the played set still never plays again, and the mode is kept
-    await page.reload();
+    await page.reload({ waitUntil: 'domcontentloaded' }); // not 'load' (see storage.spec.ts)
     await expect(page.locator('.exam-bar__title')).toContainText('Thi thật');
     await expect(spent).toBeVisible();
     await expect(page.locator('audio')).toHaveCount(0);

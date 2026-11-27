@@ -47,7 +47,7 @@ test.describe('practice by part', () => {
     await press(page, page.getByRole('button', { name: 'Nhóm tiếp theo' }));
     await expect(page.locator('p.study-gap').first()).toContainText(`Nhóm 2/${order.length}`);
     await expect.poll(() => readStorage<Record<string, string>>(page, 'onta.practice.pos.v1')).toEqual({ 3: order[1].set.id });
-    await page.reload();
+    await page.reload({ waitUntil: 'domcontentloaded' }); // not 'load' (see storage.spec.ts)
     await expect(page.getByText('Bạn đang học tiếp từ nhóm 2.')).toBeVisible();
     await expect(page.locator('.question').first()).toHaveAttribute('id', `q-${order[1].set.questions[0].id}`);
 

@@ -86,6 +86,52 @@ docker run --rm -v "${PWD}/zap-out:/zap/wrk:rw" ghcr.io/zaproxy/zaproxy:2.17.0@s
 node scripts/zap-gate.mjs zap-out/report.json .zap/rules.tsv
 ```
 
+#### Phát hành production
+
+Production (Worker `english-project`, https://english-project.leminhkhang2234.workers.dev) **chỉ** được deploy khi có tag `vX.Y.Z` trên `main`. Push hay merge vào `main` không deploy gì.
+
+Các bước phát hành:
+
+1. Gom thay đổi vào `staging` (PR, squash). Chờ `staging.yml` xanh, tức commit có dấu `staging/verified`.
+2. Mở **Release PR** từ `staging` vào `main`, ghi changelog trong mô tả, merge bằng **merge commit**.
+3. Tạo tag SemVer trên đúng merge commit đó (commit mới nhất của `main`):
+
+   ```powershell
+   git fetch origin; git tag -s v1.2.3 origin/main -m "v1.2.3"; git push origin v1.2.3
+   ```
+
+   Hoặc dùng "Draft a new release" trên GitHub, chọn tag mới và target `main`. Tag `v*` không xóa hay dời được, nên kiểm tra kỹ số phiên bản trước khi push.
+4. `.github/workflows/production.yml` chạy:
+   - `gate` (`scripts/release-gate.mjs`): tên tag đúng `vX.Y.Z` (không nhận `-rc`, `-beta`...); tag nằm trên lịch sử first-parent của `main`; commit đó là merge commit, có parent thứ hai (`^2`) nằm trên `staging`, mang status `staging/verified` = success do `github-actions[bot]` đặt, và **cây file giống hệt** `^2`. Nói cách khác, production nhận đúng từng byte mà staging đã kiểm tra. Tag đặt thẳng lên một commit của `staging` (kiểu fast-forward) bị từ chối, vì như vậy có thể deploy một bản staging cũ chưa từng qua Release PR.
+   - `release / …` (`_release.yml`, Environment `production`): ở đây workflow **dừng chờ duyệt**. Vào tab Actions → lượt chạy → **Review deployments** → chọn `production` → **Approve and deploy**. Sau đó job build lại đúng commit của tag, ghi lại version đang chạy, `wrangler deploy` (version được gắn tag và message `release vX.Y.Z`), chờ site phục vụ bản mới, rồi smoke test: `check-site` (64/64) và Playwright `@smoke` trên Chromium (trang chủ, mở một đề, phát một file audio, trang kết quả, audio Range).
+   - Smoke lỗi thì **tự rollback** về version trước, chờ API báo version đó đang chạy, chờ site phục vụ lại bản cũ, chạy lại `check-site`, rồi mở issue nhãn `incident`. Lượt chạy đó tính là **thất bại** dù rollback thành công.
+   - `publish` (chỉ khi release xanh): tạo **GitHub Release** từ tag, release notes tự sinh, đính kèm `dist.tar.gz` (chính bản `dist` đã deploy, không build lại; đóng gói tất định: cùng `dist` thì cùng sha256), `dist.tar.gz.sha256` và SBOM CycloneDX `sbom.cdx.json` (syft 1.57.1, từ `package-lock.json`, chỉ gồm thư viện chạy trong site). `dist.tar.gz` có **build provenance** ký bằng Sigstore.
+5. Kiểm tra provenance của file đã tải về:
+
+   ```powershell
+   gh release download v1.2.3 -R Kan2234/English-project -p dist.tar.gz
+   gh attestation verify dist.tar.gz -R Kan2234/English-project
+   ```
+
+   Lệnh thành công nghĩa là file được build bởi workflow `production.yml` của repo này, từ đúng commit của tag.
+
+Xem kết quả: trang Summary của lượt chạy (bảng version trước/sau, rollback hay không), **Environments → production** (lịch sử deploy), tab Releases. Artifact `release-smoke-vX.Y.Z` chứa báo cáo Playwright.
+
+**Rollback bằng tay** (`.github/workflows/rollback.yml`): tab Actions → `rollback` → **Run workflow**. Ở ô "Use workflow from" chọn **tag** phát hành mới nhất (`vX.Y.Z`), không chọn nhánh, vì Environment `production` chỉ nhận tag `v*`. Điền `reason` (bắt buộc; ký tự đặc biệt bị lọc trước khi ghi vào message trên Cloudflare) và `version_id` (để trống = version chạy trước version hiện tại; nếu deployment hiện tại đã là một lần rollback thì workflow từ chối và in bảng các deployment gần nhất để bạn chọn version ID). Cần Approve như lúc phát hành. Workflow rollback, chờ API xác nhận, chạy `check-site`, ghi tóm tắt. Muốn deploy lại nguyên một bản phát hành cũ thì vào lượt chạy `production` của tag đó và bấm **Re-run all jobs** (gate và bước duyệt chạy lại; GitHub Release đã có thì giữ nguyên). Workflow này chỉ bấm được khi file đã có trên `main`.
+
+**Diễn tập rollback** (`.github/workflows/drill.yml`): chạy trên một Worker riêng `english-project-drill` (`env.drill` trong `wrangler.jsonc`), dùng Environment `staging`, không đụng production. Workflow deploy bản A, rồi deploy bản B và cố ý cho smoke "lỗi", kiểm tra B được rollback đúng về A và đã xác minh, kiểm tra issue `incident` + `drill` được mở, rồi tự đóng issue đó và **xóa Worker drill**. Chạy tự động mỗi khi push vào `staging` có đổi `_release.yml`, `drill.yml`, `production.yml`, `rollback.yml`, `scripts/cf-versions.mjs`, `scripts/check-site.mjs`, `wrangler.jsonc` hoặc `package-lock.json` (nâng wrangler có thể đổi định dạng output mà script đọc), và bấm tay được từ nhánh `staging`. Drill đỏ thì issue drill được để mở; sửa trước khi phát hành bản tiếp theo. Không dùng tag `v0.0.0-drill` vì tag `v*` ở repo này không xóa được.
+
+**Hotfix** cũng đi qua `staging`: tách `fix/…` từ `staging`, PR vào `staging`, chờ `staging/verified`, Release PR vào `main`, tag bản patch. Gate yêu cầu `staging/verified` và cây file giống `staging`, nên một PR sửa thẳng vào `main` không phát hành được.
+
+**Khi auto-rollback xảy ra:**
+
+1. Mở issue `incident` mà workflow vừa tạo: có tag, version trước/sau, rollback đã xác minh hay chưa, link lượt chạy.
+2. Nếu "Rollback verified" là `true`: production đang chạy bản cũ và đã qua `check-site`. Xem log smoke (artifact `release-smoke-vX.Y.Z`) để tìm nguyên nhân.
+3. Nếu rollback lỗi hoặc chưa xác minh: chạy `rollback.yml` ngay, hoặc vào Cloudflare dashboard → Worker → Deployments → chọn version trước → Rollback. Sau đó chạy `npm run check-site -- https://english-project.leminhkhang2234.workers.dev`.
+4. Sửa qua `staging` như hotfix, phát hành bản patch kế tiếp (không dùng lại tag đã hỏng), rồi viết postmortem ngắn trong issue và đóng nó.
+
+Các script dùng cho phát hành: `scripts/cf-versions.mjs` (mọi lệnh wrangler về version: version đang chạy, rollback, chờ xác nhận, xóa Worker drill; đã kiểm với wrangler 4.159.0) và `scripts/release-gate.mjs`. Unit test của chúng nằm trong `tests/unit/`.
+
 ## Triển khai (Docker + nginx, chạy trên máy)
 
 Cần Docker. Quy trình gồm ba bước: lên staging, kiểm tra, rồi mới lên production.
@@ -105,10 +151,7 @@ npm run check-site -- http://127.0.0.1:8081   # chạy riêng bộ kiểm tra
 
 ## Triển khai trên Cloudflare Workers
 
-Worker `english-project` nối với repo này qua Workers Builds. Mỗi lần push, Cloudflare chạy `npm run build` rồi `npx wrangler deploy`, theo cấu hình trong `wrangler.jsonc`.
-
-- Push lên `main` sẽ cập nhật production: https://english-project.leminhkhang2234.workers.dev
-- Push lên nhánh khác sẽ tạo bản preview, dùng như staging. Kiểm tra bản preview bằng `npm run check-site -- <URL preview>`, đạt thì mới merge vào `main`.
+Worker `english-project` (https://english-project.leminhkhang2234.workers.dev) chỉ được deploy bởi GitHub Actions, theo cấu hình trong `wrangler.jsonc`: production khi có tag `vX.Y.Z` (xem "Phát hành production"), staging (`env.staging`) khi push vào `staging`, Worker diễn tập (`env.drill`) bởi `drill.yml`. Workers Builds đã được ngắt, nên push vào `main` không deploy gì.
 - `public/_headers` gắn header bảo mật và cache cho file tĩnh. Nội dung phải giống `deploy/security-headers.conf`.
 - `worker/index.js` chỉ xử lý `/data/audio/*`. Static assets của Cloudflare không hỗ trợ `Range`, nên Worker này tự trả `206 Partial Content` để trình duyệt tua được audio. Worker cũng tự gắn header bảo mật, vì `_headers` không áp dụng cho response do Worker tạo ra.
 - Đường dẫn sai trả lỗi 404 thật với trang `public/404.html`.

@@ -63,7 +63,7 @@ test.describe('mobile', () => {
     const now = Date.now();
     const attempts = [0.3, 0.5, 0.7, 0.9].map((acc, i) => attemptFor(data, `c${i}`, acc, now - (4 - i) * DAY, 'full-test-01'));
     await seed(page, { 'onta.attempts.v1': attempts });
-    await page.reload();
+    await page.reload({ waitUntil: 'domcontentloaded' }); // not 'load' (see storage.spec.ts)
     const plot = page.locator('.sc__plot');
     await plot.scrollIntoViewIfNeeded();
     const box = (await plot.boundingBox())!;

@@ -1,4 +1,10 @@
-import { attemptFor, expect, expectNoHorizontalScroll, seed, test } from './fixtures';
+import { attemptFor, exam, expect, expectNoHorizontalScroll, seed, startExam, test } from './fixtures';
+
+// Tests tagged @smoke also run against production right after every release
+// (_release.yml: chromium only, `--grep @smoke`): home, a test intro, the results
+// page, an audio file that plays, audio Range. Keep them short and read-only.
+const SMOKE = { tag: '@smoke' };
+const SMOKE_ROUTES = new Set(['home', 'test intro (mini)', 'result']);
 
 // Every main route renders its heading (or its "not found" panel), without console/CSP errors (fixture) and
 // without sideways scrolling.
@@ -22,7 +28,7 @@ const ROUTES: [name: string, hash: string, heading: RegExp | null][] = [
 
 test.describe('smoke', () => {
   for (const [name, hash, heading] of ROUTES) {
-    test(`${name} renders`, async ({ page, data }) => {
+    test(`${name} renders`, SMOKE_ROUTES.has(name) ? SMOKE : {}, async ({ page, data }) => {
       await seed(page, { 'onta.attempts.v1': [attemptFor(data, 'smoke-1', 0.6, Date.now() - 60_000)] });
       await page.goto(`/${hash}`);
       if (heading) await expect(page.locator('main h1').first()).toHaveText(heading);
@@ -62,11 +68,29 @@ test.describe('smoke', () => {
     }
   });
 
-  test('audio is served with Range support', async ({ request, data }) => {
+  test('audio is served with Range support', SMOKE, async ({ request, data }) => {
     const url = data.tests[1].sets.find((s) => s.audio_url)!.audio_url!;
     const res = await request.get(`data/${url}`, { headers: { Range: 'bytes=0-99' } });
     expect(res.status()).toBe(206);
     expect(res.headers()['content-range']).toMatch(/^bytes 0-99\/\d+$/);
     expect((await res.body()).length).toBe(100);
+  });
+
+  test('the first audio of a test loads and plays', SMOKE, async ({ page, data, browserName }) => {
+    const file = exam(data).sets[0].audio_url!.split('?')[0].split('/').pop()!;
+    await startExam(page);
+    await page.locator('.player-start').click();
+    const state = () =>
+      page.evaluate(() => {
+        const a = document.querySelector('audio');
+        return a ? { file: a.src.split('?')[0].split('/').pop(), playing: !a.paused && a.currentTime > 0.2, error: a.error?.message ?? '' } : null;
+      });
+    if (browserName === 'firefox') await page.waitForFunction(() => document.querySelector('audio')?.error, null, { timeout: 1_500 }).catch(() => {});
+    test.fixme(
+      ((await state())?.error ?? '').includes('MediaSink'),
+      'No audio output device (Firefox without PulseAudio, e.g. the plain Playwright Docker image): see real-exam.spec.ts.',
+    );
+    await expect.poll(state, { timeout: 15_000 }).toMatchObject({ file, playing: true });
+    await expect(page.locator('.player--missing')).toHaveCount(0);
   });
 });
