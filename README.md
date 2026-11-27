@@ -45,6 +45,24 @@ docker run --rm --ipc=host -v "${PWD}:/src" -e E2E_BASE_URL=http://host.docker.i
 
 Thêm `--project=chromium` (hoặc `firefox`, `webkit`, `mobile-375`, `tablet-768`) sau `npx playwright test` để chạy một trình duyệt. Xem báo cáo: `npx playwright show-report`.
 
+### CI trên GitHub
+
+Mỗi PR vào `staging` hoặc `main` chạy `.github/workflows/ci.yml` (không deploy, không dùng secret nên PR từ fork cũng chạy an toàn):
+
+- `checks / lint`, `checks / typecheck`, `checks / unit` (kèm độ phủ), `checks / data` (`db:build` và `database/toeic.json` đã commit phải khớp với nguồn), `checks / build` (JS đầu không quá 400 kB). Các job này nằm trong `_checks.yml`, sau này `staging.yml` dùng lại.
+- `secrets`: Gitleaks quét các commit của PR.
+- `deps`: osv-scanner trên `package-lock.json` và `npm audit --audit-level=high` (gồm cả devDependencies). Muốn chấp nhận một lỗ hổng thì thêm vào `osv-scanner.toml` kèm lý do và `ignoreUntil`, không bỏ qua hàng loạt.
+- `sast`: CodeQL (`security-extended`). Kết quả nằm ở tab Security; ruleset chặn merge khi có cảnh báo.
+- `container`: hadolint, `docker build` và Trivy, chỉ chạy khi PR đổi `deploy/`, `.dockerignore` hoặc `.trivyignore`. Ngoại lệ ghi trong `.trivyignore`, có lý do và `exp:`.
+- `ci-ok`: gom kết quả các job trên. Ruleset chỉ yêu cầu **một** check này; job bị bỏ qua (skipped) vẫn tính là đạt, job lỗi hay bị hủy thì `ci-ok` đỏ.
+
+Mọi action được pin theo SHA. Kiểm tra workflow trên máy trước khi push (cần Docker):
+
+```powershell
+docker run --rm -v "${PWD}:/repo" -w /repo rhysd/actionlint:1.7.12@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
+docker run --rm -v "${PWD}/.github:/repo/.github:ro" -w /repo ghcr.io/zizmorcore/zizmor:1.32.0@sha256:3014cc8f68f663935f69b3c3e0e41f5ce102b268d97db13db0f62208747f860d --offline .github/workflows
+```
+
 ## Triển khai (Docker + nginx, chạy trên máy)
 
 Cần Docker. Quy trình gồm ba bước: lên staging, kiểm tra, rồi mới lên production.
