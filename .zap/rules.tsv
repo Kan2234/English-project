@@ -1,0 +1,22 @@
+# OWASP ZAP baseline rules for On-TA (staging.yml, job dast).
+# The site is a static React SPA (HashRouter): no server-side forms, cookies, sessions or user input.
+# Format: <rule id><TAB><IGNORE|INFO|WARN|FAIL><TAB>(<rule name>). Lines starting with # are comments.
+# Gate (scripts/zap-gate.mjs): any High or Medium alert from a rule NOT listed here fails the job, and so
+# does any rule set to FAIL. Every entry has a one-line reason directly above it. Do not bulk-ignore.
+#
+# Medium. Google Fonts CSS (fonts.googleapis.com/css2) differs per browser, so no fixed SRI hash works; CSP limits it to that host, and script-src 'self' keeps any third-party script out. Real fix: self-host the fonts.
+90003	WARN	(Sub Resource Integrity Attribute Missing)
+# Low. COEP only matters for cross-origin isolation (SharedArrayBuffer), which the app does not use; require-corp would block Google Fonts. COOP and CORP are set.
+90004	WARN	(Cross-Origin-Embedder-Policy Header Missing or Invalid)
+# Low. *.workers.dev is under the .dev TLD, which is HSTS-preloaded in all major browsers, so HTTP is never used. Revisit for a custom domain.
+10035	WARN	(Strict-Transport-Security Header Not Set)
+# Informational. Words like "user" inside the public, minified React/router bundle; it holds no secrets by design.
+10027	IGNORE	(Information Disclosure - Suspicious Comments)
+# Informational. Only notes that the site is a JavaScript app, which is expected for a SPA.
+10109	IGNORE	(Modern Web Application)
+# Informational. Hashed assets are cached immutable and index.html revalidates, on purpose; check-site asserts both.
+10049	IGNORE	(Content Cacheability)
+# Informational. Flags index.html's "max-age=0, must-revalidate", which is the intended revalidation policy.
+10015	IGNORE	(Re-examine Cache-control Directives)
+# The ZAP image is pinned by digest on purpose and only updated through reviewed PRs.
+10116	IGNORE	(ZAP is Out of Date)

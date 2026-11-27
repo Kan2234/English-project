@@ -63,6 +63,29 @@ docker run --rm -v "${PWD}:/repo" -w /repo rhysd/actionlint:1.7.12@sha256:b1934e
 docker run --rm -v "${PWD}/.github:/repo/.github:ro" -w /repo ghcr.io/zizmorcore/zizmor:1.32.0@sha256:3014cc8f68f663935f69b3c3e0e41f5ce102b268d97db13db0f62208747f860d --offline .github/workflows
 ```
 
+#### Staging tự động
+
+Mỗi lần push (tức merge PR) vào `staging`, `.github/workflows/staging.yml` chạy (cũng bấm tay được trong tab Actions, nhưng chỉ deploy từ nhánh `staging`):
+
+- `checks / …`: chạy lại lint, typecheck, unit, data và build như CI. Bản `dist` build ở đây chính là bản được deploy, không build lại.
+- `deploy`: `wrangler deploy --env staging` lên Worker riêng `english-project-staging` (wrangler theo `package-lock.json`, token chỉ nằm trong Environment `staging`). Job chỉ xong khi site đã phục vụ đúng bản vừa build.
+- Sau đó chạy song song vào https://english-project-staging.leminhkhang2234.workers.dev:
+  - `verify-site`: `scripts/check-site.mjs`, phải đạt hết (hiện 64/64).
+  - `e2e`: Playwright đủ 5 project trong image `mcr.microsoft.com/playwright:v1.57.0-noble`. Có PulseAudio (null sink) để Firefox phát được audio, nên test thi thật cũng chạy trên Firefox.
+  - `dast`: OWASP ZAP baseline (chỉ quét thụ động, spider 2 phút). Cảnh báo High hoặc Medium làm job đỏ, trừ những rule đã hạ mức trong `.zap/rules.tsv` (mỗi rule một dòng lý do). Bộ lọc nằm ở `scripts/zap-gate.mjs`.
+- `summary`: bảng kết quả, rồi đặt commit status **`staging/verified`**: xanh khi `deploy`, `verify-site`, `e2e` và `dast` đều đạt, ngược lại thì đỏ. Ruleset của `main` yêu cầu status này, nên Release PR từ `staging` vào `main` chỉ merge được khi commit đó đã qua staging. Lượt chạy bị hủy thì không đặt status.
+- Mỗi lúc chỉ một lượt chạy. Push mới **xếp hàng** chứ không hủy lượt đang chạy, để không bao giờ dừng giữa lúc deploy hay để staging chạy một bản chưa ai kiểm tra.
+
+Xem kết quả: tab **Actions** → lượt chạy `staging` (bảng tóm tắt ở trang Summary), **Environments → staging** (lịch sử deploy và link site), commit trên nhánh `staging` (dấu `staging/verified`). Artifact của lượt chạy: `playwright-report`, `test-results` (trace, ảnh khi lỗi) và `zap-report` (HTML/JSON/MD).
+
+Chạy ZAP giống CI vào staging trên máy (báo cáo nằm trong `zap-out/`, không commit):
+
+```powershell
+mkdir zap-out; copy .zap\rules.tsv zap-out\
+docker run --rm -v "${PWD}/zap-out:/zap/wrk:rw" ghcr.io/zaproxy/zaproxy:2.17.0@sha256:9624669db72f54d86c4b46a7064518bd9bf79d8c61a4c31befa9923489f328af zap-baseline.py -t http://host.docker.internal:8081 -c rules.tsv -m 2 -I -J report.json -r report.html
+node scripts/zap-gate.mjs zap-out/report.json .zap/rules.tsv
+```
+
 ## Triển khai (Docker + nginx, chạy trên máy)
 
 Cần Docker. Quy trình gồm ba bước: lên staging, kiểm tra, rồi mới lên production.
@@ -75,7 +98,7 @@ npm run check-site -- http://127.0.0.1:8081   # chạy riêng bộ kiểm tra
 ```
 
 - Production không build lại mà gắn tag mới (`on-ta-web:production`) cho đúng image đã kiểm tra trên staging. Image production cũ được giữ ở tag `on-ta-web:previous` để rollback.
-- `scripts/check-site.mjs` có 53 kiểm tra: trang và tài nguyên tải được, mọi file audio/ảnh trong `toeic.json` đều có, audio tua được (HTTP 206), header bảo mật (CSP, nosniff, X-Frame-Options...), chặn path traversal, không lộ dotfile, không liệt kê thư mục, chỉ cho phép GET/HEAD. Có bất kỳ kiểm tra nào trượt thì không lên production.
+- `scripts/check-site.mjs` có 64 kiểm tra: trang và tài nguyên tải được, mọi file audio/ảnh trong `toeic.json` đều có, audio tua được (HTTP 206), header bảo mật (CSP, nosniff, X-Frame-Options...), chặn path traversal, không lộ dotfile, không liệt kê thư mục, chỉ cho phép GET/HEAD. Có bất kỳ kiểm tra nào trượt thì không lên production.
 - Container chạy với filesystem chỉ đọc, bỏ hết Linux capability (chỉ giữ 4 quyền nginx cần) và giới hạn RAM/tiến trình. Production tự khởi động lại cùng Docker (`--restart unless-stopped`).
 - Mặc định production chỉ mở cho chính máy này (`127.0.0.1:80`). Muốn máy khác trong mạng LAN truy cập: `$env:ONTA_PROD_BIND = '0.0.0.0:80'; npm run deploy:production`.
 - Cấu hình nằm trong `deploy/` (`Dockerfile`, `nginx.conf`, `security-headers.conf`).
