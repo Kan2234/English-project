@@ -1,0 +1,8 @@
+# Accepted vulnerabilities for the deploy/Dockerfile image (Trivy, used by ci.yml `container`).
+# One ID per line. Every entry needs a reason, an owner and an `exp:` date; after that
+# date Trivy stops ignoring it and the scan fails again, forcing a re-review.
+
+# musl (nginx:1.30.8-alpine base). No fixed musl package in Alpine yet, so `apk upgrade`
+# cannot remove it. Local-only Docker nginx image (production runs on Cloudflare Workers).
+# Remove as soon as Alpine ships a fixed musl. Owner: @Kan2234. Review by 2027-01-31.
+CVE-2026-107891 exp:2027-01-31

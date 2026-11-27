@@ -1,0 +1,150 @@
+# Reusable quality gate: lint, typecheck, unit tests + coverage, data validation and
+# the production build. Called by ci.yml (pull requests) and, from S3 on, staging.yml.
+#
+# Kept caller-agnostic on purpose:
+# - no inputs, no secrets, no deployment;
+# - no `concurrency:` here: the caller owns it (a called workflow that reused the
+#   caller's group would cancel or block its own caller);
+# - the GITHUB_TOKEN can only be narrowed by a called workflow, never widened.
+# Artifacts it leaves in the run: `dist` (the built site) and `coverage`.
+name: checks
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      # --ignore-scripts: no dependency install hooks (esbuild/workerd only need them for wrangler)
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run lint
+
+  typecheck:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run typecheck
+
+  unit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      # Vitest unit tests (src/lib + worker/index.js). Thresholds live in vitest.config.ts.
+      - run: npm run test:coverage
+      - name: Coverage summary
+        if: ${{ !cancelled() && hashFiles('coverage/coverage-summary.json') != '' }}
+        run: |
+          node >> "$GITHUB_STEP_SUMMARY" <<'EOF'
+          const t = require("./coverage/coverage-summary.json").total;
+          const rows = ["lines", "statements", "functions", "branches"]
+            .map((k) => `| ${k} | ${t[k].pct}% | ${t[k].covered}/${t[k].total} |`);
+          console.log(["### Coverage (src/lib + worker)", "", "| Metric | % | Covered |", "|---|---:|---:|", ...rows].join("\n"));
+          EOF
+      - name: Upload coverage
+        if: ${{ !cancelled() && hashFiles('coverage/coverage-summary.json') != '' }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: coverage
+          path: |
+            coverage/lcov.info
+            coverage/coverage-summary.json
+          retention-days: 14
+          if-no-files-found: error
+
+  data:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # database/build.mjs only uses Node built-ins (node:sqlite), so no npm ci here.
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Validate and rebuild the question bank
+        run: npm run db:build
+      # The site ships the committed database/toeic.json, so it must match its sources.
+      # Its only volatile line is the "generated_at" timestamp, which -I ignores.
+      # (No --stat: git 2.39-2.4x ignores -I for the exit code when --stat is given.)
+      - name: Committed toeic.json is up to date
+        run: |
+          if ! git diff --exit-code -I '^  "generated_at": ' -- database/toeic.json; then
+            echo "::error file=database/toeic.json::database/toeic.json is out of date with database/data. Run 'npm run db:build' and commit the result."
+            exit 1
+          fi
+
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      # Raw (uncompressed) size budget for the entry script, in bytes (kB = 1000 B,
+      # the unit Vite prints). Today ~359 kB; P-04 (code splitting) targets 200 kB,
+      # lower this when it lands.
+      MAX_ENTRY_JS_BYTES: 400000
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      # prebuild runs sync-data (database/ -> public/data/), then tsc + vite build
+      - run: npm run build
+      - name: Entry bundle size budget
+        run: |
+          entry=$(grep -oE 'assets/index-[A-Za-z0-9_-]+\.js' dist/index.html | head -n 1)
+          if [ -z "$entry" ]; then
+            echo "::error::No entry script (assets/index-*.js) referenced from dist/index.html"
+            exit 1
+          fi
+          raw=$(stat -c %s "dist/$entry")
+          gz=$(gzip -9 -c "dist/$entry" | wc -c)
+          {
+            echo "### Entry bundle"
+            echo ""
+            echo "| File | Raw | Gzip | Budget (raw) |"
+            echo "|---|---:|---:|---:|"
+            echo "| \`$entry\` | $raw B | $gz B | $MAX_ENTRY_JS_BYTES B |"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "$entry: $raw bytes raw, $gz bytes gzip (budget $MAX_ENTRY_JS_BYTES raw)"
+          if [ "$raw" -gt "$MAX_ENTRY_JS_BYTES" ]; then
+            echo "::error file=dist/$entry::Entry JS is $raw bytes, over the $MAX_ENTRY_JS_BYTES byte budget"
+            exit 1
+          fi
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dist
+          path: dist/
+          retention-days: 3
+          if-no-files-found: error

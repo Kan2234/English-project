@@ -1,0 +1,202 @@
+# Pull request gate for `staging` and `main`. Never deploys, uses no secrets.
+#
+# Fork safety: triggered by `pull_request` only (never `pull_request_target`), so a
+# fork's code runs with a read-only GITHUB_TOKEN and no access to repository secrets.
+# User-controlled event fields (titles, branch names) are never expanded into `run:`;
+# the only event values used are commit SHAs, passed through `env:`.
+name: ci
+
+on:
+  pull_request:
+    branches: [staging, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # lint, typecheck, unit, data, build (shown as "checks / <job>")
+  checks:
+    # `./` (same repo, same commit). zizmor suggests GitHub's newer `$/` form, but
+    # actionlint 1.7.12 rejects it; both resolve to this commit's copy of the file.
+    uses: ./.github/workflows/_checks.yml # zizmor: ignore[self-repository]
+
+  secrets:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GITLEAKS_VERSION: 8.30.1
+      # sha256 of gitleaks_8.30.1_linux_x64.tar.gz from the release's checksums.txt
+      GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0 # the PR's base commit must be present for base..head
+      # The gitleaks binary is MIT-licensed and needs no key (gitleaks-action does, for orgs).
+      - name: Install gitleaks (pinned, checksum verified)
+        run: |
+          cd "$RUNNER_TEMP"
+          curl -fsSLo gitleaks.tar.gz "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          echo "${GITLEAKS_SHA256}  gitleaks.tar.gz" | sha256sum -c -
+          tar -xzf gitleaks.tar.gz gitleaks
+      - name: Scan the commits of this pull request
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          if [ -n "$BASE_SHA" ] && [ -n "$HEAD_SHA" ]; then
+            range="${BASE_SHA}..${HEAD_SHA}"
+          else
+            range="HEAD" # workflow_dispatch: whole history of the branch
+          fi
+          echo "Scanning $range"
+          # --redact: this repo's Actions logs are public, never print a finding's value
+          "$RUNNER_TEMP/gitleaks" git --log-opts="$range" --redact --no-banner --exit-code 1 .
+
+  deps:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      OSV_SCANNER_VERSION: 2.7.1
+      # sha256 of osv-scanner_linux_amd64 from the release's SHA256SUMS
+      OSV_SCANNER_SHA256: fb7dab19a8bd9bbe5c3189f09d4b7ee1820c9553a23bac202648a56efd2f6ee8
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Install osv-scanner (pinned, checksum verified)
+        run: |
+          cd "$RUNNER_TEMP"
+          curl -fsSLo osv-scanner "https://github.com/google/osv-scanner/releases/download/v${OSV_SCANNER_VERSION}/osv-scanner_linux_amd64"
+          echo "${OSV_SCANNER_SHA256}  osv-scanner" | sha256sum -c -
+          chmod +x osv-scanner
+      # Every package in the lockfile, dev included, any severity. Accepted findings go
+      # in osv-scanner.toml with a reason and an expiry date (ignoreUntil).
+      - name: osv-scanner
+        run: '"$RUNNER_TEMP/osv-scanner" scan source --lockfile package-lock.json'
+      # Second opinion from the npm advisory DB. Dev dependencies are included on
+      # purpose: they run in CI and on developer machines (vite, vitest, wrangler).
+      - name: npm audit
+        run: npm audit --audit-level=high
+
+  sast:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      security-events: write # upload CodeQL results to code scanning
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: github/codeql-action/init@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
+        with:
+          languages: javascript-typescript
+          build-mode: none
+          queries: security-extended
+      # Uploads the SARIF. Blocking on alerts is done by the ruleset's
+      # code-scanning merge protection, not by this job's exit code.
+      - uses: github/codeql-action/analyze@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
+        with:
+          category: /language:javascript-typescript
+
+  # Does this pull request touch the container setup? A job-level `if:` (instead of a
+  # workflow-level `paths:` filter) keeps the run, so `ci-ok` still reports.
+  changes:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      container: ${{ steps.diff.outputs.container }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 2 # the PR merge commit and its first parent (the base branch tip)
+      - id: diff
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" != "pull_request" ]; then
+            echo "container=true" >> "$GITHUB_OUTPUT" # manual run: scan the image anyway
+            exit 0
+          fi
+          # HEAD is GitHub's test merge of the PR into its base; HEAD^1 is the base tip.
+          changed=$(git diff --name-only HEAD^1 HEAD)
+          printf '%s\n' "$changed"
+          if printf '%s\n' "$changed" | grep -qE '^(deploy/|\.dockerignore$|\.trivyignore$)'; then
+            echo "container=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "container=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  container:
+    needs: [changes, checks]
+    if: needs.changes.outputs.container == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      HADOLINT_VERSION: 2.15.1
+      # sha256 of hadolint-linux-x86_64 from the release's checksums.sha256
+      HADOLINT_SHA256: c7187db94eeeeca956519a6af171adc31453941a1e777961f6e680f697c8c507
+      TRIVY_VERSION: 0.76.2
+      # sha256 of trivy_0.76.2_Linux-64bit.tar.gz from the release's checksums.txt.
+      # The binary is used instead of aquasecurity/trivy-action, whose tags were
+      # hijacked in 2026; a hash pinned here cannot be moved under us.
+      TRIVY_SHA256: bc0fc726e017b8927a62b2d3531d7a84ee01769daf5c99ed866dced54089fdbf
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install hadolint and trivy (pinned, checksum verified)
+        run: |
+          cd "$RUNNER_TEMP"
+          curl -fsSLo hadolint "https://github.com/hadolint/hadolint/releases/download/v${HADOLINT_VERSION}/hadolint-linux-x86_64"
+          echo "${HADOLINT_SHA256}  hadolint" | sha256sum -c -
+          chmod +x hadolint
+          curl -fsSLo trivy.tar.gz "https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz"
+          echo "${TRIVY_SHA256}  trivy.tar.gz" | sha256sum -c -
+          tar -xzf trivy.tar.gz trivy
+      - name: hadolint
+        run: '"$RUNNER_TEMP/hadolint" deploy/Dockerfile'
+      # deploy/Dockerfile copies a prebuilt dist/; reuse the one from checks / build.
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: dist
+          path: dist
+      - name: docker build
+        run: docker build -f deploy/Dockerfile -t on-ta:ci .
+      # HIGH/CRITICAL with a fix available fail the job; accepted exceptions live in
+      # .trivyignore, each with a reason and an exp: date after which it stops applying.
+      - name: Trivy image scan
+        run: |
+          "$RUNNER_TEMP/trivy" image --scanners vuln --severity HIGH,CRITICAL --ignore-unfixed \
+            --ignorefile .trivyignore --exit-code 1 --no-progress on-ta:ci
+
+  # Single required status check for the branch rulesets.
+  # The ruleset requires only `ci-ok`, so jobs can be added, renamed or made
+  # conditional here without editing branch protection. `if: always()` makes it run
+  # (and report) even when a job it needs failed or was skipped: it fails if any
+  # needed job failed or was cancelled, and treats `skipped` (e.g. `container` when
+  # deploy/ is untouched) as success. Without it, a skipped required job would leave
+  # the check pending or a failed one could be missed.
+  ci-ok:
+    if: always()
+    needs: [checks, secrets, deps, sast, changes, container]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Results
+        env:
+          RESULTS: ${{ toJSON(needs) }}
+        run: printf '%s\n' "$RESULTS"
+      - name: Fail if a needed job failed or was cancelled
+        if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+        run: exit 1
