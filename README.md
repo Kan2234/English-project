@@ -20,6 +20,31 @@ npm run build
 
 Kết quả nằm trong `dist/`. Đây là site tĩnh, dùng `HashRouter` và đường dẫn tương đối, nên có thể đưa lên bất kỳ host tĩnh nào (Netlify, Vercel, GitHub Pages, Nginx...) mà không cần cấu hình rewrite.
 
+## Kiểm thử
+
+```powershell
+npm run lint            # oxlint: lỗi code, quy tắc React hooks và TypeScript (.oxlintrc.json)
+npm run typecheck       # tsc --noEmit (TypeScript 7)
+npm test                # Vitest: tests/unit (chấm điểm, localStorage, Leitner, Worker, dữ liệu)
+npm run test:coverage   # như trên, kèm độ phủ; dưới ngưỡng trong vitest.config.ts thì báo lỗi
+npm run e2e             # Playwright: tests/e2e, chạy vào site đang chạy (mặc định http://127.0.0.1:8081)
+```
+
+- Lint dùng [oxlint](https://oxc.rs) thay cho ESLint: typescript-eslint chưa chạy được với TypeScript 7.0 (bản 7.0 chưa có compiler API).
+- Báo cáo độ phủ nằm trong `coverage/`, báo cáo E2E trong `playwright-report/`, trace và ảnh chụp khi test lỗi trong `test-results/`. Các thư mục này không được commit.
+- `E2E_BASE_URL` đổi site cần kiểm tra, ví dụ bản staging trên Cloudflare.
+- Chạy `npm run e2e` ngay trên máy (ngoài Docker) thì lần đầu cần `npx playwright install` để tải trình duyệt.
+- Test chậm (phát audio thật) được gắn `@slow`: bỏ qua bằng `npm run e2e -- --grep-invert @slow`.
+
+**Chạy E2E trong Docker vào staging trên máy.** Image Playwright phải cùng phiên bản với `@playwright/test` (1.57.0). Trên Docker Desktop cho Windows, `--network host` không dùng được, nên container gọi về máy qua `host.docker.internal`. Lệnh dưới đây chép mã sang `/app` trong container rồi mới `npm ci`, để `node_modules` bản Linux không ghi đè `node_modules` trên máy, sau đó chép báo cáo về lại thư mục repo.
+
+```powershell
+npm run deploy:staging   # build và chạy staging tại http://127.0.0.1:8081
+docker run --rm --ipc=host -v "${PWD}:/src" -e E2E_BASE_URL=http://host.docker.internal:8081 mcr.microsoft.com/playwright:v1.57.0-noble sh -c 'mkdir /app && cd /src && tar -cf - package.json package-lock.json playwright.config.ts tests src | tar -xf - -C /app && cd /app && npm ci --ignore-scripts --no-audit --no-fund && npx playwright test; rc=$?; rm -rf /src/test-results /src/playwright-report; cp -r test-results playwright-report /src/; exit $rc'
+```
+
+Thêm `--project=chromium` (hoặc `firefox`, `webkit`, `mobile-375`, `tablet-768`) sau `npx playwright test` để chạy một trình duyệt. Xem báo cáo: `npx playwright show-report`.
+
 ## Triển khai (Docker + nginx, chạy trên máy)
 
 Cần Docker. Quy trình gồm ba bước: lên staging, kiểm tra, rồi mới lên production.

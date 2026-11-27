@@ -1,0 +1,80 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  // oxlint instead of ESLint: typescript-eslint cannot load with TypeScript 7.0
+  // (no compiler API until 7.1), while oxlint parses TS/TSX itself and ships
+  // ports of the typescript-eslint and react-hooks rules.
+  "plugins": ["typescript", "react", "oxc", "import", "unicorn"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error"
+  },
+  "env": {
+    "browser": true,
+    "es2024": true
+  },
+  "ignorePatterns": [
+    "dist/**",
+    "public/data/**",
+    "node_modules/**",
+    "coverage/**",
+    "test-results/**",
+    "playwright-report/**",
+    "blob-report/**",
+    ".wrangler/**"
+  ],
+  "rules": {
+    // automatic JSX runtime (react-jsx): React need not be in scope
+    "react/react-in-jsx-scope": "off",
+    // React hooks
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "error",
+    // Rules written for the React Compiler, which this app does not use. They flag
+    // deliberate patterns here: the "latest ref" idiom (ref.current = value during
+    // render, read later by timers and window listeners), effects keyed on a trigger
+    // value (route pathname, audio src, sheet open), resetting player state when the
+    // src changes, and a Date.now() fallback inside a useState initial value.
+    "react/refs": "off",
+    "react/purity": "off",
+    "react/set-state-in-effect": "off",
+    "react/exhaustive-effect-dependencies": "off",
+    // Stylistic: every sort()/reverse() here runs on a fresh array (filter/map/spread/
+    // Object.keys), so nothing shared is mutated; toSorted() is ES2023-only.
+    "unicorn/no-array-sort": "off",
+    "unicorn/no-array-reverse": "off",
+    "unicorn/prefer-string-starts-ends-with": "off",
+    // CSS is imported for its side effect (Vite bundles it)
+    "import/no-unassigned-import": ["error", { "allow": ["**/*.css"] }],
+    // TypeScript
+    "typescript/no-explicit-any": "error",
+    "typescript/ban-ts-comment": "error",
+    "typescript/consistent-type-imports": ["error", { "fixStyle": "inline-type-imports" }],
+    "typescript/no-non-null-assertion": "off",
+    // unused code is also caught by tsc (noUnusedLocals / noUnusedParameters)
+    "eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_", "caughtErrors": "none" }]
+  },
+  "overrides": [
+    {
+      // Cloudflare Worker runtime
+      "files": ["worker/**"],
+      "env": { "browser": false, "serviceworker": true }
+    },
+    {
+      // Node scripts and tool configs
+      "files": ["scripts/**", "database/**", "*.config.ts", "*.config.js", "tests/e2e/**"],
+      "env": { "node": true }
+    },
+    {
+      // Offline content scripts: they print the wrapped error message themselves,
+      // adding `cause` would only change their console output.
+      "files": ["database/**"],
+      "rules": { "eslint/preserve-caught-error": "off" }
+    },
+    {
+      "files": ["tests/unit/**"],
+      "plugins": ["typescript", "vitest"],
+      "env": { "node": true },
+      // Vitest's expect takes an optional message as a second argument
+      "rules": { "vitest/valid-expect": ["error", { "maxArgs": 2 }] }
+    }
+  ]
+}
