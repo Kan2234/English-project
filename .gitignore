@@ -14,3 +14,5 @@ blob-report/
 playwright/.cache/
 # ZAP baseline reports (see README, "Staging tự động")
 zap-out/
+# edge-tts segment cache (database/tts/generate-audio.mjs, EDGE_TTS_CACHE)
+database/tts/.cache/
