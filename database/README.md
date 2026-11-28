@@ -97,7 +97,7 @@ node database/tts/generate-audio.mjs
   ```
 
   Nếu máy đã có Python cài sẵn edge-tts, đặt biến `EDGE_TTS_PYTHON` trỏ tới python đó để chạy không cần Docker. Cần ffmpeg trong PATH, hoặc đặt biến `FFMPEG_PATH`.
-- **Lưu ý:** edge-tts là client **không chính thức**, gửi transcript tới dịch vụ đọc online của Microsoft Edge. Dùng cho dự án học tập thì ổn; nếu dùng thương mại, hãy chuyển sang dịch vụ chính thức **Azure Speech** (cùng tên giọng). Dịch vụ có giới hạn tần suất (HTTP 429), nên script gửi chậm, tự thử lại, và lưu cache từng câu (`EDGE_TTS_CACHE`, mặc định trong thư mục tạm của hệ điều hành). Bị ngắt giữa chừng thì chạy lại, các câu đã có sẽ không gửi lại.
+- **Lưu ý:** edge-tts là client **không chính thức**, gửi transcript tới dịch vụ đọc online của Microsoft Edge. Dùng cho dự án học tập thì ổn; nếu dùng thương mại, hãy chuyển sang dịch vụ chính thức **Azure Speech** (cùng tên giọng). Dịch vụ có giới hạn tần suất (HTTP 429), nên script gửi chậm, tự thử lại, và lưu cache từng câu (`EDGE_TTS_CACHE`, mặc định `database/tts/.cache/edge-tts`, không commit). Bị ngắt giữa chừng thì chạy lại, các câu đã có sẽ không gửi lại.
 - Mỗi câu thoại được đọc riêng rồi ghép bằng ffmpeg với khoảng lặng chính xác, âm lượng các giọng được cân bằng.
 - Định dạng giống đề thật: người dẫn đọc "Number 7…", "Questions 32 through 34 refer to the following conversation…". Part 3/4 đọc câu hỏi và chừa 8 giây để trả lời (12 giây với câu có biểu đồ).
 - Phân vai (cố định theo thứ tự set, không ngẫu nhiên):
