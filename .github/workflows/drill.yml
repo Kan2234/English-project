@@ -1,0 +1,176 @@
+# Rollback drill: proves that the production release path can roll itself back,
+# on a throwaway Worker `english-project-drill`, without touching production.
+#
+#   baseline  _release.yml as a normal release -> version A (creates the Worker)
+#   broken    _release.yml again, simulate_smoke_failure: true -> version B is really
+#             deployed, the smoke verdict is forced to fail, auto-rollback to A,
+#             rollback verified, incident issue labelled `incident` + `drill`
+#   verdict   passes only if B was rolled back to exactly A and verified, and the
+#             incident issue exists with both labels; then closes that issue
+#   cleanup   always deletes the drill Worker, so nothing is left running
+#
+# Why not a `v0.0.0-drill` tag: v* tags cannot be deleted or moved here, so every
+# drill would leave a permanent tag. Instead the drill runs on pushes to `staging`
+# that change the release/rollback code (and on demand), so a change to that code
+# is drilled before it can ever reach a production tag. The first drill runs when
+# the PR that adds this file is merged into staging.
+#
+# Uses the `staging` Environment and its token (its branch policy only admits
+# `staging`). english-project-drill is env.drill in wrangler.jsonc: its own Worker,
+# no bindings, nothing shared with production.
+name: drill
+
+on:
+  push:
+    branches: [staging]
+    paths:
+      - .github/workflows/_release.yml
+      - .github/workflows/drill.yml
+      - .github/workflows/production.yml
+      - .github/workflows/rollback.yml
+      - scripts/cf-versions.mjs
+      - scripts/check-site.mjs
+      - wrangler.jsonc
+      # a wrangler upgrade can change the output formats cf-versions.mjs parses
+      - package-lock.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drill
+  cancel-in-progress: false
+
+jobs:
+  baseline:
+    if: github.ref == 'refs/heads/staging'
+    uses: ./.github/workflows/_release.yml # zizmor: ignore[self-repository]
+    permissions:
+      contents: read
+      issues: write # only used if open_incident were true; the called workflow narrows per job
+    with:
+      environment: staging
+      wrangler_env: drill
+      worker_name: english-project-drill
+      url: https://english-project-drill.leminhkhang2234.workers.dev
+      release_label: drill-${{ github.run_id }}-a
+      ref: ${{ github.sha }}
+      simulate_smoke_failure: false
+      open_incident: false
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+  broken:
+    needs: baseline
+    uses: ./.github/workflows/_release.yml # zizmor: ignore[self-repository]
+    permissions:
+      contents: read
+      issues: write # the incident issue
+    with:
+      environment: staging
+      wrangler_env: drill
+      worker_name: english-project-drill
+      url: https://english-project-drill.leminhkhang2234.workers.dev
+      release_label: drill-${{ github.run_id }}-b
+      ref: ${{ github.sha }}
+      simulate_smoke_failure: true
+      open_incident: true
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+  # In drill mode _release.yml's deploy job SUCCEEDS only when the rollback happened
+  # and was verified (in production the same outcome fails the run); this job checks
+  # the details on top of that.
+  verdict:
+    needs: [baseline, broken]
+    if: ${{ !cancelled() && github.ref == 'refs/heads/staging' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      issues: write # read the incident's labels, close it when the drill passed
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      BASELINE_RESULT: ${{ needs.baseline.result }}
+      A: ${{ needs.baseline.outputs.deployed_version }}
+      A_ROLLED_BACK: ${{ needs.baseline.outputs.rolled_back }}
+      BROKEN_RESULT: ${{ needs.broken.result }}
+      B: ${{ needs.broken.outputs.deployed_version }}
+      B_PREVIOUS: ${{ needs.broken.outputs.previous_version }}
+      B_ROLLED_BACK: ${{ needs.broken.outputs.rolled_back }}
+      B_VERIFIED: ${{ needs.broken.outputs.rollback_verified }}
+      ISSUE: ${{ needs.broken.outputs.incident_issue }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - name: Assert the drill outcome
+        run: |
+          failures=0
+          check() { # check <description> <command...>
+            local what=$1; shift
+            if "$@"; then echo "| $what | pass |"; else echo "| $what | **FAIL** |"; failures=$((failures + 1)); fi
+          }
+          is_uuid() { [[ "$1" =~ ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$ ]]; }
+          new_version() { is_uuid "$B" && [ "$B" != "$A" ]; }
+          labels=""
+          if [[ "$ISSUE" =~ ^[0-9]+$ ]]; then
+            labels=$(gh issue view "$ISSUE" --json labels --jq '[.labels[].name] | sort | join(",")') || labels=""
+          fi
+          has_labels() { [[ ",$labels," == *",incident,"* && ",$labels," == *",drill,"* ]]; }
+          {
+            echo "### Rollback drill"
+            echo ""
+            echo "| Check | Result |"
+            echo "|---|---|"
+            check "baseline released (A = \`${A:-none}\`)" test "$BASELINE_RESULT" = success -a "$A_ROLLED_BACK" = false
+            check "A is a version ID" is_uuid "$A"
+            check "broken run ended as a verified rollback (job result: $BROKEN_RESULT)" test "$BROKEN_RESULT" = success
+            check "B = \`${B:-none}\` was deployed and differs from A" new_version
+            check "B's rollback target was A" test "$B_PREVIOUS" = "$A"
+            check "rolled_back = true" test "$B_ROLLED_BACK" = true
+            check "rollback_verified = true" test "$B_VERIFIED" = true
+            check "incident issue #${ISSUE:-?} labelled incident + drill" has_labels
+            echo ""
+            if [ "$failures" -eq 0 ]; then echo "**Drill passed.**"; else echo "**Drill FAILED: $failures check(s).**"; fi
+          } > "$RUNNER_TEMP/verdict.md" # a redirect, not a pipe: `failures` must survive the block
+          tee -a "$GITHUB_STEP_SUMMARY" < "$RUNNER_TEMP/verdict.md"
+          [ "$failures" -eq 0 ]
+      # Proof that incidents get opened is the issue itself; once the drill passed it
+      # needs no follow-up. A failed drill leaves it open.
+      - name: Close the drill's incident issue
+        if: env.ISSUE != ''
+        run: |
+          [[ "$ISSUE" =~ ^[0-9]+$ ]] || exit 1
+          gh issue close "$ISSUE" --reason completed --comment "Rollback drill passed ($RUN_URL): version B was rolled back to A and verified. Closed automatically."
+
+  # Always, even after a failure or a cancel: no drill Worker is left behind.
+  cleanup:
+    needs: [baseline, broken, verdict]
+    if: ${{ always() && github.ref == 'refs/heads/staging' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment: staging
+    permissions:
+      contents: read
+    env:
+      WRANGLER_SEND_METRICS: "false"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          # No dependency cache on the release path (a tag run could restore a cache that
+          # another ref wrote). npm ci checks package-lock integrity anyway; speed is not
+          # worth it here.
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      # The script refuses any name that does not end in -drill, and treats an
+      # already-missing Worker as done. It calls the Cloudflare API directly (not
+      # `wrangler delete`, which needs KV read): Workers Scripts › Edit is enough.
+      - name: Delete the drill Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: node scripts/cf-versions.mjs delete --name english-project-drill --env drill

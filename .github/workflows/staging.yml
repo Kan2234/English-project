@@ -1,0 +1,317 @@
+# Staging pipeline: every push to `staging` re-runs the quality gate, deploys the
+# Worker `english-project-staging`, then checks the live staging site (check-site,
+# Playwright E2E on 5 projects, OWASP ZAP baseline) and records the outcome as the
+# commit status `staging/verified`, which release PRs into `main` must have green.
+#
+# Never touches production: the deploy always targets `--env staging` with the
+# Worker name spelled out, and the Cloudflare token lives in the `staging`
+# Environment, which only the `staging` branch may use.
+# User-controlled event fields (commit messages, branch names) are never expanded
+# into `run:`; scripts read the runner's own GITHUB_* variables instead.
+name: staging
+
+on:
+  push:
+    branches: [staging]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One staging run at a time, and runs are queued, not cancelled.
+# With `cancel-in-progress: true` a new push would cancel the running run wherever it
+# is, deploy step included: the Cloudflare upload itself is atomic (the old version
+# keeps serving until the new one is complete), but the run would die after the
+# Worker switched and before anything verified it, leaving staging on a build no
+# run ever checked. A job-level `concurrency` with `cancel-in-progress: false` on
+# `deploy` cannot prevent that: cancelling a workflow run cancels all of its jobs.
+# Queueing keeps deploy + verification atomic per commit. GitHub keeps at most one
+# pending run per group and replaces it with the newest push, so a burst of merges
+# costs at most one extra run, and every `staging/verified` describes the build that
+# was actually live while it was tested.
+concurrency:
+  group: staging
+  cancel-in-progress: false
+
+env:
+  STAGING_URL: https://english-project-staging.leminhkhang2234.workers.dev
+
+jobs:
+  # lint, typecheck, unit, data, build (shown as "checks / <job>"); leaves the `dist` artifact
+  checks:
+    # `./` (same repo, same commit). zizmor suggests GitHub's newer `$/` form, but
+    # actionlint 1.7.12 rejects it; both resolve to this commit's copy of the file.
+    uses: ./.github/workflows/_checks.yml # zizmor: ignore[self-repository]
+
+  deploy:
+    needs: checks
+    # The `staging` Environment only admits the staging branch anyway; this keeps a
+    # manual run from another branch from showing up as a rejected deployment.
+    if: github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment:
+      name: staging
+      url: ${{ env.STAGING_URL }}
+    env:
+      WORKER_NAME: english-project-staging
+      WRANGLER_SEND_METRICS: "false"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      # The repo's own pinned wrangler (package-lock.json) instead of
+      # cloudflare/wrangler-action: one third-party action fewer handling the token.
+      # --ignore-scripts is enough: npm still installs the platform packages
+      # @esbuild/linux-x64 and @cloudflare/workerd-linux-64 (optional dependencies),
+      # and `wrangler deploy` only needs esbuild to bundle worker/index.js
+      # (checked with `wrangler deploy --dry-run` in a clean node:24 container).
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      # Build once, deploy that: the exact dist/ that checks / build produced and
+      # tested. wrangler.jsonc has no `build` command, so wrangler uploads
+      # assets.directory (./dist) as-is and only bundles worker/index.js.
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: dist
+          path: dist
+      # Fail on a broken config or Worker bundle before the token is ever exposed.
+      - name: Bundle check (dry run, no credentials)
+        run: npx wrangler deploy --dry-run --env staging --name "$WORKER_NAME" --outdir "$RUNNER_TEMP/bundle"
+      # The only step that sees the token. No `set -x`, nothing echoed.
+      # --name repeats env.staging.name from wrangler.jsonc on purpose: whatever that
+      # file says, this workflow can only ever deploy the staging Worker.
+      - name: Deploy to the staging Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          # wrangler appends one JSON line per command here (version id, targets)
+          WRANGLER_OUTPUT_FILE_PATH: ${{ runner.temp }}/wrangler-output.ndjson
+        run: npx wrangler deploy --env staging --name "$WORKER_NAME" --message "staging ${GITHUB_SHA::7}"
+      # Informational only: a missing or unexpected file never fails the deploy.
+      - name: Record the deployed version
+        env:
+          WRANGLER_OUTPUT_FILE_PATH: ${{ runner.temp }}/wrangler-output.ndjson
+        run: |
+          node >> "$GITHUB_STEP_SUMMARY" <<'EOF'
+          const fs = require("node:fs");
+          let entry;
+          try {
+            entry = fs.readFileSync(process.env.WRANGLER_OUTPUT_FILE_PATH, "utf8").trim().split("\n")
+              .map((l) => { try { return JSON.parse(l); } catch { return null; } })
+              .filter((e) => e && e.type === "deploy").pop();
+          } catch {}
+          const clean = (v) => String(v ?? "unknown").replace(/[^\w.:/@-]/g, "");
+          console.log("### Staging deploy\n\n| | |\n|---|---|");
+          console.log(`| Worker | \`${clean(entry?.worker_name)}\` |`);
+          console.log(`| Version ID | \`${clean(entry?.version_id)}\` |`);
+          console.log(`| Commit | \`${process.env.GITHUB_SHA.slice(0, 7)}\` |`);
+          console.log(`| URL | ${process.env.STAGING_URL} |`);
+          EOF
+      # Global propagation usually takes seconds. Wait until the edge serves the
+      # index.html of THIS build (same hashed ./assets/* references as the artifact),
+      # so verify-site, e2e and dast all start against the new build.
+      - name: Wait until staging serves this build
+        run: |
+          expected=$(grep -oE '\./assets/[A-Za-z0-9_.-]+' dist/index.html | sort -u | tr '\n' ' ')
+          echo "Expected assets: $expected"
+          for i in $(seq 1 30); do
+            live=$(curl -fsS --max-time 15 -H 'Cache-Control: no-cache' "$STAGING_URL/?ci=${GITHUB_RUN_ID}-${i}" \
+              | grep -oE '\./assets/[A-Za-z0-9_.-]+' | sort -u | tr '\n' ' ') || live=""
+            if [ -n "$live" ] && [ "$live" = "$expected" ]; then
+              echo "Live after $i attempt(s)."
+              exit 0
+            fi
+            echo "Attempt $i: live assets '${live}', waiting..."
+            sleep 10
+          done
+          echo "::error::$STAGING_URL did not serve this build within 5 minutes"
+          exit 1
+
+  # verify-site, e2e and dast start together once deploy has seen this build live.
+  verify-site:
+    needs: deploy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # check-site.mjs only uses Node built-ins, so no npm ci.
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      # Smoke + security checks (pages, every media file, Range/206/416, security
+      # headers, traversal, dotfiles, methods). Any FAIL fails the job.
+      - name: check-site
+        run: |
+          set -o pipefail
+          node scripts/check-site.mjs "$STAGING_URL" | tee "$RUNNER_TEMP/check-site.txt"
+      - name: check-site summary
+        if: ${{ !cancelled() }}
+        run: |
+          [ -f "$RUNNER_TEMP/check-site.txt" ] || exit 0
+          {
+            echo "### check-site"
+            echo ""
+            echo '```'
+            grep -E '^(FAIL|WARN)' "$RUNNER_TEMP/check-site.txt" || true
+            tail -n 1 "$RUNNER_TEMP/check-site.txt"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  e2e:
+    needs: deploy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    container:
+      # Must match @playwright/test (1.57.0); browsers are preinstalled in /ms-playwright.
+      image: mcr.microsoft.com/playwright:v1.57.0-noble@sha256:3bed4b1a12f2338642f3d8cba28e291deef3c66bd4a964bbeb3e57bbff511dbd
+      options: --ipc=host # Playwright's recommended Docker flag for Chromium
+    env:
+      CI: "true"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # The image already has Node 24 and the browsers; npm ci only adds @playwright/test.
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      # The image has no sound server, so Firefox fails to play audio
+      # (NS_ERROR_DOM_MEDIA_MEDIASINK_ERR) and the real-exam spec would be skipped
+      # by its fixme guard. A PulseAudio null sink gives it an output device.
+      # Container jobs run as root with HOME=/github/home: the daemon and Firefox
+      # must agree on HOME / XDG_RUNTIME_DIR to find the socket, and Firefox refuses
+      # to run as root with a HOME owned by another user, hence HOME=/root on both
+      # steps. (apt packages come from Ubuntu's signed archive; not pinned by hash.)
+      - name: Start PulseAudio with a null sink
+        env:
+          HOME: /root
+          XDG_RUNTIME_DIR: /tmp/runtime-root
+        run: |
+          apt-get update -qq
+          DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends pulseaudio > /dev/null
+          mkdir -m 700 "$XDG_RUNTIME_DIR"
+          pulseaudio -D --exit-idle-time=-1
+          pactl load-module module-null-sink sink_name=ci_null
+          pactl set-default-sink ci_null
+          pactl info | grep -E '^(Server Name|Default Sink)'
+      # All 5 projects (chromium, firefox, webkit, mobile-375, tablet-768); CI=true
+      # gives retries 1, 2 workers and forbids test.only (playwright.config.ts).
+      - name: Playwright
+        env:
+          E2E_BASE_URL: ${{ env.STAGING_URL }}
+          HOME: /root
+          XDG_RUNTIME_DIR: /tmp/runtime-root
+        run: npx playwright test
+      - name: Upload Playwright report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+          if-no-files-found: ignore
+      # traces and screenshots of failed tests (empty when everything passed)
+      - name: Upload test results
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: test-results
+          path: test-results/
+          retention-days: 7
+          if-no-files-found: ignore
+
+  # OWASP ZAP baseline: spider for up to 2 minutes, then passive scan only (GET
+  # requests, no attacks). The official image is used directly instead of
+  # zaproxy/action-baseline, which needs `issues: write` to file GitHub issues.
+  dast:
+    needs: deploy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      # ZAP 2.17.0 (== `stable` when pinned), multi-arch index digest
+      ZAP_IMAGE: ghcr.io/zaproxy/zaproxy:2.17.0@sha256:9624669db72f54d86c4b46a7064518bd9bf79d8c61a4c31befa9923489f328af
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # The image runs as user zap (uid 1000), the runner as uid 1001: the mounted
+      # work dir must be writable for the reports.
+      - name: Prepare ZAP work dir
+        run: |
+          mkdir -p "$RUNNER_TEMP/zap"
+          cp .zap/rules.tsv "$RUNNER_TEMP/zap/"
+          chmod -R a+rwX "$RUNNER_TEMP/zap"
+          docker pull -q "$ZAP_IMAGE"
+      # -c: per-rule levels from .zap/rules.tsv (a FAIL entry makes ZAP exit 1);
+      # -I: plain WARNs do not fail here, scripts/zap-gate.mjs decides by risk.
+      - name: ZAP baseline
+        run: |
+          docker run --rm -v "$RUNNER_TEMP/zap:/zap/wrk:rw" "$ZAP_IMAGE" \
+            zap-baseline.py -t "$STAGING_URL" -c rules.tsv -m 2 -I \
+            -J report.json -r report.html -w report.md
+      # Fails on any High or Medium alert that .zap/rules.tsv does not explicitly
+      # downgrade (with a reason), and on any FAIL rule. Writes a table to the summary.
+      - name: Risk gate (High/Medium fail)
+        if: ${{ !cancelled() }}
+        run: node scripts/zap-gate.mjs "$RUNNER_TEMP/zap/report.json" .zap/rules.tsv
+      - name: Upload ZAP report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: zap-report
+          path: |
+            ${{ runner.temp }}/zap/report.html
+            ${{ runner.temp }}/zap/report.json
+            ${{ runner.temp }}/zap/report.md
+          retention-days: 14
+          if-no-files-found: ignore
+
+  # Results table + the commit status `staging/verified` (required on `main`).
+  # `success` only when deploy, verify-site, e2e and dast all succeeded; any other
+  # outcome (failed, skipped because checks or deploy failed, timed out) is
+  # `failure`. If the run itself was cancelled nothing is posted, so the commit keeps
+  # whatever a completed run last said instead of a status no run actually earned.
+  summary:
+    needs: [checks, deploy, verify-site, e2e, dast]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      statuses: write # POST /repos/{owner}/{repo}/statuses/{sha}, nothing else
+    steps:
+      - name: Results table
+        env:
+          RESULTS: ${{ toJSON(needs) }}
+        run: |
+          node >> "$GITHUB_STEP_SUMMARY" <<'EOF'
+          const needs = JSON.parse(process.env.RESULTS);
+          console.log("### Staging pipeline\n\n| Job | Result |\n|---|---|");
+          for (const [job, n] of Object.entries(needs)) console.log(`| ${job} | ${n.result} |`);
+          console.log(`\nSite: ${process.env.STAGING_URL}`);
+          EOF
+      - name: Set commit status staging/verified
+        if: ${{ !cancelled() && github.ref == 'refs/heads/staging' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEPLOY: ${{ needs.deploy.result }}
+          VERIFY_SITE: ${{ needs.verify-site.result }}
+          E2E: ${{ needs.e2e.result }}
+          DAST: ${{ needs.dast.result }}
+        run: |
+          if [ "$DEPLOY" = success ] && [ "$VERIFY_SITE" = success ] && [ "$E2E" = success ] && [ "$DAST" = success ]; then
+            state=success
+            description="Staging deployed; check-site, E2E and ZAP passed"
+          else
+            state=failure
+            description="deploy=$DEPLOY verify-site=$VERIFY_SITE e2e=$E2E dast=$DAST"
+          fi
+          gh api --method POST "repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA" \
+            -f state="$state" \
+            -f context=staging/verified \
+            -f description="$description" \
+            -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            --jq '"\(.context) = \(.state)"'

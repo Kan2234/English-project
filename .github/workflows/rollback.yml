@@ -1,0 +1,151 @@
+# Manual production rollback: Actions -> rollback -> Run workflow.
+#
+# - Dispatchable only once this file is on `main` (GitHub lists workflow_dispatch
+#   workflows from the default branch). In "Use workflow from", pick the newest
+#   release TAG (vX.Y.Z), not a branch: the `production` Environment only admits tags
+#   v*, and the rollback code that runs is then the reviewed code of that release.
+# - Same approval gate as a release: the job runs in the `production` Environment.
+# - Same code path as the auto-rollback in _release.yml: scripts/cf-versions.mjs
+#   rollback (wrangler rollback + wait until the API reports the version active),
+#   then check-site against production.
+# - version_id empty = the version that served before the active deployment. If the
+#   active deployment is itself a rollback, the script refuses and lists the recent
+#   deployments so you can pick a version ID explicitly.
+# - Redeploying an old release instead (a fresh deploy of its build) = re-run
+#   production.yml for that tag; there is no second path for it here.
+# `reason` is free text: it only reaches `run:` through env, and is sanitised by
+# scripts/cf-versions.mjs before it becomes part of the rollback --message.
+name: rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_id:
+        description: Version ID to roll back to (empty = the version before the active one)
+        type: string
+        required: false
+        default: ""
+      reason:
+        description: Why (goes into the Cloudflare deployment message and the run summary)
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+env:
+  WORKER_NAME: english-project
+  WRANGLER_ENV: ""
+  SITE_URL: https://english-project.leminhkhang2234.workers.dev
+  WRANGLER_SEND_METRICS: "false"
+
+jobs:
+  rollback:
+    # The Environment would reject any other ref; this makes it explicit and skips
+    # the approval request for a run that cannot succeed.
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment:
+      name: production
+      url: ${{ env.SITE_URL }}
+    permissions:
+      contents: read
+    steps:
+      - name: Validate inputs
+        id: inputs
+        env:
+          VERSION_ID: ${{ inputs.version_id }}
+        run: |
+          if [ -n "$VERSION_ID" ] && ! [[ "$VERSION_ID" =~ ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$ ]]; then
+            echo "::error::version_id must be a Worker version ID (UUID) or empty"
+            exit 1
+          fi
+          echo "version_id=$VERSION_ID" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          # No dependency cache on the release path (a tag run could restore a cache that
+          # another ref wrote). npm ci checks package-lock integrity anyway; speed is not
+          # worth it here.
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Sanitise the reason
+        id: reason
+        env:
+          MESSAGE: ${{ inputs.reason }}
+        run: |
+          reason=$(node scripts/cf-versions.mjs message)
+          [ -n "$reason" ] || { echo "::error::reason is empty after sanitising (use letters and digits)"; exit 1; }
+          echo "reason=$reason" >> "$GITHUB_OUTPUT"
+      - name: Recent deployments
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          {
+            echo "### Recent deployments of $WORKER_NAME (before the rollback)"
+            echo ""
+            node scripts/cf-versions.mjs deployments --name "$WORKER_NAME" --env "$WRANGLER_ENV"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Choose the target version
+        id: target
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          VERSION_ID: ${{ steps.inputs.outputs.version_id }}
+        run: |
+          before=$(node scripts/cf-versions.mjs active --name "$WORKER_NAME" --env "$WRANGLER_ENV")
+          if [ -n "$VERSION_ID" ]; then
+            to="$VERSION_ID"
+          else
+            to=$(node scripts/cf-versions.mjs previous --name "$WORKER_NAME" --env "$WRANGLER_ENV")
+          fi
+          echo "Active: $before -> target: $to"
+          echo "before=$before" >> "$GITHUB_OUTPUT"
+          echo "to=$to" >> "$GITHUB_OUTPUT"
+      - name: Roll back
+        id: rollback
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          TO: ${{ steps.target.outputs.to }}
+          REASON: ${{ steps.reason.outputs.reason }}
+        run: |
+          node scripts/cf-versions.mjs rollback --name "$WORKER_NAME" --env "$WRANGLER_ENV" \
+            --to "$TO" --message="manual rollback: $REASON"
+      - name: check-site
+        id: checksite
+        run: |
+          set -o pipefail
+          node scripts/check-site.mjs "$SITE_URL" | tee "$RUNNER_TEMP/check-site.txt"
+      - name: Summary
+        if: ${{ !cancelled() }}
+        env:
+          BEFORE: ${{ steps.target.outputs.before }}
+          TO: ${{ steps.target.outputs.to }}
+          ROLLBACK: ${{ steps.rollback.outcome }}
+          ROLLED_BACK: ${{ steps.rollback.outputs.rolled_back }}
+          CHECKSITE: ${{ steps.checksite.outcome }}
+          REASON: ${{ steps.reason.outputs.reason }}
+        run: |
+          {
+            echo "### Manual rollback of $WORKER_NAME"
+            echo ""
+            echo "| | |"
+            echo "|---|---|"
+            echo "| Reason (sanitised) | ${REASON:-?} |"
+            echo "| Version before | \`${BEFORE:-unknown}\` |"
+            echo "| Target version | \`${TO:-unknown}\` |"
+            echo "| Rollback | $ROLLBACK (rolled back: ${ROLLED_BACK:-false}) |"
+            echo "| check-site | $CHECKSITE |"
+            echo "| Site | $SITE_URL |"
+          } >> "$GITHUB_STEP_SUMMARY"

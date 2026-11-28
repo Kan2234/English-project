@@ -170,6 +170,9 @@ function ExamSession({ testId, scope, strictChoice }: { testId: string; scope: S
       window.removeEventListener('keydown', onKey);
       if (submitted.current) return;
       const opener = openerRef.current;
+      // Focus must go to the "Nộp bài" button as it is when the dialog closes, so reading
+      // the ref at cleanup time (not when the effect ran) is intended here.
+      // oxlint-disable-next-line react/exhaustive-deps
       (opener?.isConnected ? opener : submitBtnRef.current)?.focus();
     };
   }, [confirming]);

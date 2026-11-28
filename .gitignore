@@ -6,3 +6,11 @@ public/data/
 database/toeic.db
 # local editor / agent settings
 .claude/settings.local.json
+# test output
+coverage/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+# ZAP baseline reports (see README, "Staging tự động")
+zap-out/
