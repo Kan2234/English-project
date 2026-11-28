@@ -49,7 +49,8 @@ test.describe('smoke', () => {
       const link = links.nth(i);
       const href = (await link.getAttribute('href'))!;
       await link.click();
-      await expect(page).toHaveURL(new RegExp(`${href.replace(/[#/]/g, '\\$&')}$`));
+      // Compare strings, not a RegExp built from page data (CodeQL js/incomplete-sanitization).
+      await expect.poll(() => page.url().endsWith(href), { message: `URL ends with ${href}` }).toBe(true);
       await expect(link).toHaveAttribute('aria-current', 'page');
     }
   });
