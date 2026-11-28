@@ -130,7 +130,7 @@ Xem kết quả: trang Summary của lượt chạy (bảng version trước/sau
 3. Nếu rollback lỗi hoặc chưa xác minh: chạy `rollback.yml` ngay, hoặc vào Cloudflare dashboard → Worker → Deployments → chọn version trước → Rollback. Sau đó chạy `npm run check-site -- https://english-project.leminhkhang2234.workers.dev`.
 4. Sửa qua `staging` như hotfix, phát hành bản patch kế tiếp (không dùng lại tag đã hỏng), rồi viết postmortem ngắn trong issue và đóng nó.
 
-Các script dùng cho phát hành: `scripts/cf-versions.mjs` (mọi lệnh wrangler về version: version đang chạy, rollback, chờ xác nhận, xóa Worker drill; đã kiểm với wrangler 4.159.0) và `scripts/release-gate.mjs`. Unit test của chúng nằm trong `tests/unit/`.
+Các script dùng cho phát hành: `scripts/cf-versions.mjs` (mọi lệnh wrangler về version: version đang chạy, rollback, chờ xác nhận, xóa Worker drill; đã kiểm với wrangler 4.159.0 và 4.162.0; mỗi lần nâng wrangler, `drill.yml` chạy lại để kiểm chứng) và `scripts/release-gate.mjs`. Unit test của chúng nằm trong `tests/unit/`.
 
 #### Quét hằng đêm và Dependabot
 
@@ -151,7 +151,13 @@ GitHub chỉ chạy `schedule` từ nhánh mặc định, nên workflow này b�
 
 `.github/CODEOWNERS` ghi `@Kan2234` là chủ các đường dẫn về pipeline và hạ tầng. Hiện chỉ mang tính thông tin: repo có một người duy trì, nên "Require review from Code Owners" trong ruleset phải để tắt (tác giả không tự duyệt PR của mình được).
 
+#### Làm việc với AI agent
+
+Agent (Claude Code và các agent con) chỉ sửa code, chạy kiểm tra nhanh trên máy và mở PR. Agent **không** deploy, không tạo tag, không duyệt deployment, và không tự chạy `check-site`, Playwright hay ZAP vào staging/production: các bước đó do `staging.yml` và `production.yml` làm, agent chỉ đọc kết quả (`gh pr checks`, `gh run view --log-failed`, status `staging/verified`, issue `scheduled`/`incident`). Nhờ vậy một đợt phát hành không còn tốn token cho việc agent dựng staging, kiểm tra từng trang và đọc nguyên log. Quy tắc và bảng lệnh nằm trong [`CLAUDE.md`](CLAUDE.md).
+
 ## Triển khai (Docker + nginx, chạy trên máy)
+
+Phần này chỉ để chạy và thử site trên máy, **không** thuộc quy trình phát hành: production và staging thật trên Cloudflare chỉ do GitHub Actions deploy.
 
 Cần Docker. Quy trình gồm ba bước: lên staging, kiểm tra, rồi mới lên production.
 

@@ -104,3 +104,12 @@ updates:
       docker:
         applies-to: version-updates
         patterns: ["*"]
+    # Stay on nginx's STABLE line. nginx uses even minors for stable (1.30.x, 1.32.x) and
+    # odd minors for mainline (1.31.x); Dependabot only compares numbers, so it proposed
+    # 1.31.0-alpine (PR #13), a mainline tag not rebuilt since 2026-05 while 1.30.8-alpine
+    # (= stable-alpine) was rebuilt on 2026-11-25. Patches of 1.30.x and the next stable
+    # (1.32) are still proposed. When 1.32 ships, move the range to 1.33.
+    ignore:
+      - dependency-name: nginx
+        # Docker version ranges use Ruby requirement syntax
+        versions: [">= 1.31.0, < 1.32.0"]
