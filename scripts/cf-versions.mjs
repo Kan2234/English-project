@@ -16,7 +16,8 @@
 // `--env ""` targets the top-level Worker in wrangler.jsonc (passed to wrangler as
 // `--env=`, which also silences its "no target environment" warning).
 //
-// Verified against wrangler 4.159.0 (node_modules/wrangler/wrangler-dist/cli.js):
+// Verified against wrangler 4.159.0 (node_modules/wrangler/wrangler-dist/cli.js); still holds
+// for 4.162.0 (drill.yml passed after the bump, 2026-11-28). What was checked:
 // - `deployments status --json` prints the latest deployment as one JSON object,
 //   { id, created_on, annotations, versions: [{ version_id, percentage }] }, and
 //   no banner (printBanner is off with --json).
