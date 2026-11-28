@@ -29,7 +29,10 @@
 //   UserError "The Worker <name> has no deployments.".
 // - `rollback [version-id] --name --message -y`: in CI (non-interactive) wrangler
 //   uses the --message as the default of its message prompt and auto-confirms.
-// - `delete [name] --force`: skips the confirmation prompt and the dependency check.
+// - `delete` does NOT use `wrangler delete`: in 4.159.0 it first lists the account's
+//   KV namespaces and aborts on a 403 (code 10000) when the token lacks KV read, which
+//   the first drill hit. The pipeline tokens only hold Workers Scripts › Edit, so
+//   delete calls DELETE /accounts/{id}/workers/scripts/{name}?force=true directly.
 import { spawnSync } from 'node:child_process';
 import { appendFileSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -110,6 +113,18 @@ export function isNoWorker(entries) {
   return entries.some(
     (e) => e.type === 'command-failed' && (e.code === WORKER_NOT_FOUND || /has no deployments/.test(String(e.message ?? ''))),
   );
+}
+
+/**
+ * Outcome of DELETE /accounts/{id}/workers/scripts/{name}: "deleted", "absent" (HTTP 404
+ * or API error 10007, so already gone) or an Error to throw. Never echoes the token.
+ */
+export function deleteOutcome(status, body) {
+  const errors = Array.isArray(body?.errors) ? body.errors : [];
+  if (status >= 200 && status < 300 && body?.success !== false) return 'deleted';
+  if (status === 404 || errors.some((e) => e?.code === WORKER_NOT_FOUND)) return 'absent';
+  const detail = errors.map((e) => `${e?.message ?? 'error'} [code ${e?.code ?? '?'}]`).join('; ') || 'no error details';
+  return new Error(`Cloudflare API delete failed (HTTP ${status}): ${detail}`);
 }
 
 const isRollback = (d) =>
@@ -365,14 +380,18 @@ export async function main(argv) {
       requireTarget(o);
       // Only ever the throwaway drill Worker: this command must never be able to delete production or staging.
       if (!/-drill$/.test(o.name)) throw new Error(`refusing to delete ${o.name}: only *-drill Workers may be deleted here`);
-      const r = wrangler(['delete', ...target(o), '--force'], { inherit: true });
-      if (r.status !== 0) {
-        if (isNoWorker(r.entries)) {
-          log(`${o.name} does not exist: nothing to delete.`);
-          return;
-        }
-        throw failed('delete', r);
-      }
+      const account = process.env.CLOUDFLARE_ACCOUNT_ID ?? '';
+      const token = process.env.CLOUDFLARE_API_TOKEN ?? '';
+      if (!/^[0-9a-f]{32}$/.test(account)) throw new Error('CLOUDFLARE_ACCOUNT_ID is missing or malformed');
+      if (!token) throw new Error('CLOUDFLARE_API_TOKEN is missing');
+      const res = await fetch(
+        `https://api.cloudflare.com/client/v4/accounts/${account}/workers/scripts/${encodeURIComponent(o.name)}?force=true`,
+        { method: 'DELETE', headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(30_000) },
+      );
+      const body = await res.json().catch(() => null);
+      const outcome = deleteOutcome(res.status, body);
+      if (outcome instanceof Error) throw outcome;
+      log(outcome === 'absent' ? `${o.name} does not exist: nothing to delete.` : `Deleted the Worker ${o.name}.`);
       return;
     }
     case 'live-assets': {

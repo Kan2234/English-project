@@ -167,7 +167,8 @@ jobs:
           package-manager-cache: false
       - run: npm ci --ignore-scripts --no-audit --no-fund
       # The script refuses any name that does not end in -drill, and treats an
-      # already-missing Worker as done.
+      # already-missing Worker as done. It calls the Cloudflare API directly (not
+      # `wrangler delete`, which needs KV read): Workers Scripts › Edit is enough.
       - name: Delete the drill Worker
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
