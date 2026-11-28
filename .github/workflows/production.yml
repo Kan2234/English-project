@@ -1,0 +1,174 @@
+# Production release: pushing a tag vX.Y.Z on main deploys it to the Worker
+# `english-project` (https://english-project.leminhkhang2234.workers.dev).
+#
+#   gate     the tag may be released (scripts/release-gate.mjs): strict SemVer, a
+#            release merge commit on main whose second parent is a staging commit
+#            with staging/verified = success and the SAME tree. What production
+#            gets is byte for byte what staging tested.
+#   release  _release.yml in the `production` Environment (tags v* only, required
+#            reviewer: the owner clicks Approve): build that commit, deploy, smoke
+#            (check-site + Playwright @smoke), auto-rollback on failure, incident issue.
+#   publish  only after a successful release: GitHub Release with the deployed
+#            dist.tar.gz (not rebuilt), a CycloneDX SBOM and build provenance.
+#
+# Redeploying an older release = re-running this workflow for that tag (Actions ->
+# the tag's run -> Re-run all jobs); the gate and the approval apply again. Tags v*
+# cannot be moved or deleted (ruleset): a wrong release is fixed by the next patch
+# tag or by rollback.yml, never by re-tagging.
+# The tag name is only read through env (and validated) in `run:` blocks.
+name: production
+
+on:
+  push:
+    tags: ['v*.*.*']
+
+permissions:
+  contents: read
+
+# Never two production deploys at once, never cancel one halfway. rollback.yml uses
+# the same group, so a manual rollback cannot interleave with a release.
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      statuses: read # GET /repos/{repo}/commits/{sha}/status of the staging commit
+    outputs:
+      sha: ${{ steps.gate.outputs.sha }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0 # origin/main, origin/staging and the tags
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          package-manager-cache: false # tag run: never restore a cache (no npm ci here anyway)
+      - name: Release gate
+        id: gate
+        env:
+          TAG: ${{ github.ref_name }}
+          TAG_SHA: ${{ github.sha }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$GITHUB_REF_TYPE" != tag ]; then echo "::error::production.yml only runs for tags"; exit 1; fi
+          node scripts/release-gate.mjs
+          echo "sha=$TAG_SHA" >> "$GITHUB_OUTPUT"
+          {
+            echo "### Release gate: passed"
+            echo ""
+            echo "| | |"
+            echo "|---|---|"
+            echo "| Tag | \`$TAG\` |"
+            echo "| Commit (main) | \`$TAG_SHA\` |"
+            echo "| Staging commit (verified, same tree) | \`$(git rev-parse "$TAG_SHA^2")\` |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  release:
+    needs: gate
+    # `./` (same repo, same commit: the tagged one). See ci.yml for the zizmor note.
+    uses: ./.github/workflows/_release.yml # zizmor: ignore[self-repository]
+    permissions:
+      contents: read
+      issues: write # the incident job only; the called workflow narrows it per job
+    with:
+      environment: production
+      wrangler_env: ""
+      worker_name: english-project
+      url: https://english-project.leminhkhang2234.workers.dev
+      release_label: ${{ github.ref_name }}
+      ref: ${{ needs.gate.outputs.sha }}
+      simulate_smoke_failure: false
+      open_incident: true
+    # By name, not `secrets: inherit`: the called workflow gets this one secret and
+    # nothing else. It exists only in the `production` Environment; the called deploy
+    # job (environment: production) is where it gets its value.
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+  publish:
+    needs: [gate, release]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write # create the GitHub Release
+      id-token: write # Sigstore signing of the provenance
+      attestations: write # store the attestation
+    env:
+      TAG: ${{ github.ref_name }}
+      SYFT_VERSION: 1.57.1
+      # sha256 of syft_1.57.1_linux_amd64.tar.gz from the release's checksums.txt.
+      # The binary instead of anchore/sbom-action: that action downloads syft itself at
+      # run time and has needed `contents: write` to attach SBOMs; a hash pinned here
+      # cannot change under us, and this job decides where the file goes.
+      SYFT_SHA256: bf52519eb57f675d47c07d43213cb6dff6449f3d6d1147ff6701ed91f44eef0c
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ needs.gate.outputs.sha }}
+          persist-credentials: false
+      # The exact dist/ that _release.yml built and deployed; never rebuilt here.
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: release-dist-${{ github.ref_name }}
+          path: ${{ runner.temp }}/dist
+      # Reproducible: sorted entries, every mtime = the commit time, uid/gid 0, fixed
+      # modes, no timestamp/name in the gzip header. The same dist always gives the
+      # same bytes, so anyone can rebuild the tag and compare the sha256.
+      - name: dist.tar.gz (deterministic)
+        run: |
+          mkdir -p "$RUNNER_TEMP/release"
+          SOURCE_DATE_EPOCH=$(git log -1 --format=%ct HEAD)
+          # files 0644, directories 0755, whatever the artifact download left behind
+          find "$RUNNER_TEMP/dist" -type d -exec chmod 0755 {} + && find "$RUNNER_TEMP/dist" -type f -exec chmod 0644 {} +
+          LC_ALL=C tar --sort=name --format=gnu --mtime="@$SOURCE_DATE_EPOCH" \
+            --owner=0 --group=0 --numeric-owner --mode='u=rwX,go=rX' \
+            -C "$RUNNER_TEMP/dist" -cf - . | gzip -9 -n > "$RUNNER_TEMP/release/dist.tar.gz"
+          (cd "$RUNNER_TEMP/release" && sha256sum dist.tar.gz | tee dist.tar.gz.sha256)
+      - name: Install syft (pinned, checksum verified)
+        run: |
+          cd "$RUNNER_TEMP"
+          curl -fsSLo syft.tar.gz "https://github.com/anchore/syft/releases/download/v${SYFT_VERSION}/syft_${SYFT_VERSION}_linux_amd64.tar.gz"
+          echo "${SYFT_SHA256}  syft.tar.gz" | sha256sum -c -
+          tar -xzf syft.tar.gz syft
+      # CycloneDX JSON of the npm project, from package-lock.json (the lockfile the
+      # deployed build was installed from). syft leaves devDependencies out by default,
+      # so the SBOM lists what ships in dist/ (react, react-dom, react-router-dom and
+      # their dependencies), not the build tools.
+      - name: SBOM (CycloneDX)
+        env:
+          SYFT_CHECK_FOR_APP_UPDATE: "false"
+        run: |
+          "$RUNNER_TEMP/syft" scan "file:package-lock.json" --source-name on-ta --source-version "$TAG" \
+            -o "cyclonedx-json=$RUNNER_TEMP/release/sbom.cdx.json"
+          jq -r '"\(.bomFormat) \(.specVersion): \(.components | length) components"' "$RUNNER_TEMP/release/sbom.cdx.json"
+      - name: Build provenance for dist.tar.gz
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: ${{ runner.temp }}/release/dist.tar.gz
+      # --verify-tag: never let gh create a tag. A re-run of an already published tag
+      # (redeploy) keeps the existing Release as it is.
+      - name: GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo "::error::bad tag"; exit 1; }
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            echo "::notice::Release $TAG already exists (re-run): left unchanged."
+            exit 0
+          fi
+          cd "$RUNNER_TEMP/release"
+          gh release create "$TAG" dist.tar.gz dist.tar.gz.sha256 sbom.cdx.json \
+            --verify-tag --generate-notes --title "$TAG"
+          {
+            echo "### GitHub Release $TAG"
+            echo ""
+            echo "Assets: \`dist.tar.gz\` (sha256 \`$(cut -d' ' -f1 dist.tar.gz.sha256)\`), \`sbom.cdx.json\`."
+            echo "Verify: \`gh attestation verify dist.tar.gz -R $GH_REPO\`"
+          } >> "$GITHUB_STEP_SUMMARY"

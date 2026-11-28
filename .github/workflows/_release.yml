@@ -1,0 +1,450 @@
+# Reusable release: build -> deploy -> smoke -> auto-rollback for ONE Worker.
+# Called by production.yml (tag vX.Y.Z -> Worker english-project) and drill.yml
+# (Worker english-project-drill), so the rollback drill exercises exactly the code
+# path a production release takes. Nothing about deploying or rolling back lives in
+# the callers.
+#
+# Contract:
+# - Inputs are validated against an allowlist (validate job) before any Environment
+#   is touched: only the production and drill targets below exist.
+# - A release whose smoke test fails is rolled back to the version that served before
+#   it, the rollback is verified (active version via the API + the site + check-site),
+#   and the deploy job FAILS: a rolled-back release is a failed release.
+# - Drill mode (simulate_smoke_failure: true, refused for production) forces the smoke
+#   verdict to "failed" AFTER the real deploy. Then the deploy job succeeds only if the
+#   rollback happened and was verified, and fails otherwise. Reason: a caller cannot
+#   reliably read the outputs of a called workflow that failed, and `continue-on-error`
+#   is not allowed on a job that calls a workflow, so drill.yml asserts on a
+#   successful run's outputs instead of on a red one.
+# - Only the steps that talk to Cloudflare see the token. The token is declared as a
+#   secret here and passed by name by the callers (not `secrets: inherit`, which would
+#   hand every repository secret to this workflow). It only has a value inside the
+#   deploy job, whose `environment:` provides it.
+# - The `dist` that was deployed is uploaded as artifact `release-dist-<label>`;
+#   production.yml publishes that artifact instead of rebuilding.
+name: release
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: GitHub Environment holding CLOUDFLARE_API_TOKEN (production | staging)
+        type: string
+        required: true
+      wrangler_env:
+        description: wrangler.jsonc environment ("" = top level)
+        type: string
+        default: ""
+      worker_name:
+        description: Worker to deploy (must match the target's wrangler.jsonc name)
+        type: string
+        required: true
+      url:
+        description: Public URL of that Worker
+        type: string
+        required: true
+      release_label:
+        description: Tag of the release (vX.Y.Z) or drill-<run id>-<a|b>; becomes the version tag and message
+        type: string
+        required: true
+      ref:
+        description: Full commit SHA to build and deploy
+        type: string
+        required: true
+      simulate_smoke_failure:
+        description: Drill only. Fail the smoke verdict after the real deploy to exercise the rollback
+        type: boolean
+        default: false
+      open_incident:
+        description: Open an `incident` issue when the release fails or is rolled back
+        type: boolean
+        required: true
+    secrets:
+      CLOUDFLARE_API_TOKEN:
+        description: Passed by name; resolves to the Environment secret inside the deploy job
+        required: true
+    outputs:
+      previous_version:
+        description: Version ID that served before the deploy ("none" on a first deploy)
+        value: ${{ jobs.deploy.outputs.previous_version }}
+      deployed_version:
+        description: Version ID created by this deploy ("" if the deploy failed)
+        value: ${{ jobs.deploy.outputs.deployed_version }}
+      rolled_back:
+        description: '"true" when this release was rolled back to previous_version'
+        value: ${{ jobs.deploy.outputs.rolled_back }}
+      rollback_verified:
+        description: '"true" when the rollback was confirmed by the API, the live site and check-site'
+        value: ${{ jobs.deploy.outputs.rollback_verified }}
+      incident_issue:
+        description: Number of the incident issue opened for this release ("" if none)
+        value: ${{ jobs.incident.outputs.issue }}
+
+permissions:
+  contents: read
+
+env:
+  # Must match @playwright/test (1.57.0); same image and digest as staging.yml.
+  PLAYWRIGHT_IMAGE: mcr.microsoft.com/playwright:v1.57.0-noble@sha256:3bed4b1a12f2338642f3d8cba28e291deef3c66bd4a964bbeb3e57bbff511dbd
+
+jobs:
+  # Fails fast, before an Environment (and its approval) is involved, on any input
+  # outside the allowlist. Callers live in this repo, but the inputs decide which
+  # Worker gets deployed and deleted, so they are checked anyway.
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions: {}
+    steps:
+      - name: Validate inputs
+        env:
+          ENVIRONMENT: ${{ inputs.environment }}
+          WRANGLER_ENV: ${{ inputs.wrangler_env }}
+          WORKER_NAME: ${{ inputs.worker_name }}
+          SITE_URL: ${{ inputs.url }}
+          RELEASE_LABEL: ${{ inputs.release_label }}
+          REF: ${{ inputs.ref }}
+          SIMULATE: ${{ inputs.simulate_smoke_failure }}
+          OPEN_INCIDENT: ${{ inputs.open_incident }}
+        run: |
+          fail() { echo "::error::_release.yml: $1"; exit 1; }
+          target="$ENVIRONMENT|$WRANGLER_ENV|$WORKER_NAME|$SITE_URL"
+          case "$target" in
+            "production||english-project|https://english-project.leminhkhang2234.workers.dev")
+              [[ "$RELEASE_LABEL" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || fail "production release_label must be a vX.Y.Z tag"
+              [ "$SIMULATE" = false ] || fail "simulate_smoke_failure is for drills only, never for production"
+              [ "$OPEN_INCIDENT" = true ] || fail "a production release must open an incident when it fails"
+              ;;
+            "staging|drill|english-project-drill|https://english-project-drill.leminhkhang2234.workers.dev")
+              [[ "$RELEASE_LABEL" =~ ^drill-[0-9]{1,15}-[a-z]$ ]] || fail "drill release_label must be drill-<run id>-<letter>"
+              ;;
+            *)
+              fail "unknown target (environment|wrangler_env|worker_name|url): $target"
+              ;;
+          esac
+          [[ "$REF" =~ ^[0-9a-f]{40}$ ]] || fail "ref must be a full commit SHA"
+          echo "Target $target, label $RELEASE_LABEL, ref $REF, simulate_smoke_failure=$SIMULATE"
+
+  deploy:
+    needs: validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    environment:
+      name: ${{ inputs.environment }}
+      url: ${{ inputs.url }}
+    permissions:
+      contents: read
+    outputs:
+      previous_version: ${{ steps.before.outputs.previous_version }}
+      deployed_version: ${{ steps.deployed.outputs.deployed_version }}
+      rolled_back: ${{ steps.result.outputs.rolled_back }}
+      rollback_verified: ${{ steps.result.outputs.rollback_verified }}
+    env:
+      WORKER_NAME: ${{ inputs.worker_name }}
+      WRANGLER_ENV: ${{ inputs.wrangler_env }}
+      SITE_URL: ${{ inputs.url }}
+      RELEASE_LABEL: ${{ inputs.release_label }}
+      WRANGLER_SEND_METRICS: "false"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.ref }}
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          # No dependency cache on the release path (a tag run could restore a cache that
+          # another ref wrote). npm ci checks package-lock integrity anyway; speed is not
+          # worth it here.
+          package-manager-cache: false
+      # --ignore-scripts: see staging.yml (esbuild/workerd platform packages still install).
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      # Built from exactly `ref` (for production: the tagged commit, whose tree the gate
+      # proved identical to the staging commit that staging.yml verified).
+      - name: Build
+        env:
+          REF: ${{ inputs.ref }}
+        run: |
+          [ "$(git rev-parse HEAD)" = "$REF" ] || { echo "::error::checked out $(git rev-parse HEAD), expected $REF"; exit 1; }
+          npm run build
+      # The deployed bytes, for production.yml's publish job (no rebuild there).
+      # overwrite: a re-run of the same run uploads the same name again.
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-dist-${{ inputs.release_label }}
+          path: dist/
+          retention-days: 7
+          if-no-files-found: error
+          overwrite: true
+      - name: Bundle check (dry run, no credentials)
+        run: npx wrangler deploy --dry-run --env="$WRANGLER_ENV" --name "$WORKER_NAME" --outdir "$RUNNER_TEMP/bundle"
+      # Which build the site serves before the deploy, so after a rollback we can wait
+      # until it serves that build again. Empty when unreachable (first deploy).
+      - name: Snapshot the live build
+        id: snapshot
+        run: |
+          assets=$(node scripts/cf-versions.mjs live-assets --url "$SITE_URL")
+          echo "Live assets before deploy: ${assets:-none}"
+          echo "assets=$assets" >> "$GITHUB_OUTPUT"
+      # The rollback target. "none" = the Worker does not exist yet (first deploy):
+      # then there is nothing to roll back to, and a failed smoke test fails loudly.
+      - name: Record the active version
+        id: before
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          previous=$(node scripts/cf-versions.mjs active --name "$WORKER_NAME" --env "$WRANGLER_ENV")
+          if [ "$previous" = none ]; then
+            echo "::warning::$WORKER_NAME has no active version: first deploy, there is no version to roll back to."
+          fi
+          echo "previous_version=$previous" >> "$GITHUB_OUTPUT"
+      # From here on, failures are recorded (continue-on-error) instead of stopping the
+      # job, so that the rollback and result steps always get to run.
+      # --name and the env are explicit: whatever wrangler.jsonc says, this deploys
+      # only the validated target. --env="" (top level) also silences wrangler's
+      # "no target environment" warning.
+      - name: Deploy
+        id: deploy
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          # wrangler appends one JSON line per command here (the new version ID)
+          WRANGLER_OUTPUT_FILE_PATH: ${{ runner.temp }}/wrangler-output.ndjson
+        run: |
+          rm -f "$WRANGLER_OUTPUT_FILE_PATH"
+          npx wrangler deploy --env="$WRANGLER_ENV" --name "$WORKER_NAME" \
+            --tag "$RELEASE_LABEL" --message "release $RELEASE_LABEL"
+      - name: Read the deployed version
+        id: deployed
+        if: steps.deploy.outcome == 'success'
+        continue-on-error: true
+        env:
+          WRANGLER_OUTPUT_FILE_PATH: ${{ runner.temp }}/wrangler-output.ndjson
+        run: |
+          version=$(node scripts/cf-versions.mjs deployed --file "$WRANGLER_OUTPUT_FILE_PATH")
+          echo "Deployed version $version"
+          echo "deployed_version=$version" >> "$GITHUB_OUTPUT"
+      - name: Confirm the new version is active
+        id: active
+        if: steps.deployed.outcome == 'success'
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          DEPLOYED: ${{ steps.deployed.outputs.deployed_version }}
+        run: node scripts/cf-versions.mjs wait-active --name "$WORKER_NAME" --env "$WRANGLER_ENV" --to "$DEPLOYED"
+      # Same approach as staging.yml: the edge serves the index.html of THIS build
+      # (same hashed ./assets/* references), up to 5 minutes.
+      - name: Wait until the site serves this build
+        id: live
+        if: steps.deploy.outcome == 'success'
+        continue-on-error: true
+        run: node scripts/cf-versions.mjs wait-live --url "$SITE_URL" --html dist/index.html
+      - name: Smoke - check-site
+        id: checksite
+        if: steps.live.outcome == 'success'
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          node scripts/check-site.mjs "$SITE_URL" | tee "$RUNNER_TEMP/check-site.txt"
+      # Chromium only, tests tagged @smoke: home, a test intro, an audio file that
+      # plays, the results page, audio Range. node_modules from the runner's npm ci
+      # (pure JS) + the browsers of the pinned image. Nothing but the URL is passed
+      # into the container: no token, and the checkout keeps no credentials.
+      - name: Smoke - Playwright (@smoke, chromium)
+        id: e2e
+        if: steps.live.outcome == 'success'
+        continue-on-error: true
+        run: |
+          docker run --rm --ipc=host -v "$GITHUB_WORKSPACE:/work" -w /work \
+            -e CI=true -e E2E_BASE_URL="$SITE_URL" "$PLAYWRIGHT_IMAGE" \
+            npx playwright test --project=chromium --grep @smoke
+      # Drill only: a smoke failure that cannot be confused with a real one. Runs after
+      # the real deploy and changes nothing that was deployed.
+      - name: Simulated smoke failure (drill)
+        id: simulated
+        if: inputs.simulate_smoke_failure && steps.deploy.outcome == 'success'
+        continue-on-error: true
+        run: |
+          echo "::warning::Drill: forcing the smoke verdict to FAILED to exercise the auto-rollback."
+          exit 1
+      - name: Smoke verdict
+        id: smoke
+        if: ${{ !cancelled() && steps.deploy.outcome != 'skipped' }}
+        env:
+          DEPLOY: ${{ steps.deploy.outcome }}
+          DEPLOYED: ${{ steps.deployed.outcome }}
+          ACTIVE: ${{ steps.active.outcome }}
+          LIVE: ${{ steps.live.outcome }}
+          CHECKSITE: ${{ steps.checksite.outcome }}
+          E2E: ${{ steps.e2e.outcome }}
+          SIMULATED: ${{ steps.simulated.outcome }}
+        run: |
+          ok=true
+          for v in "$DEPLOY" "$DEPLOYED" "$ACTIVE" "$LIVE" "$CHECKSITE" "$E2E"; do
+            [ "$v" = success ] || ok=false
+          done
+          [ "$SIMULATED" = failure ] && ok=false
+          echo "deploy=$DEPLOY version=$DEPLOYED active=$ACTIVE live=$LIVE check-site=$CHECKSITE e2e=$E2E simulated=${SIMULATED:-n/a} -> ok=$ok"
+          echo "ok=$ok" >> "$GITHUB_OUTPUT"
+      # Back to the version recorded before the deploy, then wait until the API
+      # reports it active. If the deploy itself failed before switching versions,
+      # the script sees the previous version still active and changes nothing.
+      - name: Auto-rollback
+        id: rollback
+        if: ${{ !cancelled() && steps.smoke.outputs.ok == 'false' }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          PREVIOUS: ${{ steps.before.outputs.previous_version }}
+        run: |
+          if [ "$PREVIOUS" = none ] || [ -z "$PREVIOUS" ]; then
+            echo "::error::Smoke failed and $WORKER_NAME had no earlier version: NOTHING TO ROLL BACK TO. The failed build is live; fix forward or delete the Worker."
+            exit 1
+          fi
+          node scripts/cf-versions.mjs rollback --name "$WORKER_NAME" --env "$WRANGLER_ENV" \
+            --to "$PREVIOUS" --message="auto-rollback $RELEASE_LABEL"
+      - name: Verify the site after the rollback
+        id: after
+        if: ${{ !cancelled() && steps.rollback.outcome == 'success' }}
+        env:
+          SNAPSHOT: ${{ steps.snapshot.outputs.assets }}
+        run: |
+          set -o pipefail
+          if [ -n "$SNAPSHOT" ]; then
+            node scripts/cf-versions.mjs wait-live --url "$SITE_URL" --assets "$SNAPSHOT"
+          else
+            echo "::warning::No snapshot of the build served before the deploy; checking the site only."
+          fi
+          node scripts/check-site.mjs "$SITE_URL" | tee "$RUNNER_TEMP/check-site-after-rollback.txt"
+      - name: Upload smoke report
+        if: ${{ !cancelled() && steps.e2e.outcome != 'skipped' }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-smoke-${{ inputs.release_label }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14
+          if-no-files-found: ignore
+          overwrite: true
+      # Outputs, summary and the job's verdict:
+      #   smoke ok                         -> success (release live)
+      #   rolled back, production          -> FAILURE (a rolled-back release failed)
+      #   rolled back + verified, drill    -> success (the drill's expected outcome)
+      #   anything else                    -> failure
+      - name: Release result
+        id: result
+        if: ${{ !cancelled() }}
+        env:
+          ENVIRONMENT: ${{ inputs.environment }}
+          SIMULATE: ${{ inputs.simulate_smoke_failure }}
+          DEPLOY: ${{ steps.deploy.outcome }}
+          SMOKE_OK: ${{ steps.smoke.outputs.ok }}
+          PREVIOUS: ${{ steps.before.outputs.previous_version }}
+          DEPLOYED: ${{ steps.deployed.outputs.deployed_version }}
+          ROLLBACK: ${{ steps.rollback.outcome }}
+          ROLLED_BACK: ${{ steps.rollback.outputs.rolled_back }}
+          AFTER: ${{ steps.after.outcome }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          node <<'EOF'
+          const fs = require("node:fs");
+          const e = process.env;
+          const rolledBack = e.ROLLED_BACK === "true";
+          const verified = rolledBack && e.ROLLBACK === "success" && e.AFTER === "success";
+          const smokeOk = e.SMOKE_OK === "true";
+          const drill = e.SIMULATE === "true";
+          let pass, verdict;
+          if (smokeOk) [pass, verdict] = [true, "Released: smoke tests passed."];
+          else if (rolledBack && drill) [pass, verdict] = [verified, verified ? "Drill: rolled back and verified, as expected." : "Drill FAILED: the rollback could not be verified."];
+          else if (rolledBack) [pass, verdict] = [false, `FAILED and rolled back to ${e.PREVIOUS} (${verified ? "rollback verified" : "rollback NOT verified"}).`];
+          else if (e.DEPLOY === "skipped" || e.DEPLOY === "") [pass, verdict] = [false, "FAILED before deploying: nothing changed on Cloudflare."];
+          else if (e.ROLLBACK === "failure") [pass, verdict] = [false, "FAILED and the auto-rollback FAILED: check the Worker now."];
+          else [pass, verdict] = [false, "FAILED; the previous version was still active, nothing to roll back."];
+          fs.appendFileSync(e.GITHUB_OUTPUT, `rolled_back=${rolledBack}\nrollback_verified=${verified}\n`);
+          const row = (k, v) => `| ${k} | ${v} |`;
+          fs.appendFileSync(e.GITHUB_STEP_SUMMARY, [
+            `### Release \`${e.RELEASE_LABEL}\` -> ${e.WORKER_NAME}`, "",
+            `**${verdict}**`, "",
+            "| | |", "|---|---|",
+            row("Environment", e.ENVIRONMENT),
+            row("Site", e.SITE_URL),
+            row("Version before", `\`${e.PREVIOUS || "unknown"}\``),
+            row("Version deployed", `\`${e.DEPLOYED || "none"}\``),
+            row("Smoke", smokeOk ? "passed" : (e.SMOKE_OK ? "failed" : "not run")),
+            row("Rolled back", rolledBack ? `yes, to \`${e.PREVIOUS}\`` : "no"),
+            row("Rollback verified", rolledBack ? String(verified) : "-"),
+            row("Run", e.RUN_URL), "",
+          ].join("\n") + "\n");
+          console.log(verdict);
+          process.exit(pass ? 0 : 1);
+          EOF
+
+  # Separate job so that only it holds `issues: write`. Opens on a failed release
+  # (deploy job failed) and on any rollback, including the drill's expected one.
+  # The body only contains validated inputs, version IDs and the run URL.
+  incident:
+    needs: deploy
+    if: ${{ !cancelled() && inputs.open_incident && (needs.deploy.result == 'failure' || needs.deploy.outputs.rolled_back == 'true') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      issues: write # create missing labels, open the incident issue
+    outputs:
+      issue: ${{ steps.open.outputs.issue }}
+    steps:
+      - name: Open the incident issue
+        id: open
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          IS_DRILL: ${{ inputs.wrangler_env == 'drill' }}
+          ENVIRONMENT: ${{ inputs.environment }}
+          WORKER_NAME: ${{ inputs.worker_name }}
+          SITE_URL: ${{ inputs.url }}
+          RELEASE_LABEL: ${{ inputs.release_label }}
+          REF: ${{ inputs.ref }}
+          DEPLOY_RESULT: ${{ needs.deploy.result }}
+          PREVIOUS: ${{ needs.deploy.outputs.previous_version }}
+          DEPLOYED: ${{ needs.deploy.outputs.deployed_version }}
+          ROLLED_BACK: ${{ needs.deploy.outputs.rolled_back }}
+          VERIFIED: ${{ needs.deploy.outputs.rollback_verified }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          # Create a label only when it is missing (never rewrite the owner's colour/description).
+          ensure_label() {
+            gh api "repos/$GH_REPO/labels/$1" --silent 2>/dev/null || gh label create "$1" --color "$2" --description "$3"
+          }
+          ensure_label incident B60205 "Production incident: failed or rolled-back release"
+          labels=(--label incident)
+          title="Incident: release $RELEASE_LABEL of $WORKER_NAME"
+          if [ "$IS_DRILL" = true ]; then
+            ensure_label drill FBCA04 "Created by the rollback drill (drill.yml)"
+            labels+=(--label drill)
+            title="Drill: $title"
+          fi
+          if [ "$ROLLED_BACK" = true ]; then title="$title was rolled back"; else title="$title failed"; fi
+          # Only validated values: label/ref/worker/url passed _release.yml's allowlist,
+          # version IDs come from our own parser (UUID-checked).
+          cat > "$RUNNER_TEMP/incident.md" <<EOF
+          | | |
+          |---|---|
+          | Release | \`$RELEASE_LABEL\` (commit \`$REF\`) |
+          | Environment / Worker | $ENVIRONMENT / \`$WORKER_NAME\` |
+          | Site | $SITE_URL |
+          | Deploy job | $DEPLOY_RESULT |
+          | Version before | \`${PREVIOUS:-unknown}\` |
+          | Version deployed | \`${DEPLOYED:-none}\` |
+          | Rolled back | ${ROLLED_BACK:-false} |
+          | Rollback verified | ${VERIFIED:-false} |
+          | Run | $RUN_URL |
+
+          Next steps (README, "Phát hành production"): read the run's summary and logs,
+          confirm the site, fix forward through staging, and write a short postmortem here.
+          EOF
+          url=$(gh issue create --title "$title" --body-file "$RUNNER_TEMP/incident.md" "${labels[@]}")
+          echo "Opened $url"
+          echo "issue=${url##*/}" >> "$GITHUB_OUTPUT"

@@ -1,5 +1,6 @@
-// Cloudflare Workers deployment (Workers Builds runs `npm run build` then
-// `npx wrangler deploy`). The name must match the Worker in the dashboard.
+// Cloudflare Workers deployment. Deployed only by GitHub Actions: the top level by
+// production.yml (tag vX.Y.Z, via _release.yml), env.staging by staging.yml and
+// env.drill by drill.yml. The name must match the Worker in the dashboard.
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "english-project",
@@ -31,9 +32,17 @@
   // and every binding (kv_namespaces, d1_databases, r2_buckets, services...).
   // The name would default to "<name>-staging" anyway; it is spelled out so a
   // rename of the top-level Worker can never retarget staging by accident.
+  // Drill: `--env drill` is the throwaway Worker english-project-drill used only by
+  // .github/workflows/drill.yml (rollback drill), which creates it, deploys two
+  // versions, rolls one back and deletes the Worker again. Same inheritance rules as
+  // staging; it has no bindings, vars or secrets, so it shares nothing with
+  // production. Never point it at the production or staging Worker.
   "env": {
     "staging": {
       "name": "english-project-staging"
+    },
+    "drill": {
+      "name": "english-project-drill"
     }
   }
 }
