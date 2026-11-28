@@ -1,0 +1,106 @@
+# Dependabot VERSION updates. PRs go into `staging` like every other change, run ci.yml,
+# are merged by hand (squash), deploy to staging through staging.yml and reach
+# production with the next release. Nothing here is merged automatically.
+#
+# Rules shared by all ecosystems:
+# - target-branch: staging. Only version updates follow it: GitHub documents that
+#   SECURITY updates always target the default branch (`main`) and ignore the options in
+#   this file. A security PR into main cannot merge (main requires `staging/verified`);
+#   redo it through staging: docs/runbooks/cve-dependency-base-image.md.
+# - cooldown 14 days: a release is only proposed once it is at least 14 days old, the
+#   same rule as for hand-made pins (a hijacked or broken release is usually pulled
+#   within days). Cooldown applies to version updates only, never to security updates,
+#   so a fix for a known vulnerability is not delayed by it. `default-days` is used on
+#   its own: the semver-*-days keys are not supported for github-actions and docker.
+# - labels are left at Dependabot's defaults: `dependencies` + the ecosystem label
+#   (`javascript`, `github_actions`, `docker`), which Dependabot creates when missing.
+#   An explicit `labels:` list would replace those and silently drop any label that
+#   does not exist yet.
+# - Merge Dependabot PRs by clicking "Squash and merge" yourself, never with the
+#   `@dependabot merge` comment: a push made by dependabot[bot] runs staging.yml without
+#   the Environment secret, so the staging deploy would fail.
+#
+# NOT updated by Dependabot (no ecosystem reads them): the sha256-pinned tool binaries
+# (gitleaks, osv-scanner, hadolint, trivy, syft) and the image digests in workflows
+# (Playwright, ZAP). Procedure: docs/runbooks/cap-nhat-pin-thu-cong.md.
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    target-branch: staging
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Asia/Ho_Chi_Minh
+    cooldown:
+      default-days: 14
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: deps(npm)
+      prefix-development: deps-dev(npm)
+    groups:
+      # Every minor/patch bump in one PR. Majors are not in this group, so each comes as
+      # its own PR, except the lockstep sets below.
+      npm-minor:
+        applies-to: version-updates
+        patterns: ["*"]
+        exclude-patterns: ["@playwright/test"]
+        update-types: [minor, patch]
+      # Packages that only work at the same major: one PR for the set.
+      vitest-major:
+        applies-to: version-updates
+        patterns: ["vitest", "@vitest/*"]
+        update-types: [major]
+      react-major:
+        applies-to: version-updates
+        patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
+        update-types: [major]
+    # @playwright/test must equal the version of the Playwright image pinned (by digest)
+    # in staging.yml and _release.yml; a lone npm bump would make E2E fail on staging
+    # (the browsers in the image belong to the old version). Updated by hand together with
+    # the image: docs/runbooks/cap-nhat-pin-thu-cong.md. Security updates still come.
+    ignore:
+      - dependency-name: "@playwright/test"
+
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: staging
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:10"
+      timezone: Asia/Ho_Chi_Minh
+    cooldown:
+      default-days: 14
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: deps(actions)
+    # Actions are pinned as `uses: owner/repo@<full sha> # vX.Y.Z`. Dependabot moves the
+    # SHA to the new release's commit and rewrites the trailing version in the comment
+    # (it only recognises a comment that ENDS with the old version, so keep nothing after
+    # it on that line). Read the diff: the new SHA must be the tag's commit.
+    groups:
+      actions:
+        applies-to: version-updates
+        patterns: ["*"]
+
+  # deploy/Dockerfile (local Docker nginx; not what production runs, but scanned nightly).
+  - package-ecosystem: docker
+    directory: /deploy
+    target-branch: staging
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:20"
+      timezone: Asia/Ho_Chi_Minh
+    cooldown:
+      default-days: 14
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: deps(docker)
+    groups:
+      docker:
+        applies-to: version-updates
+        patterns: ["*"]

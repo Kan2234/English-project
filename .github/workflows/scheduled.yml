@@ -1,0 +1,297 @@
+# Nightly scans of what is already live or already merged, where nothing changes on our
+# side but the world does: new CVEs for an unchanged lockfile or base image, a site that
+# broke without a deploy, a secret found in old history. Every job is independent (one
+# red job never hides the others); `report` turns each failing job into ONE issue
+# labelled `scheduled` and closes it again on the first night the job passes.
+#
+#   site-prod, site-staging  scripts/check-site.mjs against both Workers
+#   deps                     osv-scanner + npm audit on package-lock.json
+#   container                build the site, docker build deploy/Dockerfile, Trivy
+#   dast-prod                OWASP ZAP baseline against production (passive only)
+#   secrets-history          gitleaks over the full history, Sundays only (or forced)
+#   report                   open / comment / close the issues (the only `issues: write`)
+#
+# GitHub runs `schedule` only from the DEFAULT branch (`main`): this file starts running
+# nightly after the release that brings it to main. Before that it can be run by hand
+# (workflow_dispatch) from a branch that has it; `report` then only prints what it would
+# do, so test runs never open issues. In a public repository GitHub disables schedules
+# after 60 days without repository activity: docs/runbooks/schedule-bi-tat.md.
+#
+# Nothing here deploys or uses a secret. Pins (actions, binaries + sha256, the ZAP image
+# digest) are the same as in ci.yml and staging.yml: update them together
+# (docs/runbooks/cap-nhat-pin-thu-cong.md). No dependency cache anywhere in this file:
+# the run holds `issues: write` and runs on main without review of what a cache holds.
+name: scheduled
+
+on:
+  schedule:
+    # 02:17 Asia/Ho_Chi_Minh (UTC+7, no DST) = 19:17 UTC the previous day. Not on :00,
+    # when GitHub's scheduler is busiest and delays or drops runs.
+    - cron: '17 19 * * *'
+  workflow_dispatch:
+    inputs:
+      weekly:
+        description: Also run the weekly jobs (gitleaks over the full history)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+# A manual run started during the nightly one waits instead of racing it on the issues.
+concurrency:
+  group: scheduled-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  PRODUCTION_URL: https://english-project.leminhkhang2234.workers.dev
+  STAGING_URL: https://english-project-staging.leminhkhang2234.workers.dev
+
+jobs:
+  # Weekly jobs run on the Sunday night run (Asia/Ho_Chi_Minh) or when forced. Computed
+  # from the clock instead of a second cron line: a second cron would start every
+  # nightly job a second time. Scheduled runs can start late, but not by a whole day.
+  plan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions: {}
+    outputs:
+      weekly: ${{ steps.plan.outputs.weekly }}
+    steps:
+      - id: plan
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          FORCE_WEEKLY: ${{ inputs.weekly }}
+        run: |
+          dow=$(TZ=Asia/Ho_Chi_Minh date +%u) # 7 = Sunday
+          if [ "$dow" = 7 ] || { [ "$EVENT_NAME" = workflow_dispatch ] && [ "$FORCE_WEEKLY" = true ]; }; then
+            weekly=true
+          else
+            weekly=false
+          fi
+          echo "Day of week (Asia/Ho_Chi_Minh): $dow, event: $EVENT_NAME -> weekly=$weekly"
+          echo "weekly=$weekly" >> "$GITHUB_OUTPUT"
+
+  # Two jobs rather than a matrix: `needs.<job>.result` of a matrix is one value for all
+  # legs, and each site must get its own issue.
+  site-prod:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # check-site.mjs only uses Node built-ins, so no npm ci.
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: check-site (production)
+        run: |
+          set -o pipefail
+          node scripts/check-site.mjs "$PRODUCTION_URL" | tee "$RUNNER_TEMP/check-site.txt"
+      - name: check-site summary
+        if: ${{ !cancelled() }}
+        run: |
+          [ -f "$RUNNER_TEMP/check-site.txt" ] || exit 0
+          {
+            echo "### check-site: production"
+            echo ""
+            echo '```'
+            grep -E '^(FAIL|WARN)' "$RUNNER_TEMP/check-site.txt" || true
+            tail -n 1 "$RUNNER_TEMP/check-site.txt"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  site-staging:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: check-site (staging)
+        run: |
+          set -o pipefail
+          node scripts/check-site.mjs "$STAGING_URL" | tee "$RUNNER_TEMP/check-site.txt"
+      - name: check-site summary
+        if: ${{ !cancelled() }}
+        run: |
+          [ -f "$RUNNER_TEMP/check-site.txt" ] || exit 0
+          {
+            echo "### check-site: staging"
+            echo ""
+            echo '```'
+            grep -E '^(FAIL|WARN)' "$RUNNER_TEMP/check-site.txt" || true
+            tail -n 1 "$RUNNER_TEMP/check-site.txt"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # Same scanners and settings as ci.yml `deps`. The lockfile did not change, the
+  # advisory databases did: this is what catches a new CVE in a dependency we already ship.
+  deps:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      OSV_SCANNER_VERSION: 2.7.1
+      # sha256 of osv-scanner_linux_amd64 from the release's SHA256SUMS (same as ci.yml)
+      OSV_SCANNER_SHA256: fb7dab19a8bd9bbe5c3189f09d4b7ee1820c9553a23bac202648a56efd2f6ee8
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: Install osv-scanner (pinned, checksum verified)
+        run: |
+          cd "$RUNNER_TEMP"
+          curl -fsSLo osv-scanner "https://github.com/google/osv-scanner/releases/download/v${OSV_SCANNER_VERSION}/osv-scanner_linux_amd64"
+          echo "${OSV_SCANNER_SHA256}  osv-scanner" | sha256sum -c -
+          chmod +x osv-scanner
+      # Accepted findings live in osv-scanner.toml (reason + ignoreUntil), as in ci.yml.
+      - name: osv-scanner
+        run: '"$RUNNER_TEMP/osv-scanner" scan source --lockfile package-lock.json'
+      # Runs even when osv-scanner failed, so the log has both opinions.
+      - name: npm audit
+        if: ${{ !cancelled() }}
+        run: npm audit --audit-level=high
+
+  # deploy/Dockerfile uses the tag nginx:1.30.8-alpine (no digest) and runs
+  # `apk upgrade`, so every build picks up the current base and Alpine packages: a CVE
+  # published since the last build fails here even though deploy/ did not change.
+  container:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      TRIVY_VERSION: 0.76.2
+      # sha256 of trivy_0.76.2_Linux-64bit.tar.gz from the release's checksums.txt
+      # (same as ci.yml; the binary, not aquasecurity/trivy-action, see ci.yml)
+      TRIVY_SHA256: bc0fc726e017b8927a62b2d3531d7a84ee01769daf5c99ed866dced54089fdbf
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: Install trivy (pinned, checksum verified)
+        run: |
+          cd "$RUNNER_TEMP"
+          curl -fsSLo trivy.tar.gz "https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz"
+          echo "${TRIVY_SHA256}  trivy.tar.gz" | sha256sum -c -
+          tar -xzf trivy.tar.gz trivy
+      # deploy/Dockerfile copies a prebuilt dist/ (prebuild syncs database/ into public/data/).
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run build
+      # --pull: always the current nginx:1.30.8-alpine, never a stale local copy.
+      - name: docker build
+        run: docker build --pull -f deploy/Dockerfile -t on-ta:nightly .
+      # Same gate as ci.yml: HIGH/CRITICAL with a fix fail; exceptions in .trivyignore
+      # (reason + exp: date, after which the finding fails again).
+      - name: Trivy image scan
+        run: |
+          "$RUNNER_TEMP/trivy" image --scanners vuln --severity HIGH,CRITICAL --ignore-unfixed \
+            --ignorefile .trivyignore --exit-code 1 --no-progress on-ta:nightly
+
+  # Same image, rules and gate as staging.yml `dast`, against production. Passive scan
+  # only (spider + GET requests, no attacks), so it is safe on the live site.
+  dast-prod:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      # ZAP 2.17.0, multi-arch index digest (same as staging.yml)
+      ZAP_IMAGE: ghcr.io/zaproxy/zaproxy:2.17.0@sha256:9624669db72f54d86c4b46a7064518bd9bf79d8c61a4c31befa9923489f328af
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # The image runs as uid 1000, the runner as 1001: the work dir must be writable.
+      - name: Prepare ZAP work dir
+        run: |
+          mkdir -p "$RUNNER_TEMP/zap"
+          cp .zap/rules.tsv "$RUNNER_TEMP/zap/"
+          chmod -R a+rwX "$RUNNER_TEMP/zap"
+          docker pull -q "$ZAP_IMAGE"
+      - name: ZAP baseline (production)
+        run: |
+          docker run --rm -v "$RUNNER_TEMP/zap:/zap/wrk:rw" "$ZAP_IMAGE" \
+            zap-baseline.py -t "$PRODUCTION_URL" -c rules.tsv -m 2 -I \
+            -J report.json -r report.html -w report.md
+      - name: Risk gate (High/Medium fail)
+        if: ${{ !cancelled() }}
+        run: node scripts/zap-gate.mjs "$RUNNER_TEMP/zap/report.json" .zap/rules.tsv
+      - name: Upload ZAP report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: zap-report-production
+          path: |
+            ${{ runner.temp }}/zap/report.html
+            ${{ runner.temp }}/zap/report.json
+            ${{ runner.temp }}/zap/report.md
+          retention-days: 14
+          if-no-files-found: ignore
+
+  # ci.yml scans only the commits of each PR. This rescans everything ever pushed (all
+  # branches and tags, which a public repo exposes), so a gitleaks rule added since then
+  # still finds old leaks. Weekly: history only grows by what ci.yml already scanned.
+  secrets-history:
+    needs: plan
+    if: needs.plan.outputs.weekly == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GITLEAKS_VERSION: 8.30.1
+      # sha256 of gitleaks_8.30.1_linux_x64.tar.gz from the release's checksums.txt (same as ci.yml)
+      GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0 # every commit of every branch and tag
+      - name: Install gitleaks (pinned, checksum verified)
+        run: |
+          cd "$RUNNER_TEMP"
+          curl -fsSLo gitleaks.tar.gz "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          echo "${GITLEAKS_SHA256}  gitleaks.tar.gz" | sha256sum -c -
+          tar -xzf gitleaks.tar.gz gitleaks
+      # --redact: the Actions log is public, never print a finding's value.
+      - name: gitleaks (full history)
+        run: '"$RUNNER_TEMP/gitleaks" git --log-opts="--all" --redact --no-banner --exit-code 1 .'
+
+  # The only job with a write permission. `!cancelled()` instead of `always()`: it still
+  # runs when jobs failed (that is its purpose), but a run cancelled by hand does not
+  # file "cancelled" jobs as failures. A job that hit its timeout counts as failing.
+  report:
+    needs: [plan, site-prod, site-staging, deps, container, dast-prod, secrets-history]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read # checkout of scripts/scheduled-report.mjs
+      issues: write # create the `scheduled` label if missing, open/comment/close issues
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # scheduled-report.mjs only uses Node built-ins: no npm ci.
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          package-manager-cache: false
+      # Real issues only from the default branch (the nightly runs, or a manual run of
+      # main); a manual run from any other branch is a dry run that only prints.
+      - name: Open, update or close the issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RESULTS: ${{ toJSON(needs) }}
+          DRY_RUN: ${{ github.ref != 'refs/heads/main' }}
+        run: node scripts/scheduled-report.mjs
