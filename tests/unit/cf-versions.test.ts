@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   assetSet,
+  deleteOutcome,
   deployedVersionId,
   deploymentsTable,
   fullVersionOf,
@@ -154,5 +155,25 @@ describe('deploymentsTable', () => {
     expect(lines[2]).toContain('rollback');
     expect(lines[2]).toContain('x y z');
     expect(lines[3]).toContain('release v1.0.0');
+  });
+});
+
+describe('deleteOutcome (DELETE /workers/scripts/{name})', () => {
+  it('2xx with success is deleted', () => {
+    expect(deleteOutcome(200, { success: true, errors: [] })).toBe('deleted');
+  });
+  it('404 or API error 10007 means the Worker is already gone', () => {
+    expect(deleteOutcome(404, null)).toBe('absent');
+    expect(deleteOutcome(400, { success: false, errors: [{ code: 10007, message: 'workers.api.error.script_not_found' }] })).toBe('absent');
+  });
+  it('an auth error (as in the first drill) is an Error with the code', () => {
+    const r = deleteOutcome(403, { success: false, errors: [{ code: 10000, message: 'Authentication error' }] });
+    expect(r).toBeInstanceOf(Error);
+    expect((r as Error).message).toContain('HTTP 403');
+    expect((r as Error).message).toContain('code 10000');
+  });
+  it('2xx with success:false or an unparsable body is not treated as deleted', () => {
+    expect(deleteOutcome(200, { success: false, errors: [{ code: 1, message: 'x' }] })).toBeInstanceOf(Error);
+    expect(deleteOutcome(500, null)).toBeInstanceOf(Error);
   });
 });
