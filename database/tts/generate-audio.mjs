@@ -22,7 +22,7 @@
 //   Or set EDGE_TTS_PYTHON to a local python that has edge-tts installed (no Docker then).
 //   edge-tts takes one voice per request, so every spoken line is synthesized separately (tts/edge_synth.py,
 //   throttled + retried because the service rate-limits), cached by text+voice in EDGE_TTS_CACHE
-//   (default: <os tmp>/on-ta-edge-tts), trimmed, loudness-matched and joined here with exact silences.
+//   (default: database/tts/.cache/edge-tts, gitignored), trimmed, loudness-matched and joined here with exact silences.
 //   Voice plan (deterministic, from the set's index within its part):
 //     narrator  en-US-AndrewNeural (-5%) reads directions, question numbers and Part 3/4 questions
 //     speakers  US Ava/Emma, Brian/Christopher · GB Sonia/Libby, Ryan/Thomas · CA Clara, Liam · AU Natasha, William
@@ -37,7 +37,7 @@
 // Output: database/audio/<test-id>/<set-id>.mp3 and database/audio/manifest.json
 // ({ test_id, file, hash, duration_sec, engine, voices, accents } per set; the hash covers text + voices + engine).
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync, mkdtempSync, rmSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, mkdtempSync, rmSync, renameSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
@@ -272,7 +272,9 @@ function synthOneCore(jobs, work) {
 // ---------------------------------------------------------------- engine: edge-tts (online neural voices)
 const SR = 24000; // edge-tts delivers 24 kHz mono MP3
 const EDGE_PIPELINE = { v: 1, sr: SR, lead: 0.03, tail: 0.06, gateDb: -50, targetDb: -20, peak: 0.89, edgePad: 0.3, kbps: '64k' };
-const EDGE_CACHE = process.env.EDGE_TTS_CACHE || join(tmpdir(), 'on-ta-edge-tts');
+// Cache inside the project, not a fixed name in the shared OS temp dir: there another
+// local user could pre-create the directory or plant symlinks (CodeQL js/insecure-temporary-file).
+const EDGE_CACHE = process.env.EDGE_TTS_CACHE || join(HERE, '.cache', 'edge-tts');
 const segKey = (it) => `${sha(`${it.voice.name}|${it.voice.rate ?? '+0%'}|${it.voice.pitch ?? '+0Hz'}|${it.text}`, 24)}.mp3`;
 
 function runEdgeTts(segments) {
@@ -394,7 +396,16 @@ function encodeMp3(wav, job, kbps) {
 const bundlePath = join(ROOT, 'toeic.json');
 if (!existsSync(bundlePath)) { console.error('database/toeic.json not found. Run: node database/build.mjs'); process.exit(1); }
 const bundle = JSON.parse(readFileSync(bundlePath, 'utf8'));
-const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, 'utf8')) : {};
+// Read directly instead of existsSync() + read (check-then-use race, CodeQL js/file-system-race).
+function readManifest() {
+  try {
+    return JSON.parse(readFileSync(MANIFEST, 'utf8'));
+  } catch (e) {
+    if (e.code === 'ENOENT') return {};
+    throw e;
+  }
+}
+const manifest = readManifest();
 
 const jobs = [];
 const distribution = []; // [test, part, accent, voice] per speaker, to print the rotation
@@ -446,7 +457,10 @@ if (!jobs.length) {
     rmSync(work, { recursive: true, force: true });
   }
   const sorted = Object.fromEntries(Object.entries(manifest).sort(([a], [b]) => a.localeCompare(b)));
-  writeFileSync(MANIFEST, JSON.stringify(sorted, null, 2) + '\n');
+  // Atomic replace: write a fresh sibling temp file (wx = fail if it exists), then rename it over the manifest.
+  const tmpManifest = `${MANIFEST}.${process.pid}.tmp`;
+  writeFileSync(tmpManifest, JSON.stringify(sorted, null, 2) + '\n', { flag: 'wx' });
+  renameSync(tmpManifest, MANIFEST);
 }
 
 // Rebuild so audio_url is written into toeic.db / toeic.json

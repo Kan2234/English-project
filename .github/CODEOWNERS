@@ -1,0 +1,15 @@
+# Owners of the paths that decide how code is built, checked, deployed and rolled back.
+#
+# Informational for now: with a single maintainer, "Require review from Code Owners"
+# must stay OFF in the `main` and `staging` rulesets. GitHub never lets the author of a
+# PR approve it, so with that option on, every PR touching these paths (including the
+# owner's own) could never be merged. Turn it on once there is a second reviewer.
+# Later lines win over earlier ones; paths are relative to the repository root.
+
+/.github/        @Kan2234
+/worker/         @Kan2234
+/deploy/         @Kan2234
+/scripts/        @Kan2234
+/.zap/           @Kan2234
+/wrangler.jsonc  @Kan2234
+/.trivyignore    @Kan2234
