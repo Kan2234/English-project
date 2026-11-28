@@ -1,5 +1,5 @@
 # Build context is the project root; run `npm run build` first so dist/ exists.
-FROM nginx:1.30.8-alpine
+FROM nginx:1.31.0-alpine
 
 # Pull in Alpine security fixes released after the base image was built, and
 # drop the optional dynamic modules (never loaded here) together with the
