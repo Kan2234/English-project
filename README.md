@@ -52,7 +52,7 @@ Mỗi PR vào `staging` hoặc `main` chạy `.github/workflows/ci.yml` (không 
 - `checks / lint`, `checks / typecheck`, `checks / unit` (kèm độ phủ), `checks / data` (`db:build` và `database/toeic.json` đã commit phải khớp với nguồn), `checks / build` (JS đầu không quá 400 kB). Các job này nằm trong `_checks.yml`, sau này `staging.yml` dùng lại.
 - `secrets`: Gitleaks quét các commit của PR.
 - `deps`: osv-scanner trên `package-lock.json` và `npm audit --audit-level=high` (gồm cả devDependencies). Muốn chấp nhận một lỗ hổng thì thêm vào `osv-scanner.toml` kèm lý do và `ignoreUntil`, không bỏ qua hàng loạt.
-- `sast`: CodeQL (`security-extended`). Kết quả nằm ở tab Security; ruleset chặn merge khi có cảnh báo.
+- `sast`: CodeQL (`security-extended`). Kết quả nằm ở tab Security; ruleset chặn merge khi có cảnh báo. `.github/workflows/codeql.yml` chạy cùng phân tích đó mỗi lần push vào `staging`/`main` (và mỗi tuần trên `main`), để nhánh đích luôn có kết quả mới nhất: cảnh báo mới được tính cho đúng PR gây ra nó, thay vì chỉ lộ ra ở Release PR.
 - `container`: hadolint, `docker build` và Trivy, chỉ chạy khi PR đổi `deploy/`, `.dockerignore` hoặc `.trivyignore`. Ngoại lệ ghi trong `.trivyignore`, có lý do và `exp:`.
 - `ci-ok`: gom kết quả các job trên. Ruleset chỉ yêu cầu **một** check này; job bị bỏ qua (skipped) vẫn tính là đạt, job lỗi hay bị hủy thì `ci-ok` đỏ.
 
@@ -131,6 +131,25 @@ Xem kết quả: trang Summary của lượt chạy (bảng version trước/sau
 4. Sửa qua `staging` như hotfix, phát hành bản patch kế tiếp (không dùng lại tag đã hỏng), rồi viết postmortem ngắn trong issue và đóng nó.
 
 Các script dùng cho phát hành: `scripts/cf-versions.mjs` (mọi lệnh wrangler về version: version đang chạy, rollback, chờ xác nhận, xóa Worker drill; đã kiểm với wrangler 4.159.0) và `scripts/release-gate.mjs`. Unit test của chúng nằm trong `tests/unit/`.
+
+#### Quét hằng đêm và Dependabot
+
+`.github/workflows/scheduled.yml` chạy mỗi đêm lúc 02:17 giờ Việt Nam, không deploy, không dùng secret:
+
+- `site-prod`, `site-staging`: `check-site` vào production và staging.
+- `deps`: osv-scanner và `npm audit` trên `package-lock.json`. Lockfile không đổi nhưng cơ sở dữ liệu lỗ hổng thì có, nên đây là chỗ bắt CVE mới.
+- `container`: build site, `docker build -f deploy/Dockerfile`, Trivy (base image không pin digest và có `apk upgrade`, nên mỗi đêm quét đúng base hiện tại).
+- `dast-prod`: ZAP baseline vào production, cùng `.zap/rules.tsv` và `scripts/zap-gate.mjs` như staging.
+- `secrets-history`: Gitleaks quét **toàn bộ** lịch sử mọi nhánh và tag, chỉ đêm Chủ nhật (hoặc khi bấm tay có tick `weekly`).
+- `report`: mỗi job đỏ có **một** issue `Scheduled: <job> failing`, nhãn `scheduled` (xem tab Issues, lọc `label:scheduled`). Đêm sau còn đỏ thì thêm comment; xanh lại thì issue tự comment và đóng. Logic nằm trong `scripts/scheduled-report.mjs` (có unit test).
+
+GitHub chỉ chạy `schedule` từ nhánh mặc định, nên workflow này bắt đầu chạy hằng đêm sau lần phát hành đưa nó vào `main`. Bấm tay (Actions → `scheduled` → Run workflow) từ nhánh khác `main` là chạy thử: `report` chỉ in ra việc nó sẽ làm. Repo public không có hoạt động 60 ngày thì GitHub tắt schedule (runbook `schedule-bi-tat.md`).
+
+**Dependabot** (`.github/dependabot.yml`): mỗi thứ Hai mở PR nâng phiên bản cho npm (minor/patch gộp trong nhóm `npm-minor`, major tách riêng), action (nhóm `actions`, giữ dạng pin SHA + `# vX.Y.Z`) và base image Docker (nhóm `docker`). PR mở vào **`staging`**, chạy `ci.yml` như mọi PR khác; bạn tự bấm **Squash and merge** (không dùng lệnh `@dependabot merge`: push do bot tạo không nhận secret của Environment, deploy staging sẽ lỗi), rồi thay đổi đi tiếp qua `staging.yml`, Release PR và tag. Chỉ đề xuất bản đã ra ít nhất 14 ngày (`cooldown`). Security update của Dependabot luôn mở PR vào `main` và không merge được ở đó; làm lại qua `staging` theo runbook CVE. Tool binary pin bằng sha256, image Playwright/ZAP và `@playwright/test` cập nhật tay theo runbook `cap-nhat-pin-thu-cong.md`.
+
+**Runbook** cho các sự cố (production lỗi, lộ token, CVE, xoay token, tag nhầm, job đêm đỏ, cập nhật pin, diễn tập rollback, schedule bị tắt): [`docs/runbooks/`](docs/runbooks/README.md).
+
+`.github/CODEOWNERS` ghi `@Kan2234` là chủ các đường dẫn về pipeline và hạ tầng. Hiện chỉ mang tính thông tin: repo có một người duy trì, nên "Require review from Code Owners" trong ruleset phải để tắt (tác giả không tự duyệt PR của mình được).
 
 ## Triển khai (Docker + nginx, chạy trên máy)
 

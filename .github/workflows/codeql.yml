@@ -1,0 +1,54 @@
+# CodeQL on the base branches, so code scanning always has a current analysis of
+# `staging` and `main` to compare pull requests against.
+#
+# Why: code scanning decides which alerts a PR "introduces" by diffing the PR's analysis
+# (ci.yml `sast`) against the latest analysis of the PR's BASE branch with the same
+# category. Until now only PRs were analysed, so `staging` and `main` had no analysis of
+# their own: an alert that slipped into staging was never attributed to the PR that
+# added it, and surfaced first in the release PR into main (release PR #8 was blocked by
+# an alert from S1 code). With an analysis on every push, a new alert shows up and
+# blocks (ruleset code-scanning rule) at the feature PR that introduces it.
+#
+# ci.yml `sast` stays: it is what analyses and gates each PR. This workflow only keeps the
+# baselines current, with the same pinned action, language, build mode, query suite
+# and category, so both sides of the diff are comparable.
+# The weekly schedule (runs on `main`, the default branch) picks up new queries in the
+# CodeQL bundle even when nothing is pushed for a while.
+name: codeql
+
+on:
+  push:
+    branches: [staging, main]
+  schedule:
+    # Monday 03:41 Asia/Ho_Chi_Minh = Sunday 20:41 UTC (off the hour; after scheduled.yml)
+    - cron: '41 20 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A newer push supersedes the analysis of an older commit on the same branch.
+concurrency:
+  group: codeql-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      security-events: write # upload CodeQL results to code scanning
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: github/codeql-action/init@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
+        with:
+          languages: javascript-typescript
+          build-mode: none
+          queries: security-extended
+      # Must equal ci.yml's category: that is what pairs PR and base analyses.
+      - uses: github/codeql-action/analyze@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
+        with:
+          category: /language:javascript-typescript
